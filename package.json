@@ -1,0 +1,25 @@
+{
+  "name": "scratch",
+  "version": "2.0.0",
+  "description": "My Starter Kit",
+  "author": "Martin Berglund <marberglund@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/macbruker/scratch"
+  },
+  "scripts": {
+    "dev:eleventy": "eleventy --config=eleventy.config.js --serve",
+    "dev:css": "npx tailwindcss -i ./src/main.css -o ./dist/main.min.css --watch",
+    "dev": "concurrently npm:dev:*"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@11ty/eleventy": "^0.12.1",
+    "autoprefixer": "^10.4.0",
+    "compression": "^1.7.4",
+    "concurrently": "^6.4.0",
+    "cssnano": "^5.0.12",
+    "postcss": "^8.4.4",
+    "tailwindcss": "^3.0.1"
+  }
+}
