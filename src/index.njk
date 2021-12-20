@@ -1,8 +1,83 @@
 ---
-title: 'Index'
+title: 'Privatperson'
 ---
 {% extends 'base.njk' %}
 
 {% block content %}
-  {{ content | safe }}
+  {% include "partials/header.njk" %}
+
+  <main class="px-5 pt-8 sm:px-8">
+    <div class="grid max-w-screen-xl gap-3 mx-auto md:gap-6 xs:w-11/12 ">
+
+      <div class="grid w-full max-w-5xl gap-3 mx-auto xl:w-10/12 md:grid-cols-2 md:gap-6">
+        {% for link in importantLinks %}
+          <a class="flex items-center justify-between gap-2 px-6 py-5 bg-white rounded shadow group text-blue hover:ring-2 hover:ring-blue hover:shadow-xl focus:shadow-xl" href="#">
+            <div class="flex items-center gap-3">
+              {{ link.image | svgContents('w-8 h-8 flex-shrink-0') | safe }}
+              <h3 class="mt-1 text-xl font-semibold leading-tight group-hover:underline ">{{ link.title }}</h3>
+            </div>
+            <svg aria-hidden="true" focusable="false" class="-mr-2.5" width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M9 5L16 12L9 19.1421" stroke="currentColor" stroke-width="2"/></svg>
+          </a>
+        {% endfor %}
+      </div>
+
+      <h1 class="mt-12 text-3xl font-semibold text-center sm:text-4xl md:text-5xl">Privatperson</h1>
+      <div class="grid gap-3 md:gap-6 md:grid-cols-3">
+        {% for link in promotedLinks %}
+          <a class="flex flex-col items-center gap-3 px-6 py-6 text-center bg-white rounded shadow group hover:ring-2 hover:ring-blue hover:shadow-xl focus:shadow-xl" href="#">
+            {{ link.image | svgContents('w-8 h-8 flex-shrink-0 group-hover:scale-110 transition duration-200 ease-out text-blue') | safe }}
+            <div>
+              <h2 class="mt-1 text-2xl font-semibold leading-tight text-blue group-hover:underline">{{ link.title | safe }}</h2>
+              <p class="mt-1 text-lg leading-snug text-gray-600">{{ link.description | safe }}</p>
+            </div>
+          </a>
+        {% endfor %}
+      </div>
+
+      <h2 class="mt-6 text-2xl font-semibold text-center sm:text-3xl md:text-4xl">Hva er situasjonen din?</h2>
+      <div class="grid gap-3 md:gap-6 md:grid-cols-2 lg:grid-cols-3">
+        {% for link in situationLinks %}
+          <a class="flex items-start gap-4 px-8 py-8 transition duration-200 bg-white rounded shadow group hover:ring-2 hover:ring-blue hover:shadow-xl focus:shadow-xl" href="#">
+            {{ link.image | svgContents('w-8 h-8 flex-shrink-0 group-hover:scale-110 ease-out duration-75 transition text-blue') | safe }}
+            <div>
+            <h3 class="mt-1 text-2xl font-semibold leading-tight text-blue group-hover:underline ">{{ link.title | safe }}</h3>
+            <p class="mt-1.5 text-lg leading-snug">{{ link.description | safe }}</p>
+            </div>
+          </a>
+        {% endfor %}
+      </div>
+
+      <div class="grid gap-3 mt-8 md:grid-cols-3 md:gap-6">
+        {% for section in bottomList %}
+        <div class="pr-4 mb-8 sm:max-w-xs break-inside-avoid">
+          <h2 class="text-xl font-semibold">{{ section.title }}</h2>
+          <ul class="flex flex-col items-start">
+          {% for link in section.linkList %}
+            <li class="mb-2">
+              <div class="flex items-start gap-2 mt-2 text-blue hover:text-blue-dark group">
+                <svg aria-hidden="true" focusable="false" class="w-5 h-5 -ml-1.5 flex-shrink-0 group-hover:translate-x-1.5 transition-transform group-hover:ease-out group-hover:duration-200" width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M9 5L16 12L9 19.1421" stroke="currentColor" stroke-width="2"/></svg>
+                <a class="text-lg leading-tight underline hover:no-underline " href="#">{{ link.text }}</a>
+              </div>
+              {% if link.date %}
+                <div class="pl-5 mt-0.5">{{ link.date }}</div>
+              {% endif %}
+            </li>
+          {% endfor %}
+          </ul>
+          {% if section.extraLink %}
+            <div class="flex items-start gap-2 mt-8 text-blue hover:text-blue-dark group">
+              <svg aria-hidden="true" focusable="false" class="block w-5 h-5 -ml-1.5 flex-shrink-0 group-hover:translate-x-1.5 transition-transform group-hover:ease-out group-hover:duration-200" width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M9 5L16 12L9 19.1421" stroke="currentColor" stroke-width="2"/></svg>
+              <a class="text-lg leading-tight" href="#">{{ section.extraLink }}</a>
+            </div>
+          {% endif %}
+        </div>
+        {% endfor %}
+      </div>
+
+    </div>
+  </main>
+  <div class="sticky bottom-0 z-10 w-full h-6 pointer-events-none bg-gradient-to-t from-gray-200 to-gray-100/0 inset-x"></div>
+
+
+  {% include "partials/footer.njk" %}
 {% endblock %}

@@ -1,4 +1,31 @@
-body {
-  background: rebeccapurple;
-  background: yellow;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @font-face{
+    font-family: 'Source Sans 3';
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+    src: url('/fonts/source-sans-3-regular-webfont.woff2') format('woff2'),
+      url('/fonts/source-sans-3-regular-webfont.woff') format('woff');
+  }
+
+  @font-face{
+    font-family: 'Source Sans 3';
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+    src: url('/fonts/source-sans-3-italic-webfont.woff2') format('woff2'),
+      url('/fonts/source-sans-3-italic-webfont.woff') format('woff');
+  }
+  @font-face{
+    font-family: 'Source Sans 3';
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+    src: url('/fonts/source-sans-3-bold-webfont.woff2') format('woff2'),
+      url('/fonts/source-sans-3-bold-webfont.woff') format('woff');
+  }
 }

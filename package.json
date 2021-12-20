@@ -10,15 +10,20 @@
   "scripts": {
     "dev:eleventy": "eleventy --config=eleventy.config.js --serve",
     "dev:css": "npx tailwindcss -i ./src/main.css -o ./dist/main.min.css --watch",
-    "dev": "concurrently npm:dev:*"
+    "dev": "concurrently npm:dev:*",
+    "build:eleventy": "eleventy --config=eleventy.config.js",
+    "build:css": "npx tailwindcss -i ./src/main.css -o ./dist/main.min.css",
+    "build": "NODE_ENV=production concurrently npm:build:*"
   },
   "license": "MIT",
   "devDependencies": {
     "@11ty/eleventy": "^0.12.1",
+    "alpinejs": "^3.7.0",
     "autoprefixer": "^10.4.0",
     "compression": "^1.7.4",
     "concurrently": "^6.4.0",
     "cssnano": "^5.0.12",
+    "eleventy-plugin-svg-contents": "^0.7.0",
     "postcss": "^8.4.4",
     "tailwindcss": "^3.0.1"
   }

@@ -1,9 +1,11 @@
 const compress = require('compression');
+const svgContents = require("eleventy-plugin-svg-contents");
 
 module.exports = function(eleventyConfig) {
+  eleventyConfig.addPlugin(svgContents);
   eleventyConfig.addPassthroughCopy({ "./node_modules/alpinejs/dist/cdn.min.js": "./main.min.js" });
-  eleventyConfig.addPassthroughCopy("./static/images/*");
-  eleventyConfig.addPassthroughCopy("./static/fonts/*");
+  eleventyConfig.addPassthroughCopy({ "./static/images/*" : "/images" });
+  eleventyConfig.addPassthroughCopy({ "./static/fonts/*" : "/fonts" });
   eleventyConfig.addWatchTarget("./src/main.css");
   eleventyConfig.setDataDeepMerge(true);
   eleventyConfig.setBrowserSyncConfig({
