@@ -1,0 +1,4 @@
+.skjemaelement__input--harFeil:not(:focus):not(:hover):not(:active):not(.inputPanel--focused).radioknapp:not(:checked)+.skjemaelement__label:before {
+  border-color: #ba3a26;
+  box-shadow: 0 0 0 1px #ba3a26
+}
