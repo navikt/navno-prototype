@@ -9,6 +9,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addWatchTarget("./src/main.css");
   eleventyConfig.setDataDeepMerge(true);
   eleventyConfig.setBrowserSyncConfig({
+    snippet: process.env.ELEVENTY_ENV != 'production',
     server: {
       baseDir: './dist',
       middleware: function(req,res,next){
