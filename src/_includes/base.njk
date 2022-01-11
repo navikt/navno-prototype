@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="no" class="h-full text-gray-600 bg-gray-100 font-source-sans">
+<html lang="no" class="h-full text-gray-600 bg-white font-source-sans">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,13 +12,17 @@
     {{ site.title }}
   </title>
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2299%22>🧑‍💻</text></svg>">
-  <link rel="stylesheet" href="/main.min.css" />
-  <link rel="preload" href="/fonts/source-sans-3-regular-webfont.woff2" as="font" type="font/woff2" crossorigin />
-  <link rel="preload" href="/fonts/source-sans-3-bold-webfont.woff2" as="font" type="font/woff2" crossorigin />
-  <script src="/main.min.js" defer></script>
+  <link rel="stylesheet" href="/main.min.css" type="text/css" />
+  <link rel="preload" href="/fonts/source-sans-pro-regular-webfont.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/fonts/source-sans-pro-semibold-webfont.woff2" as="font" type="font/woff2" crossorigin />
+  <script src="/main.min.js" type="text/javascript" defer></script>
 </head>
-<body class="h-full" x-data="{ menuOpen: false }">
-  {% block content %}
-  {% endblock %}
+<body class="bg-gray-100" x-data="{ menuOpen: false, searchOpen: false }">
+  <nav id="site-skiplinks" class="absolute flex flex-col items-center p-1" aria-label="Hopp til innhold">
+    <a href="#" class="sr-only">Hovedmeny</a>
+    <a href="#" class="sr-only">Søk</a>
+    <a href="#maincontent" class="sr-only">Hovedinnhold</a>
+  </nav>
+  {% block content %}{% endblock %}
 </body>
 </html>

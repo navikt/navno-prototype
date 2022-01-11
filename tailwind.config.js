@@ -34,6 +34,10 @@ module.exports = {
         '600': '#262626',
       },
       purple: '#5C4378',
+      butter: {
+        light: '#FFECCC',
+        DEFAULT: '#ffd799'
+      },
       white: '#fff',
       black: '#000'
     },
