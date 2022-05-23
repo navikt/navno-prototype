@@ -9,7 +9,7 @@ eleventyExcludeFromCollections: true
     <div class="grid max-w-screen-xl gap-3 mx-auto md:gap-6 xs:w-11/12 ">
       <div class="grid w-full max-w-5xl gap-3 mx-auto text-xl xl:w-10/12 md:gap-6">
         {% for page in collections.all %}
-          <a class="px-8 py-6 bg-white rounded-md shadow" href="{{ page.url }}">{{ page.data.title }}</a>
+          <a class="px-8 py-6 bg-white rounded-md shadow hover:bg-lightblue-50" href="{{ page.url }}">{{ page.data.title }}</a>
         {% endfor %}
       </div>
     </div>

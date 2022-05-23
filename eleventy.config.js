@@ -1,22 +1,20 @@
-const compress = require('compression');
 const svgContents = require("eleventy-plugin-svg-contents");
+const compression = require("compression");
 
-module.exports = function(eleventyConfig) {
+module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(svgContents);
-  eleventyConfig.addPassthroughCopy({ "./node_modules/alpinejs/dist/cdn.min.js": "./main.min.js" });
-  eleventyConfig.addPassthroughCopy({ "./static/images/*" : "/images" });
-  eleventyConfig.addPassthroughCopy({ "./static/fonts/*" : "/fonts" });
+  eleventyConfig.addPassthroughCopy({
+    "./node_modules/alpinejs/dist/cdn.min.js": "./main.min.js",
+  });
+  eleventyConfig.addPassthroughCopy({ "./static/images/*": "/images" });
+  eleventyConfig.addPassthroughCopy({ "./static/fonts/*": "/fonts" });
   eleventyConfig.addWatchTarget("./src/main.css");
   eleventyConfig.setDataDeepMerge(true);
-  eleventyConfig.setBrowserSyncConfig({
-    snippet: process.env.ELEVENTY_ENV != 'production',
-    server: {
-      baseDir: './dist',
-      middleware: function(req,res,next){
-        const gzip = compress();
-        gzip(req,res,next);
-      }
-    }
+
+  eleventyConfig.setServerOptions({
+    enabled: false,
+    showVersion: true,
+    middleware: [compression()],
   });
 
   return {
@@ -25,6 +23,6 @@ module.exports = function(eleventyConfig) {
       data: "_data",
       includes: "_includes",
       output: "dist",
-    }
-  }
-}
+    },
+  };
+};

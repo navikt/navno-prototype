@@ -3,37 +3,36 @@
 @tailwind utilities;
 
 @layer base {
-  @font-face{
-    font-family: 'Source Sans Pro';
+  @font-face {
+    font-family: "Source Sans Pro";
     font-weight: 400;
     font-style: normal;
     font-display: swap;
-    src: url('/fonts/source-sans-pro-regular-webfont.woff2') format('woff2'),
-      url('/fonts/source-sans-pro-regular-webfont.woff') format('woff');
+    src: url("/fonts/source-sans-pro-regular-webfont.woff2") format("woff2"),
+      url("/fonts/source-sans-pro-regular-webfont.woff") format("woff");
   }
 
-  @font-face{
-    font-family: 'Source Sans Pro';
+  @font-face {
+    font-family: "Source Sans Pro";
     font-weight: 400;
     font-style: italic;
     font-display: swap;
-    src: url('/fonts/source-sans-pro-italic-webfont.woff2') format('woff2'),
-      url('/fonts/source-sans-pro-italic-webfont.woff') format('woff');
+    src: url("/fonts/source-sans-pro-italic-webfont.woff2") format("woff2"),
+      url("/fonts/source-sans-pro-italic-webfont.woff") format("woff");
   }
-  @font-face{
-    font-family: 'Source Sans Pro';
+  @font-face {
+    font-family: "Source Sans Pro";
     font-weight: 600;
     font-style: normal;
     font-display: swap;
-    src: url('/fonts/source-sans-pro-semibold-webfont.woff2') format('woff2'),
-      url('/fonts/source-sans-pro-semibold-webfont.woff') format('woff');
+    src: url("/fonts/source-sans-pro-semibold-webfont.woff2") format("woff2"),
+      url("/fonts/source-sans-pro-semibold-webfont.woff") format("woff");
   }
 }
 
-
 @layer components {
   .markup > * + * {
-    @apply mt-6
+    @apply mt-6;
   }
   .markup > h3 {
     @apply text-2xl font-bold;
