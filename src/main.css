@@ -38,3 +38,144 @@
     @apply text-2xl font-bold;
   }
 }
+
+@layer components {
+  .navds-stepper {
+    --navds-stepper-number: 1.75rem;
+
+    color: theme('colors.blue.500');
+    font-weight: 600;
+  }
+  .navds-stepper--horizontal {
+    display: flex;
+    text-align: center;
+    align-items: start;
+  }
+  .navds-stepper__item {
+    flex: 1 1 100%;
+    display: grid;
+    grid-template-rows: [line-1] auto [step-start] var(--navds-stepper-number) [line-2 step-end] auto;
+    grid-template-columns: var(--navds-stepper-number) auto;
+    justify-items: start;
+    gap: 0.5rem;
+  }
+  .navds-stepper__line {
+    background-color: theme('colors.gray.400');
+    width: 0.125rem;
+    height: 100%;
+    min-height: 0.5rem;
+    justify-self: center;
+    grid-column: 1;
+  }
+  .navds-stepper__line--1 {
+    grid-row: line-1;
+    display: none;
+  }
+  .navds-stepper__line--2 {
+    grid-row: line-2;
+   }
+
+   :where(.navds-stepper__item:last-of-type) .navds-stepper__line--2 {
+    display: none;
+  }
+  .navds-stepper__step {
+    grid-row: 2 / -1;
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: [number] var(--navds-stepper-number) [label] auto;
+    gap: 0.5rem;
+    align-items: baseline;
+    justify-items: start;
+    margin-bottom: 1.75rem;
+  }
+  :where(.navds-stepper__step):focus {
+    outline: 3px solid theme('colors.blue.800');
+    isolation: isolate;
+  }
+  .navds-stepper__circle {
+    display: inline-grid;
+    place-items: center;
+    width: var(--navds-stepper-number);
+    height: var(--navds-stepper-number);
+    border: 2px solid currentColor;
+    border-radius: 999px;
+    line-height: 1;
+    grid-column: number;
+    flex-shrink: 0;
+  }
+  .navds-stepper__content {
+    display: block;
+    min-width: fit-content;
+    grid-column: label;
+  }
+
+
+
+  /* Horizontal */
+  :where(.navds-stepper--horizontal) .navds-stepper__item {
+    grid-template-columns:
+      [line-1-start] 1fr
+      [step-start] auto
+      [line-1-end] var(--navds-stepper-number)
+      [line-2-start] auto
+      [step-end] 1fr
+      [line-2-end];
+    grid-template-rows: var(--navds-stepper-number) auto;
+  }
+  :where(.navds-stepper--horizontal) .navds-stepper__line {
+    height: 0.125rem;
+    width: 100%;
+    min-height: auto;
+    grid-row: 1;
+    display: block;
+    align-self: center;
+  }
+  :where(.navds-stepper--horizontal) .navds-stepper__line--1 {
+    grid-column: line-1;
+  }
+  :where(.navds-stepper--horizontal) .navds-stepper__line--2 {
+    grid-column: line-2;
+   }
+  :where(.navds-stepper--horizontal .navds-stepper__item:first-of-type) .navds-stepper__line--1,
+  :where(.navds-stepper--horizontal .navds-stepper__item:last-of-type) .navds-stepper__line--2 {
+    visibility: hidden;
+  }
+
+  :where(.navds-stepper--horizontal) .navds-stepper__step {
+    grid-column: step;
+    grid-row: 1 / -1;
+    grid-template-rows: [number] var(--navds-stepper-number) [label] auto;
+    grid-template-columns: [label-start] auto [number] var(--navds-stepper-number) [label-end] auto;
+    align-items: center;
+    justify-items: center;
+    display: grid;
+  }
+  :where(.navds-stepper--horizontal) .navds-stepper__circle {
+    grid-row: number;
+  }
+  :where(.navds-stepper--horizontal) .navds-stepper__content {
+    grid-row: label;
+    grid-column: 1 / -1;
+    max-width: 24ch;
+  }
+
+
+
+  /* Active */
+  :where(.navds-stepper__step--active) .navds-stepper__content {
+    color: theme('colors.gray.800');
+  }
+  :where(.navds-stepper__step:not(.navds-stepper__step--active):hover) .navds-stepper__circle,
+  :where(.navds-stepper__step:not(.navds-stepper__step--active):focus) .navds-stepper__circle {
+    background-color: theme('colors.blue.100');
+  }
+  :where(.navds-stepper__step:not(.navds-stepper__step--active):hover) .navds-stepper__content {
+    text-decoration: underline;
+  }
+  :where(.navds-stepper__step--active) .navds-stepper__circle {
+    background-color: theme('colors.deepblue.500');
+    border-color: theme('colors.deepblue.500');
+    color: theme('colors.white');
+  }
+
+}

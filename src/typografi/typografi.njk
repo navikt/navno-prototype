@@ -9,56 +9,45 @@ title: Typografi
     body {
       background-color: #fefefe;
       font-size: 1.125rem;
-      color: #262626;
+      color: #404040;
     }
     .prose > :where(*) + :where(*) {
       margin-block-start: 1.75rem;
     }
-    .prose > :where(h1, h2, h3, h4, h5) + :where(*) {
+    .prose > :where(h1, h2, h3, h4) + :where(*) {
       margin-block-start: 0;
     }
-    .prose > :where(h1, h2, h3, h4, h5) {
+    .prose > :where(h1, h2, h3, h4) {
+      margin-block-end: 0.5rem;
       font-weight: 600;
-      color: #141414;
-    }
-    .prose > :where(dl, p, li) :where(strong, dt, b) {
-      font-weight: 600;
-    }
-    .prose > :where(*) > a {
-      text-decoration: underline;
-      color: hsl(211, 100%, 35%);
-    }
-    .prose > :where(*) > a:hover {
-      text-decoration: none;
-      color: hsl(209, 100%, 39%);
+      color: #262626;
     }
     .prose > :where(h1) {
-      font-size: 2.5rem;
-      line-height: 1.3;
-      margin-block-end: 0.2em;
+      font-size: 2.75rem;
+      line-height: 1.1;
+      margin-block-end: 0.75rem;
     }
     .prose > :where(h2) {
-      font-size: 2rem;
-      line-height: 1.25;
-      margin-block-end: 0.25em;
+      font-size: 1.75rem;
+      line-height: 1.3;
     }
     .prose > :where(h3) {
       font-size: 1.5rem;
-      line-height: 1.333332;
-      margin-block-end: 0.3333334em;
+      line-height: 1.3;
     }
     .prose > :where(h4) {
-      font-size: 1.25rem;
-      line-height: 1.4;
-      margin-block-end: 0.4em;
+      font-size: 1.125rem;
+      line-height: 1.3;
+      margin-block-end: 0.25rem;
     }
-    .prose > :where(h5) {
-      font-size: 1rem;
-      line-height: 1.5;
-      margin-block-end: 0.5em;
-      text-transform: uppercase;
+    {# .prose > :where(h4) {
+      font-size: 1.5rem;
+      line-height: 1.3;
       letter-spacing: 0.06em;
-    }
+      text-transform: lowercase;
+      font-variant: small-caps;
+      margin-block-end: 0.25rem;
+    } #}
     .prose > :where(ul, ol) {
       padding-inline-start: 1.3333334em;
     }
@@ -67,29 +56,72 @@ title: Typografi
     }
     .prose > :where(ol) {
       list-style: decimal;
+      counter-reset: ordered;
     }
-    .prose > :where(ul, ol, dl) :where(li, dt) {
+    .prose > :where(ul, ol) :where(li) {
       margin-block-start: 0.75rem;
-      margin-block-end: 0.125rem;
+      margin-block-end: 0.25rem;
+    }
+    .prose > :where(ol) :where(li) {
+      counter-increment: ordered;
+    }
+    .prose > :where(ol) ::marker {
+      font-size: 1rem;
+      font-variant: small-caps;
+      content: counter(ordered) ". ";
+      font-weight: 600;
+      color: hsl(0 50% 40%);
+    }
+    .prose > :where(ul) ::marker {
+      font-size: 1.25rem;
+      color: hsl(0 50% 40%);
+      line-height: 1;
+    }
+    .prose > :where(dl) {
+      margin-inline-start: 1.5rem;
+    }
+    .prose > :where(dl) dd + dt {
+      margin-block-start: 0.75rem;
+    }
+    .prose > :where(dl, p, li) :where(strong, dt, b) {
+      font-weight: 600;
+    }
+    .prose > :where(*) > a {
+      text-decoration: underline;
+      color: hsl(210 80% 35%);
+    }
+    .prose > :where(*) > a:hover {
+      text-decoration: none;
+      color: hsl(210 80% 45%);
     }
     .prose > :where(p) {
       font-size: 1.125rem;
       line-height: 1.555556;
     }
-    .prose > :where(pre) {
-      white-space: pre-wrap;
-      word-break: break-all;
-    }
     .prose > :where(p) :where(code),
     .prose > :where(pre) {
       background-color: whitesmoke;
-      padding: 0.125em 0.25em;
-      margin-inline: 0.125em;
       border-radius: 0.25rem;
       font-size: 1rem;
     }
+    .prose > :where(pre) {
+      white-space: pre-wrap;
+      word-break: break-all;
+      padding: 0.5em 0.75em;
+    }
+    .prose > :where(p) :where(code) {
+      margin-inline: 0.125em;
+    }
     .prose > :where(small) {
       font-size: 0.875rem;
+      display: inline-block;
+      color: #595959;
+    }
+    .prose > :where(blockquote) {
+      padding-inline-start: 1rem;
+      padding-block: 0;
+      margin-inline-start: 0.125rem;
+      border-inline-start: 4px solid hsl(0 50% 40%);
       display: inline-block;
     }
     .prose > :where(blockquote) * + * {
@@ -102,7 +134,7 @@ title: Typografi
 
 {% block content %}
 <div>
-  <div class="max-w-[72ch] px-4 pt-24 pb-16 mx-auto prose">
+  <div class="max-w-[80ch] px-4 xs:w-[95%] pt-24 pb-16 mx-auto prose">
     <h1>The quick brown fox</h1>
     <p>
       Lorem ipsum dolor sit amet <a href="#">consectetur adipisicing</a> elit. Deserunt amet ipsam enim sed sequi
@@ -127,7 +159,12 @@ title: Typografi
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto quasi, incidunt eum ad, rerum dolorum sequi
       numquam illum deleniti nobis doloremque asperiores natus perferendis, recusandae at dolorem et aperiam totam.
     </p>
-    <pre class="text-base"><code>&lt;link rel="stylesheet" href="https://nordcdn.net/ds/tokens/2.0.4/tokens.custom-properties.css" integrity="sha384-XtHi70a2WlH468I3Z4gPGu2ihcHfE7IzpM+bF0cn9nEXAG67YmXsSpBSEYULYC7E" crossorigin="anonymous" /&gt;</code></pre>
+    <pre class="text-base"><code>.prose > :where(*) + :where(*) {
+  margin-block-start: 1.75rem;
+}
+.prose > :where(h1, h2, h3, h4) + :where(*) {
+  margin-block-start: 0;
+}</code></pre>
     <h3>The quick brown fox jumps over the lazy dog</h3>
     <p>
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt amet ipsam enim sed sequi voluptatibus, culpa
@@ -138,7 +175,6 @@ title: Typografi
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto quasi, incidunt eum ad, rerum dolorum sequi
       numquam illum deleniti nobis doloremque asperiores natus perferendis, recusandae at dolorem et aperiam totam.
     </p>
-    <h5>The quick brown fox jumps over the lazy dog</h5>
     <p>
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt amet ipsam enim sed sequi voluptatibus, culpa
       explicabo voluptate maxime a, cumque ea reprehenderit ad consequuntur veniam? Fuga impedit iste tenetur.
@@ -237,14 +273,13 @@ title: Typografi
     </small>
 
   </div>
-
-  <div class="px-4 py-24 prose text-center bg-gray-100">
-    <h1 class="whitespace-nowrap">The quick brown fox jumps over the lazy dog</h1>
-    <h2>The quick brown fox jumps over the lazy dog</h2>
-    <h3>The quick brown fox jumps over the lazy dog</h3>
-    <h4>The quick brown fox jumps over the lazy dog</h4>
-    <h5>The quick brown fox jumps over the lazy dog</h5>
-  </div>
-
 </div>
+
+<div class="grid w-full gap-4 px-4 py-24 prose text-center bg-gray-100">
+  <h1>The quick brown fox jumps over the lazy dog</h1>
+  <h2>The quick brown fox jumps over the lazy dog</h2>
+  <h3>The quick brown fox jumps over the lazy dog</h3>
+  <h4>The quick brown fox jumps over the lazy dog</h4>
+</div>
+
 {% endblock %}

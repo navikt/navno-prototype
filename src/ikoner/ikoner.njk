@@ -1,0 +1,26 @@
+---
+title: 'Ikoner'
+---
+
+{% extends "blank.njk" %}
+
+{% block content %}
+{% macro icon(size, iconClasses, text, textClasses) %}
+  <div class="flex items-center gap-2">
+    <svg class="{{ iconClasses }} opacity-90" width="24" height="24" fill="none" viewBox="0 0 24 24">
+      <path stroke="#262626" stroke-width="2" d="M9 3 6 6l3 3m6 12 3-3-3-3"/>
+      <path stroke="#262626" stroke-width="2" d="M7 6h10a4 4 0 0 1 4 4v2m-4 6H7a4 4 0 0 1-4-4v-2"/>
+    </svg>
+    <span class="{{ textClasses }}">{{ text }}</span>
+    <span class="py-0.5 select-none px-1.5 text-xs rounded-full bg-gray-900/10">{{ size }}</span>
+  </div>
+{% endmacro %}
+{% set text = 'reload' %}
+<div class="grid items-baseline gap-12">
+  {{ icon('16/14', 'w-4 h-4', text, 'text-sm') }}
+  {{ icon('20/16', 'w-5 h-5', text, 'text-base') }}
+  {{ icon('20/18', 'w-5 h-5', text, 'text-lg') }}
+  {{ icon('24/20', 'w-6 h-6', text, 'text-xl') }}
+  {# {{ icon('36', 'w-9 h-9', 'download', 'text-2xl') }} #}
+</div>
+{% endblock %}

@@ -1,0 +1,40 @@
+---
+title: Stepper
+stepper:
+  - Start søknad med masse tekst som gjør at det blir flere linjer
+  - Personopplysninger kan være sånne detaljer som når du er født og hvor du bor
+  - Ferdig!
+---
+
+{% extends "base.njk" %}
+
+{% block content %}
+<div class="grid gap-12 p-12 font-sans text-lg leading-normal">
+  <ol class="navds-stepper">
+    {% for item in stepper %}
+      <li class="navds-stepper__item">
+        <span class="navds-stepper__line navds-stepper__line--1" aria-hidden="true"></span>
+        <a href="#" class="navds-stepper__step {% if loop.index == 1 %}navds-stepper__step--active{% endif %}">
+          <span class="navds-stepper__circle" aria-hidden="true">{{ loop.index }}</span>
+          <span class="navds-stepper__content">{{ item }}</span>
+        </a>
+        <span class="navds-stepper__line navds-stepper__line--2" aria-hidden="true"></span>
+      </li>
+    {% endfor %}
+  </ol>
+
+  <ol class="navds-stepper navds-stepper--horizontal">
+    {% for item in stepper %}
+      <li class="navds-stepper__item">
+        <span class="navds-stepper__line navds-stepper__line--1" aria-hidden="true"></span>
+        <a href="#" class="navds-stepper__step {% if loop.index == 1 %}navds-stepper__step--active{% endif %}">
+          <span class="navds-stepper__circle" aria-hidden="true">{{ loop.index }}</span>
+          <span class="navds-stepper__content">{{ item }}</span>
+        </a>
+        <span class="navds-stepper__line navds-stepper__line--2" aria-hidden="true"></span>
+      </li>
+    {% endfor %}
+  </ol>
+</div>
+
+{% endblock %}
