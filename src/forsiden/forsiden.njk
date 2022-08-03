@@ -8,21 +8,17 @@ title: 'Forsiden: Privat'
 
   <main class="bg-white">
     <div class="px-5 py-6 md:py-10 sm:px-8">
-      <div class="max-w-screen-xl mx-auto xs:w-[95%]">
+      <div class="max-w-screen-lg mx-auto xs:w-[95%]">
         <h2 class="text-3xl font-semibold">Hva kan vi hjelpe deg med?</h2>
         <div class="grid mt-4 gap-3 mx-auto sm:grid-cols-2 lg:grid-cols-3 md:gap-6">
           {% for service in servicesList %}
-            <a class="relative flex items-center justify-between gap-4 group bg-blue-50 rounded shadow group hover:ring-2 hover:ring-blue-500 hover:shadow-xl hover:bg-gray-200 focus:shadow-xl h-32 duration-300" href="#">
-              <div class="mt-1 px-6 py-5 text-2xl leading-tight underline group-hover:no-underline flex-1 transition-colors">
+            <a class="relative flex items-center justify-between gap-4 group bg-blue-50 rounded shadow group hover:ring-2 hover:ring-blue-500 hover:text-blue-500 hover:shadow-xl hover:bg-gray-100 focus:shadow-xl h-32 duration-300" href="#">
+              <div class="mt-1 px-6 py-5 text-2xl leading-tight underline group-hover:no-underline flex-1 transition-colors max-w-[24ch]">
                 {{ service.title }}
               </div>
-              <div class="absolute inset-0 flex flex-row-reverse items-center rounded overflow-hidden">
-                {{ '/static/images/shapes.svg' | svgContents("absolute group-hover:scale-80 translate-y-12 translate-x-48 group-hover:-translate-x-44 transition-transform duration-300") | safe }}
-                <div class="absolute w-10 h-9 group-hover:-translate-x-10 translate-x-32 translate-y-2 bg-orange-300 transition-all duration-300"></div>
-                <div class="absolute inset-y-0 w-10 translate-x-40  skew-x-[18.9deg] bg-blue-200 self-stretch group-hover:-translate-x-4 transition-all duration-300"></div>
-                <div class="absolute inset-y-0 w-10 group-hover:-translate-x-16 skew-x-[-18.9deg] group-hover:bg-red-200 bg-blue-100 self-stretch scale-[500%] group-hover:scale-100 origin-center translate-x-4 transition-all duration-300"></div>
-                {{ '/static/images/briefcase.svg' | svgContents("absolute group-hover:scale-80 group-hover:translate-y-7 -translate-x-6 group-hover:-translate-x-20 transition-transform duration-300") | safe }}
-              </div>
+              {% if service.inlineSvg %}
+                {{ service.inlineSvg | svgContents("right-0 h-full w-auto rounded-lg self-stretch absolute inset-y-0 pointer-events-none") | safe }}
+              {% endif %}
             </a>
           {% endfor %}
         </div>

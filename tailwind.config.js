@@ -1,5 +1,10 @@
 module.exports = {
-  content: ["./src/**/*.njk", "./src/**/*.json", "./src/**/*.js"],
+  content: [
+    "./src/**/*.njk",
+    "./src/**/*.json",
+    "./src/**/*.js",
+    "./src/**/*.svg"
+  ],
   theme: {
     screens: {
       xs: "480px",
@@ -7,6 +12,7 @@ module.exports = {
       md: "960px",
       lg: "1280px",
       xl: "1440px",
+      'fine': { 'raw': '(pointer: fine)' },
     },
     fontFamily: {
       sans: ['"Source Sans Pro"', "Arial", "sans-serif"],

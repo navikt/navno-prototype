@@ -1,0 +1,15 @@
+---
+title: 'SVG Animation → 1'
+---
+{% extends "base.njk" %}
+
+{% block content %}
+
+  <div class="grid h-screen place-items-center">
+    <a href="#" class="group flex items-center relative bg-blue-50 rounded-lg transition-colors duration-300 hover:bg-gray-100 w-full max-w-sm h-32 p-10">
+      <div class="text-xl font-semibold underline fine:group-hover:no-underline fine:group-hover:text-blue-600">Link</div>
+      {{ '/src/forsiden/svg/shapes-arbeid.svg' | svgContents("right-0 h-full rounded-lg self-stretch absolute inset-y-0 pointer-events-none") | safe }}
+    </a>
+  </div>
+
+{% endblock %}

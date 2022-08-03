@@ -9,6 +9,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ "./static/images/*": "/images" });
   eleventyConfig.addPassthroughCopy({ "./static/fonts/*": "/fonts" });
   eleventyConfig.addWatchTarget("./src/main.css");
+  eleventyConfig.addWatchTarget("./src/**/*.svg");
   eleventyConfig.setDataDeepMerge(true);
 
   eleventyConfig.setServerOptions({

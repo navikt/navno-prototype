@@ -2,27 +2,27 @@ module.exports = {
   servicesList: [
     {
       title: 'Arbeid',
-      image: "/static/images/coronavirus.svg"
+      inlineSvg: "/src/forsiden/svg/shapes-arbeid.svg"
     },
     {
       title: 'Helse og sykdom',
-      image: "/static/images/coronavirus.svg"
+      inlineSvg: "/src/forsiden/svg/shapes-helse.svg"
     },
     {
       title: 'Familie og barn',
-      image: "/static/images/coronavirus.svg"
+      inlineSvg: ""
     },
     {
       title: 'Pensjon',
-      image: "/static/images/coronavirus.svg"
+      inlineSvg: ""
     },
     {
       title: 'Sosiale tjenester og veiledning',
-      image: "/static/images/coronavirus.svg"
+      inlineSvg: ""
     },
     {
       title: 'Hjelpemidler og tilrettelegging',
-      image: "/static/images/coronavirus.svg"
+      inlineSvg: ""
     }
   ],
   shortcutsList: [
