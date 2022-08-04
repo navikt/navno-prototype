@@ -6,7 +6,7 @@ module.exports = {
         { text: "Kontakt oss" },
         { text: "NAV i ditt fylke" },
         { text: "Kurs fra NAV" },
-        { text: "Klage og tilbakemeldinger" },
+        { text: "Klage, tilbakemelding, ros" },
       ],
     },
     {
@@ -14,24 +14,23 @@ module.exports = {
       linkList: [{ text: "English" }, { text: "Sámegiella" }],
     },
     {
+      title: "Nyheter og presse",
+      linkList: [
+        { text: "Nyheter, pressemeldinger og pressekontakt" }
+      ],
+    },
+    {
       title: "NAV og samfunn",
       linkList: [
         { text: "Statistikk, analyse og FoU" },
-        { text: "Presse" },
         { text: "Lover og regler (lovdata.no)" },
-        { text: "Om NAV" },
-        { text: "Jobb i NAV" },
+        { text: "Om NAV" }
       ],
     },
   ],
-  tiles: [
-    {
-      title: "Arbeidsgiver",
-      description: "Dine sykmeldte, rekruttering, digitale skjemaer",
-    },
-    {
-      title: "Samarbeidspartner",
-      description: "Helsepersonell, tiltakgsarrangører, fylker og kommuner",
-    },
-  ],
+  legal: [
+      { text: "Personvern og informasjonskapsler" },
+      { text: "Tilgjengelighet" },
+      { text: "Del skjerm med veileder", icon: './src/forsiden/svg/icon-display.svg' }
+  ]
 };

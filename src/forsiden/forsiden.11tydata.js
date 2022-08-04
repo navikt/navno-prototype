@@ -10,19 +10,19 @@ module.exports = {
     },
     {
       title: 'Familie og barn',
-      inlineSvg: ""
+      inlineSvg: "/src/forsiden/svg/shapes-familie.svg"
     },
     {
       title: 'Pensjon',
-      inlineSvg: ""
+      inlineSvg: "/src/forsiden/svg/shapes-pensjon.svg"
     },
     {
-      title: 'Sosiale tjenester og veiledning',
-      inlineSvg: ""
+      title: 'Sosiale tjenester og veiledning',
+      inlineSvg: "/src/forsiden/svg/shapes-sosiale-tjenester.svg"
     },
     {
       title: 'Hjelpemidler og tilrettelegging',
-      inlineSvg: ""
+      inlineSvg: "/src/forsiden/svg/shapes-hjelpemidler.svg"
     }
   ],
   shortcutsList: [
@@ -33,15 +33,20 @@ module.exports = {
       title: 'Utbetalingsdatoer'
     },
     {
-      title: 'Pengestøtter og tjenester fra A til Å'
-    }
-  ],
-  latestList: [
-    {
-      title: 'Feriepenger fra NAV'
+      title: 'Pengestøtter og tjenester fra A til Å'
     },
     {
-      title: 'Pensjonister kan ha fått feil skattetrekk'
+      title: 'Søknad og skjema'
+    }
+  ],
+  newsList: [
+    {
+      title: 'Kontantstøtte - melde endring',
+      date: '03.08.2022'
+    },
+    {
+      title: 'Briller til barn',
+      date: '02.08.2022'
     }
   ]
 };

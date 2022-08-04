@@ -1,5 +1,5 @@
-<svg width="224" height="136" fill="none" viewBox="0 0 224 136">
-  <g class="translate-x-[90px] fine:group-hover:translate-x-0 transition-transform ease-out">
+<svg width="224" height="136" fill="none" viewBox="0 0 224 136" aria-hidden="true" role="img" focusable="false">
+  <g class="translate-x-[140px] fine:group-hover:translate-x-0 transition-transform ease-out">
     <path fill="#99C4DD" d="m30 136-12-30-12 30h24Z"/>
     <circle cx="44" cy="126" r="10" fill="#FFB8B8"/>
   </g>
@@ -7,7 +7,10 @@
     <path fill="#FBD492" d="M140 58h42v42h-42z"/>
     <path fill="#94BAD7" d="M182 0h-42l46 136h42L182 0Z"/>
   </g>
-  <path class="-translate-x-[345px] scale-[4] origin-left fine:group-hover:scale-100 fine:group-hover:translate-x-0 transition-all ease-out fill-deepblue-100 fine:group-hover:fill-red-200" fill="#F7B3B0" d="M143.9-11H186l-57.9 158H86l57.9-158Z"/>
+
+  <path class="-translate-x-[200px] -rotate-[10deg] scale-[3] origin-left fine:group-hover:scale-100 fine:group-hover:translate-x-0 fine:group-hover:rotate-0 transition-all ease-out fill-deepblue-100 fine:group-hover:fill-red-200" fill="#F7B3B0" d="M143.9-11H186l-57.9 158H86l57.9-158Z"/>
+
+  <!-- Briefcase -->
   <g class="translate-x-[48px] translate-y-[-36px] fine:group-hover:translate-x-0 fine:group-hover:translate-y-0 transition-all duration-300 ease-out">
     <path fill="#5C0000" d="M61.8 107.7h70.6v24.8c0 2-1.6 3.5-3.5 3.5H65.3c-2 0-3.5-1.6-3.5-3.5v-24.8Z"/>
     <path stroke="#5C0000" stroke-width="7.1" d="M109.5 83.9a12.4 12.4 0 0 0-24.8 0"/>
