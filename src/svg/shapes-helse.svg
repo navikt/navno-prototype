@@ -1,14 +1,14 @@
 <svg width="224" height="136" fill="none" viewBox="0 0 224 136" aria-hidden="true" role="img" focusable="false">
-<g class="translate-x-[140px] fine:group-hover:translate-x-0 transition-transform duration-300 ease-out">
+<g class="c-animation__icon-pill">
   <path fill="#99C4DD" d="M48 128a8 8 0 0 1-16 0v-11.4h16V128Z"/>
   <path fill="#FFB8B8" d="M32 106a8 8 0 0 1 16 0v11.4H32V106Z"/>
 </g>
-<g class="translate-x-[40px] fine:group-hover:translate-x-0 transition-transform duration-300 ease-out">
+<g class="c-animation__letter-group">
   <path fill="#95BAD6" d="M184 0h40v136h-40z"/>
   <path fill="#FBD492" d="M140 49h44v38h-44z"/>
 </g>
-  <path class="rotate-[10deg] scale-[4] origin-bottom-left -translate-x-[290px] fill-deepblue-100 fine:group-hover:rotate-0 fine:group-hover:scale-100 fine:group-hover:translate-x-0 fine:group-hover:fill-red-200 transition-all duration-300 ease-out" fill="#F7B3B1" d="M100 0h40v136h-40z"/>
-<g class="translate-x-[40px] -translate-y-[20px] fine:group-hover:translate-x-0 fine:group-hover:translate-y-0 transition-transform duration-300 ease-out">
+  <path class="c-animation__letter-upright" fill="#ffb8b8" d="M100 0h40v136h-40z"/>
+<g class="c-animation__icon-stethoscope">
   <path stroke="#F68282" stroke-width="5.9" d="M97.8 91.7v33a7.9 7.9 0 1 0 15.7 0v-4.3c0-6.7 5.5-12.2 12.2-12.2h3.6"/>
   <path stroke="#510000" stroke-width="5.9" d="M90.6 53.4h-6.3a4 4 0 0 0-3.9 4v19.8a17 17 0 1 0 34 0V57.3a4 4 0 0 0-3.9-3.9h-6.3"/>
   <path fill="#5C0000" d="M142.6 120.7a13.6 13.6 0 1 0 0-27.3 13.6 13.6 0 0 0 0 27.3Z"/>

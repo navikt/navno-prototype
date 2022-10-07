@@ -1,0 +1,173 @@
+---
+title: 'Forside'
+description: 'Lenker til de viktigste områdene + utvalgte snarveier.'
+order: 1
+---
+{% extends 'base.njk' %}
+
+{% block styles %}
+  <style>
+    @media (prefers-reduced-motion: no-preference) and (pointer:fine) {
+      .c-animation,
+      .c-animation * {
+        transition: transform, background-color, color, border-color, fill;
+        transition-duration: 240ms;
+        {
+          # transition-delay: 100ms;
+          #;
+        }
+        transition-timing-function: ease-out;
+      }
+      .c-animation__letter-diagonal {
+        transform: translate3d(-200px, 0, 0) rotate(-10deg) scale(3);
+        transform-origin: left;
+        fill: #CCE2F0;
+      }
+      .c-animation__letter-upright {
+        transform: translate3d(-290px, 0, 0) rotate(10deg) scale(4);
+        transform-origin: left;
+        fill: #CCE2F0;
+      }
+      .c-animation__letter-cover {
+        transform: translate3d(-568px, 0, 0) rotate(10deg) scale(3);
+        transform-origin: left;
+        fill: #CCE2F0;
+      }
+      .c-animation__letter-group {
+        transform: translate3d(18px, 0, 0);
+      }
+
+      :where(.c-animation__icon-briefcase) {
+        transform: translate3d(48px, -36px, 0);
+      }
+      :where(.c-animation__icon-stroller) {
+        transform: translate3d(48px, -28px, 0);
+      }
+      :where(.c-animation__icon-stethoscope) {
+        transform: translate3d(28px, -24px, 0);
+      }
+      :where(.c-animation__icon-piggybank) {
+        transform: translate3d(42px, -36px, 0);
+      }
+      :where(.c-animation__icon-guide-dog) {
+        transform: translate3d(28px, -32px, 0);
+      }
+      :where(.c-animation__icon-hand) {
+        transform: translate3d(24px, -24px, 0);
+      }
+
+      :where(.c-animation__icon-heart) {
+        transform: translate3d(48px, -24px, 0) scale(0.8);
+      }
+
+      :where(.c-animation__icon-shapes, .c-animation__icon-pill, .c-animation__icon-house, .c-animation__icon-compass, .c-animation__icon-chart, .c-animation__icon-arrow) {
+        transform: translate3d(115px, 0, 0);
+      }
+
+      :where(.c-animation__icon-coin) {
+        transform: translate3d(15px, -95px, 0);
+      }
+
+      .c-animation:hover :where(*) {
+        transform: translate3d(0, 0, 0) rotate(0deg) scale(1);
+      }
+      .c-animation:hover :where(.c-animation__letter-upright, .c-animation__letter-diagonal) {
+        fill: #FFB8B8;
+      }
+    }
+  </style>
+{% endblock %}
+
+{% block content %}
+  {% include "partials/header.njk" %}
+
+  <main class="text-gray-900 ">
+    <div class="px-5 py-6 bg-white md:py-12 sm:px-8">
+      <div class="max-w-screen-lg mx-auto xs:w-[95%]">
+        <h2 class="-mt-2 text-xl font-semibold md:text-3xl">Hva kan vi hjelpe deg med?</h2>
+        <ul class="grid gap-3 mx-auto mt-4 sm:gap-4 sm:grid-cols-2 lg:grid-cols-3 md:gap-6">
+          {% for service in home.servicesList %}
+            <li class="">
+              <a class="relative flex items-center justify-between gap-4 bg-blue-50 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 hover:text-blue-500 hover:shadow-xl hover:bg-gray-100 focus:shadow-xl min-h-[5rem] md:min-h-[8.5rem] xl:min-h-[10rem] px-6 py-2 overflow-hidden group c-animation" href="#">
+                <div class="text-xl md:text-2xl leading-snug font-semibold underline group-hover:no-underline flex-none max-w-[75%] md:max-w-[25ch]">
+                  {{ service.title }}
+                </div>
+                {% if service.inlineSvg %}
+                  {{ service.inlineSvg | svgContents("right-0 h-full w-auto rounded-lg self-stretch absolute inset-y-0 pointer-events-none") | safe }}
+                {% endif %}
+              </a>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+
+    <div class="px-5 pt-8 pb-8 bg-[#fde6e6] md:pt-12 sm:px-8">
+      <div class="max-w-screen-lg mx-auto xs:w-[95%]">
+        <h2 class="-mt-2 text-xl font-semibold md:text-3xl">Snarveier</h2>
+        <ul class="grid gap-3 mt-4 sm:gap-4 md:gap-6 sm:grid-cols-2">
+          {% for shortcut in home.shortcutsList %}
+            <li>
+              <a class="flex items-center gap-4 px-6 py-5 transition duration-300 ease-out bg-white rounded-lg group hover:text-blue-500 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-500" href="#">
+                <svg width="54" height="54" fill="none" viewBox="0 0 54 54" aria-hidden="true" role="img" focusable="false" overflow="visible">
+                  <g class="duration-200 ease-out translate-x-4 transition-custom fine:group-hover:-translate-x-2">
+                    <path stroke="#000" stroke-width="2" d="M9 17h16" />
+                    <path stroke="#CCE2EE" stroke-width="3" d="M8 14.5h20" />
+                    <path stroke="#000" stroke-width="2" d="M13 27h20" />
+                    <path stroke="#CCE2EE" stroke-width="3" d="M15 29.5h23m-30 10h21" />
+                    <path stroke="#000" stroke-width="2" d="M10 37h12" />
+                  </g>
+                  <circle class="transition-custom duration-200 ease-out origin-center fine:group-hover:scale-0 fine:group-hover:translate-y-0.5 fine:group-hover:-translate-x-2" cx="27" cy="27" r="27" fill="#CCE2F0" />
+                  <path class="transition-custom origin-center duration-200 fine:group-hover:scale-[1.15] fine:group-hover:translate-x-3" stroke="#262626" stroke-width="2" d="M41 27 23 45l-6-6 12-12-12-12 6-6 18 18Z" />
+                </svg>
+                <span class="max-w-[30ch] text-xl leading-snug font-semibold md:text-2xl">{{ shortcut.title }}</span>
+              </a>
+            </li>
+          {% endfor %}
+
+        </ul>
+      </div>
+    </div>
+
+    <div class="mt-2 px-5 pt-8 pb-8 bg-[#f1f1f1] md:pt-12 sm:px-8">
+      <div class="max-w-screen-lg mx-auto xs:w-[95%]">
+        <h2 class="-mt-2 text-xl font-semibold md:text-3xl">Aktuelt</h2>
+        <div class="grid gap-3 mt-4 sm:gap-4 md:gap-6 sm:grid-cols-2">
+          {% for news in home.newsList %}
+            <a class="grid gap-2 px-6 py-5 duration-300 ease-out bg-white rounded-lg group transition-custom hover:text-blue-500 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-500" href="#">
+              <span class="max-w-[30ch] text-xl font-semibold md:text-2xl underline group-hover:text-blue-500 group-hover:no-underline">{{ news.title }}</span>
+              <span class="text-lg opacity-70">{{ news.date }}</span>
+            </a>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+
+    <div class="px-5 pt-6 pb-12 bg-white md:pt-12 md:pb-16 sm:px-8">
+      <div class="max-w-screen-lg mx-auto xs:w-[95%]">
+        <h2 class="-mt-2 text-xl font-semibold md:text-3xl">Kontakt oss</h2>
+        <div class="grid gap-3 mt-4 sm:gap-4 md:gap-6 sm:grid-cols-2">
+          <div class="relative grid gap-2 px-6 py-6 bg-blue-50 rounded-t-3xl rounded-r-3xl group">
+            <h3 class="text-xl font-semibold md:text-2xl">
+              <a href="#" class="text-blue-500 underline hover:text-deepblue-600 hover:no-underline">Du kan chatte med oss</a>
+            </h3>
+            <p class="text-lg">Du møter først chatbot Frida. Du kan be Frida om å få chatte med en veileder (hverdager 09:00–15:00)</p>
+            <svg class="absolute left-0 top-full" viewBox="0 0 24 24" width="24" height="24" role="img" aria-hidden="true" focusable="false">
+              <polygon class="fill-blue-50" points="0 0, 24 0, 0 24" />
+            </svg>
+          </div>
+          <div class="relative grid content-start gap-2 px-6 py-6" >
+            <h3 class="text-xl font-semibold md:text-2xl">
+              <a href="#" class="text-blue-500 underline hover:text-deepblue-600 hover:no-underline">Du kan også ringe eller skrive til oss</a>
+            </h3>
+            <p class="text-lg">Se hvordan du kan kontakte oss på ulike måter.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  {% include "partials/footer.njk" %}
+
+{% endblock %}

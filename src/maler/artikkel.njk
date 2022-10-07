@@ -1,0 +1,125 @@
+---
+title: 'Artikkel'
+description: 'Brukes til nyheter og statistikk.'
+order: 2
+bodyClass: 'bg-gray-100'
+---
+{% extends 'base.njk' %}
+
+{% block styles %}{% endblock %}
+{% block script %}
+  <script src="/main.min.js" type="text/javascript" defer></script>
+{% endblock %}
+
+{% block content %}
+  {% include "partials/header.njk" %}
+
+  <main class="min-h-[61vh] text-lg text-gray-900">
+
+    <div class="px-4 pt-8 pb-4 bg-white md:pt-12 md:pb-6 md:px-8">
+      <div class="md:max-w-screen-lg mx-auto xs:w-[95%]">
+        <h1 class="text-3xl font-semibold leading-tight md:text-4xl">Fortsatt lav ledighet i september</h1>
+        <p class="flex items-center gap-4 mt-2 text-sm text-gray-700">
+          <span class="tracking-wider uppercase ">Artikkel</span>
+          <span aria-hidden="true">|</span>
+          <span>Publisert {% now %}</span>
+        </p>
+      </div>
+    </div>
+
+    <div class="px-4 pt-4 pb-20 md:pt-6 md:px-8">
+      <div class="md:max-w-screen-lg mx-auto xs:w-[95%]">
+        <div class="max-w-prose">
+          <p class="text-xl font-semibold">Ved utgangen av september var det registrert 76 900 helt ledige, delvis ledige og arbeidssøkere på tiltak hos NAV, noe som utgjør 2,6 prosent av arbeidsstyrken. Justert for sesongvariasjoner er det en nedgang på 2 100 arbeidssøkere fra august.</p>
+
+          <p class="mt-7">– Arbeidsledigheten holder seg på et lavt nivå i september. Vi ser nå noen tegn på at arbeidsmarkedet begynner å kjøle seg ned. De siste månedene har det blitt færre ledige stillinger, samtidig som det har blitt noe flere nye arbeidssøkere, sier arbeids- og velferdsdirektør Hans Christian Holte.</p>
+
+          <p class="mt-7">46 000 personer var registrert som helt ledige ved utgangen av september, noe som utgjør 1,6 prosent av arbeidsstyrken. Bruttoledigheten, som er summen av helt ledige og arbeidssøkere på tiltak, var på 56 800 personer og tilsvarer 2,0 prosent av arbeidsstyrken. I tillegg var 20 100, eller 0,7 prosent av arbeidsstyrken, registrert som delvis ledige.</p>
+
+          <p class="mt-7">1 700 av de helt ledige er permitterte, mens det samme gjelder for 1 400 av de delvis ledige. De permitterte utgjør til sammen 0,1 prosent av arbeidsstyrken i september.</p>
+
+          <p class="mt-7">– De høye strømprisene vi har sett de siste månedene har så langt ikke resultert i noen økning i antallet permitterte, sier Holte.</p>
+
+          <figure class="grid gap-3 p-3 bg-white mt-7">
+            <img src="/images/artikkel-figur-1.webp" alt="">
+            <figcaption class="text-base text-gray-700">
+              <p>
+                <strong>Figur 1:</strong> Utvikling i antall helt ledige, delvis ledige, summen av helt ledige og arbeidssøkere på tiltak, samt antall arbeidssøkere i alt per måned. Sesong- og bruddjusterte tall.</p>
+              <p>Kilde: NAV</p>
+            </figcaption>
+          </figure>
+
+          <figure class="grid gap-3 p-3 bg-white mt-7">
+            <img src="/images/artikkel-figur-2.webp" alt="">
+            <figcaption class="text-base text-gray-700">
+              <p>
+                <strong>Figur 2:</strong> Utvikling i andel helt ledige, delvis ledige, summen av helt ledige og arbeidssøkere på tiltak, samt arbeidssøkere i alt per måned. Prosent av arbeidsstyrken. Sesong- og bruddjusterte tall.</p>
+              <p>Kilde: NAV</p>
+            </figcaption>
+          </figure>
+
+          <p class="mt-7">I løpet av september ble det registrert 14 400 nye arbeidssøkere hos NAV. Det tilsvarer om lag 700 per virkedag. Personer som oppgir å ha mistet eller at de kommer til å miste jobben utgjør den største gruppen, med 30 prosent av de nye arbeidssøkerne. 12 prosent oppgir å ha sagt opp jobben og ytterligere 12 prosent at de er usikre på jobbsituasjonen sin.</p>
+
+          <h2 class="text-2xl font-semibold mt-7">Nedgang eller stabilitet for alle yrkesgrupper</h2>
+
+          <p class="mt-2">Justert for normale sesongvariasjoner gikk antallet arbeidssøkere noe ned eller holdt seg stabilt for alle yrkesgrupper fra august til september. Unntaket var arbeidssøkere uten yrkesbakgrunn, der antall arbeidssøkere steg med 200 personer. Nedgangen var størst blant personer med bakgrunn fra serviceyrker og annet arbeid og butikk- og salgsarbeid, med 300 færre arbeidssøkere hver.</p>
+
+          <p class="mt-7">Ved utgangen av september var andelen helt ledige høyest innen reiseliv og transport, med 2,5 prosent av arbeidsstyrken, og lavest innen akademiske yrker, med 0,5 prosent. Andelen delvis ledige var høyest innen barne- og ungdomsarbeid og serviceyrker og annet arbeid, med henholdsvis 1,5 og 1,3 prosent av arbeidsstyrken, og lavest innen akademiske yrker, med 0,2 prosent av arbeidsstyrken. </p>
+
+          <h2 class="text-2xl font-semibold mt-7">Størst nedgang i Rogaland</h2>
+
+          <p class="mt-1">Antallet arbeidssøkere gikk ned eller holdt seg stabilt i alle fylker i september, justert for normale sesongvariasjoner. Den relative nedgangen var størst i Rogaland, med 4 prosent færre arbeidssøkere enn i august. Det var ingen endring i antall arbeidssøkere i Agder og Møre og Romsdal.  </p>
+
+          <p class="mt-7">Andelen helt ledige var høyest i Oslo og Vestfold og Telemark, med 2,0 prosent av arbeidsstyrken. Nordland og Trøndelag har lavest arbeidsledighet, med 1,2 prosent.</p>
+
+          <h2 class="text-2xl font-semibold mt-7">Størst nedgang blant de eldste</h2>
+
+          <p class="mt-1">Antallet arbeidssøkere falt for alle aldersgrupper i september, justert for normale sesongvariasjoner. Nedgangen var størst for personer som er 60 eller eldre (-5%) og minst for unge 24 år eller yngre (-1%).</p>
+
+          <p class="mt-7">Ved utgangen av september var andelen helt ledige høyest blant personer i alderen 20-24 år, med 2,3 prosent av arbeidsstyrken, og lavest blant personer 50-59 år, med 1,0 prosent.</p>
+
+          <h2 class="text-2xl font-semibold mt-7">Høy etterspørsel etter arbeidskraft</h2>
+
+          <p class="mt-1">I løpet av september ble det registrert 39 700 nye ledige stillinger på arbeidsplassen.no. Det tilsvarer 2 000 nye ledige stillinger per virkedag, som er 12 prosent færre enn i september i fjor.</p>
+
+          <p class="mt-7">Det var flest nye utlysninger innen helse, pleie og omsorg (8 700), butikk- og salgsarbeid (4 100), samt serviceyrker og annet arbeid (3 600).</p>
+
+          <p class="mt-7">– Det er fremdeles gode jobbmuligheter. Jeg vil oppfordre arbeidsgivere som sliter med å få tak i arbeidskraft til å tenke nytt om rekruttering, sier Holte.</p>
+
+          <p class="mt-7">For mer informasjon, kontakt pressevakten hos NAV på telefon 400 03 144 eller presse@nav.no.</p>
+
+          <p class="mt-7">
+            <a class="text-blue-500 underline hover:no-underline" href="#">Hovedtall om arbeidsmarkedet – oversiktsside</a>
+          </p>
+
+          {# Faktaboks #}
+          <aside class="px-4 pt-4 pb-5 bg-white border-l-4 border-purple-500 mt-7 sm:px-8 sm:pt-8 sm:pb-10">
+            <div class="font-semibold text-purple-500">Fakta</div>
+            <h2 class="text-2xl font-semibold">Endring og korrigering</h2>
+            <div class="mt-3">
+              <h3 class="text-xl font-semibold mt-7">Permitterte</h3>
+
+              <p class="mt-1">Fra og med september 2022 endres definisjonen på permitterte til å bare ta hensyn til 3 måneder for avstemning mot søknad og eventuelt avslag, mot 6 måneder tidligere (januar 2020 til august 2022). Dette for å hensynta en mer normalisert saksbehandlingstid.</p>
+
+              <p class="mt-7">Tall for antall helt ledige permitterte og delvis ledige permitterte i perioden januar 2020 til august 2022 ble korrigert september 2022. Bakgrunnen for korrigeringen er overgang til mer presis definisjon for permitterte.</p>
+
+              <h3 class="text-xl font-semibold mt-7">Arbeidsledige</h3>
+
+              <p class="mt-1">En gjennomgang av data fra meldekortene de arbeidsledige sender inn til NAV, viser at om lag 18 prosent av de delvis ledige har arbeidet mer enn 35 timer i gjennomsnitt de siste to ukene. Andelen i september 2022 er noe lavere enn i september 2021.  Dette vil både være personer som har skiftende arbeidstid og personer som er tilbake i arbeid, men som fremdeles sender inn meldekort. Antallet delvis ledige kan dermed være noe for høyt i statistikken til NAV. Les mer om <a class="text-blue-500 underline hover:no-underline" href="#">historikk og sammenlignbarhet over tid</a>.</p>
+
+              <h3 class="text-xl font-semibold mt-7">Sesongjustering</h3>
+              <p class="mt-1">Arbeidsledigheten følger gjerne et fast mønster gjennom året, såkalte sesongvariasjoner. For eksempel øker alltid arbeidsledigheten fra desember til januar, på grunn av at mange kontrakter går ut ved nyttår. Den øker også om sommeren når mange nyutdannede skal inn på arbeidsmarkedet. For å korrigere for disse faste svingningene og finne den underliggende trenden på arbeidsmarkedet brukes sesongjusterte tall. <a class="text-blue-500 underline hover:no-underline" href="#">Les om sesongjusteringsmetoden</a>.</p>
+
+              <p class="mt-7"></p>
+            </div>
+          </aside>
+
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  {% include "partials/footer.njk" %}
+
+{% endblock %}

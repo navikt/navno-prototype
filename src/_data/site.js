@@ -1,3 +1,3 @@
 module.exports = {
-  title: "NAV-prototype",
+  title: "NAV Prototype",
 };

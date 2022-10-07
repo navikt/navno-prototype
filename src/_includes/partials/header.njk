@@ -1,25 +1,30 @@
 <header class="relative z-30 shadow-border bg-white {% if page.fileSlug === 'forsiden' %}shadow{% endif %}">
-  <div class="relative px-5 sm:px-8">
-    <div class="max-w-screen-lg mx-auto xs:w-[95%]">
-      <div class="flex items-center w-full gap-4">
-        <a href="#" class="block my-4">
-          <svg class="w-16 h-5" width="64" height="20" fill="none" aria-hidden="true" role="img" focusable="false"><path fill-rule="evenodd" clip-rule="evenodd" d="M63.48.52h-6.66s-.459 0-.621.406l-3.685 11.287L48.832.926c-.163-.405-.624-.405-.624-.405H35.404a.514.514 0 00-.51.507v3.833c0-3.04-3.233-4.34-5.127-4.34-4.24 0-7.078 2.794-7.962 7.043-.048-2.819-.282-3.829-1.041-4.863-.349-.507-.852-.932-1.4-1.285-1.13-.662-2.145-.895-4.324-.895h-2.56s-.462 0-.625.405L9.526 6.7V1.028A.512.512 0 009.02.521H3.097s-.457 0-.624.405L.053 6.93s-.242.6.31.6H2.64v11.44c0 .284.223.51.508.51h5.87a.509.509 0 00.508-.51V7.53h2.289c1.313 0 1.59.036 2.101.274.308.117.585.352.737.623.31.583.387 1.283.387 3.348v7.195c0 .284.228.51.51.51h5.626s.636 0 .887-.63l1.247-3.083c1.658 2.324 4.387 3.712 7.779 3.712h.741s.64 0 .893-.628l2.172-5.381v5.5a.51.51 0 00.51.51h5.743s.634 0 .888-.63c0 0 2.297-5.705 2.306-5.748h.004c.088-.475-.511-.475-.511-.475h-2.05V2.836l6.45 16.015c.251.628.886.628.886.628h6.786s.638 0 .89-.628l7.151-17.716c.247-.614-.469-.614-.469-.614zM34.893 12.628h-3.858a2.784 2.784 0 110-5.57h1.079a2.788 2.788 0 012.78 2.787v2.783z" fill="#DE2E2E"/></svg>
+  <nav id="site-skiplinks" class="absolute flex flex-col items-center p-1" aria-label="Hopp til innhold">
+    <a href="#" class="sr-only">Hovedmeny</a>
+    <a href="#" class="sr-only">Søk</a>
+    <a href="#maincontent" class="sr-only">Hovedinnhold</a>
+  </nav>
+  <div class="relative px-4 md:px-8">
+    <div class="max-w-screen-xl mx-auto xs:w-[95%]">
+      <nav class="flex items-center w-full gap-4">
+        <a href="/" class="block my-4">
+          <svg class="w-16 h-5" width="64" height="20" fill="none" aria-hidden="true" role="img" focusable="false"><path fill-rule="evenodd" clip-rule="evenodd" d="M63.48.52h-6.66s-.459 0-.621.406l-3.685 11.287L48.832.926c-.163-.405-.624-.405-.624-.405H35.404a.514.514 0 00-.51.507v3.833c0-3.04-3.233-4.34-5.127-4.34-4.24 0-7.078 2.794-7.962 7.043-.048-2.819-.282-3.829-1.041-4.863-.349-.507-.852-.932-1.4-1.285-1.13-.662-2.145-.895-4.324-.895h-2.56s-.462 0-.625.405L9.526 6.7V1.028A.512.512 0 009.02.521H3.097s-.457 0-.624.405L.053 6.93s-.242.6.31.6H2.64v11.44c0 .284.223.51.508.51h5.87a.509.509 0 00.508-.51V7.53h2.289c1.313 0 1.59.036 2.101.274.308.117.585.352.737.623.31.583.387 1.283.387 3.348v7.195c0 .284.228.51.51.51h5.626s.636 0 .887-.63l1.247-3.083c1.658 2.324 4.387 3.712 7.779 3.712h.741s.64 0 .893-.628l2.172-5.381v5.5a.51.51 0 00.51.51h5.743s.634 0 .888-.63c0 0 2.297-5.705 2.306-5.748h.004c.088-.475-.511-.475-.511-.475h-2.05V2.836l6.45 16.015c.251.628.886.628.886.628h6.786s.638 0 .89-.628l7.151-17.716c.247-.614-.469-.614-.469-.614zM34.893 12.628h-3.858a2.784 2.784 0 110-5.57h1.079a2.788 2.788 0 012.78 2.787v2.783z" fill="#DE2E2E" /></svg>
           <span class="sr-only">NAV</span>
         </a>
         <div class="self-stretch hidden px-6 md:grid">
-          <ul class="flex justify-center  text-lg text-gray-700" role="tablist">
+          <ul class="flex justify-center text-lg text-gray-700" role="tablist">
             <li role="tab" aria-selected="true" class="flex">
-              <a href="#" class="flex items-center text-gray-900 pt-7 pb-5 px-3 font-semibold border-blue-500 border-b-4">
+              <a href="#" class="flex items-center px-3 pb-5 font-semibold text-gray-900 border-b-4 border-blue-500 pt-7">
                 Privat
               </a>
             </li>
             <li role="tab" aria-selected="false" class="flex">
-              <a href="#" class="flex items-center pt-7 pb-5 px-3 border-white/0 border-b-4 hover:border-blue-200">
+              <a href="#" class="flex items-center px-3 pb-5 border-b-4 pt-7 border-white/0 hover:border-gray-100">
                 Arbeidsgiver
               </a>
             </li>
             <li role="tab" aria-selected="false" class="flex">
-              <a href="#" class="flex items-center pt-7 pb-5 px-3 border-white/0 border-b-4 hover:border-blue-200">
+              <a href="#" class="flex items-center px-3 pb-5 border-b-4 pt-7 border-white/0 hover:border-gray-100">
                 Samarbeidspartner
               </a>
             </li>
@@ -35,19 +40,19 @@
           </button>
           <a class="flex flex-wrap items-center justify-center px-2 py-2 font-semibold text-blue-500 rounded gap-x-2 md:px-3 xs:text-lg hover:bg-blue-50" href="#">
             <svg class="w-5 h-5 -ml-1 xs:w-6 xs:h-6 shrink-0" width="24" height="24" fill="none" viewBox="0 0 24 24">
-              <path fill="currentColor" fill-rule="evenodd" d="M19 4h-5V2h5a3 3 0 0 1 3 3v14a3 3 0 0 1-3 3h-5v-2h5c.6 0 1-.4 1-1V5c0-.6-.4-1-1-1Zm-8.3 2.3 5.7 5.7-5.7 5.7-1.4-1.4 3.3-3.3H2v-2h10.6L9.3 7.7l1.4-1.4Z" clip-rule="evenodd"/>
+              <path fill="currentColor" fill-rule="evenodd" d="M19 4h-5V2h5a3 3 0 0 1 3 3v14a3 3 0 0 1-3 3h-5v-2h5c.6 0 1-.4 1-1V5c0-.6-.4-1-1-1Zm-8.3 2.3 5.7 5.7-5.7 5.7-1.4-1.4 3.3-3.3H2v-2h10.6L9.3 7.7l1.4-1.4Z" clip-rule="evenodd" />
             </svg>
             <span class="whitespace-nowrap">Logg inn</span>
           </a>
         </div>
-      </div>
+      </nav>
     </div>
   </div>
 </header>
 
 {# Menu #}
-<nav class="relative z-20">
-  <div class="absolute inset-x-0 z-20 px-5 pt-6 pb-12 bg-white shadow-xl top-full md:px-8" x-bind:class="menuOpen ? 'opacity-0 animate-dropdown' : 'hidden'">
+<nav class="relative z-20 hidden">
+  <div class="absolute inset-x-0 z-20 px-4 pt-6 pb-12 bg-white shadow-xl top-full md:px-8" x-bind:class="!menuOpen ? 'hidden' : 'opacity-0 animate-dropdown'">
     {# <div class="max-w-screen-xl mx-auto">
 
       <form class="grid grid-cols-[1fr_auto] max-w-2xl gap-2 py-12 mx-auto ">
@@ -68,7 +73,7 @@
             <ul class="flex flex-col items-start">
             {% for link in section.linkList %}
               <li class="flex items-start gap-2 mt-2 text-blue-500 hover:text-blue-800 group">
-                <svg aria-hidden="true" focusable="false" class="w-5 h-5 -ml-1.5 flex-shrink-0 group-hover:translate-x-1.5 transition-transform group-hover:ease-out group-hover:duration-200" width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M9 5L16 12L9 19.1421" stroke="currentColor" stroke-width="2"/></svg>
+                <svg aria-hidden="true" focusable="false" class="w-5 h-5 -ml-1.5 flex-shrink-0 group-hover:translate-x-1.5 transition group-hover:ease-out group-hover:duration-200" width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M9 5L16 12L9 19.1421" stroke="currentColor" stroke-width="2"/></svg>
                 <a class="text-lg leading-tight underline hover:no-underline " href="#">{{ link.text }}</a>
               </li>
             {% endfor %}
@@ -82,4 +87,4 @@
 </nav>
 
 {# Overlay #}
-<button class="fixed inset-0 z-10 w-full h-full bg-black/20" x-bind:class="(menuOpen || searchOpen) ? 'opacity-0 animate-dropdown' : 'hidden'" x-on:click="menuOpen = false"></button>
+<button class="fixed inset-0 z-10 hidden w-full h-full bg-black/20" x-bind:class="(menuOpen || searchOpen) ? 'opacity-0 animate-dropdown' : 'hidden'" x-on:click="menuOpen = false"></button>
