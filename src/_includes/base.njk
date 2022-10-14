@@ -47,7 +47,19 @@
     {% block styles %}{% endblock %}
     {% block script %}{% endblock %}
   </head>
-  <body class="min-h-full overflow-y-scroll {{ bodyClass }}" x-data="{ menuOpen: false, searchOpen: false }">
+  <body class="min-h-full overflow-y-scroll {{ bodyClass }}" x-data="{ menuOpen: false, loginOpen: true }">
     {% block content %}{% endblock %}
+
+    {% if page.url != "/" %}
+      <div class="fixed pt-px pr-px motion-safe:-translate-x-full motion-safe:translate-y-full bg-purple-200/40 -bottom-6 -left-6 motion-safe:animate-enter" style="clip-path: polygon(0 0, 100% 100%, 0 100%)">
+        <a class="grid pt-24 pb-8 pl-8 pr-24 text-white bg-purple-500 hover:bg-purple-300 place-items-center bg-gradient-to-tr from-purple-500/80 to-purple-900/80" style="clip-path: polygon(0 0, 100% 100%, 0 100%)" href="/" title="Tilbake til oversikten">
+          <svg class="w-6 h-6 translate-x-2.5 -translate-y-2.5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-linecap="round" stroke-width="2">
+            <path  d="M4.5 9H16a5 5 0 0 1 5 5v0a5 5 0 0 1-5 5h-1.5" />
+            <path stroke-linejoin="round" d="M8.5 4.5 4 9l4.5 4.5" />
+          </svg>
+        </a>
+      </div>
+    {% endif %}
+
   </body>
 </html>

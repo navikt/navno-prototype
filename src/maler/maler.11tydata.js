@@ -1,3 +1,3 @@
 module.exports = {
-  tags: "sidemal",
+  tags: "mal",
 };

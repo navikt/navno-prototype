@@ -1,31 +1,34 @@
-
 <footer class="px-4 text-lg text-white bg-deepblue-800 md:px-8">
   <div class="max-w-screen-lg mx-auto xs:w-[95%] ">
     <div class="flex flex-col items-center py-3">
       <a class="flex items-center gap-2 text-lg text-center hover:underline hover:text-deepblue-200" href="#">
         <svg class="w-6 h-6" width="24" height="24" viewBox="0 0 24 24" role="img" aria-hidden="true" focusable="false">
-          <path stroke="currentColor" stroke-width="1.5" d="m7 9 6-6 6 6m-6 10V4"/>
+          <path stroke="currentColor" stroke-width="1.5" d="m7 9 6-6 6 6m-6 10V4" />
         </svg>
         <span>Til toppen</span>
       </a>
     </div>
     <div class="pt-8 border-t border-white/10">
-      <div class="grid items-start gap-3 md:grid-cols-3 md:gap-6">
+      <div class="mb-8 sm:columns-2 md:columns-3">
         {% for section in footer.links %}
           <div class="mb-8 md:mb-0">
-            <h2 class="text-sm font-semibold tracking-widest uppercase text-deepblue-300">{{ section.title }}</h2>
-            <ul class="mt-2">
+            <h2 class="text-sm font-semibold tracking-widest uppercase text-deepblue-300">
+              {{ section.title }}
+            </h2>
+            <ul class="mt-2 mb-7 break-inside-avoid">
               {% for item in section.linkList %}
-                <li class="py-1"><a class="hover:underline hover:text-deepblue-200" href="#">{{ item.text }}</a></li>
+                <li class="py-1 pr-2 break-before-avoid">
+                  <a class="hover:underline hover:text-deepblue-200" href="#">{{ item.text }}</a>
+                </li>
               {% endfor %}
             </ul>
           </div>
         {% endfor %}
 
-        <div class="md:col-start-3 md:-mt-16">
-          <button class="flex items-center gap-2 px-6 py-2.5 rounded bg-deepblue-600 ring-1 ring-deepblue-400 hover:bg-deepblue-500 mb-8">
-            {{ footer.screenshare.icon | svgContents("w-6 h-6") | safe }}
+        <div class="-mt-6">
+          <button class="flex items-center gap-2">
             <span class="">{{ footer.screenshare.text }}</span>
+            {{ footer.screenshare.icon | svgContents("w-5 h-5") | safe }}
           </button>
         </div>
       </div>
@@ -40,7 +43,7 @@
       </div>
 
       <div class="grid gap-2 mt-12">
-        <svg class="h-6" width="64" height="20" fill="none" aria-hidden="true" role="img" focusable="false"><path fill-rule="evenodd" clip-rule="evenodd" d="M63.48.52h-6.66s-.459 0-.621.406l-3.685 11.287L48.832.926c-.163-.405-.624-.405-.624-.405H35.404a.514.514 0 00-.51.507v3.833c0-3.04-3.233-4.34-5.127-4.34-4.24 0-7.078 2.794-7.962 7.043-.048-2.819-.282-3.829-1.041-4.863-.349-.507-.852-.932-1.4-1.285-1.13-.662-2.145-.895-4.324-.895h-2.56s-.462 0-.625.405L9.526 6.7V1.028A.512.512 0 009.02.521H3.097s-.457 0-.624.405L.053 6.93s-.242.6.31.6H2.64v11.44c0 .284.223.51.508.51h5.87a.509.509 0 00.508-.51V7.53h2.289c1.313 0 1.59.036 2.101.274.308.117.585.352.737.623.31.583.387 1.283.387 3.348v7.195c0 .284.228.51.51.51h5.626s.636 0 .887-.63l1.247-3.083c1.658 2.324 4.387 3.712 7.779 3.712h.741s.64 0 .893-.628l2.172-5.381v5.5a.51.51 0 00.51.51h5.743s.634 0 .888-.63c0 0 2.297-5.705 2.306-5.748h.004c.088-.475-.511-.475-.511-.475h-2.05V2.836l6.45 16.015c.251.628.886.628.886.628h6.786s.638 0 .89-.628l7.151-17.716c.247-.614-.469-.614-.469-.614zM34.893 12.628h-3.858a2.784 2.784 0 110-5.57h1.079a2.788 2.788 0 012.78 2.787v2.783z" fill="currentColor"/></svg>
+        <svg class="h-6" width="64" height="20" fill="none" aria-hidden="true" role="img" focusable="false"><path fill-rule="evenodd" clip-rule="evenodd" d="M63.48.52h-6.66s-.459 0-.621.406l-3.685 11.287L48.832.926c-.163-.405-.624-.405-.624-.405H35.404a.514.514 0 00-.51.507v3.833c0-3.04-3.233-4.34-5.127-4.34-4.24 0-7.078 2.794-7.962 7.043-.048-2.819-.282-3.829-1.041-4.863-.349-.507-.852-.932-1.4-1.285-1.13-.662-2.145-.895-4.324-.895h-2.56s-.462 0-.625.405L9.526 6.7V1.028A.512.512 0 009.02.521H3.097s-.457 0-.624.405L.053 6.93s-.242.6.31.6H2.64v11.44c0 .284.223.51.508.51h5.87a.509.509 0 00.508-.51V7.53h2.289c1.313 0 1.59.036 2.101.274.308.117.585.352.737.623.31.583.387 1.283.387 3.348v7.195c0 .284.228.51.51.51h5.626s.636 0 .887-.63l1.247-3.083c1.658 2.324 4.387 3.712 7.779 3.712h.741s.64 0 .893-.628l2.172-5.381v5.5a.51.51 0 00.51.51h5.743s.634 0 .888-.63c0 0 2.297-5.705 2.306-5.748h.004c.088-.475-.511-.475-.511-.475h-2.05V2.836l6.45 16.015c.251.628.886.628.886.628h6.786s.638 0 .89-.628l7.151-17.716c.247-.614-.469-.614-.469-.614zM34.893 12.628h-3.858a2.784 2.784 0 110-5.57h1.079a2.788 2.788 0 012.78 2.787v2.783z" fill="currentColor" /></svg>
         <div class="">Arbeids- og velferdsetaten</div>
       </div>
 

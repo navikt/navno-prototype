@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+  <path stroke="currentColor" stroke-miterlimit="2.62" stroke-width="1.5" d="M5 5h1.5v1.5H5V5Z"/>
+  <path stroke="currentColor" stroke-miterlimit="2.62" stroke-width="1.5" d="M5 11.25h1.5v1.5H5v-1.5Z"/>
+  <path stroke="currentColor" stroke-miterlimit="2.62" stroke-width="1.5" d="M5 17.5h1.5V19H5v-1.5Z"/>
+  <path stroke="currentColor" stroke-miterlimit="2.62" stroke-width="1.5" d="M11.25 5h1.5v1.5h-1.5V5Z"/>
+  <path stroke="currentColor" stroke-miterlimit="2.62" stroke-width="1.5" d="M11.25 11.25h1.5v1.5h-1.5v-1.5Z"/>
+  <path stroke="currentColor" stroke-miterlimit="2.62" stroke-width="1.5" d="M11.25 17.5h1.5V19h-1.5v-1.5Z"/>
+  <path stroke="currentColor" stroke-miterlimit="2.62" stroke-width="1.5" d="M17.5 5H19v1.5h-1.5V5Z"/>
+  <path stroke="currentColor" stroke-miterlimit="2.62" stroke-width="1.5" d="M17.5 11.25H19v1.5h-1.5v-1.5Z"/>
+  <path stroke="currentColor" stroke-miterlimit="2.62" stroke-width="1.5" d="M17.5 17.5H19V19h-1.5v-1.5Z"/>
+</svg>

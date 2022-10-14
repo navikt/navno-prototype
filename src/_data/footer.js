@@ -10,28 +10,28 @@ module.exports = {
       ],
     },
     {
+      title: "Nyheter og presse",
+      linkList: [{ text: "Nyheter, pressemeldinger og pressekontakt" }],
+    },
+    {
       title: "NAV og samfunn",
       linkList: [
         { text: "Statistikk, analyse og FoU" },
         { text: "Lover og regler (lovdata.no)" },
-        { text: "Nyheter, pressemeldinger og pressekontakt" },
-        { text: "Om NAV" }
+        { text: "Om NAV" },
       ],
     },
     {
       title: "Andre språk",
-      linkList: [
-        { text: "English" },
-        { text: "Sámegiella" }
-      ],
+      linkList: [{ text: "English" }, { text: "Sámegiella" }],
     },
   ],
   screenshare: {
     text: "Del skjerm med veileder",
-    icon: '/src/svg/icon-display.svg'
+    icon: "/src/svg/icon-display.svg",
   },
   legal: [
-      { text: "Personvern og informasjonskapsler" },
-      { text: "Tilgjengelighet" },
-  ]
+    { text: "Personvern og informasjonskapsler" },
+    { text: "Tilgjengelighet" },
+  ],
 };

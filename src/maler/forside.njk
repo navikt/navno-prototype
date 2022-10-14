@@ -78,6 +78,10 @@ order: 1
   </style>
 {% endblock %}
 
+{% block script %}
+  <script src="/main.min.js" type="text/javascript" defer></script>
+{% endblock %}
+
 {% block content %}
   {% include "partials/header.njk" %}
 
@@ -85,10 +89,10 @@ order: 1
     <div class="px-5 py-6 bg-white md:py-12 sm:px-8">
       <div class="max-w-screen-lg mx-auto xs:w-[95%]">
         <h2 class="-mt-2 text-xl font-semibold md:text-3xl">Hva kan vi hjelpe deg med?</h2>
-        <ul class="grid gap-3 mx-auto mt-4 sm:gap-4 sm:grid-cols-2 lg:grid-cols-3 md:gap-6">
+        <ul class="grid gap-3 mx-auto mt-4 grid-cols-areas md:gap-6">
           {% for service in home.servicesList %}
             <li class="">
-              <a class="relative flex items-center justify-between gap-4 bg-blue-50 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 hover:text-blue-500 hover:shadow-xl hover:bg-gray-100 focus:shadow-xl min-h-[5rem] md:min-h-[8.5rem] xl:min-h-[10rem] px-6 py-2 overflow-hidden group c-animation" href="#">
+              <a class="relative flex items-center justify-between gap-4 bg-blue-50 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 hover:text-blue-500 hover:shadow-xl hover:bg-gray-100 focus:shadow-xl min-h-[8vh] md:min-h-[16vh] px-6 py-2 overflow-hidden group c-animation" href="#">
                 <div class="text-xl md:text-2xl leading-snug font-semibold underline group-hover:no-underline flex-none max-w-[75%] md:max-w-[25ch]">
                   {{ service.title }}
                 </div>
@@ -107,9 +111,9 @@ order: 1
         <h2 class="-mt-2 text-xl font-semibold md:text-3xl">Snarveier</h2>
         <ul class="grid gap-3 mt-4 sm:gap-4 md:gap-6 sm:grid-cols-2">
           {% for shortcut in home.shortcutsList %}
-            <li>
-              <a class="flex items-center gap-4 px-6 py-5 transition duration-300 ease-out bg-white rounded-lg group hover:text-blue-500 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-500" href="#">
-                <svg width="54" height="54" fill="none" viewBox="0 0 54 54" aria-hidden="true" role="img" focusable="false" overflow="visible">
+            <li class="grid">
+              <a class="flex items-center gap-4 py-5 pl-6 pr-12 transition duration-300 ease-out bg-white rounded-lg group hover:text-blue-500 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-500" href="#">
+                <svg class="w-12 h-12" width="54" height="54" fill="none" viewBox="0 0 54 54" aria-hidden="true" role="img" focusable="false" overflow="visible">
                   <g class="duration-200 ease-out translate-x-4 transition-custom fine:group-hover:-translate-x-2">
                     <path stroke="#000" stroke-width="2" d="M9 17h16" />
                     <path stroke="#CCE2EE" stroke-width="3" d="M8 14.5h20" />

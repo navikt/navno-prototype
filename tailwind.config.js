@@ -175,6 +175,7 @@ module.exports = {
     extend: {
       animation: {
         dropdown: "dropdown 100ms ease-out forwards",
+        enter: "enter 500ms cubic-bezier(0.3, 0.6, 0.25, 1.45) forwards",
       },
       backgroundImage: {
         "gradient-diagonal":
@@ -187,6 +188,7 @@ module.exports = {
         border: "0 -1px 0 inset rgba(128,128,128,0.2)",
       },
       gridTemplateColumns: {
+        areas: "repeat(auto-fit, minmax(40ch, 1fr))",
         cards: "repeat(auto-fill, minmax(32ch, 1fr))",
       },
       keyframes: {
@@ -198,6 +200,11 @@ module.exports = {
           "100%": {
             transform: "translateY(0)",
             opacity: "1",
+          },
+        },
+        enter: {
+          to: {
+            transform: "translate3d(0, 0, 0)",
           },
         },
       },
