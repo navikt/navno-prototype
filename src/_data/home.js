@@ -2,27 +2,27 @@ module.exports = {
   servicesList: [
     {
       title: "Arbeid",
-      inlineSvg: "/src/svg/shapes-arbeid.svg",
+      inlineSvg: "/src/_includes/svg/area-arbeid.svg",
     },
     {
       title: "Helse og sykdom",
-      inlineSvg: "/src/svg/shapes-helse.svg",
+      inlineSvg: "/src/_includes/svg/area-helse.svg",
     },
     {
       title: "Familie og barn",
-      inlineSvg: "/src/svg/shapes-familie.svg",
+      inlineSvg: "/src/_includes/svg/area-familie.svg",
     },
     {
       title: "Pensjon",
-      inlineSvg: "/src/svg/shapes-pensjon.svg",
+      inlineSvg: "/src/_includes/svg/area-pensjon.svg",
     },
     {
       title: "Sosiale tjenester og veiledning",
-      inlineSvg: "/src/svg/shapes-sosiale-tjenester.svg",
+      inlineSvg: "/src/_includes/svg/area-sosiale-tjenester.svg",
     },
     {
       title: "Hjelpemidler og tilrettelegging",
-      inlineSvg: "/src/svg/shapes-hjelpemidler.svg",
+      inlineSvg: "/src/_includes/svg/area-hjelpemidler.svg",
     },
   ],
   shortcutsList: [

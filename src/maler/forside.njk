@@ -8,71 +8,78 @@ order: 1
 {% block styles %}
   <style>
     @media (prefers-reduced-motion: no-preference) and (pointer:fine) {
-      .c-animation,
-      .c-animation * {
-        transition: transform, background-color, color, border-color, fill;
-        transition-duration: 240ms;
-        {
-          # transition-delay: 100ms;
-          #;
-        }
-        transition-timing-function: ease-out;
+      .c-area-card,
+      .c-area-card :where(svg) * {
+        transition-property: transform, background-color, color, border-color, fill;
+        transition-duration: 130ms;
+        transition-timing-function: cubic-bezier(.4,0,1,1);
       }
-      .c-animation__letter-diagonal {
-        transform: translate3d(-200px, 0, 0) rotate(-10deg) scale(3);
+    }
+
+    @media (pointer:fine) {
+      .c-area-card__letter-diagonal {
+        transform: translate3d(-89%, 0, 0) rotate(-10deg) scale(3);
         transform-origin: left;
         fill: #CCE2F0;
       }
-      .c-animation__letter-upright {
-        transform: translate3d(-290px, 0, 0) rotate(10deg) scale(4);
+
+      .c-area-card__letter-upright {
+        transform: translate3d(-129%, 0, 0) rotate(10deg) scale(4);
         transform-origin: left;
         fill: #CCE2F0;
       }
-      .c-animation__letter-cover {
-        transform: translate3d(-568px, 0, 0) rotate(10deg) scale(3);
+
+      .c-area-card__letter-cover {
+        transform: translate3d(-254%, 0, 0) rotate(10deg) scale(3);
         transform-origin: left;
         fill: #CCE2F0;
       }
-      .c-animation__letter-group {
-        transform: translate3d(18px, 0, 0);
+
+      :where(.c-area-card__letter-group) {
+        transform: translate3d(10%, 0, 0);
+      }
+      :where(.c-area-card__briefcase) {
+        transform: translate3d(22%, -25%, 0);
+      }
+      :where(.c-area-card__stroller) {
+        transform: translate3d(21%, -21%, 0);
+      }
+      :where(.c-area-card__stethoscope) {
+        transform: translate3d(12%, -18%, 0);
+      }
+      :where(.c-area-card__piggybank) {
+        transform: translate3d(18%, -26%, 0);
+      }
+      :where(.c-area-card__guide-dog) {
+        transform: translate3d(12%, -24%, 0);
+      }
+      :where(.c-area-card__hand) {
+        transform: translate3d(10%, -18%, 0);
+      }
+      :where(.c-area-card__heart) {
+        transform: translate3d(22%, -22%, 0) scale(0.8);
       }
 
-      :where(.c-animation__icon-briefcase) {
-        transform: translate3d(48px, -36px, 0);
-      }
-      :where(.c-animation__icon-stroller) {
-        transform: translate3d(48px, -28px, 0);
-      }
-      :where(.c-animation__icon-stethoscope) {
-        transform: translate3d(28px, -24px, 0);
-      }
-      :where(.c-animation__icon-piggybank) {
-        transform: translate3d(42px, -36px, 0);
-      }
-      :where(.c-animation__icon-guide-dog) {
-        transform: translate3d(28px, -32px, 0);
-      }
-      :where(.c-animation__icon-hand) {
-        transform: translate3d(24px, -24px, 0);
+      :where(.c-area-card__shapes, .c-area-card__pill, .c-area-card__house, .c-area-card__compass, .c-area-card__chart, .c-area-card__arrow) {
+        transform: translate3d(58%, 0, 0);
       }
 
-      :where(.c-animation__icon-heart) {
-        transform: translate3d(48px, -24px, 0) scale(0.8);
-      }
-
-      :where(.c-animation__icon-shapes, .c-animation__icon-pill, .c-animation__icon-house, .c-animation__icon-compass, .c-animation__icon-chart, .c-animation__icon-arrow) {
-        transform: translate3d(115px, 0, 0);
-      }
-
-      :where(.c-animation__icon-coin) {
+      :where(.c-area-card__coin) {
         transform: translate3d(15px, -95px, 0);
       }
 
-      .c-animation:hover :where(*) {
+      .c-area-card:where(:hover, :focus) :where(.c-area-card__letter-diagonal, .c-area-card__letter-upright) {
+        fill: #ffb8b8;
+      }
+      .c-area-card:where(:hover, :focus) :where(svg) * {
         transform: translate3d(0, 0, 0) rotate(0deg) scale(1);
       }
-      .c-animation:hover :where(.c-animation__letter-upright, .c-animation__letter-diagonal) {
-        fill: #FFB8B8;
+    }
+
+    @media (prefers-reduced-motion: no-preference) and (pointer:fine) {
+      .c-area-card:where(:hover, :focus) :where(svg) * {
+        transition-duration: 260ms;
+        transition-timing-function: cubic-bezier(0,0,.2,1);
       }
     }
   </style>
@@ -92,7 +99,7 @@ order: 1
         <ul class="grid gap-3 mx-auto mt-4 grid-cols-areas md:gap-6">
           {% for service in home.servicesList %}
             <li class="">
-              <a class="relative flex items-center justify-between gap-4 bg-blue-50 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 hover:text-blue-500 hover:shadow-xl hover:bg-gray-100 focus:shadow-xl min-h-[8vh] md:min-h-[16vh] px-6 py-2 overflow-hidden group c-animation" href="#">
+              <a class="relative flex items-center justify-between gap-4 bg-blue-50 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 hover:text-blue-500 hover:shadow-xl hover:bg-gray-100 focus:shadow-xl min-h-[8vh] md:min-h-[16vh] px-6 py-2 overflow-hidden group c-area-card" href="#">
                 <div class="text-xl md:text-2xl leading-snug font-semibold underline group-hover:no-underline flex-none max-w-[75%] md:max-w-[25ch]">
                   {{ service.title }}
                 </div>

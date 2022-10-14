@@ -31,24 +31,24 @@
           </ul>
         </div>
         <div class="flex items-end gap-2 pt-2 pb-2 ml-auto -mr-3">
-          <button class="flex flex-wrap items-center justify-center px-2 py-2 font-semibold text-blue-500 rounded gap-x-2 md:px-3 xs:text-lg hover:ring-2 hover:ring-blue-800" type="button" x-on:click="menuOpen = !menuOpen, loginOpen = false">
+          <button class="flex flex-wrap items-center justify-center px-2 py-1.5 font-semibold text-blue-500 rounded gap-x-2 md:px-3 xs:text-lg hover:ring-2 hover:ring-blue-800" type="button" x-on:click="menuOpen = !menuOpen, loginOpen = false">
             <template x-if="!menuOpen">
-              {{ '/src/_includes/svg/menusearch.svg' | svgContents('w-6 h-6 shrink-0') | safe }}
+              {{ '/src/_includes/svg/menusearch.svg' | svgContents('w-7 h-7 shrink-0') | safe }}
             </template>
             <template x-if="menuOpen">
-              {{ '/src/_includes/svg/close.svg' | svgContents('w-6 h-6 shrink-0') | safe }}
+              {{ '/src/_includes/svg/close.svg' | svgContents('w-7 h-7 shrink-0') | safe }}
             </template>
             <span class="mt-px whitespace-nowrap">Meny</span>
           </button>
-          <button class="px-2 py-2 font-semibold text-blue-500 rounded md:px-3 xs:text-lg hover:ring-2 hover:ring-blue-800" x-on:click="loginOpen = !loginOpen, menuOpen = false" x-bind:class="loginOpen && 'bg-deepblue-50'">
+          <button class="px-2 py-1.5 font-semibold text-blue-500 rounded md:px-3 xs:text-lg hover:ring-2 hover:ring-blue-800" x-on:click="loginOpen = !loginOpen, menuOpen = false" x-bind:class="loginOpen && 'bg-deepblue-50'">
 
             <span x-show="!loginOpen" class="flex flex-wrap items-center gap-x-1">
-              {{ '/src/_includes/svg/enter.svg' | svgContents('w-6 h-6 shrink-0') | safe }}
+              {{ '/src/_includes/svg/enter.svg' | svgContents('w-7 h-7 shrink-0') | safe }}
               <span class="mt-px whitespace-nowrap min-w-[8ch]">Logg inn</span>
             </span>
 
             <span x-show="loginOpen" class="flex flex-wrap items-center gap-x-1">
-              {{ '/src/_includes/svg/user.svg' | svgContents('w-6 h-6 shrink-0') | safe }}
+              {{ '/src/_includes/svg/user.svg' | svgContents('w-7 h-7 shrink-0') | safe }}
               <span class="mt-px whitespace-nowrap min-w-[8ch]">Min side</span>
             </span>
 
@@ -67,14 +67,14 @@
       <div class="flex flex-col gap-10 md:flex-row md:gap-6">
         <div class="flex-1 md:max-w-max md:pr-12">
           <h3 class="text-sm tracking-widest uppercase opacity-60">{{ menu.areas.title }}</h3>
-          <ul class="grid gap-2 mt-2">
+          <ul class="grid gap-1 mt-2">
             {% for link in menu.areas.linkList %}
               <li class="break-inside-avoid">
-                <a class="inline-flex items-center gap-2.5 px-2 py-1.5 -mx-2 text-lg leading-normal text-blue-500 no-underline rounded font-semibold hover:text-blue-600 hover:bg-blue-50 hover:underline" href="#">
+                <a class="inline-flex items-center gap-2.5 px-2 py-1.5 -mx-2  leading-normal text-blue-500 no-underline rounded font-semibold hover:text-blue-600 hover:bg-blue-50 hover:underline" href="#">
                   {% if link.icon %}
-                    {{ link.icon | svgContents('w-6 h-6 opacity-90') | safe }}
+                    {{ link.icon | svgContents('w-7 h-7 opacity-90') | safe }}
                   {% endif %}
-                  <span class="mt-px">{{ link.text }}</span>
+                  <span class="mt-px text-xl">{{ link.text }}</span>
                 </a>
               </li>
             {% endfor %}
@@ -82,29 +82,31 @@
         </div>
 
         <div class="flex-1 md:mx-auto md:flex-none md:flex">
-          <div class="h-px bg-gray-200 md:h-auto md:mx-10 md:w-px"></div>
+          <div class="h-px bg-gray-200 md:-my-12 md:h-auto md:mx-10 md:w-px"></div>
         </div>
 
         <div class="flex flex-col flex-1">
-          <h3 class="text-sm tracking-widest uppercase opacity-60">{{ menu.shortcuts.title }}</h3>
-          <ul class="mt-2 sm:columns-[33ch]">
-            {% for link in menu.shortcuts.linkList %}
-              <li>
-                <a class="inline-flex items-center gap-3 px-2 py-1 -mx-2 text-lg leading-normal text-blue-500 underline rounded hover:text-blue-80 hover:bg-blue-600 hover:text-white hover:no-underline" href="#">
-                  {% if link.icon %}
-                    {{ link.icon | svgContents('w-6 h-6 opacity-80') | safe }}
-                  {% endif %}
-                  <span class="mt-px">{{ link.text }}</span>
-                </a>
-              </li>
-            {% endfor %}
-          </ul>
+          <div>
+            <h3 class="text-sm tracking-widest uppercase opacity-60">{{ menu.shortcuts.title }}</h3>
+            <ul class="mt-2 sm:columns-[33ch]">
+              {% for link in menu.shortcuts.linkList %}
+                <li>
+                  <a class="inline-flex items-center gap-3 px-2 py-1 -mx-2 text-lg leading-normal text-blue-500 underline rounded hover:text-blue-80 hover:bg-blue-600 hover:text-white hover:no-underline" href="#">
+                    {% if link.icon %}
+                      {{ link.icon | svgContents('w-6 h-6 opacity-80') | safe }}
+                    {% endif %}
+                    <span class="mt-px">{{ link.text }}</span>
+                  </a>
+                </li>
+              {% endfor %}
+            </ul>
+          </div>
 
           <form class="w-full gap-2 pt-8 mt-auto">
             <label class="text-sm tracking-widest uppercase opacity-60" for="search">Søk</label>
             <div class="flex mt-2">
-              <input class="flex-1 p-2 text-lg border border-gray-300 rounded-l focus:outline-none focus:ring focus:ring-blue-800" id="search" type="text">
-              <button class="flex items-center col-start-2 row-start-1 gap-2 px-6 py-2 text-xl text-white bg-blue-500 rounded-r focus:outline-none focus:ring focus:ring-blue-800" type="submit">
+              <input class="flex-1 p-2 text-lg border border-gray-300 rounded-l focus:outline-none focus:rounded focus:z-10 focus:ring focus:ring-blue-800" id="search" type="text">
+              <button class="flex items-center col-start-2 row-start-1 gap-2 px-6 py-2 text-xl text-white bg-blue-500 rounded-r hover:bg-blue-600 focus:outline-none focus:rounded focus:z-10 focus:ring focus:ring-blue-800 focus:ring-offset-1 focus:ring-offset-white focus:bg-blue-600" type="submit">
                 <svg class="w-5 h-5" viewBox="0 0 28 28" width="28" height="28" fill="currentColor"><path d="M3.5 12C3.5 8.41015 6.41015 5.5 10 5.5C13.5899 5.5 16.5 8.41015 16.5 12C16.5 15.5899 13.5899 18.5 10 18.5C6.41015 18.5 3.5 15.5899 3.5 12ZM10 2.5C4.75329 2.5 0.5 6.75329 0.5 12C0.5 17.2467 4.75329 21.5 10 21.5C12.6243 21.5 15.0001 20.4359 16.7195 18.7156L25.4966 26.6149L27.5034 24.3851L18.488 16.2712C19.1354 14.9871 19.5 13.5362 19.5 12C19.5 6.75329 15.2467 2.5 10 2.5Z" /></svg>
                 <span>Søk</span>
               </button>

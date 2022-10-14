@@ -1,14 +1,14 @@
 <svg width="224" height="136" fill="none" viewBox="0 0 224 136" aria-hidden="true" role="img" focusable="false">
-  <g class="c-animation__icon-house">
+  <g class="c-area-card__house">
     <path fill="#99C4DD" d="M46 112.7 31 96l-15 16.7h30Z" />
     <path fill="#FFB8B8" d="M46 136H16v-23.3h30V136Z"/>
   </g>
-  <g class="c-animation__letter-group">
+  <g class="c-area-card__letter-group">
     <path fill="#95BAD6" d="M140 0h84v34h-84z"/>
     <path fill="#FAD592" d="M140 62h48v34h-48z"/>
   </g>
-  <path class="c-animation__letter-upright" fill="#ffb8b8" d="M100 0h40v136h-40z"/>
-  <g class="c-animation__icon-stroller">
+  <path class="c-area-card__letter-upright" fill="#ffb8b8" d="M100 0h40v136h-40z"/>
+  <g class="c-area-card__stroller">
     <path fill="#F68282" d="M83.5 136a8.5 8.5 0 1 0 0-17 8.5 8.5 0 0 0 0 17Zm32 0a8.5 8.5 0 1 0 0-17 8.5 8.5 0 0 0 0 17Z"/>
     <path stroke="#F68282" stroke-width="4" d="M69 88v-1.8C69 79.5 63.5 74 56.7 74H55"/>
     <path fill="#5C0000" d="M67 88h65v9.6c0 10.2-8 18.4-18 18.4H85c-10 0-18-8.2-18-18.4V88Z"/>

@@ -28,7 +28,7 @@ module.exports = {
   ],
   screenshare: {
     text: "Del skjerm med veileder",
-    icon: "/src/svg/icon-display.svg",
+    icon: "/src/_includes/svg/icon-display.svg",
   },
   legal: [
     { text: "Personvern og informasjonskapsler" },
