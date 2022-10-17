@@ -1,9 +1,9 @@
-<footer class="px-4 text-lg text-white bg-deepblue-800 md:px-8">
+<footer class="px-4 text-lg text-white bg-deepblue-800 md:px-8" x-bind:inert="menuOpen || loginOpen">
   <div class="max-w-screen-lg mx-auto xs:w-[95%] ">
     <div class="flex flex-col items-center py-3">
-      <a class="flex items-center gap-2 text-lg text-center hover:underline hover:text-deepblue-200" href="#">
-        <svg class="w-6 h-6" width="24" height="24" viewBox="0 0 24 24" role="img" aria-hidden="true" focusable="false">
-          <path stroke="currentColor" stroke-width="1.5" d="m7 9 6-6 6 6m-6 10V4" />
+      <a class="flex items-center gap-2 text-base text-center hover:underline hover:text-orange-200" href="#">
+        <svg class="w-5 h-5" width="24" height="24" viewBox="0 0 24 24" role="img" aria-hidden="true" focusable="false">
+          <path stroke="currentColor" stroke-width="2" d="m7 9 6-6 6 6m-6 10V4" />
         </svg>
         <span>Til toppen</span>
       </a>
@@ -11,22 +11,22 @@
     <div class="pt-8 border-t border-white/10">
       <div class="mb-8 sm:columns-2 md:columns-3">
         {% for section in footer.links %}
-          <div class="mb-8 md:mb-0">
+          <div class="mb-8 sm:pr-8 md:mb-0">
             <h2 class="text-sm font-semibold tracking-widest uppercase text-deepblue-300">
               {{ section.title }}
             </h2>
             <ul class="mt-2 mb-7 break-inside-avoid">
               {% for item in section.linkList %}
                 <li class="py-1 pr-2 break-before-avoid">
-                  <a class="hover:underline hover:text-deepblue-200" href="#">{{ item.text }}</a>
+                  <a class="hover:underline hover:text-orange-200" href="#">{{ item.text }}</a>
                 </li>
               {% endfor %}
             </ul>
           </div>
         {% endfor %}
 
-        <div class="-mt-6">
-          <button class="flex items-center gap-2">
+        <div class="-mt-2.5">
+          <button class="flex items-center gap-2 px-3 sm:-mx-3 py-1.5 bg-deepblue-700 border border-deepblue-600 hover:border-deepblue-400/50 hover:bg-deepblue-600 rounded hover:shadow-lg hover:text-orange-200">
             <span class="">{{ footer.screenshare.text }}</span>
             {{ footer.screenshare.icon | svgContents("w-5 h-5") | safe }}
           </button>
@@ -38,7 +38,7 @@
     <div class="flex flex-col justify-between pb-12 md:flex-row-reverse">
       <div class="flex flex-col justify-between gap-3 mt-4 md:gap-6 md:flex-row md:self-end">
         {% for link in footer.legal %}
-          <a class="hover:underline hover:text-deepblue-200" href="#">{{ link.text }}</a>
+          <a class="hover:underline hover:text-orange-200" href="#">{{ link.text }}</a>
         {% endfor %}
       </div>
 

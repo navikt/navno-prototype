@@ -1,37 +1,45 @@
 <header class="relative z-30 shadow-border bg-white {% if page.fileSlug === 'forsiden' %}shadow{% endif %}">
+
   {# <nav id="site-skiplinks" class="absolute flex flex-col items-center p-1" aria-label="Hopp til innhold">
     <a href="#" class="sr-only">Hovedmeny</a>
     <a href="#" class="sr-only">Søk</a>
     <a href="#maincontent" class="sr-only">Hovedinnhold</a>
   </nav> #}
+
   <div class="relative px-4 md:px-8">
     <div class="max-w-screen-xl mx-auto xs:w-[95%]">
       <nav class="flex items-center w-full gap-4">
-        <a href="#" class="block my-4">
-          <svg class="w-16 h-5" width="64" height="20" fill="none" aria-hidden="true" role="img" focusable="false"><path fill-rule="evenodd" clip-rule="evenodd" d="M63.48.52h-6.66s-.459 0-.621.406l-3.685 11.287L48.832.926c-.163-.405-.624-.405-.624-.405H35.404a.514.514 0 00-.51.507v3.833c0-3.04-3.233-4.34-5.127-4.34-4.24 0-7.078 2.794-7.962 7.043-.048-2.819-.282-3.829-1.041-4.863-.349-.507-.852-.932-1.4-1.285-1.13-.662-2.145-.895-4.324-.895h-2.56s-.462 0-.625.405L9.526 6.7V1.028A.512.512 0 009.02.521H3.097s-.457 0-.624.405L.053 6.93s-.242.6.31.6H2.64v11.44c0 .284.223.51.508.51h5.87a.509.509 0 00.508-.51V7.53h2.289c1.313 0 1.59.036 2.101.274.308.117.585.352.737.623.31.583.387 1.283.387 3.348v7.195c0 .284.228.51.51.51h5.626s.636 0 .887-.63l1.247-3.083c1.658 2.324 4.387 3.712 7.779 3.712h.741s.64 0 .893-.628l2.172-5.381v5.5a.51.51 0 00.51.51h5.743s.634 0 .888-.63c0 0 2.297-5.705 2.306-5.748h.004c.088-.475-.511-.475-.511-.475h-2.05V2.836l6.45 16.015c.251.628.886.628.886.628h6.786s.638 0 .89-.628l7.151-17.716c.247-.614-.469-.614-.469-.614zM34.893 12.628h-3.858a2.784 2.784 0 110-5.57h1.079a2.788 2.788 0 012.78 2.787v2.783z" fill="#DE2E2E" /></svg>
+
+        {# Logo #}
+        <a href="#" class="text-[#C30000] hover:text-[#DE2E2E] block focus:outline-none focus:ring-2 focus:ring-blue-800 py-2.5 px-2 -mx-2 rounded-sm">
+          <svg class="w-16 h-5" width="64" height="20" fill="none" aria-hidden="true" role="img" focusable="false"><path fill-rule="evenodd" clip-rule="evenodd" d="M63.48.52h-6.66s-.459 0-.621.406l-3.685 11.287L48.832.926c-.163-.405-.624-.405-.624-.405H35.404a.514.514 0 00-.51.507v3.833c0-3.04-3.233-4.34-5.127-4.34-4.24 0-7.078 2.794-7.962 7.043-.048-2.819-.282-3.829-1.041-4.863-.349-.507-.852-.932-1.4-1.285-1.13-.662-2.145-.895-4.324-.895h-2.56s-.462 0-.625.405L9.526 6.7V1.028A.512.512 0 009.02.521H3.097s-.457 0-.624.405L.053 6.93s-.242.6.31.6H2.64v11.44c0 .284.223.51.508.51h5.87a.509.509 0 00.508-.51V7.53h2.289c1.313 0 1.59.036 2.101.274.308.117.585.352.737.623.31.583.387 1.283.387 3.348v7.195c0 .284.228.51.51.51h5.626s.636 0 .887-.63l1.247-3.083c1.658 2.324 4.387 3.712 7.779 3.712h.741s.64 0 .893-.628l2.172-5.381v5.5a.51.51 0 00.51.51h5.743s.634 0 .888-.63c0 0 2.297-5.705 2.306-5.748h.004c.088-.475-.511-.475-.511-.475h-2.05V2.836l6.45 16.015c.251.628.886.628.886.628h6.786s.638 0 .89-.628l7.151-17.716c.247-.614-.469-.614-.469-.614zM34.893 12.628h-3.858a2.784 2.784 0 110-5.57h1.079a2.788 2.788 0 012.78 2.787v2.783z" fill="currentColor" /></svg>
           <span class="sr-only">NAV</span>
         </a>
+
+        {# Sectors #}
         <div class="self-stretch hidden px-6 md:grid">
-          <ul class="flex justify-center gap-4 text-lg text-gray-700" role="tablist">
+          <ul class="flex justify-center gap-4 text-lg " role="tablist">
             <li role="tab" aria-selected="true" class="grid">
-              <a href="#" class="flex items-center px-1.5 pb-5 font-semibold text-gray-900 border-b-4 border-blue-500 pt-7">
+              <a href="#" class="focus:outline-none focus:ring-2 focus:ring-blue-800 flex items-center px-1.5 pb-5 font-semibold text-gray-900 border-b-4 border-blue-500 pt-7">
                 Privat
               </a>
             </li>
             <li role="tab" aria-selected="false" class="grid">
-              <a href="#" class="flex items-center px-1.5 pb-5 border-b-4 pt-7 border-white/0 hover:border-gray-200">
+              <a href="#" class="focus:outline-none opacity-70 focus:ring-2 focus:ring-blue-800 flex items-center px-1.5 pb-5 border-b-4 pt-7 border-white/0 hover:border-gray-200">
                 Arbeidsgiver
               </a>
             </li>
             <li role="tab" aria-selected="false" class="grid">
-              <a href="#" class="flex items-center px-1.5 pb-5 border-b-4 pt-7 border-white/0 hover:border-gray-200">
+              <a href="#" class="focus:outline-none opacity-70 focus:ring-2 focus:ring-blue-800 flex items-center px-1.5 pb-5 border-b-4 pt-7 border-white/0 hover:border-gray-200">
                 Samarbeidspartner
               </a>
             </li>
           </ul>
         </div>
+
+        {# Menu Buttons #}
         <div class="flex items-end gap-2 pt-2 pb-2 ml-auto -mr-3">
-          <button class="flex flex-wrap items-center justify-center px-2 py-1.5 font-semibold text-blue-500 rounded gap-x-2 md:px-3 xs:text-lg hover:ring-2 hover:ring-blue-800" type="button" x-on:click="menuOpen = !menuOpen, loginOpen = false">
+          <button class="flex flex-wrap items-center justify-center px-2 py-1.5 font-semibold text-blue-500 rounded gap-x-2 md:px-3 xs:text-lg hover:ring-2 hover:ring-blue-800 focus:outline-none focus:ring-2 focus:ring-blue-800" type="button" x-on:click="menuOpen = !menuOpen, loginOpen = false">
             <template x-if="!menuOpen">
               {{ '/src/_includes/svg/menusearch.svg' | svgContents('w-7 h-7 shrink-0') | safe }}
             </template>
@@ -40,15 +48,15 @@
             </template>
             <span class="mt-px whitespace-nowrap">Meny</span>
           </button>
-          <button class="px-2 py-1.5 font-semibold text-blue-500 rounded md:px-3 xs:text-lg hover:ring-2 hover:ring-blue-800" x-on:click="loginOpen = !loginOpen, menuOpen = false" x-bind:class="loginOpen && 'bg-deepblue-50'">
+          <button class="px-2 py-1.5 font-semibold text-blue-500 rounded md:px-3 xs:text-lg hover:ring-2 hover:ring-blue-800 focus:outline-none focus:ring-2 focus:ring-blue-800" x-on:click="loginOpen = !loginOpen, menuOpen = false" x-bind:class="loginOpen && 'bg-deepblue-50'">
 
-            <span x-show="!loginOpen" class="flex flex-wrap items-center gap-x-1">
+            <span x-show="!loginOpen" class="flex flex-wrap items-center">
               {{ '/src/_includes/svg/enter.svg' | svgContents('w-7 h-7 shrink-0') | safe }}
               <span class="mt-px whitespace-nowrap min-w-[8ch]">Logg inn</span>
             </span>
 
-            <span x-show="loginOpen" class="flex flex-wrap items-center gap-x-1">
-              {{ '/src/_includes/svg/user.svg' | svgContents('w-7 h-7 shrink-0') | safe }}
+            <span x-show="loginOpen" class="flex flex-wrap items-center">
+              {{ '/src/_includes/svg/user.svg' | svgContents('w-6 h-6 shrink-0') | safe }}
               <span class="mt-px whitespace-nowrap min-w-[8ch]">Min side</span>
             </span>
 
@@ -59,18 +67,18 @@
   </div>
 </header>
 
-{# Menu #}
+{# Navigation (Private) #}
 <nav class="relative z-20">
-  <div class="absolute inset-x-0 z-20 px-4 pt-8 pb-12 bg-white shadow-xl md:pt-12 top-full md:px-8" x-bind:class="!menuOpen ? 'hidden' : 'opacity-0 animate-dropdown'">
+  <div class="absolute inset-x-0 z-20 px-4 pt-8 pb-16 bg-white shadow-xl md:pt-12 top-full md:px-8" x-bind:class="!menuOpen ? 'hidden' : 'opacity-0 animate-dropdown'" >
 
     <div class="max-w-screen-xl mx-auto xs:w-[95%]">
       <div class="flex flex-col gap-10 md:flex-row md:gap-6">
         <div class="flex-1 md:max-w-max md:pr-12">
-          <h3 class="text-sm tracking-widest uppercase opacity-60">{{ menu.areas.title }}</h3>
+          <h3 class="text-sm tracking-widest uppercase opacity-70">{{ menu.areas.title }}</h3>
           <ul class="grid gap-1 mt-2">
             {% for link in menu.areas.linkList %}
               <li class="break-inside-avoid">
-                <a class="inline-flex items-center gap-2.5 px-2 py-1.5 -mx-2  leading-normal text-blue-500 no-underline rounded font-semibold hover:text-blue-600 hover:bg-blue-50 hover:underline" href="#">
+                <a class="inline-flex items-center gap-2.5 pl-2 pr-4 py-1.5 -mx-2  leading-normal text-blue-500 no-underline rounded font-semibold hover:text-blue-600 hover:bg-deepblue-50 hover:underline" href="#">
                   {% if link.icon %}
                     {{ link.icon | svgContents('w-7 h-7 opacity-90') | safe }}
                   {% endif %}
@@ -82,16 +90,16 @@
         </div>
 
         <div class="flex-1 md:mx-auto md:flex-none md:flex">
-          <div class="h-px bg-gray-200 md:-my-12 md:h-auto md:mx-10 md:w-px"></div>
+          <div class="h-px bg-gray-200 md:-mb-1 md:h-auto md:mx-10 md:w-px"></div>
         </div>
 
         <div class="flex flex-col flex-1">
           <div>
-            <h3 class="text-sm tracking-widest uppercase opacity-60">{{ menu.shortcuts.title }}</h3>
+            <h3 class="text-sm tracking-widest uppercase opacity-70">{{ menu.shortcuts.title }}</h3>
             <ul class="mt-2 sm:columns-[33ch]">
               {% for link in menu.shortcuts.linkList %}
                 <li>
-                  <a class="inline-flex items-center gap-3 px-2 py-1 -mx-2 text-lg leading-normal text-blue-500 underline rounded hover:text-blue-80 hover:bg-blue-600 hover:text-white hover:no-underline" href="#">
+                  <a class="inline-flex items-center gap-3 px-2 py-1 -mx-2 text-lg leading-normal text-blue-500 underline rounded hover:text-blue-80 hover:bg-deepblue-50 hover:no-underline" href="#">
                     {% if link.icon %}
                       {{ link.icon | svgContents('w-6 h-6 opacity-80') | safe }}
                     {% endif %}
@@ -102,8 +110,8 @@
             </ul>
           </div>
 
-          <form class="w-full gap-2 pt-8 mt-auto">
-            <label class="text-sm tracking-widest uppercase opacity-60" for="search">Søk</label>
+          <form class="w-full gap-2 pt-8 mt-auto md:max-w-xl">
+            <label class="text-sm tracking-widest uppercase opacity-70" for="search">Søk</label>
             <div class="flex mt-2">
               <input class="flex-1 p-2 text-lg border border-gray-300 rounded-l focus:outline-none focus:rounded focus:z-10 focus:ring focus:ring-blue-800" id="search" type="text">
               <button class="flex items-center col-start-2 row-start-1 gap-2 px-6 py-2 text-xl text-white bg-blue-500 rounded-r hover:bg-blue-600 focus:outline-none focus:rounded focus:z-10 focus:ring focus:ring-blue-800 focus:ring-offset-1 focus:ring-offset-white focus:bg-blue-600" type="submit">
@@ -119,12 +127,13 @@
 
   </div>
 
-  <div class="absolute inset-x-0 z-20 px-4 pt-6 pb-12 shadow-xl bg-deepblue-50 top-full md:px-8" x-bind:class="!loginOpen ? 'hidden' : 'opacity-0 animate-dropdown'">
+  {# Navigation (Logged In) #}
+  <div class="absolute inset-x-0 z-20 px-4 pt-6 pb-16 shadow-xl bg-deepblue-50 top-full md:px-8" x-bind:class="!loginOpen ? 'hidden' : 'opacity-0 animate-dropdown'">
     <div class="max-w-screen-xl mx-auto xs:w-[95%]">
       <div class="grid max-w-sm md:ml-auto">
         <h3 class="grid pb-4">
-          <span class="text-sm tracking-widest uppercase opacity-60">Logget inn som</span>
-          <span class="text-3xl font-semibold leading-tight">Isac Norland</span>
+          <span class="text-sm tracking-widest uppercase opacity-70">Logget inn som</span>
+          <span class="text-2xl font-semibold leading-tight">Isac Norland</span>
         </h3>
 
         <div class="pt-8 border-t border-blue-700/10">
@@ -136,7 +145,7 @@
 
               {% for link in group.linkList %}
                 <li class="break-inside-avoid">
-                  <a class="inline-flex items-center gap-2 px-2 py-1.5 -mx-2 text-lg leading-normal text-blue-500 no-underline rounded font-semibold hover:bg-blue-800 hover:text-white hover:underline" href="#">
+                  <a class="inline-flex items-center gap-2 pl-2 pr-4 py-1.5 -mx-2 text-lg leading-normal text-blue-500 no-underline rounded font-semibold hover:bg-blue-800 hover:text-white hover:underline" href="#">
                     {% if link.icon %}
                       {{ link.icon | svgContents('w-6 h-6 opacity-90') | safe }}
                     {% endif %}
@@ -155,4 +164,4 @@
 </nav>
 
 {# Overlay #}
-<button class="fixed inset-0 z-10 w-full h-full bg-black/20" x-bind:class="(menuOpen || loginOpen) ? 'opacity-0 animate-dropdown' : 'hidden'" x-on:click="menuOpen = false"></button>
+<button class="fixed inset-0 z-10 w-full h-full transition duration-200 ease-out bg-black/20 " x-bind:class="(menuOpen || loginOpen) ? 'animate-fade-in' : 'hidden'" x-on:click="menuOpen = false, loginOpen = false" x-on:keyup.escape.window="menuOpen = false, loginOpen = false"></button>

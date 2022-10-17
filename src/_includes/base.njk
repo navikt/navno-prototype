@@ -47,7 +47,7 @@
     {% block styles %}{% endblock %}
     {% block script %}{% endblock %}
   </head>
-  <body class="min-h-full overflow-y-scroll {{ bodyClass }}" x-data="{ menuOpen: false, loginOpen: true }">
+  <body class="min-h-full overflow-y-scroll {{ bodyClass }}" x-data="{ menuOpen: false, loginOpen: false }">
     {% block content %}{% endblock %}
 
     {% if page.url != "/" %}

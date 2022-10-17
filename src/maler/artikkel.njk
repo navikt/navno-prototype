@@ -1,8 +1,8 @@
 ---
 title: 'Artikkel'
-description: 'Brukes til nyheter og statistikk.'
+description: 'Nyheter og statistikk.'
 order: 2
-bodyClass: 'bg-gray-50'
+bodyClass: 'bg-gray-100'
 ---
 {% extends 'base.njk' %}
 
@@ -18,10 +18,13 @@ bodyClass: 'bg-gray-50'
 
     <div class="px-4 pt-8 pb-4 bg-white md:px-8" x-data="{ bgGradient: false }" x-on:click="bgGradient = !bgGradient" x-bind:class="bgGradient && 'bg-gradient-to-b from-white to-gray-100'">
       <div class="md:max-w-screen-lg mx-auto xs:w-[95%]">
-        <p class="text-sm tracking-wider text-gray-700 uppercase">
-          Pressemelding og nyhet
+        <p class="flex items-center gap-2 text-purple-600">
+          <svg xmlns="http://www.w3.org/2000/svg" class="flex-none w-6 h-6" width="24" height="24" fill="none" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path stroke="#634689" stroke-width="1.5" d="m9.5 12.5 2.5 1 2.5 1.5V6L12 7.5l-2.5 1m-5 2c0-1.1.9-2 2-2h3v4h-3a2 2 0 0 1-2-2ZM7 13l2.5 6.5m8-9H21M17 6l3-2m-3 11 3 2" />
+          </svg>
+          <span class="text-sm font-semibold tracking-wider uppercase">Pressemelding</span>
         </p>
-        <h1 class="mt-0.5 text-3xl font-semibold leading-tight text-gray-900 md:text-4xl">
+        <h1 class="mt-1 text-3xl font-semibold leading-tight text-gray-900 md:text-4xl">
           Fortsatt lav ledighet i september
         </h1>
       </div>
@@ -92,7 +95,7 @@ bodyClass: 'bg-gray-50'
           <p class="mt-7">Les mer <a class="text-blue-500 underline hover:no-underline" href="#">om hovedtall for arbeidsmarkedet</a>.</p>
 
           {# Faktaboks #}
-          <aside class="px-4 pt-4 pb-5 border-l-4 border-purple-500 shadow-sm mt-7 sm:px-8 sm:pt-8 sm:pb-10" x-data="{ bgPurple: false }" x-on:click="bgPurple = !bgPurple" x-bind:class="bgPurple ? 'bg-purple-50 ring-1 ring-inset ring-purple-100/50' : 'bg-white'">
+          <aside class="px-4 pt-4 pb-5 border-l-4 border-purple-500 mt-7 sm:px-8 sm:pt-8 sm:pb-10" x-data="{ bgPurple: true }" x-on:click="bgPurple = !bgPurple" x-bind:class="bgPurple ? 'bg-purple-50' : 'bg-white'">
             <div class="font-semibold text-purple-500">Fakta</div>
             <h2 class="text-3xl font-semibold text-gray-900">Endring og korrigering</h2>
             <div class="mt-3">

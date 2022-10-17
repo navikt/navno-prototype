@@ -17,7 +17,7 @@ bodyClass: 'bg-purple-50'
             <div class="relative motion-safe:hover:translate-y-1 rounded-l-sm transition ease-out duration-100 hover:duration-300 flex flex-col shadow-xl hover:shadow hover:shadow-purple-600/40 shadow-purple-400/20 gap-1 content-start p-8 sm:pt-[50%] sm:pb-[15%] bg-white border-l-[6px] border-purple-800/40 rounded-r group hover:bg-purple-400">
               <p class="text-xs font-semibold tracking-wider uppercase">
                 {% for tag in page.data.tags %}
-                  <span class="inline-block px-1 py-0.5 leading-tight text-white rounded-sm bg-purple-600/80 group-hover:bg-purple-800">{{ tag | title }}</span>
+                  <span class="inline-block pl-1.5 pr-1 py-1 leading-none text-white rounded-sm bg-purple-600/80 group-hover:bg-purple-800">{{ tag | title }}</span>
                 {% endfor %}
               </p>
               <h2 class="text-xl font-semibold text-purple-600 sm:text-3xl group-hover:text-white">

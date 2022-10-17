@@ -17,7 +17,7 @@ module.exports = {
       inlineSvg: "/src/_includes/svg/area-pensjon.svg",
     },
     {
-      title: "Sosiale tjenester og veiledning",
+      title: "Sosiale tjenester og&nbsp;veiledning",
       inlineSvg: "/src/_includes/svg/area-sosiale-tjenester.svg",
     },
     {

@@ -1,10 +1,14 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-  <path stroke="currentColor" stroke-width="1.5" d="m17 12.5 3.5 5.5"/>
-  <circle cx="15" cy="9" r="4" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="1.24" stroke-width="1.5"/>
-  <mask id="a" width="18" height="20" x="2" y="2" maskUnits="userSpaceOnUse" style="mask-type:alpha">
-    <path fill="#000" d="M15 2H2v20h18l-4-6.5h-1c-4 0-6.5-2.5-6.5-6.5S11 2.5 15 2.5V2Z"/>
+  <g stroke="currentColor" stroke-linecap="round" stroke-width="1.5">
+    <path d="m17 12.5 3.5 5.5" />
+    <circle cx="15" cy="9" r="4"/>
+  </g>
+  <mask id="magnifierMask" width="18" height="18" x="2" y="2" maskUnits="userSpaceOnUse" style="mask-type:alpha" transform="translate(50, 0)">
+    <path fill="#000" d="M15 2h5v2.1A6.98 6.98 0 0 0 15 2Zm.59 13.98L18 20H2V2h13a7 7 0 1 0 .59 13.98ZM18.6 15H20v-1.1c-.41.42-.88.8-1.4 1.1Z"/>
   </mask>
-  <g stroke="currentColor" stroke-miterlimit="2.62" stroke-width="1.5" mask="url(#a)">
-    <path d="M21 6H3m18 6H3m18 6H3"/>
+  <g stroke="currentColor" stroke-width="1.5" mask="url(#magnifierMask)">
+    <path d="M21 6H3"/>
+    <path d="M21 12H3"/>
+    <path d="M21 18H3"/>
   </g>
 </svg>
