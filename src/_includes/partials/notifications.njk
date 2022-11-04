@@ -1,0 +1,65 @@
+{# Notifications #}
+<aside class="relative">
+  <div class="max-w-screen-xl mx-auto sm:w-[95%] relative">
+    <div class="absolute sm:right-0 z-50 mb-10 bg-gray-100 rounded-b-lg shadow-xl md:ml-auto md:max-w-md top-full md:overscroll-contain inset-x-0 sm:inset-x-auto md:max-h-[80vh] md:overflow-y-auto fancy-scroll" x-bind:class="!notifyOpen ? 'hidden' : 'opacity-0 animate-dropdown'">
+      <div class="p-5 md:p-8">
+
+        <div>
+          <h2 class="text-xl font-semibold">Mine oppgaver</h2>
+          <div class="grid gap-1 mt-2">
+            {% for task in notifications.myTasks %}
+              <a class="grid gap-1 px-4 py-3 bg-white rounded-lg hover:ring-2 hover:ring-blue-600" href="#">
+                <div class="flex items-baseline justify-between gap-4">
+                  <h3 class="text-lg font-semibold">{{ task.title }}</h3>
+                  <p class="text-sm opacity-70">{{ task.date }}</p>
+                </div>
+                <p class="text-lg leading-snug">{{ task.description }}</p>
+                <div class="flex items-center justify-between mt-2">
+                  <div class="flex flex-wrap gap-1">
+                    {% for tag in task.tags %}
+                      <span class="px-2 text-gray-700 leading-none py-1.5 text-sm tracking-wide uppercase rounded-sm {{ tag.color or "bg-gray-200" }}">{{ tag.title }}</span>
+                    {% endfor %}
+                  </div>
+                  {{ '/src/_includes/svg/chevron-right.svg' | svgContents('opacity-50 w-5 h-5') | safe }}
+                </div>
+              </a>
+            {% endfor %}
+          </div>
+        </div>
+
+        <div class="mt-6">
+          <h3 class="text-xl font-semibold">Innboks</h3>
+          <div class="grid gap-1 mt-2">
+            {% for message in notifications.myInbox %}
+              <a class="hover:ring-2 hover:ring-blue-600 grid gap-3 items-start grid-cols-[2.25rem_1fr] py-3 px-4 rounded-md bg-white" href="#">
+                <div class="grid text-xl mt-2 font-semibold text-white rounded-full place-items-center aspect-square {{ message.color or "bg-gray-300" }}" aria-hidden="true">
+                  <span class="-mr-px text-center">{{ message.title | first }}</span>
+                </div>
+                <div>
+                  <div class="flex items-baseline justify-between gap-4">
+                    <h3 class="text-lg font-semibold">{{ message.title }}</h3>
+                    <p class="text-sm opacity-70">{{ message.date }}</p>
+                  </div>
+                  <p class="mt-1 text-lg leading-tight">{{ message.description }}</p>
+
+                  {% if message.tags %}
+                    <div class="flex items-center justify-between pb-1 mt-2">
+                      <div class="flex flex-wrap gap-1">
+                        {% for tag in message.tags %}
+                          <span class="px-2 text-gray-700 leading-none py-1.5 text-sm tracking-wide uppercase bg-gray-200 rounded-sm">{{ tag }}</span>
+                        {% endfor %}
+                      </div>
+                    </div>
+                  {% endif %}
+
+                </div>
+              </a>
+            {% endfor %}
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</aside>

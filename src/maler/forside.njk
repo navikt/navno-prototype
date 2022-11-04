@@ -92,9 +92,9 @@ order: 1
 {% block content %}
   {% include "partials/header.njk" %}
 
-  <main class="text-gray-900" x-bind:inert="menuOpen || loginOpen">
-    <div class="px-5 py-8 bg-white md:py-12 sm:px-8">
-      <div class="max-w-screen-lg mx-auto xs:w-[95%]">
+  <main class="text-gray-900" x-bind:inert="menuOpen || notifyOpen">
+    <div class="px-5 py-8 bg-white md:py-12">
+      <div class="max-w-screen-lg mx-auto sm:w-[95%]">
         <h2 class="-mt-2 text-xl font-semibold md:text-3xl">Hva kan vi hjelpe deg med?</h2>
         <ul class="grid gap-2 mx-auto mt-4 lg:grid-cols-3 sm:grid-cols-2 sm:gap-4 md:gap-6">
           {% for service in home.servicesList %}
@@ -113,14 +113,14 @@ order: 1
       </div>
     </div>
 
-    <div class="px-5 pt-8 pb-8 bg-[#fde6e6] md:pt-12 sm:px-8">
-      <div class="max-w-screen-lg mx-auto xs:w-[95%]">
+    <div class="px-5 pt-8 pb-8 bg-[#fde6e6] md:py-12">
+      <div class="max-w-screen-lg mx-auto sm:w-[95%]">
         <h2 class="-mt-2 text-xl font-semibold md:text-3xl">Snarveier</h2>
         <ul class="grid gap-2 mt-4 sm:gap-4 md:gap-6 sm:grid-cols-2">
           {% for shortcut in home.shortcutsList %}
             <li class="grid">
               <a class="flex items-center gap-4 py-3 pl-5 pr-8 transition duration-300 ease-out bg-white rounded-lg md:py-4 group hover:text-blue-500 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-500" href="#">
-                <svg class="w-10 h-10 md:w-11 md:h-11" width="54" height="54" fill="none" viewBox="0 0 54 54" aria-hidden="true" role="img" focusable="false" overflow="visible">
+                <svg class="w-10 h-10 md:w-11 md:h-11" width="54" height="54" fill="none" viewBox="0 0 54 54" aria-hidden="true"  focusable="false" role="img" overflow="visible">
                   <g class="duration-200 ease-out translate-x-4 transition-custom fine:group-hover:-translate-x-2">
                     <path stroke="#000" stroke-width="2" d="M9 17h16" />
                     <path stroke="#CCE2EE" stroke-width="3" d="M8 14.5h20" />
@@ -141,7 +141,7 @@ order: 1
     </div>
 
     <div class="mt-2 px-5 py-8 bg-[#f1f1f1] md:py-12 sm:px-8">
-      <div class="max-w-screen-lg mx-auto xs:w-[95%]">
+      <div class="max-w-screen-lg mx-auto sm:w-[95%]">
         <h2 class="-mt-2 text-xl font-semibold md:text-3xl">Aktuelt</h2>
         <div class="grid gap-2 mt-4 sm:gap-4 md:gap-6 sm:grid-cols-2">
           {% for news in home.newsList %}
@@ -155,7 +155,7 @@ order: 1
     </div>
 
     <div class="px-5 py-8 pb-12 bg-white md:py-12 sm:px-8">
-      <div class="max-w-screen-lg mx-auto sm:pb-4 xs:w-[95%]">
+      <div class="max-w-screen-lg mx-auto sm:pb-4 sm:w-[95%]">
         <h2 class="-mt-2 text-xl font-semibold md:text-3xl">Kontakt oss</h2>
         <div class="grid gap-8 mt-4 sm:gap-4 md:gap-6 sm:grid-cols-2">
           <div class="relative grid gap-2 px-6 py-6 bg-blue-50 rounded-t-3xl rounded-r-3xl group">
@@ -163,11 +163,11 @@ order: 1
               <a href="#" class="text-blue-500 underline hover:text-deepblue-600 hover:no-underline">Du kan chatte med oss</a>
             </h3>
             <p class="text-lg">Du møter først chatbot Frida. Du kan be Frida om å få chatte med en veileder (hverdager 09:00–15:00)</p>
-            <svg class="absolute left-0 top-full" viewBox="0 0 24 24" width="24" height="24" role="img" aria-hidden="true" focusable="false">
+            <svg class="absolute left-0 top-full" viewBox="0 0 24 24" width="24" height="24"  aria-hidden="true" focusable="false" role="img">
               <polygon class="fill-blue-50" points="0 0, 24 0, 0 24" />
             </svg>
           </div>
-          <div class="relative grid content-start gap-2 px-6 py-6" >
+          <div class="relative grid content-start gap-2 px-6 py-6">
             <h3 class="text-xl font-semibold md:text-2xl">
               <a href="#" class="text-blue-500 underline hover:text-deepblue-600 hover:no-underline">Du kan også ringe eller skrive til oss</a>
             </h3>

@@ -18,7 +18,7 @@ bodyClass: 'bg-white'
   <main class="min-h-[61vh] text-lg text-gray-800">
 
     <div class="px-4 pt-8 pb-4 md:px-8">
-      <div class="md:max-w-screen-lg mx-auto xs:w-[95%]">
+      <div class="md:max-w-screen-lg mx-auto sm:w-[95%]">
         <h1 class="text-3xl font-semibold leading-tight text-gray-900 md:text-4xl">
           NAV Andeby
         </h1>
@@ -33,7 +33,7 @@ bodyClass: 'bg-white'
     </div>
 
     <div class="px-4 pt-4 pb-20 md:pt-6 md:px-8">
-      <div class="md:max-w-screen-lg mx-auto xs:w-[95%]">
+      <div class="md:max-w-screen-lg mx-auto sm:w-[95%]">
         <div class="max-w-prose">
 
           <div class="p-8 bg-orange-50">
@@ -68,7 +68,7 @@ bodyClass: 'bg-white'
               </tr>
             </table>
             <div class="flex items-start gap-3 mt-7">
-              <svg class="w-6 h-6 mt-px" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
+              <svg class="w-6 h-6 mt-px" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false" role="img">
                 <path d="M12 0C5.38226 0 0 5.38226 0 12C0 18.6177 5.38226 24 12 24C18.6167 24 24 18.6177 24 12C24 5.38226 18.6167 0 12 0Z" fill="#368DA8" />
                 <path d="M13.5 6.5C13.5 5.67157 12.8284 5 12 5C11.1716 5 10.5 5.67157 10.5 6.5C10.5 7.32843 11.1716 8 12 8C12.8284 8 13.5 7.32843 13.5 6.5ZM9 17V19H15V17H13V10H9V12H11V17H9Z" fill="white" />
               </svg>
@@ -85,9 +85,15 @@ bodyClass: 'bg-white'
       </div>
     </div>
 
-    <div class="px-4 py-4 bg-gray-100 md:py-8 md:px-8">
-      <div class="md:max-w-screen-lg mx-auto xs:w-[95%]">
-        <div class="py-12 text-center text-[10ch] leading-loose opacity-20 mb-10">...</div>
+    <div class="px-4 pb-12 bg-gray-100 md:px-8">
+      <div class="md:max-w-screen-lg mx-auto sm:w-[95%]">
+        <div class="max-w-prose">
+
+          {% for box in boxes %}
+            {{ iconBox(box) }}
+          {% endfor %}
+
+        </div>
       </div>
     </div>
 
@@ -96,3 +102,17 @@ bodyClass: 'bg-white'
   {% include "partials/footer.njk" %}
 
 {% endblock %}
+
+{% macro iconBox(box) %}
+  <div class="grid isolate">
+    <div class="z-10 grid w-16 mx-auto translate-y-1/2 bg-blue-100 rounded-full place-items-center aspect-square">
+      {{ box.icon | svgContents('w-7 h-7 shrink-0') | safe }}
+    </div>
+    <div class="px-6 py-8 bg-white md:py-12 md:px-10">
+      <h2 class="mt-8 text-2xl font-semibold">{{ box.title }}</h2>
+      <div class="mt-2 markdown">
+        {{ box.content | markdown | safe }}
+      </div>
+    </div>
+  </div>
+{% endmacro %}

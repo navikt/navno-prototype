@@ -176,7 +176,7 @@ module.exports = {
       animation: {
         dropdown: "dropdown 100ms cubic-bezier(0.3, 0.6, 0.25, 1) forwards",
         enter: "enter 500ms cubic-bezier(0.3, 0.6, 0.25, 1.45) forwards",
-        "fade-in": "fade-in 400ms cubic-bezier(0.3, 0.6, 0.25, 1) forwards",
+        "fade-in": "fade-in 700ms cubic-bezier(0.3, 0.6, 0.25, 1) forwards",
       },
       backgroundImage: {
         "gradient-diagonal":
@@ -187,6 +187,9 @@ module.exports = {
       },
       boxShadow: {
         border: "0 -1px 0 inset rgba(128,128,128,0.2)",
+      },
+      fontSize: {
+        squishy: "clamp(2rem, 10vw + 10%, 8rem)",
       },
       gridTemplateColumns: {
         areas: "repeat(auto-fit, minmax(32ch, 1fr))",

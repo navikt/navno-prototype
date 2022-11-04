@@ -8,7 +8,7 @@
     "url": "https://github.com/macbruker/nav-prototype"
   },
   "scripts": {
-    "dev:eleventy": "eleventy --config=eleventy.config.js --serve",
+    "dev:eleventy": "eleventy --config=eleventy.config.js --serve --quiet",
     "dev:css": "npx tailwindcss -i ./src/main.css -o ./dist/main.min.css --minify --watch",
     "dev": "concurrently npm:dev:*",
     "build:eleventy": "ELEVENTY_ENV=production eleventy --config=eleventy.config.js",

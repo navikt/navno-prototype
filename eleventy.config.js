@@ -1,4 +1,9 @@
+/**
+ * @param { import('@11ty/eleventy/src/UserConfig') } eleventyConfig
+ */
+
 const svgContents = require("eleventy-plugin-svg-contents");
+const markdownIt = require("markdown-it");
 const htmlmin = require("html-minifier");
 const compression = require("compression");
 
@@ -16,7 +21,24 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.setServerOptions({
     enabled: false,
     showVersion: true,
+    port: 8888,
     middleware: [compression()],
+  });
+
+  eleventyConfig.addFilter("markdown", function (value) {
+    return new markdownIt({
+      html: true,
+      linkify: true,
+      typographer: true,
+      quotes: "«»",
+    }).render(value);
+  });
+
+  eleventyConfig.addFilter("markdownInline", function (value) {
+    return new markdownIt({
+      html: false,
+      quotes: "«»",
+    }).renderInline(value);
   });
 
   eleventyConfig.addShortcode("now", function () {

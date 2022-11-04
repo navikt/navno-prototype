@@ -251,7 +251,58 @@
     --navds-shadow-focus: 0 0 0 3px var(--navds-semantic-color-focus);
   }
 
-  a {
-    text-decoration-thickness: 1px;
+  p > a {
+    text-decoration-thickness: 0.0875rem;
+    text-decoration-color: var(--navds-global-color-gray-400);
   }
 }
+@layer components {
+  :where(.markdown) > *:not(h2, h3, h4, h5) + * {
+    margin-block-start: 1.5rem;
+  }
+  .markdown > *:where(h2, h3, h4, h5) + * {
+    margin-block-start: 0.125rem;
+  }
+  :where(.markdown) a {
+    text-decoration: underline;
+    text-decoration-thickness: 0.0625em;
+    text-decoration-color: var(--navds-global-color-gray-400);
+    color: var(--navds-global-color-blue-500);
+    text-underline-offset: 0.1875em;
+  }
+  :where(.markdown) a:hover {
+    text-decoration: none;
+    color: var(--navds-global-color-blue-600);
+  }
+  :where(.markdown) h3 {
+    @apply font-semibold text-xl;
+  }
+  :where(.markdown) ul {
+    list-style: disc;
+    list-style-position: outside;
+    padding-inline-start: 1.125rem;
+  }
+  :where(.markdown) li + li {
+    margin-block-start: 0.5rem;
+  }
+}
+
+/*
+  .fancy-scroll::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    background-color: #f5f5f5;
+  }
+
+  .fancy-scroll::-webkit-scrollbar {
+    width: 12px;
+    background-color: #f5f5f5;
+  }
+
+  .fancy-scroll::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    background-color: #555;
+  }
+
+*/
