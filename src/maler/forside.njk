@@ -93,13 +93,13 @@ order: 1
   {% include "partials/header.njk" %}
 
   <main class="text-gray-900" x-bind:inert="menuOpen || notifyOpen">
-    <div class="px-5 py-8 bg-white md:py-12">
-      <div class="max-w-screen-lg mx-auto sm:w-[95%]">
+    <div class="grid py-8 bg-white grid-cols-layout md:py-12">
+      <div class="col-popout">
         <h2 class="-mt-2 text-xl font-semibold md:text-3xl">Hva kan vi hjelpe deg med?</h2>
         <ul class="grid gap-2 mx-auto mt-4 lg:grid-cols-3 sm:grid-cols-2 sm:gap-4 md:gap-6">
           {% for service in home.servicesList %}
             <li class="">
-              <a class="relative flex items-center justify-between gap-4 z-10 bg-deepblue-50 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 hover:text-blue-500 hover:shadow-xl hover:bg-gray-100 focus:shadow-xl min-h-[9vh] lg:min-h-[12vh] pl-6 pr-[40%] py-2 overflow-hidden group c-area-card" href="#">
+              <a class="relative flex items-center justify-between gap-4 z-10 bg-deepblue-50 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 hover:text-blue-500 hover:shadow-xl hover:bg-gray-100 focus:shadow-xl min-h-[7rem] lg:min-h-[9rem] pl-6 pr-[40%] py-2 overflow-hidden group c-area-card" href="#">
                 <div class="text-xl font-semibold leading-snug underline md:text-2xl group-hover:no-underline">
                   {{ service.title | safe }}
                 </div>
@@ -113,8 +113,8 @@ order: 1
       </div>
     </div>
 
-    <div class="px-5 pt-8 pb-8 bg-[#fde6e6] md:py-12">
-      <div class="max-w-screen-lg mx-auto sm:w-[95%]">
+    <div class="grid grid-cols-layout pt-8 pb-8 bg-[#fde6e6] md:py-12">
+      <div class="col-popout">
         <h2 class="-mt-2 text-xl font-semibold md:text-3xl">Snarveier</h2>
         <ul class="grid gap-2 mt-4 sm:gap-4 md:gap-6 sm:grid-cols-2">
           {% for shortcut in home.shortcutsList %}
@@ -131,7 +131,7 @@ order: 1
                   <circle class="transition-custom duration-200 ease-out origin-center fine:group-hover:scale-0 fine:group-hover:translate-y-0.5 fine:group-hover:-translate-x-2" cx="27" cy="27" r="27" fill="#CCE2F0" />
                   <path class="transition-custom origin-center duration-200 fine:group-hover:scale-[1.15] fine:group-hover:translate-x-3" stroke="#262626" stroke-width="2" d="M41 27 23 45l-6-6 12-12-12-12 6-6 18 18Z" />
                 </svg>
-                <span class="max-w-[30ch] text-xl leading-snug font-semibold md:text-2xl">{{ shortcut.title }}</span>
+                <span class="max-w-[30ch] text-xl leading-snug font-semibold md:text-2xl">{{ shortcut.title | safe }}</span>
               </a>
             </li>
           {% endfor %}
@@ -140,13 +140,13 @@ order: 1
       </div>
     </div>
 
-    <div class="mt-2 px-5 py-8 bg-[#f1f1f1] md:py-12 sm:px-8">
-      <div class="max-w-screen-lg mx-auto sm:w-[95%]">
+    <div class="mt-2 grid grid-cols-layout py-8 bg-[#f1f1f1] md:py-12 sm:px-8">
+      <div class="col-popout">
         <h2 class="-mt-2 text-xl font-semibold md:text-3xl">Aktuelt</h2>
         <div class="grid gap-2 mt-4 sm:gap-4 md:gap-6 sm:grid-cols-2">
           {% for news in home.newsList %}
             <a class="grid gap-2 px-6 py-5 duration-300 ease-out bg-white rounded-lg group transition-custom hover:text-blue-500 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-500" href="#">
-              <span class="max-w-[30ch] text-xl font-semibold md:text-2xl underline group-hover:text-blue-500 group-hover:no-underline">{{ news.title }}</span>
+              <span class="max-w-[30ch] text-xl font-semibold md:text-2xl underline group-hover:text-blue-500 group-hover:no-underline">{{ news.title | safe }}</span>
               <span class="text-lg opacity-70">{{ news.date }}</span>
             </a>
           {% endfor %}
@@ -154,8 +154,8 @@ order: 1
       </div>
     </div>
 
-    <div class="px-5 py-8 pb-12 bg-white md:py-12 sm:px-8">
-      <div class="max-w-screen-lg mx-auto sm:pb-4 sm:w-[95%]">
+    <div class="grid py-8 pb-12 bg-white grid-cols-layout md:py-12">
+      <div class="col-popout">
         <h2 class="-mt-2 text-xl font-semibold md:text-3xl">Kontakt oss</h2>
         <div class="grid gap-8 mt-4 sm:gap-4 md:gap-6 sm:grid-cols-2">
           <div class="relative grid gap-2 px-6 py-6 bg-blue-50 rounded-t-3xl rounded-r-3xl group">

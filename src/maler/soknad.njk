@@ -1,7 +1,7 @@
 ---
 title: 'Søknad'
 description: 'Grunnoppsett for søknader'
-order: 4
+order: 9
 stepperList:
   -
     text: 'Personalia'
@@ -142,8 +142,8 @@ stepperList:
   {% include "partials/header.njk" %}
 
   <main class="min-h-[61vh] text-lg text-gray-900">
-    <div class="px-4 py-8 bg-white md:pt-12 md:pb-20 md:px-8">
-      <div class="xs:max-w-xl md:max-w-screen-md mx-auto sm:w-[95%]">
+    <div class="grid py-8 bg-white grid-cols-layout md:pt-12 md:pb-20 ">
+      <div class="col-content">
         <h1 class="text-3xl font-semibold leading-tight md:text-4xl">Søknad om dagpenger</h1>
 
         <div class="mt-3 md:grid md:grid-flow-row-dense md:gap-20 md:grid-cols-12">
@@ -209,13 +209,13 @@ stepperList:
           </div>
 
           <div class="md:col-span-8">
-            <div class="max-w-xl">
+            <div class="max-w-prose">
               <div class="hidden mt-6 mb-4 md:block">
                 <p class="text-sm">Steg 5 av 14</p>
                 <h2 class="text-2xl font-semibold">Arbeidsforhold i EØS</h2>
               </div>
 
-              <p>NAV har registrert følgende kontaktinformasjon. Du kan gjøre endringer på&nbsp;<strong>Min side</strong>.</p>
+              <p>NAV har registrert følgende kontaktinformasjon. Du kan gjøre endringer på&nbsp;<strong>Min&nbsp;side</strong>.</p>
 
               <div class="mt-6">
                 <label class="font-semibold" for="country">Hvilket land bor du i?</label>

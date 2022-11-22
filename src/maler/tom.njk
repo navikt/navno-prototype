@@ -1,7 +1,7 @@
 ---
 title: 'Tom side'
 description: ''
-order: 5
+order: 10
 bodyClass: ''
 ---
 {% extends 'base.njk' %}
@@ -15,14 +15,9 @@ bodyClass: ''
 {% block content %}
   {% include "partials/header.njk" %}
 
-  <main class="text-lg text-gray-900 place-self-stretch">
-    <div class="px-4 py-8 bg-white md:pt-12 md:pb-20 md:px-8">
-      <div class="xs:max-w-xl md:max-w-screen-md mx-auto sm:w-[95%] text-center min-h-[30vh] grid place-items-center">
-        <h1 class="mb-4 font-semibold leading-none tracking-wider uppercase select-none text-squishy opacity-5">{{ title }}</h1>
-      </div>
-    </div>
-  </div>
-</main>
+  <main class="grid py-12 min-h-[36vh] lg:min-h-[44vh] grid-cols-layout">
+    <div class="col-popout leading-[28vh] lg:leading-[36vh] text-squishy font-bold text-center uppercase text-gray-700/5">Tom side</div>
+  </main>
 
 {% include "partials/footer.njk" %}
 

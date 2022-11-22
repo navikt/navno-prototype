@@ -7,21 +7,29 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>
       {% if title %}
-        {{ title }} &ndash;
+        {{ title | safe }} &ndash;
     {% endif %}
-      {{ site.title }}
+      {{ site.title | safe }}
     </title>
     <meta name="description" content="..." />
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2299%22>🧑‍💻</text></svg>" />
     <link rel="preconnect" href="https://marvelous-biscochitos-50396c.netlify.app" crossorigin />
-    <link rel="preload" href="/fonts/Source_Sans_3_latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/fonts/Source_Sans_3-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
     <style>
       @font-face {
         font-family: "Source Sans Pro";
         font-weight: 400;
         font-style: normal;
         font-display: swap;
-        src: url("/fonts/Source_Sans_3_latin.woff2") format("woff2"), url("/fonts/Source_Sans_3_latin.woff2") format("woff");
+        src: url("/fonts/Source_Sans_3-normal-latin_ext.woff2") format("woff2");
+        unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+      }
+      @font-face {
+        font-family: "Source Sans Pro";
+        font-weight: 400;
+        font-style: normal;
+        font-display: swap;
+        src: url("/fonts/Source_Sans_3-normal-latin.woff2") format("woff2");
         unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
       }
 
@@ -30,7 +38,16 @@
         font-weight: 400;
         font-style: italic;
         font-display: swap;
-        src: url("/fonts/Source_Sans_3_latin.woff2") format("woff2"), url("/fonts/Source_Sans_3_latin.woff2") format("woff");
+        src: url("/fonts/Source_Sans_3-italic-latin_ext.woff2") format("woff2");
+        unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+      }
+
+      @font-face {
+        font-family: "Source Sans Pro";
+        font-weight: 400;
+        font-style: italic;
+        font-display: swap;
+        src: url("/fonts/Source_Sans_3-italic-latin.woff2") format("woff2");
         unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
       }
 
@@ -39,7 +56,15 @@
         font-weight: 600;
         font-style: normal;
         font-display: swap;
-        src: url("/fonts/Source_Sans_3_latin.woff2") format("woff2"), url("/fonts/Source_Sans_3_latin.woff2") format("woff");
+        src: url("/fonts/Source_Sans_3-normal-latin_ext.woff2") format("woff2");
+        unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+      }
+      @font-face {
+        font-family: "Source Sans Pro";
+        font-weight: 600;
+        font-style: normal;
+        font-display: swap;
+        src: url("/fonts/Source_Sans_3-normal-latin.woff2") format("woff2");
         unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
       }
     </style>
@@ -51,8 +76,8 @@
     {% block content %}{% endblock %}
 
     {% if page.url != "/" %}
-      <div class="fixed z-50 pt-px pr-px transition-all duration-300 motion-safe:-translate-x-full motion-safe:translate-y-full bg-red-300/80 -bottom-6 -left-6 motion-safe:animate-enter hover:-bottom-5 hover:-left-5" style="clip-path: polygon(0 0, 100% 100%, 0 100%)">
-        <a class="grid pt-24 pb-8 pl-8 pr-24 text-white bg-red-500 hover:bg-red-300 place-items-center bg-gradient-to-tr from-red-500/80 to-red-900/80" style="clip-path: polygon(0 0, 100% 100%, 0 100%)" href="/">
+      <div class="fixed z-50 pt-px pr-px transition-all duration-300 motion-safe:-translate-x-full motion-safe:translate-y-full bg-purple-300/80 -bottom-6 -left-6 motion-safe:animate-enter hover:-bottom-5 hover:-left-5" style="clip-path: polygon(0 0, 100% 100%, 0 100%)">
+        <a class="grid pt-24 pb-8 pl-8 pr-24 text-white bg-purple-500 hover:bg-purple-300 place-items-center bg-gradient-to-tr from-purple-500/80 to-purple-900/80" style="clip-path: polygon(0 0, 100% 100%, 0 100%)" href="/">
           <svg class="w-6 h-6 translate-x-2.5 -translate-y-2.5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-linecap="round" stroke-width="2" aria-hidden="true" focusable="false" role="img">
             <path  d="M4.5 9H16a5 5 0 0 1 5 5v0a5 5 0 0 1-5 5h-1.5" />
             <path stroke-linejoin="round" d="M8.5 4.5 4 9l4.5 4.5" />

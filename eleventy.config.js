@@ -22,7 +22,13 @@ module.exports = function (eleventyConfig) {
     enabled: false,
     showVersion: true,
     port: 8888,
-    middleware: [compression()],
+    middleware: [
+      // function compression(req, res, next) {
+      //   res.writeHead(200, { "content-type": "text/html" });
+      //   res.end();
+      //   next();
+      // },
+    ],
   });
 
   eleventyConfig.addFilter("markdown", function (value) {

@@ -1,5 +1,5 @@
-<footer class="self-end px-4 pb-20 text-lg text-white bg-deepblue-800 md:px-8" x-bind:inert="menuOpen || notifyOpen">
-  <div class="max-w-screen-lg mx-auto sm:w-[95%] ">
+<footer class="grid self-end pb-20 text-lg text-white bg-deepblue-800 grid-cols-layout" x-bind:inert="menuOpen || notifyOpen">
+  <div class="col-feature">
     <div class="flex flex-col items-center py-3">
       <a class="flex items-center gap-2 text-base text-center hover:underline hover:text-orange-200" href="#">
         <svg class="w-5 h-5" width="24" height="24" viewBox="0 0 24 24"  aria-hidden="true" focusable="false" role="img">
@@ -13,7 +13,7 @@
         {% for section in footer.links %}
           <div class="mb-8 sm:pr-8 md:mb-0">
             <h2 class="text-sm font-semibold tracking-widest uppercase text-deepblue-300">
-              {{ section.title }}
+              {{ section.title | safe }}
             </h2>
             <ul class="mt-2 mb-7 break-inside-avoid">
               {% for item in section.linkList %}

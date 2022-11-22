@@ -1,3 +1,5 @@
+const plugin = require("tailwindcss/plugin");
+
 module.exports = {
   content: [
     "./src/**/*.njk",
@@ -50,13 +52,9 @@ module.exports = {
       lg: "1.125rem",
       xl: "1.25rem",
       "2xl": "1.5rem",
-      "3xl": "1.875rem",
+      "3xl": "2rem",
       "4xl": "2.25rem",
-      "5xl": "3rem",
-      "6xl": "3.75rem",
-      "7xl": "4.5rem",
-      "8xl": "6rem",
-      "9xl": "8rem",
+      "5xl": "2.5rem",
     },
     colors: {
       blue: {
@@ -229,5 +227,35 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    plugin(function ({ addUtilities }) {
+      addUtilities({
+        ".grid-cols-layout": {
+          "grid-template-columns": `
+          [full-start] var(--_layout-full)
+          [feature-start] var(--_layout-feature)
+          [popout-start] var(--_layout-popout)
+          [content-start ] var(--_layout-content) [content-end]
+          var(--_layout-popout) [popout-end]
+          var(--_layout-feature) [feature-end]
+          var(--_layout-full) [full-end]`,
+        },
+        ".grid-cols-layout > *": {
+          "grid-column": "content",
+        },
+        ".col-full": {
+          "grid-column": "full",
+        },
+        ".col-feature": {
+          "grid-column": "feature",
+        },
+        ".col-popout": {
+          "grid-column": "popout",
+        },
+        ".col-content": {
+          "grid-column": "content",
+        },
+      });
+    }),
+  ],
 };
