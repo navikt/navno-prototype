@@ -12,7 +12,7 @@ bodyClass: 'bg-purple-50'
     <h1 class="text-xl font-semibold">{{ site.title | safe }}</h1>
     <nav>
       <ul class="grid gap-3 mt-8 md:gap-8 grid-cols-cards">
-        {% for page in collections.all | sort(false, false, 'data.order') %}
+        {% for page in collections.template | sort(false, false, 'data.order') %}
           <li class="grid">
             <div class="relative motion-safe:hover:translate-y-1 rounded-l-sm transition ease-out duration-100 hover:duration-300 flex flex-col shadow-xl hover:shadow hover:shadow-purple-600/40 shadow-purple-400/20 gap-1 content-start p-8 sm:pt-[50%] sm:pb-[15%] bg-white border-l-[6px] border-purple-800/40 rounded-r group hover:bg-purple-400">
               <p class="text-xs font-semibold tracking-wider uppercase">

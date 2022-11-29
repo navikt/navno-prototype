@@ -269,21 +269,24 @@
   .markdown > *:where(h2, h3, h4, h5) + * {
     margin-block-start: 0.125rem;
   }
-  :where(.markdown) a {
+  :where(.markdown) > p a {
     text-decoration: underline;
     text-decoration-thickness: 0.0625em;
     text-decoration-color: var(--navds-global-color-gray-400);
     color: var(--navds-global-color-blue-500);
     text-underline-offset: 0.1875em;
   }
-  :where(.markdown) a:hover {
+  :where(.markdown) > p a:hover {
     text-decoration: none;
     color: var(--navds-global-color-blue-600);
   }
-  :where(.markdown) h3 {
+  :where(.markdown) > h2 {
+    @apply font-semibold text-2xl;
+  }
+  :where(.markdown) > h3 {
     @apply font-semibold text-xl;
   }
-  :where(.markdown) ul {
+  :where(.markdown) > ul {
     list-style: disc;
     list-style-position: outside;
     padding-inline-start: 1.125rem;

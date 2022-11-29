@@ -16,10 +16,15 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ "./static/fonts/*": "/fonts" });
   eleventyConfig.addWatchTarget("./src/main.css");
   eleventyConfig.addWatchTarget("./src/**/*.svg");
+
   eleventyConfig.setDataDeepMerge(true);
 
+  eleventyConfig.addCollection("productEntry", function (collectionApi) {
+    return collectionApi.getFilteredByTag("productEntry");
+  });
+
   eleventyConfig.setServerOptions({
-    enabled: false,
+    enabled: true,
     showVersion: true,
     port: 8888,
     middleware: [
@@ -34,7 +39,6 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter("markdown", function (value) {
     return new markdownIt({
       html: true,
-      linkify: true,
       typographer: true,
       quotes: "«»",
     }).render(value);
@@ -43,7 +47,6 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter("markdownInline", function (value) {
     return new markdownIt({
       html: false,
-      quotes: "«»",
     }).renderInline(value);
   });
 
@@ -69,6 +72,8 @@ module.exports = function (eleventyConfig) {
   });
 
   return {
+    markdownTemplateEngine: "njk",
+    templateFormats: ["njk", "md"],
     dir: {
       input: "src",
       data: "_data",

@@ -1,6 +1,8 @@
 ---
-title: 'Produkt&shy;oversikt'
+title: 'Søknad og skjema fra A til Å'
 description: 'Pengestøtter og tjenester fra NAV for privatpersoner'
+tags:
+  - template
 order: 4
 bodyClass: ''
 ---
@@ -21,40 +23,35 @@ bodyClass: ''
         <h1 class="text-5xl font-semibold">{{ title | safe }}</h1>
         <p class="mt-6 max-w-prose">Pengestøtter og tjenester fra NAV for privatpersoner. Du kan søke eller sortere på tema og type.</p>
         <div class="absolute hidden right-12 bottom-3 md:block">
-          <svg class="w-32 h-32" xmlns="http://www.w3.org/2000/svg" width="96" height="96" viewBox="0 0 96 96">
-            <path fill="#CCE2F0" d="M48 61.17c6.07 0 11 4.88 11 10.91S54.07 83 48 83s-11-4.89-11-10.92 4.93-10.91 11-10.91zm0-30.31c-3.99 0-6 2.83-6 4.82H24C24 22.5 35.44 13 48 13c12.55 0 24 9.5 24 22.68a22 22 0 0 1-7.29 16.27l-.03.04-.04.03-.07.06.07-.06-.01.01-.02.02-.04.03a13.89 13.89 0 0 1-.44.38c-.27.22-.63.52-1.08.86-.89.68-2.14 1.59-3.69 2.52l-.08.05a72.3 72.3 0 0 0-2.3 1.44v.95H55.7l-.07.06.05-.06h-16.7V55.6l.04-1.5a11.42 11.42 0 0 1 2.64-7 19.43 19.43 0 0 1 3.2-3.1 51.92 51.92 0 0 1 4.94-3.3l.2-.11a22.36 22.36 0 0 0 2.53-1.79l.04-.03a4.19 4.19 0 0 0 1.43-3.1c0-1.98-2-4.8-6-4.8z"/>
-            <path fill="none" stroke="#262626" stroke-width="3" d="M58.5 41.5a20 20 0 1 1 0 40 20 20 0 0 1 0-40zm14.56 33.44 20 20"/>
-            <path fill="#262626" d="M5.95 11.5 9.53 16l7.25-7.02-2.09-2.15-4.87 4.72L8.3 9.64 5.95 11.5zm11.15 2.83h11.4v-3H17.1m0 12.17h11.4v-3H17.1m0 12.17h11.4v-3H17.1"/>
-            <path fill="#FFF" d="M36 47H1.99h34.02z"/>
-            <path fill="#262626" d="M3 3h32v38H3V3zm33-3H2a2 2 0 0 0-2 2v40c0 1.1.9 2 2 2h34a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"/>
-            <path fill="#262626" d="M11.5 20.17c1.1 0 2 .86 2 1.93 0 1.06-.9 1.93-2 1.93s-2-.87-2-1.93c0-1.07.9-1.93 2-1.93zm0 8.78c1.1 0 2 .86 2 1.93 0 1.06-.9 1.93-2 1.93s-2-.87-2-1.93c0-1.07.9-1.93 2-1.93z"/>
-          </svg>
+          {{ '/src/_includes/svg/pictogram-support.svg' | svgContents('w-32 h-32') | safe }}
         </div>
       </div>
     </div>
 
-    <div class="grid py-8 bg-deepblue-50 md:py-16 grid-cols-layout">
+    {% set chipClasses = "inline-flex cursor-pointer px-4 pt-1.5 pb-1.5 leading-tight text-base bg-white ring-1 ring-gray-200/25 rounded-full hover:bg-orange-100" %}
+
+    <div class="grid py-8 bg-gray-100 md:py-16 grid-cols-layout">
       <div class="grid items-start md:grid-cols-12 col-popout">
         <aside class="md:col-span-4 md:sticky md:top-8">
           <div class="">
-            <h2 class="font-semibold md:text-xl">{{ productDomain.title | safe }}</h2>
+            <h2 class="font-semibold md:text-xl">{{ domain.title | safe }}</h2>
             <ul class="flex flex-wrap mt-3 gap-x-2 gap-y-3">
-              {% for item in productDomain.items %}
+              {% for item in domain.items %}
                 <li class="">
                   <input type="radio" class="absolute opacity-0 pointer-events-none peer/domain" name="productDomain" value="{{ item }}" id="productDomain-{{ item | lower }}" {{ 'checked' if loop.first }} />
-                  <label class="inline-flex cursor-pointer ring-1 ring-deepblue-200/50 hover:bg-deepblue-200/50 px-4 pt-1.5 pb-1.5 leading-tight text-base bg-deepblue-100 rounded-full peer-checked/domain:bg-deepblue-500 peer-checked/domain:text-white" for="productDomain-{{ item | lower }}">{{ item }}</label>
+                  <label class="{{ chipClasses }} peer-checked/domain:bg-blue-600 peer-checked/domain:text-white" for="productDomain-{{ item | lower }}">{{ item }}</label>
                 </li>
               {% endfor %}
             </ul>
           </div>
 
           <div class="mt-12">
-            <h2 class="font-semibold md:text-xl">{{ productType.title | safe }}</h2>
+            <h2 class="font-semibold md:text-xl">{{ category.title | safe }}</h2>
             <ul class="flex flex-wrap items-center mt-3 gap-x-2 gap-y-3">
-              {% for item in productType.items %}
+              {% for item in category.items %}
                 <li>
-                  <input type="radio" class="absolute opacity-0 pointer-events-none peer/type" name="productType" value="{{ item }}" id="productType-{{ item | lower }}" {{ 'checked' if loop.first }} />
-                  <label class="inline-flex cursor-pointer ring-1 ring-deepblue-200/50 hover:bg-deepblue-200/50 px-4 pt-1.5 pb-1.5 leading-tight text-base bg-deepblue-100 rounded-full peer-checked/type:bg-deepblue-500 peer-checked/type:text-white" for="productType-{{ item | lower }}">{{ item }}</label>
+                  <input type="radio" class="absolute opacity-0 pointer-events-none peer/category" name="productType" value="{{ item }}" id="productType-{{ item | lower }}" {{ 'checked' if loop.first }} />
+                  <label class="{{ chipClasses }} peer-checked/category:bg-blue-600 peer-checked/category:text-white" for="productType-{{ item | lower }}">{{ item }}</label>
                 </li>
               {% endfor %}
             </ul>
@@ -68,79 +65,44 @@ bodyClass: ''
           <div class="mt-12 md:mt-0">
             <div>
               <label for="soook" class="font-semibold">Søk</label>
-              <input id="soook" type="text" class="w-full px-4 py-3 bg-white border rounded-lg shadow-inner focus:outline-none focus:ring focus:ring-deepblue-600 border-deepblue-300/50">
+              <input id="soook" type="text" class="w-full px-4 py-3 bg-white border rounded-lg shadow-inner focus:outline-none focus:ring focus:ring-gray-600 border-gray-300/50">
             </div>
           </div>
 
-          <div class="grid mt-6 bg-white divide-y rounded-lg shadow-xl divide-deepblue-50">
-            {% for product in productList %}
-              <div x-data="{ isOpen: {{ product.isOpen }} }" class="focus-within:ring focus-within:ring-deepblue-600 focus-within:rounded focus-within:z-10">
-                <a href="{{ product.title | slug }}" class="flex items-center w-full gap-4 px-4 py-6 text-xl font-semibold text-left hover:bg-deepblue-50/50 group focus:outline-none">
-                  <span class="flex-none block w-10 h-10 rounded-full  {{ 'bg-deepblue-300' if product.contentBlocks else 'bg-deepblue-200' }}"></span>
-                  <span class="flex-1 leading-tight">{{ product.title | safe }}</span>
-                  {{ '/src/_includes/svg/chevron-right.svg' | svgContents('mt-1 mr-1 w-5 h-5 opacity-60 group-aria-expanded:rotate-90 transition duration-100') | safe }}
-                </a>
-                {# <button x-on:click="isOpen = !isOpen" class="flex items-center w-full gap-4 px-4 py-6 text-xl font-semibold text-left hover:bg-deepblue-50/50 group focus:outline-none" x-bind:aria-expanded="isOpen">
-                  <span class="flex-none block w-10 h-10 rounded-full  {{ 'bg-deepblue-300' if product.contentBlocks else 'bg-deepblue-200' }}"></span>
-                  <span class="flex-1 leading-tight">{{ product.title | safe }}</span>
-                  {{ '/src/_includes/svg/chevron-right.svg' | svgContents('mt-1 mr-1 w-5 h-5 opacity-60 group-aria-expanded:rotate-90 transition duration-100') | safe }}
-                </button> #}
-                <div class="px-4 pt-2 pb-12 mb-4" x-bind:hidden="!isOpen">
-                  <div class="xs:px-14">
-                  {% if product.contentBlocks %}
-                    {% for block in product.contentBlocks %}
-
-                      {% if block.type === 'markdown' %}
-                        <div class="markdown {{ 'mt-7' if loop.index >= 2 }}">
-                          {% for item in block.content %}
-                            {{ item | markdown | safe }}
-                          {% endfor %}
-                        </div>
-
-                      {# {% elseif block.type === 'tag' %}
-                        <div class="mt-7">
-                          {% for tag in block.tags %}
-                            <span class="border text-sm tracking-wide rounded bg-gray-50 py-0.5 px-2 border-gray-200">{{ tag }}</span>
-                          {% endfor %}
-                        </div> #}
-
-                      {% elseif block.type === 'microcards' %}
-                        <div class="mt-7">
-                          <h3 class="text-lg font-semibold">{{ block.title | safe }}</h3>
-                          <div class="flex flex-wrap gap-1 mt-1 -mx-0.5">
-                          {% for link in block.links %}
-                            <a class="flex items-center gap-2 pt-1.5 pb-1 pl-2.5 pr-4 text-sm bg-white border border-gray-300 rounded-full before:w-2 before:h-2 before:rounded-full before:bg-blue-400 before:mb-px" href="#">
-                              {{ link }}
-                            </a>
-                          {% endfor %}
-                          </div>
-                        </div>
-
-                      {% elseif block.type === 'cta' %}
-                        <div class="mt-7">
-                          <a class="inline-flex items-center gap-2 px-4 py-2  {{ 'bg-blue-500 text-white' if block.variant === 'primary' else 'text-blue-600 bg-white' }}  rounded-sm ring-2 ring-blue-500" href="#">
-                            {{ block.text }}
-                          </a>
-                        </div>
-                      {% endif %}
-                    {% endfor %}
+          <div class="grid mt-6 bg-white divide-y divide-gray-200 rounded-lg shadow">
+            {% for product in collections.productEntry %}
+              <div x-data="{ expanded: {{ product.data.expanded or 'false' }} }" class="focus-within:z-10">
+                <button x-on:click="expanded = !expanded" class="flex items-center w-full gap-4 px-4 py-4 text-xl font-semibold text-left hover:bg-gray-50/50 group focus:outline-none focus-visible:ring focus-visible:ring-gray-600 focus-visible:rounded" x-bind:aria-expanded="expanded">
+                  {% if product.data.icon %}
+                    {{ product.data.icon | svgContents('w-12 h-12') | safe }}
                   {% else %}
-                    <div class="empty:bg-gray-100 min-h-[40vh]"></div>
+                  <span class="flex-none block w-12 h-12 my-2 rounded-full bg-green-200/25"></span>
                   {% endif %}
+                  <span class="flex-1 leading-tight">{{ product.data.title | safe }}</span>
+                  {{ '/src/_includes/svg/chevron-down.svg' | svgContents('mt-1 mr-1 w-5 h-5 opacity-60 group-aria-expanded:rotate-180 transition duration-100') | safe }}
+                </button>
+                <div class="relative px-4 pt-2 pb-12" x-bind:hidden="!expanded">
+                  {% if product.templateContent %}
+                    <div class="pt-4 xs:px-14 markdown">
+                      {{ product.templateContent | markdown | safe }}
+                    </div>
+                  {% endif %}
+                  <div class="pt-6 text-center px-14">
+                    <a class="text-sm text-blue-500 hover:underline hover:text-blue-600" href="{{ product.url }}">(Vis som egen side)</a>
                   </div>
                 </div>
               </div>
             {% endfor %}
 
             {% for i in range(7,197) %}
-              <div x-data="{ isOpen: false }" class="focus-within:ring focus-within:ring-deepblue-600 focus-within:rounded focus-within:z-10">
-                <button x-on:click="isOpen = !isOpen" class="flex items-center w-full gap-4 px-4 py-6 text-xl font-semibold text-left focus:outline-none hover:bg-deepblue-50/50" x-bind:aria-expanded="isOpen">
-                  <span class="flex-none block w-10 h-10 rounded-full bg-deepblue-200/60"></span>
-                  <span class="flex-1 opacity-60">{{ i }} …</span>
+              <div x-data="{ expanded: false }" class="isolate focus-within:z-10">
+                <button x-on:click="expanded = !expanded" class="flex items-center w-full gap-4 px-4 py-4 text-xl font-semibold text-left focus:outline-none hover:bg-gray-50/50 focus-visible:ring focus-visible:ring-gray-600 focus-visible:rounded " x-bind:aria-expanded="true">
+                  {{ "/src/_includes/svg/pictogram-neutral.svg" | svgContents('w-12 h-12') | safe }}
+                  <span class="flex-1">Produkt {{ i }} …</span>
                   {{ '/src/_includes/svg/chevron-down.svg' | svgContents('mt-1 mr-1 w-5 h-5 opacity-60 group-aria-expanded:rotate-180 transition duration-100') | safe }}
                 </button>
-                <div class="px-4 pb-12 mb-4" x-bind:hidden="!isOpen">
-                  <div class="xs:px-14">
+                <div class="px-4 pt-4 pb-4" x-bind:hidden="!expanded">
+                  <div class="xs:pl-14">
                     <div class="min-h-[40vh] empty:bg-gray-100"></div>
                   </div>
                 </div>

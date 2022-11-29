@@ -3,6 +3,8 @@ title: 'Tom side'
 description: ''
 order: 10
 bodyClass: ''
+tags:
+  - template
 ---
 {% extends 'base.njk' %}
 
@@ -16,7 +18,7 @@ bodyClass: ''
   {% include "partials/header.njk" %}
 
   <main class="grid py-12 min-h-[36vh] lg:min-h-[44vh] grid-cols-layout">
-    <div class="col-popout leading-[28vh] lg:leading-[36vh] text-squishy font-bold text-center uppercase text-gray-700/5">Tom side</div>
+    <div class="col-content bg-orange-300 xl:col-feature leading-[28vh] lg:leading-[36vh] text-squishy font-bold text-center uppercase text-gray-700/5">Tom side</div>
   </main>
 
 {% include "partials/footer.njk" %}

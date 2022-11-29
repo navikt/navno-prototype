@@ -1,0 +1,34 @@
+{% extends 'base.njk' %}
+
+{% block script %}
+  <script src="/main.min.js" type="text/javascript" defer></script>
+{% endblock %}
+
+{% block content %}
+  {% include "partials/header.njk" %}
+
+  <main class="min-h-[50vh]">
+    <div class="grid grid-cols-layout">
+      <div class="pt-12 pb-8 col-content">
+        <a href="/maler/produktoversikt" class="font-semibold tracking-wide text-blue-500 uppercase hover:underline">Søknad og skjema fra A til Å</a>
+        <h1 class="mt-1 text-5xl font-semibold">{{ title | safe }}</h1>
+        {% if ingress %}
+        <div class="mt-4 text-lg max-w-prose">
+          <p class="mt-1 text-xl">{{ ingress | safe }}</p>
+        </div>
+        {% endif %}
+      </div>
+    </div>
+    <div class="grid pt-10 pb-12 bg-deepblue-50 grid-cols-layout min-h-[40vh]">
+      <div class="text-lg markdown col-content">
+        {% if content %}
+          {{ content | markdown | safe }}
+        {% else %}
+          <p>Innhold mangler …</p>
+        {% endif %}
+      </div>
+    </div>
+  </main>
+
+  {% include "partials/footer.njk" %}
+{% endblock %}

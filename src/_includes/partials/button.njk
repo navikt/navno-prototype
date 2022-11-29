@@ -1,0 +1,22 @@
+{% macro button(text, variant, class) %}
+
+  {% set buttonClasses = "bg-white border-2 border-blue-500 text-blue-600" %}
+
+  {% if variant %}
+    {% if variant === "primary" %}
+      {% set buttonClasses = "bg-blue-500 text-white" %}
+    {% endif %}
+
+    {% if variant === "secondary" %}
+      {% set buttonClasses = "bg-white border-2 border-blue-500 text-blue-600" %}
+    {% endif %}
+
+    {% if variant === "tertiary" %}
+      {% set buttonClasses = "bg-blue-50 text-blue-600" %}
+    {% endif %}
+  {% endif %}
+
+  <a href="#" class="inline-flex items-center gap-2 px-4 py-2.5 no-underline rounded font-semibold leading-tight text-center justify-center {{ buttonClasses }} {{ class }}">
+    <span>{{ text | safe }}</span>
+  </a>
+{% endmacro %}
