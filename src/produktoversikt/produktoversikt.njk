@@ -10,11 +10,11 @@ bodyClass: ''
 
 {% block content %}
   <main class="text-lg text-gray-900 place-self-stretch">
-    <div class="grid py-8 bg-white grid-cols-layout md:pt-12 md:pb-16">
+    <div class="grid py-8 bg-white grid-cols-layout md:py-12">
       <div class="relative col-popout sm:mx-auto md:mx-0 sm:max-w-prose md:max-w-none">
         <h1 class="text-3xl font-semibold leading-tight md:text-5xl md:leading-tight">Søknad og skjema fra A&nbsp;til&nbsp;Å</h1>
         <p class="mt-3 md:mt-6 max-w-prose">Pengestøtter og tjenester fra NAV for privatpersoner. Du kan søke eller sortere på område og kategori.</p>
-        <div class="absolute hidden right-12 bottom-3 md:block">
+        <div class="absolute bottom-0 hidden right-12 md:block">
           {{ '/src/_includes/svg/pictogram-support.svg' | svgContents('w-32 h-32') | safe }}
         </div>
       </div>
@@ -22,7 +22,7 @@ bodyClass: ''
 
     {% set chipClasses = "inline-flex cursor-pointer px-4 pt-1.5 pb-1.5 leading-tight text-base bg-white ring-1 ring-gray-200/25 rounded-full hover:bg-orange-100" %}
 
-    <div class="grid py-8 bg-gray-100 md:py-16 grid-cols-layout">
+    <div class="grid py-8 bg-gray-100 grid-cols-layout md:pt-12 md:pb-20">
       <div class="grid items-start md:grid-cols-12 col-popout sm:max-w-prose sm:mx-auto md:mx-0 md:max-w-none">
         <aside class="md:col-span-4 md:sticky md:top-8">
           <div class="">
@@ -52,7 +52,7 @@ bodyClass: ''
         </aside>
 
 
-        <div class="md:col-start-6 md:col-end-13">
+        <div class="hidden md:col-start-6 md:col-end-13">
 
           <div class="mt-12 md:mt-0">
             <div>
@@ -83,21 +83,6 @@ bodyClass: ''
                 </div>
               </div>
             {% endfor %}
-
-            {# {% for i in range(7,197) %}
-              <div x-data="{ expanded: false }" class="isolate focus-within:z-10">
-                <button x-on:click="expanded = !expanded" class="flex items-center w-full gap-4 px-4 py-4 text-xl font-semibold text-left focus:outline-none hover:bg-gray-50/50 focus-visible:ring focus-visible:ring-gray-600 focus-visible:rounded " x-bind:aria-expanded="true">
-                  {{ "/src/_includes/svg/pictogram-neutral.svg" | svgContents('w-12 h-12') | safe }}
-                  <span class="flex-1">Produkt {{ i }} …</span>
-                  {{ '/src/_includes/svg/chevron-down.svg' | svgContents('mt-1 mr-1 w-5 h-5 opacity-60 group-aria-expanded:rotate-180 transition duration-100') | safe }}
-                </button>
-                <div class="px-4 pt-4 pb-4" x-bind:hidden="!expanded">
-                  <div class="xs:pl-14">
-                    <div class="min-h-[40vh] empty:bg-gray-100"></div>
-                  </div>
-                </div>
-              </div>
-            {% endfor %} #}
           </div>
 
         </div>
