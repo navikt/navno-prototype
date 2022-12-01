@@ -1,57 +1,63 @@
 <header class="relative z-40 isolate grid grid-cols-layout shadow-border bg-white {% if page.fileSlug === 'forsiden' %}shadow{% endif %}">
 
-  <nav class="flex items-center w-full gap-4 col-feature">
+  <div class="relative z-10 text-white bg-deepblue-800 md:hidden col-full">
+    <button class="flex items-center justify-center w-full gap-2 px-4 py-2 hover:bg-deepblue-700 focus:outline-none focus-visible:bg-deepblue-800 focus-visible:text-white" x-on:click="audienceDropdownOpen = !audienceDropdownOpen">
+      <span>{{ menu.audience[0] }}</span>
+      {{ '/src/_includes/svg/chevron-down.svg' | svgContents('w-4 h-4') | safe }}
+    </button>
+    <div class="absolute inset-x-0 px-4 mt-px top-full">
+      <ul class="overflow-hidden text-gray-900 bg-white divide-y divide-gray-300 rounded shadow-xl ring-1 ring-gray-200" role="tablist" x-show="audienceDropdownOpen">
+        {% for item in menu.audience %}
+        <li role="tab" aria-selected="{{ 'true' if loop.index === 1 else 'false' }}" class="grid">
+          <a href="#" class="py-2 px-3 border-l-4 hover:bg-gray-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-800 {{ 'border-blue-500' if loop.index === 1 else 'border-transparent' }}">
+            {{ item }}
+          </a>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
 
+  <nav class="flex items-center w-full gap-4 col-feature">
     {# Logo #}
-    {# <a href="/maler/forside" class="text-[#C30000] hover:text-[#DE2E2E] block focus:outline-none focus:ring-2 focus:ring-blue-800 py-2.5 px-2 -mx-2 rounded-sm">
-      {{ '/src/_includes/svg/logo.svg' | svgContents('w-16 h-5') | safe }}
-      <span class="sr-only">NAV</span>
-    </a> #}
-    <button x-on:click="indexOpen = !indexOpen" class="text-[#C30000] hover:text-[#DE2E2E] block focus:outline-none focus:ring-2 focus:ring-blue-800 py-2.5 px-2 -mx-2 rounded-sm">
-      {{ '/src/_includes/svg/logo.svg' | svgContents('w-16 h-5') | safe }}
+    <button x-on:click="indexOpen = !indexOpen" class="text-[#C30000] hover:text-[#DE2E2E] block focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-800 py-2.5 px-2 -mx-2 rounded-sm">
+      {{ '/src/_includes/svg/logo.svg' | svgContents('w-20 md:w-16 h-auto') | safe }}
       <span class="sr-only">NAV</span>
     </button>
 
-    {# Sectors #}
+    {# Audience #}
     <div class="self-stretch hidden px-6 md:grid">
       <ul class="flex justify-center gap-4 text-lg " role="tablist">
-        <li role="tab" aria-selected="true" class="grid">
-          <a href="#" class="focus:outline-none focus:ring-2 focus:ring-blue-800 flex items-center px-1.5 pb-5 font-semibold text-gray-900 border-b-4 border-blue-500 pt-7">
-        Privat
-      </a>
+        {% for item in menu.audience %}
+        <li role="tab" aria-selected="{{ 'true' if loop.index === 1 else 'false' }}" class="grid">
+          <a href="#" class="focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-800 flex items-center px-1.5 pb-5 text-gray-900 border-b-4 pt-7 {{ 'border-blue-500 font-semibold' if loop.index === 1 else 'border-transparent hover:border-gray-300/75 opacity-70' }}">
+            {{ item | replace('person', "") }}
+          </a>
         </li>
-        <li role="tab" aria-selected="false" class="grid">
-          <a href="#" class="focus:outline-none opacity-70 focus:ring-2 focus:ring-blue-800 flex items-center px-1.5 pb-5 border-b-4 pt-7 border-white/0 hover:border-gray-200">
-        Arbeidsgiver
-      </a>
-        </li>
-        <li role="tab" aria-selected="false" class="grid">
-          <a href="#" class="focus:outline-none opacity-70 focus:ring-2 focus:ring-blue-800 flex items-center px-1.5 pb-5 border-b-4 pt-7 border-white/0 hover:border-gray-200">
-        Samarbeidspartner
-      </a>
-        </li>
+        {% endfor %}
       </ul>
     </div>
 
     {# Menu Buttons #}
-    <div class="flex items-end gap-2 pt-2 pb-2 ml-auto">
-      <button class="flex flex-wrap items-center justify-center pl-2 pr-3 py-1.5 font-semibold min-w-[8ch] gap-1 text-blue-500 rounded md:px-3 xs:text-lg hover:ring-2 hover:ring-blue-800 focus:outline-none focus:ring-2 focus:ring-blue-800" x-on:click="notifyOpen = !notifyOpen, menuOpen = false" x-bind:class="notifyOpen && 'bg-deepblue-50'">
 
+    {% set menuButtonClasses = "flex flex-col xs:flex-row items-center justify-center pt-2 pb-2.5 px-3 leading-none font-semibold xs:gap-1 text-blue-500 xs:rounded md:px-3 xs:text-lg  hover:bg-deepblue-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-800" %}
+
+    <div class="flex items-end gap-2 ml-auto xs:py-2">
+      <button class="{{ menuButtonClasses }}" x-on:click="notifyOpen = !notifyOpen, menuOpen = false" x-bind:class="notifyOpen && 'bg-deepblue-50'">
         <span class="relative">
           {{ '/src/_includes/svg/notification.svg' | svgContents('w-7 h-7') | safe }}
           <span class="absolute block w-2 h-2 bg-red-400 rounded-full top-1 ring-2 ring-red-100/50 -left-1"></span>
         </span>
-        <span class="mt-px whitespace-nowrap">Varsel</span>
-
+        <span class="mt-px">Varsel</span>
       </button>
-      <button class="flex flex-wrap items-center justify-center px-2 py-1.5 font-semibold text-blue-500 rounded gap-x-2 md:pl-2 md:pr-3 xs:text-lg hover:ring-2 gap-1 hover:ring-blue-800 focus:outline-none focus:ring-2 focus:ring-blue-800" type="button" x-on:click="menuOpen = !menuOpen, notifyOpen = false" x-bind:class="menuOpen && 'bg-deepblue-50'">
+      <button class="{{ menuButtonClasses }}" type="button" x-on:click="menuOpen = !menuOpen, notifyOpen = false" x-bind:class="menuOpen && 'bg-deepblue-50'">
         <template x-if="!menuOpen">
           {{ '/src/_includes/svg/menusearch.svg' | svgContents('w-7 h-7 shrink-0 pointer-events-none') | safe }}
         </template>
         <template x-if="menuOpen">
           {{ '/src/_includes/svg/close.svg' | svgContents('w-7 h-7 shrink-0 pointer-events-none') | safe }}
         </template>
-        <span class="mt-px whitespace-nowrap">Meny</span>
+        <span class="mt-px">Meny</span>
       </button>
     </div>
   </nav>

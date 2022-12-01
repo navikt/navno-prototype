@@ -77,13 +77,14 @@
     class="min-h-full overflow-y-scroll overflow-x-hidden {{ bodyClass }}"
     x-data="{
       indexOpen: false,
+      audienceDropdownOpen: false,
       menuOpen: false,
       notifyOpen: false
     }">
 
-    <div class="font-mono text-3xl text-white bg-blue-700">
+    <div class="font-mono text-2xl text-white bg-blue-700 md:text-3xl">
       <div class="grid overflow-hidden transition-all duration-200 grid-cols-layout" x-bind:class="indexOpen ? 'max-h-[60vh]' : 'max-h-0'">
-        <ul class="grid py-8 divide-y divide-blue-300/25 col-feature">
+        <ul class="py-3 divide-y md:py-6 divide-blue-300/25 col-popout">
         {% for page in collections.template | sort(false, false, 'data.order') %}
           <li class="py-4">
             <a href="{{ page.url }}" class="hover:text-orange-300 hover:underline">

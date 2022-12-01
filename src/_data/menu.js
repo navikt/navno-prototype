@@ -1,4 +1,5 @@
 module.exports = {
+  audience: ["Privatperson", "Arbeidsgiver", "Samarbeidspartner"],
   areas: {
     title: "Områder",
     linkList: [
