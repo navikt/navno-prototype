@@ -250,11 +250,11 @@
       var(--navds-semantic-color-focus-inverted);
     --navds-shadow-focus: 0 0 0 3px var(--navds-semantic-color-focus);
 
-    --_layout-gap: clamp(1rem, 4vw, 3rem);
+    --_layout-gap: clamp(0.75rem, 0.5rem + 2vw, 6rem);
     --_layout-full: minmax(var(--_layout-gap), 1fr);
     --_layout-feature: minmax(0, 6.75rem);
     --_layout-popout: minmax(0, 7.125rem);
-    --_layout-content: min(56.25rem, 100% - var(--_layout-gap) * 2);
+    --_layout-content: min(56.25rem, 100% - (var(--_layout-gap) * 2));
   }
 
   p > a {
@@ -293,5 +293,10 @@
   }
   :where(.markdown) li + li {
     margin-block-start: 0.5rem;
+  }
+}
+@layer utilities {
+  .scrollbar-hidden::-webkit-scrollbar {
+    display: none;
   }
 }

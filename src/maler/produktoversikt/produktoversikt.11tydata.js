@@ -13,7 +13,7 @@ module.exports = {
     ],
   },
   category: {
-    title: "Velg type",
+    title: "Velg kategori",
     items: [
       "Alle",
       "Hjelpemiddel",

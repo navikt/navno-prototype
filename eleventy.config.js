@@ -19,10 +19,6 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.setDataDeepMerge(true);
 
-  eleventyConfig.addCollection("productEntry", function (collectionApi) {
-    return collectionApi.getFilteredByTag("productEntry");
-  });
-
   eleventyConfig.setServerOptions({
     enabled: true,
     showVersion: true,
@@ -39,6 +35,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter("markdown", function (value) {
     return new markdownIt({
       html: true,
+      linkify: true,
       typographer: true,
       quotes: "«»",
     }).render(value);

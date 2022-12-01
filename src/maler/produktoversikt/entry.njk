@@ -1,3 +1,17 @@
+---js
+{
+  pagination: {
+    data: "productEntries",
+    size: 1,
+    alias: "product"
+  },
+  eleventyComputed: {
+    title: "{{ product.title }}",
+    permalink: "/maler/produktoversikt/{{ product.title | slug }}.html"
+  }
+}
+---
+
 {% extends 'base.njk' %}
 
 {% block script %}
@@ -11,21 +25,22 @@
     <div class="grid grid-cols-layout">
       <div class="pt-12 pb-8 col-content">
         <a href="/maler/produktoversikt" class="font-semibold tracking-wide text-blue-500 uppercase hover:underline">Søknad og skjema fra A til Å</a>
-        <h1 class="mt-1 text-5xl font-semibold">{{ title | safe }}</h1>
+        <h1 class="mt-1 text-5xl font-semibold">{{ product.title | safe }}</h1>
         {% if ingress %}
         <div class="mt-4 text-lg max-w-prose">
-          <p class="mt-1 text-xl">{{ ingress | safe }}</p>
+          <p class="mt-1 text-xl">{{ product.ingress | safe }}</p>
         </div>
         {% endif %}
       </div>
     </div>
-    <div class="grid pt-10 pb-12 bg-deepblue-50 grid-cols-layout min-h-[40vh]">
-      <div class="text-lg markdown col-content">
-        {% if content %}
-          {{ content | markdown | safe }}
-        {% else %}
-          <p>Innhold mangler …</p>
-        {% endif %}
+
+    <div class="grid pb-12 bg-white grid-cols-layout min-h-[40vh]">
+      <div class="text-lg col-content">
+        <div class="max-w-prose markdown">
+          {{ product.contentBlocks | dump(2) | safe }}
+
+          {% include "partials/contentBlocks.njk" %}
+        </div>
       </div>
     </div>
   </main>

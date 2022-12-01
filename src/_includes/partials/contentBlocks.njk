@@ -1,0 +1,23 @@
+{% import "macros/button.njk" as button %}
+
+{% if product.contentBlocks %}
+  {% for block in product.contentBlocks %}
+
+    {% if block.type === 'markdown' %}
+      {% for item in block.data %}
+        {{ item | markdown | safe }}
+      {% endfor %}
+    {% endif %}
+
+    {% if block.type === 'actions' %}
+      <div class="flex flex-wrap items-baseline gap-2">
+        {% for item in block.data %}
+          {{ button.button(item.text, item.variant) }}
+        {% endfor %}
+      </div>
+    {% endif %}
+
+  {% endfor %}
+{% else %}
+  <p>Innhold mangler …</p>
+{% endif %}

@@ -72,7 +72,7 @@
     {% block styles %}{% endblock %}
     {% block script %}{% endblock %}
   </head>
-  <body class="min-h-full overflow-y-scroll {{ bodyClass }}" x-data="{ menuOpen: false, notifyOpen: false, toggleScroll: false }">
+  <body class="min-h-full overflow-y-scroll overflow-x-hidden {{ bodyClass }}" x-data="{ menuOpen: false, notifyOpen: false, toggleScroll: false }">
     {% block content %}{% endblock %}
 
     {% if page.url != "/" %}
