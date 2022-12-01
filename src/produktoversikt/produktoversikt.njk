@@ -22,70 +22,70 @@ bodyClass: ''
 
     {% set chipClasses = "inline-flex cursor-pointer px-4 pt-1.5 pb-1.5 leading-tight text-base bg-white ring-1 ring-gray-200/25 rounded-full hover:bg-orange-100" %}
 
-    <div class="grid py-8 bg-gray-100 grid-cols-layout md:pt-12 md:pb-20">
-      <div class="grid items-start md:grid-cols-12 col-popout sm:max-w-prose sm:mx-auto md:mx-0 md:max-w-none">
-        <aside class="md:col-span-4 md:sticky md:top-8">
-          <div class="">
-            <h2 class="font-semibold md:text-xl">{{ domain.title | safe }}</h2>
-            <ul class="flex flex-wrap items-start mt-3 gap-x-2 gap-y-3">
-              {% for item in domain.items %}
-                <li>
-                  <input type="radio" class="absolute opacity-0 pointer-events-none peer/domain" name="productDomain" value="{{ item }}" id="productDomain-{{ item | lower }}" {{ 'checked' if loop.first }} />
-                  <label class="{{ chipClasses }} peer-checked/domain:bg-blue-600 peer-checked/domain:text-white" for="productDomain-{{ item | lower }}">{{ item }}</label>
-                </li>
-              {% endfor %}
-            </ul>
+    <div class="grid pt-8 pb-20 bg-gray-100 grid-cols-layout md:pt-12">
+      <aside class="grid items-start gap-8 sm:mx-auto col-popout sm:max-w-prose md:max-w-none md:mx-0">
+
+        <div class="">
+          <h2 class="font-semibold md:text-xl">{{ category.title | safe }}</h2>
+          <ul class="flex flex-wrap items-start mt-3 gap-x-2 gap-y-3">
+            {% for item in category.items %}
+              <li>
+                <input type="radio" class="absolute opacity-0 pointer-events-none peer/category" name="productType" value="{{ item }}" id="productType-{{ item | lower }}" {{ '' if loop.first }} />
+                <label class="{{ chipClasses }} peer-checked/category:bg-blue-600 peer-checked/category:text-white" for="productType-{{ item | lower }}">{{ item }}</label>
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+
+        <div class="">
+          <h2 class="font-semibold md:text-xl">{{ domain.title | safe }}</h2>
+          <ul class="flex flex-wrap items-start mt-3 gap-x-2 gap-y-3">
+            {% for item in domain.items %}
+              <li>
+                <input type="radio" class="absolute opacity-0 pointer-events-none peer/domain" name="productDomain" value="{{ item }}" id="productDomain-{{ item | lower }}" {{ '' if loop.first }} />
+                <label class="{{ chipClasses }} peer-checked/domain:bg-blue-600 peer-checked/domain:text-white" for="productDomain-{{ item | lower }}">{{ item }}</label>
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+
+
+      </aside>
+
+
+      <div class="sm:mx-auto md:mx-0 sm:max-w-prose md:max-w-none col-popout">
+
+        <div class="mt-12 md:mt-0">
+          <div>
+            <label for="soook" class="font-semibold">Søk</label>
+            <input id="soook" type="text" class="w-full px-4 py-3 bg-white border rounded-lg shadow-inner focus:outline-none focus:ring focus:ring-gray-600 border-gray-300/50">
           </div>
+        </div>
 
-          <div class="mt-12">
-            <h2 class="font-semibold md:text-xl">{{ category.title | safe }}</h2>
-            <ul class="flex flex-wrap items-start mt-3 gap-x-2 gap-y-3">
-              {% for item in category.items %}
-                <li>
-                  <input type="radio" class="absolute opacity-0 pointer-events-none peer/category" name="productType" value="{{ item }}" id="productType-{{ item | lower }}" {{ 'checked' if loop.first }} />
-                  <label class="{{ chipClasses }} peer-checked/category:bg-blue-600 peer-checked/category:text-white" for="productType-{{ item | lower }}">{{ item }}</label>
-                </li>
-              {% endfor %}
-            </ul>
-          </div>
-
-        </aside>
-
-
-        <div class="hidden md:col-start-6 md:col-end-13">
-
-          <div class="mt-12 md:mt-0">
-            <div>
-              <label for="soook" class="font-semibold">Søk</label>
-              <input id="soook" type="text" class="w-full px-4 py-3 bg-white border rounded-lg shadow-inner focus:outline-none focus:ring focus:ring-gray-600 border-gray-300/50">
-            </div>
-          </div>
-
-          <div class="grid mt-6 bg-white divide-y divide-gray-200 rounded-lg shadow">
-            {% for product in productEntries %}
-              <div x-data="{ expanded: {{ product.expanded or 'false' }} }" class="focus-within:z-10">
-                <button x-on:click="expanded = !expanded" class="flex items-center w-full gap-4 px-4 py-4 text-xl font-semibold text-left hover:bg-gray-50/50 group focus:outline-none focus-visible:ring focus-visible:ring-gray-600 focus-visible:rounded" x-bind:aria-expanded="expanded">
-                  {% if product.icon %}
-                    {{ product.icon | svgContents('w-12 h-12') | safe }}
-                  {% else %}
-                  <span class="flex-none block w-12 h-12 rounded-full bg-green-200/25"></span>
-                  {% endif %}
-                  <span class="flex-1 leading-tight">{{ product.title | safe }}</span>
-                  {{ '/src/_includes/svg/chevron-down.svg' | svgContents('mt-1 mr-1 w-5 h-5 opacity-60 group-aria-expanded:rotate-180 transition duration-100') | safe }}
-                </button>
-                <div class="relative px-4 pt-2 pb-12" x-bind:hidden="!expanded">
-                  <div class="pt-4 xs:px-14 markdown">
-                    {% include "partials/contentBlocks.njk" %}
-                  </div>
-                  <div class="pt-6 text-center px-14">
-                    <a class="text-sm text-blue-500 hover:underline hover:text-blue-600" href="/maler/produktoversikt/{{ product.title | slug }}.html">(Vis som egen side)</a>
-                  </div>
+        <div class="grid mt-6 bg-white divide-y divide-gray-200 rounded-lg shadow">
+          {% for product in productEntries %}
+            <div x-data="{ expanded: {{ product.expanded or 'false' }} }" class="focus-within:z-10">
+              <button x-on:click="expanded = !expanded" class="flex items-center w-full gap-4 px-4 py-4 text-xl font-semibold text-left hover:bg-gray-50/50 group focus:outline-none focus-visible:ring focus-visible:ring-gray-600 focus-visible:rounded" x-bind:aria-expanded="expanded">
+                {% if product.icon %}
+                  {{ product.icon | svgContents('w-12 h-12') | safe }}
+                {% else %}
+                <span class="flex-none block w-12 h-12 rounded-full bg-green-200/25"></span>
+                {% endif %}
+                <span class="flex-1 leading-tight">{{ product.title | safe }}</span>
+                {{ '/src/_includes/svg/chevron-down.svg' | svgContents('mt-1 mr-1 w-5 h-5 opacity-60 group-aria-expanded:rotate-180 transition duration-100') | safe }}
+              </button>
+              <div class="relative px-4 pt-2 pb-12" x-bind:hidden="!expanded">
+                <div class="pt-4 xs:px-14 markdown">
+                  {% include "partials/contentBlocks.njk" %}
+                </div>
+                <div class="pt-6 text-center px-14">
+                  <a class="text-sm text-blue-500 hover:underline hover:text-blue-600" href="/maler/produktoversikt/{{ product.title | slug }}.html">(Vis som egen side)</a>
                 </div>
               </div>
-            {% endfor %}
-          </div>
-
+            </div>
+          {% endfor %}
         </div>
+
       </div>
     </div>
   </main>
