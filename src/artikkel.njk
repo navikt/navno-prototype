@@ -8,16 +8,8 @@ bodyClass: 'bg-gray-100'
 ---
 {% extends 'base.njk' %}
 
-{% block styles %}{% endblock %}
-{% block script %}
-  <script src="/main.min.js" type="text/javascript" defer></script>
-{% endblock %}
-
 {% block content %}
-  {% include "partials/header.njk" %}
-
   <main class="min-h-[61vh] text-lg text-gray-800">
-
     <div class="grid pt-8 pb-4 bg-white grid-cols-layout" x-data="{ bgGradient: false }" x-on:click="bgGradient = !bgGradient" x-bind:class="bgGradient && 'bg-gradient-to-b from-white to-gray-100'">
       <div class="col-content">
         <p class="flex items-center gap-2 text-purple-600">
@@ -121,13 +113,11 @@ bodyClass: 'bg-gray-100'
               <p class="mt-7"></p>
             </div>
           </aside>
-
         </div>
       </div>
     </div>
-
   </main>
-
-  {% include "partials/footer.njk" %}
-
 {% endblock %}
+
+{% block styles %}{% endblock %}
+{% block script %}{% endblock %}

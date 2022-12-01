@@ -1,18 +1,16 @@
 <header class="relative z-40 isolate grid grid-cols-layout shadow-border bg-white {% if page.fileSlug === 'forsiden' %}shadow{% endif %}">
 
-  {# <nav id="site-skiplinks" class="absolute flex flex-col items-center p-1" aria-label="Hopp til innhold">
-<a href="#" class="sr-only">Hovedmeny</a>
-<a href="#" class="sr-only">Søk</a>
-<a href="#maincontent" class="sr-only">Hovedinnhold</a>
-nav> #}
-
   <nav class="flex items-center w-full gap-4 col-feature">
 
     {# Logo #}
-    <a href="/maler/forside" class="text-[#C30000] hover:text-[#DE2E2E] block focus:outline-none focus:ring-2 focus:ring-blue-800 py-2.5 px-2 -mx-2 rounded-sm">
+    {# <a href="/maler/forside" class="text-[#C30000] hover:text-[#DE2E2E] block focus:outline-none focus:ring-2 focus:ring-blue-800 py-2.5 px-2 -mx-2 rounded-sm">
       {{ '/src/_includes/svg/logo.svg' | svgContents('w-16 h-5') | safe }}
       <span class="sr-only">NAV</span>
-    </a>
+    </a> #}
+    <button x-on:click="indexOpen = !indexOpen" class="text-[#C30000] hover:text-[#DE2E2E] block focus:outline-none focus:ring-2 focus:ring-blue-800 py-2.5 px-2 -mx-2 rounded-sm">
+      {{ '/src/_includes/svg/logo.svg' | svgContents('w-16 h-5') | safe }}
+      <span class="sr-only">NAV</span>
+    </button>
 
     {# Sectors #}
     <div class="self-stretch hidden px-6 md:grid">

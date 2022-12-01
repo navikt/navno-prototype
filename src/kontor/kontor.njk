@@ -8,15 +8,7 @@ bodyClass: 'bg-white'
 ---
 {% extends 'base.njk' %}
 
-{% block styles %}{% endblock %}
-
-{% block script %}
-  <script src="/main.min.js" type="text/javascript" defer></script>
-{% endblock %}
-
 {% block content %}
-  {% include "partials/header.njk" %}
-
   <main class="min-h-[61vh] text-lg text-gray-800">
 
     <div class="grid pt-8 pb-4 grid-cols-layout ">
@@ -100,9 +92,6 @@ bodyClass: 'bg-white'
     </div>
 
   </main>
-
-  {% include "partials/footer.njk" %}
-
 {% endblock %}
 
 {% macro iconBox(box) %}
@@ -118,3 +107,6 @@ bodyClass: 'bg-white'
     </div>
   </div>
 {% endmacro %}
+
+{% block styles %}{% endblock %}
+{% block script %}{% endblock %}
