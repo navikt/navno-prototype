@@ -219,7 +219,7 @@ module.exports = {
         },
       },
       maxWidth: {
-        prose: "67ch",
+        prose: "76ch",
       },
       transitionProperty: {
         custom:

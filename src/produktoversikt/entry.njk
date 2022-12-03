@@ -1,13 +1,17 @@
 ---js
 {
   pagination: {
-    data: "productEntries",
+    data: "products",
     size: 1,
-    alias: "product"
+    alias: "product",
+    before: function(fullData) {
+      const oneData = fullData.at(88)
+      return [oneData]
+    }
   },
   eleventyComputed: {
     title: "{{ product.title }}",
-    permalink: "/maler/produktoversikt/{{ product.title | slug }}.html"
+    permalink: "/produktoversikt/{{ product.title | slug }}.html"
   }
 }
 ---
@@ -19,7 +23,7 @@
   <main class="min-h-[50vh]">
     <div class="grid grid-cols-layout">
       <div class="pt-12 pb-8 col-content">
-        <a href="/maler/produktoversikt" class="font-semibold tracking-wide text-blue-500 uppercase hover:underline">Søknad og skjema fra A til Å</a>
+        <a href="/produktoversikt" class="font-semibold tracking-wide text-blue-500 uppercase hover:underline">Søknad og skjema fra A til Å</a>
         <h1 class="mt-1 text-5xl font-semibold">{{ product.title | safe }}</h1>
         {% if ingress %}
         <div class="mt-4 text-lg max-w-prose">
@@ -32,8 +36,6 @@
     <div class="grid pb-12 bg-white grid-cols-layout min-h-[40vh]">
       <div class="text-lg col-content">
         <div class="max-w-prose markdown">
-          {{ product.contentBlocks | dump(2) | safe }}
-
           {% include "partials/contentBlocks.njk" %}
         </div>
       </div>

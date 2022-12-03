@@ -9,87 +9,109 @@ bodyClass: ''
 {% extends 'base.njk' %}
 
 {% block content %}
-  <main class="text-lg text-gray-900 place-self-stretch">
+  <main
+    class="text-lg text-gray-900 place-self-stretch"
+    x-data="{
+      categoryFilter: 'Alle',
+      domainFilter: 'Alle',
+      show_item(el) {
+        return (
+          (this.categoryFilter === 'Alle'
+          || el.dataset.category.includes(this.categoryFilter))
+          && (this.domainFilter === 'Alle'
+          || el.dataset.domain.includes(this.domainFilter))
+        )
+      }
+    }"
+  >
     <div class="grid py-8 bg-white grid-cols-layout md:py-12">
-      <div class="relative col-popout sm:mx-auto md:mx-0 sm:max-w-prose md:max-w-none">
+      <div class="relative col-popout">
+
         <h1 class="text-3xl font-semibold leading-tight md:text-5xl md:leading-tight">Søknad og skjema fra A&nbsp;til&nbsp;Å</h1>
         <p class="mt-3 md:mt-6 max-w-prose">Pengestøtter og tjenester fra NAV for privatpersoner. Du kan søke eller sortere på område og kategori.</p>
-        <div class="absolute bottom-0 hidden right-12 md:block">
+        <div class="absolute hidden top-3 right-12 md:block">
           {{ '/src/_includes/svg/pictogram-support.svg' | svgContents('w-32 h-32') | safe }}
         </div>
+
+        {# <div class="fixed p-3 text-white bg-red-500/90 left-4 bottom-4">
+          <div>Category: <span x-text="categoryFilter" /></div>
+          <div>Domain: <span x-text="domainFilter" /></div>
+        </div> #}
+
+        <aside class="grid items-start gap-8 mt-8">
+          {% set labelClasses = "inline-flex cursor-pointer px-4 pt-1.5 pb-1.5 leading-tight text-base bg-gray-100 ring-1 ring-gray-200/25 rounded-full hover:bg-orange-100" %}
+          {% set inputClasses = "absolute opacity-0 pointer-events-none" %}
+
+          {% for group in filters | dictsort %}
+            <div class="">
+              <h2 class="text-sm tracking-widest uppercase">{{ group[1].title | safe }}</h2>
+
+              <ul class="flex flex-wrap items-start mt-3 gap-x-2 gap-y-3">
+                  <li>
+                    <input
+                      type="radio"
+                      x-model="{{ group[0] }}Filter"
+                      class="{{ inputClasses }}
+                        {{ 'peer/category' if group[0] === 'category' }}
+                        {{ 'peer/domain' if group[0] === 'domain' }}"
+                      name="productType-{{ group[0] | slug }}"
+                      value="Alle"
+                      id="productType-{{ group[0] | slug }}-all"
+                      checked="checked"
+                    />
+                    <label
+                      class="{{ labelClasses }}
+                      {{ 'peer-checked/category:bg-blue-600 peer-checked/category:text-white' if group[0] === 'category' }}
+                      {{ 'peer-checked/domain:bg-blue-600 peer-checked/domain:text-white' if group[0] === 'domain' }}" for="productType-{{ group[0] | slug }}-all"
+                    >
+                      Alle
+                    </label>
+                  </li>
+                {% for item in group[1].items %}
+                  <li>
+                    <input
+                      type="radio"
+                      x-model="{{ group[0] }}Filter"
+                      class="{{ inputClasses }}
+                        {{ 'peer/category' if group[0] === 'category' }}
+                        {{ 'peer/domain' if group[0] === 'domain' }}"
+                      name="productType-{{ group[0] | slug }}"
+                      value="{{ item }}"
+                      id="productType-{{ item | lower }}"
+                    />
+                    <label
+                      class="{{ labelClasses }}
+                      {{ 'peer-checked/category:bg-blue-600 peer-checked/category:text-white' if group[0] === 'category' }}
+                      {{ 'peer-checked/domain:bg-blue-600 peer-checked/domain:text-white' if group[0] === 'domain' }}" for="productType-{{ item | lower }}"
+                    >
+                      {{ item }}
+                    </label>
+                  </li>
+                {% endfor %}
+              </ul>
+            </div>
+          {% endfor %}
+        </aside>
       </div>
     </div>
 
-    {% set chipClasses = "inline-flex cursor-pointer px-4 pt-1.5 pb-1.5 leading-tight text-base bg-white ring-1 ring-gray-200/25 rounded-full hover:bg-orange-100" %}
-
     <div class="grid pt-8 pb-20 bg-gray-100 grid-cols-layout md:pt-12">
-      <aside class="grid items-start gap-8 sm:mx-auto col-popout sm:max-w-prose md:max-w-none md:mx-0">
+      <div class="col-popout">
 
-        <div class="">
-          <h2 class="font-semibold md:text-xl">{{ category.title | safe }}</h2>
-          <ul class="flex flex-wrap items-start mt-3 gap-x-2 gap-y-3">
-            {% for item in category.items %}
-              <li>
-                <input type="radio" class="absolute opacity-0 pointer-events-none peer/category" name="productType" value="{{ item }}" id="productType-{{ item | lower }}" {{ '' if loop.first }} />
-                <label class="{{ chipClasses }} peer-checked/category:bg-blue-600 peer-checked/category:text-white" for="productType-{{ item | lower }}">{{ item }}</label>
-              </li>
-            {% endfor %}
-          </ul>
+        <div class="hidden">
+          <label for="fiiilter" class="font-semibold">Søk</label>
+          <input id="fiiilter" type="text" class="w-full px-4 py-3 bg-white border rounded-lg shadow-inner focus:outline-none focus:ring focus:ring-gray-600 border-gray-300/50">
         </div>
 
-        <div class="">
-          <h2 class="font-semibold md:text-xl">{{ domain.title | safe }}</h2>
-          <ul class="flex flex-wrap items-start mt-3 gap-x-2 gap-y-3">
-            {% for item in domain.items %}
-              <li>
-                <input type="radio" class="absolute opacity-0 pointer-events-none peer/domain" name="productDomain" value="{{ item }}" id="productDomain-{{ item | lower }}" {{ '' if loop.first }} />
-                <label class="{{ chipClasses }} peer-checked/domain:bg-blue-600 peer-checked/domain:text-white" for="productDomain-{{ item | lower }}">{{ item }}</label>
-              </li>
-            {% endfor %}
-          </ul>
-        </div>
-
-
-      </aside>
-
-
-      <div class="sm:mx-auto md:mx-0 sm:max-w-prose md:max-w-none col-popout">
-
-        <div class="mt-12 md:mt-0">
-          <div>
-            <label for="soook" class="font-semibold">Søk</label>
-            <input id="soook" type="text" class="w-full px-4 py-3 bg-white border rounded-lg shadow-inner focus:outline-none focus:ring focus:ring-gray-600 border-gray-300/50">
-          </div>
-        </div>
-
-        <div class="grid mt-6 bg-white divide-y divide-gray-200 rounded-lg shadow">
-          {% for product in productEntries %}
-            <div x-data="{ expanded: {{ product.expanded or 'false' }} }" class="focus-within:z-10">
-              <button x-on:click="expanded = !expanded" class="flex items-center w-full gap-4 px-4 py-4 text-xl font-semibold text-left hover:bg-gray-50/50 group focus:outline-none focus-visible:ring focus-visible:ring-gray-600 focus-visible:rounded" x-bind:aria-expanded="expanded">
-                {% if product.icon %}
-                  {{ product.icon | svgContents('w-12 h-12') | safe }}
-                {% else %}
-                <span class="flex-none block w-12 h-12 rounded-full bg-green-200/25"></span>
-                {% endif %}
-                <span class="flex-1 leading-tight">{{ product.title | safe }}</span>
-                {{ '/src/_includes/svg/chevron-down.svg' | svgContents('mt-1 mr-1 w-5 h-5 opacity-60 group-aria-expanded:rotate-180 transition duration-100') | safe }}
-              </button>
-              <div class="relative px-4 pt-2 pb-12" x-bind:hidden="!expanded">
-                <div class="pt-4 xs:px-14 markdown">
-                  {% include "partials/contentBlocks.njk" %}
-                </div>
-                <div class="pt-6 text-center px-14">
-                  <a class="text-sm text-blue-500 hover:underline hover:text-blue-600" href="/maler/produktoversikt/{{ product.title | slug }}.html">(Vis som egen side)</a>
-                </div>
-              </div>
-            </div>
+        <h2 class="text-2xl"><strong>{{ products.length }} søknader og skjema</strong>, ingen avgrensning er valgt</h2>
+        <div class="grid mt-3 bg-white divide-y divide-gray-200 rounded-lg shadow">
+          {% for product in products %}
+            {% include "partials/product-item.njk" %}
           {% endfor %}
+
         </div>
 
       </div>
     </div>
   </main>
 {% endblock %}
-
-{% block styles %}{% endblock %}
-{% block script %}{% endblock %}

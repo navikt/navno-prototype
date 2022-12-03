@@ -53,7 +53,8 @@ module.exports = function (eleventyConfig) {
   });
 
   eleventyConfig.addTransform("htmlmin", function (content, outputPath) {
-    if (outputPath && outputPath.endsWith(".html")) {
+    const env = process.env.ELEVENTY_ENV;
+    if (env === "production" && outputPath && outputPath.endsWith(".html")) {
       let minified = htmlmin.minify(content, {
         useShortDoctype: true,
         removeComments: true,
