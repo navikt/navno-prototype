@@ -20,16 +20,10 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.setDataDeepMerge(true);
 
   eleventyConfig.setServerOptions({
-    enabled: true,
+    enabled: false,
     showVersion: true,
     port: 8888,
-    middleware: [
-      // function compression(req, res, next) {
-      //   res.writeHead(200, { "content-type": "text/html" });
-      //   res.end();
-      //   next();
-      // },
-    ],
+    middleware: [compression()],
   });
 
   eleventyConfig.addFilter("markdown", function (value) {
