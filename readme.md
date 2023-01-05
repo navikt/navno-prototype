@@ -1,9 +1,13 @@
-# nav.no frontpage prototype
+# Prototype for nav.no
 
-A simple prototype of the nav.no frontpage, using Eleventy with Tailwind CSS and Alpine JS.
+Prosjektet bruker **Eleventy** som statisk sidegenerator, med **Tailwind CSS** for styling og **Alpine JS** for interaktivitet.
 
-## NPM Commands
+---
 
-`npm run dev` to start dev server.
+### Utvikling
 
-`npm run build` to run build once.
+`npm run dev` for å starte utviklingsmiljø.
+
+### Bygging
+
+`npm run build` for å bygge.

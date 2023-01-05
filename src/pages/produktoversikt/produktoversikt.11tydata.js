@@ -1,6 +1,6 @@
 module.exports = {
   filters: {
-    category: {
+    taxonomy: {
       title: "Velg kategori",
       items: [
         "Hjelpemiddel",
@@ -11,7 +11,7 @@ module.exports = {
         "Forsikring",
       ],
     },
-    domain: {
+    area: {
       title: "Velg område",
       items: [
         "Arbeid",
@@ -28,8 +28,8 @@ module.exports = {
     { title: "Ansiktsprotese" },
     {
       title: "Arbeidsavklaringspenger (AAP)",
-      category: ["Pengestøtte"],
-      domain: ["Arbeid"],
+      taxonomy: ["Pengestøtte"],
+      area: ["Arbeid"],
     },
     { title: "Arbeidsforberedende trening" },
     { title: "Arbeids- og utdanningsreiser" },
@@ -119,8 +119,8 @@ module.exports = {
     { title: "Opplæring" },
     {
       title: "Opplæringspenger",
-      category: ["Pengestøtte"],
-      domain: ["Arbeid"],
+      taxonomy: ["Pengestøtte"],
+      area: ["Arbeid"],
     },
     { title: "Opplysning, råd og veiledning" },
     { title: "Ortopediske sko" },
@@ -128,8 +128,8 @@ module.exports = {
     {
       title: "Overgangsstønad for enslig mor eller far",
       icon: "/src/_includes/svg/pictogram-single-parent.svg",
-      category: ["Pengestøtte"],
-      domain: ["Familie og barn"],
+      taxonomy: ["Pengestøtte"],
+      area: ["Familie og barn"],
       ingress:
         "Sikrer deg inntekt i inntil 3 år når du har minst 60 prosent av den daglige omsorgen for barn under 8 år.",
       contentBlocks: [

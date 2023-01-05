@@ -1,18 +1,18 @@
 <div
   x-data="{ expanded: {{ product.expanded or 'false' }} }"
-  class="focus-within:z-10"
+  class="bg-white rounded shadow focus-within:z-10"
   x-show="show_item($el)"
-  data-category="{{ product.category | list if product.category }}"
-  data-domain="{{ product.domain | list if product.domain }}"
+  data-taxonomy="{{ product.taxonomy | list if product.taxonomy }}"
+  data-area="{{ product.area | list if product.area }}"
 >
-  <button x-on:click="expanded = !expanded" class="flex items-center w-full gap-4 px-4 py-4 text-xl font-semibold text-left hover:bg-gray-50/50 group focus:outline-none focus-visible:ring focus-visible:ring-gray-600 focus-visible:rounded" x-bind:aria-expanded="expanded">
+  <button x-on:click="expanded = !expanded" class="flex items-center w-full gap-4 px-4 py-4 text-xl font-semibold text-left group hover:bg-deepblue-100 focus:outline-none focus-visible:ring focus-visible:ring-gray-600 focus-visible:rounded" x-bind:aria-expanded="expanded">
     {% if product.icon %}
       {{ product.icon | svgContents('w-12 h-12') | safe }}
     {% else %}
-    <span class="flex-none block w-12 h-12 rounded-full bg-green-200/25"></span>
+    <span class="flex-none block w-12 h-12 rounded-full bg-deepblue-100/50 group-hover:bg-deepblue-200/50"></span>
     {% endif %}
     <span class="flex-1 leading-tight">{{ product.title | safe }}</span>
-    {{ '/src/_includes/svg/chevron-down.svg' | svgContents('mt-1 mr-1 w-5 h-5 opacity-60 group-aria-expanded:rotate-180 transition duration-100') | safe }}
+    {{ '/src/_includes/svg/chevron-down.svg' | svgContents('mr-1.5 w-5 h-5 opacity-50 group-aria-expanded:rotate-180 transition duration-100') | safe }}
   </button>
   <div class="relative px-4 pt-2 pb-12" x-bind:hidden="!expanded">
     <div class="pt-4 xs:px-14 markdown">

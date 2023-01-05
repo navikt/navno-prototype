@@ -1,0 +1,992 @@
+<!DOCTYPE html>
+<html lang="no" class="h-full antialiased leading-normal text-gray-900 bg-white font-source-sans">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="robots" content="noindex" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>
+      Kontor
+      &ndash;
+      NAV Prototype
+    </title>
+    <meta name="description" content="..." />
+
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2299%22>🧑‍💻</text></svg>" />
+    <link rel="preconnect" href="https://marvelous-biscochitos-50396c.netlify.app" crossorigin />
+    <link rel="preload" href="/assets/fonts/Source_Sans_3-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="/assets/main.min.css" type="text/css" />
+
+    
+    <script src="/assets/main.min.js" type="text/javascript" defer></script>
+    
+  </head>
+  <body
+    class="min-h-full overflow-y-scroll overflow-x-hidden bg-white"
+    x-data="{
+      indexOpen: false,
+      audienceDropdownOpen: false,
+      menuOpen: false,
+      notifyOpen: false
+    }">
+
+    <div class="font-mono text-2xl text-white bg-blue-700 md:text-3xl">
+      <div class="grid overflow-hidden transition-all duration-200 grid-cols-layout" x-bind:class="indexOpen ? 'max-h-[60vh]' : 'max-h-0'">
+        <ul class="py-3 divide-y md:py-6 divide-blue-300/25 col-popout">
+        
+          <li class="py-4">
+            <a href="/" class="hover:text-orange-300 hover:underline decoration-from-font underline-offset-4">
+              <span class="w-5">01</span>
+            Forside
+            </a>
+          </li>
+        
+          <li class="py-4">
+            <a href="/artikkel/" class="hover:text-orange-300 hover:underline decoration-from-font underline-offset-4">
+              <span class="w-5">02</span>
+            Artikkel
+            </a>
+          </li>
+        
+          <li class="py-4">
+            <a href="/kontor/" class="hover:text-orange-300 hover:underline decoration-from-font underline-offset-4">
+              <span class="w-5">03</span>
+            Kontor
+            </a>
+          </li>
+        
+          <li class="py-4">
+            <a href="/produktoversikt/" class="hover:text-orange-300 hover:underline decoration-from-font underline-offset-4">
+              <span class="w-5">04</span>
+            Produkt&shy;oversikt
+            </a>
+          </li>
+        
+          <li class="py-4">
+            <a href="/soknad/" class="hover:text-orange-300 hover:underline decoration-from-font underline-offset-4">
+              <span class="w-5">05</span>
+            Søknad
+            </a>
+          </li>
+        
+          <li class="py-4">
+            <a href="/tom/" class="hover:text-orange-300 hover:underline decoration-from-font underline-offset-4">
+              <span class="w-5">06</span>
+            Tom side
+            </a>
+          </li>
+        
+        </ul>
+      </div>
+    </div>
+    <header class="relative z-40 isolate grid grid-cols-layout shadow-border bg-white " >
+
+  <div class="relative z-10 grid justify-center bg-gray-100 xs:hidden col-full">
+    <button class="flex items-center justify-center gap-2 px-4 py-2 focus:outline-none focus-visible:text-white focus-visible:bg-blue-500" x-on:click="audienceDropdownOpen = !audienceDropdownOpen" x-on:click.outside="audienceDropdownOpen = false">
+      <span>Privatperson</span>
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" class="w-4 h-4">
+  <path fill="currentColor" fill-rule="evenodd" d="M12 17.4 4.3 9.7l1.4-1.4 6.3 6.3 6.3-6.3 1.4 1.4-7.7 7.7Z" clip-rule="evenodd"/>
+</svg>
+    </button>
+    <div class="absolute px-4 mt-px -translate-x-1/2 left-1/2 top-full">
+      <ul class="overflow-hidden text-gray-900 bg-white divide-y divide-gray-300 rounded shadow-xl max-w-max ring-1 ring-gray-200" role="tablist" x-show="audienceDropdownOpen">
+        
+        <li role="tab" aria-selected="true" class="grid">
+          <a href="#" class="py-2 px-3 border-l-4 hover:bg-gray-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-800 border-blue-500">
+            Privatperson
+          </a>
+        </li>
+        
+        <li role="tab" aria-selected="false" class="grid">
+          <a href="#" class="py-2 px-3 border-l-4 hover:bg-gray-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-800 border-transparent">
+            Arbeidsgiver
+          </a>
+        </li>
+        
+        <li role="tab" aria-selected="false" class="grid">
+          <a href="#" class="py-2 px-3 border-l-4 hover:bg-gray-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-800 border-transparent">
+            Samarbeidspartner
+          </a>
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  <nav class="flex items-center w-full gap-4 col-feature">
+    
+    <button x-on:click="indexOpen = !indexOpen" class="text-[#C30000] hover:text-[#DE2E2E] block focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-800 py-2.5 px-2 -mx-2 rounded-sm">
+      <svg width="64" height="20" viewBox="0 0 64 20" fill="none" aria-hidden="true" focusable="false" role="img" class="w-[72px] h-auto"><path fill-rule="evenodd" clip-rule="evenodd" d="M63.48.52h-6.66s-.459 0-.621.406l-3.685 11.287L48.832.926c-.163-.405-.624-.405-.624-.405H35.404a.514.514 0 00-.51.507v3.833c0-3.04-3.233-4.34-5.127-4.34-4.24 0-7.078 2.794-7.962 7.043-.048-2.819-.282-3.829-1.041-4.863-.349-.507-.852-.932-1.4-1.285-1.13-.662-2.145-.895-4.324-.895h-2.56s-.462 0-.625.405L9.526 6.7V1.028A.512.512 0 009.02.521H3.097s-.457 0-.624.405L.053 6.93s-.242.6.31.6H2.64v11.44c0 .284.223.51.508.51h5.87a.509.509 0 00.508-.51V7.53h2.289c1.313 0 1.59.036 2.101.274.308.117.585.352.737.623.31.583.387 1.283.387 3.348v7.195c0 .284.228.51.51.51h5.626s.636 0 .887-.63l1.247-3.083c1.658 2.324 4.387 3.712 7.779 3.712h.741s.64 0 .893-.628l2.172-5.381v5.5a.51.51 0 00.51.51h5.743s.634 0 .888-.63c0 0 2.297-5.705 2.306-5.748h.004c.088-.475-.511-.475-.511-.475h-2.05V2.836l6.45 16.015c.251.628.886.628.886.628h6.786s.638 0 .89-.628l7.151-17.716c.247-.614-.469-.614-.469-.614zM34.893 12.628h-3.858a2.784 2.784 0 110-5.57h1.079a2.788 2.788 0 012.78 2.787v2.783z" fill="currentColor"/></svg>
+      <span class="sr-only">NAV</span>
+    </button>
+
+    
+    <div class="relative hidden px-4 md:px-5 md:self-stretch xs:grid">
+      <button class="flex items-center self-center justify-center gap-4 py-2 pl-3 pr-2 border border-gray-200 rounded hover:bg-deepblue-100 focus:outline-none md:hidden" x-on:click="audienceDropdownOpen = !audienceDropdownOpen">
+        <span>Privatperson</span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" class="w-4 h-4">
+  <path fill="currentColor" fill-rule="evenodd" d="M12 17.4 4.3 9.7l1.4-1.4 6.3 6.3 6.3-6.3 1.4 1.4-7.7 7.7Z" clip-rule="evenodd"/>
+</svg>
+      </button>
+      <div class="xs:absolute md:static xs:top-full xs:left-0">
+      <ul class="justify-center overflow-hidden text-lg bg-white border border-gray-200 divide-y divide-gray-200 rounded shadow-lg md:rounded-none md:bg-transparent md:shadow-none md:border-0 md:divide-y-0 md:gap-4 md:flex" role="tablist" x-bind:class="audienceDropdownOpen ? 'grid' : 'hidden md:flex'">
+        
+        <li role="tab" aria-selected="true" class="grid">
+          <a href="#" class="focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-800 flex items-center py-2 px-3 md:px-0.5 md:pb-5 text-gray-900 border-l-4 md:border-l-0 md:border-b-4 md:pt-6 border-blue-500 font-semibold">
+            Privat
+          </a>
+        </li>
+        
+        <li role="tab" aria-selected="false" class="grid">
+          <a href="#" class="focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-800 flex items-center py-2 px-3 md:px-0.5 md:pb-5 text-gray-900 border-l-4 md:border-l-0 md:border-b-4 md:pt-6 border-transparent hover:border-gray-300/75 opacity-70">
+            Arbeidsgiver
+          </a>
+        </li>
+        
+        <li role="tab" aria-selected="false" class="grid">
+          <a href="#" class="focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-800 flex items-center py-2 px-3 md:px-0.5 md:pb-5 text-gray-900 border-l-4 md:border-l-0 md:border-b-4 md:pt-6 border-transparent hover:border-gray-300/75 opacity-70">
+            Samarbeidspartner
+          </a>
+        </li>
+        
+      </ul>
+      </div>
+    </div>
+
+    
+    
+    <div class="flex items-end gap-2 ml-auto sm:py-4 md:py-3">
+      <button class="flex flex-col sm:flex-row items-center justify-center py-2.5 px-3 leading-none font-semibold sm:gap-1 text-blue-500 sm:rounded md:px-4 sm:text-lg hover:bg-deepblue-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-800" x-on:click="notifyOpen = !notifyOpen, menuOpen = false" x-bind:class="notifyOpen && 'bg-deepblue-50'">
+        <span class="relative">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke-width="1.5" viewBox="0 0 24 24" stroke="currentColor" stroke-linejoin="round" aria-hidden="true" focusable="false" role="img" class="w-7 h-7">
+  <path d="M5.5 17.75h13s-1.73-2.57-1.73-4.29V10.9c0-2.57-.44-5.14-4.77-5.14-4.33 0-4.77 2.57-4.77 5.14v2.57c0 1.72-1.73 4.29-1.73 4.29Z"/>
+  <path d="M14.5 17.75a2.5 2.5 0 0 1-5 0"/>
+  <path stroke-linecap="round" d="M12 5.75v-2"/>
+</svg>
+          <span class="absolute block w-2 h-2 bg-red-400 rounded-full top-1 ring-2 ring-red-100/50 -left-1"></span>
+        </span>
+        <span class="mt-px">Varsel</span>
+      </button>
+      <button class="flex flex-col sm:flex-row items-center justify-center py-2.5 px-3 leading-none font-semibold sm:gap-1 text-blue-500 sm:rounded md:px-4 sm:text-lg hover:bg-deepblue-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-800" type="button" x-on:click="menuOpen = !menuOpen, notifyOpen = false" x-bind:class="menuOpen && 'bg-deepblue-50'">
+        <template x-if="!menuOpen">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" aria-hidden="true" focusable="false" role="img" class="w-7 h-7 shrink-0 pointer-events-none">
+  <g stroke="currentColor" stroke-linecap="round" stroke-width="1.5">
+    <path d="m17 12.5 3.5 5.5"/>
+    <circle cx="15" cy="9" r="4"/>
+  </g>
+  <mask id="magnifierMask" width="18" height="18" x="2" y="2" maskUnits="userSpaceOnUse" style="mask-type:alpha" transform="translate(50, 0)">
+    <path fill="#000" d="M15 2h5v2.1A6.98 6.98 0 0 0 15 2Zm.59 13.98L18 20H2V2h13a7 7 0 1 0 .59 13.98ZM18.6 15H20v-1.1c-.41.42-.88.8-1.4 1.1Z"/>
+  </mask>
+  <g stroke="currentColor" stroke-width="1.5" mask="url(#magnifierMask)">
+    <path d="M21 6H3"/>
+    <path d="M21 12H3"/>
+    <path d="M21 18H3"/>
+  </g>
+</svg>
+        </template>
+        <template x-if="menuOpen">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true" focusable="false" role="img" class="w-7 h-7 shrink-0 pointer-events-none">
+  <path d="M18.36 5.64 5.64 18.36"/>
+  <path d="M18.36 18.36 5.64 5.64"/>
+</svg>
+        </template>
+        <span class="mt-px">Meny</span>
+      </button>
+    </div>
+  </nav>
+</header>
+
+
+<nav class="relative">
+  <div class="absolute inset-x-0 z-50 grid pt-8 pb-16 bg-white shadow-xl grid-cols-layout md:pt-12 top-full" x-bind:class="!menuOpen ? 'hidden' : 'opacity-0 animate-dropdown'">
+
+    <div class="col-feature">
+      <div class="grid gap-3 md:gap-6 md:grid-flow-col-dense">
+
+        <div class="grid flex-auto row-start-1 p-4 -mx-2 rounded-lg md:col-start-3 md:row-span-2 bg-deepblue-50 md:p-6 md:-mx-6">
+          <h3 class="grid">
+            <span class="text-sm tracking-wider uppercase opacity-70">Logget inn som</span>
+            <span class="text-2xl font-semibold leading-tight">Isac Norland</span>
+          </h3>
+
+          <div class="pt-6">
+            <ul class="grid gap-2">
+              
+                
+
+                
+                  <li class="break-inside-avoid">
+                    <a class="inline-flex items-center gap-2 pl-2 pr-4 py-1.5 -mx-2 text-lg leading-normal text-blue-500 no-underline rounded font-semibold hover:bg-blue-800 hover:text-white hover:underline" href="#">
+                      
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" aria-hidden="true" focusable="false" role="img" class="w-6 h-6 opacity-90">
+  <path stroke="currentColor" stroke-miterlimit="2.62" stroke-width="1.5" d="M5 5h1.5v1.5H5V5Z"/>
+  <path stroke="currentColor" stroke-miterlimit="2.62" stroke-width="1.5" d="M5 11.25h1.5v1.5H5v-1.5Z"/>
+  <path stroke="currentColor" stroke-miterlimit="2.62" stroke-width="1.5" d="M5 17.5h1.5V19H5v-1.5Z"/>
+  <path stroke="currentColor" stroke-miterlimit="2.62" stroke-width="1.5" d="M11.25 5h1.5v1.5h-1.5V5Z"/>
+  <path stroke="currentColor" stroke-miterlimit="2.62" stroke-width="1.5" d="M11.25 11.25h1.5v1.5h-1.5v-1.5Z"/>
+  <path stroke="currentColor" stroke-miterlimit="2.62" stroke-width="1.5" d="M11.25 17.5h1.5V19h-1.5v-1.5Z"/>
+  <path stroke="currentColor" stroke-miterlimit="2.62" stroke-width="1.5" d="M17.5 5H19v1.5h-1.5V5Z"/>
+  <path stroke="currentColor" stroke-miterlimit="2.62" stroke-width="1.5" d="M17.5 11.25H19v1.5h-1.5v-1.5Z"/>
+  <path stroke="currentColor" stroke-miterlimit="2.62" stroke-width="1.5" d="M17.5 17.5H19V19h-1.5v-1.5Z"/>
+</svg>
+                      
+                      <span class="mt-px">Min side</span>
+                    </a>
+                  </li>
+                
+                  <li class="break-inside-avoid">
+                    <a class="inline-flex items-center gap-2 pl-2 pr-4 py-1.5 -mx-2 text-lg leading-normal text-blue-500 no-underline rounded font-semibold hover:bg-blue-800 hover:text-white hover:underline" href="#">
+                      
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" aria-hidden="true" focusable="false" role="img" class="w-6 h-6 opacity-90">
+  <path stroke="currentColor" stroke-miterlimit="16" stroke-width="1.5" d="M19 11V8a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-3"/>
+  <path stroke="currentColor" stroke-miterlimit="16" stroke-width="1.5" d="M14.5 11h5a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-5S12 16 12 13.5s2.5-2.5 2.5-2.5Z"/>
+  <path stroke="currentColor" stroke-linecap="round" stroke-width="1.5" d="M14.51 13.5h-.01"/>
+  <path stroke="currentColor" stroke-miterlimit="16" stroke-width="1.5" d="m5 7 11-4 1.5 4"/>
+</svg>
+                      
+                      <span class="mt-px">Mine utbetalinger</span>
+                    </a>
+                  </li>
+                
+                  <li class="break-inside-avoid">
+                    <a class="inline-flex items-center gap-2 pl-2 pr-4 py-1.5 -mx-2 text-lg leading-normal text-blue-500 no-underline rounded font-semibold hover:bg-blue-800 hover:text-white hover:underline" href="#">
+                      
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" aria-hidden="true" focusable="false" role="img" class="w-6 h-6 opacity-90">
+  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="1.24" stroke-width="1.5" d="M9 12.5h3.5"/>
+  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="1.24" stroke-width="1.5" d="M9 15.5h5.5"/>
+  <path stroke="currentColor" stroke-width="1.5" d="M6 19.5v-15c0-.28.22-.5.5-.5H15l3 3v12.5a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5Z"/>
+  <path stroke="currentColor" stroke-width="1.5" d="M14 4v3.5c0 .28.22.5.5.5H18"/>
+</svg>
+                      
+                      <span class="mt-px">Mine saker</span>
+                    </a>
+                  </li>
+                
+                  <li class="break-inside-avoid">
+                    <a class="inline-flex items-center gap-2 pl-2 pr-4 py-1.5 -mx-2 text-lg leading-normal text-blue-500 no-underline rounded font-semibold hover:bg-blue-800 hover:text-white hover:underline" href="#">
+                      
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" aria-hidden="true" focusable="false" role="img" class="w-6 h-6 opacity-90">
+  <path stroke="currentColor" stroke-linejoin="round" stroke-width="1.5" d="M21 19V6H3v13h18Z"/>
+  <path stroke="currentColor" stroke-linejoin="round" stroke-width="1.5" d="m21 7-9 6-9-6"/>
+  <path stroke="currentColor" stroke-width="1.5" d="m21 19-7-7"/>
+  <path stroke="currentColor" stroke-width="1.5" d="m3 19 7-7"/>
+</svg>
+                      
+                      <span class="mt-px">Innboks</span>
+                    </a>
+                  </li>
+                
+                  <li class="break-inside-avoid">
+                    <a class="inline-flex items-center gap-2 pl-2 pr-4 py-1.5 -mx-2 text-lg leading-normal text-blue-500 no-underline rounded font-semibold hover:bg-blue-800 hover:text-white hover:underline" href="#">
+                      
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke-linejoin="round" stroke-width="1.5" aria-hidden="true" focusable="false" role="img" class="w-6 h-6 opacity-90">
+  <circle cx="12" cy="7.5" r="4.5" stroke="currentColor" stroke-linecap="round"/>
+  <path stroke="currentColor" d="M6 21a6 6 0 1 1 12 0"/>
+</svg>
+                      
+                      <span class="mt-px">Personopplysninger</span>
+                    </a>
+                  </li>
+                
+              
+                
+                  <li class="my-3 border-t border-deepblue-700/10"></li>
+                
+
+                
+                  <li class="break-inside-avoid">
+                    <a class="inline-flex items-center gap-2 pl-2 pr-4 py-1.5 -mx-2 text-lg leading-normal text-blue-500 no-underline rounded font-semibold hover:bg-blue-800 hover:text-white hover:underline" href="#">
+                      
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" aria-hidden="true" focusable="false" role="img" class="w-6 h-6 opacity-90">
+  <path d="M7 5v15l5-5 5 5V5a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1Z"/>
+</svg>
+                      
+                      <span class="mt-px">Min pensjon</span>
+                    </a>
+                  </li>
+                
+                  <li class="break-inside-avoid">
+                    <a class="inline-flex items-center gap-2 pl-2 pr-4 py-1.5 -mx-2 text-lg leading-normal text-blue-500 no-underline rounded font-semibold hover:bg-blue-800 hover:text-white hover:underline" href="#">
+                      
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" aria-hidden="true" focusable="false" role="img" class="w-6 h-6 opacity-90">
+  <path d="M7 5v15l5-5 5 5V5a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1Z"/>
+</svg>
+                      
+                      <span class="mt-px">Arbeidssøker</span>
+                    </a>
+                  </li>
+                
+              
+                
+                  <li class="my-3 border-t border-deepblue-700/10"></li>
+                
+
+                
+                  <li class="break-inside-avoid">
+                    <a class="inline-flex items-center gap-2 pl-2 pr-4 py-1.5 -mx-2 text-lg leading-normal text-blue-500 no-underline rounded font-semibold hover:bg-blue-800 hover:text-white hover:underline" href="#">
+                      
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" aria-hidden="true" focusable="false" role="img" class="w-6 h-6 opacity-90">
+  <path d="M7.5 4H4a1 1 0 0 0-1 1v14a1 1 0 0 0 1 1h3.5"/>
+  <path d="M8.5 12H19"/>
+  <path d="M15.5 7.5 20 12l-4.5 4.5"/>
+</svg>
+                      
+                      <span class="mt-px">Logg ut</span>
+                    </a>
+                  </li>
+                
+              
+            </ul>
+          </div>
+
+        </div>
+
+        <div class="flex-1 pt-8 md:pr-4 md:col-start-1 md:row-start-1">
+          <h3 class="text-sm tracking-widest uppercase opacity-70">Områder</h3>
+          <ul class="grid gap-1 mt-2">
+            
+              <li class="break-inside-avoid">
+                <a class="inline-flex items-center gap-2.5 pl-2 pr-4 py-1.5 -mx-2  leading-normal text-blue-500 no-underline rounded font-semibold hover:text-blue-600 hover:bg-deepblue-50 hover:underline" href="#">
+                  
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" aria-hidden="true" focusable="false" role="img" class="w-7 h-7 opacity-90">
+  <path stroke="currentColor" stroke-miterlimit="16" stroke-width="1.5" d="M4.5 13v6.5c0 .3.2.5.5.5h14c.3 0 .5-.2.5-.5V13"/>
+  <path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="16" stroke-width="1.5" d="M12 11v4"/>
+  <path stroke="currentColor" stroke-miterlimit="16" stroke-width="1.5" d="M20.5 6h-17c-.3 0-.5.2-.5.5v6c0 .3.2.5.5.5h17c.3 0 .5-.2.5-.5v-6c0-.3-.2-.5-.5-.5Zm-12 0V4c0-.6.4-1 1-1h5c.6 0 1 .4 1 1v2"/>
+</svg>
+                  
+                  <span class="mt-px text-xl">Arbeid</span>
+                </a>
+              </li>
+            
+              <li class="break-inside-avoid">
+                <a class="inline-flex items-center gap-2.5 pl-2 pr-4 py-1.5 -mx-2  leading-normal text-blue-500 no-underline rounded font-semibold hover:text-blue-600 hover:bg-deepblue-50 hover:underline" href="#">
+                  
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" aria-hidden="true" focusable="false" role="img" class="w-7 h-7 opacity-90">
+  <path stroke="currentColor" stroke-width="1.5" d="M3 19V8c0-.6.4-1 1-1h16c.6 0 1 .4 1 1v11c0 .6-.4 1-1 1H4a1 1 0 0 1-1-1ZM8.5 7V5c0-.6.4-1 1-1h5c.6 0 1 .4 1 1v2M12 10.5v6m-3-3h6"/>
+</svg>
+                  
+                  <span class="mt-px text-xl">Helse og sykdom</span>
+                </a>
+              </li>
+            
+              <li class="break-inside-avoid">
+                <a class="inline-flex items-center gap-2.5 pl-2 pr-4 py-1.5 -mx-2  leading-normal text-blue-500 no-underline rounded font-semibold hover:text-blue-600 hover:bg-deepblue-50 hover:underline" href="#">
+                  
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" aria-hidden="true" focusable="false" role="img" class="w-7 h-7 opacity-90">
+  <path stroke="currentColor" stroke-width="1.5" d="m5 10 7-7 7 7v11H5V10Z"/>
+  <path stroke="currentColor" stroke-width="1.5" d="M12 17.27 9.73 15c-1.52-1.51-.57-2.46-.38-2.65.2-.2 1.14-1.14 2.65.38 1.51-1.52 2.46-.57 2.65-.38.19.19 1.13 1.14-.38 2.65L12 17.27Z"/>
+</svg>
+                  
+                  <span class="mt-px text-xl">Familie og barn</span>
+                </a>
+              </li>
+            
+              <li class="break-inside-avoid">
+                <a class="inline-flex items-center gap-2.5 pl-2 pr-4 py-1.5 -mx-2  leading-normal text-blue-500 no-underline rounded font-semibold hover:text-blue-600 hover:bg-deepblue-50 hover:underline" href="#">
+                  
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" aria-hidden="true" focusable="false" role="img" class="w-7 h-7 opacity-90">
+  <path stroke="currentColor" stroke-miterlimit="16" stroke-width="1.5" d="M12 3c-7 0-9 5-9 7 .5 0 1.5-1 3-1s3 1 3 1 1.5-1 3-1 3 1 3 1 1.5-1 3-1 2.5 1 3 1c0-.5-2-7-9-7Zm0 9v7s0 2 2 2 2-2 2-2v-.5"/>
+</svg>
+                  
+                  <span class="mt-px text-xl">Pensjon</span>
+                </a>
+              </li>
+            
+              <li class="break-inside-avoid">
+                <a class="inline-flex items-center gap-2.5 pl-2 pr-4 py-1.5 -mx-2  leading-normal text-blue-500 no-underline rounded font-semibold hover:text-blue-600 hover:bg-deepblue-50 hover:underline" href="#">
+                  
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" aria-hidden="true" focusable="false" role="img" class="w-7 h-7 opacity-90">
+  <path stroke="currentColor" stroke-linejoin="round" stroke-width="1.5" d="M10 16.5h3c2.5 0 2.5-3.5 0-3.5h-3c-.55 0-1.18-.45-1.69-.67A6.1 6.1 0 0 0 6 12c-3 0-3 2.5-3 2.5V19l3 1h9.3a2 2 0 0 0 1.25-.44l3.84-3.07a1.63 1.63 0 0 0-1.78-2.7L14 16.26"/>
+  <path stroke="currentColor" stroke-width="1.5" d="M12 10 9 7c-2-2-.75-3.25-.5-3.5S10 2 12 4c2-2 3.25-.75 3.5-.5S17 5 15 7l-3 3Z"/>
+</svg>
+                  
+                  <span class="mt-px text-xl">Sosiale tjenester og veiledning</span>
+                </a>
+              </li>
+            
+              <li class="break-inside-avoid">
+                <a class="inline-flex items-center gap-2.5 pl-2 pr-4 py-1.5 -mx-2  leading-normal text-blue-500 no-underline rounded font-semibold hover:text-blue-600 hover:bg-deepblue-50 hover:underline" href="#">
+                  
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" aria-hidden="true" focusable="false" role="img" class="w-7 h-7 opacity-90">
+  <circle cx="8" cy="16" r="4.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="1.2" stroke-width="1.5"/>
+  <path stroke="currentColor" stroke-linecap="round" stroke-width="1.5" d="M5 4h2v5h7a2 2 0 0 1 2 2v3h4"/>
+  <circle cx="17.5" cy="18.5" r="2" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="1.2" stroke-width="1.5"/>
+</svg>
+                  
+                  <span class="mt-px text-xl">Hjelpemidler og tilrettelegging</span>
+                </a>
+              </li>
+            
+              <li class="break-inside-avoid">
+                <a class="inline-flex items-center gap-2.5 pl-2 pr-4 py-1.5 -mx-2  leading-normal text-blue-500 no-underline rounded font-semibold hover:text-blue-600 hover:bg-deepblue-50 hover:underline" href="#">
+                  
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" aria-hidden="true" focusable="false" role="img" class="w-7 h-7 opacity-90">
+  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="1.24" stroke-width="1.5" d="M11.5 16.5H15"/>
+  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="1.24" stroke-width="1.5" d="M11.5 12.5H15"/>
+  <path stroke="currentColor" stroke-linecap="round" stroke-width="1.5" d="M9.01 12.5H9"/>
+  <path stroke="currentColor" stroke-linecap="round" stroke-width="1.5" d="M9.01 16.5H9"/>
+  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="1.24" stroke-width="1.5" d="M12.5 8.5H15"/>
+  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="1.24" stroke-width="1.5" d="m8.5 8 .5.5L10 7"/>
+  <path stroke="currentColor" stroke-width="1.5" d="M5 20.5v-17c0-.28.22-.5.5-.5h13c.28 0 .5.22.5.5v17a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5Z"/>
+</svg>
+                  
+                  <span class="mt-px text-xl">Pengestøtter og tjenester fra NAV</span>
+                </a>
+              </li>
+            
+          </ul>
+        </div>
+
+        <div class="flex flex-col pt-8 md:pr-12 md:col-start-2 md:row-start-1">
+          <h3 class="text-sm tracking-widest uppercase opacity-70">Snarveier</h3>
+          <ul class="mt-2">
+            
+              <li>
+                <a class="inline-flex items-center gap-3 px-2 py-1 -mx-2 text-lg leading-normal text-blue-500 underline rounded hover:text-blue-80 hover:bg-deepblue-50 hover:no-underline" href="#">
+                  
+                  <span class="mt-px">Saksbehandlingstider</span>
+                </a>
+              </li>
+            
+              <li>
+                <a class="inline-flex items-center gap-3 px-2 py-1 -mx-2 text-lg leading-normal text-blue-500 underline rounded hover:text-blue-80 hover:bg-deepblue-50 hover:no-underline" href="#">
+                  
+                  <span class="mt-px">Utbetalinger</span>
+                </a>
+              </li>
+            
+              <li>
+                <a class="inline-flex items-center gap-3 px-2 py-1 -mx-2 text-lg leading-normal text-blue-500 underline rounded hover:text-blue-80 hover:bg-deepblue-50 hover:no-underline" href="#">
+                  
+                  <span class="mt-px">Satser</span>
+                </a>
+              </li>
+            
+              <li>
+                <a class="inline-flex items-center gap-3 px-2 py-1 -mx-2 text-lg leading-normal text-blue-500 underline rounded hover:text-blue-80 hover:bg-deepblue-50 hover:no-underline" href="#">
+                  
+                  <span class="mt-px">Skjema og søknad</span>
+                </a>
+              </li>
+            
+              <li>
+                <a class="inline-flex items-center gap-3 px-2 py-1 -mx-2 text-lg leading-normal text-blue-500 underline rounded hover:text-blue-80 hover:bg-deepblue-50 hover:no-underline" href="#">
+                  
+                  <span class="mt-px">Meldekort</span>
+                </a>
+              </li>
+            
+              <li>
+                <a class="inline-flex items-center gap-3 px-2 py-1 -mx-2 text-lg leading-normal text-blue-500 underline rounded hover:text-blue-80 hover:bg-deepblue-50 hover:no-underline" href="#">
+                  
+                  <span class="mt-px">Kurs fra NAV</span>
+                </a>
+              </li>
+            
+              <li>
+                <a class="inline-flex items-center gap-3 px-2 py-1 -mx-2 text-lg leading-normal text-blue-500 underline rounded hover:text-blue-80 hover:bg-deepblue-50 hover:no-underline" href="#">
+                  
+                  <span class="mt-px">Innkreving og innbetaling</span>
+                </a>
+              </li>
+            
+              <li>
+                <a class="inline-flex items-center gap-3 px-2 py-1 -mx-2 text-lg leading-normal text-blue-500 underline rounded hover:text-blue-80 hover:bg-deepblue-50 hover:no-underline" href="#">
+                  
+                  <span class="mt-px">Kontakt oss</span>
+                </a>
+              </li>
+            
+          </ul>
+        </div>
+
+        <form class="w-full gap-2 pt-8 md:pr-12 md:max-w-4xl md:col-start-1 md:col-end-3">
+          <label class="text-sm tracking-widest uppercase opacity-70" for="search">Søk</label>
+          <div class="flex mt-2">
+            <input class="flex-1 p-2 text-lg border border-gray-300 rounded-l focus:outline-none focus:rounded focus:z-10 focus:ring focus:ring-blue-800" id="search" type="text">
+            <button class="flex items-center col-start-2 row-start-1 gap-2 px-6 py-2 text-xl text-white bg-blue-500 rounded-r hover:bg-blue-600 focus:outline-none focus:rounded focus:z-10 focus:ring focus:ring-blue-800 focus:ring-offset-1 focus:ring-offset-white focus:bg-blue-600" type="submit">
+              <svg class="w-5 h-5" viewBox="0 0 28 28" width="28" height="28" fill="currentColor"><path d="M3.5 12C3.5 8.41015 6.41015 5.5 10 5.5C13.5899 5.5 16.5 8.41015 16.5 12C16.5 15.5899 13.5899 18.5 10 18.5C6.41015 18.5 3.5 15.5899 3.5 12ZM10 2.5C4.75329 2.5 0.5 6.75329 0.5 12C0.5 17.2467 4.75329 21.5 10 21.5C12.6243 21.5 15.0001 20.4359 16.7195 18.7156L25.4966 26.6149L27.5034 24.3851L18.488 16.2712C19.1354 14.9871 19.5 13.5362 19.5 12C19.5 6.75329 15.2467 2.5 10 2.5Z" /></svg>
+              <span>Søk</span>
+            </button>
+          </div>
+        </form>
+
+      </div>
+    </div>
+
+  </div>
+
+</nav>
+
+
+<aside class="relative">
+  <div class="max-w-screen-xl mx-auto sm:w-[90%] relative">
+    <div class="absolute sm:right-0 z-50 mb-10 bg-gray-100 rounded-b-lg shadow-xl md:ml-auto md:max-w-md top-full md:overscroll-contain inset-x-0 sm:inset-x-auto md:max-h-[80vh] md:overflow-y-auto fancy-scroll" x-bind:class="!notifyOpen ? 'hidden' : 'opacity-0 animate-dropdown'">
+      <div class="p-5 md:p-8">
+
+        <div>
+          <h2 class="text-xl font-semibold">Mine oppgaver</h2>
+          <div class="grid gap-1 mt-2">
+            
+              <a class="grid gap-1 px-4 py-3 bg-white rounded-lg hover:ring-2 hover:ring-blue-600" href="#">
+                <div class="flex items-baseline justify-between gap-4">
+                  <h3 class="text-lg font-semibold">Les vedtak</h3>
+                  <p class="text-sm opacity-70">23. jul.</p>
+                </div>
+                <p class="text-lg leading-snug">Du må lese vedtaket på søknaden din om dagpenger.</p>
+                <div class="flex items-center justify-between mt-2">
+                  <div class="flex flex-wrap gap-1">
+                    
+                      <span class="px-2 text-gray-700 leading-none py-1.5 text-sm tracking-wide uppercase rounded-sm bg-gray-200">Varslet på e-post</span>
+                    
+                      <span class="px-2 text-gray-700 leading-none py-1.5 text-sm tracking-wide uppercase rounded-sm bg-orange-100">Frist 6.8.2022</span>
+                    
+                  </div>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false" role="img" class="opacity-50 w-5 h-5">
+  <path d="m9 5 7 7-7 7"/>
+</svg>
+                </div>
+              </a>
+            
+              <a class="grid gap-1 px-4 py-3 bg-white rounded-lg hover:ring-2 hover:ring-blue-600" href="#">
+                <div class="flex items-baseline justify-between gap-4">
+                  <h3 class="text-lg font-semibold">Last opp vedlegg</h3>
+                  <p class="text-sm opacity-70">5. jul.</p>
+                </div>
+                <p class="text-lg leading-snug">Vi mangler vedlegg for å kunne behandle søknaden din om dagpenger.</p>
+                <div class="flex items-center justify-between mt-2">
+                  <div class="flex flex-wrap gap-1">
+                    
+                      <span class="px-2 text-gray-700 leading-none py-1.5 text-sm tracking-wide uppercase rounded-sm bg-gray-200">Varslet på SMS</span>
+                    
+                  </div>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false" role="img" class="opacity-50 w-5 h-5">
+  <path d="m9 5 7 7-7 7"/>
+</svg>
+                </div>
+              </a>
+            
+          </div>
+        </div>
+
+        <div class="mt-6">
+          <h3 class="text-xl font-semibold">Innboks</h3>
+          <div class="grid gap-1 mt-2">
+            
+              <a class="hover:ring-2 hover:ring-blue-600 grid gap-3 items-start grid-cols-[2.25rem_1fr] py-3 px-4 rounded-md bg-white" href="#">
+                <div class="grid text-xl mt-2 font-semibold text-white rounded-full place-items-center aspect-square bg-green-300" aria-hidden="true">
+                  <span class="-mr-px text-center">F</span>
+                </div>
+                <div>
+                  <div class="flex items-baseline justify-between gap-4">
+                    <h3 class="text-lg font-semibold">Familie – Samtalereferat</h3>
+                    <p class="text-sm opacity-70">15. aug.</p>
+                  </div>
+                  <p class="mt-1 text-lg leading-tight">Foreldrepenger – Surrogati: Fremgan…</p>
+
+                  
+
+                </div>
+              </a>
+            
+              <a class="hover:ring-2 hover:ring-blue-600 grid gap-3 items-start grid-cols-[2.25rem_1fr] py-3 px-4 rounded-md bg-white" href="#">
+                <div class="grid text-xl mt-2 font-semibold text-white rounded-full place-items-center aspect-square bg-green-300" aria-hidden="true">
+                  <span class="-mr-px text-center">F</span>
+                </div>
+                <div>
+                  <div class="flex items-baseline justify-between gap-4">
+                    <h3 class="text-lg font-semibold">Familie – Samtalereferat</h3>
+                    <p class="text-sm opacity-70">14. jul.</p>
+                  </div>
+                  <p class="mt-1 text-lg leading-tight">Hei! Vi mottok den 3.7.19 din søknad…</p>
+
+                  
+
+                </div>
+              </a>
+            
+              <a class="hover:ring-2 hover:ring-blue-600 grid gap-3 items-start grid-cols-[2.25rem_1fr] py-3 px-4 rounded-md bg-white" href="#">
+                <div class="grid text-xl mt-2 font-semibold text-white rounded-full place-items-center aspect-square bg-red-300" aria-hidden="true">
+                  <span class="-mr-px text-center">R</span>
+                </div>
+                <div>
+                  <div class="flex items-baseline justify-between gap-4">
+                    <h3 class="text-lg font-semibold">Regnskap/utbetaling – Årsop…</h3>
+                    <p class="text-sm opacity-70">10. jan.</p>
+                  </div>
+                  <p class="mt-1 text-lg leading-tight">Du har fått årsoppgave fra NAV over dine…</p>
+
+                  
+                    <div class="flex items-center justify-between pb-1 mt-2">
+                      <div class="flex flex-wrap gap-1">
+                        
+                          <span class="px-2 text-gray-700 leading-none py-1.5 text-sm tracking-wide uppercase bg-gray-200 rounded-sm">Åpnes i regnskap/utbetaling</span>
+                        
+                      </div>
+                    </div>
+                  
+
+                </div>
+              </a>
+            
+              <a class="hover:ring-2 hover:ring-blue-600 grid gap-3 items-start grid-cols-[2.25rem_1fr] py-3 px-4 rounded-md bg-white" href="#">
+                <div class="grid text-xl mt-2 font-semibold text-white rounded-full place-items-center aspect-square bg-gray-300" aria-hidden="true">
+                  <span class="-mr-px text-center">F</span>
+                </div>
+                <div>
+                  <div class="flex items-baseline justify-between gap-4">
+                    <h3 class="text-lg font-semibold">Familie – Samtalereferat</h3>
+                    <p class="text-sm opacity-70">15. aug.</p>
+                  </div>
+                  <p class="mt-1 text-lg leading-tight">Foreldrepenger – Surrogati: Fremgan…</p>
+
+                  
+
+                </div>
+              </a>
+            
+              <a class="hover:ring-2 hover:ring-blue-600 grid gap-3 items-start grid-cols-[2.25rem_1fr] py-3 px-4 rounded-md bg-white" href="#">
+                <div class="grid text-xl mt-2 font-semibold text-white rounded-full place-items-center aspect-square bg-gray-300" aria-hidden="true">
+                  <span class="-mr-px text-center">F</span>
+                </div>
+                <div>
+                  <div class="flex items-baseline justify-between gap-4">
+                    <h3 class="text-lg font-semibold">Familie – Samtalereferat</h3>
+                    <p class="text-sm opacity-70">14. jul.</p>
+                  </div>
+                  <p class="mt-1 text-lg leading-tight">Hei! Vi mottok den 3.7.19 din søknad…</p>
+
+                  
+
+                </div>
+              </a>
+            
+              <a class="hover:ring-2 hover:ring-blue-600 grid gap-3 items-start grid-cols-[2.25rem_1fr] py-3 px-4 rounded-md bg-white" href="#">
+                <div class="grid text-xl mt-2 font-semibold text-white rounded-full place-items-center aspect-square bg-gray-300" aria-hidden="true">
+                  <span class="-mr-px text-center">R</span>
+                </div>
+                <div>
+                  <div class="flex items-baseline justify-between gap-4">
+                    <h3 class="text-lg font-semibold">Regnskap/utbetaling – Årsop…</h3>
+                    <p class="text-sm opacity-70">10. jan.</p>
+                  </div>
+                  <p class="mt-1 text-lg leading-tight">Du har fått årsoppgave fra NAV over dine…</p>
+
+                  
+                    <div class="flex items-center justify-between pb-1 mt-2">
+                      <div class="flex flex-wrap gap-1">
+                        
+                          <span class="px-2 text-gray-700 leading-none py-1.5 text-sm tracking-wide uppercase bg-gray-200 rounded-sm">Åpnes i regnskap/utbetaling</span>
+                        
+                      </div>
+                    </div>
+                  
+
+                </div>
+              </a>
+            
+              <a class="hover:ring-2 hover:ring-blue-600 grid gap-3 items-start grid-cols-[2.25rem_1fr] py-3 px-4 rounded-md bg-white" href="#">
+                <div class="grid text-xl mt-2 font-semibold text-white rounded-full place-items-center aspect-square bg-gray-300" aria-hidden="true">
+                  <span class="-mr-px text-center">F</span>
+                </div>
+                <div>
+                  <div class="flex items-baseline justify-between gap-4">
+                    <h3 class="text-lg font-semibold">Familie – Samtalereferat</h3>
+                    <p class="text-sm opacity-70">14. jul.</p>
+                  </div>
+                  <p class="mt-1 text-lg leading-tight">Hei! Vi mottok den 3.7.19 din søknad…</p>
+
+                  
+
+                </div>
+              </a>
+            
+              <a class="hover:ring-2 hover:ring-blue-600 grid gap-3 items-start grid-cols-[2.25rem_1fr] py-3 px-4 rounded-md bg-white" href="#">
+                <div class="grid text-xl mt-2 font-semibold text-white rounded-full place-items-center aspect-square bg-gray-300" aria-hidden="true">
+                  <span class="-mr-px text-center">R</span>
+                </div>
+                <div>
+                  <div class="flex items-baseline justify-between gap-4">
+                    <h3 class="text-lg font-semibold">Regnskap/utbetaling – Årsop…</h3>
+                    <p class="text-sm opacity-70">10. jan.</p>
+                  </div>
+                  <p class="mt-1 text-lg leading-tight">Du har fått årsoppgave fra NAV over dine…</p>
+
+                  
+                    <div class="flex items-center justify-between pb-1 mt-2">
+                      <div class="flex flex-wrap gap-1">
+                        
+                          <span class="px-2 text-gray-700 leading-none py-1.5 text-sm tracking-wide uppercase bg-gray-200 rounded-sm">Åpnes i regnskap/utbetaling</span>
+                        
+                      </div>
+                    </div>
+                  
+
+                </div>
+              </a>
+            
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</aside>
+
+
+
+<button class="fixed inset-0 z-30 w-full h-full bg-black/30 " x-bind:class="(menuOpen || notifyOpen) ? 'animate-fade-in' : 'hidden'" x-on:click="menuOpen = false, notifyOpen = false" x-on:keyup.escape.window="menuOpen = false, notifyOpen = false"></button>
+
+    
+  <main class="min-h-[61vh] text-lg text-gray-800">
+
+    <div class="grid pt-8 pb-4 grid-cols-layout ">
+      <div class="col-content">
+        <h1 class="text-3xl font-semibold leading-tight text-gray-900 md:text-4xl">
+          NAV Andeby
+        </h1>
+        <p class="flex items-baseline gap-4 mt-1">
+          <span class="text-sm tracking-wider text-gray-700 uppercase">
+            NAV kontor
+          </span>
+          <span aria-hidden="true">|</span>
+          <span class="text-sm text-gray-600">Lokalkontor for Andeby, Gåseby og Fjærby</span>
+        </p>
+      </div>
+    </div>
+
+    <div class="grid pt-4 pb-20 grid-cols-layout md:pt-6">
+      <div class="col-content">
+        <div class="max-w-prose">
+
+          <div class="p-8 bg-orange-50">
+            <h3 class="text-xl font-semibold">Adresse</h3>
+            <address class="mt-1">
+              Kvakkegata 24,<br />
+              1234 Andeby
+            </address>
+            <p class="mt-2 text-sm">Bruk inngang ved lekeplass</p>
+
+            <h3 class="text-xl font-semibold mt-7">Åpningstider når du ikke har avtale</h3>
+            <table class="mt-2 text-left">
+              <tr>
+                <th class="py-0.5 w-24 font-normal">Mandag</th>
+                <td class="py-0.5 font-semibold">10.00–14.00</td>
+              </tr>
+              <tr>
+                <th class="py-0.5 w-24 font-normal">Tirsdag</th>
+                <td class="py-0.5 font-semibold">10.00–14.00</td>
+              </tr>
+              <tr>
+                <th class="py-0.5 w-24 font-normal">Onsdag</th>
+                <td class="py-0.5 font-semibold">10.00–14.00</td>
+              </tr>
+              <tr>
+                <th class="py-0.5 w-24 font-normal">Torsdag</th>
+                <td class="py-0.5 font-semibold">Kun timeavtale</td>
+              </tr>
+              <tr>
+                <th class="py-0.5 w-24 font-normal">Fredag</th>
+                <td class="py-0.5 font-semibold">10.00–14.00</td>
+              </tr>
+            </table>
+            <div class="flex items-start gap-3 mt-7">
+              <svg class="w-6 h-6 mt-px" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false" role="img">
+                <path d="M12 0C5.38226 0 0 5.38226 0 12C0 18.6177 5.38226 24 12 24C18.6167 24 24 18.6177 24 12C24 5.38226 18.6167 0 12 0Z" fill="#368DA8" />
+                <path d="M13.5 6.5C13.5 5.67157 12.8284 5 12 5C11.1716 5 10.5 5.67157 10.5 6.5C10.5 7.32843 11.1716 8 12 8C12.8284 8 13.5 7.32843 13.5 6.5ZM9 17V19H15V17H13V10H9V12H11V17H9Z" fill="white" />
+              </svg>
+              <p>Du kan avtale møte med veilederen din utenom disse åpningstidene.</p>
+            </div>
+          </div>
+
+          <div class="p-8 mt-7 bg-gray-50">
+            <p>Telefonnummeret til NAV er <span class="block text-2xl font-semibold leading-tight">55 55 33 33</span></p>
+            <p class="pt-4">Du kan ikke ringe direkte til NAV-kontoret.</p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="grid pb-12 bg-gray-100 grid-cols-layout">
+      <div class="col-content">
+        <div class="max-w-prose">
+
+          
+            
+  <div class="grid isolate">
+    <div class="z-10 grid w-16 mx-auto translate-y-1/2 bg-blue-100 rounded-full place-items-center aspect-square">
+      <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none" viewBox="0 0 32 32" aria-hidden="true" focusable="false" role="img" class="w-7 h-7 shrink-0">
+  <path fill="currentColor" fill-rule="evenodd" d="M2.67 2.67h2.66v2.66H2.67V2.67ZM0 8V0h8v8H0Zm2.67 6.67h2.66v2.66H2.67v-2.66ZM0 20v-8h8v8H0Zm5.33 6.67H2.67v2.66h2.66v-2.66ZM0 24v8h8v-8H0ZM32 2.67H10.67v2.66H32V2.67Zm-21.33 12H32v2.66H10.67v-2.66Zm21.33 12H10.67v2.66H32v-2.66Z" clip-rule="evenodd"/>
+</svg>
+    </div>
+    <div class="px-6 py-8 bg-white md:py-12 md:px-10">
+      <h2 class="mt-8 text-2xl font-semibold">Dette kan vi hjelpe deg med</h2>
+      <div class="mt-2 markdown">
+        <ul>
+<li>Hjelp i nødsituasjoner, for eksempel midlertidig botilbud eller økonomisk sosialhjelp</li>
+<li>Tilgang til PC</li>
+<li>Hjelp til å bruke digitale tjenester hvis du trenger det</li>
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+          
+            
+  <div class="grid isolate">
+    <div class="z-10 grid w-16 mx-auto translate-y-1/2 bg-blue-100 rounded-full place-items-center aspect-square">
+      <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none" viewBox="0 0 32 32" aria-hidden="true" focusable="false" role="img" class="w-7 h-7 shrink-0">
+  <path fill="currentColor" fill-rule="evenodd" d="M14.9 3.07a1.33 1.33 0 0 1 1.86-.05L22.15 8h7.18v8.15H24.8L17.18 8.5l-1.89-1.88-4.24 4.24c-.52.52-1.36.52-1.89 0l-.95-.95 6.7-6.85Zm.4 7.33-2.36 2.36a4 4 0 0 1-5.66 0l-.95-.96a2.67 2.67 0 0 1-.03-3.75L6.36 8h-3.7v8.78l11.2 11.04a.66.66 0 0 0 .94-.94l-1.4-1.39 1.9-1.88 2.35 2.36a.67.67 0 0 0 .94-.95l-2.35-2.35 1.88-1.89 2.36 2.36.94.94a.67.67 0 0 0 .94-.94l-3.3-3.3 1.89-1.89 3.3 3.3.94.94a.67.67 0 1 0 .95-.94L15.29 10.4ZM8.96 5.32 13 1.2a4 4 0 0 1 5.57-.14l4.62 4.26H32V18.8h-4.53l.55.56a3.33 3.33 0 0 1-3.09 5.6 3.33 3.33 0 0 1-3.77 1.9 3.33 3.33 0 0 1-3.8 1.87 3.32 3.32 0 0 1-5.37.98L0 17.88V5.32h8.97Z" clip-rule="evenodd"/>
+</svg>
+    </div>
+    <div class="px-6 py-8 bg-white md:py-12 md:px-10">
+      <h2 class="mt-8 text-2xl font-semibold">Avtal møte med veilederen din</h2>
+      <div class="mt-2 markdown">
+        <p>Du kan avtale møte med veilederen din hvis du er registrert hos NAV.</p>
+<h3>Hvis du er arbeidssøker</h3>
+<p>Avtal møte i <a href="#">Aktivitetsplanen</a> din.
+Du kan få hjelp til å avtale møte ved å ringe NAV på telefon 33 33 55 55 eller bruke <a href="#">Skriv til oss</a> for å avtale møte.</p>
+<h3>Hvis du er syk</h3>
+<p>Avtal møte i <a href="#">Ditt sykefravær</a>.
+Du kan få hjelp til å avtale møte ved å ringe NAV på telefon 33 33 55 55 eller bruke <a href="#">Skriv til oss</a> for å avtale møte.</p>
+<h3>Hvis du får økonomisk sosialhjelp eller andre sosiale tjenester</h3>
+<p>Avtal møte ved å ringe NAV på 33 33 55 55</p>
+
+      </div>
+    </div>
+  </div>
+
+          
+
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+    <footer class="grid self-end pb-8 text-lg text-white bg-deepblue-800 grid-cols-layout" x-bind:inert="menuOpen || notifyOpen">
+  <div class="col-feature">
+    <div class="flex flex-col items-center py-3">
+      <a class="flex items-center gap-2 text-base text-center hover:underline hover:text-orange-200" href="#">
+        <svg class="w-5 h-5" width="24" height="24" viewBox="0 0 24 24"  aria-hidden="true" focusable="false" role="img">
+          <path stroke="currentColor" stroke-width="2" d="m7 9 6-6 6 6m-6 10V4" />
+        </svg>
+        <span>Til toppen</span>
+      </a>
+    </div>
+    <div class="pt-8 border-t border-white/10">
+      <div class="sm:columns-2 md:columns-3">
+        
+          <div class="mb-8 sm:pr-8 md:mb-0">
+            <h2 class="text-sm font-semibold tracking-widest uppercase text-deepblue-300">
+              Kontakt
+            </h2>
+            <ul class="mt-2 mb-7 break-inside-avoid">
+              
+                <li class="py-1 pr-2 break-before-avoid">
+                  <a class="hover:underline hover:text-orange-200" href="#">Kontakt oss</a>
+                </li>
+              
+                <li class="py-1 pr-2 break-before-avoid">
+                  <a class="hover:underline hover:text-orange-200" href="#">NAV i ditt fylke</a>
+                </li>
+              
+                <li class="py-1 pr-2 break-before-avoid">
+                  <a class="hover:underline hover:text-orange-200" href="#">Kurs fra NAV</a>
+                </li>
+              
+                <li class="py-1 pr-2 break-before-avoid">
+                  <a class="hover:underline hover:text-orange-200" href="#">Klage, tilbakemelding, ros</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+          <div class="mb-8 sm:pr-8 md:mb-0">
+            <h2 class="text-sm font-semibold tracking-widest uppercase text-deepblue-300">
+              Nyheter og presse
+            </h2>
+            <ul class="mt-2 mb-7 break-inside-avoid">
+              
+                <li class="py-1 pr-2 break-before-avoid">
+                  <a class="hover:underline hover:text-orange-200" href="#">Nyheter, pressemeldinger og pressekontakt</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+          <div class="mb-8 sm:pr-8 md:mb-0">
+            <h2 class="text-sm font-semibold tracking-widest uppercase text-deepblue-300">
+              NAV og samfunn
+            </h2>
+            <ul class="mt-2 mb-7 break-inside-avoid">
+              
+                <li class="py-1 pr-2 break-before-avoid">
+                  <a class="hover:underline hover:text-orange-200" href="#">Statistikk, analyse og FoU</a>
+                </li>
+              
+                <li class="py-1 pr-2 break-before-avoid">
+                  <a class="hover:underline hover:text-orange-200" href="#">Lover og regler (lovdata.no)</a>
+                </li>
+              
+                <li class="py-1 pr-2 break-before-avoid">
+                  <a class="hover:underline hover:text-orange-200" href="#">Om NAV</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+          <div class="mb-8 sm:pr-8 md:mb-0">
+            <h2 class="text-sm font-semibold tracking-widest uppercase text-deepblue-300">
+              Andre språk
+            </h2>
+            <ul class="mt-2 mb-7 break-inside-avoid">
+              
+                <li class="py-1 pr-2 break-before-avoid">
+                  <a class="hover:underline hover:text-orange-200" href="#">English</a>
+                </li>
+              
+                <li class="py-1 pr-2 break-before-avoid">
+                  <a class="hover:underline hover:text-orange-200" href="#">Sámegiella</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        <div class="-mt-2.5">
+          <button class="flex items-center gap-2 px-3 sm:-mx-3 py-1.5 bg-deepblue-700 border border-deepblue-600 hover:border-deepblue-400/50 hover:bg-deepblue-600 rounded hover:shadow-lg hover:text-orange-200">
+            <span class="">Del skjerm med veileder</span>
+            <svg width="24" height="24" fill="none" viewBox="0 0 24 24" aria-hidden="true" focusable="false" role="img" class="w-5 h-5">
+  <path stroke="currentColor" stroke-width="2" d="M12 16v4m-5 0h10"/>
+  <rect stroke="currentColor" width="16" height="11" x="4" y="5" stroke-width="2" rx="1"/>
+</svg>
+          </button>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="flex flex-col justify-between mt-6 sm:flex-row-reverse">
+      <div class="flex flex-col justify-between gap-3 mt-6 sm:gap-6 sm:flex-row sm:self-end">
+        
+          <a class="hover:underline hover:text-orange-200" href="#">Personvern og informasjonskapsler</a>
+        
+          <a class="hover:underline hover:text-orange-200" href="#">Tilgjengelighet</a>
+        
+      </div>
+
+      <div class="grid gap-2 mt-16">
+        <svg width="64" height="20" viewBox="0 0 64 20" fill="none" aria-hidden="true" focusable="false" role="img" class="h-6"><path fill-rule="evenodd" clip-rule="evenodd" d="M63.48.52h-6.66s-.459 0-.621.406l-3.685 11.287L48.832.926c-.163-.405-.624-.405-.624-.405H35.404a.514.514 0 00-.51.507v3.833c0-3.04-3.233-4.34-5.127-4.34-4.24 0-7.078 2.794-7.962 7.043-.048-2.819-.282-3.829-1.041-4.863-.349-.507-.852-.932-1.4-1.285-1.13-.662-2.145-.895-4.324-.895h-2.56s-.462 0-.625.405L9.526 6.7V1.028A.512.512 0 009.02.521H3.097s-.457 0-.624.405L.053 6.93s-.242.6.31.6H2.64v11.44c0 .284.223.51.508.51h5.87a.509.509 0 00.508-.51V7.53h2.289c1.313 0 1.59.036 2.101.274.308.117.585.352.737.623.31.583.387 1.283.387 3.348v7.195c0 .284.228.51.51.51h5.626s.636 0 .887-.63l1.247-3.083c1.658 2.324 4.387 3.712 7.779 3.712h.741s.64 0 .893-.628l2.172-5.381v5.5a.51.51 0 00.51.51h5.743s.634 0 .888-.63c0 0 2.297-5.705 2.306-5.748h.004c.088-.475-.511-.475-.511-.475h-2.05V2.836l6.45 16.015c.251.628.886.628.886.628h6.786s.638 0 .89-.628l7.151-17.716c.247-.614-.469-.614-.469-.614zM34.893 12.628h-3.858a2.784 2.784 0 110-5.57h1.079a2.788 2.788 0 012.78 2.787v2.783z" fill="currentColor"/></svg>
+        <div class="">Arbeids- og velferdsetaten</div>
+      </div>
+
+    </div>
+  </div>
+</footer>
+
+  </body>
+</html>

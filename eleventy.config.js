@@ -3,64 +3,43 @@
  */
 
 const svgContents = require("eleventy-plugin-svg-contents");
-const markdownIt = require("markdown-it");
-const htmlmin = require("html-minifier");
-const compression = require("compression");
+const { markdown, markdownInline } = require("./src/_11ty/filters.js");
+const { timestampNow } = require("./src/_11ty/shortcodes.js");
+const { minifyHtml } = require("./src/_11ty/transforms.js");
+
+// const compression = require("compression");
 
 module.exports = function (eleventyConfig) {
+  // Eleventy Plugins
   eleventyConfig.addPlugin(svgContents);
+
+  // Copy static assets to _site
+  eleventyConfig.addPassthroughCopy({ "./static/images/*": "/assets/images" });
+  eleventyConfig.addPassthroughCopy({ "./static/fonts/*": "/assets/fonts" });
   eleventyConfig.addPassthroughCopy({
-    "./node_modules/alpinejs/dist/cdn.min.js": "./main.min.js",
+    "./node_modules/alpinejs/dist/cdn.min.js": "./assets/main.min.js",
   });
-  eleventyConfig.addPassthroughCopy({ "./static/images/*": "/images" });
-  eleventyConfig.addPassthroughCopy({ "./static/fonts/*": "/fonts" });
-  eleventyConfig.addWatchTarget("./src/main.css");
+
+  // Watch extra files for changes
+  eleventyConfig.addWatchTarget("./src/assets/main.css");
   eleventyConfig.addWatchTarget("./src/**/*.svg");
 
-  eleventyConfig.setDataDeepMerge(true);
+  // Templating filters
+  eleventyConfig.addFilter("markdown", markdown);
+  eleventyConfig.addFilter("markdownInline", markdownInline);
 
+  // Templating shortcodes
+  eleventyConfig.addShortcode("now", timestampNow);
+
+  // Transforms
+  eleventyConfig.addTransform("minifyHtml", minifyHtml);
+
+  // Dev server options
   eleventyConfig.setServerOptions({
-    enabled: false,
+    enabled: true,
     showVersion: true,
     port: 8888,
-    middleware: [compression()],
-  });
-
-  eleventyConfig.addFilter("markdown", function (value) {
-    return new markdownIt({
-      html: true,
-      linkify: true,
-      typographer: true,
-      quotes: "«»",
-    }).render(value);
-  });
-
-  eleventyConfig.addFilter("markdownInline", function (value) {
-    return new markdownIt({
-      html: false,
-    }).renderInline(value);
-  });
-
-  eleventyConfig.addShortcode("now", function () {
-    const now = new Date();
-    return now.toLocaleDateString("nb-NO", { dateStyle: "medium" });
-  });
-
-  eleventyConfig.addTransform("htmlmin", function (content, outputPath) {
-    const env = process.env.ELEVENTY_ENV;
-    if (env === "production" && outputPath && outputPath.endsWith(".html")) {
-      let minified = htmlmin.minify(content, {
-        useShortDoctype: true,
-        removeComments: true,
-        collapseWhitespace: true,
-        minifyCSS: {
-          level: 2,
-        },
-      });
-      return minified;
-    }
-
-    return content;
+    middleware: [],
   });
 
   return {
@@ -70,7 +49,7 @@ module.exports = function (eleventyConfig) {
       input: "src",
       data: "_data",
       includes: "_includes",
-      output: "dist",
+      output: "_site",
     },
   };
 };
