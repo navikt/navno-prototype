@@ -1,28 +1,32 @@
 {
-  "name": "nav-prototype",
+  "name": "navno-prototype",
   "version": "0.1.0",
   "description": "",
   "author": "Martin Berglund <marberglund@gmail.com>",
   "repository": {
     "type": "git",
-    "url": "https://github.com/macbruker/nav-prototype"
+    "url": "https://github.com/macbruker/navno-prototype"
   },
   "scripts": {
     "dev:eleventy": "ELEVENTY_ENV=development eleventy --config=eleventy.config.js --serve",
-    "dev:css": "npx tailwindcss -i ./src/assets/main.css -o ./_site/assets/main.min.css --minify --watch",
+    "dev:css": "postcss ./src/assets/main.css -o ./_site/assets/main.min.css --watch",
     "dev": "concurrently npm:dev:*",
     "build:eleventy": "ELEVENTY_ENV=production eleventy --config=eleventy.config.js",
-    "build:css": "NODE_ENV=production npx tailwindcss -i ./src/assets/main.css -o ./_site/assets/main.min.css --minify",
+    "build:css": "NODE_ENV=production postcss ./src/assets/main.css -o ./_site/assets/main.min.css",
     "build": "concurrently npm:build:*"
   },
   "license": "MIT",
   "devDependencies": {
     "@11ty/eleventy": "^2.0.0-canary.23",
     "alpinejs": "^3.10.5",
+    "autoprefixer": "^10.4.13",
     "compression": "^1.7.4",
     "concurrently": "^7.6.0",
+    "cssnano": "^5.1.14",
     "eleventy-plugin-svg-contents": "^0.7.0",
     "html-minifier": "^4.0.0",
+    "postcss": "^8.4.20",
+    "postcss-cli": "^10.1.0",
     "prettier": "^2.8.1",
     "tailwindcss": "^3.2.4"
   }
