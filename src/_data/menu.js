@@ -5,31 +5,31 @@ module.exports = {
     linkList: [
       {
         text: "Arbeid",
-        icon: "/src/_includes/svg/suitcase.svg",
+        icon: "/src/_includes/svg/icons/suitcase.svg",
       },
       {
         text: "Helse og sykdom",
-        icon: "/src/_includes/svg/medkit.svg",
+        icon: "/src/_includes/svg/icons/medkit.svg",
       },
       {
         text: "Familie og barn",
-        icon: "/src/_includes/svg/family.svg",
+        icon: "/src/_includes/svg/icons/family.svg",
       },
       {
         text: "Pensjon",
-        icon: "/src/_includes/svg/umbrella.svg",
+        icon: "/src/_includes/svg/icons/umbrella.svg",
       },
       {
         text: "Sosiale tjenester og veiledning",
-        icon: "/src/_includes/svg/socialaid.svg",
+        icon: "/src/_includes/svg/icons/socialaid.svg",
       },
       {
         text: "Hjelpemidler og tilrettelegging",
-        icon: "/src/_includes/svg/wheelchair.svg",
+        icon: "/src/_includes/svg/icons/wheelchair.svg",
       },
       {
         text: "Pengestøtter og tjenester fra NAV",
-        icon: "/src/_includes/svg/tasks.svg",
+        icon: "/src/_includes/svg/icons/tasks.svg",
       },
     ],
   },
@@ -51,23 +51,23 @@ module.exports = {
       linkList: [
         {
           text: "Min side",
-          icon: "/src/_includes/svg/grid.svg",
+          icon: "/src/_includes/svg/icons/grid.svg",
         },
         {
           text: "Mine utbetalinger",
-          icon: "/src/_includes/svg/wallet.svg",
+          icon: "/src/_includes/svg/icons/wallet.svg",
         },
         {
           text: "Mine saker",
-          icon: "/src/_includes/svg/document.svg",
+          icon: "/src/_includes/svg/icons/document.svg",
         },
         {
           text: "Innboks",
-          icon: "/src/_includes/svg/envelope.svg",
+          icon: "/src/_includes/svg/icons/envelope.svg",
         },
         {
           text: "Personopplysninger",
-          icon: "/src/_includes/svg/user.svg",
+          icon: "/src/_includes/svg/icons/user.svg",
         },
       ],
     },
@@ -75,11 +75,11 @@ module.exports = {
       linkList: [
         {
           text: "Min pensjon",
-          icon: "/src/_includes/svg/bookmark.svg",
+          icon: "/src/_includes/svg/icons/bookmark.svg",
         },
         {
           text: "Arbeidssøker",
-          icon: "/src/_includes/svg/bookmark.svg",
+          icon: "/src/_includes/svg/icons/bookmark.svg",
         },
       ],
     },
@@ -87,7 +87,7 @@ module.exports = {
       linkList: [
         {
           text: "Logg ut",
-          icon: "/src/_includes/svg/exit.svg",
+          icon: "/src/_includes/svg/icons/exit.svg",
         },
       ],
     },

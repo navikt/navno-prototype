@@ -1,14 +1,14 @@
 module.exports = {
   boxes: [
     {
-      icon: "/src/_includes/svg/box-list.svg",
+      icon: "/src/_includes/svg/icons/box-list.svg",
       title: "Dette kan vi hjelpe deg med",
       content: `* Hjelp i nødsituasjoner, for eksempel midlertidig botilbud eller økonomisk sosialhjelp
 * Tilgang til PC
 * Hjelp til å bruke digitale tjenester hvis du trenger det`,
     },
     {
-      icon: "/src/_includes/svg/box-handshake.svg",
+      icon: "/src/_includes/svg/icons/box-handshake.svg",
       title: "Avtal møte med veilederen din",
       content: `Du kan avtale møte med veilederen din hvis du er registrert hos NAV.
 

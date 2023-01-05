@@ -12,7 +12,7 @@
     <span class="flex-none block w-12 h-12 rounded-full bg-deepblue-100/50 group-hover:bg-deepblue-200/50"></span>
     {% endif %}
     <span class="flex-1 leading-tight">{{ product.title | safe }}</span>
-    {{ '/src/_includes/svg/chevron-down.svg' | svgContents('mr-1.5 w-5 h-5 opacity-50 group-aria-expanded:rotate-180 transition duration-100') | safe }}
+    {{ '/src/_includes/svg/icons/chevron-down.svg' | svgContents('mr-1.5 w-5 h-5 opacity-50 group-aria-expanded:rotate-180 transition duration-100') | safe }}
   </button>
   <div class="relative px-4 pt-2 pb-12" x-bind:hidden="!expanded">
     <div class="pt-4 xs:px-14 markdown">

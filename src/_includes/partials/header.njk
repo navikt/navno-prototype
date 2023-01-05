@@ -3,7 +3,7 @@
   <div class="relative z-10 grid justify-center bg-gray-100 xs:hidden col-full">
     <button class="flex items-center justify-center gap-2 px-4 py-2 focus:outline-none focus-visible:text-white focus-visible:bg-blue-500" x-on:click="audienceDropdownOpen = !audienceDropdownOpen" x-on:click.outside="audienceDropdownOpen = false">
       <span>{{ menu.audience[0] }}</span>
-      {{ '/src/_includes/svg/chevron-down.svg' | svgContents('w-4 h-4') | safe }}
+      {{ '/src/_includes/svg/icons/chevron-down.svg' | svgContents('w-4 h-4') | safe }}
     </button>
     <div class="absolute px-4 mt-px -translate-x-1/2 left-1/2 top-full">
       <ul class="overflow-hidden text-gray-900 bg-white divide-y divide-gray-300 rounded shadow-xl max-w-max ring-1 ring-gray-200" role="tablist" x-show="audienceDropdownOpen">
@@ -29,7 +29,7 @@
     <div class="relative hidden px-4 md:px-5 md:self-stretch xs:grid">
       <button class="flex items-center self-center justify-center gap-4 py-2 pl-3 pr-2 border border-gray-200 rounded hover:bg-deepblue-100 focus:outline-none md:hidden" x-on:click="audienceDropdownOpen = !audienceDropdownOpen">
         <span>{{ menu.audience[0] }}</span>
-        {{ '/src/_includes/svg/chevron-down.svg' | svgContents('w-4 h-4') | safe }}
+        {{ '/src/_includes/svg/icons/chevron-down.svg' | svgContents('w-4 h-4') | safe }}
       </button>
       <div class="xs:absolute md:static xs:top-full xs:left-0">
       <ul class="justify-center overflow-hidden text-lg bg-white border border-gray-200 divide-y divide-gray-200 rounded shadow-lg md:rounded-none md:bg-transparent md:shadow-none md:border-0 md:divide-y-0 md:gap-4 md:flex" role="tablist" x-bind:class="audienceDropdownOpen ? 'grid' : 'hidden md:flex'">
@@ -49,17 +49,17 @@
     <div class="flex items-end gap-2 ml-auto sm:py-4 md:py-3">
       <button class="{{ menuButtonClasses }}" x-on:click="notifyOpen = !notifyOpen, menuOpen = false" x-bind:class="notifyOpen && 'bg-deepblue-50'">
         <span class="relative">
-          {{ '/src/_includes/svg/notification.svg' | svgContents('w-7 h-7') | safe }}
+          {{ '/src/_includes/svg/icons/notification.svg' | svgContents('w-7 h-7') | safe }}
           <span class="absolute block w-2 h-2 bg-red-400 rounded-full top-1 ring-2 ring-red-100/50 -left-1"></span>
         </span>
         <span class="mt-px">Varsel</span>
       </button>
       <button class="{{ menuButtonClasses }}" type="button" x-on:click="menuOpen = !menuOpen, notifyOpen = false" x-bind:class="menuOpen && 'bg-deepblue-50'">
         <template x-if="!menuOpen">
-          {{ '/src/_includes/svg/menusearch.svg' | svgContents('w-7 h-7 shrink-0 pointer-events-none') | safe }}
+          {{ '/src/_includes/svg/icons/menusearch.svg' | svgContents('w-7 h-7 shrink-0 pointer-events-none') | safe }}
         </template>
         <template x-if="menuOpen">
-          {{ '/src/_includes/svg/close.svg' | svgContents('w-7 h-7 shrink-0 pointer-events-none') | safe }}
+          {{ '/src/_includes/svg/icons/close.svg' | svgContents('w-7 h-7 shrink-0 pointer-events-none') | safe }}
         </template>
         <span class="mt-px">Meny</span>
       </button>
