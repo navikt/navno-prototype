@@ -127,7 +127,7 @@ module.exports = {
     { title: "Ortoser" },
     {
       title: "Overgangsstønad for enslig mor eller far",
-      icon: "/src/_includes/svg/pictogram/single-parent.svg",
+      icon: "/src/_includes/svg/pictograms/single-parent.svg",
       taxonomy: ["Pengestøtte"],
       area: ["Familie og barn"],
       ingress:
