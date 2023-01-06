@@ -13,7 +13,7 @@ module.exports = function (eleventyConfig) {
   // Eleventy Plugins
   eleventyConfig.addPlugin(svgContents);
 
-  // Copy static assets to _site
+  // Copy static assets to build folder
   eleventyConfig.addPassthroughCopy({ "./static/images/*": "/assets/images" });
   eleventyConfig.addPassthroughCopy({ "./static/fonts/*": "/assets/fonts" });
   eleventyConfig.addPassthroughCopy({
@@ -49,7 +49,7 @@ module.exports = function (eleventyConfig) {
       input: "src",
       data: "_data",
       includes: "_includes",
-      output: "_site",
+      output: "build",
     },
   };
 };

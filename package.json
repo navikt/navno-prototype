@@ -9,11 +9,12 @@
   },
   "scripts": {
     "dev:eleventy": "ELEVENTY_ENV=development eleventy --config=eleventy.config.js --serve",
-    "dev:css": "postcss ./src/assets/main.css -o ./_site/assets/main.min.css --watch",
+    "dev:css": "postcss ./src/assets/main.css -o ./build/assets/main.min.css --watch",
     "dev": "concurrently npm:dev:*",
     "build:eleventy": "ELEVENTY_ENV=production eleventy --config=eleventy.config.js",
-    "build:css": "NODE_ENV=production postcss ./src/assets/main.css -o ./_site/assets/main.min.css",
-    "build": "concurrently npm:build:*"
+    "build:css": "NODE_ENV=production postcss ./src/assets/main.css -o ./build/assets/main.min.css",
+    "build": "concurrently npm:build:*",
+    "start": "node ./server/app.js"
   },
   "license": "MIT",
   "devDependencies": {
@@ -29,5 +30,9 @@
     "postcss-cli": "^10.1.0",
     "prettier": "^2.8.1",
     "tailwindcss": "^3.2.4"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "path": "^0.12.7"
   }
 }
