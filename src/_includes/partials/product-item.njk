@@ -20,7 +20,7 @@
 
       {% if product.contentBlocks %}
         <div class="pt-6 text-center px-14">
-          <a class="text-sm text-blue-500 hover:underline hover:text-blue-600" href="/produktoversikt/{{ product.title | slug }}.html">(Vis som egen side)</a>
+          <a class="text-sm text-blue-500 hover:underline hover:text-blue-600" href="{{ env.sitePath }}/produktoversikt/{{ product.title | slug }}.html">(Vis som egen side)</a>
         </div>
       {% endif %}
     </div>

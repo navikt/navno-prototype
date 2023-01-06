@@ -14,11 +14,11 @@
 
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2299%22>🧑‍💻</text></svg>" />
     <link rel="preconnect" href="https://marvelous-biscochitos-50396c.netlify.app" crossorigin />
-    <link rel="preload" href="/assets/fonts/Source_Sans_3-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="stylesheet" href="/assets/main.min.css" type="text/css" />
+    <link rel="preload" href="{{ env.sitePath }}/assets/fonts/Source_Sans_3-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="{{ env.sitePath }}/assets/main.min.css" type="text/css" />
 
     {% block styles %}{% endblock %}
-    <script src="/assets/main.min.js" type="text/javascript" defer></script>
+    <script src="{{ env.sitePath }}/assets/main.min.js" type="text/javascript" defer></script>
     {% block script %}{% endblock %}
   </head>
   <body
@@ -29,7 +29,7 @@
       menuOpen: false,
       notifyOpen: false
     }">
-
+    {{ env.sitePath }}
     {% include "partials/prototypeNav.njk" %}
     <div class="relative z-10 transition-transform duration-150 ease-out bg-white" x-bind:class="indexOpen ? 'translate-y-[80vh]' : 'translate-y-0'" x-on:click.outside="indexOpen = false">
     {% include "partials/header.njk" %}
