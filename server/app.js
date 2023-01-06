@@ -8,11 +8,11 @@ app.set("port", 3123);
 // Use Express to serve the static assets
 app.use(express.static(path.join(__dirname, "../build")));
 
-app.get("/internal/isAlive", (req, res) => {
+app.get("/person/prototype/internal/isAlive", (req, res) => {
   return res.status(200).send("I'm alive!");
 });
 
-app.get("/internal/isReady", (req, res) => {
+app.get("/person/prototype/internal/isReady", (req, res) => {
   return res.status(200).send("I'm ready!");
 });
 
