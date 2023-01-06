@@ -30,55 +30,58 @@
       notifyOpen: false
     }">
 
-    <div class="font-mono text-2xl text-white bg-blue-700 md:text-3xl">
-      <div class="grid overflow-hidden transition-all duration-200 grid-cols-layout" x-bind:class="indexOpen ? 'max-h-[60vh]' : 'max-h-0'">
-        <ul class="py-3 divide-y md:py-6 divide-blue-300/25 col-popout">
-        
-          <li class="py-4">
-            <a href="/" class="hover:text-orange-300 hover:underline decoration-from-font underline-offset-4">
-              <span class="w-5">01</span>
-            Forside
-            </a>
-          </li>
-        
-          <li class="py-4">
-            <a href="/artikkel/" class="hover:text-orange-300 hover:underline decoration-from-font underline-offset-4">
-              <span class="w-5">02</span>
-            Artikkel
-            </a>
-          </li>
-        
-          <li class="py-4">
-            <a href="/kontor/" class="hover:text-orange-300 hover:underline decoration-from-font underline-offset-4">
-              <span class="w-5">03</span>
-            Kontor
-            </a>
-          </li>
-        
-          <li class="py-4">
-            <a href="/produktoversikt/" class="hover:text-orange-300 hover:underline decoration-from-font underline-offset-4">
-              <span class="w-5">04</span>
-            Produkt&shy;oversikt
-            </a>
-          </li>
-        
-          <li class="py-4">
-            <a href="/soknad/" class="hover:text-orange-300 hover:underline decoration-from-font underline-offset-4">
-              <span class="w-5">05</span>
-            Søknad
-            </a>
-          </li>
-        
-          <li class="py-4">
-            <a href="/tom/" class="hover:text-orange-300 hover:underline decoration-from-font underline-offset-4">
-              <span class="w-5">06</span>
-            Tom side
-            </a>
-          </li>
-        
-        </ul>
-      </div>
-    </div>
+    <div class="fixed w-full h-screen overflow-y-auto font-mono text-2xl text-white bg-blue-700 bg-gradient-to-t from-transparent to-blue-600/50 md:text-3xl">
+  <div class="grid grid-cols-layout">
+    <ul class="py-3 divide-y md:py-6 divide-blue-300/25 col-popout">
+    
+      <li class="py-4">
+        <a href="/" class="hover:text-orange-300 hover:underline decoration-from-font underline-offset-4">
+          <span class="w-5">01</span>
+        Forside
+        </a>
+      </li>
+    
+      <li class="py-4">
+        <a href="/artikkel/" class="hover:text-orange-300 hover:underline decoration-from-font underline-offset-4">
+          <span class="w-5">02</span>
+        Artikkel
+        </a>
+      </li>
+    
+      <li class="py-4">
+        <a href="/kontor/" class="hover:text-orange-300 hover:underline decoration-from-font underline-offset-4">
+          <span class="w-5">03</span>
+        Kontor
+        </a>
+      </li>
+    
+      <li class="py-4">
+        <a href="/produktoversikt/" class="hover:text-orange-300 hover:underline decoration-from-font underline-offset-4">
+          <span class="w-5">04</span>
+        Produkt&shy;oversikt
+        </a>
+      </li>
+    
+      <li class="py-4">
+        <a href="/soknad/" class="hover:text-orange-300 hover:underline decoration-from-font underline-offset-4">
+          <span class="w-5">05</span>
+        Søknad
+        </a>
+      </li>
+    
+      <li class="py-4">
+        <a href="/tom/" class="hover:text-orange-300 hover:underline decoration-from-font underline-offset-4">
+          <span class="w-5">06</span>
+        Tom side
+        </a>
+      </li>
+    
+    </ul>
+  </div>
+</div>
+
+
+    <div class="relative z-10 transition-transform duration-150 ease-out bg-white" x-bind:class="indexOpen ? 'translate-y-[80vh]' : 'translate-y-0'" x-on:click.outside="indexOpen = false">
     <header class="relative z-40 isolate grid grid-cols-layout shadow-border bg-white " >
 
   <div class="relative z-10 grid justify-center bg-gray-100 xs:hidden col-full">
@@ -738,6 +741,21 @@
 
 <button class="fixed inset-0 z-30 w-full h-full bg-black/30 " x-bind:class="(menuOpen || notifyOpen) ? 'animate-fade-in' : 'hidden'" x-on:click="menuOpen = false, notifyOpen = false" x-on:keyup.escape.window="menuOpen = false, notifyOpen = false"></button>
 
+    <div class="grid py-8 text-xl leading-snug bg-purple-700 grid-cols-layout text-purple-50">
+  <div class="flex items-start gap-4 md:gap-5 md:items-center col-popout">
+    <div class="grid w-12 h-12 -mb-px rounded-full bg-purple-800/50 md:w-16 md:h-16 shrink-0 place-items-center">
+      <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" fill="none" viewBox="0 0 25 24" class="w-6 h-6 md:w-9 md:h-9 mb-1">
+  <path fill="currentColor" fill-rule="evenodd" d="M14 6v6a1 1 0 1 0 2 0V8.07A8 8 0 0 1 20 15v2.67L21 19H3l1-1.33V15a8 8 0 0 1 4-6.93V12a1 1 0 1 0 2 0V6.01a1 1 0 0 1 .84-.9l.19-.03a6 6 0 0 1 1.94 0l.2.03a1 1 0 0 1 .83.9Zm8 9v2l1.8 2.4A1 1 0 0 1 23 21H1a1 1 0 0 1-.8-1.6L2 17v-2a10 10 0 0 1 6.01-9.17 3 3 0 0 1 2.5-2.7l.2-.02a8 8 0 0 1 2.59 0l.19.03a3 3 0 0 1 2.5 2.69A10 10 0 0 1 22 15Zm-11 0a1 1 0 1 0 0 2h2a1 1 0 1 0 0-2h-2Z" clip-rule="evenodd"/>
+</svg>
+    </div>
+    <div class="max-w-lg">
+      <p>Hei! Dette er en bare en <strong>prototype til testing og utvikling</strong>.
+      <a class="text-blue-300 underline hover:no-underline hover:text-purple-200" href="https://www.nav.no/">Dette er lenken til nav.no</a> om du har havnet her ved en feil.</p>
+    </div>
+    
+  </div>
+</div>
+
     
   <main class="grid py-12 min-h-[36vh] lg:min-h-[44vh] grid-cols-layout">
     <div class="col-content xl:col-feature leading-[28vh] lg:leading-[36vh] text-squishy font-bold text-center uppercase text-gray-700/5">Tom side</div>
@@ -747,7 +765,7 @@
   <div class="col-feature">
     <div class="flex flex-col items-center py-3">
       <a class="flex items-center gap-2 text-base text-center hover:underline hover:text-orange-200" href="#">
-        <svg class="w-5 h-5" width="24" height="24" viewBox="0 0 24 24"  aria-hidden="true" focusable="false" role="img">
+        <svg class="w-5 h-5" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false" role="img">
           <path stroke="currentColor" stroke-width="2" d="m7 9 6-6 6 6m-6 10V4" />
         </svg>
         <span>Til toppen</span>
@@ -864,5 +882,6 @@
   </div>
 </footer>
 
+    </div>
   </body>
 </html>
