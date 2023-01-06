@@ -1,0 +1,26 @@
+---
+apiVersion: nais.io/v1alpha1
+kind: Application
+metadata:
+  name: navno-prototype
+  namespace: personbruker
+  labels:
+    team: personbruker
+spec:
+  image: { { image } }
+  team: personbruker
+  port: 3123
+  liveness:
+    path: /person/prototype/internal/isAlive
+    initialDelay: 5
+  readiness:
+    path: /person/prototype/internal/isReady
+    initialDelay: 5
+  ingresses:
+    - https://www.nav.no/person/prototype
+  env:
+    - name: NPM_CONFIG_CACHE
+      value: /tmp/npm-cache
+  replicas:
+    min: 1
+    max: 1

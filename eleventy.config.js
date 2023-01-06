@@ -49,7 +49,7 @@ module.exports = function (eleventyConfig) {
       input: "src",
       data: "_data",
       includes: "_includes",
-      output: "_site",
+      output: "build",
     },
   };
 };
