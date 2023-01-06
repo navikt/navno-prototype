@@ -10,12 +10,12 @@ permalink: '/index.html'
 {% block content %}
   <main class="text-gray-900" x-bind:inert="menuOpen || notifyOpen">
     <div class="grid py-8 bg-white grid-cols-layout md:py-12">
-      <div class="col-popout">
+      <div class="col-feature">
         <h2 class="-mt-2 text-xl font-semibold md:text-3xl">Hva kan vi hjelpe deg med?</h2>
         <ul class="grid gap-2 mx-auto mt-4 lg:grid-cols-3 sm:grid-cols-2 sm:gap-4 md:gap-6">
           {% for service in servicesList %}
             <li class="">
-              <a class="relative flex items-center justify-between gap-4 z-10 bg-deepblue-50 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 hover:text-blue-500 hover:shadow-xl hover:bg-gray-100 focus:shadow-xl min-h-[7rem] lg:min-h-[9rem] pl-6 pr-[40%] py-2 overflow-hidden group c-area-card" href="#">
+              <a class="relative flex items-center justify-between gap-4 z-10 bg-deepblue-50 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600 hover:text-blue-600 hover:shadow-xl hover:bg-gray-100 focus:shadow-xl min-h-[7rem] lg:min-h-[9rem] pl-6 pr-[40%] py-2 overflow-hidden group c-area-card" href="#">
                 <div class="text-xl font-semibold leading-snug underline md:text-2xl group-hover:no-underline">
                   {{ service.title | safe }}
                 </div>
@@ -29,22 +29,22 @@ permalink: '/index.html'
       </div>
     </div>
 
-    <div class="grid grid-cols-layout pt-8 pb-8 bg-[#fde6e6] md:py-12">
-      <div class="col-popout">
+    <div class="grid pb-8 grid-cols-layout md:pb-12">
+      <div class="col-feature">
         <h2 class="-mt-2 text-xl font-semibold md:text-3xl">Snarveier</h2>
         <ul class="grid gap-2 mt-4 sm:gap-4 md:gap-6 sm:grid-cols-2">
           {% for shortcut in shortcutsList %}
             <li class="grid">
-              <a class="flex items-center gap-4 py-3 pl-5 pr-8 transition duration-300 ease-out bg-white rounded-lg md:py-4 group hover:text-blue-500 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-500" href="#">
+              <a class="flex items-center gap-4 py-3 pl-5 pr-8 transition duration-300 ease-out bg-[#fde6e6] rounded-lg md:py-4 group hover:text-blue-600 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-600" href="#">
                 <svg class="w-10 h-10 md:w-11 md:h-11" width="54" height="54" fill="none" viewBox="0 0 54 54" aria-hidden="true"  focusable="false" role="img" overflow="visible">
                   <g class="duration-200 ease-out translate-x-4 transition-custom fine:group-hover:-translate-x-2">
                     <path stroke="#000" stroke-width="2" d="M9 17h16" />
-                    <path stroke="#CCE2EE" stroke-width="3" d="M8 14.5h20" />
+                    <path stroke="#fde6e6" stroke-width="3" d="M8 14.5h20" />
                     <path stroke="#000" stroke-width="2" d="M13 27h20" />
-                    <path stroke="#CCE2EE" stroke-width="3" d="M15 29.5h23m-30 10h21" />
+                    <path stroke="#fde6e6" stroke-width="3" d="M15 29.5h23m-30 10h21" />
                     <path stroke="#000" stroke-width="2" d="M10 37h12" />
                   </g>
-                  <circle class="transition-custom duration-200 ease-out origin-center fine:group-hover:scale-0 fine:group-hover:translate-y-0.5 fine:group-hover:-translate-x-2" cx="27" cy="27" r="27" fill="#CCE2F0" />
+                  <circle class="transition-custom duration-200 ease-out origin-center fine:group-hover:scale-0 fine:group-hover:translate-y-0.5 fine:group-hover:-translate-x-2" cx="27" cy="27" r="27" fill="#ffffff" />
                   <path class="transition-custom origin-center duration-200 fine:group-hover:scale-[1.15] fine:group-hover:translate-x-3" stroke="#262626" stroke-width="2" d="M41 27 23 45l-6-6 12-12-12-12 6-6 18 18Z" />
                 </svg>
                 <span class="max-w-[30ch] text-xl leading-snug font-semibold md:text-2xl">{{ shortcut.title | safe }}</span>
@@ -56,13 +56,13 @@ permalink: '/index.html'
       </div>
     </div>
 
-    <div class="mt-2 grid grid-cols-layout py-8 bg-[#f1f1f1] md:py-12 sm:px-8">
-      <div class="col-popout">
+    <div class="mt-2 grid grid-cols-layout py-8 bg-[#f1f1f1] md:pb-12">
+      <div class="col-feature">
         <h2 class="-mt-2 text-xl font-semibold md:text-3xl">Aktuelt</h2>
         <div class="grid gap-2 mt-4 sm:gap-4 md:gap-6 sm:grid-cols-2">
           {% for news in newsList %}
-            <a class="grid gap-2 px-6 py-5 duration-300 ease-out bg-white rounded-lg group transition-custom hover:text-blue-500 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-500" href="#">
-              <span class="max-w-[30ch] text-xl font-semibold md:text-2xl underline group-hover:text-blue-500 group-hover:no-underline">{{ news.title | safe }}</span>
+            <a class="grid gap-2 px-6 py-5 duration-300 ease-out bg-white rounded-lg group transition-custom hover:text-blue-600 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-600" href="#">
+              <span class="max-w-[30ch] text-xl font-semibold md:text-2xl underline group-hover:text-blue-600 group-hover:no-underline">{{ news.title | safe }}</span>
               <span class="text-lg opacity-70">{{ news.date }}</span>
             </a>
           {% endfor %}
@@ -70,13 +70,13 @@ permalink: '/index.html'
       </div>
     </div>
 
-    <div class="grid py-8 pb-12 bg-white grid-cols-layout md:pt-12 md:pb-20">
-      <div class="col-popout">
+    <div class="grid pt-8 pb-12 bg-white grid-cols-layout md:pb-16">
+      <div class="col-feature">
         <h2 class="-mt-2 text-xl font-semibold md:text-3xl">Kontakt oss</h2>
         <div class="grid gap-8 mt-4 sm:gap-4 md:gap-6 sm:grid-cols-2">
           <div class="relative grid gap-2 px-6 py-6 bg-blue-50 rounded-t-3xl rounded-r-3xl group">
             <h3 class="text-xl font-semibold md:text-2xl">
-              <a href="#" class="text-blue-500 underline hover:text-deepblue-600 hover:no-underline">Du kan chatte med oss</a>
+              <a href="#" class="text-blue-600 underline hover:text-deepblue-600 hover:no-underline">Du kan chatte med oss</a>
             </h3>
             <p class="text-lg">Du møter først chatbot Frida. Du kan be Frida om å få chatte med en veileder (hverdager 09:00–15:00)</p>
             <svg class="absolute left-0 top-full" viewBox="0 0 24 24" width="24" height="24"  aria-hidden="true" focusable="false" role="img">
@@ -85,7 +85,7 @@ permalink: '/index.html'
           </div>
           <div class="relative grid content-start gap-2 px-6 py-6">
             <h3 class="text-xl font-semibold md:text-2xl">
-              <a href="#" class="text-blue-500 underline hover:text-deepblue-600 hover:no-underline">Du kan også ringe eller skrive til oss</a>
+              <a href="#" class="text-blue-600 underline hover:text-deepblue-600 hover:no-underline">Du kan også ringe eller skrive til oss</a>
             </h3>
             <p class="text-lg">Se hvordan du kan kontakte oss på ulike måter.</p>
           </div>

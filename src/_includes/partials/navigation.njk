@@ -1,11 +1,11 @@
 {# Navigation (Private) #}
 <nav class="relative">
-  <div class="absolute inset-x-0 z-50 grid pt-8 pb-16 bg-white shadow-xl grid-cols-layout md:pt-12 top-full" x-bind:class="!menuOpen ? 'hidden' : 'opacity-0 animate-dropdown'">
+  <div class="absolute inset-x-0 z-50 grid pt-8 pb-16 bg-white border-t border-gray-200 shadow-xl grid-cols-layout md:pt-12 top-full" x-bind:class="!menuOpen ? 'hidden' : 'opacity-0 animate-dropdown'">
 
     <div class="col-feature">
       <div class="grid gap-3 md:gap-6 md:grid-flow-col-dense">
 
-        <div class="grid flex-auto row-start-1 p-4 -mx-2 rounded-lg md:col-start-3 md:row-span-2 bg-deepblue-50 md:p-6 md:-mx-6">
+        <div class="grid flex-auto row-start-1 p-4 rounded-lg md:p-6 md:col-start-3 md:row-span-2 bg-deepblue-50 md:-ml-6">
           <h3 class="grid">
             <span class="text-sm tracking-wider uppercase opacity-70">Logget inn som</span>
             <span class="text-2xl font-semibold leading-tight">Fjong Vindelbro</span>
@@ -34,7 +34,7 @@
 
         </div>
 
-        <div class="flex-1 pt-8 md:pr-4 md:col-start-1 md:row-start-1">
+        <div class="flex-1 pt-8 md:pt-0 md:pr-4 md:col-start-1 md:row-start-1">
           <h3 class="text-sm tracking-widest uppercase opacity-70">{{ menu.areas.title | safe }}</h3>
           <ul class="grid gap-1 mt-2">
             {% for link in menu.areas.linkList %}
@@ -50,7 +50,7 @@
           </ul>
         </div>
 
-        <div class="flex flex-col pt-8 md:pr-12 md:col-start-2 md:row-start-1">
+        <div class="flex flex-col pt-8 md:pt-0 md:pr-12 md:col-start-2 md:row-start-1">
           <h3 class="text-sm tracking-widest uppercase opacity-70">{{ menu.shortcuts.title | safe }}</h3>
           <ul class="mt-2">
             {% for link in menu.shortcuts.linkList %}

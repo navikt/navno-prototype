@@ -234,9 +234,7 @@ module.exports = {
           "grid-template-columns": `
           [full-start] var(--_layout-full)
           [feature-start] var(--_layout-feature)
-          [popout-start] var(--_layout-popout)
           [content-start ] var(--_layout-content) [content-end]
-          var(--_layout-popout) [popout-end]
           var(--_layout-feature) [feature-end]
           var(--_layout-full) [full-end]`,
         },
@@ -248,9 +246,6 @@ module.exports = {
         },
         ".col-feature": {
           "grid-column": "feature",
-        },
-        ".col-popout": {
-          "grid-column": "popout",
         },
         ".col-content": {
           "grid-column": "content",
