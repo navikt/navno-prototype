@@ -1,0 +1,17 @@
+<div class="grid py-8 text-xl leading-snug bg-purple-700 grid-cols-layout text-purple-50">
+  <div class="flex items-start gap-4 md:gap-5 md:items-center col-popout">
+    <div class="grid w-12 h-12 -mb-px rounded-full bg-purple-800/50 md:w-16 md:h-16 shrink-0 place-items-center">
+      {{ '/src/_includes/svg/icons/helmet.svg' | svgContents('w-6 h-6 md:w-9 md:h-9 mb-1') | safe }}
+    </div>
+    <div class="max-w-lg">
+      <p>Hei! Dette er en bare en <strong>prototype til testing og utvikling</strong>.
+      <a class="text-blue-300 underline hover:no-underline hover:text-purple-200" href="https://www.nav.no/">Dette er lenken til nav.no</a> om du har havnet her ved en feil.</p>
+    </div>
+    {# <a class="inline-flex items-center gap-3 px-5 py-3 text-white bg-blue-400 rounded" href="https://www.nav.no/">
+      <span>Til nav.no</span>
+      <svg class="w-5 h-5" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false" role="img">
+        <path d="m15 6 6 6-6 6M5 12h15" stroke="currentColor" stroke-width="2"/>
+      </svg>
+    </a> #}
+  </div>
+</div>
