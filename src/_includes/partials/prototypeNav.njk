@@ -3,7 +3,7 @@
     <ul class="py-3 divide-y md:py-6 divide-blue-300/25 col-popout">
     {% for page in collections.template | sort(false, false, 'data.order') %}
       <li class="py-4">
-        <a href="{{ env.sitePath }}{{ page.url }}" class="hover:text-orange-300 hover:underline decoration-from-font underline-offset-4">
+        <a href="{{ page.url }}" class="hover:text-orange-300 hover:underline decoration-from-font underline-offset-4">
           <span class="w-5">{{ '0' if page.data.order < 10 }}{{ page.data.order }}</span>
         {{ page.data.title | safe }}
         </a>
