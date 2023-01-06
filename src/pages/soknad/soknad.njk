@@ -4,62 +4,30 @@ description: 'Grunnoppsett for søknader'
 order: 5
 tags:
   - template
-stepperList:
-  -
-    text: 'Personalia'
-    state: 'complete'
-  -
-    text: 'Bostedsland'
-    state: 'complete'
-  -
-    text: 'Reel arbeidssøker'
-    state: 'complete'
-  -
-    text: 'Arbeidsforhold'
-    state: 'complete'
-  -
-    text: 'Arbeidsforhold i EØS'
-    state: 'active'
-  -
-    text: 'Egen næring'
-  -
-    text: 'Utdanning'
-  -
-    text: 'Værneplikt'
-  -
-    text: 'Barnetillegg'
-  -
-    text: 'Andre ytelser'
-  -
-    text: 'Tilleggsopplysninger'
-  -
-    text: 'Vedlegg'
-  -
-    text: 'Oppsummering'
-  -
-    text: 'Kvittering'
 ---
 {% extends 'base.njk' %}
 
 {% block content %}
   <main class="min-h-[61vh] text-lg text-gray-900">
     <div class="grid py-8 bg-white grid-cols-layout md:pt-12 md:pb-20 ">
-      <div class="col-content">
+      <div class="col-popout">
         <h1 class="text-3xl font-semibold leading-tight md:text-4xl">Søknad om dagpenger</h1>
 
         <div class="mt-3 md:grid md:grid-flow-row-dense md:gap-20 md:grid-cols-12">
-          <div class="px-4 py-3 mb-3 -mx-4 md:col-span-8 md:hidden" x-data="{ stepperOpen: false }" x-bind:class="stepperOpen && 'bg-blue-50 xs:rounded md:bg-transparent'">
-            <p class="text-sm">Steg 5 av 14</p>
-            <div class="relative flex items-center justify-between gap-8">
-              <h2 class="text-2xl font-semibold">Arbeidsforhold i EØS</h2>
-              <button class="absolute inset-0" x-on:click="stepperOpen = !stepperOpen">
-                <span class="sr-only">Vis seksjoner</span>
-              </button>
-              <svg class="flex-none w-6 h-6 pointer-events-none" x-bind:class="stepperOpen && 'rotate-180'" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false" role="img">
-                <path d="M18 9L12 15L6 9" stroke="currentColor" stroke-width="2" />
-              </svg>
+          <div class="mb-3 -mx-4 md:col-span-8 md:hidden" x-data="{ stepperOpen: false }" x-bind:class="stepperOpen && 'bg-gray-50 xs:rounded md:bg-transparent'">
+            <div class="relative px-4 py-3 hover:bg-blue-50 xs:rounded">
+              <p class="text-sm">Steg 5 av 14</p>
+              <div class="flex items-center gap-3 ">
+                <h2 class="text-2xl font-semibold">Arbeidsforhold i EØS</h2>
+                <button class="absolute inset-0" x-on:click="stepperOpen = !stepperOpen">
+                  <span class="sr-only">Vis seksjoner</span>
+                </button>
+                <svg class="flex-none w-6 h-6 pointer-events-none" x-bind:class="stepperOpen && 'rotate-180'" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false" role="img">
+                  <path d="M18 9L12 15L6 9" stroke="currentColor" stroke-width="2" />
+                </svg>
+              </div>
             </div>
-            <div class="mt-4" x-show="stepperOpen">
+            <div class="px-4 py-3" x-show="stepperOpen">
               <ol class="navds-stepper">
                 {% for item in stepperList %}
                   <li class="navds-stepper__item">
@@ -109,7 +77,7 @@ stepperList:
             </ol>
           </div>
 
-          <div class="md:col-span-8">
+          <div class="mt-6 md:col-span-8">
             <div class="max-w-prose">
               <div class="hidden mt-6 mb-4 md:block">
                 <p class="text-sm">Steg 5 av 14</p>
@@ -120,7 +88,7 @@ stepperList:
 
               <div class="mt-6">
                 <label class="font-semibold" for="country">Hvilket land bor du i?</label>
-                <p class="text-base">Med bostedsland mener vi ditt vanlige oppholdssted, som er der du eier eller leier bolig og tilbringer mesteparten av tiden din.</p>
+                <p class="">Med bostedsland mener vi ditt vanlige oppholdssted, som er der du eier eller leier bolig og tilbringer mesteparten av tiden din.</p>
                 <select id="country" class="select w-full px-2.5 py-1.5 mt-2 border border-gray-300 rounded appearance-none">
                   <option value="1">Velg land</option>
                   <option value="2">Sveits</option>
@@ -129,7 +97,7 @@ stepperList:
               </label>
             </div>
 
-            <div class="h-[800px] bg-gray-50 mt-12"></div>
+            <div class="h-[800px] bg-white mt-12"></div>
           </div>
         </div>
 
@@ -146,6 +114,12 @@ stepperList:
       background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='none' %3E%3Cpath d='M18 9L12 15L6 9' stroke='%23404040' stroke-width='1.75'%3E%3C/path%3E%3C/svg%3E") no-repeat calc(100% - 0.5rem) 50%;
     }
     .navds-stepper {
+      --navds-global-color-white: rgba(255, 255, 255, 1);
+      --navds-global-color-blue-500: rgba(0, 103, 197, 1);
+      --navds-global-color-blue-800: rgba(0, 52, 125, 1);
+      --navds-global-color-gray-400: rgba(176, 176, 176, 1);
+      --navds-global-color-gray-600: rgba(112, 112, 112, 1);
+      --navds-global-color-deepblue-500: rgba(0, 91, 130, 1);
       --navds-stepper-marker-size: 1.75rem;
       --navds-stepper-marker-color: var(--navds-global-color-blue-500);
 
