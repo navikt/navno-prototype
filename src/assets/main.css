@@ -10,8 +10,7 @@
     --_layout-popout: minmax(0, 7.125rem);
     --_layout-content: min(56.25rem, 100% - (var(--_layout-gap) * 2));
   }
-
-  p > a {
+  a {
     text-decoration-thickness: 0.0875rem;
     text-underline-offset: 0.125em;
   }
