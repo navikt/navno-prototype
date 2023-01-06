@@ -44,8 +44,6 @@ module.exports = function (eleventyConfig) {
     middleware: [],
   });
 
-  console.log(eleventyConfig.baseHref);
-
   return {
     markdownTemplateEngine: "njk",
     templateFormats: ["njk", "md"],
