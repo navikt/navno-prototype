@@ -11,14 +11,14 @@
     "dev:eleventy": "ELEVENTY_ENV=development eleventy --config=eleventy.config.js --serve",
     "dev:css": "postcss ./src/assets/main.css -o ./build/assets/main.min.css --watch",
     "dev": "concurrently npm:dev:*",
-    "build:eleventy": "ELEVENTY_ENV=production SITE_PATH=/person/prototype eleventy --config=eleventy.config.js",
+    "build:eleventy": "ELEVENTY_ENV=production eleventy --config=eleventy.config.js --pathprefix=person/prototype",
     "build:css": "NODE_ENV=production postcss ./src/assets/main.css -o ./build/assets/main.min.css",
     "build": "concurrently npm:build:*",
     "start": "node ./server/app.js"
   },
   "license": "MIT",
   "devDependencies": {
-    "@11ty/eleventy": "^2.0.0-canary.23",
+    "@11ty/eleventy": "^2.0.0-canary.24",
     "alpinejs": "^3.10.5",
     "autoprefixer": "^10.4.13",
     "compression": "^1.7.4",

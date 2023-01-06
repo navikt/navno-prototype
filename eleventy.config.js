@@ -2,6 +2,7 @@
  * @param { import('@11ty/eleventy/src/UserConfig') } eleventyConfig
  */
 
+const { EleventyHtmlBasePlugin } = require("@11ty/eleventy");
 const svgContents = require("eleventy-plugin-svg-contents");
 const { markdown, markdownInline } = require("./src/_11ty/filters.js");
 const { timestampNow } = require("./src/_11ty/shortcodes.js");
@@ -11,6 +12,7 @@ const { minifyHtml } = require("./src/_11ty/transforms.js");
 
 module.exports = function (eleventyConfig) {
   // Eleventy Plugins
+  eleventyConfig.addPlugin(EleventyHtmlBasePlugin);
   eleventyConfig.addPlugin(svgContents);
 
   // Copy static assets to build folder
