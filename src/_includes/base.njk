@@ -29,7 +29,6 @@
       menuOpen: false,
       notifyOpen: false
     }">
-    {{ env.sitePath }}
     {% include "partials/prototypeNav.njk" %}
     <div class="relative z-10 transition-transform duration-150 ease-out bg-white" x-bind:class="indexOpen ? 'translate-y-[80vh]' : 'translate-y-0'" x-on:click.outside="indexOpen = false">
     {% include "partials/header.njk" %}
