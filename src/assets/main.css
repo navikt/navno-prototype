@@ -47,6 +47,16 @@
   .dashed-svg {
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='100%25' height='100%25' fill='none' stroke='%23b0b0b0' stroke-dasharray='6 5' rx='8' stroke-width='4'/%3E%3C/svg%3E");
   }
+  .border-warning {
+    border-image: repeating-linear-gradient(
+        -64deg,
+        theme(colors.orange.300),
+        theme(colors.orange.300) 10px,
+        theme(colors.deepblue.900) 10px,
+        theme(colors.deepblue.900) 20px
+      )
+      20;
+  }
 }
 @layer utilities {
   .scrollbar-hidden::-webkit-scrollbar {

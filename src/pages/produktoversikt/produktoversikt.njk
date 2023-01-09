@@ -10,7 +10,7 @@ bodyClass: ''
 
 {% block content %}
   <main
-    class="text-lg text-gray-900"
+    class="my-4 text-lg text-gray-900"
     x-data="{
       taxonomyFilter: new URLSearchParams(location.search).get('taxonomy') || 'alle',
       areaFilter: new URLSearchParams(location.search).get('area') || 'alle',
@@ -47,14 +47,25 @@ bodyClass: ''
 
         <h1 class="text-3xl font-semibold leading-tight md:text-5xl md:leading-tight">Søknad og skjema fra A&nbsp;til&nbsp;Å</h1>
 
-        <p class="max-w-2xl mt-2 text-xl">Pengestøtter og tjenester fra NAV for privatpersoner. Du kan søke eller sortere etter område og kategori.</p>
+        <p class="max-w-2xl mt-2 text-xl md:mt-3 md:text-2xl">Pengestøtter og tjenester fra NAV for privatpersoner. Du kan søke eller sortere etter område og kategori.</p>
 
         <div class="absolute hidden top-3 right-8 md:block">
           {{ '/src/_includes/svg/pictograms/support.svg' | svgContents('w-32 h-32') | safe }}
         </div>
 
-        <aside class="grid items-start gap-6 mt-8">
-          {% set labelClasses = "inline-flex cursor-pointer px-4 pt-1.5 pb-1.5 leading-tight text-base bg-gray-100 ring-1 ring-gray-200/25 rounded-full hover:bg-deepblue-100 peer-checked:bg-deepblue-50 peer-checked:ring-2 peer-checked:ring-blue-500 peer-checked:text-blue-600 peer-checked:font-semibold" %}
+      </div>
+    </div>
+
+    <div class="grid bg-white grid-cols-layout">
+      <div class="grid gap-8 pb-24 lg:gap-x-24 lg:items-start lg:grid-cols-12 col-popout">
+
+        {# <div>
+          <label for="searchFilter" class="font-semibold">Søk</label>
+          <input id="searchFilter" type="text" class="w-full px-4 py-3 bg-white border rounded-lg shadow-inner focus:outline-none focus:ring focus:ring-gray-600 border-gray-300/50">
+        </div> #}
+
+        <div class="grid items-start gap-12 lg:mt-8 lg:pt-1 lg:col-span-4 lg:row-span-2">
+          {% set labelClasses = "inline-flex cursor-pointer px-4 pt-1.5 pb-1.5 leading-tight text-base bg-gray-100 ring-1 ring-deepblue-200/50 rounded-full hover:bg-deepblue-100 peer-checked:bg-deepblue-600 peer-checked:ring-2 peer-checked:ring-deepblue-500 peer-checked:text-deepblue-50 peer-checked:font-semibold" %}
           {% set inputClasses = "absolute opacity-0 pointer-events-none peer" %}
 
           {% for group in filters | dictsort %}
@@ -90,64 +101,58 @@ bodyClass: ''
               </ul>
             </div>
           {% endfor %}
-          <p>Viser <span x-text="count"></span> produkter og tjenester</p>
-        </aside>
-      </div>
-    </div>
+        </div>
 
-    <div class="grid pt-8 pb-24 bg-gray-100 grid-cols-layout lg:pt-12 min-h-[25vh]">
-      <div class="grid items-start gap-8 lg:gap-16 lg:grid-cols-10 col-content">
-        {# <div>
-          <label for="searchFilter" class="font-semibold">Søk</label>
-          <input id="searchFilter" type="text" class="w-full px-4 py-3 bg-white border rounded-lg shadow-inner focus:outline-none focus:ring focus:ring-gray-600 border-gray-300/50">
-        </div> #}
 
-        <div class="grid gap-0.5 lg:col-span-6" x-ref="entries" x-show="count !== 0">
-          {% for product in products %}
-            <div
-              x-data="{ expanded: {{ product.expanded or 'false' }} }"
-              class="bg-white rounded shadow focus-within:z-10"
-              x-show="show_item($el)"
-              data-taxonomy="{{ product.taxonomy | slugify }}"
-              data-area="{{ product.area | slugify }}">
-              <button x-on:click="expanded = !expanded" class="flex items-center w-full gap-4 px-4 py-4 text-xl font-semibold text-left group hover:bg-deepblue-100 focus:outline-none focus-visible:ring focus-visible:ring-gray-600 focus-visible:rounded" x-bind:aria-expanded="expanded">
-                {% if product.icon %}
-                  {{ product.icon | svgContents('w-12 h-12') | safe }}
-                {% else %}
-                <span class="flex-none block w-12 h-12 rounded-full bg-deepblue-100/50 group-hover:bg-deepblue-200/50"></span>
-                {% endif %}
-                <span class="flex-1 leading-tight">{{ product.title | safe }}</span>
-                {{ '/src/_includes/svg/icons/chevron-down.svg' | svgContents('mr-1.5 w-5 h-5 opacity-50 group-aria-expanded:rotate-180 transition duration-100') | safe }}
-              </button>
-              <div class="relative px-4 pt-2 pb-12" x-bind:hidden="!expanded">
-                <div class="pt-4 xs:px-16 markdown">
-                  {% include "partials/contentBlocks.njk" %}
+        <div class="lg:col-span-8 lg:-order-1">
+          <p class="mb-4">Viser <span x-text="count"></span> av {{ products.length }} produkter og tjenester</p>
 
-                  {% if product.contentBlocks %}
-                    <div class="px-16 pt-6 text-center">
-                      <a class="text-sm text-blue-500 hover:underline hover:text-blue-600" href="/produktoversikt/{{ product.title | slug }}.html">(Vis som egen side)</a>
-                    </div>
+          <div class=" grid gap-1.5" x-ref="entries" x-show="count !== 0">
+            {% for product in products %}
+              <div
+                x-data="{ expanded: {{ product.expanded or 'false' }} }"
+                class=" focus-within:z-10"
+                x-show="show_item($el)"
+                data-taxonomy="{{ product.taxonomy | slugify }}"
+                data-area="{{ product.area | slugify }}">
+
+                <button x-on:click="expanded = !expanded" class="flex flex-row-reverse items-center w-full gap-4 px-6 py-4 text-left rounded-lg bg-deepblue-100/50 group hover:bg-deepblue-50 focus:outline-none focus-visible:ring focus-visible:ring-gray-600 focus-visible:rounded" x-bind:aria-expanded="expanded">
+                  {% if product.icon %}
+                    {{ product.icon | svgContents('w-14 h-14') | safe }}
                   {% endif %}
+                  <span class="grid flex-1 gap-0.5">
+                    <span class="text-xl font-semibold leading-tight">{{ product.title | safe }}</span>
+                    <span class="">{{ product.description or 'Beskrivelse mangler' }}</span>
+                  </span>
+                  {# {{ '/src/_includes/svg/icons/chevron-down.svg' | svgContents('mr-1.5 w-5 h-5 text-deepblue-500/60 group-aria-expanded:rotate-180 transition duration-100') | safe }} #}
+                </button>
+                <div class="relative px-4 pt-2 pb-12 max-w-prose" x-bind:hidden="!expanded">
+                  <div class="pt-2 markdown">
+                    {% include "partials/contentBlocks.njk" %}
+
+                    {% if product.contentBlocks %}
+                      <div class="pt-3 text-center">
+                        <a class="text-base text-deepblue-500 hover:underline hover:text-deepblue-600" href="/produktoversikt/{{ product.title | slug }}.html">(Vis som egen side)</a>
+                      </div>
+                    {% endif %}
+                  </div>
                 </div>
               </div>
-            </div>
 
-          {% endfor %}
+            {% endfor %}
+          </div>
+          <div x-show="count === 0" class="p-6 py-8 text-center overflow-hidden grid items-center leading-snug rounded-lg bg-gray-100 min-h-[4.75rem] lg:col-span-6">
+            <p>Ingen søknader eller skjema er merket med denne kombinasjonen av kategori og område.</p>
+          </div>
         </div>
 
-        <div x-show="count === 0" class="p-6 overflow-hidden grid items-center leading-snug rounded-lg dashed-svg min-h-[4.75rem] lg:col-span-6">
-          <p>Fant ingen søknad eller skjema med valgt kategori eller område.</p>
-        </div>
-
-        <div class="lg:col-span-4">
-          <div class="p-4 border rounded bg-deepblue-50 border-deepblue-200 lg:px-6 lg:py-5">
+        <div class="p-4 bg-orange-100 rounded lg:col-span-8 lg:px-6 lg:py-5">
             <h3 class="text-xl font-semibold">
               Klage eller anke på vedtak?
             </h3>
             <p class="mt-2 max-w-prose">Hvis du har fått et vedtak fra NAV og du er uenig i vedtaket, har du rett til å klage eller anke.</p>
-            <p class="mb-2 mt-7"><a href="#" class="text-blue-600 underline hover:no-underline hover:text-blue-700">Les mer om dine klagerettigheter</a>.</p>
+            <p class="mb-2 mt-7"><a href="#" class="underline text-deepblue-600 hover:no-underline hover:text-deepblue-700">Les mer om dine klagerettigheter</a>.</p>
           </div>
-        </div>
 
       </div>
     </div>

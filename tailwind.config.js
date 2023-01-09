@@ -182,6 +182,7 @@ module.exports = {
       },
       borderWidth: {
         3: "3px",
+        6: "6px",
       },
       boxShadow: {
         border: "0 -1px 0 inset rgba(128,128,128,0.2)",
