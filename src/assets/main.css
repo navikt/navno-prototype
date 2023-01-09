@@ -4,11 +4,10 @@
 
 @layer base {
   :root {
-    --_layout-gap: clamp(0.75rem, 0.5rem + 2vw, 6rem);
+    --_layout-gap: clamp(0.75rem, 0.5rem + 3vw, 6rem);
     --_layout-full: minmax(var(--_layout-gap), 1fr);
-    --_layout-feature: minmax(0, 6.75rem);
-    --_layout-popout: minmax(0, 7.125rem);
-    --_layout-content: min(56.25rem, 100% - (var(--_layout-gap) * 2));
+    --_layout-feature: minmax(0, 6.5rem);
+    --_layout-content: min(40rem + 32vw, 100% - (var(--_layout-gap) * 2));
   }
   a {
     text-decoration-thickness: 0.0875rem;
@@ -47,6 +46,16 @@
 
   .dashed-svg {
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='100%25' height='100%25' fill='none' stroke='%23b0b0b0' stroke-dasharray='6 5' rx='8' stroke-width='4'/%3E%3C/svg%3E");
+  }
+  .border-warning {
+    border-image: repeating-linear-gradient(
+        -64deg,
+        theme(colors.orange.300),
+        theme(colors.orange.300) 10px,
+        theme(colors.deepblue.900) 10px,
+        theme(colors.deepblue.900) 20px
+      )
+      20;
   }
 }
 @layer utilities {

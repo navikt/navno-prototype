@@ -44,6 +44,8 @@ module.exports = function (eleventyConfig) {
     middleware: [],
   });
 
+  eleventyConfig.setDataDeepMerge(true);
+
   return {
     markdownTemplateEngine: "njk",
     templateFormats: ["njk", "md"],

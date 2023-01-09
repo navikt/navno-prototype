@@ -11,8 +11,8 @@ module.exports = {
     screens: {
       xs: "480px",
       sm: "720px",
-      md: "960px",
-      lg: "1280px",
+      md: "1024px",
+      lg: "1200px",
       xl: "1440px",
       fine: { raw: "(pointer: fine)" },
     },
@@ -182,6 +182,7 @@ module.exports = {
       },
       borderWidth: {
         3: "3px",
+        6: "6px",
       },
       boxShadow: {
         border: "0 -1px 0 inset rgba(128,128,128,0.2)",
@@ -234,9 +235,7 @@ module.exports = {
           "grid-template-columns": `
           [full-start] var(--_layout-full)
           [feature-start] var(--_layout-feature)
-          [popout-start] var(--_layout-popout)
           [content-start ] var(--_layout-content) [content-end]
-          var(--_layout-popout) [popout-end]
           var(--_layout-feature) [feature-end]
           var(--_layout-full) [full-end]`,
         },
@@ -248,9 +247,6 @@ module.exports = {
         },
         ".col-feature": {
           "grid-column": "feature",
-        },
-        ".col-popout": {
-          "grid-column": "popout",
         },
         ".col-content": {
           "grid-column": "content",

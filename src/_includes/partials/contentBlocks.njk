@@ -1,4 +1,4 @@
-{% import "macros/button.njk" as button %}
+{%- from "macros/button.njk" import button -%}
 
 {% if product.contentBlocks %}
   {% for block in product.contentBlocks %}
@@ -10,11 +10,18 @@
     {% endif %}
 
     {% if block.type === 'actions' %}
-      <div class="flex flex-wrap items-baseline gap-2">
+    <div class="px-4 pt-3 pb-4 bg-gray-100 rounded-lg">
+      <p class="font-semibold">{{ block.title | safe }}</p>
+      <div class="flex flex-wrap items-baseline gap-2 mt-2">
         {% for item in block.data %}
-          {{ button.button(item.text, item.variant) }}
+          {{ button(
+            {
+              text: item.text,
+              variant: item.variant
+            }) }}
         {% endfor %}
       </div>
+    </div>
     {% endif %}
   {% endfor %}
 {% else %}

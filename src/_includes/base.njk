@@ -94,9 +94,9 @@
       notifyOpen: false
     }">
     {% include "partials/prototypeNav.njk" %}
-    <div class="relative z-10 transition-transform duration-150 ease-out bg-white" x-bind:class="indexOpen ? 'translate-y-[80vh]' : 'translate-y-0'" x-on:click.outside="indexOpen = false">
-    {% include "partials/header.njk" %}
+    <div class="relative z-10 transition-transform duration-200 ease-in bg-white" x-bind:class="indexOpen ? 'translate-y-[80vh]' : 'translate-y-0'" x-on:click.outside="indexOpen = false">
     {% include "partials/banner.njk" %}
+    {% include "partials/header.njk" %}
     {% block content %}{% endblock %}
     {% include "partials/footer.njk" %}
     </div>
