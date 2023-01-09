@@ -12,13 +12,13 @@ bodyClass: ''
   <main
     class="text-lg text-gray-900"
     x-data="{
-      taxonomyFilter: new URLSearchParams(location.search).get('taxonomy') || 'Alle',
-      areaFilter: new URLSearchParams(location.search).get('area') || 'Alle',
+      taxonomyFilter: new URLSearchParams(location.search).get('taxonomy') || 'alle',
+      areaFilter: new URLSearchParams(location.search).get('area') || 'alle',
       show_item(el) {
         return (
-          (this.taxonomyFilter === 'Alle'
+          (this.taxonomyFilter === 'alle'
           || el.dataset.taxonomy.includes(this.taxonomyFilter))
-          && (this.areaFilter === 'Alle'
+          && (this.areaFilter === 'alle'
           || el.dataset.area.includes(this.areaFilter))
         )
       },
@@ -69,7 +69,7 @@ bodyClass: ''
                       x-on:change="updateCount()"
                       class="{{ inputClasses }}"
                       name="productType-{{ group[0] | slug }}"
-                      value="Alle"
+                      value="alle"
                       id="productType-{{ group[0] | slug }}-all"
                       checked="checked"
                     />
@@ -81,8 +81,8 @@ bodyClass: ''
                   </li>
                 {% for item in group[1].items %}
                   <li>
-                    <input type="radio" x-on:change="updateCount()" x-model="{{ group[0] }}Filter" class="{{ inputClasses }}" name="productType-{{ group[0] | slug }}" value="{{ item }}" id="productType-{{ item | lower }}" />
-                    <label class="{{ labelClasses }}" for="productType-{{ item | lower }}">
+                    <input type="radio" x-on:change="updateCount()" x-model="{{ group[0] }}Filter" class="{{ inputClasses }}" name="productType-{{ group[0] | slugify }}" value="{{ item | slugify }}" id="productType-{{ item | slugify }}" />
+                    <label class="{{ labelClasses }}" for="productType-{{ item | slugify }}">
                       {{ item }}
                     </label>
                   </li>

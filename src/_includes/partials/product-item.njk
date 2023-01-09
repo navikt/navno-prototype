@@ -2,8 +2,8 @@
   x-data="{ expanded: {{ product.expanded or 'false' }} }"
   class="bg-white rounded shadow focus-within:z-10"
   x-show="show_item($el)"
-  data-taxonomy="{{ product.taxonomy | list if product.taxonomy }}"
-  data-area="{{ product.area | list if product.area }}"
+  data-taxonomy="{{ product.taxonomy | slugify }}"
+  data-area="{{ product.area | slugify }}"
 >
   <button x-on:click="expanded = !expanded" class="flex items-center w-full gap-4 px-4 py-4 text-xl font-semibold text-left group hover:bg-deepblue-100 focus:outline-none focus-visible:ring focus-visible:ring-gray-600 focus-visible:rounded" x-bind:aria-expanded="expanded">
     {% if product.icon %}
@@ -15,11 +15,11 @@
     {{ '/src/_includes/svg/icons/chevron-down.svg' | svgContents('mr-1.5 w-5 h-5 opacity-50 group-aria-expanded:rotate-180 transition duration-100') | safe }}
   </button>
   <div class="relative px-4 pt-2 pb-12" x-bind:hidden="!expanded">
-    <div class="pt-4 xs:px-14 markdown">
+    <div class="pt-4 xs:px-16 markdown">
       {% include "partials/contentBlocks.njk" %}
 
       {% if product.contentBlocks %}
-        <div class="pt-6 text-center px-14">
+        <div class="px-16 pt-6 text-center">
           <a class="text-sm text-blue-500 hover:underline hover:text-blue-600" href="/produktoversikt/{{ product.title | slug }}.html">(Vis som egen side)</a>
         </div>
       {% endif %}

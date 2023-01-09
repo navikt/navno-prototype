@@ -128,8 +128,8 @@ module.exports = {
     {
       title: "Overgangsstønad for enslig mor eller far",
       icon: "/src/_includes/svg/pictograms/single-parent.svg",
-      taxonomy: ["Pengestøtte"],
-      area: ["Familie og barn"],
+      taxonomy: ["pengestotte"],
+      area: ["familie-og-barn"],
       ingress:
         "Sikrer deg inntekt i inntil 3 år når du har minst 60 prosent av den daglige omsorgen for barn under 8 år.",
       contentBlocks: [
@@ -154,34 +154,36 @@ module.exports = {
         },
         {
           type: "actions",
+          title: "Søk om overgangs&shy;stønad",
           data: [
             {
-              text: "Søk om overgangs&shy;stønad",
+              text: "Søk digitalt",
               variant: "primary",
             },
             {
-              text: "Søk om overgangs&shy;stønad på papir",
-              variant: "tertiary",
+              text: "Søk på papir",
+              variant: "secondary",
             },
           ],
         },
         {
           type: "markdown",
           data: [
-            "## Søk om forlengelse av overgangsstønad som følge av koronasituasjonen",
+            "## Forlengelse av overgangsstønad som følge av koronasituasjonen",
             "Dette er en midlertidig ordning som er opprettet som følge av koronasituasjonen. Dette skjemaet gjelder kun søknad om forlengelse av overgangsstønaden som følge av koronasituasjonen.",
           ],
         },
         {
           type: "actions",
+          title: "Søk om forlengelse av overgangsstønad (korona)",
           data: [
             {
-              text: "Søk om forlengelse av overgangsstønad (korona)",
+              text: "Søk digitalt",
               variant: "primary",
             },
             {
-              text: "Søk om forlengelse av overgangs&shy;stønad (korona) på papir",
-              variant: "tertiary",
+              text: "Søk på papir",
+              variant: "secondary",
             },
           ],
         },
