@@ -47,7 +47,7 @@ bodyClass: ''
 
         <h1 class="text-3xl font-semibold leading-tight md:text-5xl md:leading-tight">Søknad og skjema fra A&nbsp;til&nbsp;Å</h1>
 
-        <p class="mt-2 text-xl max-w-prose">Pengestøtter og tjenester fra NAV for privatpersoner. Du kan søke eller sortere på område og kategori.</p>
+        <p class="max-w-2xl mt-2 text-xl">Pengestøtter og tjenester fra NAV for privatpersoner. Du kan søke eller sortere etter område og kategori.</p>
 
         <div class="absolute hidden top-3 right-8 md:block">
           {{ '/src/_includes/svg/pictograms/support.svg' | svgContents('w-32 h-32') | safe }}
@@ -90,19 +90,19 @@ bodyClass: ''
               </ul>
             </div>
           {% endfor %}
+          <p>Viser <span x-text="count"></span> produkter og tjenester</p>
         </aside>
       </div>
     </div>
 
-    <div class="grid pt-8 pb-24 bg-gray-100 grid-cols-layout md:pt-12 min-h-[25vh]">
-      <div class="grid items-start gap-8 md:gap-16 md:grid-cols-10 col-content">
-
+    <div class="grid pt-8 pb-24 bg-gray-100 grid-cols-layout lg:pt-12 min-h-[25vh]">
+      <div class="grid items-start gap-8 lg:gap-16 lg:grid-cols-10 col-content">
         {# <div>
           <label for="searchFilter" class="font-semibold">Søk</label>
           <input id="searchFilter" type="text" class="w-full px-4 py-3 bg-white border rounded-lg shadow-inner focus:outline-none focus:ring focus:ring-gray-600 border-gray-300/50">
         </div> #}
 
-        <div class="grid gap-0.5 md:col-span-6" x-ref="entries" x-show="count !== 0">
+        <div class="grid gap-0.5 lg:col-span-6" x-ref="entries" x-show="count !== 0">
           {% for product in products %}
             <div
               x-data="{ expanded: {{ product.expanded or 'false' }} }"
@@ -135,12 +135,12 @@ bodyClass: ''
           {% endfor %}
         </div>
 
-        <div x-show="count === 0" class="p-6 overflow-hidden grid items-center leading-snug rounded-lg dashed-svg min-h-[4.75rem] md:col-span-6">
+        <div x-show="count === 0" class="p-6 overflow-hidden grid items-center leading-snug rounded-lg dashed-svg min-h-[4.75rem] lg:col-span-6">
           <p>Fant ingen søknad eller skjema med valgt kategori eller område.</p>
         </div>
 
-        <div class="md:col-span-4">
-          <div class="p-4 border rounded bg-deepblue-50 border-deepblue-200 md:px-6 md:py-5">
+        <div class="lg:col-span-4">
+          <div class="p-4 border rounded bg-deepblue-50 border-deepblue-200 lg:px-6 lg:py-5">
             <h3 class="text-xl font-semibold">
               Klage eller anke på vedtak?
             </h3>
