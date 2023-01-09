@@ -10,27 +10,24 @@ bodyClass: 'bg-gray-100'
 
 {% block content %}
   <main class="min-h-[61vh] text-lg text-gray-800">
-    <div class="grid pt-8 pb-4 bg-white grid-cols-layout" x-data="{ bgGradient: false }" x-on:click="bgGradient = !bgGradient" x-bind:class="bgGradient && 'bg-gradient-to-b from-white to-gray-100'">
+    <div class="grid pt-8 pb-20 bg-white md:pt-12 grid-cols-layout">
       <div class="col-content">
         <p class="flex items-center gap-2 text-purple-600">
-          <svg xmlns="http://www.w3.org/2000/svg" class="flex-none w-6 h-6" width="24" height="24" fill="none" viewBox="0 0 24 24" aria-hidden="true" focusable="false" role="img">
+          <svg xmlns="http://www.w3.org/2000/svg" class="flex-none w-7 h-7 -mb-0.5" width="24" height="24" fill="none" viewBox="0 0 24 24" aria-hidden="true" focusable="false" role="img">
             <path stroke="#634689" stroke-width="1.5" d="m9.5 12.5 2.5 1 2.5 1.5V6L12 7.5l-2.5 1m-5 2c0-1.1.9-2 2-2h3v4h-3a2 2 0 0 1-2-2ZM7 13l2.5 6.5m8-9H21M17 6l3-2m-3 11 3 2" />
           </svg>
-          <span class="text-sm font-semibold tracking-wider uppercase">Pressemelding</span>
+          <span class="text-base font-semibold tracking-wider uppercase">Pressemelding</span>
         </p>
-        <h1 class="mt-1 text-3xl font-semibold leading-tight text-gray-900 md:text-4xl">
+        <h1 class="mt-2 text-3xl font-semibold leading-tight text-gray-900 md:text-4xl">
           Fortsatt lav ledighet i september
         </h1>
-      </div>
-    </div>
 
-    <div class="grid pt-4 pb-20 grid-cols-layout md:pt-6">
-      <div class="col-content">
-        <div class="max-w-prose">
-          <p class="text-sm text-gray-600">Publisert 30. september 2022</p>
-          <p class="mt-4 text-xl font-semibold">Ved utgangen av september var det registrert 76 900 helt ledige, delvis ledige og arbeidssøkere på tiltak hos NAV, noe som utgjør 2,6 prosent av arbeidsstyrken. Justert for sesongvariasjoner er det en nedgang på 2 100 arbeidssøkere fra august.</p>
+        <div class="mt-4 max-w-prose">
+          <p class="text-xl font-semibold">Ved utgangen av september var det registrert 76 900 helt ledige, delvis ledige og arbeidssøkere på tiltak hos NAV, noe som utgjør 2,6 prosent av arbeidsstyrken. Justert for sesongvariasjoner er det en nedgang på 2 100 arbeidssøkere fra august.</p>
 
-          <p class="mt-7">– Arbeidsledigheten holder seg på et lavt nivå i september. Vi ser nå noen tegn på at arbeidsmarkedet begynner å kjøle seg ned. De siste månedene har det blitt færre ledige stillinger, samtidig som det har blitt noe flere nye arbeidssøkere, sier arbeids- og velferdsdirektør Hans Christian Holte.</p>
+          <p class="pb-1 mt-5 text-base text-gray-600 border-b">Publisert 30. september 2022</p>
+
+          <p class="mt-6">– Arbeidsledigheten holder seg på et lavt nivå i september. Vi ser nå noen tegn på at arbeidsmarkedet begynner å kjøle seg ned. De siste månedene har det blitt færre ledige stillinger, samtidig som det har blitt noe flere nye arbeidssøkere, sier arbeids- og velferdsdirektør Hans Christian Holte.</p>
 
           <p class="mt-7">46 000 personer var registrert som helt ledige ved utgangen av september, noe som utgjør 1,6 prosent av arbeidsstyrken. Bruttoledigheten, som er summen av helt ledige og arbeidssøkere på tiltak, var på 56 800 personer og tilsvarer 2,0 prosent av arbeidsstyrken. I tillegg var 20 100, eller 0,7 prosent av arbeidsstyrken, registrert som delvis ledige.</p>
 
@@ -39,7 +36,7 @@ bodyClass: 'bg-gray-100'
           <p class="mt-7">– De høye strømprisene vi har sett de siste månedene har så langt ikke resultert i noen økning i antallet permitterte, sier Holte.</p>
 
           <figure class="grid gap-3 p-3 bg-white shadow-sm mt-7">
-            <img src="/images/artikkel-figur-1.webp" alt="" width="768" height="430">
+            <img src="/assets/images/artikkel-figur-1.webp" alt="" width="768" height="430">
             <figcaption class="text-base text-gray-700">
               <p>
                 <strong>Figur 1:</strong> Utvikling i antall helt ledige, delvis ledige, summen av helt ledige og arbeidssøkere på tiltak, samt antall arbeidssøkere i alt per måned. Sesong- og bruddjusterte tall.</p>
@@ -48,7 +45,7 @@ bodyClass: 'bg-gray-100'
           </figure>
 
           <figure class="grid gap-3 p-3 bg-white shadow-sm mt-7">
-            <img src="/images/artikkel-figur-2.webp" alt="" width="768" height="430">
+            <img src="/assets/images/artikkel-figur-2.webp" alt="" width="768" height="430">
             <figcaption class="text-base text-gray-700">
               <p>
                 <strong>Figur 2:</strong> Utvikling i andel helt ledige, delvis ledige, summen av helt ledige og arbeidssøkere på tiltak, samt arbeidssøkere i alt per måned. Prosent av arbeidsstyrken. Sesong- og bruddjusterte tall.</p>
@@ -109,10 +106,10 @@ bodyClass: 'bg-gray-100'
 
               <p class="mt-1">Arbeidsledigheten følger gjerne et fast mønster gjennom året, såkalte sesongvariasjoner. For eksempel øker alltid arbeidsledigheten fra desember til januar, på grunn av at mange kontrakter går ut ved nyttår. Den øker også om sommeren når mange nyutdannede skal inn på arbeidsmarkedet. For å korrigere for disse faste svingningene og finne den underliggende trenden på arbeidsmarkedet brukes sesongjusterte tall.</p>
               <p class="mt-7">Les mer <a class="text-blue-500 underline hover:no-underline" href="#">om metoden for sesongjustering</a>.</p>
-
-              <p class="mt-7"></p>
             </div>
           </aside>
+
+          <p class="pt-1 mt-5 text-base text-gray-600 border-t">Publisert 30. september 2022</p>
         </div>
       </div>
     </div>
