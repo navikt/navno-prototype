@@ -65,7 +65,7 @@ bodyClass: ''
         </div> #}
 
         <div class="grid items-start gap-12 lg:mt-8 lg:pt-1 lg:col-span-4 lg:row-span-2">
-          {% set labelClasses = "inline-flex cursor-pointer px-4 pt-1.5 pb-1.5 leading-tight text-base bg-gray-100 ring-1 ring-deepblue-200/50 rounded-full hover:bg-deepblue-100 peer-checked:bg-deepblue-600 peer-checked:ring-2 peer-checked:ring-deepblue-500 peer-checked:text-deepblue-50 peer-checked:font-semibold" %}
+          {% set labelClasses = "inline-flex cursor-pointer px-4 pt-1.5 pb-1.5 leading-tight text-base bg-gray-100 ring-2 ring-gray-100 rounded-full hover:bg-deepblue-100 hover:ring-deepblue-200 peer-checked:bg-deepblue-600 peer-checked:ring-deepblue-500 peer-checked:text-deepblue-50 peer-checked:font-semibold" %}
           {% set inputClasses = "absolute opacity-0 pointer-events-none peer" %}
 
           {% for group in filters | dictsort %}
@@ -116,23 +116,23 @@ bodyClass: ''
                 data-taxonomy="{{ product.taxonomy | slugify }}"
                 data-area="{{ product.area | slugify }}">
 
-                <button x-on:click="expanded = !expanded" class="flex flex-row-reverse items-center w-full gap-4 px-6 py-4 text-left rounded-lg bg-deepblue-100/50 group hover:bg-deepblue-50 focus:outline-none focus-visible:ring focus-visible:ring-gray-600 focus-visible:rounded" x-bind:aria-expanded="expanded">
+                <button x-on:click="expanded = !expanded" class="flex items-center w-full gap-3 px-6 py-4 text-left rounded-lg bg-deepblue-100/50 group hover:bg-deepblue-50 focus:outline-none focus-visible:ring focus-visible:ring-gray-600 aria-expanded:bg-gray-100" x-bind:aria-expanded="expanded">
                   {% if product.icon %}
-                    {{ product.icon | svgContents('w-14 h-14') | safe }}
+                    {{ product.icon | svgContents('w-12 h-12') | safe }}
                   {% endif %}
                   <span class="grid flex-1 gap-0.5">
                     <span class="text-xl font-semibold leading-tight">{{ product.title | safe }}</span>
                     <span class="">{{ product.description or 'Beskrivelse mangler' }}</span>
                   </span>
-                  {# {{ '/src/_includes/svg/icons/chevron-down.svg' | svgContents('mr-1.5 w-5 h-5 text-deepblue-500/60 group-aria-expanded:rotate-180 transition duration-100') | safe }} #}
+                  {{ '/src/_includes/svg/icons/chevron-down.svg' | svgContents('mr-1.5 w-5 h-5 text-deepblue-500/60 group-aria-expanded:rotate-180 transition duration-100') | safe }}
                 </button>
-                <div class="relative px-4 pt-2 pb-12 max-w-prose" x-bind:hidden="!expanded">
-                  <div class="pt-2 markdown">
+                <div class="relative px-6 pt-4 pb-6" x-bind:hidden="!expanded">
+                  <div class="markdown max-w-prose">
                     {% include "partials/contentBlocks.njk" %}
 
                     {% if product.contentBlocks %}
-                      <div class="pt-3 text-center">
-                        <a class="text-base text-deepblue-500 hover:underline hover:text-deepblue-600" href="/produktoversikt/{{ product.title | slug }}.html">(Vis som egen side)</a>
+                      <div class="">
+                        <a class=" text-deepblue-500 hover:underline hover:text-deepblue-600" href="/produktoversikt/{{ product.title | slug }}.html">(Vis som egen side)</a>
                       </div>
                     {% endif %}
                   </div>
@@ -142,11 +142,11 @@ bodyClass: ''
             {% endfor %}
           </div>
           <div x-show="count === 0" class="p-6 py-8 text-center overflow-hidden grid items-center leading-snug rounded-lg bg-gray-100 min-h-[4.75rem] lg:col-span-6">
-            <p>Ingen søknader eller skjema er merket med denne kombinasjonen av kategori og område.</p>
+            <p class="max-w-prose">Ingen søknader eller skjema er merket med denne kombinasjonen av kategori og område.</p>
           </div>
         </div>
 
-        <div class="p-4 bg-orange-100 rounded lg:col-span-8 lg:px-6 lg:py-5">
+        <div class="p-4 bg-orange-100 rounded-lg lg:col-span-8 lg:px-6 lg:py-5">
             <h3 class="text-xl font-semibold">
               Klage eller anke på vedtak?
             </h3>
