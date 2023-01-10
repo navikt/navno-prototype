@@ -65,7 +65,7 @@ bodyClass: ''
         </div> #}
 
         <div class="grid items-start gap-12 lg:mt-8 lg:pt-1 lg:col-span-4 lg:row-span-2">
-          {% set labelClasses = "inline-flex cursor-pointer px-4 pt-1.5 pb-1.5 leading-tight text-base bg-gray-100 ring-2 ring-gray-100 rounded-full hover:bg-deepblue-100 hover:ring-deepblue-200 peer-checked:bg-deepblue-600 peer-checked:ring-deepblue-500 peer-checked:text-deepblue-50 peer-checked:font-semibold" %}
+          {% set labelClasses = "inline-flex cursor-pointer px-4 pt-1.5 pb-1.5 leading-tight text-base bg-gray-100 ring-2 ring-gray-100 rounded-full hover:bg-deepblue-100 hover:ring-deepblue-200 peer-checked:bg-deepblue-600 peer-checked:ring-deepblue-500 peer-checked:text-deepblue-50" %}
           {% set inputClasses = "absolute opacity-0 pointer-events-none peer" %}
 
           {% for group in filters | dictsort %}
@@ -116,19 +116,36 @@ bodyClass: ''
                 data-taxonomy="{{ product.taxonomy | slugify }}"
                 data-area="{{ product.area | slugify }}">
 
-                <button x-on:click="expanded = !expanded" class="flex items-center w-full gap-3 px-6 py-4 text-left rounded-lg bg-deepblue-100/50 group hover:bg-deepblue-50 focus:outline-none focus-visible:ring focus-visible:ring-gray-600 aria-expanded:bg-gray-100" x-bind:aria-expanded="expanded">
+                <button x-on:click="expanded = !expanded" class="flex items-center w-full gap-3 px-4 py-4 text-left rounded-lg bg-deepblue-100/50 group hover:bg-deepblue-50 focus:outline-none focus-visible:ring focus-visible:ring-gray-600 aria-expanded:bg-deepblue-200" x-bind:aria-expanded="expanded">
                   {% if product.icon %}
                     {{ product.icon | svgContents('w-12 h-12') | safe }}
                   {% endif %}
-                  <span class="grid flex-1 gap-0.5">
-                    <span class="text-xl font-semibold leading-tight">{{ product.title | safe }}</span>
-                    <span class="">{{ product.description or 'Beskrivelse mangler' }}</span>
+                  <span class="grid flex-1 gap-1">
+                    <span class="text-xl font-semibold leading-tight ">
+                      {{ product.title | safe }}
+                    </span>
+                    <span class="flex flex-wrap gap-1.5 text-base">
+                      {% for item in product.taxonomy %}
+                        <span class="box-content px-1 rounded bg-deepblue-100">{{ item }}</span>
+                      {% endfor %}
+                      {% for item in product.area %}
+                        <span class="box-content px-1 rounded bg-deepblue-100">{{ item }}</span>
+                      {% endfor %}
+                    </span>
                   </span>
-                  {{ '/src/_includes/svg/icons/chevron-down.svg' | svgContents('mr-1.5 w-5 h-5 text-deepblue-500/60 group-aria-expanded:rotate-180 transition duration-100') | safe }}
+                  {{ '/src/_includes/svg/icons/chevron-down.svg' | svgContents('mr-1.5 w-5 h-5 opacity-50 transition duration-100 group-aria-expanded:rotate-180') | safe }}
                 </button>
-                <div class="relative px-6 pt-4 pb-6" x-bind:hidden="!expanded">
-                  <div class="markdown max-w-prose">
-                    {% include "partials/contentBlocks.njk" %}
+
+                <div class="relative px-5 pt-6 pb-6" x-bind:hidden="!expanded">
+                  <div class="markdown max-w-prose min-h-[30vh]">
+                    <p>{{ product.ingress }}</p>
+
+                    {% if product.contentBlocks %}
+                      {% include "partials/contentBlocks.njk" %}
+                    {% else %}
+                      <p class="italic">Noe innhold mangler …</p>
+                    {% endif %}
+
 
                     {% if product.contentBlocks %}
                       <div class="">
