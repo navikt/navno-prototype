@@ -16,7 +16,7 @@
 }
 @layer components {
   :where(.markdown) > *:not(h2, h3, h4, h5) + * {
-    margin-block-start: 1.5rem;
+    margin-block-start: 1.75rem;
   }
   .markdown > *:where(h2, h3, h4, h5) + * {
     margin-block-start: 0.125rem;
@@ -30,7 +30,7 @@
     color: var(--navds-global-color-blue-600);
   }
   :where(.markdown) > h2 {
-    @apply font-semibold text-2xl;
+    @apply font-semibold text-2xl leading-snug;
   }
   :where(.markdown) > h3 {
     @apply font-semibold text-xl;
