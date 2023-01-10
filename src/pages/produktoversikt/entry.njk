@@ -4,9 +4,9 @@
     data: "products",
     size: 1,
     alias: "product",
-    before: function(fullData) {
-      const oneData = fullData.at(88)
-      return [oneData]
+    before: function(data) {
+      const filteredData = data.filter(element => element.contentBlocks != null)
+      return filteredData
     }
   },
   eleventyComputed: {
@@ -16,9 +16,6 @@
 }
 ---
 {% extends 'base.njk' %}
-?area={{ product.taxonomy | slugify }}
-  ?area=familie-og-barn&taxonomy=pengestotte
-
 
 {% block content %}
   <main class="min-h-[50vh]">

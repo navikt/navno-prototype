@@ -34,14 +34,11 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addShortcode("now", timestampNow);
 
   // Transforms
-
-  if (process.env.ELEVENTY_ENV === "production") {
-    eleventyConfig.addTransform("minifyHtml", minifyHtml);
-  }
+  eleventyConfig.addTransform("minifyHtml", minifyHtml);
 
   // Dev server options
   eleventyConfig.setServerOptions({
-    enabled: false,
+    enabled: true,
     showVersion: true,
     port: 8888,
     middleware: [],
