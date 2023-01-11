@@ -88,7 +88,7 @@ module.exports = {
         "Når du har registrert deg, kan vi sammen med deg vurdere situasjonen din og finne ut hva du trenger hjelp til.",
       icon: "/src/_includes/svg/pictograms/neutral.svg",
       area: ["Arbeid"],
-      taxonomy: ["Tjeneste"],
+      taxonomy: ["Skjema"],
     },
     {
       title: "Arbeidstrening",
@@ -167,7 +167,7 @@ module.exports = {
         "Har du motoriske utfordringer, kan tilrettelegging og hjelpemidler gjøre hverdagen enklere.",
       icon: "/src/_includes/svg/pictograms/neutral.svg",
       area: ["Hjelpemidler og tilrettelegging"],
-      taxonomy: [],
+      taxonomy: ["Hjelpemiddel"],
     },
     {
       title: "Bidragsforskudd",
@@ -208,7 +208,7 @@ module.exports = {
       taxonomy: ["benefits"],
       icon: "/src/_includes/svg/pictograms/neutral.svg",
       area: ["Familie og barn", "Hjelpemidler og tilrettelegging"],
-      taxonomy: ["Pengestøtte"],
+      taxonomy: ["Pengestøtte", "Hjelpemiddel"],
     },
     {
       title: "Briller til behandling eller forebygging av amblyopi",
@@ -216,7 +216,7 @@ module.exports = {
         "Amblyopi er synsnedsettelse på ett eller begge øynene, uten påviselig sykdom i selve øyet. Briller kan være viktig for å behandle eller forebygge amblyopi hos barn som har utviklet eller har økt risiko for å utvikle tilstanden. ",
       icon: "/src/_includes/svg/pictograms/neutral.svg",
       area: ["Hjelpemidler og tilrettelegging"],
-      taxonomy: ["Pengestøtte"],
+      taxonomy: ["Pengestøtte", "Hjelpemiddel"],
     },
     {
       title: "Brystprotese",
@@ -224,7 +224,7 @@ module.exports = {
         "En brystprotese etterligner et bryst i form og størrelse. Brystprotesene kan klebes direkte til huden, legges løst i brystholdere eller i spesialtilpassede lommer i brystholdere. De finnes i mange ulike størrelser, tykkelser og fasonger.",
       icon: "/src/_includes/svg/pictograms/brystprotese.svg",
       area: ["Hjelpemidler og tilrettelegging"],
-      taxonomy: ["Pengestøtte"],
+      taxonomy: ["Pengestøtte", "Hjelpemiddel"],
     },
     {
       title: "Dagpenger",
@@ -387,7 +387,7 @@ module.exports = {
         "Hvis farskapet eller medmorskapet for barnet ditt er fastsatt utenfor Norden, kan du søke om at den utenlandske avgjørelsen anerkjennes i Norge.",
       icon: "/src/_includes/svg/pictograms/neutral.svg",
       area: ["Familie og barn"],
-      taxonomy: [],
+      taxonomy: ["Skjema"],
     },
     {
       title: "Farskapsregistrering",
@@ -395,7 +395,7 @@ module.exports = {
         "Far kan erklære farskapet både, før og etter fødsel. Erklæring av farskap skal gjøres skriftlig enten ved å erklære digitalt eller ved oppmøte på et offentlig kontor. ",
       icon: "/src/_includes/svg/pictograms/neutral.svg",
       area: ["Familie og barn"],
-      taxonomy: [],
+      taxonomy: ["Skjema"],
     },
     {
       title: "Foreldrepenger",
@@ -418,13 +418,7 @@ module.exports = {
       ingress:
         "Et frivillig skattetrekk vil si at du blir trukket mer skatt enn det skattekortet ditt viser. Det blir også kalt ekstra skattetrekk. ",
       icon: "/src/_includes/svg/pictograms/slik-gjor-du-det.svg",
-      area: [
-        "Arbeid",
-        "Familie og barn",
-        "Helse og sykdom",
-        "Pensjon",
-        "Sosiale tjenester og veiledning",
-      ],
+      area: ["Annet"],
       taxonomy: ["Skjema"],
     },
     {
@@ -433,15 +427,15 @@ module.exports = {
         "Yrkesskadetrygd er en frivillig forsikring for selvstendig næringsdrivende og frilansere.",
       icon: "/src/_includes/svg/pictograms/frivillig-yrkesskadetrygd.svg",
       area: ["Helse og sykdom"],
-      taxonomy: ["Skjema"],
+      taxonomy: ["Forsikring"],
     },
     {
       title: "Funksjonsassistanse i arbeidslivet",
       ingress:
         "Ordningen skal bidra til at du kan skaffe deg eller beholde ordinært arbeid hvis du har fysiske funksjonsnedsettelser. Ordningen dekker utgifter til nødvendig, praktisk hjelp i arbeidssituasjonen. Blinde og svaksynte kan også få funksjonsassistanse til ledsaging.",
       icon: "/src/_includes/svg/pictograms/neutral.svg",
-      area: ["Arbeid"],
-      taxonomy: ["Tiltak"],
+      area: ["Arbeid", "Hjelpemidler og tilrettelegging"],
+      taxonomy: ["Tjeneste"],
     },
     {
       title: "Førerhund",
@@ -473,7 +467,7 @@ module.exports = {
         "Et grunnmønster er et grunnriss av kroppens form og mål som brukes som grunnlag for å skreddersy klær. Spesialsøm innebærer at klærne blir sydd med utgangspunkt i et grunnmønster.",
       icon: "/src/_includes/svg/pictograms/neutral.svg",
       area: ["Hjelpemidler og tilrettelegging"],
-      taxonomy: ["Pengestøtte", "Veiledning"],
+      taxonomy: ["Pengestøtte"],
     },
     {
       title: "Grunnstønad",
@@ -496,8 +490,8 @@ module.exports = {
       ingress:
         "Økonomisk støtte til barn eller voksne som trenger langvarig, privat pleie og tilsyn.",
       icon: "/src/_includes/svg/pictograms/hjelpestonad.svg",
-      area: ["Pengestøtte"],
-      taxonomy: ["Familie og barn", "Helse og sykdom"],
+      area: ["Familie og barn", "Helse og sykdom"],
+      taxonomy: ["Pengestøtte"],
     },
     {
       title: "Honnørkort",
@@ -505,15 +499,15 @@ module.exports = {
         "Med honnørkort får du redusert billettpris på kollektive transportmidler. Kortet gir også rett til honnørrabatt for ektefelle eller registrert partner som reiser sammen med deg, uansett alder.",
       icon: "/src/_includes/svg/pictograms/neutral.svg",
       area: ["Pensjon"],
-      taxonomy: [],
+      taxonomy: ["Skjema"],
     },
     {
       title: "Huske, planlegge og organisere – hjelpemidler",
       ingress:
         "Kognisjon handler om hjernens evne til å motta, bearbeide og uttrykke informasjon. Hjelpemidler kan bedre situasjonen for mange.",
       icon: "/src/_includes/svg/pictograms/neutral.svg",
-      area: ["Hjelpemiddel"],
-      taxonomy: ["Hjelpemidler og tilrettelegging"],
+      area: ["Hjelpemidler og tilrettelegging"],
+      taxonomy: ["Hjelpemiddel"],
     },
     {
       title: "Høreapparat",
@@ -545,7 +539,7 @@ module.exports = {
         "Inkluderingstilskudd er for deg som trenger å tilrettelegge arbeids- eller tiltaksplassen. Det er arbeidsgiveren som søker om tilskuddet.",
       icon: "/src/_includes/svg/pictograms/neutral.svg",
       area: ["Arbeid"],
-      taxonomy: [],
+      taxonomy: ["Pengestøtte"],
     },
     {
       title: "Introduksjonsstønad",
@@ -601,21 +595,14 @@ module.exports = {
         "Hvis NAV har godkjent at du kan bruke din egen bil i til arbeid, utdanning eller til tilpasning av hjelpemidler, kan du sende inn kjøreliste for å få tilbakebetalt utleggene dine.",
       icon: "/src/_includes/svg/pictograms/neutral.svg",
       area: ["Arbeid"],
-      taxonomy: [],
+      taxonomy: ["Skjema"],
     },
     {
       title: "Klagerettigheter",
       ingress:
         "Når du søker NAV om økonomisk støtte eller en tjeneste, får du et svar. Dette er vedtaket i saken din. I vedtaket står det hvordan du skal gå fram hvis du skal klage, hvem du skal klage til og klagefrist. ",
       icon: "/src/_includes/svg/pictograms/neutral.svg",
-      area: [
-        "Arbeid",
-        "Familie og barn",
-        "Helse og sykdom",
-        "Hjelpemidler og tilrettelegging",
-        "Pensjon",
-        "Sosiale tjenester og veiledning",
-      ],
+      area: ["Annet"],
       taxonomy: [],
     },
     {
@@ -623,14 +610,7 @@ module.exports = {
       ingress:
         "Når NAV sender deg post, sender vi posten til kontaktinformasjonen du har registrert i kontakt- og reservasjonsregisteret, eller til adressen du har oppgitt til folkeregisteret.",
       icon: "/src/_includes/svg/pictograms/neutral.svg",
-      area: [
-        "Arbeid",
-        "Familie og barn",
-        "Helse og sykdom",
-        "Hjelpemidler og tilrettelegging",
-        "Pensjon",
-        "Sosiale tjenester og veiledning",
-      ],
+      area: ["Annet"],
       taxonomy: ["Skjema"],
     },
     {
@@ -638,8 +618,8 @@ module.exports = {
       ingress:
         "Kontantstøtte er penger du kan få hvis du har barn mellom 1 og 2 år som ikke har fått tildelt fulltidsplass i barnehage.",
       icon: "/src/_includes/svg/pictograms/kontantstotte.svg",
-      area: ["Pengestøtte"],
-      taxonomy: ["Familie og barn"],
+      area: ["Familie og barn"],
+      taxonomy: ["Pengestøtte"],
     },
     {
       title: "Kontonummer internasjonalt – slik endrer du",
@@ -686,7 +666,7 @@ module.exports = {
         "En lese- og sekretærhjelp er en person som kan hjelpe deg med å lese og skrive. Dette er et tilbud til deg som er blind eller svaksynt.",
       icon: "/src/_includes/svg/pictograms/neutral.svg",
       area: ["Hjelpemidler og tilrettelegging"],
-      taxonomy: ["Tiltak"],
+      taxonomy: ["Tjeneste"],
     },
     {
       title: "Lese og skrive – hjelpemidler",
@@ -702,7 +682,7 @@ module.exports = {
         "Hvis du er bosatt i utlandet og får pensjon eller uføretrygd fra NAV, kan vi be deg om å levere leveattest.\nVi gjennomfører årlig leveattestkontroller for å sikre at utbetalingene går til riktig mottaker.",
       icon: "/src/_includes/svg/pictograms/neutral.svg",
       area: ["Pensjon"],
-      taxonomy: [],
+      taxonomy: ["Skjema"],
     },
     {
       title: "Lydutjevningsanlegg",
@@ -741,15 +721,8 @@ module.exports = {
       ingress:
         "Skal du arbeide eller oppholde deg i utlandet, kan det medføre at medlemskapet ditt i folketrygden opphører. I slike tilfeller bør du sende inn en søknad til NAV for å få en vurdering av medlemskapet. \n\nHvis du bor i et annet EØS-land og arbeider i Norge, eller nylig har flyttet til Norge, kan et annet land be om dokumentasjon på at du er medlem i folketrygden. I slike tilfeller kan du også sende inn en søknad. ",
       icon: "/src/_includes/svg/pictograms/neutral.svg",
-      area: [
-        "Arbeid",
-        "Familie og barn",
-        "Helse og sykdom",
-        "Hjelpemidler og tilrettelegging",
-        "Pensjon",
-        "Sosiale tjenester og veiledning",
-      ],
-      taxonomy: [],
+      area: ["Annet"],
+      taxonomy: ["Skjema"],
     },
     {
       title: "Meldekort",
@@ -757,7 +730,7 @@ module.exports = {
         "For å være registrert som arbeidssøker eller for å få dagpenger, AAP og tiltakspenger, må du sende meldekort hver 14. dag.",
       icon: "/src/_includes/svg/pictograms/neutral.svg",
       area: ["Arbeid", "Helse og sykdom"],
-      taxonomy: [],
+      taxonomy: ["Skjema"],
     },
     {
       title: "Meld fra om endringer",
@@ -770,7 +743,7 @@ module.exports = {
         "Hjelpemidler og tilrettelegging",
         "Pensjon",
       ],
-      taxonomy: [],
+      taxonomy: ["Skjema"],
     },
     {
       title: "Menerstatning ved yrkesskade eller yrkessykdom",
@@ -818,7 +791,7 @@ module.exports = {
         "Hvis du mottar kommunal omsorgsstønad (tidligere omsorgslønn), må du melde fra til NAV hvis du søker om/har en pengestøtte fra NAV. Omsorgsstønaden kan påvirke beregningen av pengestøtten din.",
       icon: "/src/_includes/svg/pictograms/neutral.svg",
       area: ["Annet"],
-      taxonomy: [],
+      taxonomy: ["Skjema"],
     },
     {
       title: "Oppfostringsbidrag",
@@ -826,7 +799,7 @@ module.exports = {
         "Hvis kommunen overtar omsorgen for barnet ditt, kan det bli krevd oppfostringsbidrag fra deg som forelder.",
       icon: "/src/_includes/svg/pictograms/neutral.svg",
       area: ["Familie og barn"],
-      taxonomy: [],
+      taxonomy: ["Skjema"],
     },
     {
       title: "Oppfølging",
@@ -858,7 +831,7 @@ module.exports = {
         "Du kan få veiledning hos NAV for å forebygge eller løse utfordringer med hjemmeforhold, bosituasjon, omsorg for barn, arbeid eller økonomi. ",
       icon: "/src/_includes/svg/pictograms/opplysning-rad-og-veiledning.svg",
       area: ["Sosiale tjenester og veiledning"],
-      taxonomy: ["Tjeneste"],
+      taxonomy: ["Veiledning"],
     },
     {
       title: "Ortopediske sko",
@@ -962,7 +935,7 @@ module.exports = {
         "Har du eller har du hatt daglig omsorg for små barn fra 0 til og med 5 år, kan du ha rett på pensjonsopptjening. Dette kalles omsorgsopptjening.",
       icon: "/src/_includes/svg/pictograms/neutral.svg",
       area: ["Pensjon"],
-      taxonomy: [],
+      taxonomy: ["Skjema"],
     },
     {
       title:
@@ -971,7 +944,7 @@ module.exports = {
         "Hvis du tar deg av en person som er syk, eldre eller har en funksjonsnedsettelse, kan du ha rett på pensjonsopptjening. Dette kalles omsorgsopptjening.",
       icon: "/src/_includes/svg/pictograms/neutral.svg",
       area: ["Pensjon"],
-      taxonomy: [],
+      taxonomy: ["Skjema"],
     },
     {
       title: "Pleiepenger for en utviklingshemmet person over 18 år",
@@ -1035,7 +1008,7 @@ module.exports = {
         "Senter for jobbmestring er et tilbud for deg som har angst og/eller depresjon. Målet er å hjelpe deg med å mestre symptomene slik at du kan bli værende i jobb eller komme i jobb. ",
       icon: "/src/_includes/svg/pictograms/neutral.svg",
       area: ["Arbeid"],
-      taxonomy: [],
+      taxonomy: ["Tjeneste"],
     },
     {
       title: "Servicehund",
@@ -1315,14 +1288,7 @@ module.exports = {
       ingress:
         "Du har rett til tolk i en samtale med NAV hvis du ikke forstår det som blir sagt og ikke kan formidle hva du trenger. Dette gjelder både tolk i ulike språk og tolk for døve, hørselshemmede og døvblinde.",
       icon: "/src/_includes/svg/pictograms/neutral.svg",
-      area: [
-        "Arbeid",
-        "Familie og barn",
-        "Helse og sykdom",
-        "Hjelpemidler og tilrettelegging",
-        "Pensjon",
-        "Sosiale tjenester og veiledning",
-      ],
+      area: ["Annet"],
       taxonomy: ["Tjeneste"],
     },
     {
@@ -1379,7 +1345,7 @@ module.exports = {
         "Arbeidsgivere, Forsvaret, rektorer eller andre i lignende stillinger har plikt til å sende skademelding for deg ved arbeidsulykker og skadelig påvirkning av stoffer under arbeid. Hvis den meldepliktige ikke sender inn skademelding til NAV, kan du selv gjøre det selv.",
       icon: "/src/_includes/svg/pictograms/yrkesskade.svg",
       area: ["Helse og sykdom"],
-      taxonomy: [""],
+      taxonomy: ["Skjema"],
     },
     {
       title: "Ytelser til tidligere familiepleiere",
