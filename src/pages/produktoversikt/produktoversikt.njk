@@ -10,24 +10,36 @@ bodyClass: ''
 
 {% block content %}
   <main
-    class="my-4 text-lg text-gray-900"
+    class="my-3 text-lg text-gray-900"
     x-data="{
       taxonomyFilter: new URLSearchParams(location.search).get('taxonomy') || 'alle',
       areaFilter: new URLSearchParams(location.search).get('area') || 'alle',
-      show_item(el) {
-        return (
-          (this.taxonomyFilter === 'alle'
-          || el.dataset.taxonomy.includes(this.taxonomyFilter))
-          && (this.areaFilter === 'alle'
-          || el.dataset.area.includes(this.areaFilter))
-        )
+      filterItem(el) {
+        const item = el.children[0].textContent.toLowerCase()
+        if (this.search === '') {
+          return (
+            (this.taxonomyFilter === 'alle' || el.dataset.taxonomy.includes(this.taxonomyFilter))
+            &&
+            (this.areaFilter === 'alle' || el.dataset.area.includes(this.areaFilter))
+          )
+        } else {
+          this.taxonomyFilter = 'alle'
+          this.areaFilter = 'alle'
+          return (
+            item.includes(this.search.toLowerCase())
+          )
+        }
       },
+      search: '',
       count: '',
       updateCount() {
         $nextTick(() => {
           let count = Array.from($refs.entries.children).filter(element => window.getComputedStyle(element).display !== 'none').length;
           this.count = count
         })
+      },
+      clearSearch() {
+        this.search = ''
       }
     }"
     x-init="
@@ -35,44 +47,47 @@ bodyClass: ''
         const url = new URL(window.location.href);
         url.searchParams.set('taxonomy', value);
         history.pushState(null, document.title, url.toString());
+        updateCount();
+        clearSearch();
       });
       $watch('areaFilter', (value) => {
         const url = new URL(window.location.href);
         url.searchParams.set('area', value);
         history.pushState(null, document.title, url.toString());
+        updateCount();
+        clearSearch();
+      });
+      $watch('search', (value) => {
+        updateCount()
       });
       updateCount()">
-    <div class="grid py-8 bg-white grid-cols-layout md:pt-12">
-      <div class="relative col-popout">
+    <div class="grid py-8 bg-white grid-cols-layout">
+      <div class="relative w-full col-popout">
+
+        <div class="hidden float-right mb-8 ml-24 sm:block">
+          {{ '/src/_includes/svg/pictograms/support.svg' | svgContents('w-full aspect-square max-w-[16vw]') | safe }}
+        </div>
 
         <h1 class="text-3xl font-semibold leading-tight md:text-5xl md:leading-tight">Søknad og skjema fra A&nbsp;til&nbsp;Å</h1>
 
-        <p class="max-w-2xl mt-2 text-xl md:mt-3 md:text-2xl">Pengestøtter og tjenester fra NAV for privatpersoner. Du kan søke eller sortere etter område og kategori.</p>
+        <p class="max-w-2xl mt-2 text-xl md:mt-3 md:text-2xl">Pengestøtter og tjenester fra NAV for privatpersoner. Du kan søke eller filtrere etter type og kategori.</p>
 
-        <div class="absolute hidden top-3 right-8 md:block">
-          {{ '/src/_includes/svg/pictograms/support.svg' | svgContents('w-32 h-32') | safe }}
-        </div>
 
       </div>
     </div>
 
     <div class="grid bg-white grid-cols-layout">
-      <div class="grid gap-8 pb-24 lg:gap-x-24 lg:items-start lg:grid-cols-12 col-popout">
+      <div class="grid w-full gap-8 pb-20 lg:gap-x-16 lg:items-start lg:grid-cols-3 col-popout">
 
-        {# <div>
-          <label for="searchFilter" class="font-semibold">Søk</label>
-          <input id="searchFilter" type="text" class="w-full px-4 py-3 bg-white border rounded-lg shadow-inner focus:outline-none focus:ring focus:ring-gray-600 border-gray-300/50">
-        </div> #}
-
-        <div class="grid items-start gap-12 lg:mt-8 lg:pt-1 lg:col-span-4 lg:row-span-2">
-          {% set labelClasses = "inline-flex cursor-pointer px-4 pt-1.5 pb-1.5 leading-tight text-base bg-gray-100 ring-2 ring-gray-100 rounded-full hover:bg-deepblue-100 hover:ring-deepblue-200 peer-checked:bg-deepblue-600 peer-checked:ring-deepblue-500 peer-checked:text-deepblue-50" %}
-          {% set inputClasses = "absolute opacity-0 pointer-events-none peer" %}
-
-          {% for group in filters | dictsort %}
+        <div class="grid items-start gap-6 lg:gap-12 lg:mt-8 lg:pt-1 lg:row-span-2">
+          {% for group in filters | dictsort | reverse %}
             <div class="">
               <h2 class="text-sm tracking-widest uppercase opacity-70">{{ group[1].title | safe }}</h2>
 
-              <ul class="flex flex-wrap items-start mt-1.5 gap-x-2 gap-y-3">
+              {% set labelClasses = "inline-flex cursor-pointer px-4 pt-1.5 pb-1.5 leading-tight text-base bg-gray-100 rounded-full hover:bg-deepblue-100 peer-checked:bg-deepblue-400 peer-checked:text-white peer-focus:ring-2 peer-focus:ring-deepblue-800" %}
+              {% set inputClasses = "absolute opacity-0 pointer-events-none peer" %}
+
+              <ul class="flex flex-wrap items-start mt-2.5 gap-x-2 gap-y-3">
                   <li>
                     <input
                       type="radio"
@@ -103,38 +118,47 @@ bodyClass: ''
           {% endfor %}
         </div>
 
+        <div class="lg:col-span-2 lg:-order-1">
+          <div>
+            <label for="searchFilter" class="font-semibold">Søk</label>
+            <input id="searchFilter" type="text" x-model="search" class="w-full px-4 py-3 border border-gray-300 rounded-lg shadow-inner bg-gray-50/50 focus:outline-none focus:ring focus:ring-blue-800">
+          </div>
 
-        <div class="lg:col-span-8 lg:-order-1">
-          <p class="mb-4">Viser <span x-text="count"></span> av {{ products.length }} produkter og tjenester</p>
+          <p class="mt-6 mb-4">Viser <span x-text="count"></span> av {{ products.length }} produkter og tjenester</p>
 
           <div class=" grid gap-1.5" x-ref="entries" x-show="count !== 0">
             {% for product in products %}
               <div
                 x-data="{ expanded: {{ product.expanded or 'false' }} }"
                 class=" focus-within:z-10"
-                x-show="show_item($el)"
+                x-show="filterItem($el)"
                 data-taxonomy="{{ product.taxonomy | slugify }}"
                 data-area="{{ product.area | slugify }}">
 
-                <button x-on:click="expanded = !expanded" class="flex items-center w-full gap-3 px-4 py-4 text-left rounded-lg bg-deepblue-100/50 group hover:bg-deepblue-50 focus:outline-none focus-visible:ring focus-visible:ring-gray-600 aria-expanded:bg-deepblue-200" x-bind:aria-expanded="expanded">
+                <div class="relative flex items-center w-full gap-4 px-4 py-4 text-left rounded-lg lg:px-6 c-product-item" x-bind:class="expanded ? 'bg-deepblue-200' : 'bg-deepblue-50 hover:bg-deepblue-50/60'">
                   {% if product.icon %}
-                    {{ product.icon | svgContents('w-12 h-12') | safe }}
+                    {{ product.icon | svgContents('w-12 h-12 lg:w-14 lg:h-14 shrink-0') | safe }}
                   {% endif %}
-                  <span class="grid flex-1 gap-1">
-                    <span class="text-xl font-semibold leading-tight ">
+                  <div class="grid gap-1">
+                    <p class="text-base opacity-80">
+                    {% for item in product.taxonomy %}
+                      <span>{{ item }}</span>{{ ', ' if product.taxonomy.length > 1 and not loop.last }}
+                    {% endfor %}
+                    </p>
+                    <h2 class="text-xl font-semibold leading-tight">
                       {{ product.title | safe }}
-                    </span>
-                    <span class="flex flex-wrap gap-1.5 text-base">
-                      {% for item in product.taxonomy %}
-                        <span class="box-content px-1 rounded bg-deepblue-100">{{ item }}</span>
-                      {% endfor %}
-                      {% for item in product.area %}
-                        <span class="box-content px-1 rounded bg-deepblue-100">{{ item }}</span>
-                      {% endfor %}
-                    </span>
-                  </span>
-                  {{ '/src/_includes/svg/icons/chevron-down.svg' | svgContents('mr-1.5 w-5 h-5 opacity-50 transition duration-100 group-aria-expanded:rotate-180') | safe }}
-                </button>
+                    </h2>
+                    <p class="text-base">
+                      {%- for item in product.area -%}
+                        <span class="">{{ item }}</span>{{ ', ' if loop.length > 1 and not loop.last }}
+                      {%- endfor -%}
+                    </p>
+                  </div>
+                  <button x-on:click="expanded = !expanded" class="absolute inset-0 flex items-center justify-end px-4 rounded-lg group focus:outline-none focus-visible:ring focus-visible:ring-blue-800" x-bind:aria-expanded="expanded">
+                    <span class="sr-only"></span>
+                    {{ '/src/_includes/svg/icons/chevron-down.svg' | svgContents('mr-1.5 w-5 h-5 opacity-50 transition duration-100 group-aria-expanded:rotate-180') | safe }}
+                  </button>
+                </div>
 
                 <div class="relative px-5 pt-6 pb-6" x-bind:hidden="!expanded">
                   <div class="markdown max-w-prose min-h-[30vh]">
@@ -163,7 +187,7 @@ bodyClass: ''
           </div>
         </div>
 
-        <div class="p-4 bg-orange-100 rounded-lg lg:col-span-8 lg:px-6 lg:py-5">
+        <div class="p-4 bg-orange-100 rounded-lg lg:col-span-2 lg:px-6 lg:py-5">
             <h3 class="text-xl font-semibold">
               Klage eller anke på vedtak?
             </h3>
