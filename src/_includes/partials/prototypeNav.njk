@@ -1,6 +1,6 @@
-<div class="fixed w-full h-screen overflow-y-auto font-mono text-2xl text-white bg-blue-700 bg-gradient-to-t from-transparent to-blue-600/50 md:text-3xl">
+<div class="fixed w-full h-screen overflow-y-auto font-mono text-2xl text-white bg-red-600 bg-gradient-to-b from-transparent to-red-800/50 md:text-3xl">
   <div class="grid grid-cols-layout">
-    <ul class="py-3 divide-y md:py-6 divide-blue-300/25 col-content">
+    <ul class="py-3 divide-y md:py-6 divide-red-400/25 col-content">
     {% for page in collections.template | sort(false, false, 'data.order') %}
       <li class="">
         <a href="{{ page.url }}" class="inline-block py-4 hover:text-orange-300 hover:underline decoration-from-font underline-offset-4">
