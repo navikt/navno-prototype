@@ -37,7 +37,7 @@ module.exports = {
     {
       title: "Ansiktsprotese",
       ingress:
-        "Personer som har en ansiktsdefekt, kan få stønad til ansiktsprotese. Protesene består av naturtro etterligninger av delen av ansiktet som mangler eller er skadet.",
+        "Etterligner den delen av ansiktet som mangler eller er skadet.",
       icon: "/src/_includes/svg/pictograms/ansiktsprotese.svg",
       area: ["Hjelpemidler og tilrettelegging"],
       taxonomy: ["Hjelpemiddel", "Pengestøtte"],
@@ -63,7 +63,7 @@ module.exports = {
       ingress:
         "Hvis du har varige forflytningsvansker og ikke kan reise til og fra arbeids- eller utdanningssted med offentlige kommunikasjonsmidler, kan du søke om stønad til arbeids- og utdanningsreiser. Ordningen innebærer at du kan få transport med drosje til og fra arbeid eller skole.",
       icon: "/src/_includes/svg/pictograms/neutral.svg",
-      area: ["Arbeid"],
+      area: ["Arbeid", "Hjelpemidler og tilrettelegging"],
       taxonomy: ["Pengestøtte"],
     },
     {
@@ -80,7 +80,7 @@ module.exports = {
         "NAV-kontor og NAV Hjelpemiddelsentral gir råd og veiledning om hva som skal til for å delta i arbeid.",
       icon: "/src/_includes/svg/pictograms/neutral.svg",
       area: ["Hjelpemidler og tilrettelegging"],
-      taxonomy: ["Tjeneste"],
+      taxonomy: ["Veiledning"],
     },
     {
       title: "Arbeidssøker - registrer deg",
@@ -101,7 +101,7 @@ module.exports = {
     {
       title: "Arm- og benproteser",
       ingress:
-        "En protese er et ortopedisk hjelpemiddel som skal erstatte en manglende kroppsdel. Folketrygden dekker hele beløpet for deg som trenger protese.",
+        "Erstatter en manglende kroppsdel.",
       icon: "/src/_includes/svg/pictograms/arm-og-benprotese.svg",
       area: ["Hjelpemidler og tilrettelegging"],
       taxonomy: ["Hjelpemiddel"],
@@ -221,7 +221,7 @@ module.exports = {
     {
       title: "Brystprotese",
       ingress:
-        "En brystprotese etterligner et bryst i form og størrelse. Brystprotesene kan klebes direkte til huden, legges løst i brystholdere eller i spesialtilpassede lommer i brystholdere. De finnes i mange ulike størrelser, tykkelser og fasonger.",
+        "Etterligner et bryst i form og størrelse, og finnes i mange ulike utgaver.",
       icon: "/src/_includes/svg/pictograms/brystprotese.svg",
       area: ["Hjelpemidler og tilrettelegging"],
       taxonomy: ["Pengestøtte", "Hjelpemiddel"],
@@ -410,7 +410,7 @@ module.exports = {
       ingress:
         "Økonomisk støtte til barn under 18 år som har et vesentlig større behov for pleie og tilsyn, enn det som dekkes av ordinær hjelpestønad.",
       icon: "/src/_includes/svg/pictograms/forhoyet-hjelpestonad.svg",
-      area: ["Familie og barn"],
+      area: ["Familie og barn", "Helse og sykdom"],
       taxonomy: ["Pengestøtte"],
     },
     {
@@ -440,7 +440,7 @@ module.exports = {
     {
       title: "Førerhund",
       ingress:
-        "En førerhund er spesialtrent til å hjelpe deg som er blind eller svært svaksynt til å ta deg frem innendørs og utendørs.",
+        "Hjelper deg å ta deg frem innendørs og utendørs når du er blind eller svært svaksynt.",
       icon: "/src/_includes/svg/pictograms/neutral.svg",
       area: ["Hjelpemidler og tilrettelegging"],
       taxonomy: ["Hjelpemiddel"],
@@ -498,7 +498,7 @@ module.exports = {
       ingress:
         "Med honnørkort får du redusert billettpris på kollektive transportmidler. Kortet gir også rett til honnørrabatt for ektefelle eller registrert partner som reiser sammen med deg, uansett alder.",
       icon: "/src/_includes/svg/pictograms/neutral.svg",
-      area: ["Pensjon"],
+      area: ["Pensjon", "Helse og sykdom"],
       taxonomy: ["Skjema"],
     },
     {
@@ -603,7 +603,7 @@ module.exports = {
         "Når du søker NAV om økonomisk støtte eller en tjeneste, får du et svar. Dette er vedtaket i saken din. I vedtaket står det hvordan du skal gå fram hvis du skal klage, hvem du skal klage til og klagefrist. ",
       icon: "/src/_includes/svg/pictograms/neutral.svg",
       area: ["Annet"],
-      taxonomy: [],
+      taxonomy: ["Skjema"],
     },
     {
       title: "Kontaktinformasjon – slik endrer du",
@@ -767,7 +767,7 @@ module.exports = {
         "Hvis du ikke klarer å finne et sted å bo selv, skal NAV hjelpe deg med å finne et midlertidig botilbud.",
       icon: "/src/_includes/svg/pictograms/midlertidig-botilbud.svg",
       area: ["Sosiale tjenester og veiledning"],
-      taxonomy: ["Pengestøtte", "Veiledning"],
+      taxonomy: ["Tjeneste", "Veiledning"],
     },
     {
       title: "Midlertidig lønnstilskudd",
@@ -775,7 +775,7 @@ module.exports = {
         "Midlertidig lønnstilskudd skal bidra til å øke mulighetene for å få jobb. Du får ordinær lønn og ansettelse i hel- eller deltidsstilling, mens arbeidsgiveren din får et tilskudd til lønnen din.",
       icon: "/src/_includes/svg/pictograms/neutral.svg",
       area: ["Arbeid"],
-      taxonomy: ["Pengestøtte"],
+      taxonomy: ["Tiltak"],
     },
     {
       title: "Omsorgspenger (hjemme med sykt barn-dager)",
@@ -836,7 +836,7 @@ module.exports = {
     {
       title: "Ortopediske sko",
       ingress:
-        "Ortopediske sko kan hjelpe deg som har en feilstilling i fot eller ankel, har problemer med føttene på grunn av diabetes eller revmatisme, eller har en annen funksjonsnedsettelse i føttene.",
+        "Hjelper deg når du har ulike problemer med føttene.",
       icon: "/src/_includes/svg/pictograms/ortopediske-sko.svg",
       area: ["Hjelpemidler og tilrettelegging"],
       taxonomy: ["Pengestøtte", "Hjelpemiddel"],
@@ -844,7 +844,7 @@ module.exports = {
     {
       title: "Ortoser",
       ingress:
-        "En ortose er en støtteskinne, et korsett eller en spesiallaget innleggssåle (fotseng). Ortoser brukes for å stabilisere eller gi bedre funksjon til en kroppsdel som er lammet eller svekket på andre måter. ",
+        "Stabiliserer eller gir bedre funksjon når du har en kroppsdel som er lammet eller svekket.",
       icon: "/src/_includes/svg/pictograms/ortoser.svg",
       area: ["Hjelpemidler og tilrettelegging"],
       taxonomy: ["Pengestøtte", "Hjelpemiddel"],
@@ -924,7 +924,7 @@ module.exports = {
     {
       title: "Parykk",
       ingress:
-        "En parykk kan erstatte eget hår på hele hodet, eller deler av hodet. Parykken kan være laget av ekte eller syntetisk hår, og den kan være masseprodusert eller laget til en bestemt person.",
+        "Erstatter eget hår på hele hodet, eller deler av hodet.",
       icon: "/src/_includes/svg/pictograms/parykk.svg",
       area: ["Hjelpemidler og tilrettelegging"],
       taxonomy: ["Hjelpemiddel", "Pengestøtte"],
@@ -934,7 +934,7 @@ module.exports = {
       ingress:
         "Har du eller har du hatt daglig omsorg for små barn fra 0 til og med 5 år, kan du ha rett på pensjonsopptjening. Dette kalles omsorgsopptjening.",
       icon: "/src/_includes/svg/pictograms/neutral.svg",
-      area: ["Pensjon"],
+      area: ["Pensjon", "Familie og barn"],
       taxonomy: ["Skjema"],
     },
     {
@@ -943,7 +943,7 @@ module.exports = {
       ingress:
         "Hvis du tar deg av en person som er syk, eldre eller har en funksjonsnedsettelse, kan du ha rett på pensjonsopptjening. Dette kalles omsorgsopptjening.",
       icon: "/src/_includes/svg/pictograms/neutral.svg",
-      area: ["Pensjon"],
+      area: ["Pensjon", "Familie og barn"],
       taxonomy: ["Skjema"],
     },
     {
@@ -1013,7 +1013,7 @@ module.exports = {
     {
       title: "Servicehund",
       ingress:
-        "En servicehund er spesialtrent til å hjelpe deg som har fysiske funksjonsnedsettelser i hverdagen. ",
+        "Hjelper deg i hverdagen når du har fysiske funksjonsnedsettelser.",
       icon: "/src/_includes/svg/pictograms/neutral.svg",
       area: ["Hjelpemidler og tilrettelegging"],
       taxonomy: ["Hjelpemiddel"],
@@ -1077,7 +1077,7 @@ module.exports = {
     {
       title: "Støtte til folkehøyskole",
       ingress:
-        "Hvis du ønsker et tilrettelagt tilbud med opplæring i daglige aktiviteter, for eksempel en bo- og arbeidstreningslinje, kan du søke om støtte til ekstrautgiftene dine.",
+        "Dekker ekstrautgifter når du går tilrettelagt linje med opplæring i daglige aktiviteter.",
       icon: "/src/_includes/svg/pictograms/neutral.svg",
       area: ["Hjelpemidler og tilrettelegging"],
       taxonomy: ["Pengestøtte"],
@@ -1086,7 +1086,7 @@ module.exports = {
       title:
         "Supplerende stønad for personer over 67 år med kort botid i Norge",
       ingress:
-        "Supplerende stønad er for deg som har bodd kort i Norge. Det er en pengestøtte som kan gi deg høyere pensjon.",
+        "Gir deg høyere pensjon når du har bodd kort tid i Norge.",
       icon: "/src/_includes/svg/pictograms/neutral.svg",
       area: ["Pensjon"],
       taxonomy: ["Pengestøtte"],
@@ -1110,7 +1110,7 @@ module.exports = {
     {
       title: "Sykepenger",
       ingress:
-        "Sykepenger erstatter arbeidsinntekt når du ikke kan jobbe på grunn av sykdom eller skade.",
+        "Erstatter inntekten din når du ikke kan jobbe på grunn av sykdom eller skade.",
       icon: "/src/_includes/svg/pictograms/sykepenger.svg",
       area: ["Helse og sykdom"],
       taxonomy: ["Pengestøtte"],
@@ -1294,7 +1294,7 @@ module.exports = {
     {
       title: "Uføretrygd",
       ingress:
-        "Uføretrygd skal sikre deg inntekt hvis inntektsevnen din er varig redusert på grunn av sykdom eller skade.",
+        "Sikrer deg inntekt hvis inntektsevnen din er varig redusert på grunn av sykdom eller skade.",
       icon: "/src/_includes/svg/pictograms/uforetrygd.svg",
       area: ["Helse og sykdom"],
       taxonomy: ["Pengestøtte"],
@@ -1361,7 +1361,7 @@ module.exports = {
         "NAV kan gi deg råd om privatøkonomien din. Tjenesten er gratis og du bør søke hjelp så tidlig som mulig.",
       icon: "/src/_includes/svg/pictograms/neutral.svg",
       area: ["Sosiale tjenester og veiledning"],
-      taxonomy: ["Tjeneste"],
+      taxonomy: ["Veiledning"],
     },
     {
       title: "Økonomisk sosialhjelp",
@@ -1374,7 +1374,7 @@ module.exports = {
     {
       title: "Øyeprotese",
       ingress:
-        "Personer som helt eller delvis mangler et øye, eller har skadet øyet, kan få støtte til øyeprotese.",
+        "Erstatter øyet når du mangler et øye, eller har skadet øyet.",
       icon: "/src/_includes/svg/pictograms/neutral.svg",
       area: ["Hjelpemidler og tilrettelegging"],
       taxonomy: ["Hjelpemiddel"],
