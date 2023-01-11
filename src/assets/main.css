@@ -4,7 +4,7 @@
 
 @layer base {
   :root {
-    --_layout-gap: clamp(0.75rem, 0.5rem + 3vw, 6rem);
+    --_layout-gap: clamp(0.75rem, 0.125rem + 4vw, 6rem);
     --_layout-full: minmax(var(--_layout-gap), 1fr);
     --_layout-feature: minmax(0, 6.5rem);
     --_layout-content: min(40rem + 32vw, 100% - (var(--_layout-gap) * 2));

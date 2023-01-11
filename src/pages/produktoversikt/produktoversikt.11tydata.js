@@ -1,7 +1,7 @@
 module.exports = {
   filters: {
     taxonomy: {
-      title: "Velg kategori",
+      title: "Velg type",
       items: [
         "Hjelpemiddel",
         "Pengestøtte",
@@ -9,6 +9,7 @@ module.exports = {
         "Tjeneste",
         "Veiledning",
         "Forsikring",
+        "Skjema",
       ],
     },
     area: {
@@ -20,6 +21,7 @@ module.exports = {
         "Hjelpemidler og tilrettelegging",
         "Pensjon",
         "Sosiale tjenester og veiledning",
+        "Annet",
       ],
     },
   },
@@ -37,7 +39,7 @@ module.exports = {
       ingress:
         "Personer som har en ansiktsdefekt, kan få stønad til ansiktsprotese. Protesene består av naturtro etterligninger av delen av ansiktet som mangler eller er skadet.",
       icon: "/src/_includes/svg/pictograms/ansiktsprotese.svg",
-      area: [],
+      area: ["Hjelpemidler og tilrettelegging"],
       taxonomy: ["Hjelpemiddel", "Pengestøtte"],
     },
     {
@@ -157,7 +159,7 @@ module.exports = {
         "Bestillingsordningen har forenklet saksbehandling i NAV. Hjelpemidler man kan bestille gjennom denne ordningen er enkle produkter som ikke krever individuelle tilpasninger.",
       icon: "/src/_includes/svg/pictograms/neutral.svg",
       area: ["Hjelpemidler og tilrettelegging"],
-      taxonomy: [],
+      taxonomy: ["Skjema"],
     },
     {
       title: "Bevegelseshjelpemidler",
@@ -352,7 +354,7 @@ module.exports = {
       ingress:
         "Hvis du har sykmelding fra lege utenfor Norge, må du fylle ut dette skjemaet, vedlegge sykmeldingen og sende til NAV.",
       area: ["Helse og sykdom"],
-      taxonomy: [],
+      taxonomy: ["Skjema"],
     },
     {
       title: "Ektefellebidrag",
@@ -376,7 +378,7 @@ module.exports = {
         "Dette skjemaet må du fylle ut dersom du er arbeidssøker og søker om overgangsstønad til enslig mor eller far. ",
       icon: "/src/_includes/svg/pictograms/neutral.svg",
       area: ["Familie og barn", "Arbeid"],
-      taxonomy: [],
+      taxonomy: ["Skjema"],
     },
     {
       title:
@@ -401,7 +403,7 @@ module.exports = {
         "Foreldrepengene skal erstatte inntekten din når du skal være hjemme med barnet i forbindelse med fødsel eller adopsjon.",
       icon: "/src/_includes/svg/pictograms/foreldrepenger.svg",
       area: ["Familie og barn"],
-      taxonomy: [],
+      taxonomy: ["Pengestøtte"],
     },
     {
       title: "Forhøyet hjelpestønad",
@@ -423,7 +425,7 @@ module.exports = {
         "Pensjon",
         "Sosiale tjenester og veiledning",
       ],
-      taxonomy: [],
+      taxonomy: ["Skjema"],
     },
     {
       title: "Frivillig yrkesskadetrygd",
@@ -431,7 +433,7 @@ module.exports = {
         "Yrkesskadetrygd er en frivillig forsikring for selvstendig næringsdrivende og frilansere.",
       icon: "/src/_includes/svg/pictograms/frivillig-yrkesskadetrygd.svg",
       area: ["Helse og sykdom"],
-      taxonomy: [],
+      taxonomy: ["Skjema"],
     },
     {
       title: "Funksjonsassistanse i arbeidslivet",
@@ -629,7 +631,7 @@ module.exports = {
         "Pensjon",
         "Sosiale tjenester og veiledning",
       ],
-      taxonomy: [],
+      taxonomy: ["Skjema"],
     },
     {
       title: "Kontantstøtte",
@@ -643,16 +645,16 @@ module.exports = {
       title: "Kontonummer internasjonalt – slik endrer du",
       ingress: "Om kontoendringer (internasjonalt). ",
       icon: "/src/_includes/svg/pictograms/neutral.svg",
-      area: [],
-      taxonomy: [],
+      area: ["Annet"],
+      taxonomy: ["Skjema"],
     },
     {
       title: "Kontonummer – slik endrer du",
       ingress:
         "Når du søker om pengestøtte fra NAV, må du kontrollere at vi har korrekt kontonummer. Du kan sjekke kontonummeret som er registrert på deg ved å logge inn på nav.no.",
       icon: "/src/_includes/svg/pictograms/neutral.svg",
-      area: [],
-      taxonomy: [],
+      area: ["Annet"],
+      taxonomy: ["Skjema"],
     },
     {
       title: "Krigspensjon",
@@ -706,7 +708,7 @@ module.exports = {
       title: "Lydutjevningsanlegg",
       ingress:
         "Fastmontert eller mobilt utstyr som bidrar til at du får med deg det som blir sagt i rom med mange lydforstyrrelser.",
-      icon: "/src/_includes/svg/pictograms/neutral.svg",
+      icon: "/src/_includes/svg/pictograms/horselshjelpemidler.svg",
       area: ["Hjelpemidler og tilrettelegging"],
       taxonomy: ["Hjelpemiddel"],
     },
@@ -714,7 +716,7 @@ module.exports = {
       title: "Lyttehjelpemidler for telefon",
       ingress:
         "Forsterker lyden fra telefonen slik at du kan høre telefonsamtalen bedre.",
-      icon: "/src/_includes/svg/pictograms/neutral.svg",
+      icon: "/src/_includes/svg/pictograms/horselshjelpemidler.svg",
       area: ["Hjelpemidler og tilrettelegging"],
       taxonomy: ["Hjelpemiddel"],
     },
@@ -815,7 +817,7 @@ module.exports = {
       ingress:
         "Hvis du mottar kommunal omsorgsstønad (tidligere omsorgslønn), må du melde fra til NAV hvis du søker om/har en pengestøtte fra NAV. Omsorgsstønaden kan påvirke beregningen av pengestøtten din.",
       icon: "/src/_includes/svg/pictograms/neutral.svg",
-      area: [],
+      area: ["Annet"],
       taxonomy: [],
     },
     {
@@ -918,7 +920,7 @@ module.exports = {
         {
           type: "markdown",
           data: [
-            "## Forlengelse av overgangsstønad som følge av koronasituasjonen",
+            "### Forlengelse av overgangsstønad som følge av koronasituasjonen",
             "Dette er en midlertidig ordning som er opprettet som følge av koronasituasjonen. Dette skjemaet gjelder kun søknad om forlengelse av overgangsstønaden som følge av koronasituasjonen.",
           ],
         },
@@ -1015,7 +1017,7 @@ module.exports = {
       title: "Samtale – hjelpemidler",
       ingress:
         "Personlig og mobilt utstyr som bidrar til at du får med deg det som blir sagt når du har nedsatt hørsel.",
-      icon: "/src/_includes/svg/pictograms/neutral.svg",
+      icon: "/src/_includes/svg/pictograms/horselshjelpemidler.svg",
       area: ["Hjelpemidler og tilrettelegging"],
       taxonomy: ["Hjelpemiddel"],
     },
@@ -1162,8 +1164,8 @@ module.exports = {
       ingress:
         "Hvis du er medlem i folketrygden og skal oppholde deg i utlandet, kan det føre til at du mister medlemskapet i folketrygden. Du kan på visse vilkår søke om frivillig medlemskap i folketrygden.",
       icon: "/src/_includes/svg/pictograms/neutral.svg",
-      area: [],
-      taxonomy: [],
+      area: ["Annet"],
+      taxonomy: ["Skjema"],
     },
     {
       title: "Tale og språk – hjelpemidler",
@@ -1178,14 +1180,14 @@ module.exports = {
       ingress:
         "NAV har taushetsplikt om all kontakt du har med NAV, inkludert opplysninger om hvilke tjenester og utbetalinger du mottar. Hvis andre skal få tilgang til de opplysningene som NAV har om deg, må de ha lovhjemmel eller samtykke fra deg. ",
       icon: "/src/_includes/svg/pictograms/neutral.svg",
-      area: [],
-      taxonomy: [],
+      area: ["Annet"],
+      taxonomy: ["Skjema"],
     },
     {
       title: "Teleslynge",
       ingress:
         "Forsterker lyd slik at du kan høre eller oppfatte tale. Det finnes ulike typer teleslynger til bruk på ulike arenaer, og som er tilpasset deg og dine behov.",
-      icon: "/src/_includes/svg/pictograms/neutral.svg",
+      icon: "/src/_includes/svg/pictograms/horselshjelpemidler.svg",
       area: ["Hjelpemidler og tilrettelegging"],
       taxonomy: ["Hjelpemiddel"],
     },
@@ -1193,7 +1195,7 @@ module.exports = {
       title: "Tilbehør til høreapparat",
       ingress:
         "Dette kan være eksterne mikrofoner, eller et mellomledd som kobler høreapparatet til andre hørselshjelpemidler eller lydkilder.",
-      icon: "/src/_includes/svg/pictograms/neutral.svg",
+      icon: "/src/_includes/svg/pictograms/horselshjelpemidler.svg",
       area: ["Hjelpemidler og tilrettelegging"],
       taxonomy: ["Hjelpemiddel"],
     },
@@ -1297,7 +1299,7 @@ module.exports = {
       title: "Tinnitusmaskerer",
       ingress:
         "Lager motlyd for å dempe tinnitus (også kalt øresus) hvis du plages av tinnitus når det er stille eller når du skal sove.",
-      icon: "/src/_includes/svg/pictograms/neutral.svg",
+      icon: "/src/_includes/svg/pictograms/horselshjelpemidler.svg",
       area: ["Hjelpemidler og tilrettelegging"],
       taxonomy: ["Hjelpemiddel", "Pengestøtte"],
     },
@@ -1359,7 +1361,7 @@ module.exports = {
       title: "Varslingsutstyr for hørsel",
       ingress:
         "Hjelper deg å oppfatte varsler fra for eksempel røykvarsler, dørklokke, barnegråt eller telefon.",
-      icon: "/src/_includes/svg/pictograms/neutral.svg",
+      icon: "/src/_includes/svg/pictograms/horselshjelpemidler.svg",
       area: ["Hjelpemidler og tilrettelegging"],
       taxonomy: ["Hjelpemiddel"],
     },

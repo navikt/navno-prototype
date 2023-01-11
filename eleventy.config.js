@@ -23,6 +23,7 @@ module.exports = function (eleventyConfig) {
   });
 
   // Watch extra files for changes
+  eleventyConfig.setWatchThrottleWaitTime(200);
   eleventyConfig.addWatchTarget("./src/assets/main.css");
   eleventyConfig.addWatchTarget("./src/**/*.svg");
 
