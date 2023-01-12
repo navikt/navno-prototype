@@ -45,7 +45,7 @@ module.exports = {
     {
       title: "Arbeidsavklaringspenger (AAP)",
       ingress:
-        "AAP skal sikre deg inntekt i perioder du har behov for hjelp fra NAV for å komme i eller beholde arbeid på grunn av sykdom eller skade.",
+        "Sikrer deg inntekt i perioder du har behov for hjelp fra NAV for å komme i eller beholde arbeid på grunn av sykdom eller skade.",
       icon: "/src/_includes/svg/pictograms/aap.svg",
       area: ["Arbeid", "Helse og sykdom"],
       taxonomy: ["Pengestøtte"],
@@ -53,7 +53,7 @@ module.exports = {
     {
       title: "Arbeidsforberedende trening",
       ingress:
-        "Arbeidsforberedende trening er et tilbud for deg som trenger å jobbe i et tilrettelagt arbeidsmiljø før du starter arbeidstrening i en vanlig bedrift.",
+        "Et tiltak for deg som har behov for en skjermet og tilrettelagt jobb i en oppstartsfase, før du går over i arbeidstrening hos bedrifter i ordinært arbeidsliv.",
       icon: "/src/_includes/svg/pictograms/neutral.svg",
       area: ["Arbeid"],
       taxonomy: ["Tiltak"],
@@ -69,7 +69,7 @@ module.exports = {
     {
       title: "Arbeidsrettet rehabilitering",
       ingress:
-        "Arbeidsrettet rehabilitering er et tilbud for deg som har helseplager eller sosiale problemer. Du får veiledningssamtaler og individuelt tilpassede aktiviteter.",
+        "Et tiltak som skal styrke arbeidsevnen din og hjelpe deg med å mestre helserelaterte og sosiale problemer som hindrer deg i å delta i arbeidslivet.",
       icon: "/src/_includes/svg/pictograms/neutral.svg",
       area: ["Arbeid"],
       taxonomy: ["Tiltak"],
@@ -93,7 +93,7 @@ module.exports = {
     {
       title: "Arbeidstrening",
       ingress:
-        "I arbeidstrening får du prøvd deg i en vanlig jobb for en kort periode. Det  kan være aktuelt for deg som trenger arbeidserfaring for å mestre en bestemt type jobb, eller trenger en referanse mens du søker vanlige jobber.",
+        "Et tiltak for deg som vil se om du kan mestre en bestemt type jobb, eller trenger en referanse mens du søker vanlig jobb.",
       icon: "/src/_includes/svg/pictograms/neutral.svg",
       area: ["Arbeid"],
       taxonomy: ["Tiltak"],
@@ -109,7 +109,7 @@ module.exports = {
     {
       title: "Avklaring",
       ingress:
-        "Avklaring er rettet mot deg som er usikker på hva du kan jobbe med, for eksempel fordi du har fått dårligere helse eller har vært lenge ute av arbeidslivet.",
+        "Et tiltak for deg som er usikker på hva du kan jobbe med, for eksempel fordi du har fått dårligere helse eller har vært lenge ute av arbeidslivet.",
       icon: "/src/_includes/svg/pictograms/neutral.svg",
       area: ["Arbeid"],
       taxonomy: ["Tiltak"],
@@ -196,7 +196,7 @@ module.exports = {
     {
       title: "Briller og kontaktlinser for synshemmede",
       ingress:
-        "Har du en øyetilstand, sykdom eller lidelse som utløser behov for briller, kan du søke støtte til briller eller kontaktlinser.",
+        "Støtte til briller eller kontaktlinser når du har en øyetilstand, sykdom eller lidelse som gir behov for briller.",
       icon: "/src/_includes/svg/pictograms/neutral.svg",
       area: ["Hjelpemidler og tilrettelegging"],
       taxonomy: ["Pengestøtte", "Hjelpemiddel"],
@@ -204,7 +204,7 @@ module.exports = {
     {
       title: "Briller til barn",
       ingress:
-        "Barn og unge under 18 år som trenger briller, kan få støtte til dette.",
+        "Tilskudd til barn og unge under 18 år som trenger briller.",
       taxonomy: ["benefits"],
       icon: "/src/_includes/svg/pictograms/neutral.svg",
       area: ["Familie og barn", "Hjelpemidler og tilrettelegging"],
@@ -213,7 +213,7 @@ module.exports = {
     {
       title: "Briller til behandling eller forebygging av amblyopi",
       ingress:
-        "Amblyopi er synsnedsettelse på ett eller begge øynene, uten påviselig sykdom i selve øyet. Briller kan være viktig for å behandle eller forebygge amblyopi hos barn som har utviklet eller har økt risiko for å utvikle tilstanden. ",
+        "Kan behandle eller forebygge synsnedsettelsen amblyopi hos barn.",
       icon: "/src/_includes/svg/pictograms/neutral.svg",
       area: ["Hjelpemidler og tilrettelegging"],
       taxonomy: ["Pengestøtte", "Hjelpemiddel"],
@@ -432,7 +432,7 @@ module.exports = {
     {
       title: "Funksjonsassistanse i arbeidslivet",
       ingress:
-        "Ordningen skal bidra til at du kan skaffe deg eller beholde ordinært arbeid hvis du har fysiske funksjonsnedsettelser. Ordningen dekker utgifter til nødvendig, praktisk hjelp i arbeidssituasjonen. Blinde og svaksynte kan også få funksjonsassistanse til ledsaging.",
+        "Hjelper deg med praktiske oppgaver når det er nødvendig for at du skal kunne utføre jobben din.",
       icon: "/src/_includes/svg/pictograms/neutral.svg",
       area: ["Arbeid", "Hjelpemidler og tilrettelegging"],
       taxonomy: ["Tjeneste"],
@@ -464,7 +464,7 @@ module.exports = {
     {
       title: "Grunnmønster og søm av klær",
       ingress:
-        "Et grunnmønster er et grunnriss av kroppens form og mål som brukes som grunnlag for å skreddersy klær. Spesialsøm innebærer at klærne blir sydd med utgangspunkt i et grunnmønster.",
+        "Brukes som grunnlag for å skreddersy klær.",
       icon: "/src/_includes/svg/pictograms/neutral.svg",
       area: ["Hjelpemidler og tilrettelegging"],
       taxonomy: ["Pengestøtte"],
@@ -512,18 +512,10 @@ module.exports = {
     {
       title: "Høreapparat",
       ingress:
-        "Er festet til øret ditt, og forsterker lyden rundt deg. Det finnes mange ulike typer, teknologier og modeller.",
+        "Forsterker lyden rundt deg når du har nedsatt hørsel.",
       icon: "/src/_includes/svg/pictograms/horselshjelpemidler.svg",
       area: ["Hjelpemidler og tilrettelegging"],
       taxonomy: ["Pengestøtte", "Hjelpemiddel"],
-    },
-    {
-      title: "Idretts- og funksjonsaktiviteter – hjelpemidler",
-      ingress:
-        "Barn og ungdom under 26 år kan få stønad til spesialprotese og ortopedisk fottøy for idretts- og mosjonaktivitet.",
-      icon: "/src/_includes/svg/pictograms/neutral.svg",
-      area: ["Hjelpemidler og tilrettelegging"],
-      taxonomy: ["Hjelpemiddel"],
     },
     {
       title: "Individuell jobbstøtte (IPS)",
@@ -560,7 +552,7 @@ module.exports = {
     {
       title: "Irislinse",
       ingress:
-        "En irislinse er en kontaktlinse med påmalt iris. Formålet er å dekke over en deformert iris.",
+        "Dekker over en deformert iris ved hjelp av en spesiallaget kontaktlinse.",
       icon: "/src/_includes/svg/pictograms/neutral.svg",
       area: ["Hjelpemidler og tilrettelegging"],
       taxonomy: ["Pengestøtte", "Hjelpemiddel"],
@@ -623,7 +615,7 @@ module.exports = {
     },
     {
       title: "Kontonummer internasjonalt – slik endrer du",
-      ingress: "Om kontoendringer (internasjonalt). ",
+      ingress: "Om kontoendringer (internasjonalt).",
       icon: "/src/_includes/svg/pictograms/neutral.svg",
       area: ["Annet"],
       taxonomy: ["Skjema"],
@@ -647,7 +639,7 @@ module.exports = {
     {
       title: "Kronisk syk eller gravid arbeidstaker",
       ingress:
-        "Har du en langvarig eller kronisk sykdom som kan føre til hyppige sykefravær? Eller er du sykmeldt på grunn av årsaker som henger sammen med graviditeten? Du eller arbeidsgiveren din kan søke om at NAV dekker sykepenger i arbeidsgiverperioden.",
+        "NAV kan dekke sykepenger i arbeidsgiverperioden når du har hyppige sykefravær på grunn av kronisk sykdom eller graviditet.",
       icon: "/src/_includes/svg/pictograms/neutral.svg",
       area: ["Arbeid", "Helse og sykdom"],
       taxonomy: ["Tiltak"],
@@ -663,7 +655,7 @@ module.exports = {
     {
       title: "Lese- og sekretærhjelp",
       ingress:
-        "En lese- og sekretærhjelp er en person som kan hjelpe deg med å lese og skrive. Dette er et tilbud til deg som er blind eller svaksynt.",
+        "Hjelper deg med å lese og skrive når du er blind eller svaksynt.",
       icon: "/src/_includes/svg/pictograms/neutral.svg",
       area: ["Hjelpemidler og tilrettelegging"],
       taxonomy: ["Tjeneste"],
@@ -687,7 +679,7 @@ module.exports = {
     {
       title: "Lydutjevningsanlegg",
       ingress:
-        "Fastmontert eller mobilt utstyr som bidrar til at du får med deg det som blir sagt i rom med mange lydforstyrrelser.",
+        "Bidrar til at du får med deg det som blir sagt når du er i rom med mange lydforstyrrelser.",
       icon: "/src/_includes/svg/pictograms/horselshjelpemidler.svg",
       area: ["Hjelpemidler og tilrettelegging"],
       taxonomy: ["Hjelpemiddel"],
@@ -695,7 +687,7 @@ module.exports = {
     {
       title: "Lyttehjelpemidler for telefon",
       ingress:
-        "Forsterker lyden fra telefonen slik at du kan høre telefonsamtalen bedre.",
+        "Forsterker lyden fra telefonen når du trenger å høre telefonsamtale bedre.",
       icon: "/src/_includes/svg/pictograms/horselshjelpemidler.svg",
       area: ["Hjelpemidler og tilrettelegging"],
       taxonomy: ["Hjelpemiddel"],
@@ -703,7 +695,7 @@ module.exports = {
     {
       title: "Lyttehjelpemidler til TV og radio",
       ingress:
-        "Sender lyden fra det du vil lytte til, til ønsket mottaker hos deg.",
+        "Sender lyden fra det du vil høre på til en ønsket mottaker hos deg.",
       icon: "/src/_includes/svg/pictograms/neutral.svg",
       area: ["Hjelpemidler og tilrettelegging"],
       taxonomy: ["Hjelpemiddel"],
@@ -981,7 +973,7 @@ module.exports = {
     {
       title: "Reiseutgifter",
       ingress:
-        "Du kan få dekket reiseutgiftene dine når du skal prøve, tilpasse eller reparere et hjelpemiddel.",
+        "Dekker reiseutgiftene dine når du skal prøve, tilpasse eller reparere et hjelpemiddel.",
       icon: "/src/_includes/svg/pictograms/neutral.svg",
       area: ["Hjelpemidler og tilrettelegging"],
       taxonomy: ["Pengestøtte"],
@@ -989,7 +981,7 @@ module.exports = {
     {
       title: "Samtale – hjelpemidler",
       ingress:
-        "Personlig og mobilt utstyr som bidrar til at du får med deg det som blir sagt når du har nedsatt hørsel.",
+        "Gjør det lettere å delta i samtaler når du har nedsatt hørsel.",
       icon: "/src/_includes/svg/pictograms/horselshjelpemidler.svg",
       area: ["Hjelpemidler og tilrettelegging"],
       taxonomy: ["Hjelpemiddel"],
@@ -997,7 +989,7 @@ module.exports = {
     {
       title: "Seksualtekniske hjelpemidler",
       ingress:
-        "Et seksualteknisk hjelpemiddel kan gi et bedre sexliv dersom du har nedsatt seksualfunksjon.",
+        "Kan gi et bedre sexliv når du har nedsatt seksualfunksjon.",
       icon: "/src/_includes/svg/pictograms/seksualtekniske-hjelpemidler.svg",
       area: ["Hjelpemidler og tilrettelegging"],
       taxonomy: ["Hjelpemiddel", "Pengestøtte"],
@@ -1159,7 +1151,7 @@ module.exports = {
     {
       title: "Teleslynge",
       ingress:
-        "Forsterker lyd slik at du kan høre eller oppfatte tale. Det finnes ulike typer teleslynger til bruk på ulike arenaer, og som er tilpasset deg og dine behov.",
+        "Forsterker lyd slik at du kan høre eller oppfatte tale når du har nedsatt hørsel.",
       icon: "/src/_includes/svg/pictograms/horselshjelpemidler.svg",
       area: ["Hjelpemidler og tilrettelegging"],
       taxonomy: ["Hjelpemiddel"],
@@ -1167,7 +1159,7 @@ module.exports = {
     {
       title: "Tilbehør til høreapparat",
       ingress:
-        "Dette kan være eksterne mikrofoner, eller et mellomledd som kobler høreapparatet til andre hørselshjelpemidler eller lydkilder.",
+        "Gjør at du kan bruke høreapparat i flere situasjoner og andre sammenhenger.",
       icon: "/src/_includes/svg/pictograms/horselshjelpemidler.svg",
       area: ["Hjelpemidler og tilrettelegging"],
       taxonomy: ["Hjelpemiddel"],
@@ -1215,7 +1207,7 @@ module.exports = {
     {
       title: "Tilpasningskurs - nedsatt syn og hørsel",
       ingress:
-        "Tilpasningskurs er et tilbud til deg som har nedsatt syn eller nedsatt hørsel. Kursene gir deg verktøy og kunnskap som kan hjelpe deg både i jobben og på fritiden.",
+        "Gir verktøy og kunnskap når du har nedsatt syn eller nedsatt hørsel.",
       icon: "/src/_includes/svg/pictograms/neutral.svg",
       area: ["Sosiale tjenester og veiledning"],
       taxonomy: ["Pengestøtte"],
@@ -1247,7 +1239,7 @@ module.exports = {
     {
       title: "Tilskudd til rimelige hjelpemidler",
       ingress:
-        "Økonomisk tilskudd som kan dekke de ekstrautgifter du har til rimelige tekniske hjelpemidler som ikke er en del av hjelpemiddelsentralens sortiment.",
+        "Gir økonomisk støtte når du trenger rimelige tekniske hjelpemidler.",
       icon: "/src/_includes/svg/pictograms/tilskudd.svg",
       area: ["Hjelpemidler og tilrettelegging"],
       taxonomy: ["Pengestøtte"],
@@ -1271,7 +1263,7 @@ module.exports = {
     {
       title: "Tinnitusmaskerer",
       ingress:
-        "Lager motlyd for å dempe tinnitus (også kalt øresus) hvis du plages av tinnitus når det er stille eller når du skal sove.",
+        "Lager motlyd for å dempe tinnitus (også kalt øresus) når det er stille eller når du skal sove.",
       icon: "/src/_includes/svg/pictograms/horselshjelpemidler.svg",
       area: ["Hjelpemidler og tilrettelegging"],
       taxonomy: ["Hjelpemiddel", "Pengestøtte"],
