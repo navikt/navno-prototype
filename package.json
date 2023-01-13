@@ -12,10 +12,8 @@
     "dev:css": "postcss ./src/assets/main.css -o ./build/assets/main.min.css --watch",
     "dev": "concurrently npm:dev:*",
     "build:eleventy": "ELEVENTY_ENV=production eleventy --config=eleventy.config.js --pathprefix=person/prototype",
-    "build:eleventy-local": "ELEVENTY_ENV=production eleventy --config=eleventy.config.js",
     "build:css": "NODE_ENV=production postcss ./src/assets/main.css -o ./build/assets/main.min.css",
     "build": "concurrently npm:build:*",
-    "build-local": "concurrently \"npm:build:css\" \"npm:build:eleventy-local\"",
     "start": "node ./server/app.js"
   },
   "license": "MIT",
