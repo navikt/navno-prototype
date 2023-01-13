@@ -8,7 +8,7 @@ const { markdown, markdownInline } = require("./src/_11ty/filters.js");
 const { timestampNow } = require("./src/_11ty/shortcodes.js");
 const { minifyHtml } = require("./src/_11ty/transforms.js");
 
-// const compression = require("compression");
+const compression = require("compression");
 
 module.exports = function (eleventyConfig) {
   // Eleventy Plugins
@@ -42,7 +42,7 @@ module.exports = function (eleventyConfig) {
     enabled: true,
     showVersion: true,
     port: 8888,
-    middleware: [],
+    // middleware: [compression()],
   });
 
   eleventyConfig.setDataDeepMerge(true);
