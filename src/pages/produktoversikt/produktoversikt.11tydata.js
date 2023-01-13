@@ -36,8 +36,7 @@ module.exports = {
     },
     {
       title: "Ansiktsprotese",
-      ingress:
-        "Etterligner den delen av ansiktet som mangler eller er skadet.",
+      ingress: "Etterligner den delen av ansiktet som mangler eller er skadet.",
       icon: "/src/_includes/svg/pictograms/ansiktsprotese.svg",
       area: ["Hjelpemidler og tilrettelegging"],
       taxonomy: ["Hjelpemiddel", "Pengestøtte"],
@@ -100,8 +99,7 @@ module.exports = {
     },
     {
       title: "Arm- og benproteser",
-      ingress:
-        "Erstatter en manglende kroppsdel.",
+      ingress: "Erstatter en manglende kroppsdel.",
       icon: "/src/_includes/svg/pictograms/arm-og-benprotese.svg",
       area: ["Hjelpemidler og tilrettelegging"],
       taxonomy: ["Hjelpemiddel"],
@@ -203,8 +201,7 @@ module.exports = {
     },
     {
       title: "Briller til barn",
-      ingress:
-        "Tilskudd til barn og unge under 18 år som trenger briller.",
+      ingress: "Tilskudd til barn og unge under 18 år som trenger briller.",
       taxonomy: ["benefits"],
       icon: "/src/_includes/svg/pictograms/neutral.svg",
       area: ["Familie og barn", "Hjelpemidler og tilrettelegging"],
@@ -463,8 +460,7 @@ module.exports = {
     },
     {
       title: "Grunnmønster og søm av klær",
-      ingress:
-        "Brukes som grunnlag for å skreddersy klær.",
+      ingress: "Brukes som grunnlag for å skreddersy klær.",
       icon: "/src/_includes/svg/pictograms/neutral.svg",
       area: ["Hjelpemidler og tilrettelegging"],
       taxonomy: ["Pengestøtte"],
@@ -511,8 +507,7 @@ module.exports = {
     },
     {
       title: "Høreapparat",
-      ingress:
-        "Forsterker lyden rundt deg når du har nedsatt hørsel.",
+      ingress: "Forsterker lyden rundt deg når du har nedsatt hørsel.",
       icon: "/src/_includes/svg/pictograms/horselshjelpemidler.svg",
       area: ["Hjelpemidler og tilrettelegging"],
       taxonomy: ["Pengestøtte", "Hjelpemiddel"],
@@ -827,8 +822,7 @@ module.exports = {
     },
     {
       title: "Ortopediske sko",
-      ingress:
-        "Hjelper deg når du har ulike problemer med føttene.",
+      ingress: "Hjelper deg når du har ulike problemer med føttene.",
       icon: "/src/_includes/svg/pictograms/ortopediske-sko.svg",
       area: ["Hjelpemidler og tilrettelegging"],
       taxonomy: ["Pengestøtte", "Hjelpemiddel"],
@@ -870,7 +864,7 @@ module.exports = {
         },
         {
           type: "actions",
-          title: "Søk om overgangs&shy;stønad",
+          title: "Søk om overgangsstønad",
           data: [
             {
               text: "Søk digitalt",
@@ -915,8 +909,7 @@ module.exports = {
     },
     {
       title: "Parykk",
-      ingress:
-        "Erstatter eget hår på hele hodet, eller deler av hodet.",
+      ingress: "Erstatter eget hår på hele hodet, eller deler av hodet.",
       icon: "/src/_includes/svg/pictograms/parykk.svg",
       area: ["Hjelpemidler og tilrettelegging"],
       taxonomy: ["Hjelpemiddel", "Pengestøtte"],
@@ -980,16 +973,14 @@ module.exports = {
     },
     {
       title: "Samtale – hjelpemidler",
-      ingress:
-        "Gjør det lettere å delta i samtaler når du har nedsatt hørsel.",
+      ingress: "Gjør det lettere å delta i samtaler når du har nedsatt hørsel.",
       icon: "/src/_includes/svg/pictograms/horselshjelpemidler.svg",
       area: ["Hjelpemidler og tilrettelegging"],
       taxonomy: ["Hjelpemiddel"],
     },
     {
       title: "Seksualtekniske hjelpemidler",
-      ingress:
-        "Kan gi et bedre sexliv når du har nedsatt seksualfunksjon.",
+      ingress: "Kan gi et bedre sexliv når du har nedsatt seksualfunksjon.",
       icon: "/src/_includes/svg/pictograms/seksualtekniske-hjelpemidler.svg",
       area: ["Hjelpemidler og tilrettelegging"],
       taxonomy: ["Hjelpemiddel", "Pengestøtte"],
@@ -1077,8 +1068,7 @@ module.exports = {
     {
       title:
         "Supplerende stønad for personer over 67 år med kort botid i Norge",
-      ingress:
-        "Gir deg høyere pensjon når du har bodd kort tid i Norge.",
+      ingress: "Gir deg høyere pensjon når du har bodd kort tid i Norge.",
       icon: "/src/_includes/svg/pictograms/neutral.svg",
       area: ["Pensjon"],
       taxonomy: ["Pengestøtte"],
@@ -1365,8 +1355,7 @@ module.exports = {
     },
     {
       title: "Øyeprotese",
-      ingress:
-        "Erstatter øyet når du mangler et øye, eller har skadet øyet.",
+      ingress: "Erstatter øyet når du mangler et øye, eller har skadet øyet.",
       icon: "/src/_includes/svg/pictograms/neutral.svg",
       area: ["Hjelpemidler og tilrettelegging"],
       taxonomy: ["Hjelpemiddel"],

@@ -14,6 +14,7 @@
       {{ button(
         {
           text: item.text,
+          href: '/soknad-og-skjema/' + product.title | slugify + '/',
           variant: item.variant
         }
       ) }}

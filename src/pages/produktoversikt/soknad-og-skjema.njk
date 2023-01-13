@@ -1,0 +1,43 @@
+---js
+{
+  pagination: {
+    data: "products",
+    size: 1,
+    alias: "product",
+    before: function(data) {
+      const filteredData = data.filter(element => element.contentBlocks != null)
+      return filteredData
+    }
+  },
+  eleventyComputed: {
+    title: "{{ product.title }}",
+    permalink: "/soknad-og-skjema/{{ product.title | slug }}/"
+  }
+}
+---
+{% extends 'base.njk' %}
+
+{% block content %}
+  <main class="min-h-[50vh]">
+    <div class="grid grid-cols-layout">
+      <div class="pt-12 pb-8 col-content">
+        <h1 class="mt-1 text-5xl font-semibold">{{ product.title | safe }}</h1>
+        {% if ingress %}
+        <div class="mt-4 text-lg max-w-prose">
+          <p class="mt-1 text-xl">{{ product.ingress | safe }}</p>
+        </div>
+        {% endif %}
+      </div>
+    </div>
+
+    <div class="grid pb-12 bg-white grid-cols-layout min-h-[40vh]">
+      <div class="text-lg col-content">
+        <p><a class="px-4 py-3 text-white bg-blue-500 rounded" href="#">Start søknad</a></p>
+      </div>
+    </div>
+  </main>
+
+{% endblock %}
+
+{% block styles %}{% endblock %}
+{% block script %}{% endblock %}

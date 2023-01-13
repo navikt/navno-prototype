@@ -16,7 +16,7 @@
     {% endif %}
   {% endif %}
 
-  <a href="#" class="inline-flex items-center gap-2 px-6 py-2.5 no-underline rounded font-semibold leading-tight text-center justify-center {{ params.class }} {{ variant or buttonClasses }}">
+  <a href="{{ params.href or '#' }}" class="inline-flex items-center gap-2 px-6 py-2.5 no-underline rounded font-semibold leading-tight text-center justify-center {{ params.class }} {{ variant or buttonClasses }}">
     <span>{{ params.text | safe }}</span>
   </a>
 {% endmacro %}
