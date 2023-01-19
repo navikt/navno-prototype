@@ -48,6 +48,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.setDataDeepMerge(true);
 
   return {
+    pathPrefix: "person/prototype",
     markdownTemplateEngine: "njk",
     templateFormats: ["njk", "md"],
     dir: {

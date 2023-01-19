@@ -8,17 +8,17 @@
     "url": "https://github.com/macbruker/navno-prototype"
   },
   "scripts": {
-    "dev:eleventy": "ELEVENTY_ENV=development eleventy --config=eleventy.config.js --serve",
+    "dev:eleventy": "ELEVENTY_ENV=development eleventy --config=eleventy.config.js --serve --quiet",
     "dev:css": "postcss ./src/assets/main.css -o ./build/assets/main.min.css --watch",
     "dev": "concurrently npm:dev:*",
-    "build:eleventy": "ELEVENTY_ENV=production eleventy --config=eleventy.config.js --pathprefix=person/prototype",
+    "build:eleventy": "ELEVENTY_ENV=production eleventy --config=eleventy.config.js",
     "build:css": "NODE_ENV=production postcss ./src/assets/main.css -o ./build/assets/main.min.css",
     "build": "concurrently npm:build:*",
     "start": "node ./server/app.js"
   },
   "license": "MIT",
   "devDependencies": {
-    "@11ty/eleventy": "^2.0.0-canary.29",
+    "@11ty/eleventy": "^2.0.0-canary.30",
     "alpinejs": "^3.10.5",
     "autoprefixer": "^10.4.13",
     "compression": "^1.7.4",
@@ -28,7 +28,7 @@
     "html-minifier": "^4.0.0",
     "postcss": "^8.4.21",
     "postcss-cli": "^10.1.0",
-    "prettier": "^2.8.2",
+    "prettier": "^2.8.3",
     "tailwindcss": "^3.2.4"
   },
   "dependencies": {
