@@ -5,13 +5,14 @@
     size: 1,
     alias: "product",
     before: function(data) {
-      const filteredData = data.filter(element => element.contentBlocks != null)
+      const filteredData = data.filter(element => element.egenSide === true)
       return filteredData
     }
   },
   eleventyComputed: {
     title: "{{ product.title }}",
-    permalink: "/produktoversikt/{{ product.title | slug }}.html"
+    permalink: false
+    // permalink: "/produktoversikt/{{ product.title | slugify }}.html"
   }
 }
 ---
