@@ -4,6 +4,7 @@ ingress: "Sikrer deg inntekt i inntil 3 år når du har minst 60 prosent av den 
 icon: "/src/_includes/svg/pictograms/overgangsstonad-enslig-foreldre.svg"
 type: ["Pengestøtte"]
 area: ["Familie og barn"]
+egenSide: true
 ---
 
 {%- from "macros/button.njk" import button -%}

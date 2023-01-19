@@ -185,7 +185,9 @@ bodyClass: ''
 
                   {{ product.content | markdown | safe }}
 
-                  <p><a class="text-deepblue-500 hover:underline hover:text-deepblue-600" href="/produktoversikt/{{ product.data.title | slug }}.html">(Vis som egen side)</a></p>
+                  {% if product.data.egenSide %}
+                  <p><a class="text-deepblue-500 hover:underline hover:text-deepblue-600" href="/produktoversikt/{{ product.data.title | slugify }}.html">(Vis som egen side)</a></p>
+                  {% endif %}
                 </div>
               </div>
 

@@ -4,6 +4,7 @@ ingress: "Har du blitt arbeidsledig, kan du ha rett til dagpenger eller annen ø
 icon: "/src/_includes/svg/pictograms/dagpenger.svg"
 type: ["Pengestøtte"]
 area: ["Arbeid"]
+egenSide: true
 ---
 
 {%- from "macros/button.njk" import button -%}
