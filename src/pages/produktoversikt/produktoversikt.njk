@@ -9,8 +9,8 @@ bodyClass: ''
 {% extends 'base.njk' %}
 
 {% block content %}
-  <main
-    class="my-8 text-lg text-gray-900"
+
+  <main class="my-8 text-lg text-gray-900"
     x-data="{
       taxonomyFilter: new URLSearchParams(location.search).get('taxonomy') || 'alle',
       areaFilter: new URLSearchParams(location.search).get('area') || 'alle',
