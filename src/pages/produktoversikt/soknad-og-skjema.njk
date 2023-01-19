@@ -1,17 +1,17 @@
 ---js
 {
   pagination: {
-    data: "products",
+    data: "collections.produkt",
     size: 1,
     alias: "product",
     before: function(data) {
-      const filteredData = data.filter(element => element.contentBlocks != null)
+      const filteredData = data.filter(element => element.data.egenSide === true)
       return filteredData
     }
   },
   eleventyComputed: {
-    title: "{{ product.title }}",
-    permalink: "/soknad-og-skjema/{{ product.title | slug }}/"
+    title: "{{ product.data.title }}",
+    permalink: "/soknad-og-skjema/{{ product.data.title | slug }}/"
   }
 }
 ---
@@ -22,9 +22,9 @@
     <div class="grid grid-cols-layout">
       <div class="pt-12 pb-8 col-content">
         <h1 class="mt-1 text-5xl font-semibold">{{ product.title | safe }}</h1>
-        {% if ingress %}
+        {% if product.data.ingress %}
         <div class="mt-4 text-lg max-w-prose">
-          <p class="mt-1 text-xl">{{ product.ingress | safe }}</p>
+          <p class="mt-1 text-xl">{{ product.data.ingress | safe }}</p>
         </div>
         {% endif %}
       </div>

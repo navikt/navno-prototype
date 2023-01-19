@@ -1,4 +1,5 @@
 const markdownIt = require("markdown-it");
+const util = require("util");
 
 const markdown = (value) => {
   return new markdownIt({
@@ -15,4 +16,8 @@ const markdownInline = (value) => {
   }).renderInline(value);
 };
 
-module.exports = { markdown, markdownInline };
+const console = (value) => {
+  return util.inspect(value);
+};
+
+module.exports = { markdown, markdownInline, console };

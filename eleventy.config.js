@@ -4,9 +4,10 @@
 
 const { EleventyHtmlBasePlugin } = require("@11ty/eleventy");
 const svgContents = require("eleventy-plugin-svg-contents");
-const { markdown, markdownInline } = require("./src/_11ty/filters.js");
+const { markdown, markdownInline, console } = require("./src/_11ty/filters.js");
 const { timestampNow } = require("./src/_11ty/shortcodes.js");
 const { minifyHtml } = require("./src/_11ty/transforms.js");
+const { typeFilter, areaFilter } = require("./src/_11ty/collections.js");
 
 const compression = require("compression");
 
@@ -30,6 +31,11 @@ module.exports = function (eleventyConfig) {
   // Templating filters
   eleventyConfig.addFilter("markdown", markdown);
   eleventyConfig.addFilter("markdownInline", markdownInline);
+  eleventyConfig.addFilter("console", console);
+
+  // Templating collections
+  eleventyConfig.addCollection("typeFilter", typeFilter);
+  eleventyConfig.addCollection("areaFilter", areaFilter);
 
   // Templating shortcodes
   eleventyConfig.addShortcode("now", timestampNow);

@@ -8,7 +8,8 @@
     "url": "https://github.com/macbruker/navno-prototype"
   },
   "scripts": {
-    "dev:eleventy": "ELEVENTY_ENV=development eleventy --config=eleventy.config.js --serve --quiet",
+    "eleventy-debug": "DEBUG=Eleventy* npx @11ty/eleventy",
+    "dev:eleventy": "ELEVENTY_ENV=development eleventy --config=eleventy.config.js --serve",
     "dev:css": "postcss ./src/assets/main.css -o ./build/assets/main.min.css --watch",
     "dev": "concurrently npm:dev:*",
     "build:eleventy": "ELEVENTY_ENV=production eleventy --config=eleventy.config.js",
@@ -19,7 +20,7 @@
   "license": "MIT",
   "devDependencies": {
     "@11ty/eleventy": "^2.0.0-beta.1",
-    "alpinejs": "^3.10.5",
+    "alpinejs": "^3.11.1",
     "autoprefixer": "^10.4.13",
     "compression": "^1.7.4",
     "concurrently": "^7.6.0",
