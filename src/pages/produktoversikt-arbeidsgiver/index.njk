@@ -1,8 +1,6 @@
 ---
 title: 'Søknad og skjema fra A til Å'
 description: 'Pengestøtter og tjenester fra NAV for arbeidsgivere. Du kan søke eller filtrere etter type og område.'
-tags:
-  - template
 order: 4
 bodyClass: ''
 ---
@@ -97,7 +95,7 @@ bodyClass: ''
                 />
                 <label class="{{ labelClasses }}" for="filter-type-all">Alle</label>
               </li>
-            {% for item in collections.typeFilterArb %}
+            {% for item in typeFilter %}
               <li>
                 <input type="radio" x-on:change="updateCount($refs)" x-model="typeFilter" class="{{ inputClasses }}" name="filter-type" value="{{ item | slugify }}" id="filter-{{ item | slugify }}" />
                 <label class="{{ labelClasses }}" for="filter-{{ item | slugify }}">
@@ -122,7 +120,7 @@ bodyClass: ''
                 />
                 <label class="{{ labelClasses }}" for="filter-area-all">Alle</label>
               </li>
-            {% for item in collections.areaFilterArb %}
+            {% for item in areaFilter %}
               <li>
                 <input type="radio" x-on:change="updateCount($refs)" x-model="areaFilter" class="{{ inputClasses }}" name="filter-area" value="{{ item | slugify }}" id="filter-{{ item | slugify }}" />
                 <label class="{{ labelClasses }}" for="filter-{{ item | slugify }}">
@@ -146,32 +144,32 @@ bodyClass: ''
           <p class="mt-8 mb-2">Viser <span x-text="count"></span> av {{ products.length }} produkter og tjenester</p>
 
           <div class="border-b border-deepblue-100" x-ref="entries" x-show="count !== 0">
-            {% for product in collections.produktArb %}
+            {% for product in products %}
               <div
                 x-data="{ expanded: false }"
                 class="focus-within:z-10 -mx-clamp-gap px-clamp-gap sm:-mx-0 sm:px-0 border-t border-deepblue-100"
                 x-bind:class="expanded ? '' : ''"
                 x-show="filterItem($el)"
-                data-type="{{ product.data.type | slugify }}"
-                data-area="{{ product.data.area | slugify }}">
+                data-type="{{ product.type | slugify }}"
+                data-area="{{ product.area | slugify }}">
 
                 <div
                   class="py-4 px-clamp-gap -mx-clamp-gap -my-px relative z-10 flex items-center gap-4 text-left sm:-mx-2 sm:px-4 sm:rounded-lg hover:z-20"
                   x-bind:class="expanded ? ' hover:bg-deepblue-200 bg-deepblue-50' : 'hover:bg-deepblue-200'">
-                  {% if product.data.icon %}
-                    {{ product.data.icon | svgContents('w-12 h-12 lg:w-14 lg:h-14 shrink-0') | safe }}
+                  {% if product.icon %}
+                    {{ product.icon | svgContents('w-12 h-12 lg:w-14 lg:h-14 shrink-0') | safe }}
                   {% endif %}
                   <div class="grid gap-1">
                     <p class="text-base opacity-80">
-                    {% for item in product.data.type %}
-                      <span>{{ item }}</span>{{ ', ' if product.data.type.length > 1 and not loop.last }}
+                    {% for item in product.type %}
+                      <span>{{ item }}</span>{{ ', ' if product.type.length > 1 and not loop.last }}
                     {% endfor %}
                     </p>
                     <h2 class="text-xl font-semibold leading-tight">
-                      {{ product.data.title | safe }}
+                      {{ product.title | safe }}
                     </h2>
                     <p class="text-base">
-                      {%- for item in product.data.area -%}
+                      {%- for item in product.area -%}
                         <span class="">{{ item }}</span>{{ ', ' if loop.length > 1 and not loop.last }}
                       {%- endfor -%}
                     </p>
@@ -183,14 +181,16 @@ bodyClass: ''
                 </div>
 
                 <div class="pt-6 pb-8 px-clamp-gap -mx-clamp-gap relative min-h-[30vh] markdown bg-deepblue-50 sm:-mx-2 sm:-mt-2 sm:px-5 sm:rounded-b-lg mb-4" x-bind:hidden="!expanded">
-                  <p>{{ product.data.ingress }}</p>
+                  <p>{{ product.ingress }}</p>
 
+                  {% if product.content %}
                   {{ product.content | markdown | safe }}
+                  {% endif %}
                 </div>
 
-                {% if product.data.egenSide %}
+                {% if product.egenSide %}
                 <div x-bind:hidden="!expanded" class="sm:px-6 pt-4 pb-6">
-                  <a class="inline-block mx-auto text-center underline hover:no-underline hover:text-blue-600" href="/produktoversikt/{{ product.data.title | slugify }}.html">Vis som egen side</a>
+                  <a class="inline-block mx-auto text-center underline hover:no-underline hover:text-blue-600" href="/produktoversikt/{{ product.title | slugify }}.html">Vis som egen side</a>
                 </div>
                 {% endif %}
 
