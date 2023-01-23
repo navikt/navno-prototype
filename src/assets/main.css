@@ -3,31 +3,28 @@
 @tailwind utilities;
 
 @layer base {
-  :root {
-    --_layout-gap: clamp(0.75rem, 0.125rem + 4vw, 6rem);
-    --_layout-full: minmax(var(--_layout-gap), 1fr);
-    --_layout-feature: minmax(0, 6.5rem);
-    --_layout-content: min(40rem + 32vw, 100% - (var(--_layout-gap) * 2));
-  }
   a {
     text-decoration-thickness: 0.0875rem;
     text-underline-offset: 0.125em;
   }
 }
 @layer components {
+  :where(.markdown) > *:not(hr) {
+    max-width: 64ch;
+  }
   :where(.markdown) > *:not(h2, h3, h4, h5) + * {
-    margin-block-start: 1.75rem;
+    margin-block-start: theme("spacing.7");
   }
   .markdown > *:where(h2, h3, h4, h5) + * {
-    margin-block-start: 0.125rem;
+    margin-block-start: theme("spacing[0.5]");
   }
   :where(.markdown) > p a {
     text-decoration: underline;
-    color: var(--navds-global-color-blue-500);
+    color: theme("colors.blue.500");
   }
   :where(.markdown) > p a:hover {
     text-decoration: none;
-    color: var(--navds-global-color-blue-600);
+    color: theme("colors.blue.600");
   }
   :where(.markdown) > h2 {
     @apply font-semibold text-2xl leading-snug;
@@ -57,9 +54,45 @@
       )
       20;
   }
+  .c-product:has(+ .c-product--expanded) {
+    border-bottom-color: #fff !important;
+  }
 }
 @layer utilities {
-  .scrollbar-hidden::-webkit-scrollbar {
-    display: none;
+  .grid-cols-layout {
+    --_layout-gap: clamp(0.75rem, 0.05rem + 4vw, 6rem);
+    --_layout-full: minmax(var(--_layout-gap), 1fr);
+    --_layout-popout: minmax(0, 6rem);
+    --_layout-feature: minmax(0, 7rem);
+    --_layout-content: min(50rem, 100% - (var(--_layout-gap) * 2));
+
+    grid-template-columns:
+      [full-start] var(--_layout-full)
+      [feature-start] var(--_layout-feature)
+      [popout-start] var(--_layout-popout)
+      [content-start] var(--_layout-content) [content-end]
+      var(--_layout-popout) [popout-end]
+      var(--_layout-feature) [feature-end]
+      var(--_layout-full) [full-end];
+  }
+  .grid-cols-layout > * {
+    grid-column: content;
+  }
+  .col-content {
+    grid-column: content;
+  }
+  .col-popout {
+    grid-column: popout;
+  }
+  .col-feature {
+    grid-column: feature;
+  }
+  .col-full {
+    grid-column: full;
+  }
+  @media (min-width: theme("screens.lg")) {
+    .lg\:col-feature {
+      grid-column: feature;
+    }
   }
 }

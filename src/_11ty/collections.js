@@ -23,7 +23,15 @@ const areaFilter = (collection) => {
       }
     });
 
-  return [...tagSet];
+  return [...tagSet].sort((a, b) => {
+    if (a == b) return 0;
+    if (a == "Annet") return 1;
+    if (b == "Annet") return -1;
+
+    if (a < b) return -1;
+    if (a > b) return 1;
+    return 0;
+  });
 };
 
 const typeFilter = (collection) => {
@@ -51,7 +59,7 @@ const typeFilter = (collection) => {
       }
     });
 
-  return [...tagSet];
+  return [...tagSet].sort();
 };
 
 module.exports = { areaFilter, typeFilter };

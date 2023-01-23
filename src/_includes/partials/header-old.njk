@@ -21,7 +21,7 @@
   <nav class="flex items-center w-full gap-4 col-feature">
     {# Logo #}
     <button x-on:click="indexOpen = !indexOpen" class="text-[#C30000] hover:text-[#DE2E2E] block focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-800 py-2.5 px-2 -mx-2 rounded-sm">
-      {{ '/src/_includes/svg/logo.svg' | svgContents('w-[72px] h-auto') | safe }}
+      {{ '/src/_includes/svg/logo.svg' | svgContents('w-[75px] h-auto') | safe }}
       <span class="sr-only">NAV</span>
     </button>
 
@@ -45,20 +45,20 @@
     </div>
 
     {# Menu Buttons #}
-    {% set menuButtonClasses = "flex flex-0 flex-col sm:flex-row items-center justify-center py-2 pl-2.5 pr-3 leading-none font-semibold sm:gap-2.5 text-blue-500 sm:rounded sm:text-lg hover:bg-deepblue-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-800" %}
+    {% set menuButtonClasses = "flex-0 flex-col sm:flex-row items-center justify-center py-2 pl-2.5 pr-3 leading-none font-semibold sm:gap-2.5 text-blue-500 sm:rounded sm:text-lg hover:bg-deepblue-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-800" %}
 
-    <div class="flex items-end gap-0.5 ml-auto sm:py-4 md:py-3">
-      <button class="{{ menuButtonClasses }}" type="button">
+    <div class="flex items-end gap-0.5 ml-auto py-2 sm:py-4 whitespace-nowrap">
+      <button class="flex {{ menuButtonClasses }}" type="button">
         <span class="relative">
           {{ '/src/_includes/svg/icons/menu.svg' | svgContents('w-6 h-6') | safe }}
         </span>
         <span class="mt-px">Meny</span>
       </button>
-      <button class="{{ menuButtonClasses }}" type="button">
+      <button class="hidden sm:flex {{ menuButtonClasses }}" type="button">
           {{ '/src/_includes/svg/icons/search.svg' | svgContents('w-6 h-6 shrink-0 pointer-events-none') | safe }}
         <span class="mt-px">Søk</span>
       </button>
-      <button class="{{ menuButtonClasses }}" type="button">
+      <button class="flex {{ menuButtonClasses }}" type="button">
           {{ '/src/_includes/svg/icons/login.svg' | svgContents('w-6 h-6 shrink-0 pointer-events-none') | safe }}
         <span class="mt-px">Logg inn</span>
       </button>
