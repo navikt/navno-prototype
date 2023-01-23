@@ -34,11 +34,20 @@
       <div class="xs:absolute md:static xs:top-full xs:left-0">
       <ul class="justify-center overflow-hidden text-lg bg-white border border-gray-200 divide-y divide-gray-200 rounded shadow-lg md:rounded-none md:bg-transparent md:shadow-none md:border-0 md:divide-y-0 md:gap-4 md:flex" role="tablist" x-bind:class="audienceDropdownOpen ? 'grid' : 'hidden md:flex'">
         {% for item in menu.audience %}
-        <li role="tab" aria-selected="{{ 'true' if loop.index === 1 else 'false' }}" class="grid">
-          <a href="#" class="focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-800 flex items-center py-2 px-3 md:px-0.5 md:pb-5 text-gray-900 border-l-4 md:border-l-0 md:border-b-4 md:pt-6 {{ 'border-blue-500 font-semibold' if loop.index === 1 else 'border-transparent hover:border-gray-300/75 opacity-70' }}">
-            {{ item | replace('person', "") }}
-          </a>
-        </li>
+
+
+
+          {% if (page.fileSlug != 'produktoversikt-arbeidsgiver' and loop.first) or (page.fileSlug === 'produktoversikt-arbeidsgiver' and loop.index === 2) %}
+            {% set menuBorder = 'border-blue-500' %}
+          {% else %}
+            {% set menuBorder = 'border-transparent hover:border-gray-300/75 opacity-70' %}
+          {% endif %}
+
+          <li role="tab" aria-selected="{{ 'true' if loop.index === 1 else 'false' }}" class="grid">
+            <a href="#" class="focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-800 flex items-center py-2 px-3 md:px-0.5 md:pb-5 text-gray-900 border-l-4 md:border-l-0 md:border-b-4 md:pt-6 {{ menuBorder }}">
+              {{ item | replace('person', "") }}
+            </a>
+          </li>
         {% endfor %}
       </ul>
       </div>
