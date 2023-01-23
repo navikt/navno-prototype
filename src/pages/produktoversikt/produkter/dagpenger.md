@@ -68,5 +68,5 @@ Dersom du allerede mottar dagpenger, kan du søke om å få beholde dagpengene i
 ### Mer om
 
 <div class="flex gap-1.5">
-{{ microcard({ text: 'Send søknad', dot: 'bg-green-300' }) }}
+{{ microcard({ text: 'Dagpenger', dot: 'bg-green-300' }) }}
 </div>
