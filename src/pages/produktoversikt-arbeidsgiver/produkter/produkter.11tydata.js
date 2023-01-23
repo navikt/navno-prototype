@@ -9,13 +9,13 @@ module.exports = {
       area: ["Helse og sykdom"],
     },
     {
-      title: "Eksempel 3",
+      title: "Eksempel 4",
       ingress: "Ingress her …",
       type: ["Pengestøtte"],
       area: ["Helse og sykdom"],
     },
     {
-      title: "Eksempel 3",
+      title: "Eksempel 5",
       ingress: "Ingress her …",
       type: ["Pengestøtte"],
       area: ["Helse og sykdom"],
