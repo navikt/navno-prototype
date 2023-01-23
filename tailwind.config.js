@@ -3,13 +3,14 @@ const plugin = require("tailwindcss/plugin");
 module.exports = {
   content: [
     "./src/**/*.njk",
+    "./src/**/*.md",
     "./src/**/*.json",
     "./src/**/*.js",
     "./src/**/*.svg",
   ],
   theme: {
     screens: {
-      xs: "480px",
+      xs: "540px",
       sm: "720px",
       md: "1024px",
       lg: "1200px",
@@ -193,6 +194,7 @@ module.exports = {
       gridTemplateColumns: {
         areas: "repeat(auto-fit, minmax(32ch, 1fr))",
         cards: "repeat(auto-fill, minmax(32ch, 1fr))",
+        sidebar: "minmax(48ch, 2fr) 1fr",
       },
       keyframes: {
         dropdown: {
@@ -222,36 +224,14 @@ module.exports = {
       maxWidth: {
         prose: "76ch",
       },
+      spacing: {
+        "clamp-gap": "clamp(0.75rem, 0.05rem + 4vw, 6rem)",
+      },
       transitionProperty: {
         custom:
           "color, background-color, border-color, fill, stroke, transform",
       },
     },
   },
-  plugins: [
-    plugin(function ({ addUtilities }) {
-      addUtilities({
-        ".grid-cols-layout": {
-          "grid-template-columns": `
-          [full-start] var(--_layout-full)
-          [feature-start] var(--_layout-feature)
-          [content-start ] var(--_layout-content) [content-end]
-          var(--_layout-feature) [feature-end]
-          var(--_layout-full) [full-end]`,
-        },
-        ".grid-cols-layout > *": {
-          "grid-column": "content",
-        },
-        ".col-full": {
-          "grid-column": "full",
-        },
-        ".col-feature": {
-          "grid-column": "feature",
-        },
-        ".col-content": {
-          "grid-column": "content",
-        },
-      });
-    }),
-  ],
+  plugins: [],
 };
