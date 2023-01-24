@@ -4,6 +4,45 @@ const products = [
     ingress: "Forsikring for å få bedre dekning når du blir sykmeldt.",
     type: ["Forsikring"],
     area: ["Helse og sykdom"],
+    contentBlocks: [
+      {
+        type: "markdown",
+        data: [
+          "## Overskrift nivå 2",
+          "### Overskrift nivå 3",
+          "Et kort avsnitt med tekst",
+        ],
+      },
+      {
+        type: "actions",
+        data: [
+          {
+            text: "Test",
+            variant: "primary",
+          },
+          {
+            text: "Test",
+            variant: "secondary",
+          },
+        ],
+      },
+      {
+        type: "line",
+      },
+      {
+        type: "markdown",
+        data: ["### Mer om"],
+      },
+      {
+        type: "microcards",
+        data: [
+          {
+            text: "Test",
+            dot: "bg-green-300",
+          },
+        ],
+      },
+    ],
   },
   {
     title:

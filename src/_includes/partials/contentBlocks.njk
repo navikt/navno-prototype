@@ -1,4 +1,5 @@
 {%- from "macros/button.njk" import button -%}
+{%- from "macros/microcard.njk" import microcard -%}
 
 {% for block in product.contentBlocks %}
 
@@ -9,16 +10,34 @@
   {% endif %}
 
   {% if block.type === 'actions' %}
-  <div class="grid gap-2 pb-8 mt-4 mb-6 border-b border-gray-200 sm:flex">
+  <div class="grid gap-1.5 sm:flex">
     {% for item in block.data %}
       {{ button(
         {
           text: item.text,
-          href: '/soknad-og-skjema/' + product.title | slugify + '/',
+          href: '#',
           variant: item.variant
         }
       ) }}
     {% endfor %}
   </div>
   {% endif %}
+
+  {% if block.type === 'microcards' %}
+    <div class="flex gap-1.5">
+    {% for item in block.data %}
+      {{ microcard(
+        {
+          text: item.text,
+          dot: 'bg-green-300'
+        }
+      ) }}
+    {% endfor %}
+  </div>
+  {% endif %}
+
+  {% if block.type === 'line' %}
+    <hr class="border-deepblue-100" />
+  {% endif %}
+
 {% endfor %}
