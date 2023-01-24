@@ -90,15 +90,16 @@
     {%- endif -%}
   </head>
   <body
-    class="min-h-full overflow-y-scroll overflow-x-hidden {{ bodyClass }}"
+    class="min-h-full overflow-y-scroll overflow-x-hidden transition-all duration-200 ease-in {{ bodyClass }}"
     x-data="{
       indexOpen: false,
       audienceDropdownOpen: false,
       menuOpen: false,
       notifyOpen: false
-    }">
+    }"
+    x-on:click.outside="indexOpen = false">
     {% include "partials/prototypeNav.njk" %}
-    <div class="relative z-10 transition-transform duration-200 ease-in bg-white" x-bind:class="indexOpen ? 'translate-y-[70vh]' : 'translate-y-0'" x-on:click.outside="indexOpen = false">
+    <div class="relative z-10 bg-white" >
     {% include "partials/banner.njk" %}
     {% include "partials/header-old.njk" %}
     {% block content %}{% endblock %}

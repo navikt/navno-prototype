@@ -1,6 +1,6 @@
-<div class="fixed w-full h-[70vh] overflow-y-auto font-mono text-2xl bg-gray-900 text-white md:text-3xl">
+<div class="overflow-y-auto font-mono text-2xl bg-gray-900 text-white md:text-3xl" x-show="indexOpen">
   <div class="grid grid-cols-layout">
-    <ul class="py-3 divide-y md:py-6 divide-gray-400/25 col-content">
+    <ul class="py-3 divide-y md:py-6 divide-gray-400/25 col-popout">
     {% for page in collections.template | sort(false, false, 'data.order') %}
       <li class="">
         <a href="{{ page.url }}" class="inline-block py-4 hover:text-blue-300 hover:underline decoration-from-font underline-offset-4">

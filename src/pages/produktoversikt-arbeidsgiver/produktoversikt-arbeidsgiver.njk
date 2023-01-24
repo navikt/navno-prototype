@@ -1,10 +1,13 @@
 ---
-title: 'Søknad og skjema fra A til Å'
+title: 'Søknad og skjema fra A til Å (arbeidsgiver)'
 description: 'Pengestøtter og tjenester fra NAV for arbeidsgivere. Du kan søke eller filtrere etter type og område.'
-order: 4
+order: 5
 bodyClass: ''
 ---
 {% extends 'base.njk' %}
+
+{%- from "macros/button.njk" import button -%}
+{%- from "macros/microcard.njk" import microcard -%}
 
 {% block content %}
   <main class="my-8 text-lg text-gray-900"
@@ -183,8 +186,8 @@ bodyClass: ''
                 <div class="pt-6 pb-8 px-clamp-gap -mx-clamp-gap relative min-h-[30vh] markdown bg-deepblue-50 sm:-mx-2 sm:-mt-2 sm:px-5 sm:rounded-b-lg mb-4" x-bind:hidden="!expanded">
                   <p>{{ product.ingress }}</p>
 
-                  {% if product.content %}
-                  {{ product.content | markdown | safe }}
+                  {% if product.contentBlocks %}
+                    {% include "partials/contentBlocks.njk" %}
                   {% endif %}
                 </div>
 
