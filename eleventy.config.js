@@ -25,7 +25,11 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ "./static/images/*": "/assets/images" });
   eleventyConfig.addPassthroughCopy({ "./static/fonts/*": "/assets/fonts" });
   eleventyConfig.addPassthroughCopy({
-    "./node_modules/alpinejs/dist/cdn.min.js": "./assets/main.min.js",
+    "./node_modules/alpinejs/dist/cdn.min.js": "./assets/alpine.min.js",
+  });
+  eleventyConfig.addPassthroughCopy({
+    "./node_modules/@alpinejs/focus/dist/cdn.min.js":
+      "./assets/alpineFocus.min.js",
   });
 
   // Watch extra files for changes

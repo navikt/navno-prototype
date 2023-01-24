@@ -20,6 +20,7 @@
   "license": "MIT",
   "devDependencies": {
     "@11ty/eleventy": "^2.0.0-beta.1",
+    "@alpinejs/focus": "^3.11.1",
     "alpinejs": "^3.11.1",
     "autoprefixer": "^10.4.13",
     "compression": "^1.7.4",
