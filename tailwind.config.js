@@ -176,6 +176,7 @@ module.exports = {
         dropdown: "dropdown 100ms cubic-bezier(0.3, 0.6, 0.25, 1) forwards",
         enter: "enter 500ms cubic-bezier(0.3, 0.6, 0.25, 1.45) forwards",
         "fade-in": "fade-in 700ms cubic-bezier(0.3, 0.6, 0.25, 1) forwards",
+        blur: "blur 300ms cubic-bezier(0.3, 0.6, 0.25, 1) forwards",
       },
       backgroundImage: {
         "gradient-diagonal":
@@ -210,6 +211,16 @@ module.exports = {
         enter: {
           to: {
             transform: "translate3d(0, 0, 0)",
+          },
+        },
+        blur: {
+          from: {
+            "backdrop-filter": "blur(0px)",
+            "background-color": "rgb(0 0 0 / 0%)",
+          },
+          to: {
+            "backdrop-filter": "blur(2px)",
+            "background-color": "rgb(0 0 0 / 15%)",
           },
         },
         "fade-in": {
