@@ -133,16 +133,14 @@ const products = [
   },
   {
     title: "Frivillig yrkesskadetrygd",
-    ingress: "En frivillig forsikring for selvstendig næringsdrivende og frilansere.",
+    ingress:
+      "En frivillig forsikring for selvstendig næringsdrivende og frilansere.",
     type: ["Forsikring"],
     area: ["Helse og sykdom"],
     contentBlocks: [
       {
         type: "markdown",
-        data: [
-          "### Søk om opptak i forsikringen",
-          "Et kort avsnitt med tekst",
-        ],
+        data: ["### Søk om opptak i forsikringen", "Et kort avsnitt med tekst"],
       },
       {
         type: "actions",
@@ -180,13 +178,10 @@ const products = [
     ingress: "Forsikring mot ansvar for sykepenger i arbeidsgiverperioden.",
     type: ["Forsikring", "Refusjon"],
     area: ["Helse og sykdom"],
-        contentBlocks: [
+    contentBlocks: [
       {
         type: "markdown",
-        data: [
-          "### Søk om opptak i forsikringen",
-          "Et kort avsnitt med tekst",
-        ],
+        data: ["### Søk om opptak i forsikringen", "Et kort avsnitt med tekst"],
       },
       {
         type: "actions",
@@ -206,10 +201,7 @@ const products = [
       },
       {
         type: "markdown",
-        data: [
-          "### Be om refusjon",
-          "Et kort avsnitt med tekst",
-        ],
+        data: ["### Be om refusjon", "Et kort avsnitt med tekst"],
       },
       {
         type: "actions",
@@ -244,7 +236,8 @@ const products = [
   },
   {
     title: "Tolk på arbeidsplassen",
-    ingress: "Den som er døv, hørselshemmet eller døvblind kan få tolkehjelp for å kunne utføre arbeidet.",
+    ingress:
+      "Den som er døv, hørselshemmet eller døvblind kan få tolkehjelp for å kunne utføre arbeidet.",
     type: ["Tjeneste", "Refusjon"],
     area: ["Inkludering og tilrettelegging"],
     contentBlocks: [
@@ -294,10 +287,7 @@ const products = [
     contentBlocks: [
       {
         type: "markdown",
-        data: [
-          "### Søk om funksjonsassistanse",
-          "Tekst",
-        ],
+        data: ["### Søk om funksjonsassistanse", "Tekst"],
       },
       {
         type: "actions",
@@ -317,10 +307,7 @@ const products = [
       },
       {
         type: "markdown",
-        data: [
-          "### Be om refusjon for funksjonsassistanse",
-          "Tekst",
-        ],
+        data: ["### Be om refusjon for funksjonsassistanse", "Tekst"],
       },
       {
         type: "actions",
@@ -355,7 +342,8 @@ const products = [
   },
   {
     title: "Lese- og sekretærhjelp",
-    ingress: "Den som er blind eller svaksynt kan få lese- og sekretærhjelp når hjelpen er nødvendig for å kunne utføre arbeidet.",
+    ingress:
+      "Den som er blind eller svaksynt kan få lese- og sekretærhjelp når hjelpen er nødvendig for å kunne utføre arbeidet.",
     type: ["Tjeneste", "Refusjon"],
     area: ["Inkludering og tilrettelegging"],
     contentBlocks: [
@@ -399,7 +387,8 @@ const products = [
   },
   {
     title: "Arbeidstrening",
-    ingress: "Gir personer som trenger ekstra hjelp muligheten til å få relevant erfaring og etter hvert en fast jobb.",
+    ingress:
+      "Gir personer som trenger ekstra hjelp muligheten til å få relevant erfaring og etter hvert en fast jobb.",
     type: ["Tiltak"],
     area: ["Inkludering og tilrettelegging"],
     contentBlocks: [
@@ -439,7 +428,8 @@ const products = [
   },
   {
     title: "Inkluderingstilskudd",
-    ingress: "Et tilskudd til arbeidsgivere for å tilrettelegge en arbeids- eller tiltaksplass.",
+    ingress:
+      "Et tilskudd til arbeidsgivere for å tilrettelegge en arbeids- eller tiltaksplass.",
     type: ["Tiltak", "Refusjon"],
     area: ["Inkludering og tilrettelegging"],
     contentBlocks: [
@@ -464,10 +454,7 @@ const products = [
       },
       {
         type: "markdown",
-        data: [
-          "### Be om refusjon",
-          "Tekst",
-        ],
+        data: ["### Be om refusjon", "Tekst"],
       },
       {
         type: "actions",
@@ -502,7 +489,8 @@ const products = [
   },
   {
     title: "Dekking av sykepenger i arbeidsgiverperioden",
-    ingress: "Dekking av sykepenger i arbeidsgiverperioden når en arbeidstaker har en langvarig eller kronisk sykdom som kan føre til hyppige sykefravær, eller sykmelding som henger sammen med graviditet.",
+    ingress:
+      "Dekking av sykepenger i arbeidsgiverperioden når en arbeidstaker har en langvarig eller kronisk sykdom som kan føre til hyppige sykefravær, eller sykmelding som henger sammen med graviditet.",
     type: ["Tiltak", "Refusjon"],
     area: ["Inkludering og tilrettelegging"],
     contentBlocks: [
@@ -544,7 +532,7 @@ const products = [
       {
         type: "line",
       },
-            {
+      {
         type: "markdown",
         data: [
           "### Be om refusjon av sykepenger",
@@ -584,7 +572,8 @@ const products = [
   },
   {
     title: "Mentor",
-    ingress: "En støtteordning der en medarbeider blir frikjøpt for å gi praktisk hjelp, veiledning og opplæring.",
+    ingress:
+      "En støtteordning der en medarbeider blir frikjøpt for å gi praktisk hjelp, veiledning og opplæring.",
     type: ["Tiltak", "Refusjon"],
     area: ["Inkludering og tilrettelegging"],
     contentBlocks: [
@@ -609,10 +598,7 @@ const products = [
       },
       {
         type: "markdown",
-        data: [
-          "### Be om refusjon",
-          "Tekst",
-        ],
+        data: ["### Be om refusjon", "Tekst"],
       },
       {
         type: "actions",
@@ -647,10 +633,11 @@ const products = [
   },
   {
     title: "Midlertidig lønnstilskudd",
-    ingress: "Et tilskudd til arbeidsgiveren der NAV dekker en del av lønnen til en arbeidstaker i en periode.",
+    ingress:
+      "Et tilskudd til arbeidsgiveren der NAV dekker en del av lønnen til en arbeidstaker i en periode.",
     type: ["Tiltak", "Refusjon"],
     area: ["Inkludering og tilrettelegging"],
-        contentBlocks: [
+    contentBlocks: [
       {
         type: "markdown",
         data: [
@@ -672,10 +659,7 @@ const products = [
       },
       {
         type: "markdown",
-        data: [
-          "### Be om refusjon",
-          "Tekst",
-        ],
+        data: ["### Be om refusjon", "Tekst"],
       },
       {
         type: "actions",
@@ -710,10 +694,11 @@ const products = [
   },
   {
     title: "Varig lønnstilskudd",
-    ingress: "En støtteordning der NAV dekker en del av lønnen til en arbeidstaker.",
+    ingress:
+      "En støtteordning der NAV dekker en del av lønnen til en arbeidstaker.",
     type: ["Tiltak", "Refusjon"],
     area: ["Inkludering og tilrettelegging"],
-        contentBlocks: [
+    contentBlocks: [
       {
         type: "markdown",
         data: [
@@ -735,10 +720,7 @@ const products = [
       },
       {
         type: "markdown",
-        data: [
-          "### Be om refusjon",
-          "Tekst",
-        ],
+        data: ["### Be om refusjon", "Tekst"],
       },
       {
         type: "actions",
@@ -773,10 +755,11 @@ const products = [
   },
   {
     title: "Tilskudd til ekspertbistand",
-    ingress: "Hjelp til arbeidsgiveren og arbeidstakeren fra en nøytral ekspert som har kompetanse på sykefravær og arbeidsmiljø.",
+    ingress:
+      "Hjelp til arbeidsgiveren og arbeidstakeren fra en nøytral ekspert som har kompetanse på sykefravær og arbeidsmiljø.",
     type: ["Tiltak", "Refusjon"],
     area: ["Inkludering og tilrettelegging"],
-        contentBlocks: [
+    contentBlocks: [
       {
         type: "markdown",
         data: [
@@ -798,10 +781,7 @@ const products = [
       },
       {
         type: "markdown",
-        data: [
-          "### Be om refusjon",
-          "Tekst",
-        ],
+        data: ["### Be om refusjon", "Tekst"],
       },
       {
         type: "actions",
@@ -836,10 +816,11 @@ const products = [
   },
   {
     title: "Tilskudd til sommerjobb",
-    ingress: "Arbeidsgivere kan søke om tilskudd til sommerjobb for unge arbeidsledige med lite jobberfaring.",
+    ingress:
+      "Arbeidsgivere kan søke om tilskudd til sommerjobb for unge arbeidsledige med lite jobberfaring.",
     type: ["Tiltak"],
     area: ["Inkludering og tilrettelegging"],
-        contentBlocks: [
+    contentBlocks: [
       {
         type: "markdown",
         data: [
@@ -920,7 +901,8 @@ const products = [
   },
   {
     title: "Jobbmestrende oppfølging",
-    ingress: "Arbeidstrening og oppfølging av ansatte med alvorlige psykiske helseproblemer.",
+    ingress:
+      "Arbeidstrening og oppfølging av ansatte med alvorlige psykiske helseproblemer.",
     type: ["Tiltak"],
     area: ["Inkludering og tilrettelegging"],
     contentBlocks: [
@@ -966,7 +948,8 @@ const products = [
   },
   {
     title: "Arbeidsgiverlos",
-    ingress: "Støtte fra en arbeidsgiverlos skal hindre at ansatte med psykiske helseproblemer faller ut av arbeidslivet.",
+    ingress:
+      "Støtte fra en arbeidsgiverlos skal hindre at ansatte med psykiske helseproblemer faller ut av arbeidslivet.",
     type: ["Veiledning"],
     area: ["Helse og sykdom"],
     contentBlocks: [
@@ -1006,7 +989,8 @@ const products = [
   },
   {
     title: "Kurspakken Sees i morgen!",
-    ingress: "Skal gi arbeidsgivere, tillitsvalgte og verneombud mer kunnskap om hvordan møte ansatte med psykiske helseproblemer.",
+    ingress:
+      "Skal gi arbeidsgivere, tillitsvalgte og verneombud mer kunnskap om hvordan møte ansatte med psykiske helseproblemer.",
     type: ["Veiledning"],
     area: ["Helse og sykdom"],
     contentBlocks: [
@@ -1128,7 +1112,7 @@ const products = [
       {
         type: "markdown",
         data: [
-          "### Meld fra om skade eller sykdom under militær tjenestegjøring,
+          "### Meld fra om skade eller sykdom under militær tjenestegjøring",
           "Tekst",
         ],
       },
@@ -1188,7 +1172,8 @@ const products = [
   },
   {
     title: "AA-registeret - søk om tilgang",
-    ingress: "Arbeidsgiver- og Arbeidstakerregisteret (Aa-registeret) er tilgjengelig for offentlige og noen private aktører. Tilgang kan gis etter søknad.",
+    ingress:
+      "Arbeidsgiver- og Arbeidstakerregisteret (Aa-registeret) er tilgjengelig for offentlige og noen private aktører. Tilgang kan gis etter søknad.",
     type: ["Skjema"],
     area: ["Annet"],
     contentBlocks: [
@@ -1291,7 +1276,8 @@ const products = [
   },
   {
     title: "Permittere",
-    ingress: "Skal du permittere ansatte, melder du fra til NAV så tidlig som mulig.",
+    ingress:
+      "Skal du permittere ansatte, melder du fra til NAV så tidlig som mulig.",
     type: ["Skjema"],
     area: ["Permittering og nedbemanning"],
     contentBlocks: [
@@ -1331,7 +1317,8 @@ const products = [
   },
   {
     title: "Meld fra om nedbemanning",
-    ingress: "Hvis du vurderer eller skal si opp ansatte, skal du så tidlig som mulig sende melding til NAV.",
+    ingress:
+      "Hvis du vurderer eller skal si opp ansatte, skal du så tidlig som mulig sende melding til NAV.",
     type: ["Skjema"],
     area: ["Permittering og nedbemanning"],
     contentBlocks: [
@@ -1377,10 +1364,7 @@ const products = [
     contentBlocks: [
       {
         type: "markdown",
-        data: [
-          "### Endre kontonummer",
-          "Dette gjør du hos Altinn.",
-        ],
+        data: ["### Endre kontonummer", "Dette gjør du hos Altinn."],
       },
       {
         type: "actions",
@@ -1411,16 +1395,14 @@ const products = [
   },
   {
     title: "Inntektsmelding - send inn",
-    ingress: "Arbeidsgivere må sende digitale inntektsmeldinger til NAV i tide.",
+    ingress:
+      "Arbeidsgivere må sende digitale inntektsmeldinger til NAV i tide.",
     type: ["Skjema"],
     area: ["Annet"],
     contentBlocks: [
       {
         type: "markdown",
-        data: [
-          "### Send inntektsmelding",
-          "Dette gjør du hos Altinn.",
-        ],
+        data: ["### Send inntektsmelding", "Dette gjør du hos Altinn."],
       },
       {
         type: "actions",
@@ -1451,7 +1433,8 @@ const products = [
   },
   {
     title: "Utleggstrekk fra NAV Innkreving",
-    ingress: "Som arbeidsgiver er du pliktig til å gjennomføre trekk i lønn i henhold til tilsendt trekkpålegg fra NAV Innkreving.",
+    ingress:
+      "Som arbeidsgiver er du pliktig til å gjennomføre trekk i lønn i henhold til tilsendt trekkpålegg fra NAV Innkreving.",
     type: ["Skjema"],
     area: ["Annet"],
     contentBlocks: [
@@ -1516,10 +1499,7 @@ const products = [
       },
       {
         type: "markdown",
-        data: [
-          "### Send trekkopplysninger for arbeidstaker",
-          "Tekst",
-        ],
+        data: ["### Send trekkopplysninger for arbeidstaker", "Tekst"],
       },
       {
         type: "actions",
@@ -1579,10 +1559,7 @@ const products = [
       },
       {
         type: "markdown",
-        data: [
-          "### Send trekkopplysninger for arbeidstaker",
-          "Tekst",
-        ],
+        data: ["### Send trekkopplysninger for arbeidstaker", "Tekst"],
       },
       {
         type: "actions",
@@ -1912,16 +1889,14 @@ const products = [
   },
   {
     title: "Sykepenger",
-    ingress: "Erstatter inntekten til arbeidstakeren når de ikke kan jobbe på grunn av sykdom eller skade.",
+    ingress:
+      "Erstatter inntekten til arbeidstakeren når de ikke kan jobbe på grunn av sykdom eller skade.",
     type: ["Pengestøtte til ansatt", "Refusjon"],
     area: ["Helse og sykdom"],
     contentBlocks: [
       {
         type: "markdown",
-        data: [
-          "### Søk om sykepenger",
-          "Tekst",
-        ],
+        data: ["### Søk om sykepenger", "Tekst"],
       },
       {
         type: "actions",
@@ -1960,10 +1935,7 @@ const products = [
       },
       {
         type: "markdown",
-        data: [
-          "### Send trekkopplysninger for arbeidstaker",
-          "Tekst",
-        ],
+        data: ["### Send trekkopplysninger for arbeidstaker", "Tekst"],
       },
       {
         type: "actions",
@@ -2004,10 +1976,7 @@ const products = [
     contentBlocks: [
       {
         type: "markdown",
-        data: [
-          "### Søk om refusjon",
-          "Tekst",
-        ],
+        data: ["### Søk om refusjon", "Tekst"],
       },
       {
         type: "actions",
