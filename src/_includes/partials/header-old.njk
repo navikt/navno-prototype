@@ -8,11 +8,29 @@
     <div class="absolute px-4 mt-px -translate-x-1/2 left-1/2 top-full">
       <ul class="overflow-hidden text-gray-900 bg-white divide-y divide-gray-300 rounded shadow-xl max-w-max ring-1 ring-gray-200" role="tablist" x-show="audienceDropdownOpen" x-on:click.outside="audienceDropdownOpen = false">
         {% for item in menu.audience %}
-        <li role="tab" aria-selected="{{ 'true' if loop.index === 1 else 'false' }}" class="grid">
-          <a href="#" class="py-2 px-3 border-l-4 hover:bg-gray-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-800 {{ 'border-blue-500' if loop.index === 1 else 'border-transparent' }}">
-            {{ item }}
-          </a>
-        </li>
+
+          {% if ('samarbeidspartner' in page.fileSlug and loop.last) or ('arbeidsgiver' in page.fileSlug and loop.index === 2) or (loop.first and not ( 'produktoversikt-' in page.fileSlug)) %}
+            {% set menuBorder = 'border-blue-500' %}
+          {% else %}
+            {% set menuBorder = 'border-transparent hover:border-gray-300/75 opacity-70' %}
+          {% endif %}
+
+          {% if 'produktoversikt' in page.fileSlug %}
+            {% if loop.first %}
+              {% set audienceLink = '/produktoversikt/' %}
+            {% endif %}
+            {% if loop.index === 2 %}
+              {% set audienceLink = '/produktoversikt-arbeidsgiver/' %}
+            {% endif %}
+            {% if loop.last %}
+              {% set audienceLink = '/produktoversikt-samarbeidspartner/' %}
+            {% endif %}
+          {% endif %}
+          <li role="tab" aria-selected="{{ 'true' if loop.index === 1 else 'false' }}" class="grid">
+            <a href="{{ audienceLink or '#' }}" class="py-2 px-3 border-l-4 hover:bg-gray-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-800 {{ menuBorder }}">
+              {{ item }}
+            </a>
+          </li>
         {% endfor %}
       </ul>
     </div>
