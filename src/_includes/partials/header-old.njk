@@ -20,10 +20,10 @@
 
   <nav class="flex items-center w-full gap-4 col-feature">
     {# Logo #}
-    <button x-on:click="indexOpen = !indexOpen" class=" text-red-500 hover:text-red-400 block focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-800 py-2.5 px-2 -mx-2 rounded-sm">
+    <a href="#" class="text-red-500 hover:text-red-400 block focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-800 py-2.5 px-2 -mx-2 rounded-sm">
       {{ '/src/_includes/svg/logo.svg' | svgContents('w-[75px] h-auto') | safe }}
       <span class="sr-only">NAV</span>
-    </button>
+    </a>
 
     {# Audience #}
     <div class="relative hidden px-4 md:px-5 md:self-stretch xs:grid" x-on:click.outside="audienceDropdownOpen = false">
@@ -35,9 +35,7 @@
       <ul class="justify-center overflow-hidden text-lg bg-white border border-gray-200 divide-y divide-gray-200 rounded shadow-lg md:rounded-none md:bg-transparent md:shadow-none md:border-0 md:divide-y-0 md:gap-4 md:flex" role="tablist" x-bind:class="audienceDropdownOpen ? 'grid' : 'hidden md:flex'">
         {% for item in menu.audience %}
 
-
-
-          {% if (page.fileSlug != 'produktoversikt-arbeidsgiver' and loop.first) or (page.fileSlug === 'produktoversikt-arbeidsgiver' and loop.index === 2) %}
+          {% if (page.fileSlug != 'produktoversikt-arbeidsgiver' and page.fileSlug != 'produktoversikt-samarbeidspartner' and loop.first) or (page.fileSlug === 'produktoversikt-arbeidsgiver' and loop.index === 2) or (page.fileSlug === 'produktoversikt-samarbeidspartner' and loop.index === 3) %}
             {% set menuBorder = 'border-blue-500' %}
           {% else %}
             {% set menuBorder = 'border-transparent hover:border-gray-300/75 opacity-70' %}
