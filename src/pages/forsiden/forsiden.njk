@@ -55,7 +55,7 @@ permalink: '/index.html'
         <ul class="grid gap-2 mt-4 sm:gap-3 md:gap-6 md:grid-cols-2">
           {% for form in formsList %}
             <li>
-              <a class="flex items-center gap-4 py-4 pl-5 pr-8 transition duration-300 ease-out bg-white rounded-lg shadow-sm sm:py-6 group hover:text-blue-600 hover:shadow-lg hover:underline focus:outline-none focus:ring-2 focus:ring-blue-600" href="#">
+              <a class="flex items-center gap-4 py-4 pl-5 pr-8 transition duration-300 ease-out bg-white rounded-lg shadow-sm sm:py-6 group hover:text-blue-600 hover:shadow-lg hover:underline focus:outline-none focus:ring-2 focus:ring-blue-600" href="{{ form.href or '#'}}">
                 {% if form.icon %}
                   {{ form.icon | svgContents("w-12 h-12 md:w-16 md:h-16") | safe }}
                 {% endif %}
