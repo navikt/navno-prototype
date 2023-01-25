@@ -14,8 +14,6 @@ const {
   areaFilterArb,
 } = require("./src/_11ty/collections.js");
 
-const compression = require("compression");
-
 module.exports = function (eleventyConfig) {
   // Eleventy Plugins
   eleventyConfig.addPlugin(EleventyHtmlBasePlugin);

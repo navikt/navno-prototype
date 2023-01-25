@@ -9,7 +9,7 @@
   },
   "scripts": {
     "eleventy-debug": "DEBUG=Eleventy* npx @11ty/eleventy",
-    "dev:eleventy": "ELEVENTY_ENV=development eleventy --config=eleventy.config.js --serve",
+    "dev:eleventy": "ELEVENTY_ENV=development eleventy --config=eleventy.config.js --serve --incremental",
     "dev:css": "postcss ./src/assets/main.css -o ./build/assets/main.min.css --watch",
     "dev": "concurrently npm:dev:*",
     "build:eleventy": "ELEVENTY_ENV=production eleventy --config=eleventy.config.js",
@@ -23,7 +23,6 @@
     "@alpinejs/focus": "^3.11.1",
     "alpinejs": "^3.11.1",
     "autoprefixer": "^10.4.13",
-    "compression": "^1.7.4",
     "concurrently": "^7.6.0",
     "cssnano": "^5.1.14",
     "eleventy-plugin-svg-contents": "^0.7.0",
@@ -34,6 +33,7 @@
     "tailwindcss": "^3.2.4"
   },
   "dependencies": {
+    "compression": "^1.7.4",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "path": "^0.12.7"
