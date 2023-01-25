@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="no" class="h-full antialiased leading-normal text-gray-900 bg-white font-source-sans">
+<html lang="no" class="h-full antialiased leading-normal text-gray-900 bg-white font-source-sans scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="robots" content="noindex" />
@@ -97,14 +97,13 @@
       audienceDropdownOpen: false,
       menuOpen: false,
       notifyOpen: false
-    }"
-    x-on:click.outside="indexOpen = false">
-    {% include "partials/prototypeNav.njk" %}
+    }">
     <div class="relative z-10 bg-white" >
     {% include "partials/banner.njk" %}
     {% include "partials/header-old.njk" %}
     {% block content %}{% endblock %}
     {% include "partials/footer.njk" %}
+    {% include "partials/prototypeNav.njk" %}
     </div>
   </body>
 </html>

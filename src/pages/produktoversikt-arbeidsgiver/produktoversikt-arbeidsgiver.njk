@@ -18,9 +18,9 @@ bodyClass: ''
         const item = el.querySelector('h2').textContent.toLowerCase()
         if (this.search === '') {
           return (
-            (this.typeFilter === 'alle' || el.dataset.type.includes(this.typeFilter))
+            (this.typeFilter === 'alle' || el.dataset.type.startsWith(this.typeFilter))
             &&
-            (this.areaFilter === 'alle' || el.dataset.area.includes(this.areaFilter))
+            (this.areaFilter === 'alle' || el.dataset.area.startsWith(this.areaFilter))
           )
         } else {
           this.typeFilter = 'alle'
@@ -147,17 +147,17 @@ bodyClass: ''
           <p class="mt-8 mb-2">Viser <span x-text="count"></span> av {{ products.length }} produkter og tjenester</p>
 
           <div class="border-b border-deepblue-100" x-ref="entries" x-show="count !== 0">
-            {% for product in products %}
+            {% for product in products | sort(true, false, 'title') | reverse %}
               <div
                 x-data="{ expanded: false }"
-                class="focus-within:z-10 -mx-clamp-gap px-clamp-gap sm:-mx-0 sm:px-0 border-t border-deepblue-100"
+                class="border-t focus-within:z-10 -mx-clamp-gap px-clamp-gap sm:-mx-0 sm:px-0 border-deepblue-100"
                 x-bind:class="expanded ? '' : ''"
                 x-show="filterItem($el)"
                 data-type="{{ product.type | slugify }}"
                 data-area="{{ product.area | slugify }}">
 
                 <div
-                  class="py-4 px-clamp-gap -mx-clamp-gap -my-px relative z-10 flex items-center gap-4 text-left sm:-mx-2 sm:px-4 sm:rounded-lg hover:z-20"
+                  class="relative z-10 flex items-center gap-4 py-4 -my-px text-left px-clamp-gap -mx-clamp-gap sm:-mx-2 sm:px-4 sm:rounded-lg hover:z-20"
                   x-bind:class="expanded ? ' hover:bg-deepblue-200 bg-deepblue-50' : 'hover:bg-deepblue-200'">
                   {% if product.icon %}
                     {{ product.icon | svgContents('w-12 h-12 lg:w-14 lg:h-14 shrink-0') | safe }}
@@ -192,7 +192,7 @@ bodyClass: ''
                 </div>
 
                 {% if product.egenSide %}
-                <div x-bind:hidden="!expanded" class="sm:px-6 pt-4 pb-6">
+                <div x-bind:hidden="!expanded" class="pt-4 pb-6 sm:px-6">
                   <a class="inline-block mx-auto text-center underline hover:no-underline hover:text-blue-600" href="/produktoversikt/{{ product.title | slugify }}.html">Vis som egen side</a>
                 </div>
                 {% endif %}

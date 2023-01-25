@@ -43,7 +43,9 @@
       </div>
 
       <div class="grid gap-2 mt-16">
-        {{ '/src/_includes/svg/logo.svg' | svgContents('h-6') | safe }}
+        <button x-on:click="indexOpen = !indexOpen, $nextTick(() => $refs.prototypeMenu.scrollIntoView())" x-trap="indexOpen" class="cursor-pointer">
+          {{ '/src/_includes/svg/logo.svg' | svgContents('h-6') | safe }}
+        </button>
         <div class="">Arbeids- og velferdsetaten</div>
       </div>
 
