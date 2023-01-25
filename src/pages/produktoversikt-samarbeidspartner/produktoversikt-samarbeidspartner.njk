@@ -18,9 +18,9 @@ bodyClass: ''
         const item = el.querySelector('h2').textContent.toLowerCase()
         if (this.search === '') {
           return (
-            (this.typeFilter === 'alle' || el.dataset.type.includes(this.typeFilter))
+            (this.typeFilter === 'alle' || el.dataset.type.startsWith(this.typeFilter))
             &&
-            (this.roleFilter === 'alle' || el.dataset.role.includes(this.roleFilter))
+            (this.roleFilter === 'alle' || el.dataset.role.startsWith(this.roleFilter))
           )
         } else {
           this.typeFilter = 'alle'
@@ -256,7 +256,7 @@ bodyClass: ''
           <p class="mb-2">Viser <span x-text="count"></span> av {{ products.length }} produkter og tjenester</p>
 
           <div class="border-b border-deepblue-100" x-ref="entries" x-show="count !== 0">
-            {% for product in products %}
+            {% for product in products | sort(true, false, 'title') | reverse %}
               <div
                 x-data="{ expanded: false }"
                 class="border-t focus-within:z-10 -mx-clamp-gap px-clamp-gap sm:-mx-0 sm:px-0 border-deepblue-100"
