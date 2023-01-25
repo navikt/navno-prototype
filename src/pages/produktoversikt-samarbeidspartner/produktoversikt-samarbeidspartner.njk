@@ -78,11 +78,11 @@ bodyClass: ''
       <div class="grid w-full gap-8 pb-20 lg:gap-x-16 lg:items-start lg:grid-cols-sidebar col-content lg:col-feature">
 
         <div class="relative hidden sm:block lg:col-start-1">
-          <label for="searchFilter" class="font-semibold sr-only">Søk</label>
+          <label for="searchFilter-desktop" class="font-semibold sr-only">Søk</label>
           <span class="absolute inset-y-0 left-0 grid px-2.5 place-items-center">
             {{ '/src/_includes/svg/icons/search.svg' | svgContents('w-6 h-6') | safe }}
           </span>
-          <input id="searchFilter" type="search" x-model="search" class="w-full pl-10 pr-3 py-2.5 border border-gray-300 rounded shadow-inner bg-gray-50/50 focus:outline-none focus:ring focus:ring-blue-800">
+          <input id="searchFilter-desktop" type="search" x-model="search" class="w-full pl-10 pr-3 py-2.5 border border-gray-300 rounded shadow-inner bg-gray-50/50 focus:outline-none focus:ring focus:ring-blue-800">
         </div>
 
         <div class="relative lg:-mt-1.5 lg:row-span-3 lg:col-start-2" x-data="{ filterDrawer: false, filterTags: false, filterSearch: false }">
@@ -133,15 +133,15 @@ bodyClass: ''
                       class="{{ inputClasses }}"
                       name="filter-type-mobil"
                       value="alle"
-                      id="filter-type-all"
+                      id="filter-type-all-mobile"
                       checked="checked"
                     />
-                    <label class="{{ labelClasses }}" for="filter-type-all">Alle</label>
+                    <label class="{{ labelClasses }}" for="filter-type-all-mobile">Alle</label>
                   </li>
                   {% for item in typeFilter %}
                     <li>
-                      <input type="radio" x-on:change="updateCount($refs)" x-model="typeFilter" class="{{ inputClasses }}" name="filter-type-mobil" value="{{ item | slugify }}" id="filter-{{ item | slugify }}" />
-                      <label class="{{ labelClasses }}" for="filter-{{ item | slugify }}">
+                      <input type="radio" x-on:change="updateCount($refs)" x-model="typeFilter" class="{{ inputClasses }}" name="filter-type-mobil" value="{{ item | slugify }}" id="filter-{{ item | slugify }}-mobile" />
+                      <label class="{{ labelClasses }}" for="filter-{{ item | slugify }}-mobile">
                         {{ item }}
                       </label>
                     </li>
@@ -156,17 +156,17 @@ bodyClass: ''
                       x-model="roleFilter"
                       x-on:change="updateCount($refs)"
                       class="{{ inputClasses }}"
-                      name="filter-role-mobil"
+                      name="filter-role-mobile"
                       value="alle"
-                      id="filter-role-all"
+                      id="filter-role-all-mobile"
                       checked="checked"
                     />
-                    <label class="{{ labelClasses }}" for="filter-role-all">Alle</label>
+                    <label class="{{ labelClasses }}" for="filter-role-all-mobile">Alle</label>
                   </li>
                   {% for item in roleFilter %}
                     <li>
-                      <input type="radio" x-on:change="updateCount($refs)" x-model="roleFilter" class="{{ inputClasses }}" name="filter-role-mobil" value="{{ item | slugify }}" id="filter-{{ item | slugify }}" />
-                      <label class="{{ labelClasses }}" for="filter-{{ item | slugify }}">
+                      <input type="radio" x-on:change="updateCount($refs)" x-model="roleFilter" class="{{ inputClasses }}" name="filter-role-mobile" value="{{ item | slugify }}" id="filter-{{ item | slugify }}-mobile" />
+                      <label class="{{ labelClasses }}" for="filter-{{ item | slugify }}-mobile">
                         {{ item }}
                       </label>
                     </li>
@@ -188,11 +188,11 @@ bodyClass: ''
               x-transition:leave-end="opacity-0 translate-y-6">
               <form class="grid gap-3" x-on:submit.prevent="filterSearch = false, filterDrawer = false">
                 <div class="relative" x-trap="filterSearch">
-                  <label for="searchFilter" class="font-semibold sr-only">Søk</label>
+                  <label for="searchFilter-mobile" class="font-semibold sr-only">Søk</label>
                   <span class="absolute inset-y-0 left-0 grid px-2.5 place-items-center">
                     {{ '/src/_includes/svg/icons/search.svg' | svgContents('w-6 h-6') | safe }}
                   </span>
-                  <input x-ref="searchFilter" id="searchFilter" type="search" x-model="search" class=" w-full pl-10 pr-3 py-2.5 border border-gray-300 rounded shadow-inner bg-gray-50/50 focus:outline-none focus:ring-2 focus:ring-blue-800">
+                  <input id="searchFilter-mobile" type="search" x-model="search" class=" w-full pl-10 pr-3 py-2.5 border border-gray-300 rounded shadow-inner bg-gray-50/50 focus:outline-none focus:ring-2 focus:ring-blue-800">
                 </div>
                 <button type="submit" class="px-4 py-3 text-white bg-blue-500 rounded whitespace-nowrap focus:outline-none focus:ring focus:ring-blue-800">Vis resultat (<span x-text="count"></span>)</button>
               </form>
@@ -210,15 +210,15 @@ bodyClass: ''
                   class="{{ inputClasses }}"
                   name="filter-type"
                   value="alle"
-                  id="filter-type-all"
+                  id="filter-type-all-desktop"
                   checked="checked"
                 />
-                <label class="{{ labelClasses }}" for="filter-type-all">Alle</label>
+                <label class="{{ labelClasses }}" for="filter-type-all-desktop">Alle</label>
               </li>
               {% for item in typeFilter %}
                 <li>
-                  <input type="radio" x-on:change="updateCount($refs)" x-model="typeFilter" class="{{ inputClasses }}" name="filter-type" value="{{ item | slugify }}" id="filter-{{ item | slugify }}" />
-                  <label class="{{ labelClasses }}" for="filter-{{ item | slugify }}">
+                  <input type="radio" x-on:change="updateCount($refs)" x-model="typeFilter" class="{{ inputClasses }}" name="filter-type" value="{{ item | slugify }}" id="filter-{{ item | slugify }}-desktop" />
+                  <label class="{{ labelClasses }}" for="filter-{{ item | slugify }}-desktop">
                     {{ item }}
                   </label>
                 </li>
@@ -235,15 +235,15 @@ bodyClass: ''
                   class="{{ inputClasses }}"
                   name="filter-role"
                   value="alle"
-                  id="filter-role-all"
+                  id="filter-role-all-desktop"
                   checked="checked"
                 />
-                <label class="{{ labelClasses }}" for="filter-role-all">Alle</label>
+                <label class="{{ labelClasses }}" for="filter-role-all-desktop">Alle</label>
               </li>
               {% for item in roleFilter %}
                 <li>
-                  <input type="radio" x-on:change="updateCount($refs)" x-model="roleFilter" class="{{ inputClasses }}" name="filter-role" value="{{ item | slugify }}" id="filter-{{ item | slugify }}" />
-                  <label class="{{ labelClasses }}" for="filter-{{ item | slugify }}">
+                  <input type="radio" x-on:change="updateCount($refs)" x-model="roleFilter" class="{{ inputClasses }}" name="filter-role" value="{{ item | slugify }}" id="filter-{{ item | slugify }}-desktop" />
+                  <label class="{{ labelClasses }}" for="filter-{{ item | slugify }}-desktop">
                     {{ item }}
                   </label>
                 </li>
