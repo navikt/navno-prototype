@@ -1,42 +1,52 @@
 module.exports = {
-  servicesList: [
+  areaList: [
     {
       title: "Arbeid",
-      inlineSvg: "/src/_includes/svg/area-illustrations/arbeid.svg",
+      icon: "/src/_includes/svg/area-illustrations/arbeid.svg",
     },
     {
       title: "Helse og sykdom",
-      inlineSvg: "/src/_includes/svg/area-illustrations/helse.svg",
+      icon: "/src/_includes/svg/area-illustrations/helse.svg",
     },
     {
       title: "Familie og barn",
-      inlineSvg: "/src/_includes/svg/area-illustrations/familie.svg",
+      icon: "/src/_includes/svg/area-illustrations/familie.svg",
     },
     {
       title: "Pensjon",
-      inlineSvg: "/src/_includes/svg/area-illustrations/pensjon.svg",
+      icon: "/src/_includes/svg/area-illustrations/pensjon.svg",
     },
     {
       title: "Sosiale tjenester og&nbsp;veiledning",
-      inlineSvg: "/src/_includes/svg/area-illustrations/sosiale-tjenester.svg",
+      icon: "/src/_includes/svg/area-illustrations/sosiale-tjenester.svg",
     },
     {
       title: "Hjelpemidler og tilrettelegging",
-      inlineSvg: "/src/_includes/svg/area-illustrations/hjelpemidler.svg",
+      icon: "/src/_includes/svg/area-illustrations/hjelpemidler.svg",
     },
   ],
   shortcutsList: [
     {
       title: "Saksbehandlingstider",
+      icon: "/src/_includes/svg/pictograms/saksbehandlingstider.svg",
     },
     {
       title: "Utbetalingsdatoer",
+      icon: "/src/_includes/svg/pictograms/utbetalingsdatoer.svg",
     },
     {
-      title: "Pengestøtter og tjenester fra A til Å",
+      title: "Satser",
+      icon: "/src/_includes/svg/pictograms/satser.svg",
     },
+  ],
+  formsList: [
     {
       title: "Søknad og skjema",
+      icon: "/src/_includes/svg/pictograms/soknad-og-skjema.svg",
+    },
+    {
+      title: "Ettersende dokumentasjon",
+      icon: "/src/_includes/svg/pictograms/utbetalingsdatoer-bla.svg",
     },
   ],
   newsList: [
