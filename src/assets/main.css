@@ -62,8 +62,8 @@
   .grid-cols-layout {
     --_layout-gap: clamp(0.75rem, 0.05rem + 4vw, 6rem);
     --_layout-full: minmax(var(--_layout-gap), 1fr);
-    --_layout-popout: minmax(0, 6rem);
-    --_layout-feature: minmax(0, 7rem);
+    --_layout-popout: minmax(0, 7rem);
+    --_layout-feature: minmax(0, 8rem);
     --_layout-content: min(50rem, 100% - (var(--_layout-gap) * 2));
 
     grid-template-columns:
