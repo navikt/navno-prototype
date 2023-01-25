@@ -1,9 +1,13 @@
 const express = require("express");
 const path = require("path");
+const compression = require("compression");
 const app = express();
 
 // Define the port the web server will listen to
 app.set("port", 3123);
+
+// Compress files
+app.use(compression());
 
 // Use Express to serve the static assets
 app.use("/person/prototype", express.static(path.join(__dirname, "../build")));
