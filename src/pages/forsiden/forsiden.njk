@@ -13,14 +13,14 @@ permalink: '/index.html'
       <div class="col-feature">
         <h2 class="-mt-2 text-xl font-semibold md:text-3xl">Hva kan vi hjelpe deg med?</h2>
         <ul class="grid gap-2 mx-auto mt-4 lg:grid-cols-3 sm:grid-cols-2 sm:gap-4 md:gap-6">
-          {% for service in servicesList %}
-            <li class="">
+          {% for area in areaList %}
+            <li>
               <a class="relative flex items-center justify-between gap-4 z-10 bg-deepblue-50 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600 hover:text-blue-600 hover:shadow-xl hover:bg-gray-100 focus:shadow-xl min-h-[7rem] lg:min-h-[9rem] pl-6 pr-[40%] py-2 overflow-hidden group c-area-card" href="#">
-                <div class="text-xl font-semibold leading-snug underline md:text-2xl group-hover:no-underline">
-                  {{ service.title | safe }}
+                <div class="text-xl font-semibold leading-snug md:text-2xl group-hover:underline">
+                  {{ area.title | safe }}
                 </div>
-                {% if service.inlineSvg %}
-                  {{ service.inlineSvg | svgContents("-z-10 right-0 h-full w-auto rounded-lg self-stretch absolute inset-y-0 pointer-events-none") | safe }}
+                {% if area.icon %}
+                  {{ area.icon | svgContents("-z-10 right-0 h-full w-auto rounded-lg self-stretch absolute inset-y-0 pointer-events-none") | safe }}
                 {% endif %}
               </a>
             </li>
@@ -29,24 +29,16 @@ permalink: '/index.html'
       </div>
     </div>
 
-    <div class="grid pb-8 grid-cols-layout md:pb-12">
+    <div class="grid py-8 grid-cols-layout md:pb-12 bg-red-50">
       <div class="col-feature">
         <h2 class="-mt-2 text-xl font-semibold md:text-3xl">Snarveier</h2>
-        <ul class="grid gap-2 mt-4 sm:gap-4 md:gap-6 sm:grid-cols-2">
+        <ul class="grid gap-2 mt-4 md:grid-cols-2 sm:gap-3 md:gap-6 lg:grid-cols-3">
           {% for shortcut in shortcutsList %}
-            <li class="grid">
-              <a class="flex items-center gap-4 py-3 pl-5 pr-8 transition duration-300 ease-out bg-[#fde6e6] rounded-lg md:py-4 group hover:text-blue-600 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-600" href="#">
-                <svg class="w-10 h-10 md:w-11 md:h-11" width="54" height="54" fill="none" viewBox="0 0 54 54" aria-hidden="true"  focusable="false" role="img" overflow="visible">
-                  <g class="duration-200 ease-out translate-x-4 transition-custom fine:group-hover:-translate-x-2">
-                    <path stroke="#000" stroke-width="2" d="M9 17h16" />
-                    <path stroke="#fde6e6" stroke-width="3" d="M8 14.5h20" />
-                    <path stroke="#000" stroke-width="2" d="M13 27h20" />
-                    <path stroke="#fde6e6" stroke-width="3" d="M15 29.5h23m-30 10h21" />
-                    <path stroke="#000" stroke-width="2" d="M10 37h12" />
-                  </g>
-                  <circle class="transition-custom duration-200 ease-out origin-center fine:group-hover:scale-0 fine:group-hover:translate-y-0.5 fine:group-hover:-translate-x-2" cx="27" cy="27" r="27" fill="#ffffff" />
-                  <path class="transition-custom origin-center duration-200 fine:group-hover:scale-[1.15] fine:group-hover:translate-x-3" stroke="#262626" stroke-width="2" d="M41 27 23 45l-6-6 12-12-12-12 6-6 18 18Z" />
-                </svg>
+            <li>
+              <a class="flex items-center gap-4 py-4 pl-5 pr-8 transition duration-300 ease-out bg-white rounded-lg shadow-sm sm:py-6 group hover:text-blue-600 hover:shadow-lg hover:underline focus:outline-none focus:ring-2 focus:ring-blue-600" href="#">
+                {% if shortcut.icon %}
+                  {{ shortcut.icon | svgContents("w-12 h-12 md:w-16 md:h-16") | safe }}
+                {% endif %}
                 <span class="max-w-[30ch] text-xl leading-snug font-semibold md:text-2xl">{{ shortcut.title | safe }}</span>
               </a>
             </li>
@@ -56,13 +48,32 @@ permalink: '/index.html'
       </div>
     </div>
 
-    <div class="mt-2 grid grid-cols-layout py-8 bg-[#f1f1f1] md:pb-12">
+
+    <div class="grid py-8 mt-1 grid-cols-layout md:pb-12 bg-deepblue-50">
+      <div class="col-feature">
+        <h2 class="-mt-2 text-xl font-semibold md:text-3xl">Søke og ettersende</h2>
+        <ul class="grid gap-2 mt-4 sm:gap-3 md:gap-6 md:grid-cols-2">
+          {% for form in formsList %}
+            <li>
+              <a class="flex items-center gap-4 py-4 pl-5 pr-8 transition duration-300 ease-out bg-white rounded-lg shadow-sm sm:py-6 group hover:text-blue-600 hover:shadow-lg hover:underline focus:outline-none focus:ring-2 focus:ring-blue-600" href="#">
+                {% if form.icon %}
+                  {{ form.icon | svgContents("w-12 h-12 md:w-16 md:h-16") | safe }}
+                {% endif %}
+                <span class="max-w-[30ch] text-xl leading-snug font-semibold md:text-2xl">{{ form.title | safe }}</span>
+              </a>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+
+    <div class="grid py-8 mt-1 grid-cols-layout bg-gray-50 md:pb-12">
       <div class="col-feature">
         <h2 class="-mt-2 text-xl font-semibold md:text-3xl">Aktuelt</h2>
         <div class="grid gap-2 mt-4 sm:gap-4 md:gap-6 sm:grid-cols-2">
           {% for news in newsList %}
-            <a class="grid gap-2 px-6 py-5 duration-300 ease-out bg-white rounded-lg group transition-custom hover:text-blue-600 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-600" href="#">
-              <span class="max-w-[30ch] text-xl font-semibold md:text-2xl underline group-hover:text-blue-600 group-hover:no-underline">{{ news.title | safe }}</span>
+            <a class="grid gap-2 px-6 py-6 duration-300 ease-out bg-white rounded-lg shadow-sm group transition-custom hover:text-blue-600 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-600" href="#">
+              <span class="max-w-[30ch] text-xl font-semibold md:text-2xl group-hover:text-blue-600 group-hover:underline">{{ news.title | safe }}</span>
               <span class="text-lg opacity-70">{{ news.date }}</span>
             </a>
           {% endfor %}

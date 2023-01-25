@@ -1,4 +1,4 @@
-<header class="relative z-40 isolate grid grid-cols-layout shadow-border bg-white {% if page.fileSlug === 'forsiden' %}shadow{% endif %}" >
+<header class="relative z-40 grid bg-white isolate grid-cols-layout shadow-border" >
 
   <div class="relative z-10 grid justify-center bg-gray-100 xs:hidden col-full">
     <button class="flex items-center justify-center gap-2 px-4 py-2 focus:outline-none focus-visible:text-white focus-visible:bg-blue-500" x-on:click="audienceDropdownOpen = !audienceDropdownOpen">
@@ -20,7 +20,7 @@
 
   <nav class="flex items-center w-full gap-4 col-feature">
     {# Logo #}
-    <button x-on:click="indexOpen = !indexOpen" class="text-[#C30000] hover:text-[#DE2E2E] block focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-800 py-2.5 px-2 -mx-2 rounded-sm">
+    <button x-on:click="indexOpen = !indexOpen" class=" text-red-500 hover:text-red-400 block focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-800 py-2.5 px-2 -mx-2 rounded-sm">
       {{ '/src/_includes/svg/logo.svg' | svgContents('w-[75px] h-auto') | safe }}
       <span class="sr-only">NAV</span>
     </button>

@@ -1,0 +1,220 @@
+---
+title: 'Søknad og skjema fra A til Å (samarbeidspartnere)'
+description: 'Pengestøtter og tjenester fra NAV for samarbeidspartnere. Du kan søke eller filtrere etter type og område.'
+order: 6
+bodyClass: ''
+---
+{% extends 'base.njk' %}
+
+{%- from "macros/button.njk" import button -%}
+{%- from "macros/microcard.njk" import microcard -%}
+
+{% block content %}
+  <main class="my-8 text-lg text-gray-900"
+    x-data="{
+      typeFilter: new URLSearchParams(location.search).get('type') || 'alle',
+      roleFilter: new URLSearchParams(location.search).get('role') || 'alle',
+      filterItem(el) {
+        const item = el.querySelector('h2').textContent.toLowerCase()
+        if (this.search === '') {
+          return (
+            (this.typeFilter === 'alle' || el.dataset.type.includes(this.typeFilter))
+            &&
+            (this.roleFilter === 'alle' || el.dataset.role.includes(this.roleFilter))
+          )
+        } else {
+          this.typeFilter = 'alle'
+          this.roleFilter = 'alle'
+          return (
+            item.includes(this.search.toLowerCase())
+          )
+        }
+      },
+      search: '',
+      count: '',
+      updateCount() {
+        $nextTick(() => {
+          let count = Array.from(this.$refs.entries.children).filter(element => window.getComputedStyle(element).display !== 'none').length;
+          this.count = count
+        })
+      },
+      clearSearch() {
+        this.search = ''
+      }
+    }"
+    x-init="
+      $watch('typeFilter', (value) => {
+        const url = new URL(window.location.href);
+        url.searchParams.set('type', value);
+        history.replaceState(null, document.title, url.toString());
+        updateCount();
+        clearSearch();
+      });
+      $watch('roleFilter', (value) => {
+        const url = new URL(window.location.href);
+        url.searchParams.set('role', value);
+        history.replaceState(null, document.title, url.toString());
+        updateCount();
+        clearSearch();
+      });
+      $watch('search', (value) => {
+        updateCount()
+      });
+      updateCount()">
+    <div class="grid grid-cols-layout">
+      <div class="relative w-full col-content lg:col-feature">
+
+        <div class="hidden float-right my-2 ml-24 xs:block">
+          {{ '/src/_includes/svg/pictograms/support.svg' | svgContents('w-[12vw] h-auto overflow-hidden max-w-[8rem] aspect-square') | safe }}
+        </div>
+
+        <h1 class="text-3xl font-semibold leading-tight md:text-5xl md:leading-tight">{{ title }}</h1>
+
+        <p class="max-w-2xl mt-2 text-xl md:mt-3 md:text-2xl">{{ description }}</p>
+
+
+      </div>
+    </div>
+
+    <div class="grid grid-cols-layout">
+      <div class="grid w-full gap-8 pb-20 lg:gap-x-16 lg:items-start lg:grid-cols-sidebar col-content lg:col-feature">
+
+        <div class="lg:-mt-4 lg:row-span-2 lg:col-start-2">
+          {% set labelClasses = "inline-flex cursor-pointer px-4 pt-1.5 pb-1.5 leading-tight text-base bg-gray-100 rounded-full hover:bg-deepblue-100 peer-checked:bg-deepblue-500 peer-checked:text-white peer-focus:ring-2 peer-focus:ring-deepblue-800" %}
+          {% set inputClasses = "absolute opacity-0 pointer-events-none peer" %}
+
+          <h2 class="mt-6 text-sm tracking-widest uppercase lg:mt-8 opacity-70">Velg type</h2>
+          <ul class="flex flex-wrap items-start mt-2.5 gap-x-2 gap-y-3">
+              <li>
+                <input
+                  type="radio"
+                  x-model="typeFilter"
+                  x-on:change="updateCount($refs)"
+                  class="{{ inputClasses }}"
+                  name="filter-type"
+                  value="alle"
+                  id="filter-type-all"
+                  checked="checked"
+                />
+                <label class="{{ labelClasses }}" for="filter-type-all">Alle</label>
+              </li>
+            {% for item in typeFilter %}
+              <li>
+                <input type="radio" x-on:change="updateCount($refs)" x-model="typeFilter" class="{{ inputClasses }}" name="filter-type" value="{{ item | slugify }}" id="filter-{{ item | slugify }}" />
+                <label class="{{ labelClasses }}" for="filter-{{ item | slugify }}">
+                  {{ item }}
+                </label>
+              </li>
+            {% endfor %}
+          </ul>
+
+          <h2 class="mt-6 text-sm tracking-widest uppercase lg:mt-8 opacity-70">Velg rolle</h2>
+          <ul class="flex flex-wrap items-start mt-2.5 gap-x-2 gap-y-3">
+              <li>
+                <input
+                  type="radio"
+                  x-model="roleFilter"
+                  x-on:change="updateCount($refs)"
+                  class="{{ inputClasses }}"
+                  name="filter-role"
+                  value="alle"
+                  id="filter-role-all"
+                  checked="checked"
+                />
+                <label class="{{ labelClasses }}" for="filter-role-all">Alle</label>
+              </li>
+            {% for item in roleFilter %}
+              <li>
+                <input type="radio" x-on:change="updateCount($refs)" x-model="roleFilter" class="{{ inputClasses }}" name="filter-role" value="{{ item | slugify }}" id="filter-{{ item | slugify }}" />
+                <label class="{{ labelClasses }}" for="filter-{{ item | slugify }}">
+                  {{ item }}
+                </label>
+              </li>
+            {% endfor %}
+          </ul>
+
+        </div>
+
+        <div class="lg:col-start-1 lg:-order-1">
+          <div class="relative mt-6">
+            <label for="searchFilter" class="font-semibold sr-only">Søk</label>
+            <span class="absolute inset-y-0 left-0 grid px-2.5 place-items-center">
+              {{ '/src/_includes/svg/icons/search.svg' | svgContents('w-6 h-6') | safe }}
+            </span>
+            <input id="searchFilter" type="search" x-model="search" class="w-full pl-10 pr-3 py-2.5 border border-gray-300 rounded shadow-inner bg-gray-50/50 focus:outline-none focus:ring focus:ring-blue-800">
+          </div>
+
+          <p class="mt-8 mb-2">Viser <span x-text="count"></span> av {{ products.length }} produkter og tjenester</p>
+
+          <div class="border-b border-deepblue-100" x-ref="entries" x-show="count !== 0">
+            {% for product in products %}
+              <div
+                x-data="{ expanded: false }"
+                class="border-t focus-within:z-10 -mx-clamp-gap px-clamp-gap sm:-mx-0 sm:px-0 border-deepblue-100"
+                x-bind:class="expanded ? '' : ''"
+                x-show="filterItem($el)"
+                data-type="{{ product.type | slugify }}"
+                data-role="{{ product.role | slugify }}">
+
+                <div
+                  class="relative z-10 flex items-center gap-4 py-4 -my-px text-left px-clamp-gap -mx-clamp-gap sm:-mx-2 sm:px-4 sm:rounded-lg hover:z-20"
+                  x-bind:class="expanded ? ' hover:bg-deepblue-200 bg-deepblue-50' : 'hover:bg-deepblue-200'">
+                  {% if product.icon %}
+                    {{ product.icon | svgContents('w-12 h-12 lg:w-14 lg:h-14 shrink-0') | safe }}
+                  {% endif %}
+                  <div class="grid gap-1">
+                    <p class="text-base opacity-80">
+                    {% for item in product.type %}
+                      <span>{{ item }}</span>{{ ', ' if product.type.length > 1 and not loop.last }}
+                    {% endfor %}
+                    </p>
+                    <h2 class="text-xl font-semibold leading-tight">
+                      {{ product.title | safe }}
+                    </h2>
+                    <p class="text-base">
+                      {%- for item in product.role -%}
+                        <span class="">{{ item }}</span>{{ ', ' if loop.length > 1 and not loop.last }}
+                      {%- endfor -%}
+                    </p>
+                  </div>
+                  <button x-on:click="expanded = !expanded" class="absolute inset-0 flex items-center justify-end pr-4 rounded-lg group focus:outline-none focus-visible:ring focus-visible:ring-inset focus-visible:ring-blue-800" x-bind:aria-expanded="expanded">
+                    <span class="sr-only">Vis/skjul innhold</span>
+                    {{ '/src/_includes/svg/icons/chevron-down.svg' | svgContents('mr-1.5 w-5 h-5 opacity-50 transition duration-100 group-aria-expanded:rotate-180') | safe }}
+                  </button>
+                </div>
+
+                <div class="pt-6 pb-8 px-clamp-gap -mx-clamp-gap relative min-h-[30vh] markdown bg-deepblue-50 sm:-mx-2 sm:-mt-2 sm:px-5 sm:rounded-b-lg mb-4" x-bind:hidden="!expanded">
+                  <p>{{ product.ingress }}</p>
+
+                  {% if product.contentBlocks %}
+                    {% include "partials/contentBlocks.njk" %}
+                  {% endif %}
+                </div>
+
+                {% if product.egenSide %}
+                <div x-bind:hidden="!expanded" class="pt-4 pb-6 sm:px-6">
+                  <a class="inline-block mx-auto text-center underline hover:no-underline hover:text-blue-600" href="/produktoversikt/{{ product.title | slugify }}.html">Vis som egen side</a>
+                </div>
+                {% endif %}
+
+              </div>
+
+            {% endfor %}
+          </div>
+          <div x-show="count === 0" class="p-6 py-8 text-center overflow-hidden grid items-center leading-snug rounded-lg bg-gray-100 min-h-[4.75rem] lg:col-span-6">
+            <p class="max-w-prose">Ingen søknader eller skjema er merket med denne kombinasjonen av type og område.</p>
+          </div>
+        </div>
+
+        <div class="p-4 bg-orange-100 rounded-lg lg:col-start-1 lg:px-6 lg:py-5">
+          <h3 class="text-xl font-semibold">
+            Klage eller anke på vedtak?
+          </h3>
+          <p class="mt-2 max-w-prose">Hvis du har fått et vedtak fra NAV og du er uenig i vedtaket, har du rett til å klage eller anke.</p>
+          <p class="mb-2 mt-7"><a href="#" class="underline text-deepblue-600 hover:no-underline hover:text-deepblue-700">Les mer om dine klagerettigheter</a>.</p>
+        </div>
+
+      </div>
+    </div>
+  </main>
+{% endblock %}
