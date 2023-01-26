@@ -12,7 +12,7 @@
           {% if ('samarbeidspartner' in page.fileSlug and loop.last) or ('arbeidsgiver' in page.fileSlug and loop.index === 2) or (loop.first and not ( 'produktoversikt-' in page.fileSlug)) %}
             {% set menuBorder = 'border-blue-500' %}
           {% else %}
-            {% set menuBorder = 'border-transparent hover:border-gray-300/75 opacity-70' %}
+            {% set menuBorder = 'border-transparent fine:hover:border-gray-300/75 opacity-70' %}
           {% endif %}
 
           {% if 'produktoversikt' in page.fileSlug %}
@@ -27,7 +27,7 @@
             {% endif %}
           {% endif %}
           <li role="tab" aria-selected="{{ 'true' if loop.index === 1 else 'false' }}" class="grid">
-            <a href="{{ audienceLink or '#' }}" class="py-2 px-3 border-l-4 hover:bg-gray-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-800 {{ menuBorder }}">
+            <a href="{{ audienceLink or '#' }}" class="py-2 px-3 border-l-4 fine:hover:bg-gray-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-800 {{ menuBorder }}">
               {{ item }}
             </a>
           </li>
@@ -38,14 +38,14 @@
 
   <nav class="flex items-center w-full gap-8 col-feature">
     {# Logo #}
-    <a href="/" class="text-red-500 hover:text-red-400 block focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-800 py-2.5 px-2 -mx-2 rounded-sm">
+    <a href="/" class="text-red-500 fine:hover:text-red-400 block focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-800 py-2.5 px-2 -mx-2 rounded-sm">
       {{ '/src/_includes/svg/logo.svg' | svgContents('w-[75px] h-auto') | safe }}
       <span class="sr-only">NAV</span>
     </a>
 
     {# Audience #}
     <div class="relative hidden px-4 md:px-5 md:self-stretch xs:grid" x-on:click.outside="audienceDropdownOpen = false">
-      <button class="flex items-center self-center justify-center gap-4 py-2 pl-3 pr-2 border border-gray-200 rounded hover:bg-deepblue-100 focus:outline-none md:hidden" x-on:click="audienceDropdownOpen = !audienceDropdownOpen">
+      <button class="flex items-center self-center justify-center gap-4 py-2 pl-3 pr-2 border border-gray-200 rounded fine:hover:bg-deepblue-100 focus:outline-none md:hidden" x-on:click="audienceDropdownOpen = !audienceDropdownOpen">
         <span>{{ menu.audience[0] }}</span>
         {{ '/src/_includes/svg/icons/chevron-down.svg' | svgContents('w-4 h-4') | safe }}
       </button>
@@ -56,7 +56,7 @@
           {% if ('samarbeidspartner' in page.fileSlug and loop.last) or ('arbeidsgiver' in page.fileSlug and loop.index === 2) or (loop.first and not ( 'produktoversikt-' in page.fileSlug)) %}
             {% set menuBorder = 'border-blue-500' %}
           {% else %}
-            {% set menuBorder = 'border-transparent hover:border-gray-300/75 opacity-70' %}
+            {% set menuBorder = 'border-transparent fine:hover:border-gray-300/75 opacity-70' %}
           {% endif %}
 
           {% if 'produktoversikt' in page.fileSlug %}
@@ -82,7 +82,7 @@
     </div>
 
     {# Menu Buttons #}
-    {% set menuButtonClasses = "flex-0 flex-col sm:flex-row items-center justify-center py-2 pl-2.5 pr-3 leading-none font-semibold sm:gap-2.5 text-blue-500 sm:rounded sm:text-lg hover:bg-deepblue-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-800" %}
+    {% set menuButtonClasses = "flex-0 flex-col sm:flex-row items-center justify-center py-2 pl-2.5 pr-3 leading-none font-semibold sm:gap-2.5 text-blue-500 sm:rounded sm:text-lg fine:hover:bg-deepblue-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-800" %}
 
     <div class="flex items-end gap-0.5 ml-auto py-2 sm:py-4 whitespace-nowrap">
       <button class="flex {{ menuButtonClasses }}" type="button">
