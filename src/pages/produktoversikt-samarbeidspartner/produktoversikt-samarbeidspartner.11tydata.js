@@ -731,8 +731,7 @@ const products = [
   },
   {
     title: "Seksualtekniske hjelpemidler",
-    ingress:
-      "Kan gi et bedre sexliv når en har nedsatt seksualfunksjon.",
+    ingress: "Kan gi et bedre sexliv når en har nedsatt seksualfunksjon.",
     type: ["Pengestøtte", "Hjelpemiddel"],
     role: ["Lege"],
     contentBlocks: [
@@ -772,8 +771,7 @@ const products = [
   },
   {
     title: "Førerhund",
-    ingress:
-      "Hjelper blinde og svaksynte å ta seg frem innendørs og utendørs.",
+    ingress: "Hjelper blinde og svaksynte å ta seg frem innendørs og utendørs.",
     type: ["Hjelpemiddel"],
     role: ["Lege", "Optiker eller øyelege"],
     contentBlocks: [
@@ -804,8 +802,7 @@ const products = [
   },
   {
     title: "Servicehund",
-    ingress:
-      "Hjelper pasienter med fysiske funksjonsnedsettelser i hverdagen.",
+    ingress: "Hjelper pasienter med fysiske funksjonsnedsettelser i hverdagen.",
     type: ["Hjelpemiddel"],
     role: ["Lege"],
     contentBlocks: [
@@ -909,8 +906,7 @@ const products = [
   },
   {
     title: "Øyeprotese",
-    ingress:
-      "Erstatter øyet når en mangler et øye, eller har skadet øyet.",
+    ingress: "Erstatter øyet når en mangler et øye, eller har skadet øyet.",
     type: ["Hjelpemiddel"],
     role: ["Lege"],
     contentBlocks: [
@@ -941,8 +937,7 @@ const products = [
   },
   {
     title: "Ansiktsprotese",
-    ingress:
-      "Etterligner den delen av ansiktet som mangler eller er skadet.",
+    ingress: "Etterligner den delen av ansiktet som mangler eller er skadet.",
     type: ["Pengestøtte", "Hjelpemiddel"],
     role: ["Lege"],
     contentBlocks: [
@@ -973,8 +968,7 @@ const products = [
   },
   {
     title: "Parykk",
-    ingress:
-      "Erstatter eget hår på hele hodet, eller deler av hodet.",
+    ingress: "Erstatter eget hår på hele hodet, eller deler av hodet.",
     type: ["Pengestøtte", "Hjelpemiddel"],
     role: ["Lege"],
     contentBlocks: [
@@ -1005,8 +999,7 @@ const products = [
   },
   {
     title: "Lese- og sekretærhjelp",
-    ingress:
-      "Hjelper deg med å lese og skrive når du er blind eller svaksynt.",
+    ingress: "Hjelper deg med å lese og skrive når du er blind eller svaksynt.",
     type: ["Pengestøtte", "Hjelpemiddel"],
     role: ["Optiker eller øyelege", "Andre"],
     contentBlocks: [
@@ -1060,8 +1053,7 @@ const products = [
   },
   {
     title: "Tolk for hørselshemmede",
-    ingress:
-      "Utfører tolkeoppdrag for døve, døvblinde og hørselshemmede.",
+    ingress: "Utfører tolkeoppdrag for døve, døvblinde og hørselshemmede.",
     type: ["Tjeneste", "Hjelpemiddel"],
     role: ["Lege"],
     contentBlocks: [
@@ -1092,8 +1084,7 @@ const products = [
   },
   {
     title: "Tolk- og ledsagerhjelp for døvblinde",
-    ingress:
-      "Utfører tolkeoppdrag for døve, døvblinde og hørselshemmede.",
+    ingress: "Utfører tolkeoppdrag for døve, døvblinde og hørselshemmede.",
     type: ["Tjeneste", "Hjelpemiddel"],
     role: ["Lege"],
     contentBlocks: [
@@ -1124,8 +1115,7 @@ const products = [
   },
   {
     title: "Høreapparat",
-    ingress:
-      "Forsterker lyden rundt deg når en har nedsatt hørsel.",
+    ingress: "Forsterker lyden rundt deg når en har nedsatt hørsel.",
     type: ["Pengestøtte", "Hjelpemiddel"],
     role: ["Lege"],
     contentBlocks: [
@@ -1259,8 +1249,7 @@ const products = [
   },
   {
     title: "Arm- og benproteser",
-    ingress:
-      "Erstatter en manglende kroppsdel.",
+    ingress: "Erstatter en manglende kroppsdel.",
     type: ["Hjelpemiddel"],
     role: ["Lege"],
     contentBlocks: [
@@ -1336,8 +1325,7 @@ const products = [
   },
   {
     title: "Grunnmønster og søm av klær",
-    ingress:
-      "Brukes som grunnlag for å skreddersy klær.",
+    ingress: "Brukes som grunnlag for å skreddersy klær.",
     type: ["Pengestøtte"],
     role: ["Lege"],
     contentBlocks: [
@@ -1402,10 +1390,7 @@ const products = [
       },
       {
         type: "markdown",
-        data: [
-          "### Send refusjonskrav",
-          "Noe tekst",
-        ],
+        data: ["### Send refusjonskrav", "Noe tekst"],
       },
       {
         type: "actions",
@@ -1463,8 +1448,7 @@ const products = [
   },
   {
     title: "Varig tilrettelagt arbeid i skjermet virksomhet",
-    ingress:
-      "Tilrettelagt jobb i en skjermet bedrift.",
+    ingress: "Tilrettelagt jobb i en skjermet bedrift.",
     type: ["Tiltak"],
     role: ["Tiltaksarrangør"],
     contentBlocks: [
@@ -1497,10 +1481,7 @@ const products = [
       },
       {
         type: "markdown",
-        data: [
-          "### Send refusjonskrav",
-          "Noe tekst",
-        ],
+        data: ["### Send refusjonskrav", "Noe tekst"],
       },
       {
         type: "actions",
@@ -1603,8 +1584,7 @@ const products = [
   },
   {
     title: "Oppfølging",
-    ingress:
-      "Støtte for å klare å skaffe eller beholde en jobb.",
+    ingress: "Støtte for å klare å skaffe eller beholde en jobb.",
     type: ["Tiltak"],
     role: ["Tiltaksarrangør"],
     contentBlocks: [
@@ -1656,8 +1636,7 @@ const products = [
   },
   {
     title: "Avklaring",
-    ingress:
-      "Støtte for å klare å skaffe eller beholde en jobb.",
+    ingress: "Støtte for å klare å skaffe eller beholde en jobb.",
     type: ["Tiltak"],
     role: ["Tiltaksarrangør"],
     contentBlocks: [
@@ -1709,8 +1688,7 @@ const products = [
   },
   {
     title: "Arbeidsrettet rehabilitering",
-    ingress:
-      "Støtte for å klare å skaffe eller beholde en jobb.",
+    ingress: "Støtte for å klare å skaffe eller beholde en jobb.",
     type: ["Tiltak"],
     role: ["Tiltaksarrangør"],
     contentBlocks: [
@@ -1762,8 +1740,7 @@ const products = [
   },
   {
     title: "Deltakeroversikt for tiltaksarrangører",
-    ingress:
-      "Hold oversikt over deltakere i tiltakene og dialogen med NAV.",
+    ingress: "Hold oversikt over deltakere i tiltakene og dialogen med NAV.",
     type: ["Skjema"],
     role: ["Tiltaksarrangør"],
     contentBlocks: [
@@ -1803,8 +1780,7 @@ const products = [
   },
   {
     title: "Fullmakt til å søke om hjelpemidler",
-    ingress:
-      "Fullmakt i forbindelse med søknad om tekniske hjelpemidler",
+    ingress: "Fullmakt i forbindelse med søknad om tekniske hjelpemidler",
     type: ["Skjema"],
     role: ["Optiker eller øyelege", "Ergoterapeut"],
     contentBlocks: [
@@ -1844,8 +1820,7 @@ const products = [
   },
   {
     title: "Briller til barn",
-    ingress:
-      "Tilskudd til barn og unge under 18 år som trenger briller.",
+    ingress: "Tilskudd til barn og unge under 18 år som trenger briller.",
     type: ["Pengestøtte", "Hjelpemiddel"],
     role: ["Optiker eller øyelege"],
     contentBlocks: [
@@ -1904,8 +1879,7 @@ const products = [
   },
   {
     title: "Irislinse",
-    ingress:
-      "Tilskudd til barn og unge under 18 år som trenger briller.",
+    ingress: "Tilskudd til barn og unge under 18 år som trenger briller.",
     type: ["Pengestøtte", "Hjelpemiddel"],
     role: ["Optiker eller øyelege"],
     contentBlocks: [
@@ -1945,8 +1919,7 @@ const products = [
   },
   {
     title: "Hørselshjelpemidler",
-    ingress:
-      "Ingress",
+    ingress: "Ingress",
     type: ["Pengestøtte", "Hjelpemiddel"],
     role: ["Ergoterapeut"],
     contentBlocks: [
