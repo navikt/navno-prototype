@@ -698,7 +698,7 @@ const products = [
       "Hvis du ringer til NAV om en pasient og ønsker innsyn i saken, må du ha fullmakt. Du ringer da ikke som behandler, men på vegne av en privatperson. Det er pasienten som gir fullmakten.",
     icon: "/src/_includes/svg/pictograms/neutral.svg",
     type: ["Skjema"],
-    role: ["Lege", "Annen behandler"],
+    role: ["Lege", "Hjelpemiddelformidler", "Bostyrer"],
     contentBlocks: [
       {
         type: "markdown",
@@ -1399,7 +1399,7 @@ const products = [
         type: "markdown",
         data: [
           "### Registrer deltakere",
-          "Dette gjør du digitalt i Deltakeroversikten. Hvis du ikke har mulighet til å bruke deltakeroversikten, kan du sende fremmøteoversikt på papir.",
+          "Dette gjør du digitalt i Deltakeroversikten.",
         ],
       },
       {
@@ -1409,6 +1409,17 @@ const products = [
             text: "Bruk deltakeroversikten",
             variant: "primary",
           },
+        ],
+      },
+      {
+        type: "markdown",
+        data: [
+          "Hvis du ikke har mulighet til å bruke deltakeroversikten, kan du sende fremmøteoversikt på papir.",
+        ],
+      },
+      {
+        type: "actions",
+        data: [
           {
             text: "Send oversikt i posten",
             variant: "secondary",
@@ -1491,7 +1502,7 @@ const products = [
         type: "markdown",
         data: [
           "### Registrer deltakere",
-          "Dette gjør du digitalt i Deltakeroversikten. Hvis du ikke har mulighet til å bruke deltakeroversikten, kan du sende fremmøteoversikt på papir.",
+          "Dette gjør du digitalt i Deltakeroversikten.",
         ],
       },
       {
@@ -1501,6 +1512,17 @@ const products = [
             text: "Bruk deltakeroversikten",
             variant: "primary",
           },
+        ],
+      },
+      {
+        type: "markdown",
+        data: [
+          "Hvis du ikke har mulighet til å bruke deltakeroversikten, kan du sende fremmøteoversikt på papir.",
+        ],
+      },
+      {
+        type: "actions",
+        data: [
           {
             text: "Send oversikt i posten",
             variant: "secondary",
@@ -1629,7 +1651,7 @@ const products = [
         type: "markdown",
         data: [
           "### Registrer deltakere",
-          "Dette gjør du digitalt i Deltakeroversikten. Hvis du ikke har mulighet til å bruke deltakeroversikten, kan du sende fremmøteoversikt i posten.",
+          "Dette gjør du digitalt i Deltakeroversikten.",
         ],
       },
       {
@@ -1639,6 +1661,17 @@ const products = [
             text: "Bruk deltakeroversikten",
             variant: "primary",
           },
+        ],
+      },
+      {
+        type: "markdown",
+        data: [
+          "Hvis du ikke har mulighet til å bruke deltakeroversikten, kan du sende fremmøteoversikt i posten.",
+        ],
+      },
+      {
+        type: "actions",
+        data: [
           {
             text: "Send oversikt i posten",
             variant: "secondary",
@@ -1682,7 +1715,7 @@ const products = [
         type: "markdown",
         data: [
           "### Registrer deltakere",
-          "Dette gjør du digitalt i Deltakeroversikten. Hvis du ikke har mulighet til å bruke deltakeroversikten, kan du sende fremmøteoversikt i posten.",
+          "Dette gjør du digitalt i Deltakeroversikten.",
         ],
       },
       {
@@ -1692,6 +1725,17 @@ const products = [
             text: "Bruk deltakeroversikten",
             variant: "primary",
           },
+        ],
+      },
+      {
+        type: "markdown",
+        data: [
+          "Hvis du ikke har mulighet til å bruke deltakeroversikten, kan du sende fremmøteoversikt i posten.",
+        ],
+      },
+      {
+        type: "actions",
+        data: [
           {
             text: "Send oversikt i posten",
             variant: "secondary",
@@ -1735,7 +1779,7 @@ const products = [
         type: "markdown",
         data: [
           "### Registrer deltakere",
-          "Dette gjør du digitalt i Deltakeroversikten. Hvis du ikke har mulighet til å bruke deltakeroversikten, kan du sende fremmøteoversikt i posten.",
+          "Dette gjør du digitalt i Deltakeroversikten.",
         ],
       },
       {
@@ -1745,6 +1789,17 @@ const products = [
             text: "Bruk deltakeroversikten",
             variant: "primary",
           },
+        ],
+      },
+      {
+        type: "markdown",
+        data: [
+          "Hvis du ikke har mulighet til å bruke deltakeroversikten, kan du sende fremmøteoversikt i posten.",
+        ],
+      },
+      {
+        type: "actions",
+        data: [
           {
             text: "Send oversikt i posten",
             variant: "secondary",
@@ -1823,7 +1878,7 @@ const products = [
     ingress: "Fullmakt i forbindelse med søknad om tekniske hjelpemidler",
     icon: "/src/_includes/svg/pictograms/neutral.svg",
     type: ["Skjema"],
-    role: ["Optiker eller øyelege", "Ergoterapeut"],
+    role: ["Optiker eller øyelege", "Hjelpemiddelformidler"],
     contentBlocks: [
       {
         type: "markdown",
@@ -1965,7 +2020,7 @@ const products = [
     ingress: "Ingress",
     icon: "/src/_includes/svg/pictograms/neutral.svg",
     type: ["Pengestøtte", "Hjelpemiddel"],
-    role: ["Ergoterapeut"],
+    role: ["Hjelpemiddelformidler"],
     contentBlocks: [
       {
         type: "markdown",
@@ -1994,7 +2049,7 @@ const products = [
         type: "markdown",
         data: [
           "### Søk om andre høreapparat, tinnitusmaskerer eller tilleggsutstyr",
-          "Hørselssentral eller avtalespesialist har ansvar for at skjemaet blir fylt ut og sendt inn. Det er valgfritt å fylle ut søknaden via pasientjournalsystemet eller via NAVs nettsider. Hvis du har fylt ut søknaden i pasientjournalsystemet, må du skrive ut en førsteside som skal legges ved søknaden. (Evt bygge mellomsteg her?)",
+          "Hørselssentral eller avtalespesialist har ansvar for at skjemaet blir fylt ut og sendt inn. Det er valgfritt å fylle ut søknaden via pasientjournalsystemet eller via NAVs nettsider.",
         ],
       },
       {
@@ -2005,11 +2060,22 @@ const products = [
             variant: "primary",
           },
           {
-            text: "Skriv ut førsteside for å sende i posten",
+            text: "Ettersend dokumentasjon",
             variant: "secondary",
           },
+        ],
+      },
+      {
+        type: "markdown",
+        data: [
+          "Hvis du har fylt ut søknaden i pasientjournalsystemet, må du skrive ut en førsteside som skal legges ved søknaden. (Evt bygge mellomsteg her?)",
+        ],
+      },
+      {
+        type: "actions",
+        data: [
           {
-            text: "Ettersend dokumentasjon",
+            text: "Skriv ut førsteside for å sende i posten",
             variant: "secondary",
           },
         ],
@@ -2039,7 +2105,7 @@ const products = [
       {
         type: "markdown",
         data: [
-          "### Søk om andre hørselshjelpemidler",
+          "### Søk om hjelpemidler (dette er et fellesskjema som brukes for mange hjelpemidler, må ha generisk tekst?)",
           "Hvis du er hjelpemiddelformidler i kommunen og har fått nødvendige tilganger, kan du nå søke digitalt om et utvalg av enkle hjelpemidler. Når du skal søke på vegne av andre trenger du signert fullmakt.",
         ],
       },
@@ -2087,6 +2153,595 @@ const products = [
         data: [
           {
             text: "Hørselshjelpemidler",
+            dot: "bg-green-300",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    title: "Hjelpemidler til tale og språk",
+    ingress: "Ingress",
+    type: ["Pengestøtte", "Hjelpemiddel"],
+    role: ["Hjelpemiddelformidler"],
+    contentBlocks: [
+      {
+        type: "markdown",
+        data: [
+          "### Be om hjelp til vurdering og utprøving",
+          "Dette skjemaet bruker du hvis du er fagperson og trenger hjelp til vurdering eller utprøving.",
+        ],
+      },
+      {
+        type: "actions",
+        data: [
+          {
+            text: "Send skjema",
+            variant: "primary",
+          },
+          {
+            text: "Ettersend dokumentasjon",
+            variant: "secondary",
+          },
+        ],
+      },
+      {
+        type: "line",
+      },
+      {
+        type: "markdown",
+        data: [
+          "### Søk om hjelpemidler (dette er et fellesskjema som brukes for mange hjelpemidler, må ha generisk tekst?)",
+          "Hvis du er hjelpemiddelformidler i kommunen og har fått nødvendige tilganger, kan du nå søke digitalt om et utvalg av enkle hjelpemidler. Når du skal søke på vegne av andre trenger du signert fullmakt.",
+        ],
+      },
+      {
+        type: "actions",
+        data: [
+          {
+            text: "Send skjema",
+            variant: "primary",
+          },
+          {
+            text: "Ettersend dokumentasjon",
+            variant: "secondary",
+          },
+        ],
+      },
+      {
+        type: "line",
+      },
+      {
+        type: "markdown",
+        data: [
+          "### Be om fullmakt",
+          "Skjemaet benyttes når søker gir fullmakt til at søknad kan hentes fra nav.no og fylles ut av behandler/kartlegger i etterkant av kartlegging.",
+        ],
+      },
+      {
+        type: "actions",
+        data: [
+          {
+            text: "Send søknad",
+            variant: "primary",
+          },
+        ],
+      },
+      {
+        type: "line",
+      },
+      {
+        type: "markdown",
+        data: ["### Mer om"],
+      },
+      {
+        type: "microcards",
+        data: [
+          {
+            text: "Hjelpemidler til tale og språk",
+            dot: "bg-green-300",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    title: "Hjelpemidler for å huske, planlegge og organisere",
+    ingress: "Ingress",
+    type: ["Pengestøtte", "Hjelpemiddel"],
+    role: ["Hjelpemiddelformidler"],
+    contentBlocks: [
+      {
+        type: "markdown",
+        data: [
+          "### Be om hjelp til vurdering og utprøving",
+          "Dette skjemaet bruker du hvis du er fagperson og trenger hjelp til vurdering eller utprøving.",
+        ],
+      },
+      {
+        type: "actions",
+        data: [
+          {
+            text: "Send skjema",
+            variant: "primary",
+          },
+          {
+            text: "Ettersend dokumentasjon",
+            variant: "secondary",
+          },
+        ],
+      },
+      {
+        type: "line",
+      },
+      {
+        type: "markdown",
+        data: [
+          "### Søk om hjelpemidler (dette er et fellesskjema som brukes for mange hjelpemidler, må ha generisk tekst?)",
+          "Hvis du er hjelpemiddelformidler i kommunen og har fått nødvendige tilganger, kan du nå søke digitalt om et utvalg av enkle hjelpemidler. Når du skal søke på vegne av andre trenger du signert fullmakt.",
+        ],
+      },
+      {
+        type: "actions",
+        data: [
+          {
+            text: "Send skjema",
+            variant: "primary",
+          },
+          {
+            text: "Ettersend dokumentasjon",
+            variant: "secondary",
+          },
+        ],
+      },
+      {
+        type: "line",
+      },
+      {
+        type: "markdown",
+        data: [
+          "### Be om fullmakt",
+          "Skjemaet benyttes når søker gir fullmakt til at søknad kan hentes fra nav.no og fylles ut av behandler/kartlegger i etterkant av kartlegging.",
+        ],
+      },
+      {
+        type: "actions",
+        data: [
+          {
+            text: "Send søknad",
+            variant: "primary",
+          },
+        ],
+      },
+      {
+        type: "line",
+      },
+      {
+        type: "markdown",
+        data: ["### Mer om"],
+      },
+      {
+        type: "microcards",
+        data: [
+          {
+            text: "Hjelpemidler for å huske, planlegge og organisere",
+            dot: "bg-green-300",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    title: "Bevegelseshjelpemidler",
+    ingress: "Ingress",
+    type: ["Pengestøtte", "Hjelpemiddel"],
+    role: ["Hjelpemiddelformidler"],
+    contentBlocks: [
+      {
+        type: "markdown",
+        data: [
+          "### Be om hjelp til vurdering og utprøving",
+          "Dette skjemaet bruker du hvis du er fagperson og trenger hjelp til vurdering eller utprøving.",
+        ],
+      },
+      {
+        type: "actions",
+        data: [
+          {
+            text: "Send skjema",
+            variant: "primary",
+          },
+          {
+            text: "Ettersend dokumentasjon",
+            variant: "secondary",
+          },
+        ],
+      },
+      {
+        type: "line",
+      },
+      {
+        type: "markdown",
+        data: [
+          "### Søk om hjelpemidler (dette er et fellesskjema som brukes for mange hjelpemidler, må ha generisk tekst?)",
+          "Hvis du er hjelpemiddelformidler i kommunen og har fått nødvendige tilganger, kan du nå søke digitalt om et utvalg av enkle hjelpemidler. Når du skal søke på vegne av andre trenger du signert fullmakt.",
+        ],
+      },
+      {
+        type: "actions",
+        data: [
+          {
+            text: "Send skjema",
+            variant: "primary",
+          },
+          {
+            text: "Ettersend dokumentasjon",
+            variant: "secondary",
+          },
+        ],
+      },
+      {
+        type: "line",
+      },
+      {
+        type: "markdown",
+        data: [
+          "### Be om fullmakt",
+          "Skjemaet benyttes når søker gir fullmakt til at søknad kan hentes fra nav.no og fylles ut av behandler/kartlegger i etterkant av kartlegging.",
+        ],
+      },
+      {
+        type: "actions",
+        data: [
+          {
+            text: "Send søknad",
+            variant: "primary",
+          },
+        ],
+      },
+      {
+        type: "line",
+      },
+      {
+        type: "markdown",
+        data: ["### Mer om"],
+      },
+      {
+        type: "microcards",
+        data: [
+          {
+            text: "Bevegelseshjelpemidler",
+            dot: "bg-green-300",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    title: "Ortopediske hjelpemidler",
+    ingress: "Ingress",
+    type: ["Pengestøtte", "Hjelpemiddel"],
+    role: ["Hjelpemiddelformidler", "Lege"],
+    contentBlocks: [
+      {
+        type: "markdown",
+        data: [
+          "### Be om hjelp til vurdering og utprøving",
+          "Dette skjemaet bruker du hvis du er fagperson og trenger hjelp til vurdering eller utprøving.",
+        ],
+      },
+      {
+        type: "actions",
+        data: [
+          {
+            text: "Send skjema",
+            variant: "primary",
+          },
+          {
+            text: "Ettersend dokumentasjon",
+            variant: "secondary",
+          },
+        ],
+      },
+      {
+        type: "line",
+      },
+      {
+        type: "markdown",
+        data: [
+          "### Søk om ortopedisk hjelpemidler",
+          "Gjelder hvis du skal søke om protese (har ikke disse egne søknader?), ortose, spesialfottøy, aktivitetshjelpemidler for brukere over 26 år, fotseng eller ortopedisk sydd fottøy. Skjemaet fylles ut av legespesialist eller sykehuslege (ved førstegangssøknad eller fornyelse) eller ortopediingeniør (ved fornyelse).",
+        ],
+      },
+      {
+        type: "actions",
+        data: [
+          {
+            text: "Send skjema",
+            variant: "primary",
+          },
+        ],
+      },
+      {
+        type: "markdown",
+        data: [
+          "Er søknaden om ortopedisk hjelpemiddel fylt ut i legens pasientjournalsystem eller (på papir?) av ortopediingeniør? Da må du skrive ut en førsteside som du legger ved søknaden når du sender søknaden i posten.",
+        ],
+      },
+      {
+        type: "actions",
+        data: [
+          {
+            text: "Skriv ut førsteside",
+            variant: "secondary",
+          },
+        ],
+      },
+      {
+        type: "line",
+      },
+      {
+        type: "markdown",
+        data: [
+          "### Skriv begrunnelse for behov for ortopediske sko",
+          "Sykehusleger og spesialister i ortopedisk kirurgi må begrunne behovet i et eget felt på søknadsskjemaet (skrives kanskje bare ut førsteside? kan fylles ut i legens epj-system). Avhengig av hvilken type ortopedisk hjelpemiddel det søkes om, kan også andre legespesialister begrunne behovet.",
+        ],
+      },
+      {
+        type: "actions",
+        data: [
+          {
+            text: "Send søknad",
+            variant: "primary",
+          },
+        ],
+      },
+      {
+        type: "line",
+      },
+      {
+        type: "markdown",
+        data: [
+          "### Be om fullmakt",
+          "Skjemaet benyttes når søker gir fullmakt til at søknad kan hentes fra nav.no og fylles ut av behandler/kartlegger i etterkant av kartlegging.",
+        ],
+      },
+      {
+        type: "actions",
+        data: [
+          {
+            text: "Send søknad",
+            variant: "primary",
+          },
+        ],
+      },
+      {
+        type: "line",
+      },
+      {
+        type: "markdown",
+        data: ["### Mer om"],
+      },
+      {
+        type: "microcards",
+        data: [
+          {
+            text: "Ortopediske hjelpemidler",
+            dot: "bg-green-300",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    title: "Hjelpemidler for å lese og skrive",
+    ingress: "Ingress",
+    type: ["Pengestøtte", "Hjelpemiddel"],
+    role: ["Hjelpemiddelformidler", "Lege"],
+    contentBlocks: [
+      {
+        type: "markdown",
+        data: [
+          "### Be om hjelp til vurdering og utprøving",
+          "Dette skjemaet bruker du hvis du er fagperson og trenger hjelp til vurdering eller utprøving.",
+        ],
+      },
+      {
+        type: "actions",
+        data: [
+          {
+            text: "Send skjema",
+            variant: "primary",
+          },
+          {
+            text: "Ettersend dokumentasjon",
+            variant: "secondary",
+          },
+        ],
+      },
+      {
+        type: "line",
+      },
+      {
+        type: "markdown",
+        data: [
+          "### Søk om hjelpemidler (dette er et fellesskjema som brukes for mange hjelpemidler, må ha generisk tekst?)",
+          "Hvis du er hjelpemiddelformidler i kommunen og har fått nødvendige tilganger, kan du nå søke digitalt om et utvalg av enkle hjelpemidler. Når du skal søke på vegne av andre trenger du signert fullmakt.",
+        ],
+      },
+      {
+        type: "actions",
+        data: [
+          {
+            text: "Send skjema",
+            variant: "primary",
+          },
+          {
+            text: "Ettersend dokumentasjon",
+            variant: "secondary",
+          },
+        ],
+      },
+      {
+        type: "line",
+      },
+      {
+        type: "markdown",
+        data: [
+          "### Be om fullmakt",
+          "Skjemaet benyttes når søker gir fullmakt til at søknad kan hentes fra nav.no og fylles ut av behandler/kartlegger i etterkant av kartlegging.",
+        ],
+      },
+      {
+        type: "actions",
+        data: [
+          {
+            text: "Send søknad",
+            variant: "primary",
+          },
+        ],
+      },
+      {
+        type: "line",
+      },
+      {
+        type: "markdown",
+        data: ["### Mer om"],
+      },
+      {
+        type: "microcards",
+        data: [
+          {
+            text: "Hjelpemidler for å lese og skrive",
+            dot: "bg-green-300",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    title: "Lønnsgaranti",
+    ingress: "Ingress",
+    type: ["Pengestøtte"],
+    role: ["Bostyrer"],
+    contentBlocks: [
+      {
+        type: "markdown",
+        data: [
+          "### Send inn opplysninger om boet og kravene",
+          "Bostyrers oversendelsesbrev for søknader om lønnsgarantidekning.",
+        ],
+      },
+      {
+        type: "actions",
+        data: [
+          {
+            text: "Send skjema",
+            variant: "primary",
+          },
+          {
+            text: "Ettersend dokumentasjon",
+            variant: "secondary",
+          },
+        ],
+      },
+      {
+        type: "line",
+      },
+      {
+        type: "markdown",
+        data: ["### Mer om"],
+      },
+      {
+        type: "microcards",
+        data: [
+          {
+            text: "Lønnsgaranti",
+            dot: "bg-green-300",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    title: "Meld behov for hjelpemidler",
+    ingress: "Kommunalt ansatte kan melde behov om hjelpemidler digitalt.",
+    type: ["Hjelpemiddel"],
+    role: ["Hjelpemiddelformidler", "Ansatt i kommunen"],
+    contentBlocks: [
+      {
+        type: "markdown",
+        data: [
+          "### Meld inn behov for hjelpemidler",
+          "Saken sendes til NAV Hjelpemiddelsentral. Saker du har sendt inn digitalt vil være tilgjengelig på innlogget side på nav.no. Der kan du følge status på dine innsendte digitale saker. Søknaden blir også tilgjengelig på nav.no-profilen til innbyggeren du har søkt for.",
+        ],
+      },
+      {
+        type: "actions",
+        data: [
+          {
+            text: "Send skjema",
+            variant: "primary",
+          },
+        ],
+      },
+      {
+        type: "line",
+      },
+      {
+        type: "markdown",
+        data: ["### Mer om"],
+      },
+      {
+        type: "microcards",
+        data: [
+          {
+            text: "Meld behov for hjelpemidler",
+            dot: "bg-green-300",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    title: "Oppfostringsbidrag",
+    ingress:
+      "Hvis kommunen overtar omsorgen for et barn, kan kommunen kreve et oppfostringsbidrag fra foreldrene hvis de har betalingsevne og det er rimelig ut fra situasjonen.",
+    type: ["Pengestøtte"],
+    role: ["Ansatt i kommunen"],
+    contentBlocks: [
+      {
+        type: "markdown",
+        data: [
+          "### Krav i forbindelse med oppfostringsbidrag etter barnevernloven",
+          "Hvis kommunen søker om oppfostringsbidrag fra begge foreldrene, må kommunen fylle ut to skjemaer.",
+        ],
+      },
+      {
+        type: "actions",
+        data: [
+          {
+            text: "Send skjema",
+            variant: "primary",
+          },
+          {
+            text: "Ettersend dokumentasjon",
+            variant: "secondary",
+          },
+        ],
+      },
+      {
+        type: "line",
+      },
+      {
+        type: "markdown",
+        data: ["### Mer om"],
+      },
+      {
+        type: "microcards",
+        data: [
+          {
+            text: "Oppfostringsbidrag",
             dot: "bg-green-300",
           },
         ],
