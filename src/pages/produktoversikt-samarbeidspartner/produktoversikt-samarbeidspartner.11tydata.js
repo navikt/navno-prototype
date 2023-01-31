@@ -2162,6 +2162,7 @@ const products = [
   {
     title: "Hjelpemidler til tale og språk",
     ingress: "Ingress",
+    icon: "/src/_includes/svg/pictograms/neutral.svg",
     type: ["Pengestøtte", "Hjelpemiddel"],
     role: ["Hjelpemiddelformidler"],
     contentBlocks: [
@@ -2248,6 +2249,7 @@ const products = [
   {
     title: "Hjelpemidler for å huske, planlegge og organisere",
     ingress: "Ingress",
+    icon: "/src/_includes/svg/pictograms/neutral.svg",
     type: ["Pengestøtte", "Hjelpemiddel"],
     role: ["Hjelpemiddelformidler"],
     contentBlocks: [
@@ -2334,6 +2336,7 @@ const products = [
   {
     title: "Bevegelseshjelpemidler",
     ingress: "Ingress",
+    icon: "/src/_includes/svg/pictograms/neutral.svg",
     type: ["Pengestøtte", "Hjelpemiddel"],
     role: ["Hjelpemiddelformidler"],
     contentBlocks: [
@@ -2420,6 +2423,7 @@ const products = [
   {
     title: "Ortopediske hjelpemidler",
     ingress: "Ingress",
+    icon: "/src/_includes/svg/pictograms/neutral.svg",
     type: ["Pengestøtte", "Hjelpemiddel"],
     role: ["Hjelpemiddelformidler", "Lege"],
     contentBlocks: [
@@ -2536,6 +2540,7 @@ const products = [
   {
     title: "Hjelpemidler for å lese og skrive",
     ingress: "Ingress",
+    icon: "/src/_includes/svg/pictograms/neutral.svg",
     type: ["Pengestøtte", "Hjelpemiddel"],
     role: ["Hjelpemiddelformidler", "Lege"],
     contentBlocks: [
@@ -2622,6 +2627,7 @@ const products = [
   {
     title: "Lønnsgaranti",
     ingress: "Ingress",
+    icon: "/src/_includes/svg/pictograms/neutral.svg",
     type: ["Pengestøtte"],
     role: ["Bostyrer"],
     contentBlocks: [
@@ -2666,6 +2672,7 @@ const products = [
   {
     title: "Meld behov for hjelpemidler",
     ingress: "Kommunalt ansatte kan melde behov om hjelpemidler digitalt.",
+    icon: "/src/_includes/svg/pictograms/neutral.svg",
     type: ["Hjelpemiddel"],
     role: ["Hjelpemiddelformidler", "Ansatt i kommunen"],
     contentBlocks: [
@@ -2707,6 +2714,7 @@ const products = [
     title: "Oppfostringsbidrag",
     ingress:
       "Hvis kommunen overtar omsorgen for et barn, kan kommunen kreve et oppfostringsbidrag fra foreldrene hvis de har betalingsevne og det er rimelig ut fra situasjonen.",
+    icon: "/src/_includes/svg/pictograms/neutral.svg",
     type: ["Pengestøtte"],
     role: ["Ansatt i kommunen"],
     contentBlocks: [
