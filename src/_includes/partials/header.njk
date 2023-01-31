@@ -9,7 +9,7 @@
       <ul class="overflow-hidden text-gray-900 bg-white divide-y divide-gray-300 rounded shadow-xl max-w-max ring-1 ring-gray-200" role="tablist" x-show="audienceDropdownOpen">
         {% for item in menu.audience %}
         <li role="tab" aria-selected="{{ 'true' if loop.index === 1 else 'false' }}" class="grid">
-          <a href="#" class="py-2 px-3 border-l-4 hover:bg-gray-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-800 {{ 'border-blue-500' if loop.index === 1 else 'border-transparent' }}">
+          <a href="#" class="py-2 px-3 border-l-4 fine:hover:bg-gray-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-800 {{ 'border-blue-500' if loop.index === 1 else 'border-transparent' }}">
             {{ item }}
           </a>
         </li>
@@ -20,14 +20,14 @@
 
   <nav class="flex items-center w-full gap-4 col-feature">
     {# Logo #}
-    <button x-on:click="indexOpen = !indexOpen" class="text-[#C30000] hover:text-[#DE2E2E] block focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-800 py-2.5 px-2 -mx-2 rounded-sm">
+    <button x-on:click="indexOpen = !indexOpen" class="text-[#C30000] fine:hover:text-[#DE2E2E] block focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-800 py-2.5 px-2 -mx-2 rounded-sm">
       {{ '/src/_includes/svg/logo.svg' | svgContents('w-[72px] h-auto') | safe }}
       <span class="sr-only">NAV</span>
     </button>
 
     {# Audience #}
     <div class="relative hidden px-4 md:px-5 md:self-stretch xs:grid">
-      <button class="flex items-center self-center justify-center gap-4 py-2 pl-3 pr-2 border border-gray-200 rounded hover:bg-deepblue-100 focus:outline-none md:hidden" x-on:click="audienceDropdownOpen = !audienceDropdownOpen">
+      <button class="flex items-center self-center justify-center gap-4 py-2 pl-3 pr-2 border border-gray-200 rounded fine:hover:bg-deepblue-100 focus:outline-none md:hidden" x-on:click="audienceDropdownOpen = !audienceDropdownOpen">
         <span>{{ menu.audience[0] }}</span>
         {{ '/src/_includes/svg/icons/chevron-down.svg' | svgContents('w-4 h-4') | safe }}
       </button>
@@ -35,7 +35,7 @@
       <ul class="justify-center overflow-hidden text-lg bg-white border border-gray-200 divide-y divide-gray-200 rounded shadow-lg md:rounded-none md:bg-transparent md:shadow-none md:border-0 md:divide-y-0 md:gap-4 md:flex" role="tablist" x-bind:class="audienceDropdownOpen ? 'grid' : 'hidden md:flex'">
         {% for item in menu.audience %}
         <li role="tab" aria-selected="{{ 'true' if loop.index === 1 else 'false' }}" class="grid">
-          <a href="#" class="focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-800 flex items-center py-2 px-3 md:px-0.5 md:pb-5 text-gray-900 border-l-4 md:border-l-0 md:border-b-4 md:pt-6 {{ 'border-blue-500 font-semibold' if loop.index === 1 else 'border-transparent hover:border-gray-300/75 opacity-70' }}">
+          <a href="#" class="focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-800 flex items-center py-2 px-3 md:px-0.5 md:pb-5 text-gray-900 border-l-4 md:border-l-0 md:border-b-4 md:pt-6 {{ 'border-blue-500 font-semibold' if loop.index === 1 else 'border-transparent fine:hover:border-gray-300/75 opacity-70' }}">
             {{ item | replace('person', "") }}
           </a>
         </li>
@@ -45,7 +45,7 @@
     </div>
 
     {# Menu Buttons #}
-    {% set menuButtonClasses = "flex flex-col sm:flex-row items-center justify-center py-2.5 px-3 leading-none font-semibold sm:gap-1 text-blue-500 sm:rounded md:px-4 sm:text-lg hover:bg-deepblue-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-800" %}
+    {% set menuButtonClasses = "flex flex-col sm:flex-row items-center justify-center py-2.5 px-3 leading-none font-semibold sm:gap-1 text-blue-500 sm:rounded md:px-4 sm:text-lg fine:hover:bg-deepblue-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-800" %}
     <div class="flex items-end gap-2 ml-auto sm:py-4 md:py-3">
       <button class="{{ menuButtonClasses }}" x-on:click="notifyOpen = !notifyOpen, menuOpen = false" x-bind:class="notifyOpen && 'bg-deepblue-50'">
         <span class="relative">

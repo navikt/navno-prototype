@@ -18,9 +18,9 @@ bodyClass: ''
         const item = el.querySelector('h2').textContent.toLowerCase()
         if (this.search === '') {
           return (
-            (this.typeFilter === 'alle' || el.dataset.type.startsWith(this.typeFilter))
+            el.dataset.type.split(' ').includes(this.typeFilter)
             &&
-            (this.roleFilter === 'alle' || el.dataset.role.startsWith(this.roleFilter))
+            el.dataset.role.split(' ').includes(this.roleFilter)
           )
         } else {
           this.typeFilter = 'alle'
@@ -87,7 +87,7 @@ bodyClass: ''
 
         <div class="relative lg:-mt-1.5 lg:row-span-3 lg:col-start-2" x-data="{ filterDrawer: false, filterTags: false, filterSearch: false }">
 
-          {% set labelClasses = "inline-flex cursor-pointer px-4 pt-1.5 pb-1.5 leading-tight text-base bg-gray-100 rounded-full hover:bg-deepblue-100 peer-checked:bg-deepblue-500 peer-checked:text-white peer-focus:ring-2 peer-focus:ring-deepblue-800" %}
+          {% set labelClasses = "inline-flex cursor-pointer px-4 pt-1.5 pb-1.5 leading-tight text-base bg-gray-100 rounded-full fine:hover:bg-deepblue-100 peer-checked:bg-deepblue-500 peer-checked:text-white peer-focus:ring-2 peer-focus:ring-deepblue-800" %}
           {% set inputClasses = "absolute opacity-0 pointer-events-none peer" %}
 
           <div class="flex gap-2.5 sm:hidden">
@@ -256,18 +256,18 @@ bodyClass: ''
           <p class="mb-2">Viser <span x-text="count"></span> av {{ products.length }} produkter og tjenester</p>
 
           <div class="border-b border-deepblue-100" x-ref="entries" x-show="count !== 0">
-            {% for product in products | sort(true, false, 'title') | reverse %}
+            {% for product in products | sort(true, false, 'data.title') | reverse %}
               <div
                 x-data="{ expanded: false }"
                 class="border-t focus-within:z-10 -mx-clamp-gap px-clamp-gap sm:-mx-0 sm:px-0 border-deepblue-100"
                 x-bind:class="expanded ? '' : ''"
                 x-show="filterItem($el)"
-                data-type="{{ product.type | slugify }}"
-                data-role="{{ product.role | slugify }}">
+                data-type="alle {% for item in product.type %}{{ item | slugify }} {% endfor %}"
+                data-role="alle {% for item in product.role %}{{ item | slugify }} {% endfor %}">
 
                 <div
-                  class="relative z-10 flex items-center gap-4 py-4 -my-px text-left px-clamp-gap -mx-clamp-gap sm:-mx-2 sm:px-4 sm:rounded-lg hover:z-20"
-                  x-bind:class="expanded ? ' hover:bg-deepblue-200 bg-deepblue-50' : 'hover:bg-deepblue-200'">
+                  class="relative z-10 flex items-center gap-4 py-4 -my-px text-left px-clamp-gap -mx-clamp-gap sm:-mx-2 sm:px-4 sm:rounded-lg fine:hover:z-20"
+                  x-bind:class="expanded ? ' fine:hover:bg-deepblue-200 bg-deepblue-50' : 'fine:hover:bg-deepblue-200'">
                   {% if product.icon %}
                     {{ product.icon | svgContents('w-12 h-12 lg:w-14 lg:h-14 shrink-0') | safe }}
                   {% endif %}
@@ -302,7 +302,7 @@ bodyClass: ''
 
                 {% if product.egenSide %}
                 <div x-bind:hidden="!expanded" class="pt-4 pb-6 sm:px-6">
-                  <a class="inline-block mx-auto text-center underline hover:no-underline hover:text-blue-600" href="/produktoversikt/{{ product.title | slugify }}.html">Vis som egen side</a>
+                  <a class="inline-block mx-auto text-center underline fine:hover:no-underline fine:hover:text-blue-600" href="/produktoversikt/{{ product.title | slugify }}.html">Vis som egen side</a>
                 </div>
                 {% endif %}
 
@@ -320,7 +320,7 @@ bodyClass: ''
             Klage eller anke på vedtak?
           </h3>
           <p class="mt-2 max-w-prose">Hvis du har fått et vedtak fra NAV og du er uenig i vedtaket, har du rett til å klage eller anke.</p>
-          <p class="mb-2 mt-7"><a href="#" class="underline text-deepblue-600 hover:no-underline hover:text-deepblue-700">Les mer om dine klagerettigheter</a>.</p>
+          <p class="mb-2 mt-7"><a href="#" class="underline text-deepblue-600 fine:hover:no-underline fine:hover:text-deepblue-700">Les mer om dine klagerettigheter</a>.</p>
         </div>
 
       </div>

@@ -9,7 +9,7 @@
   },
   "scripts": {
     "eleventy-debug": "DEBUG=Eleventy* npx @11ty/eleventy",
-    "dev:eleventy": "ELEVENTY_ENV=development eleventy --config=eleventy.config.js --serve --incremental",
+    "dev:eleventy": "ELEVENTY_ENV=development eleventy --config=eleventy.config.js --serve",
     "dev:css": "postcss ./src/assets/main.css -o ./build/assets/main.min.css --watch",
     "dev": "concurrently npm:dev:*",
     "build:eleventy": "ELEVENTY_ENV=production eleventy --config=eleventy.config.js",
