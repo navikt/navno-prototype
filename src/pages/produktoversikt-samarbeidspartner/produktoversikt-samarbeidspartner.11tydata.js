@@ -2070,8 +2070,8 @@ const getTags = (array, key) => {
 
   return [...tagSet].sort((a, b) => {
     if (a == b) return 0;
-    if (a == "Annet") return 1;
-    if (b == "Annet") return -1;
+    if (a == "Andre") return 1;
+    if (b == "Andre") return -1;
 
     if (a < b) return -1;
     if (a > b) return 1;
