@@ -2,7 +2,7 @@ const products = [
   {
     title: "Sykepengeforsikring for selvstendig næringsdrivende",
     ingress: "Forsikring for å få bedre dekning når du blir sykmeldt.",
-    icon: "/src/_includes/svg/pictograms/neutral.svg",
+    icon: "/src/_includes/svg/pictograms/sykepenger.svg",
     type: ["Forsikring"],
     area: ["Helse og sykdom"],
     contentBlocks: [
@@ -47,7 +47,7 @@ const products = [
   {
     title: "Sykepengeforsikring for jordbrukere og reindriftsutøvere",
     ingress: "Forsikring for å få bedre dekning når du blir sykmeldt.",
-    icon: "/src/_includes/svg/pictograms/neutral.svg",
+    icon: "/src/_includes/svg/pictograms/sykepenger.svg",
     type: ["Forsikring"],
     area: ["Helse og sykdom"],
     contentBlocks: [
@@ -243,7 +243,7 @@ const products = [
     title: "Tolk på arbeidsplassen",
     ingress:
       "Den som er døv, hørselshemmet eller døvblind kan få tolkehjelp for å kunne utføre arbeidet.",
-    icon: "/src/_includes/svg/pictograms/neutral.svg",
+    icon: "/src/_includes/svg/pictograms/tegnspraak.svg",
     type: ["Tjeneste", "Refusjon"],
     area: ["Inkludering og tilrettelegging"],
     contentBlocks: [
@@ -501,7 +501,7 @@ const products = [
     title: "Dekking av sykepenger i arbeidsgiverperioden",
     ingress:
       "Dekking av sykepenger i arbeidsgiverperioden når en arbeidstaker har en langvarig eller kronisk sykdom som kan føre til hyppige sykefravær, eller sykmelding som henger sammen med graviditet.",
-    icon: "/src/_includes/svg/pictograms/neutral.svg",
+    icon: "/src/_includes/svg/pictograms/sykepenger.svg",
     type: ["Tiltak", "Refusjon"],
     area: ["Inkludering og tilrettelegging"],
     contentBlocks: [
@@ -1505,7 +1505,7 @@ const products = [
   {
     title: "Foreldrepenger",
     ingress: "Ingress her …",
-    icon: "/src/_includes/svg/pictograms/neutral.svg",
+    icon: "/src/_includes/svg/pictograms/foreldrepenger.svg",
     type: ["Pengestøtte til ansatt", "Refusjon"],
     area: ["Helse og sykdom"],
     contentBlocks: [
@@ -1566,7 +1566,7 @@ const products = [
   {
     title: "Svangerskapspenger",
     ingress: "Ingress her …",
-    icon: "/src/_includes/svg/pictograms/neutral.svg",
+    icon: "/src/_includes/svg/pictograms/svangerskapspenger.svg",
     type: ["Pengestøtte til ansatt", "Refusjon"],
     area: ["Helse og sykdom"],
     contentBlocks: [
@@ -1627,7 +1627,7 @@ const products = [
   {
     title: "Pleiepenger for sykt barn",
     ingress: "Ingress her …",
-    icon: "/src/_includes/svg/pictograms/neutral.svg",
+    icon: "/src/_includes/svg/pictograms/pleiepenger-sykt-barn.svg",
     type: ["Pengestøtte til ansatt", "Refusjon"],
     area: ["Helse og sykdom"],
     contentBlocks: [
@@ -1687,7 +1687,7 @@ const products = [
   {
     title: "Pleiepenger for utviklingshemmet person over 18 år",
     ingress: "Ingress her …",
-    icon: "/src/_includes/svg/pictograms/neutral.svg",
+    icon: "/src/_includes/svg/pictograms/pleiepenger-utviklingshemmet.svg",
     type: ["Pengestøtte til ansatt", "Refusjon"],
     area: ["Helse og sykdom"],
     contentBlocks: [
@@ -1747,7 +1747,7 @@ const products = [
   {
     title: "Pleiepenger i livets sluttfase",
     ingress: "Ingress her …",
-    icon: "/src/_includes/svg/pictograms/neutral.svg",
+    icon: "/src/_includes/svg/pictograms/pleiepenger-livets-sluttfase.svg",
     type: ["Pengestøtte til ansatt", "Refusjon"],
     area: ["Helse og sykdom"],
     contentBlocks: [
@@ -1807,7 +1807,7 @@ const products = [
   {
     title: "Opplæringspenger",
     ingress: "Ingress her …",
-    icon: "/src/_includes/svg/pictograms/neutral.svg",
+    icon: "/src/_includes/svg/pictograms/opplaeringspenger.svg",
     type: ["Pengestøtte til ansatt", "Refusjon"],
     area: ["Helse og sykdom"],
     contentBlocks: [
@@ -1867,7 +1867,7 @@ const products = [
   {
     title: "Omsorgspenger",
     ingress: "Ingress her …",
-    icon: "/src/_includes/svg/pictograms/neutral.svg",
+    icon: "/src/_includes/svg/pictograms/omsorgspenger.svg",
     type: ["Pengestøtte til ansatt", "Refusjon"],
     area: ["Helse og sykdom"],
     contentBlocks: [
@@ -1928,7 +1928,7 @@ const products = [
     title: "Sykepenger",
     ingress:
       "Erstatter inntekten til arbeidstakeren når de ikke kan jobbe på grunn av sykdom eller skade.",
-    icon: "/src/_includes/svg/pictograms/neutral.svg",
+    icon: "/src/_includes/svg/pictograms/sykepenger.svg",
     type: ["Pengestøtte til ansatt", "Refusjon"],
     area: ["Helse og sykdom"],
     contentBlocks: [
@@ -2051,7 +2051,7 @@ const products = [
   {
     title: "Dagpenger",
     ingress: "Ingress her …",
-    icon: "/src/_includes/svg/pictograms/neutral.svg",
+    icon: "/src/_includes/svg/pictograms/dagpenger.svg",
     type: ["Pengestøtte til ansatt"],
     area: ["Permittering og nedbemanning"],
     contentBlocks: [
