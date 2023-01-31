@@ -3,7 +3,7 @@ const products = [
     title: "Tannelegerklæring ved yrkesskade",
     ingress:
       "I sakene hvor det er aktuelt, kan du som tannlege bli bedt om å fylle ut en tannlegeerklæring.",
-    icon: "/src/_includes/svg/pictograms/bidrag-sarlige-utgifter.svg",
+    icon: "/src/_includes/svg/pictograms/slik-gjor-du-det.svg",
     type: ["Skjema"],
     role: ["Tannlege"],
     contentBlocks: [
@@ -32,7 +32,7 @@ const products = [
         data: [
           {
             text: "Yrkesskade eller yrkessykdom",
-            dot: "bg-green-300",
+            dot: "bg-lightblue-300",
           },
         ],
       },
@@ -42,7 +42,7 @@ const products = [
     title: "Yrkesskade eller yrkessykdom",
     ingress:
       "Hvis skaden eller sykdommen blir godkjent som yrkesskade, vil pasienten kunne få dekket utgifter til ulik helsehjelp.",
-    icon: "/src/_includes/svg/pictograms/menerstatning.svg",
+    icon: "/src/_includes/svg/pictograms/slik-gjor-du-det.svg",
     type: ["Skjema"],
     role: ["Lege"],
     contentBlocks: [
@@ -84,7 +84,7 @@ const products = [
         data: [
           {
             text: "Yrkesskade eller yrkessykdom",
-            dot: "bg-green-300",
+            dot: "bg-lightblue-300",
           },
         ],
       },
@@ -244,7 +244,7 @@ const products = [
     title: "Omsorgspenger",
     ingress:
       "Når en må være hjemme med barn som for eksempel har fått omgangssyke.",
-    icon: "/src/_includes/svg/pictograms/neutral.svg",
+    icon: "/src/_includes/svg/pictograms/omsorgspenger.svg",
     type: ["Pengestøtte"],
     role: ["Lege"],
     contentBlocks: [
@@ -385,7 +385,7 @@ const products = [
     title: "Sykepenger",
     ingress:
       "Erstatter inntekten din når pasienten ikke kan jobbe på grunn av sykdom eller skade.",
-    icon: "/src/_includes/svg/pictograms/neutral.svg",
+    icon: "/src/_includes/svg/pictograms/sykepenger.svg",
     type: ["Pengestøtte"],
     role: ["Lege"],
     contentBlocks: [
@@ -653,7 +653,7 @@ const products = [
     title: "Legeerklæringved arbeidsuførhet",
     ingress:
       "Denne brukes i forbindelse med søknad om sykepenger(?), arbeidsavklaringspenger (AAP), uføretrygd og supplerende stønad for uføre flyktninger. Erklæringen kan skrives av lege, psykolog, fysioterapeut, manuellterapeut eller kiropraktor dersom NAV etterspør dette.",
-    icon: "/src/_includes/svg/pictograms/neutral.svg",
+    icon: "/src/_includes/svg/pictograms/slik-gjor-du-det.svg",
     type: ["Skjema"],
     role: ["Lege", "Annen behandler"],
     contentBlocks: [
@@ -686,7 +686,7 @@ const products = [
         data: [
           {
             text: "Legeerklæringved arbeidsuførhet",
-            dot: "bg-green-300",
+            dot: "bg-lightblue-300",
           },
         ],
       },
@@ -696,7 +696,7 @@ const products = [
     title: "Fullmakt og innsyn",
     ingress:
       "Hvis du ringer til NAV om en pasient og ønsker innsyn i saken, må du ha fullmakt. Du ringer da ikke som behandler, men på vegne av en privatperson. Det er pasienten som gir fullmakten.",
-    icon: "/src/_includes/svg/pictograms/neutral.svg",
+    icon: "/src/_includes/svg/pictograms/slik-gjor-du-det.svg",
     type: ["Skjema"],
     role: ["Lege", "Hjelpemiddelformidler", "Bostyrer"],
     contentBlocks: [
@@ -739,7 +739,7 @@ const products = [
         data: [
           {
             text: "Fullmakt og innsyn",
-            dot: "bg-green-300",
+            dot: "bg-lightblue-300",
           },
         ],
       },
@@ -789,7 +789,7 @@ const products = [
   {
     title: "Førerhund",
     ingress: "Hjelper blinde og svaksynte å ta seg frem innendørs og utendørs.",
-    icon: "/src/_includes/svg/pictograms/neutral.svg",
+    icon: "/src/_includes/svg/pictograms/forerhund.svg",
     type: ["Hjelpemiddel"],
     role: ["Lege", "Optiker eller øyelege"],
     contentBlocks: [
@@ -928,7 +928,7 @@ const products = [
   {
     title: "Øyeprotese",
     ingress: "Erstatter øyet når en mangler et øye, eller har skadet øyet.",
-    icon: "/src/_includes/svg/pictograms/neutral.svg",
+    icon: "/src/_includes/svg/pictograms/oyeprotese.svg",
     type: ["Hjelpemiddel"],
     role: ["Lege"],
     contentBlocks: [
@@ -1835,7 +1835,7 @@ const products = [
   {
     title: "Deltakeroversikt for tiltaksarrangører",
     ingress: "Hold oversikt over deltakere i tiltakene og dialogen med NAV.",
-    icon: "/src/_includes/svg/pictograms/neutral.svg",
+    icon: "/src/_includes/svg/pictograms/slik-gjor-du-det.svg",
     type: ["Skjema"],
     role: ["Tiltaksarrangør"],
     contentBlocks: [
@@ -1867,7 +1867,7 @@ const products = [
         data: [
           {
             text: "Deltakeroversikt for tiltaksarrangører",
-            dot: "bg-green-300",
+            dot: "bg-lightblue-300",
           },
         ],
       },
@@ -1876,7 +1876,7 @@ const products = [
   {
     title: "Fullmakt til å søke om hjelpemidler",
     ingress: "Fullmakt i forbindelse med søknad om tekniske hjelpemidler",
-    icon: "/src/_includes/svg/pictograms/neutral.svg",
+    icon: "/src/_includes/svg/pictograms/slik-gjor-du-det.svg",
     type: ["Skjema"],
     role: ["Optiker eller øyelege", "Hjelpemiddelformidler"],
     contentBlocks: [
@@ -1908,7 +1908,7 @@ const products = [
         data: [
           {
             text: "Fullmakt til å søke om hjelpemidler)",
-            dot: "bg-green-300",
+            dot: "bg-lightblue-300",
           },
         ],
       },
@@ -2423,7 +2423,7 @@ const products = [
   {
     title: "Ortopediske hjelpemidler",
     ingress: "Ingress",
-    icon: "/src/_includes/svg/pictograms/neutral.svg",
+    icon: "/src/_includes/svg/pictograms/ortopediske-sko.svg",
     type: ["Pengestøtte", "Hjelpemiddel"],
     role: ["Hjelpemiddelformidler", "Lege"],
     contentBlocks: [
@@ -2672,7 +2672,7 @@ const products = [
   {
     title: "Meld behov for hjelpemidler",
     ingress: "Kommunalt ansatte kan melde behov om hjelpemidler digitalt.",
-    icon: "/src/_includes/svg/pictograms/neutral.svg",
+    icon: "/src/_includes/svg/pictograms/slik-gjor-du-det.svg",
     type: ["Hjelpemiddel"],
     role: ["Hjelpemiddelformidler", "Ansatt i kommunen"],
     contentBlocks: [
@@ -2704,7 +2704,7 @@ const products = [
         data: [
           {
             text: "Meld behov for hjelpemidler",
-            dot: "bg-green-300",
+            dot: "bg-lightblue-300",
           },
         ],
       },
@@ -2714,7 +2714,7 @@ const products = [
     title: "Oppfostringsbidrag",
     ingress:
       "Hvis kommunen overtar omsorgen for et barn, kan kommunen kreve et oppfostringsbidrag fra foreldrene hvis de har betalingsevne og det er rimelig ut fra situasjonen.",
-    icon: "/src/_includes/svg/pictograms/neutral.svg",
+    icon: "/src/_includes/svg/pictograms/slik-gjor-du-det.svg",
     type: ["Pengestøtte"],
     role: ["Ansatt i kommunen"],
     contentBlocks: [
@@ -2750,7 +2750,203 @@ const products = [
         data: [
           {
             text: "Oppfostringsbidrag",
-            dot: "bg-green-300",
+            dot: "bg-lightblue-300",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    title: "Demontering av heis",
+    ingress:
+      "Ingress",
+    icon: "/src/_includes/svg/pictograms/slik-gjor-du-det.svg",
+    type: ["Skjema"],
+    role: ["Ortopedisk verksted"],
+    contentBlocks: [
+      {
+        type: "markdown",
+        data: [
+          "### Last ned skjema for demontering av trappeheis, løfteplattform, sjaktheis eller takheis",
+          "Skjemaet skal fylles ut og returneres sammen med demontert heis.",
+        ],
+      },
+      {
+        type: "actions",
+        data: [
+          {
+            text: "Last ned skjema",
+            variant: "primary",
+          },
+        ],
+      },
+      {
+        type: "line",
+      },
+      {
+        type: "markdown",
+        data: ["### Mer om"],
+      },
+      {
+        type: "microcards",
+        data: [
+          {
+            text: "Demontering av heis",
+            dot: "bg-lightblue-300",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    title: "Oppgjør for ortopediske verksteder",
+    ingress:
+      "De ortopediske verkstedene som har avtale med NAV, forplikter seg til å levere elektronisk oppgjør.",
+    icon: "/src/_includes/svg/pictograms/slik-gjor-du-det.svg",
+    type: ["Skjema"],
+    role: ["Ortopedisk verksted"],
+    contentBlocks: [
+      {
+        type: "markdown",
+        data: [
+          "### Lever oppgjør",
+          "For å få støtten, må verkstedene levere oppgjør gjennom programmet ORTOK.",
+        ],
+      },
+      {
+        type: "line",
+      },
+      {
+        type: "markdown",
+        data: ["### Mer om"],
+      },
+      {
+        type: "microcards",
+        data: [
+          {
+            text: "Demontering av heis",
+            dot: "bg-lightblue-300",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    title: "Opphold i kriminalomsorgen - meld fra",
+    ingress:
+      "Det er egne regler for å beregne økonomiske ytelser under institusjonsopphold og i fengsel. NAV har derfor behov for rask informasjon fra Kriminalomsorgen når en person kommer i varetekt eller soner en fengselsdom.",
+    icon: "/src/_includes/svg/pictograms/slik-gjor-du-det.svg",
+    type: ["Skjema"],
+    role: ["Andre"],
+    contentBlocks: [
+      {
+        type: "markdown",
+        data: [
+          "### Meld fra om institusjonsopphold",
+          "Noe tekst",
+        ],
+      },
+      {
+        type: "actions",
+        data: [
+          {
+            text: "Send skjema",
+            variant: "primary",
+          },
+          {
+            text: "Ettersend dokumentasjon",
+            variant: "secondary",
+          },
+        ],
+      },
+      {
+        type: "line",
+      },
+      {
+        type: "markdown",
+        data: ["### Mer om"],
+      },
+      {
+        type: "microcards",
+        data: [
+          {
+            text: "Meld fra om opphold i kriminalomsorgen",
+            dot: "bg-lightblue-300",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    title: "Opphold på alders- eller sykehjem - meld fra",
+    ingress:
+      "Det er viktig at NAV får melding om innleggelse/utskriving ved opphold på alders- og sykehjem da dette kan ha betydning for rettigheter til ytelser eller det kan ha konsekvenser for beregningen av ytelsen eller at ytelsen skal stanses eller reduseres.",
+    icon: "/src/_includes/svg/pictograms/slik-gjor-du-det.svg",
+    type: ["Skjema"],
+    role: ["Andre"],
+    contentBlocks: [
+      {
+        type: "markdown",
+        data: [
+          "### Meld fra om innleggelse",
+          "Noe tekst",
+        ],
+      },
+      {
+        type: "actions",
+        data: [
+          {
+            text: "Send skjema",
+            variant: "primary",
+          },
+        ],
+      },
+      {
+        type: "line",
+      },
+      {
+        type: "markdown",
+        data: ["### Mer om"],
+      },
+      {
+        type: "microcards",
+        data: [
+          {
+            text: "Meld fra om opphold på alders- eller sykehjem",
+            dot: "bg-lightblue-300",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    title: "Innleggelse på helseinstitusjon - meld fra",
+    ingress:
+      "Det er viktig at helseinstitusjoner melder raskt om personens opphold på helseinstitusjon. Dette har påvirkning på personens ytelser fra NAV, i form av at ytelser kan stanses eller reduseres.",
+    icon: "/src/_includes/svg/pictograms/slik-gjor-du-det.svg",
+    type: ["Skjema"],
+    role: ["Andre"],
+    contentBlocks: [
+      {
+        type: "markdown",
+        data: [
+          "### Meld fra om innleggelse",
+          "Hver enkelt helseinstitusjon må melde fra skriftlig i form av et brev til NAV. Brevet skal sendes til det NAV lokale kontoret en person tilhører. Det jobbes med å lage et Altinn-skjema.",
+        ],
+      },
+      {
+        type: "line",
+      },
+      {
+        type: "markdown",
+        data: ["### Mer om"],
+      },
+      {
+        type: "microcards",
+        data: [
+          {
+            text: "meld fra om innleggelse på helseinstitusjon",
+            dot: "bg-lightblue-300",
           },
         ],
       },
