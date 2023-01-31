@@ -8,7 +8,7 @@
           <h2 class="text-xl font-semibold">Mine oppgaver</h2>
           <div class="grid gap-1 mt-2">
             {% for task in notifications.myTasks %}
-              <a class="grid gap-1 px-4 py-3 bg-white rounded-lg hover:ring-2 hover:ring-blue-600" href="#">
+              <a class="grid gap-1 px-4 py-3 bg-white rounded-lg fine:hover:ring-2 fine:hover:ring-blue-600" href="#">
                 <div class="flex items-baseline justify-between gap-4">
                   <h3 class="text-lg font-semibold">{{ task.title | safe }}</h3>
                   <p class="text-sm opacity-70">{{ task.date }}</p>
@@ -31,7 +31,7 @@
           <h3 class="text-xl font-semibold">Innboks</h3>
           <div class="grid gap-1 mt-2">
             {% for message in notifications.myInbox %}
-              <a class="hover:ring-2 hover:ring-blue-600 grid gap-3 items-start grid-cols-[2.25rem_1fr] py-3 px-4 rounded-md bg-white" href="#">
+              <a class="fine:hover:ring-2 fine:hover:ring-blue-600 grid gap-3 items-start grid-cols-[2.25rem_1fr] py-3 px-4 rounded-md bg-white" href="#">
                 <div class="grid text-xl mt-2 font-semibold text-white rounded-full place-items-center aspect-square {{ message.color or "bg-gray-300" }}" aria-hidden="true">
                   <span class="-mr-px text-center">{{ message.title | first }}</span>
                 </div>

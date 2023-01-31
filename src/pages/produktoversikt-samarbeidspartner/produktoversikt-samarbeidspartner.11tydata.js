@@ -3,6 +3,7 @@ const products = [
     title: "Tannelegerklæring ved yrkesskade",
     ingress:
       "I sakene hvor det er aktuelt, kan du som tannlege bli bedt om å fylle ut en tannlegeerklæring.",
+    icon: "/src/_includes/svg/pictograms/neutral.svg",
     type: ["Skjema"],
     role: ["Tannlege"],
     contentBlocks: [
@@ -41,6 +42,7 @@ const products = [
     title: "Yrkesskade eller yrkessykdom",
     ingress:
       "Hvis skaden eller sykdommen blir godkjent som yrkesskade, vil pasienten kunne få dekket utgifter til ulik helsehjelp.",
+    icon: "/src/_includes/svg/pictograms/neutral.svg",
     type: ["Skjema"],
     role: ["Lege"],
     contentBlocks: [
@@ -92,6 +94,7 @@ const products = [
     title: "Pleiepenger for sykt barn",
     ingress:
       "Når en må være borte fra jobb for å pleie og ta vare på et barn som er, eller har vært, innlagt eller til behandling på sykehus.",
+    icon: "/src/_includes/svg/pictograms/neutral.svg",
     type: ["Pengestøtte"],
     role: ["Lege"],
     contentBlocks: [
@@ -124,6 +127,7 @@ const products = [
     title: "Pleiepenger for en utviklingshemmet person over 18 år",
     ingress:
       "Når en må være borte fra jobb for å ta vare på en person over 18 år, som er utviklingshemmet og svært alvorlig syk.",
+    icon: "/src/_includes/svg/pictograms/neutral.svg",
     type: ["Pengestøtte"],
     role: ["Lege"],
     contentBlocks: [
@@ -156,6 +160,7 @@ const products = [
     title: "Pleiepenger i livets sluttfase",
     ingress:
       "Når en må være borte fra jobb for å ta vare på en person som er i livets sluttfase.",
+    icon: "/src/_includes/svg/pictograms/neutral.svg",
     type: ["Pengestøtte"],
     role: ["Lege"],
     contentBlocks: [
@@ -197,6 +202,7 @@ const products = [
     title: "Opplæringspenger",
     ingress:
       "Når en må være borte fra jobb for å få opplæring for et barn eller en voksen, som har en funksjonshemning eller langvarig sykdom.",
+    icon: "/src/_includes/svg/pictograms/neutral.svg",
     type: ["Pengestøtte"],
     role: ["Lege"],
     contentBlocks: [
@@ -238,6 +244,7 @@ const products = [
     title: "Omsorgspenger",
     ingress:
       "Når en må være hjemme med barn som for eksempel har fått omgangssyke.",
+    icon: "/src/_includes/svg/pictograms/neutral.svg",
     type: ["Pengestøtte"],
     role: ["Lege"],
     contentBlocks: [
@@ -279,6 +286,7 @@ const products = [
     title: "Grunnstønad",
     ingress:
       "Gir økonomisk støtte til ekstrautgifter når pasienten har en varig skade, sykdom eller funksjonsnedsettelse.",
+    icon: "/src/_includes/svg/pictograms/neutral.svg",
     type: ["Pengestøtte"],
     role: ["Lege"],
     contentBlocks: [
@@ -311,6 +319,7 @@ const products = [
     title: "Hjelpestønad",
     ingress:
       "Økonomisk støtte til barn eller voksne som trenger langvarig, privat pleie og tilsyn.",
+    icon: "/src/_includes/svg/pictograms/neutral.svg",
     type: ["Pengestøtte"],
     role: ["Lege"],
     contentBlocks: [
@@ -343,6 +352,7 @@ const products = [
     title: "Forhøyet hjelpestønad",
     ingress:
       "Økonomisk støtte til barn under 18 år når behovet for pleie og tilsyn er vesentlig enn det ordinær hjelpestønad kan dekke.",
+    icon: "/src/_includes/svg/pictograms/neutral.svg",
     type: ["Pengestøtte"],
     role: ["Lege"],
     contentBlocks: [
@@ -375,6 +385,7 @@ const products = [
     title: "Sykepenger",
     ingress:
       "Erstatter inntekten din når pasienten ikke kan jobbe på grunn av sykdom eller skade.",
+    icon: "/src/_includes/svg/pictograms/neutral.svg",
     type: ["Pengestøtte"],
     role: ["Lege"],
     contentBlocks: [
@@ -490,6 +501,7 @@ const products = [
     title: "Arbeidsavklaringspenger (AAP)",
     ingress:
       "Sikrer pasienten inntekt i perioder de har behov for hjelp fra NAV på grunn av sykdom eller skade.",
+    icon: "/src/_includes/svg/pictograms/neutral.svg",
     type: ["Pengestøtte"],
     role: ["Lege"],
     contentBlocks: [
@@ -532,6 +544,7 @@ const products = [
     title: "Uføretrygd)",
     ingress:
       "Sikrer pasienten inntekt hvis inntektsevnen er varig redusert på grunn av sykdom eller skade.",
+    icon: "/src/_includes/svg/pictograms/neutral.svg",
     type: ["Pengestøtte"],
     role: ["Lege"],
     contentBlocks: [
@@ -597,6 +610,7 @@ const products = [
     title: "Supplerende stønad til uføre flyktninger",
     ingress:
       "Sikrer pasienten inntekt hvis inntektsevnen er varig redusert på grunn av sykdom eller skade.",
+    icon: "/src/_includes/svg/pictograms/neutral.svg",
     type: ["Pengestøtte"],
     role: ["Lege"],
     contentBlocks: [
@@ -639,6 +653,7 @@ const products = [
     title: "Legeerklæringved arbeidsuførhet",
     ingress:
       "Denne brukes i forbindelse med søknad om sykepenger(?), arbeidsavklaringspenger (AAP), uføretrygd og supplerende stønad for uføre flyktninger. Erklæringen kan skrives av lege, psykolog, fysioterapeut, manuellterapeut eller kiropraktor dersom NAV etterspør dette.",
+    icon: "/src/_includes/svg/pictograms/neutral.svg",
     type: ["Skjema"],
     role: ["Lege", "Annen behandler"],
     contentBlocks: [
@@ -681,6 +696,7 @@ const products = [
     title: "Fullmakt og innsyn",
     ingress:
       "Hvis du ringer til NAV om en pasient og ønsker innsyn i saken, må du ha fullmakt. Du ringer da ikke som behandler, men på vegne av en privatperson. Det er pasienten som gir fullmakten.",
+    icon: "/src/_includes/svg/pictograms/neutral.svg",
     type: ["Skjema"],
     role: ["Lege", "Annen behandler"],
     contentBlocks: [
@@ -732,6 +748,7 @@ const products = [
   {
     title: "Seksualtekniske hjelpemidler",
     ingress: "Kan gi et bedre sexliv når en har nedsatt seksualfunksjon.",
+    icon: "/src/_includes/svg/pictograms/neutral.svg",
     type: ["Pengestøtte", "Hjelpemiddel"],
     role: ["Lege"],
     contentBlocks: [
@@ -772,6 +789,7 @@ const products = [
   {
     title: "Førerhund",
     ingress: "Hjelper blinde og svaksynte å ta seg frem innendørs og utendørs.",
+    icon: "/src/_includes/svg/pictograms/neutral.svg",
     type: ["Hjelpemiddel"],
     role: ["Lege", "Optiker eller øyelege"],
     contentBlocks: [
@@ -803,6 +821,7 @@ const products = [
   {
     title: "Servicehund",
     ingress: "Hjelper pasienter med fysiske funksjonsnedsettelser i hverdagen.",
+    icon: "/src/_includes/svg/pictograms/neutral.svg",
     type: ["Hjelpemiddel"],
     role: ["Lege"],
     contentBlocks: [
@@ -835,6 +854,7 @@ const products = [
     title: "Bilstønad",
     ingress:
       "Støtte til bil, tilpasning av bil og spesialutstyr til bruk i bil.",
+    icon: "/src/_includes/svg/pictograms/neutral.svg",
     type: ["Pengestøtte", "Hjelpemiddel"],
     role: ["Lege"],
     contentBlocks: [
@@ -876,6 +896,7 @@ const products = [
     title: "Brystprotese",
     ingress:
       "Etterligner et bryst i form og størrelse, og finnes i mange ulike utgaver.",
+    icon: "/src/_includes/svg/pictograms/neutral.svg",
     type: ["Pengestøtte", "Hjelpemiddel"],
     role: ["Lege"],
     contentBlocks: [
@@ -907,6 +928,7 @@ const products = [
   {
     title: "Øyeprotese",
     ingress: "Erstatter øyet når en mangler et øye, eller har skadet øyet.",
+    icon: "/src/_includes/svg/pictograms/neutral.svg",
     type: ["Hjelpemiddel"],
     role: ["Lege"],
     contentBlocks: [
@@ -938,6 +960,7 @@ const products = [
   {
     title: "Ansiktsprotese",
     ingress: "Etterligner den delen av ansiktet som mangler eller er skadet.",
+    icon: "/src/_includes/svg/pictograms/neutral.svg",
     type: ["Pengestøtte", "Hjelpemiddel"],
     role: ["Lege"],
     contentBlocks: [
@@ -969,6 +992,7 @@ const products = [
   {
     title: "Parykk",
     ingress: "Erstatter eget hår på hele hodet, eller deler av hodet.",
+    icon: "/src/_includes/svg/pictograms/neutral.svg",
     type: ["Pengestøtte", "Hjelpemiddel"],
     role: ["Lege"],
     contentBlocks: [
@@ -1000,6 +1024,7 @@ const products = [
   {
     title: "Lese- og sekretærhjelp",
     ingress: "Hjelper deg med å lese og skrive når du er blind eller svaksynt.",
+    icon: "/src/_includes/svg/pictograms/neutral.svg",
     type: ["Pengestøtte", "Hjelpemiddel"],
     role: ["Optiker eller øyelege", "Andre"],
     contentBlocks: [
@@ -1054,6 +1079,7 @@ const products = [
   {
     title: "Tolk for hørselshemmede",
     ingress: "Utfører tolkeoppdrag for døve, døvblinde og hørselshemmede.",
+    icon: "/src/_includes/svg/pictograms/neutral.svg",
     type: ["Tjeneste", "Hjelpemiddel"],
     role: ["Lege"],
     contentBlocks: [
@@ -1085,6 +1111,7 @@ const products = [
   {
     title: "Tolk- og ledsagerhjelp for døvblinde",
     ingress: "Utfører tolkeoppdrag for døve, døvblinde og hørselshemmede.",
+    icon: "/src/_includes/svg/pictograms/neutral.svg",
     type: ["Tjeneste", "Hjelpemiddel"],
     role: ["Lege"],
     contentBlocks: [
@@ -1116,6 +1143,7 @@ const products = [
   {
     title: "Høreapparat",
     ingress: "Forsterker lyden rundt deg når en har nedsatt hørsel.",
+    icon: "/src/_includes/svg/pictograms/neutral.svg",
     type: ["Pengestøtte", "Hjelpemiddel"],
     role: ["Lege"],
     contentBlocks: [
@@ -1161,6 +1189,7 @@ const products = [
     title: "Ortopediske sko",
     ingress:
       "Hjelper når en har feilstilling i foten eller ankelen, har problemer med føttene på grunn av diabetes eller revmatisme, eller har en annen funksjonsnedsettelse i føttene.",
+    icon: "/src/_includes/svg/pictograms/neutral.svg",
     type: ["Pengestøtte", "Hjelpemiddel"],
     role: ["Lege"],
     contentBlocks: [
@@ -1206,6 +1235,7 @@ const products = [
     title: "Ortoser",
     ingress:
       "Stabiliserer eller gir bedre funksjon når du har en kroppsdel som er lammet eller svekket.",
+    icon: "/src/_includes/svg/pictograms/neutral.svg",
     type: ["Pengestøtte", "Hjelpemiddel"],
     role: ["Lege"],
     contentBlocks: [
@@ -1250,6 +1280,7 @@ const products = [
   {
     title: "Arm- og benproteser",
     ingress: "Erstatter en manglende kroppsdel.",
+    icon: "/src/_includes/svg/pictograms/neutral.svg",
     type: ["Hjelpemiddel"],
     role: ["Lege"],
     contentBlocks: [
@@ -1295,6 +1326,7 @@ const products = [
     title: "Funksjonsassistanse i arbeidslivet",
     ingress:
       "Hjelper deg med praktiske oppgaver når det er nødvendig for at du skal kunne utføre jobben din.",
+    icon: "/src/_includes/svg/pictograms/neutral.svg",
     type: ["Tjeneste", "Hjelpemiddel"],
     role: ["Lege"],
     contentBlocks: [
@@ -1326,6 +1358,7 @@ const products = [
   {
     title: "Grunnmønster og søm av klær",
     ingress: "Brukes som grunnlag for å skreddersy klær.",
+    icon: "/src/_includes/svg/pictograms/neutral.svg",
     type: ["Pengestøtte"],
     role: ["Lege"],
     contentBlocks: [
@@ -1358,6 +1391,7 @@ const products = [
     title: "Arbeidsforberedende trening",
     ingress:
       "Skjermet og tilrettelagt jobb i en oppstartsfase, før en går over i arbeidstrening hos bedrifter i ordinært arbeidsliv.",
+    icon: "/src/_includes/svg/pictograms/neutral.svg",
     type: ["Tiltak"],
     role: ["Tiltaksarrangør"],
     contentBlocks: [
@@ -1449,6 +1483,7 @@ const products = [
   {
     title: "Varig tilrettelagt arbeid i skjermet virksomhet",
     ingress: "Tilrettelagt jobb i en skjermet bedrift.",
+    icon: "/src/_includes/svg/pictograms/neutral.svg",
     type: ["Tiltak"],
     role: ["Tiltaksarrangør"],
     contentBlocks: [
@@ -1541,6 +1576,7 @@ const products = [
     title: "Arbeidsmarkedsopplæring (AMO)",
     ingress:
       "AMO-kurs eller ordinær utdanning for å bli kvalifisert til ledige jobber.",
+    icon: "/src/_includes/svg/pictograms/neutral.svg",
     type: ["Tiltak"],
     role: ["Tiltaksarrangør"],
     contentBlocks: [
@@ -1585,6 +1621,7 @@ const products = [
   {
     title: "Oppfølging",
     ingress: "Støtte for å klare å skaffe eller beholde en jobb.",
+    icon: "/src/_includes/svg/pictograms/neutral.svg",
     type: ["Tiltak"],
     role: ["Tiltaksarrangør"],
     contentBlocks: [
@@ -1637,6 +1674,7 @@ const products = [
   {
     title: "Avklaring",
     ingress: "Støtte for å klare å skaffe eller beholde en jobb.",
+    icon: "/src/_includes/svg/pictograms/neutral.svg",
     type: ["Tiltak"],
     role: ["Tiltaksarrangør"],
     contentBlocks: [
@@ -1689,6 +1727,7 @@ const products = [
   {
     title: "Arbeidsrettet rehabilitering",
     ingress: "Støtte for å klare å skaffe eller beholde en jobb.",
+    icon: "/src/_includes/svg/pictograms/neutral.svg",
     type: ["Tiltak"],
     role: ["Tiltaksarrangør"],
     contentBlocks: [
@@ -1741,6 +1780,7 @@ const products = [
   {
     title: "Deltakeroversikt for tiltaksarrangører",
     ingress: "Hold oversikt over deltakere i tiltakene og dialogen med NAV.",
+    icon: "/src/_includes/svg/pictograms/neutral.svg",
     type: ["Skjema"],
     role: ["Tiltaksarrangør"],
     contentBlocks: [
@@ -1781,6 +1821,7 @@ const products = [
   {
     title: "Fullmakt til å søke om hjelpemidler",
     ingress: "Fullmakt i forbindelse med søknad om tekniske hjelpemidler",
+    icon: "/src/_includes/svg/pictograms/neutral.svg",
     type: ["Skjema"],
     role: ["Optiker eller øyelege", "Ergoterapeut"],
     contentBlocks: [
@@ -1821,6 +1862,7 @@ const products = [
   {
     title: "Briller til barn",
     ingress: "Tilskudd til barn og unge under 18 år som trenger briller.",
+    icon: "/src/_includes/svg/pictograms/neutral.svg",
     type: ["Pengestøtte", "Hjelpemiddel"],
     role: ["Optiker eller øyelege"],
     contentBlocks: [
@@ -1880,6 +1922,7 @@ const products = [
   {
     title: "Irislinse",
     ingress: "Tilskudd til barn og unge under 18 år som trenger briller.",
+    icon: "/src/_includes/svg/pictograms/neutral.svg",
     type: ["Pengestøtte", "Hjelpemiddel"],
     role: ["Optiker eller øyelege"],
     contentBlocks: [
@@ -1920,6 +1963,7 @@ const products = [
   {
     title: "Hørselshjelpemidler",
     ingress: "Ingress",
+    icon: "/src/_includes/svg/pictograms/neutral.svg",
     type: ["Pengestøtte", "Hjelpemiddel"],
     role: ["Ergoterapeut"],
     contentBlocks: [
@@ -2070,8 +2114,8 @@ const getTags = (array, key) => {
 
   return [...tagSet].sort((a, b) => {
     if (a == b) return 0;
-    if (a == "Annet") return 1;
-    if (b == "Annet") return -1;
+    if (a == "Andre") return 1;
+    if (b == "Andre") return -1;
 
     if (a < b) return -1;
     if (a > b) return 1;
