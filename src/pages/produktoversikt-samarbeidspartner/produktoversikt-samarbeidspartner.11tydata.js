@@ -3,7 +3,7 @@ const products = [
     title: "Tannelegerklæring ved yrkesskade",
     ingress:
       "I sakene hvor det er aktuelt, kan du som tannlege bli bedt om å fylle ut en tannlegeerklæring.",
-    icon: "/src/_includes/svg/pictograms/neutral.svg",
+    icon: "/src/_includes/svg/pictograms/bidrag-sarlige-utgifter.svg",
     type: ["Skjema"],
     role: ["Tannlege"],
     contentBlocks: [
@@ -42,7 +42,7 @@ const products = [
     title: "Yrkesskade eller yrkessykdom",
     ingress:
       "Hvis skaden eller sykdommen blir godkjent som yrkesskade, vil pasienten kunne få dekket utgifter til ulik helsehjelp.",
-    icon: "/src/_includes/svg/pictograms/neutral.svg",
+    icon: "/src/_includes/svg/pictograms/menerstatning.svg",
     type: ["Skjema"],
     role: ["Lege"],
     contentBlocks: [
@@ -94,7 +94,7 @@ const products = [
     title: "Pleiepenger for sykt barn",
     ingress:
       "Når en må være borte fra jobb for å pleie og ta vare på et barn som er, eller har vært, innlagt eller til behandling på sykehus.",
-    icon: "/src/_includes/svg/pictograms/neutral.svg",
+    icon: "/src/_includes/svg/pictograms/pleiepenger-sykt-barn.svg",
     type: ["Pengestøtte"],
     role: ["Lege"],
     contentBlocks: [
@@ -127,7 +127,7 @@ const products = [
     title: "Pleiepenger for en utviklingshemmet person over 18 år",
     ingress:
       "Når en må være borte fra jobb for å ta vare på en person over 18 år, som er utviklingshemmet og svært alvorlig syk.",
-    icon: "/src/_includes/svg/pictograms/neutral.svg",
+    icon: "/src/_includes/svg/pictograms/pleiepenger-utviklingshemmet.svg",
     type: ["Pengestøtte"],
     role: ["Lege"],
     contentBlocks: [
@@ -160,7 +160,7 @@ const products = [
     title: "Pleiepenger i livets sluttfase",
     ingress:
       "Når en må være borte fra jobb for å ta vare på en person som er i livets sluttfase.",
-    icon: "/src/_includes/svg/pictograms/neutral.svg",
+    icon: "/src/_includes/svg/pictograms/pleiepenger-livets-sluttfase.svg",
     type: ["Pengestøtte"],
     role: ["Lege"],
     contentBlocks: [
@@ -202,7 +202,7 @@ const products = [
     title: "Opplæringspenger",
     ingress:
       "Når en må være borte fra jobb for å få opplæring for et barn eller en voksen, som har en funksjonshemning eller langvarig sykdom.",
-    icon: "/src/_includes/svg/pictograms/neutral.svg",
+    icon: "/src/_includes/svg/pictograms/opplaeringspenger.svg",
     type: ["Pengestøtte"],
     role: ["Lege"],
     contentBlocks: [
@@ -286,7 +286,7 @@ const products = [
     title: "Grunnstønad",
     ingress:
       "Gir økonomisk støtte til ekstrautgifter når pasienten har en varig skade, sykdom eller funksjonsnedsettelse.",
-    icon: "/src/_includes/svg/pictograms/neutral.svg",
+    icon: "/src/_includes/svg/pictograms/grunnstonad.svg",
     type: ["Pengestøtte"],
     role: ["Lege"],
     contentBlocks: [
@@ -319,7 +319,7 @@ const products = [
     title: "Hjelpestønad",
     ingress:
       "Økonomisk støtte til barn eller voksne som trenger langvarig, privat pleie og tilsyn.",
-    icon: "/src/_includes/svg/pictograms/neutral.svg",
+    icon: "/src/_includes/svg/pictograms/hjelpestonad.svg",
     type: ["Pengestøtte"],
     role: ["Lege"],
     contentBlocks: [
@@ -352,7 +352,7 @@ const products = [
     title: "Forhøyet hjelpestønad",
     ingress:
       "Økonomisk støtte til barn under 18 år når behovet for pleie og tilsyn er vesentlig enn det ordinær hjelpestønad kan dekke.",
-    icon: "/src/_includes/svg/pictograms/neutral.svg",
+    icon: "/src/_includes/svg/pictograms/hjelpestonad.svg",
     type: ["Pengestøtte"],
     role: ["Lege"],
     contentBlocks: [
@@ -501,7 +501,7 @@ const products = [
     title: "Arbeidsavklaringspenger (AAP)",
     ingress:
       "Sikrer pasienten inntekt i perioder de har behov for hjelp fra NAV på grunn av sykdom eller skade.",
-    icon: "/src/_includes/svg/pictograms/neutral.svg",
+    icon: "/src/_includes/svg/pictograms/aap.svg",
     type: ["Pengestøtte"],
     role: ["Lege"],
     contentBlocks: [
@@ -541,10 +541,10 @@ const products = [
     ],
   },
   {
-    title: "Uføretrygd)",
+    title: "Uføretrygd",
     ingress:
       "Sikrer pasienten inntekt hvis inntektsevnen er varig redusert på grunn av sykdom eller skade.",
-    icon: "/src/_includes/svg/pictograms/neutral.svg",
+    icon: "/src/_includes/svg/pictograms/uforetrygd.svg",
     type: ["Pengestøtte"],
     role: ["Lege"],
     contentBlocks: [
@@ -748,7 +748,7 @@ const products = [
   {
     title: "Seksualtekniske hjelpemidler",
     ingress: "Kan gi et bedre sexliv når en har nedsatt seksualfunksjon.",
-    icon: "/src/_includes/svg/pictograms/neutral.svg",
+    icon: "/src/_includes/svg/pictograms/seksualtekniske-hjelpemidler.svg",
     type: ["Pengestøtte", "Hjelpemiddel"],
     role: ["Lege"],
     contentBlocks: [
@@ -854,7 +854,7 @@ const products = [
     title: "Bilstønad",
     ingress:
       "Støtte til bil, tilpasning av bil og spesialutstyr til bruk i bil.",
-    icon: "/src/_includes/svg/pictograms/neutral.svg",
+    icon: "/src/_includes/svg/pictograms/grunnstonad.svg",
     type: ["Pengestøtte", "Hjelpemiddel"],
     role: ["Lege"],
     contentBlocks: [
@@ -896,7 +896,7 @@ const products = [
     title: "Brystprotese",
     ingress:
       "Etterligner et bryst i form og størrelse, og finnes i mange ulike utgaver.",
-    icon: "/src/_includes/svg/pictograms/neutral.svg",
+    icon: "/src/_includes/svg/pictograms/brystprotese.svg",
     type: ["Pengestøtte", "Hjelpemiddel"],
     role: ["Lege"],
     contentBlocks: [
@@ -960,7 +960,7 @@ const products = [
   {
     title: "Ansiktsprotese",
     ingress: "Etterligner den delen av ansiktet som mangler eller er skadet.",
-    icon: "/src/_includes/svg/pictograms/neutral.svg",
+    icon: "/src/_includes/svg/pictograms/ansiktsprotese.svg",
     type: ["Pengestøtte", "Hjelpemiddel"],
     role: ["Lege"],
     contentBlocks: [
@@ -992,7 +992,7 @@ const products = [
   {
     title: "Parykk",
     ingress: "Erstatter eget hår på hele hodet, eller deler av hodet.",
-    icon: "/src/_includes/svg/pictograms/neutral.svg",
+    icon: "/src/_includes/svg/pictograms/parykk.svg",
     type: ["Pengestøtte", "Hjelpemiddel"],
     role: ["Lege"],
     contentBlocks: [
@@ -1079,7 +1079,7 @@ const products = [
   {
     title: "Tolk for hørselshemmede",
     ingress: "Utfører tolkeoppdrag for døve, døvblinde og hørselshemmede.",
-    icon: "/src/_includes/svg/pictograms/neutral.svg",
+    icon: "/src/_includes/svg/pictograms/tegnspraak.svg",
     type: ["Tjeneste", "Hjelpemiddel"],
     role: ["Lege"],
     contentBlocks: [
@@ -1143,7 +1143,7 @@ const products = [
   {
     title: "Høreapparat",
     ingress: "Forsterker lyden rundt deg når en har nedsatt hørsel.",
-    icon: "/src/_includes/svg/pictograms/neutral.svg",
+    icon: "/src/_includes/svg/pictograms/horselshjelpemidler.svg",
     type: ["Pengestøtte", "Hjelpemiddel"],
     role: ["Lege"],
     contentBlocks: [
@@ -1189,7 +1189,7 @@ const products = [
     title: "Ortopediske sko",
     ingress:
       "Hjelper når en har feilstilling i foten eller ankelen, har problemer med føttene på grunn av diabetes eller revmatisme, eller har en annen funksjonsnedsettelse i føttene.",
-    icon: "/src/_includes/svg/pictograms/neutral.svg",
+    icon: "/src/_includes/svg/pictograms/ortopediske-sko.svg",
     type: ["Pengestøtte", "Hjelpemiddel"],
     role: ["Lege"],
     contentBlocks: [
@@ -1235,7 +1235,7 @@ const products = [
     title: "Ortoser",
     ingress:
       "Stabiliserer eller gir bedre funksjon når du har en kroppsdel som er lammet eller svekket.",
-    icon: "/src/_includes/svg/pictograms/neutral.svg",
+    icon: "/src/_includes/svg/pictograms/ortoser.svg",
     type: ["Pengestøtte", "Hjelpemiddel"],
     role: ["Lege"],
     contentBlocks: [
@@ -1280,7 +1280,7 @@ const products = [
   {
     title: "Arm- og benproteser",
     ingress: "Erstatter en manglende kroppsdel.",
-    icon: "/src/_includes/svg/pictograms/neutral.svg",
+    icon: "/src/_includes/svg/pictograms/arm-og-benprotese.svg",
     type: ["Hjelpemiddel"],
     role: ["Lege"],
     contentBlocks: [
@@ -2018,7 +2018,7 @@ const products = [
   {
     title: "Hørselshjelpemidler",
     ingress: "Ingress",
-    icon: "/src/_includes/svg/pictograms/neutral.svg",
+    icon: "/src/_includes/svg/pictograms/horselshjelpemidler.svg",
     type: ["Pengestøtte", "Hjelpemiddel"],
     role: ["Hjelpemiddelformidler"],
     contentBlocks: [
