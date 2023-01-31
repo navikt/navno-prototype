@@ -18,9 +18,9 @@ bodyClass: ''
         const item = el.querySelector('h2').textContent.toLowerCase()
         if (this.search === '') {
           return (
-            (this.typeFilter === 'alle' || el.dataset.type.startsWith(this.typeFilter))
+            el.dataset.type.split(' ').includes(this.typeFilter)
             &&
-            (this.roleFilter === 'alle' || el.dataset.role.startsWith(this.roleFilter))
+            el.dataset.role.split(' ').includes(this.roleFilter)
           )
         } else {
           this.typeFilter = 'alle'
@@ -262,8 +262,8 @@ bodyClass: ''
                 class="border-t focus-within:z-10 -mx-clamp-gap px-clamp-gap sm:-mx-0 sm:px-0 border-deepblue-100"
                 x-bind:class="expanded ? '' : ''"
                 x-show="filterItem($el)"
-                data-type="{{ product.type | slugify }}"
-                data-role="{{ product.role | slugify }}">
+                data-type="alle {% for item in product.type %}{{ item | slugify }} {% endfor %}"
+                data-role="alle {% for item in product.role %}{{ item | slugify }} {% endfor %}">
 
                 <div
                   class="relative z-10 flex items-center gap-4 py-4 -my-px text-left px-clamp-gap -mx-clamp-gap sm:-mx-2 sm:px-4 sm:rounded-lg fine:hover:z-20"
