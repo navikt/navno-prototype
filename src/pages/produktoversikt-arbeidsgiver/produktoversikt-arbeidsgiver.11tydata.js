@@ -136,14 +136,18 @@ const products = [
   },
   {
     title: "Frivillig yrkesskadetrygd",
-    ingress: "En frivillig forsikring for selvstendig næringsdrivende og frilansere.",
+    ingress:
+      "En frivillig forsikring for selvstendig næringsdrivende og frilansere.",
     icon: "/src/_includes/svg/pictograms/neutral.svg",
     type: ["Forsikring"],
     area: ["Helse og sykdom"],
     contentBlocks: [
       {
         type: "markdown",
-        data: ["### Søk om opptak i forsikringen", "Et kort avsnitt med tekst"],
+        data: [
+          "### Søk om opptak i forsikringen",
+          "Et kort avsnitt med tekst",
+        ],
       },
       {
         type: "actions",
@@ -180,12 +184,18 @@ const products = [
     title: "Forsikring for små bedrifter",
     ingress: "Forsikring mot ansvar for sykepenger i arbeidsgiverperioden.",
     icon: "/src/_includes/svg/pictograms/neutral.svg",
-    type: ["Forsikring", "Refusjon"],
+    type: [
+      "Forsikring",
+      "Refusjon",
+    ],
     area: ["Helse og sykdom"],
     contentBlocks: [
       {
         type: "markdown",
-        data: ["### Søk om opptak i forsikringen", "Et kort avsnitt med tekst"],
+        data: [
+          "### Søk om opptak i forsikringen",
+          "Et kort avsnitt med tekst",
+        ],
       },
       {
         type: "actions",
@@ -205,7 +215,10 @@ const products = [
       },
       {
         type: "markdown",
-        data: ["### Be om refusjon", "Et kort avsnitt med tekst"],
+        data: [
+          "### Be om refusjon",
+          "Et kort avsnitt med tekst",
+        ],
       },
       {
         type: "actions",
@@ -243,7 +256,10 @@ const products = [
     ingress:
       "Den som er døv, hørselshemmet eller døvblind kan få tolkehjelp for å kunne utføre arbeidet.",
     icon: "/src/_includes/svg/pictograms/tegnspraak.svg",
-    type: ["Tjeneste", "Refusjon"],
+    type: [
+      "Tjeneste",
+      "Refusjon",
+    ],
     area: ["Inkludering og tilrettelegging"],
     contentBlocks: [
       {
@@ -288,12 +304,18 @@ const products = [
     title: "Funksjonsassistanse i arbeidslivet",
     ingress: "Ingress her …",
     icon: "/src/_includes/svg/pictograms/neutral.svg",
-    type: ["Tjeneste", "Refusjon"],
+    type: [
+      "Tjeneste",
+      "Refusjon",
+    ],
     area: ["Inkludering og tilrettelegging"],
     contentBlocks: [
       {
         type: "markdown",
-        data: ["### Søk om funksjonsassistanse", "Tekst"],
+        data: [
+          "### Søk om funksjonsassistanse",
+          "Tekst",
+        ],
       },
       {
         type: "actions",
@@ -313,7 +335,10 @@ const products = [
       },
       {
         type: "markdown",
-        data: ["### Be om refusjon for funksjonsassistanse", "Tekst"],
+        data: [
+          "### Be om refusjon for funksjonsassistanse",
+          "Tekst",
+        ],
       },
       {
         type: "actions",
@@ -351,7 +376,10 @@ const products = [
     ingress:
       "Den som er blind eller svaksynt kan få lese- og sekretærhjelp når hjelpen er nødvendig for å kunne utføre arbeidet.",
     icon: "/src/_includes/svg/pictograms/neutral.svg",
-    type: ["Tjeneste", "Refusjon"],
+    type: [
+      "Tjeneste",
+      "Refusjon",
+    ],
     area: ["Inkludering og tilrettelegging"],
     contentBlocks: [
       {
@@ -439,7 +467,10 @@ const products = [
     ingress:
       "Et tilskudd til arbeidsgivere for å tilrettelegge en arbeids- eller tiltaksplass.",
     icon: "/src/_includes/svg/pictograms/neutral.svg",
-    type: ["Tiltak", "Refusjon"],
+    type: [
+      "Tiltak",
+      "Refusjon",
+    ],
     area: ["Inkludering og tilrettelegging"],
     contentBlocks: [
       {
@@ -463,7 +494,10 @@ const products = [
       },
       {
         type: "markdown",
-        data: ["### Be om refusjon", "Tekst"],
+        data: [
+          "### Be om refusjon",
+          "Tekst",
+        ],
       },
       {
         type: "actions",
@@ -501,7 +535,10 @@ const products = [
     ingress:
       "Dekking av sykepenger i arbeidsgiverperioden når en arbeidstaker har en langvarig eller kronisk sykdom som kan føre til hyppige sykefravær, eller sykmelding som henger sammen med graviditet.",
     icon: "/src/_includes/svg/pictograms/sykepenger.svg",
-    type: ["Tiltak", "Refusjon"],
+    type: [
+      "Tiltak",
+      "Refusjon",
+    ],
     area: ["Inkludering og tilrettelegging"],
     contentBlocks: [
       {
@@ -585,7 +622,10 @@ const products = [
     ingress:
       "En støtteordning der en medarbeider blir frikjøpt for å gi praktisk hjelp, veiledning og opplæring.",
     icon: "/src/_includes/svg/pictograms/neutral.svg",
-    type: ["Tiltak", "Refusjon"],
+    type: [
+      "Tiltak",
+      "Refusjon",
+    ],
     area: ["Inkludering og tilrettelegging"],
     contentBlocks: [
       {
@@ -609,7 +649,10 @@ const products = [
       },
       {
         type: "markdown",
-        data: ["### Be om refusjon", "Tekst"],
+        data: [
+          "### Be om refusjon",
+          "Tekst",
+        ],
       },
       {
         type: "actions",
@@ -647,7 +690,10 @@ const products = [
     ingress:
       "Et tilskudd til arbeidsgiveren der NAV dekker en del av lønnen til en arbeidstaker i en periode.",
     icon: "/src/_includes/svg/pictograms/neutral.svg",
-    type: ["Tiltak", "Refusjon"],
+    type: [
+      "Tiltak",
+      "Refusjon",
+    ],
     area: ["Inkludering og tilrettelegging"],
     contentBlocks: [
       {
@@ -671,7 +717,10 @@ const products = [
       },
       {
         type: "markdown",
-        data: ["### Be om refusjon", "Tekst"],
+        data: [
+          "### Be om refusjon",
+          "Tekst",
+        ],
       },
       {
         type: "actions",
@@ -709,7 +758,10 @@ const products = [
     ingress:
       "En støtteordning der NAV dekker en del av lønnen til en arbeidstaker.",
     icon: "/src/_includes/svg/pictograms/neutral.svg",
-    type: ["Tiltak", "Refusjon"],
+    type: [
+      "Tiltak",
+      "Refusjon",
+    ],
     area: ["Inkludering og tilrettelegging"],
     contentBlocks: [
       {
@@ -733,7 +785,10 @@ const products = [
       },
       {
         type: "markdown",
-        data: ["### Be om refusjon", "Tekst"],
+        data: [
+          "### Be om refusjon",
+          "Tekst",
+        ],
       },
       {
         type: "actions",
@@ -771,7 +826,10 @@ const products = [
     ingress:
       "Hjelp til arbeidsgiveren og arbeidstakeren fra en nøytral ekspert som har kompetanse på sykefravær og arbeidsmiljø.",
     icon: "/src/_includes/svg/pictograms/neutral.svg",
-    type: ["Tiltak", "Refusjon"],
+    type: [
+      "Tiltak",
+      "Refusjon",
+    ],
     area: ["Inkludering og tilrettelegging"],
     contentBlocks: [
       {
@@ -795,7 +853,10 @@ const products = [
       },
       {
         type: "markdown",
-        data: ["### Be om refusjon", "Tekst"],
+        data: [
+          "### Be om refusjon",
+          "Tekst",
+        ],
       },
       {
         type: "actions",
@@ -874,7 +935,10 @@ const products = [
     title: "Varig tilrettelagt arbeid i ordinær bedrift",
     ingress: "Ingress her …",
     icon: "/src/_includes/svg/pictograms/neutral.svg",
-    type: ["Tiltak", "Refusjon"],
+    type: [
+      "Tiltak",
+      "Refusjon",
+    ],
     area: ["Inkludering og tilrettelegging"],
     contentBlocks: [
       {
@@ -962,7 +1026,10 @@ const products = [
     ingress: "Ingress her …",
     icon: "/src/_includes/svg/pictograms/neutral.svg",
     type: ["Veiledning"],
-    area: ["Rekruttering", "Inkludering og tilrettelegging"],
+    area: [
+      "Rekruttering",
+      "Inkludering og tilrettelegging",
+    ],
   },
   {
     title: "Arbeidsgiverlos",
@@ -1391,7 +1458,10 @@ const products = [
     contentBlocks: [
       {
         type: "markdown",
-        data: ["### Endre kontonummer", "Dette gjør du hos Altinn."],
+        data: [
+          "### Endre kontonummer",
+          "Dette gjør du hos Altinn.",
+        ],
       },
       {
         type: "actions",
@@ -1430,7 +1500,10 @@ const products = [
     contentBlocks: [
       {
         type: "markdown",
-        data: ["### Send inntektsmelding", "Dette gjør du hos Altinn."],
+        data: [
+          "### Send inntektsmelding",
+          "Dette gjør du hos Altinn.",
+        ],
       },
       {
         type: "actions",
@@ -1505,7 +1578,10 @@ const products = [
     title: "Foreldrepenger",
     ingress: "Ingress her …",
     icon: "/src/_includes/svg/pictograms/foreldrepenger.svg",
-    type: ["Pengestøtte til ansatt", "Refusjon"],
+    type: [
+      "Pengestøtte til ansatt",
+      "Refusjon",
+    ],
     area: ["Helse og sykdom"],
     contentBlocks: [
       {
@@ -1529,7 +1605,10 @@ const products = [
       },
       {
         type: "markdown",
-        data: ["### Send trekkopplysninger for arbeidstaker", "Tekst"],
+        data: [
+          "### Send trekkopplysninger for arbeidstaker",
+          "Tekst",
+        ],
       },
       {
         type: "actions",
@@ -1566,7 +1645,10 @@ const products = [
     title: "Svangerskapspenger",
     ingress: "Ingress her …",
     icon: "/src/_includes/svg/pictograms/svangerskapspenger.svg",
-    type: ["Pengestøtte til ansatt", "Refusjon"],
+    type: [
+      "Pengestøtte til ansatt",
+      "Refusjon",
+    ],
     area: ["Helse og sykdom"],
     contentBlocks: [
       {
@@ -1590,7 +1672,10 @@ const products = [
       },
       {
         type: "markdown",
-        data: ["### Send trekkopplysninger for arbeidstaker", "Tekst"],
+        data: [
+          "### Send trekkopplysninger for arbeidstaker",
+          "Tekst",
+        ],
       },
       {
         type: "actions",
@@ -1627,7 +1712,10 @@ const products = [
     title: "Pleiepenger for sykt barn",
     ingress: "Ingress her …",
     icon: "/src/_includes/svg/pictograms/pleiepenger-sykt-barn.svg",
-    type: ["Pengestøtte til ansatt", "Refusjon"],
+    type: [
+      "Pengestøtte til ansatt",
+      "Refusjon",
+    ],
     area: ["Helse og sykdom"],
     contentBlocks: [
       {
@@ -1687,7 +1775,10 @@ const products = [
     title: "Pleiepenger for utviklingshemmet person over 18 år",
     ingress: "Ingress her …",
     icon: "/src/_includes/svg/pictograms/pleiepenger-utviklingshemmet.svg",
-    type: ["Pengestøtte til ansatt", "Refusjon"],
+    type: [
+      "Pengestøtte til ansatt",
+      "Refusjon",
+    ],
     area: ["Helse og sykdom"],
     contentBlocks: [
       {
@@ -1747,7 +1838,10 @@ const products = [
     title: "Pleiepenger i livets sluttfase",
     ingress: "Ingress her …",
     icon: "/src/_includes/svg/pictograms/pleiepenger-livets-sluttfase.svg",
-    type: ["Pengestøtte til ansatt", "Refusjon"],
+    type: [
+      "Pengestøtte til ansatt",
+      "Refusjon",
+    ],
     area: ["Helse og sykdom"],
     contentBlocks: [
       {
@@ -1807,7 +1901,10 @@ const products = [
     title: "Opplæringspenger",
     ingress: "Ingress her …",
     icon: "/src/_includes/svg/pictograms/opplaeringspenger.svg",
-    type: ["Pengestøtte til ansatt", "Refusjon"],
+    type: [
+      "Pengestøtte til ansatt",
+      "Refusjon",
+    ],
     area: ["Helse og sykdom"],
     contentBlocks: [
       {
@@ -1867,7 +1964,10 @@ const products = [
     title: "Omsorgspenger",
     ingress: "Ingress her …",
     icon: "/src/_includes/svg/pictograms/omsorgspenger.svg",
-    type: ["Pengestøtte til ansatt", "Refusjon"],
+    type: [
+      "Pengestøtte til ansatt",
+      "Refusjon",
+    ],
     area: ["Helse og sykdom"],
     contentBlocks: [
       {
@@ -1928,12 +2028,18 @@ const products = [
     ingress:
       "Erstatter inntekten til arbeidstakeren når de ikke kan jobbe på grunn av sykdom eller skade.",
     icon: "/src/_includes/svg/pictograms/sykepenger.svg",
-    type: ["Pengestøtte til ansatt", "Refusjon"],
+    type: [
+      "Pengestøtte til ansatt",
+      "Refusjon",
+    ],
     area: ["Helse og sykdom"],
     contentBlocks: [
       {
         type: "markdown",
-        data: ["### Søk om sykepenger", "Tekst"],
+        data: [
+          "### Søk om sykepenger",
+          "Tekst",
+        ],
       },
       {
         type: "actions",
@@ -1972,7 +2078,10 @@ const products = [
       },
       {
         type: "markdown",
-        data: ["### Send trekkopplysninger for arbeidstaker", "Tekst"],
+        data: [
+          "### Send trekkopplysninger for arbeidstaker",
+          "Tekst",
+        ],
       },
       {
         type: "actions",
@@ -2009,12 +2118,18 @@ const products = [
     title: "Reisetilskudd",
     ingress: "Ingress her …",
     icon: "/src/_includes/svg/pictograms/neutral.svg",
-    type: ["Pengestøtte til ansatt", "Refusjon"],
+    type: [
+      "Pengestøtte til ansatt",
+      "Refusjon",
+    ],
     area: ["Helse og sykdom"],
     contentBlocks: [
       {
         type: "markdown",
-        data: ["### Søk om refusjon", "Tekst"],
+        data: [
+          "### Søk om refusjon",
+          "Tekst",
+        ],
       },
       {
         type: "actions",
@@ -2226,7 +2341,8 @@ const products = [
   },
   {
     title: "Skatteoppgjørsrapport til kemnere",
-    ingress: "T09 Skatteoppgjørsrapport går til alle landets kemnere. Det er ca 435, én i hver kommune. Rapporten produseres annen hver måned. Rapporten brukes som dokumentasjon av uttrekk fra NAV.",
+    ingress:
+      "T09 Skatteoppgjørsrapport går til alle landets kemnere. Det er ca 435, én i hver kommune. Rapporten produseres annen hver måned. Rapporten brukes som dokumentasjon av uttrekk fra NAV.",
     icon: "/src/_includes/svg/pictograms/slik-gjor-du-det.svg",
     type: ["Skjema"],
     area: ["Annet"],
@@ -2267,7 +2383,8 @@ const products = [
   },
   {
     title: "Trekkoppgjørsrapport",
-    ingress: "T14 Trekkoppgjørsrapport går til alle landets kreditorer som har trekk i NAVsine brukeres ytelser (inkassobyråer, NAVI og andre). Rapporten brukes som dokumentasjon av uttrekk fra NAV.",
+    ingress:
+      "T14 Trekkoppgjørsrapport går til alle landets kreditorer som har trekk i NAVsine brukeres ytelser (inkassobyråer, NAVI og andre). Rapporten brukes som dokumentasjon av uttrekk fra NAV.",
     icon: "/src/_includes/svg/pictograms/slik-gjor-du-det.svg",
     type: ["Skjema"],
     area: ["Annet"],
@@ -2308,7 +2425,8 @@ const products = [
   },
   {
     title: "Oppgjørsrapport",
-    ingress: "Oppgjørsrapport (K27) fra NAV for refusjon av sykepenger, feriepenger, adopsjons- eller fødselspenger.",
+    ingress:
+      "Oppgjørsrapport (K27) fra NAV for refusjon av sykepenger, feriepenger, adopsjons- eller fødselspenger.",
     icon: "/src/_includes/svg/pictograms/slik-gjor-du-det.svg",
     type: ["Skjema"],
     area: ["Annet"],
@@ -2349,7 +2467,8 @@ const products = [
   },
   {
     title: "Arbeidsgivertjenester - få tilgang",
-    ingress: "For å få tilgang til NAVs tjenester til arbeidsgiver må du ha blitt tildelt nødvendige Altinn-rettigheter av din arbeidsgiver. Administrator for Altinn i virksomheten er ofte daglig leder, men det kan også være andre.",
+    ingress:
+      "For å få tilgang til NAVs tjenester til arbeidsgiver må du ha blitt tildelt nødvendige Altinn-rettigheter av din arbeidsgiver. Administrator for Altinn i virksomheten er ofte daglig leder, men det kan også være andre.",
     icon: "/src/_includes/svg/pictograms/slik-gjor-du-det.svg",
     type: ["Skjema"],
     area: ["Annet"],
@@ -2390,7 +2509,8 @@ const products = [
   },
   {
     title: "Trekkhendelser til kemner og namsmann",
-    ingress: "Rapporten viser en oversikt over innsendte trekk der det ikke er noen ytelse å trekke i, samt der det ikke har vært foretatt trekk i et gitt antall dager.",
+    ingress:
+      "Rapporten viser en oversikt over innsendte trekk der det ikke er noen ytelse å trekke i, samt der det ikke har vært foretatt trekk i et gitt antall dager.",
     icon: "/src/_includes/svg/pictograms/slik-gjor-du-det.svg",
     type: ["Skjema"],
     area: ["Annet"],
@@ -2431,7 +2551,8 @@ const products = [
   },
   {
     title: "Refusjoner fra NAV ved virksomhetsoverdragelser",
-    ingress: "Når en arbeidstaker bytter virksomhet, må virksomhetene sørge for at refusjoner fra NAV fortsatt kan komme fram til riktig mottaker.",
+    ingress:
+      "Når en arbeidstaker bytter virksomhet, må virksomhetene sørge for at refusjoner fra NAV fortsatt kan komme fram til riktig mottaker.",
     icon: "/src/_includes/svg/pictograms/slik-gjor-du-det.svg",
     type: ["Skjema"],
     area: ["Annet"],
@@ -2454,7 +2575,10 @@ const products = [
       },
       {
         type: "markdown",
-        data: ["### Send inntektsmelding", "Dette gjør du hos Altinn."],
+        data: [
+          "### Send inntektsmelding",
+          "Dette gjør du hos Altinn.",
+        ],
       },
       {
         type: "actions",

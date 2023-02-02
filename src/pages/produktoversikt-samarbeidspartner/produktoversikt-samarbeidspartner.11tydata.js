@@ -9,7 +9,10 @@ const products = [
     contentBlocks: [
       {
         type: "markdown",
-        data: ["### Send tannlegelegeerklæring", "Noe tekst"],
+        data: [
+          "### Send tannlegelegeerklæring",
+          "Noe tekst",
+        ],
       },
       {
         type: "actions",
@@ -410,7 +413,10 @@ const products = [
       },
       {
         type: "markdown",
-        data: ["### Send vurdering av arbeidsmulighet ved 7 uker", "Noe tekst"],
+        data: [
+          "### Send vurdering av arbeidsmulighet ved 7 uker",
+          "Noe tekst",
+        ],
       },
       {
         type: "actions",
@@ -464,7 +470,10 @@ const products = [
       },
       {
         type: "markdown",
-        data: ["### Send legeerklæring ved arbeidsuførhet", "Noe tekst"],
+        data: [
+          "### Send legeerklæring ved arbeidsuførhet",
+          "Noe tekst",
+        ],
       },
       {
         type: "actions",
@@ -507,7 +516,10 @@ const products = [
     contentBlocks: [
       {
         type: "markdown",
-        data: ["### Send legeerklæring ved arbeidsuførhet", "Noe tekst"],
+        data: [
+          "### Send legeerklæring ved arbeidsuførhet",
+          "Noe tekst",
+        ],
       },
       {
         type: "actions",
@@ -550,7 +562,10 @@ const products = [
     contentBlocks: [
       {
         type: "markdown",
-        data: ["### Send legeerklæring ved arbeidsuførhet", "Noe tekst"],
+        data: [
+          "### Send legeerklæring ved arbeidsuførhet",
+          "Noe tekst",
+        ],
       },
       {
         type: "actions",
@@ -616,7 +631,10 @@ const products = [
     contentBlocks: [
       {
         type: "markdown",
-        data: ["### Send legeerklæring ved arbeidsuførhet", "Noe tekst"],
+        data: [
+          "### Send legeerklæring ved arbeidsuførhet",
+          "Noe tekst",
+        ],
       },
       {
         type: "actions",
@@ -655,11 +673,17 @@ const products = [
       "Denne brukes i forbindelse med søknad om sykepenger(?), arbeidsavklaringspenger (AAP), uføretrygd og supplerende stønad for uføre flyktninger. Erklæringen kan skrives av lege, psykolog, fysioterapeut, manuellterapeut eller kiropraktor dersom NAV etterspør dette.",
     icon: "/src/_includes/svg/pictograms/slik-gjor-du-det.svg",
     type: ["Skjema"],
-    role: ["Lege", "Annen behandler"],
+    role: [
+      "Lege",
+      "Annen behandler",
+    ],
     contentBlocks: [
       {
         type: "markdown",
-        data: ["### Send legeerklæring ved arbeidsuførhet", "Noe tekst"],
+        data: [
+          "### Send legeerklæring ved arbeidsuførhet",
+          "Noe tekst",
+        ],
       },
       {
         type: "actions",
@@ -698,7 +722,11 @@ const products = [
       "Hvis du ringer til NAV om en pasient og ønsker innsyn i saken, må du ha fullmakt. Du ringer da ikke som behandler, men på vegne av en privatperson. Det er pasienten som gir fullmakten.",
     icon: "/src/_includes/svg/pictograms/slik-gjor-du-det.svg",
     type: ["Skjema"],
-    role: ["Lege", "Hjelpemiddelformidler", "Bostyrer"],
+    role: [
+      "Lege",
+      "Hjelpemiddelformidler",
+      "Bostyrer",
+    ],
     contentBlocks: [
       {
         type: "markdown",
@@ -749,7 +777,10 @@ const products = [
     title: "Seksualtekniske hjelpemidler",
     ingress: "Kan gi et bedre sexliv når en har nedsatt seksualfunksjon.",
     icon: "/src/_includes/svg/pictograms/seksualtekniske-hjelpemidler.svg",
-    type: ["Pengestøtte", "Hjelpemiddel"],
+    type: [
+      "Pengestøtte",
+      "Hjelpemiddel",
+    ],
     role: ["Lege"],
     contentBlocks: [
       {
@@ -791,7 +822,10 @@ const products = [
     ingress: "Hjelper blinde og svaksynte å ta seg frem innendørs og utendørs.",
     icon: "/src/_includes/svg/pictograms/forerhund.svg",
     type: ["Hjelpemiddel"],
-    role: ["Lege", "Optiker eller øyelege"],
+    role: [
+      "Lege",
+      "Optiker eller øyelege",
+    ],
     contentBlocks: [
       {
         type: "markdown",
@@ -855,7 +889,10 @@ const products = [
     ingress:
       "Støtte til bil, tilpasning av bil og spesialutstyr til bruk i bil.",
     icon: "/src/_includes/svg/pictograms/grunnstonad.svg",
-    type: ["Pengestøtte", "Hjelpemiddel"],
+    type: [
+      "Pengestøtte",
+      "Hjelpemiddel",
+    ],
     role: ["Lege"],
     contentBlocks: [
       {
@@ -897,7 +934,10 @@ const products = [
     ingress:
       "Etterligner et bryst i form og størrelse, og finnes i mange ulike utgaver.",
     icon: "/src/_includes/svg/pictograms/brystprotese.svg",
-    type: ["Pengestøtte", "Hjelpemiddel"],
+    type: [
+      "Pengestøtte",
+      "Hjelpemiddel",
+    ],
     role: ["Lege"],
     contentBlocks: [
       {
@@ -961,7 +1001,10 @@ const products = [
     title: "Ansiktsprotese",
     ingress: "Etterligner den delen av ansiktet som mangler eller er skadet.",
     icon: "/src/_includes/svg/pictograms/ansiktsprotese.svg",
-    type: ["Pengestøtte", "Hjelpemiddel"],
+    type: [
+      "Pengestøtte",
+      "Hjelpemiddel",
+    ],
     role: ["Lege"],
     contentBlocks: [
       {
@@ -993,7 +1036,10 @@ const products = [
     title: "Parykk",
     ingress: "Erstatter eget hår på hele hodet, eller deler av hodet.",
     icon: "/src/_includes/svg/pictograms/parykk.svg",
-    type: ["Pengestøtte", "Hjelpemiddel"],
+    type: [
+      "Pengestøtte",
+      "Hjelpemiddel",
+    ],
     role: ["Lege"],
     contentBlocks: [
       {
@@ -1025,8 +1071,14 @@ const products = [
     title: "Lese- og sekretærhjelp",
     ingress: "Hjelper deg med å lese og skrive når du er blind eller svaksynt.",
     icon: "/src/_includes/svg/pictograms/neutral.svg",
-    type: ["Pengestøtte", "Hjelpemiddel"],
-    role: ["Optiker eller øyelege", "Andre"],
+    type: [
+      "Pengestøtte",
+      "Hjelpemiddel",
+    ],
+    role: [
+      "Optiker eller øyelege",
+      "Andre",
+    ],
     contentBlocks: [
       {
         type: "markdown",
@@ -1080,7 +1132,10 @@ const products = [
     title: "Tolk for hørselshemmede",
     ingress: "Utfører tolkeoppdrag for døve, døvblinde og hørselshemmede.",
     icon: "/src/_includes/svg/pictograms/tegnspraak.svg",
-    type: ["Tjeneste", "Hjelpemiddel"],
+    type: [
+      "Tjeneste",
+      "Hjelpemiddel",
+    ],
     role: ["Lege"],
     contentBlocks: [
       {
@@ -1112,7 +1167,10 @@ const products = [
     title: "Tolk- og ledsagerhjelp for døvblinde",
     ingress: "Utfører tolkeoppdrag for døve, døvblinde og hørselshemmede.",
     icon: "/src/_includes/svg/pictograms/neutral.svg",
-    type: ["Tjeneste", "Hjelpemiddel"],
+    type: [
+      "Tjeneste",
+      "Hjelpemiddel",
+    ],
     role: ["Lege"],
     contentBlocks: [
       {
@@ -1144,7 +1202,10 @@ const products = [
     title: "Høreapparat",
     ingress: "Forsterker lyden rundt deg når en har nedsatt hørsel.",
     icon: "/src/_includes/svg/pictograms/horselshjelpemidler.svg",
-    type: ["Pengestøtte", "Hjelpemiddel"],
+    type: [
+      "Pengestøtte",
+      "Hjelpemiddel",
+    ],
     role: ["Lege"],
     contentBlocks: [
       {
@@ -1190,7 +1251,10 @@ const products = [
     ingress:
       "Hjelper når en har feilstilling i foten eller ankelen, har problemer med føttene på grunn av diabetes eller revmatisme, eller har en annen funksjonsnedsettelse i føttene.",
     icon: "/src/_includes/svg/pictograms/ortopediske-sko.svg",
-    type: ["Pengestøtte", "Hjelpemiddel"],
+    type: [
+      "Pengestøtte",
+      "Hjelpemiddel",
+    ],
     role: ["Lege"],
     contentBlocks: [
       {
@@ -1236,7 +1300,10 @@ const products = [
     ingress:
       "Stabiliserer eller gir bedre funksjon når du har en kroppsdel som er lammet eller svekket.",
     icon: "/src/_includes/svg/pictograms/ortoser.svg",
-    type: ["Pengestøtte", "Hjelpemiddel"],
+    type: [
+      "Pengestøtte",
+      "Hjelpemiddel",
+    ],
     role: ["Lege"],
     contentBlocks: [
       {
@@ -1327,7 +1394,10 @@ const products = [
     ingress:
       "Hjelper deg med praktiske oppgaver når det er nødvendig for at du skal kunne utføre jobben din.",
     icon: "/src/_includes/svg/pictograms/neutral.svg",
-    type: ["Tjeneste", "Hjelpemiddel"],
+    type: [
+      "Tjeneste",
+      "Hjelpemiddel",
+    ],
     role: ["Lege"],
     contentBlocks: [
       {
@@ -1435,7 +1505,10 @@ const products = [
       },
       {
         type: "markdown",
-        data: ["### Send refusjonskrav", "Noe tekst"],
+        data: [
+          "### Send refusjonskrav",
+          "Noe tekst",
+        ],
       },
       {
         type: "actions",
@@ -1538,7 +1611,10 @@ const products = [
       },
       {
         type: "markdown",
-        data: ["### Send refusjonskrav", "Noe tekst"],
+        data: [
+          "### Send refusjonskrav",
+          "Noe tekst",
+        ],
       },
       {
         type: "actions",
@@ -1878,7 +1954,10 @@ const products = [
     ingress: "Fullmakt i forbindelse med søknad om tekniske hjelpemidler",
     icon: "/src/_includes/svg/pictograms/slik-gjor-du-det.svg",
     type: ["Skjema"],
-    role: ["Optiker eller øyelege", "Hjelpemiddelformidler"],
+    role: [
+      "Optiker eller øyelege",
+      "Hjelpemiddelformidler",
+    ],
     contentBlocks: [
       {
         type: "markdown",
@@ -1918,7 +1997,10 @@ const products = [
     title: "Briller til barn",
     ingress: "Tilskudd til barn og unge under 18 år som trenger briller.",
     icon: "/src/_includes/svg/pictograms/neutral.svg",
-    type: ["Pengestøtte", "Hjelpemiddel"],
+    type: [
+      "Pengestøtte",
+      "Hjelpemiddel",
+    ],
     role: ["Optiker eller øyelege"],
     contentBlocks: [
       {
@@ -1978,7 +2060,10 @@ const products = [
     title: "Irislinse",
     ingress: "Tilskudd til barn og unge under 18 år som trenger briller.",
     icon: "/src/_includes/svg/pictograms/neutral.svg",
-    type: ["Pengestøtte", "Hjelpemiddel"],
+    type: [
+      "Pengestøtte",
+      "Hjelpemiddel",
+    ],
     role: ["Optiker eller øyelege"],
     contentBlocks: [
       {
@@ -2019,7 +2104,10 @@ const products = [
     title: "Hørselshjelpemidler",
     ingress: "Ingress",
     icon: "/src/_includes/svg/pictograms/horselshjelpemidler.svg",
-    type: ["Pengestøtte", "Hjelpemiddel"],
+    type: [
+      "Pengestøtte",
+      "Hjelpemiddel",
+    ],
     role: ["Hjelpemiddelformidler"],
     contentBlocks: [
       {
@@ -2163,7 +2251,10 @@ const products = [
     title: "Hjelpemidler til tale og språk",
     ingress: "Ingress",
     icon: "/src/_includes/svg/pictograms/neutral.svg",
-    type: ["Pengestøtte", "Hjelpemiddel"],
+    type: [
+      "Pengestøtte",
+      "Hjelpemiddel",
+    ],
     role: ["Hjelpemiddelformidler"],
     contentBlocks: [
       {
@@ -2250,7 +2341,10 @@ const products = [
     title: "Hjelpemidler for å huske, planlegge og organisere",
     ingress: "Ingress",
     icon: "/src/_includes/svg/pictograms/neutral.svg",
-    type: ["Pengestøtte", "Hjelpemiddel"],
+    type: [
+      "Pengestøtte",
+      "Hjelpemiddel",
+    ],
     role: ["Hjelpemiddelformidler"],
     contentBlocks: [
       {
@@ -2337,7 +2431,10 @@ const products = [
     title: "Bevegelseshjelpemidler",
     ingress: "Ingress",
     icon: "/src/_includes/svg/pictograms/neutral.svg",
-    type: ["Pengestøtte", "Hjelpemiddel"],
+    type: [
+      "Pengestøtte",
+      "Hjelpemiddel",
+    ],
     role: ["Hjelpemiddelformidler"],
     contentBlocks: [
       {
@@ -2424,8 +2521,14 @@ const products = [
     title: "Ortopediske hjelpemidler",
     ingress: "Ingress",
     icon: "/src/_includes/svg/pictograms/ortopediske-sko.svg",
-    type: ["Pengestøtte", "Hjelpemiddel"],
-    role: ["Hjelpemiddelformidler", "Lege"],
+    type: [
+      "Pengestøtte",
+      "Hjelpemiddel",
+    ],
+    role: [
+      "Hjelpemiddelformidler",
+      "Lege",
+    ],
     contentBlocks: [
       {
         type: "markdown",
@@ -2541,8 +2644,14 @@ const products = [
     title: "Hjelpemidler for å lese og skrive",
     ingress: "Ingress",
     icon: "/src/_includes/svg/pictograms/neutral.svg",
-    type: ["Pengestøtte", "Hjelpemiddel"],
-    role: ["Hjelpemiddelformidler", "Lege"],
+    type: [
+      "Pengestøtte",
+      "Hjelpemiddel",
+    ],
+    role: [
+      "Hjelpemiddelformidler",
+      "Lege",
+    ],
     contentBlocks: [
       {
         type: "markdown",
@@ -2674,7 +2783,10 @@ const products = [
     ingress: "Kommunalt ansatte kan melde behov om hjelpemidler digitalt.",
     icon: "/src/_includes/svg/pictograms/slik-gjor-du-det.svg",
     type: ["Hjelpemiddel"],
-    role: ["Hjelpemiddelformidler", "Ansatt i kommunen"],
+    role: [
+      "Hjelpemiddelformidler",
+      "Ansatt i kommunen",
+    ],
     contentBlocks: [
       {
         type: "markdown",
@@ -2758,8 +2870,7 @@ const products = [
   },
   {
     title: "Demontering av heis",
-    ingress:
-      "Ingress",
+    ingress: "Ingress",
     icon: "/src/_includes/svg/pictograms/slik-gjor-du-det.svg",
     type: ["Skjema"],
     role: ["Ortopedisk verksted"],
