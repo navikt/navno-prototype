@@ -26,12 +26,7 @@
   {% if block.type === 'microcards' %}
     <div class="flex gap-1.5">
     {% for item in block.data %}
-      {{ microcard(
-        {
-          text: item.text,
-          dot: 'bg-green-300'
-        }
-      ) }}
+      {{ microcard(item) }}
     {% endfor %}
   </div>
   {% endif %}
