@@ -1260,9 +1260,9 @@ const products = [
     ],
   },
   {
-    title: "AA-registeret - søk om tilgang",
+    title: "AA-registeret",
     ingress:
-      "Arbeidsgiver- og Arbeidstakerregisteret (Aa-registeret) er tilgjengelig for offentlige og noen private aktører. Tilgang kan gis etter søknad.",
+      "Aa-registeret forteller hvilke arbeidstakere som er ansatt hos hvilke arbeidsgivere.",
     icon: "/src/_includes/svg/pictograms/slik-gjor-du-det.svg",
     type: ["Skjema"],
     area: ["Annet"],
@@ -1271,7 +1271,7 @@ const products = [
         type: "markdown",
         data: [
           "### Søk om tilgang til AA-registeret",
-          "Dette gjør du hos Altinn.",
+          "Registeret er tilgjengelig for offentlige og noen private aktører.",
         ],
       },
       {
@@ -1288,6 +1288,63 @@ const products = [
       },
       {
         type: "markdown",
+        data: [
+          "### Rapporter inn arbeidstakere",
+          "Som arbeids- og oppdragsgiver må du rapportere arbeidstakere og frilansere til registeret. Rapporteringen gjør du gjennom a-meldingen hos Altinn.",
+        ],
+      },
+      {
+        type: "actions",
+        data: [
+          {
+            text: "Rapporter til registeret (hos Altinn)",
+            variant: "primary",
+          },
+        ],
+      },
+      {
+        type: "line",
+      },
+      {
+        type: "markdown",
+        data: [
+          "### Slå opp i registeret",
+          "Web-oppslag er en tjeneste som lar deg slå opp i registeret.",
+        ],
+      },
+      {
+        type: "actions",
+        data: [
+          {
+            text: "Slå opp i Aa-registeret (hos Altinn)",
+            variant: "primary",
+          },
+        ],
+      },
+      {
+        type: "line",
+      },
+      {
+        type: "markdown",
+        data: [
+          "### Få brukerstøtte",
+          "Hjelper deg med ulike oppgaver som har med tilgangen din å gjøre.",
+        ],
+      },
+      {
+        type: "actions",
+        data: [
+          {
+            text: "Logg inn (hos Altinn)",
+            variant: "primary",
+          },
+        ],
+      },
+      {
+        type: "line",
+      },
+      {
+        type: "markdown",
         data: ["### Mer om"],
       },
       {
@@ -1295,6 +1352,33 @@ const products = [
         data: [
           {
             text: "Søk om tilgang til AA-registeret",
+            dot: "bg-lightblue-300",
+          },
+        ],
+      },
+      {
+        type: "microcards",
+        data: [
+          {
+            text: "Rapporter inn arbeidastakere til AA-registeret",
+            dot: "bg-lightblue-300",
+          },
+        ],
+      },
+      {
+        type: "microcards",
+        data: [
+          {
+            text: "Slå opp i AA-registeret",
+            dot: "bg-lightblue-300",
+          },
+        ],
+      },
+      {
+        type: "microcards",
+        data: [
+          {
+            text: "Få brukerstøtte til AA-registeret",
             dot: "bg-lightblue-300",
           },
         ],
