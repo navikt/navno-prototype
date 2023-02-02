@@ -136,8 +136,7 @@ const products = [
   },
   {
     title: "Frivillig yrkesskadetrygd",
-    ingress:
-      "En frivillig forsikring for selvstendig næringsdrivende og frilansere.",
+    ingress: "En frivillig forsikring for selvstendig næringsdrivende og frilansere.",
     icon: "/src/_includes/svg/pictograms/neutral.svg",
     type: ["Forsikring"],
     area: ["Helse og sykdom"],
@@ -1059,7 +1058,7 @@ const products = [
   {
     title: "Yrkesskade eller yrkessykdom - meld fra til NAV",
     ingress: "Send skademelding om arbeidsulykker eller yrkessykdommer.",
-    icon: "/src/_includes/svg/pictograms/neutral.svg",
+    icon: "/src/_includes/svg/pictograms/slik-gjor-du-det.svg",
     type: ["Skjema"],
     area: ["Helse og sykdom"],
     contentBlocks: [
@@ -1187,7 +1186,7 @@ const products = [
         data: [
           {
             text: "Meld yrkesskade eller yrkessykdom",
-            dot: "bg-green-300",
+            dot: "bg-lightblue-300",
           },
         ],
       },
@@ -1197,7 +1196,7 @@ const products = [
     title: "AA-registeret - søk om tilgang",
     ingress:
       "Arbeidsgiver- og Arbeidstakerregisteret (Aa-registeret) er tilgjengelig for offentlige og noen private aktører. Tilgang kan gis etter søknad.",
-    icon: "/src/_includes/svg/pictograms/neutral.svg",
+    icon: "/src/_includes/svg/pictograms/slik-gjor-du-det.svg",
     type: ["Skjema"],
     area: ["Annet"],
     contentBlocks: [
@@ -1229,7 +1228,7 @@ const products = [
         data: [
           {
             text: "Søk om tilgang til AA-registeret",
-            dot: "bg-green-300",
+            dot: "bg-lightblue-300",
           },
         ],
       },
@@ -1238,7 +1237,7 @@ const products = [
   {
     title: "Medlemskap i folketrygden for utsendte arbeidstakere",
     ingress: "Ingress her …",
-    icon: "/src/_includes/svg/pictograms/neutral.svg",
+    icon: "/src/_includes/svg/pictograms/slik-gjor-du-det.svg",
     type: ["Skjema"],
     area: ["Annet"],
     contentBlocks: [
@@ -1293,7 +1292,7 @@ const products = [
         data: [
           {
             text: "Medlemskap i folketrygden for utsendte arbeidstakere",
-            dot: "bg-green-300",
+            dot: "bg-lightblue-300",
           },
         ],
       },
@@ -1303,7 +1302,7 @@ const products = [
     title: "Permittere",
     ingress:
       "Skal du permittere ansatte, melder du fra til NAV så tidlig som mulig.",
-    icon: "/src/_includes/svg/pictograms/neutral.svg",
+    icon: "/src/_includes/svg/pictograms/slik-gjor-du-det.svg",
     type: ["Skjema"],
     area: ["Permittering og nedbemanning"],
     contentBlocks: [
@@ -1335,7 +1334,7 @@ const products = [
         data: [
           {
             text: "Permittere",
-            dot: "bg-green-300",
+            dot: "bg-lightblue-300",
           },
         ],
       },
@@ -1345,7 +1344,7 @@ const products = [
     title: "Meld fra om nedbemanning",
     ingress:
       "Hvis du vurderer eller skal si opp ansatte, skal du så tidlig som mulig sende melding til NAV.",
-    icon: "/src/_includes/svg/pictograms/neutral.svg",
+    icon: "/src/_includes/svg/pictograms/slik-gjor-du-det.svg",
     type: ["Skjema"],
     area: ["Permittering og nedbemanning"],
     contentBlocks: [
@@ -1377,7 +1376,7 @@ const products = [
         data: [
           {
             text: "Meld fra om nedbemanning",
-            dot: "bg-green-300",
+            dot: "bg-lightblue-300",
           },
         ],
       },
@@ -1386,7 +1385,7 @@ const products = [
   {
     title: "Kontonummer for bedriften - slik endrer du",
     ingress: "Ingress her …",
-    icon: "/src/_includes/svg/pictograms/neutral.svg",
+    icon: "/src/_includes/svg/pictograms/slik-gjor-du-det.svg",
     type: ["Skjema"],
     area: ["Annet"],
     contentBlocks: [
@@ -1415,7 +1414,7 @@ const products = [
         data: [
           {
             text: "Endre kontonummer for bedriften",
-            dot: "bg-green-300",
+            dot: "bg-lightblue-300",
           },
         ],
       },
@@ -1425,7 +1424,7 @@ const products = [
     title: "Inntektsmelding - send inn",
     ingress:
       "Arbeidsgivere må sende digitale inntektsmeldinger til NAV i tide.",
-    icon: "/src/_includes/svg/pictograms/neutral.svg",
+    icon: "/src/_includes/svg/pictograms/slik-gjor-du-det.svg",
     type: ["Skjema"],
     area: ["Annet"],
     contentBlocks: [
@@ -1454,7 +1453,7 @@ const products = [
         data: [
           {
             text: "Send inn inntektsmelding",
-            dot: "bg-green-300",
+            dot: "bg-lightblue-300",
           },
         ],
       },
@@ -1464,7 +1463,7 @@ const products = [
     title: "Utleggstrekk fra NAV Innkreving",
     ingress:
       "Som arbeidsgiver er du pliktig til å gjennomføre trekk i lønn i henhold til tilsendt trekkpålegg fra NAV Innkreving.",
-    icon: "/src/_includes/svg/pictograms/neutral.svg",
+    icon: "/src/_includes/svg/pictograms/slik-gjor-du-det.svg",
     type: ["Skjema"],
     area: ["Annet"],
     contentBlocks: [
@@ -1496,7 +1495,7 @@ const products = [
         data: [
           {
             text: "Utleggstrekk fra NAV Innkreving",
-            dot: "bg-green-300",
+            dot: "bg-lightblue-300",
           },
         ],
       },
@@ -2179,6 +2178,309 @@ const products = [
           {
             text: "Lønngaranti",
             dot: "bg-green-300",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    title: "Fakturaspesifikasjon for pensjonsytelser",
+    ingress: "Spesifikasjon til faktura for pensjonsytelser fra NAV",
+    icon: "/src/_includes/svg/pictograms/slik-gjor-du-det.svg",
+    type: ["Skjema"],
+    area: ["Annet"],
+    contentBlocks: [
+      {
+        type: "markdown",
+        data: [
+          "### Se rapport",
+          "Dette gjør du hos Altinn",
+        ],
+      },
+      {
+        type: "actions",
+        data: [
+          {
+            text: "Til Altinn-innboks",
+            variant: "primary",
+          },
+        ],
+      },
+      {
+        type: "line",
+      },
+      {
+        type: "markdown",
+        data: ["### Mer om"],
+      },
+      {
+        type: "microcards",
+        data: [
+          {
+            text: "Fakturaspesifikasjon for pensjonsytelser",
+            dot: "bg-lightblue-300",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    title: "Skatteoppgjørsrapport til kemnere",
+    ingress: "T09 Skatteoppgjørsrapport går til alle landets kemnere. Det er ca 435, én i hver kommune. Rapporten produseres annen hver måned. Rapporten brukes som dokumentasjon av uttrekk fra NAV.",
+    icon: "/src/_includes/svg/pictograms/slik-gjor-du-det.svg",
+    type: ["Skjema"],
+    area: ["Annet"],
+    contentBlocks: [
+      {
+        type: "markdown",
+        data: [
+          "### Se rapport",
+          "Dette gjør du hos Altinn",
+        ],
+      },
+      {
+        type: "actions",
+        data: [
+          {
+            text: "Til Altinn-innboks",
+            variant: "primary",
+          },
+        ],
+      },
+      {
+        type: "line",
+      },
+      {
+        type: "markdown",
+        data: ["### Mer om"],
+      },
+      {
+        type: "microcards",
+        data: [
+          {
+            text: "Skatteoppgjørsrapport til kemnere",
+            dot: "bg-lightblue-300",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    title: "Trekkoppgjørsrapport",
+    ingress: "T14 Trekkoppgjørsrapport går til alle landets kreditorer som har trekk i NAVsine brukeres ytelser (inkassobyråer, NAVI og andre). Rapporten brukes som dokumentasjon av uttrekk fra NAV.",
+    icon: "/src/_includes/svg/pictograms/slik-gjor-du-det.svg",
+    type: ["Skjema"],
+    area: ["Annet"],
+    contentBlocks: [
+      {
+        type: "markdown",
+        data: [
+          "### Se rapport",
+          "Dette gjør du hos Altinn",
+        ],
+      },
+      {
+        type: "actions",
+        data: [
+          {
+            text: "Til Altinn-innboks",
+            variant: "primary",
+          },
+        ],
+      },
+      {
+        type: "line",
+      },
+      {
+        type: "markdown",
+        data: ["### Mer om"],
+      },
+      {
+        type: "microcards",
+        data: [
+          {
+            text: "Trekkoppgjørsrapport",
+            dot: "bg-lightblue-300",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    title: "Oppgjørsrapport",
+    ingress: "Oppgjørsrapport (K27) fra NAV for refusjon av sykepenger, feriepenger, adopsjons- eller fødselspenger.",
+    icon: "/src/_includes/svg/pictograms/slik-gjor-du-det.svg",
+    type: ["Skjema"],
+    area: ["Annet"],
+    contentBlocks: [
+      {
+        type: "markdown",
+        data: [
+          "### Se rapport",
+          "Dette gjør du hos Altinn",
+        ],
+      },
+      {
+        type: "actions",
+        data: [
+          {
+            text: "Til Altinn-innboks",
+            variant: "primary",
+          },
+        ],
+      },
+      {
+        type: "line",
+      },
+      {
+        type: "markdown",
+        data: ["### Mer om"],
+      },
+      {
+        type: "microcards",
+        data: [
+          {
+            text: "Oppgjørsrapport",
+            dot: "bg-lightblue-300",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    title: "Arbeidsgivertjenester - få tilgang",
+    ingress: "For å få tilgang til NAVs tjenester til arbeidsgiver må du ha blitt tildelt nødvendige Altinn-rettigheter av din arbeidsgiver. Administrator for Altinn i virksomheten er ofte daglig leder, men det kan også være andre.",
+    icon: "/src/_includes/svg/pictograms/slik-gjor-du-det.svg",
+    type: ["Skjema"],
+    area: ["Annet"],
+    contentBlocks: [
+      {
+        type: "markdown",
+        data: [
+          "### Få tilgang",
+          "Du ber om tilgang hos Altinn",
+        ],
+      },
+      {
+        type: "actions",
+        data: [
+          {
+            text: "Be om tilgang (hos Altinn)",
+            variant: "primary",
+          },
+        ],
+      },
+      {
+        type: "line",
+      },
+      {
+        type: "markdown",
+        data: ["### Mer om"],
+      },
+      {
+        type: "microcards",
+        data: [
+          {
+            text: "Arbeidsgivertjenester - få tilgang",
+            dot: "bg-lightblue-300",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    title: "Trekkhendelser til kemner og namsmann",
+    ingress: "Rapporten viser en oversikt over innsendte trekk der det ikke er noen ytelse å trekke i, samt der det ikke har vært foretatt trekk i et gitt antall dager.",
+    icon: "/src/_includes/svg/pictograms/slik-gjor-du-det.svg",
+    type: ["Skjema"],
+    area: ["Annet"],
+    contentBlocks: [
+      {
+        type: "markdown",
+        data: [
+          "### Se rapport",
+          "Dette gjør du hos Altinn",
+        ],
+      },
+      {
+        type: "actions",
+        data: [
+          {
+            text: "Til Altinn-innboks",
+            variant: "primary",
+          },
+        ],
+      },
+      {
+        type: "line",
+      },
+      {
+        type: "markdown",
+        data: ["### Mer om"],
+      },
+      {
+        type: "microcards",
+        data: [
+          {
+            text: "Trekkhendelser til kemner og namsmann",
+            dot: "bg-lightblue-300",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    title: "Refusjoner fra NAV ved virksomhetsoverdragelser",
+    ingress: "Når en arbeidstaker bytter virksomhet, må virksomhetene sørge for at refusjoner fra NAV fortsatt kan komme fram til riktig mottaker.",
+    icon: "/src/_includes/svg/pictograms/slik-gjor-du-det.svg",
+    type: ["Skjema"],
+    area: ["Annet"],
+    contentBlocks: [
+      {
+        type: "markdown",
+        data: [
+          "### Oppdater Aa-registeret",
+          "Dette gjør du hos Altinn",
+        ],
+      },
+      {
+        type: "actions",
+        data: [
+          {
+            text: "Rapporter til registeret (hos Altinn)",
+            variant: "primary",
+          },
+        ],
+      },
+      {
+        type: "markdown",
+        data: ["### Send inntektsmelding", "Dette gjør du hos Altinn."],
+      },
+      {
+        type: "actions",
+        data: [
+          {
+            text: "Send skjema (hos Altinn)",
+            variant: "primary",
+          },
+        ],
+      },
+      {
+        type: "line",
+      },
+      {
+        type: "line",
+      },
+      {
+        type: "markdown",
+        data: ["### Mer om"],
+      },
+      {
+        type: "microcards",
+        data: [
+          {
+            text: "Refusjoner fra NAV ved virksomhetsoverdragelser",
+            dot: "bg-lightblue-300",
           },
         ],
       },
