@@ -3056,7 +3056,7 @@ const products = [
         type: "microcards",
         data: [
           {
-            text: "meld fra om innleggelse på helseinstitusjon",
+            text: "Meld fra om innleggelse på helseinstitusjon",
             dot: "bg-lightblue-300",
           },
         ],
