@@ -24,7 +24,7 @@
   {% endif %}
 
   {% if block.type === 'microcards' %}
-    <div class="flex gap-1.5">
+    <div class="flex flex-wrap gap-1.5">
     {% for item in block.data %}
       {{ microcard(item) }}
     {% endfor %}

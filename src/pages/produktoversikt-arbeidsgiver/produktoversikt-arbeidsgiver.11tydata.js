@@ -1354,29 +1354,14 @@ const products = [
             text: "Søk om tilgang til AA-registeret",
             dot: "bg-lightblue-300",
           },
-        ],
-      },
-      {
-        type: "microcards",
-        data: [
           {
             text: "Rapporter inn arbeidastakere til AA-registeret",
             dot: "bg-lightblue-300",
           },
-        ],
-      },
-      {
-        type: "microcards",
-        data: [
           {
             text: "Slå opp i AA-registeret",
             dot: "bg-lightblue-300",
           },
-        ],
-      },
-      {
-        type: "microcards",
-        data: [
           {
             text: "Få brukerstøtte til AA-registeret",
             dot: "bg-lightblue-300",

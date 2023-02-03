@@ -9,7 +9,7 @@
   }
 }
 @layer components {
-  :where(.markdown) > *:not(hr) {
+  :where(.markdown) > *:not(hr, div) {
     max-width: 64ch;
   }
   :where(.markdown) > :where(*):not(h2, h3, h4, h5) + * {
