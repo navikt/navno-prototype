@@ -3096,6 +3096,7 @@ const getTags = (array, key) => {
 module.exports = {
   products,
   tags: ["template"],
+  activeRole: "Samarbeidspartner",
   typeFilter: getTags(products, "type"),
   roleFilter: getTags(products, "role"),
 };

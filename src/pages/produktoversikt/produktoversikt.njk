@@ -3,6 +3,8 @@ title: 'Søknad og skjema fra A til Å'
 description: 'Pengestøtter og tjenester fra NAV for privatpersoner. Du kan søke eller filtrere etter type og område.'
 order: 4
 bodyClass: ''
+tags: ['template']
+activeRole: "Privat"
 ---
 {% extends 'base.njk' %}
 
@@ -89,7 +91,7 @@ bodyClass: ''
 
           <div class="fixed inset-0 z-50 grid items-end grid-cols-layout lg:hidden" x-show="filterDrawer" x-bind:class="filterDrawer && 'animate-blur'">
             <form class="grid bg-white shadow-drawer rounded-t-2xl col-content -mx-clamp-gap md:-mx-6 lg:hidden" x-on:click.outside="filterDrawer = false, filterTags = false" x-on:submit.prevent="filterDrawer = false">
-              <div class="pb-12 overflow-y-auto px-clamp-gap md:px-6 max-h-[60vh]">
+              <div class="pb-12 overflow-y-auto overscroll-y-contain px-clamp-gap md:px-6 max-h-[60vh]">
                 <div class="relative grid pt-clamp-gap md:pt-7" >
                   <div class="relative">
                     <label for="searchFilter-mobile" class="font-semibold sr-only">Søk</label>
@@ -176,13 +178,13 @@ bodyClass: ''
                       {%- endfor -%}
                     </p>
                   </div>
-                  <button x-on:click="expanded = !expanded" class="absolute inset-0 flex items-center justify-end w-full pr-4 rounded-lg group focus:outline-none focus-visible:ring focus-visible:ring-inset focus-visible:ring-blue-800" x-bind:aria-expanded="expanded">
+                  <button x-on:click="expanded = !expanded" class="absolute inset-0 flex items-center justify-end w-full pr-4 rounded-lg group focus:outline-none focus-visible:ring focus-visible:ring-inset focus-visible:ring-blue-800" aria-expanded="false" x-bind:aria-expanded="expanded">
                     <span class="sr-only">Vis/skjul innhold</span>
                     {{ '/src/_includes/svg/icons/chevron-down.svg' | svgContents('mr-1.5 w-5 h-5 opacity-50 transition duration-100 group-aria-expanded:rotate-180') | safe }}
                   </button>
                 </div>
 
-                <div class="pt-6 pb-8 px-clamp-gap -mx-clamp-gap relative min-h-[30vh] markdown bg-deepblue-50 sm:mx-0 sm:-mt-2 sm:px-5 sm:rounded-b-lg mb-4" x-bind:hidden="!expanded">
+                <div class="pt-6 pb-8 px-clamp-gap -mx-clamp-gap relative min-h-[30vh] markdown bg-deepblue-50 sm:mx-0 sm:-mt-2 sm:px-5 sm:rounded-b-lg mb-4" x-bind:hidden="!expanded" hidden>
                   <p>{{ product.data.ingress }}</p>
 
                   {{ product.content | markdown | safe }}

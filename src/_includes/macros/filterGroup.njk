@@ -26,8 +26,8 @@
     </li>
     {% for item in params.array %}
       <li>
-        <input type="radio" x-on:change="updateCount($refs)" x-model="{{ params.xModel }}" class="{{ inputClasses }}" name="{{ params.inputName }}" value="{{ item | slugify }}" id="filter-{{ item | slugify }}-mobile" />
-        <label class="{{ labelClasses }}" for="filter-{{ item | slugify }}-mobile">
+        <input type="radio" x-on:change="updateCount($refs)" x-model="{{ params.xModel }}" class="{{ inputClasses }}" name="{{ params.inputName }}" value="{{ item | slugify }}" id="filter-{{ item | slugify }}-{{ loop.index }}-{{ params.inputName }}" />
+        <label class="{{ labelClasses }}" for="filter-{{ item | slugify }}-{{ loop.index }}-{{ params.inputName }}">
           {{ item }}
         </label>
       </li>
