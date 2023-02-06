@@ -1,8 +1,9 @@
 ---
-title: 'Søknad og skjema fra A til Å (arbeidsgiver)'
-description: 'Pengestøtter og tjenester fra NAV for arbeidsgivere. Du kan søke eller filtrere etter type og område.'
-order: 5
+title: 'Søknad og skjema fra A til Å (samarbeidspartnere)'
+description: 'Pengestøtter og tjenester fra NAV for samarbeidspartnere. Du kan søke eller filtrere etter type og rolle.'
+order: 6
 bodyClass: ''
+permalink: '/produktoversikt-samarbeidspartner/'
 ---
 {% extends 'base.njk' %}
 
@@ -14,18 +15,18 @@ bodyClass: ''
   <main class="py-12 text-lg text-gray-900"
     x-data="{
       typeFilter: new URLSearchParams(location.search).get('type') || 'alle',
-      areaFilter: new URLSearchParams(location.search).get('area') || 'alle',
+      roleFilter: new URLSearchParams(location.search).get('role') || 'alle',
       filterItem(el) {
         const item = el.querySelector('h2').textContent.toLowerCase()
         if (this.search === '') {
           return (
             el.dataset.type.split(' ').includes(this.typeFilter)
             &&
-            el.dataset.area.split(' ').includes(this.areaFilter)
+            el.dataset.role.split(' ').includes(this.roleFilter)
           )
         } else {
           this.typeFilter = 'alle'
-          this.areaFilter = 'alle'
+          this.roleFilter = 'alle'
           return (
             item.includes(this.search.toLowerCase())
           )
@@ -51,9 +52,9 @@ bodyClass: ''
         updateCount();
         clearSearch();
       });
-      $watch('areaFilter', (value) => {
+      $watch('roleFilter', (value) => {
         const url = new URL(window.location.href);
-        url.searchParams.set('area', value);
+        url.searchParams.set('role', value);
         history.replaceState(null, document.title, url.toString());
         updateCount();
         clearSearch();
@@ -66,12 +67,12 @@ bodyClass: ''
       <div class="relative w-full col-content lg:col-feature">
 
         <div class="hidden float-right pb-8 mt-2 ml-24 xs:block sm:pb-0 sm:-mb-8">
-          {{ '/src/_includes/svg/pictograms/support.svg' | svgContents('w-[12vw] h-auto overflow-hidden max-w-[7rem] aspect-square') | safe }}
+          {{ '/src/_includes/svg/pictograms/support.svg' | svgContents('w-[12vw] h-auto overflow-hidden max-w-[7rem]') | safe }}
         </div>
 
-        <h1 class="text-3xl font-semibold leading-tight md:text-5xl md:leading-tight">{{ title }}</h1>
+        <h1 class="text-3xl font-semibold leading-tight md:text-5xl md:leading-tight">{{ title | safe }}</h1>
 
-        <p class="max-w-2xl mt-2 text-xl md:mt-3 md:text-2xl">{{ description }}</p>
+        <p class="max-w-2xl mt-2 text-xl md:mt-3 md:text-2xl">{{ description | safe }}</p>
       </div>
     </div>
 
@@ -90,7 +91,7 @@ bodyClass: ''
           <div class="fixed inset-0 z-50 grid items-end grid-cols-layout lg:hidden" x-show="filterDrawer" x-bind:class="filterDrawer && 'animate-blur'">
             <form class="grid bg-white shadow-drawer rounded-t-2xl col-content -mx-clamp-gap md:-mx-6 lg:hidden" x-on:click.outside="filterDrawer = false, filterTags = false"
             x-on:submit.prevent="filterDrawer = false">
-              <div class="pb-12 overflow-y-auto px-clamp-gap md:px-6 max-h-[60vh]">
+              <div class="pb-12 overflow-y-auto overscroll-y-contain px-clamp-gap md:px-6 max-h-[60vh]">
                 <div class="grid pt-clamp-gap md:pt-7">
                   <div class="relative">
                     <label for="searchFilter-mobile" class="font-semibold sr-only">Søk</label>
@@ -106,10 +107,10 @@ bodyClass: ''
                     inputName: 'filter-type-mobile'
                   }) }}
                   {{ filterGroup({
-                    array: areaFilter,
-                    title: 'Velg område',
-                    xModel: 'areaFilter',
-                    inputName: 'filter-area-mobile'
+                    array: roleFilter,
+                    title: 'Velg rolle',
+                    xModel: 'roleFilter',
+                    inputName: 'filter-role-mobile'
                   }) }}
                 </div>
               </div>
@@ -135,10 +136,10 @@ bodyClass: ''
               inputName: 'filter-type-desktop'
             }) }}
             {{ filterGroup({
-              array: areaFilter,
-              title: 'Velg område',
-              xModel: 'areaFilter',
-              inputName: 'filter-area-desktop'
+              array: roleFilter,
+              title: 'Velg rolle',
+              xModel: 'roleFilter',
+              inputName: 'filter-role-desktop'
             }) }}
           </div>
         </div>
@@ -154,7 +155,7 @@ bodyClass: ''
                 x-bind:class="expanded ? '' : ''"
                 x-show="filterItem($el)"
                 data-type="alle {% for item in product.type %}{{ item | slugify }} {% endfor %}"
-                data-area="alle {% for item in product.area %}{{ item | slugify }} {% endfor %}">
+                data-role="alle {% for item in product.role %}{{ item | slugify }} {% endfor %}">
 
                 <div
                   class="relative z-10 flex items-center gap-4 py-4 -my-px text-left px-clamp-gap -mx-clamp-gap sm:-mx-2 sm:px-4 sm:rounded-lg fine:hover:z-20"
@@ -172,7 +173,7 @@ bodyClass: ''
                       {{ product.title | safe }}
                     </h2>
                     <p class="text-base">
-                      {%- for item in product.area -%}
+                      {%- for item in product.role -%}
                         <span class="">{{ item }}</span>{{ ', ' if loop.length > 1 and not loop.last }}
                       {%- endfor -%}
                     </p>
@@ -202,7 +203,7 @@ bodyClass: ''
             {% endfor %}
           </div>
           <div x-show="count === 0" class="p-6 py-8 text-center overflow-hidden grid items-center leading-snug rounded-lg bg-gray-100 min-h-[4.75rem] lg:col-span-6">
-            <p class="max-w-prose">Ingen søknader eller skjema er merket med denne kombinasjonen av type og område.</p>
+            <p class="max-w-prose">Ingen søknader eller skjema er merket med denne kombinasjonen av type og rolle.</p>
           </div>
         </div>
 

@@ -1,5 +1,18 @@
 module.exports = {
-  audience: ["Privatperson", "Arbeidsgiver", "Samarbeidspartner"],
+  audience: [
+    {
+      title: "Privat",
+      href: "#",
+    },
+    {
+      title: "Arbeidsgiver",
+      href: "#",
+    },
+    {
+      title: "Samarbeidspartner",
+      href: "#",
+    },
+  ],
   areas: {
     title: "Områder",
     linkList: [
