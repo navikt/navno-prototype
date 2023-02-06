@@ -8,9 +8,10 @@ bodyClass: ''
 
 {%- from "macros/button.njk" import button -%}
 {%- from "macros/microcard.njk" import microcard -%}
+{%- from "macros/filterGroup.njk" import filterGroup -%}
 
 {% block content %}
-  <main class="my-8 text-lg text-gray-900"
+  <main class="py-12 text-lg text-gray-900"
     x-data="{
       typeFilter: new URLSearchParams(location.search).get('type') || 'alle',
       roleFilter: new URLSearchParams(location.search).get('role') || 'alle',
@@ -61,11 +62,11 @@ bodyClass: ''
         updateCount()
       });
       updateCount()">
-    <div class="grid pb-6 grid-cols-layout">
+    <div class="grid grid-cols-layout">
       <div class="relative w-full col-content lg:col-feature">
 
-        <div class="hidden float-right my-2 ml-24 xs:block">
-          {{ '/src/_includes/svg/pictograms/support.svg' | svgContents('w-[12vw] h-auto overflow-hidden max-w-[8rem] aspect-square') | safe }}
+        <div class="hidden float-right pb-8 mt-2 ml-24 xs:block sm:pb-0 sm:-mb-8">
+          {{ '/src/_includes/svg/pictograms/support.svg' | svgContents('w-[12vw] h-auto overflow-hidden max-w-[7rem]') | safe }}
         </div>
 
         <h1 class="text-3xl font-semibold leading-tight md:text-5xl md:leading-tight">{{ title | safe }}</h1>
@@ -74,181 +75,71 @@ bodyClass: ''
       </div>
     </div>
 
-    <div class="grid grid-cols-layout">
+    <div class="grid mt-8 lg:mt-12 grid-cols-layout">
       <div class="grid w-full gap-8 pb-20 lg:gap-x-16 lg:items-start lg:grid-cols-sidebar col-content lg:col-feature">
 
-        <div class="relative hidden sm:block lg:col-start-1">
-          <label for="searchFilter-desktop" class="font-semibold sr-only">Søk</label>
-          <span class="absolute inset-y-0 left-0 grid px-2.5 place-items-center">
-            {{ '/src/_includes/svg/icons/search.svg' | svgContents('w-6 h-6') | safe }}
-          </span>
-          <input id="searchFilter-desktop" type="search" x-model="search" class="w-full pl-10 pr-3 py-2.5 border border-gray-300 rounded shadow-inner bg-gray-50/50 focus:outline-none focus:ring focus:ring-blue-800">
-        </div>
+        <div class="relative lg:row-start-1 lg:row-span-3 lg:col-start-2" x-data="{ filterDrawer: false }">
+          <button
+            class="flex items-center justify-start gap-2.5 pl-3 pr-4 py-3 leading-none text-blue-600 bg-white rounded ring-2 ring-blue-500 hover:bg-blue-100 hover:text-blue-700 lg:hidden"
+            x-on:click="filterDrawer = true"
+            x-bind:aria-expanded="filterDrawer">
+            {{ '/src/_includes/svg/icons/filter.svg' | svgContents('w-5 h-5') | safe }}
+            <span>Søk eller velg type og område</span>
+          </button>
 
-        <div class="relative lg:-mt-1.5 lg:row-span-3 lg:col-start-2" x-data="{ filterDrawer: false, filterTags: false, filterSearch: false }">
-
-          {% set labelClasses = "inline-flex cursor-pointer px-4 pt-1.5 pb-1.5 leading-tight text-base bg-gray-100 rounded-full fine:hover:bg-deepblue-100 peer-checked:bg-deepblue-500 peer-checked:text-white peer-focus:ring-2 peer-focus:ring-deepblue-800" %}
-          {% set inputClasses = "absolute opacity-0 pointer-events-none peer" %}
-
-          <div class="flex gap-2.5 sm:hidden">
-            <button class="flex items-center justify-start flex-1 gap-3 px-4 py-3 leading-none rounded bg-deepblue-100"
-            x-on:click="filterDrawer = true, filterSearch = false, filterTags = true"
-            x-bind:aria-expanded="filterDrawer && filterTags">
-              {{ '/src/_includes/svg/icons/filter.svg' | svgContents('w-5 h-5') | safe }}
-              <span>Velg type og/eller rolle</span>
-            </button>
-
-            <button class="flex items-center justify-center gap-2 px-8 py-3 leading-none text-white bg-blue-500 rounded"
-            x-on:click="filterDrawer = true, filterSearch = true, filterTags = false"
-            x-bind:aria-expanded="filterDrawer && filterSearch">
-              {{ '/src/_includes/svg/icons/search.svg' | svgContents('w-6 h-6 -ml-2') | safe }}
-              <span>Søk</span>
-            </button>
-          </div>
-
-          <div class="fixed inset-0 z-50 overflow-hidden overscroll-contain sm:hidden" x-show="filterDrawer" x-bind:class="filterDrawer && 'animate-blur'"
-              x-transition:enter="transition ease-out duration-300"
-              x-transition:enter-start="opacity-0"
-              x-transition:enter-end="opacity-100"
-              x-transition:leave="transition ease-in duration-300"
-              x-transition:leave-start="opacity-100"
-              x-transition:leave-end="opacity-0">
-            <div class="absolute inset-x-0 bottom-0 grid bg-white shadow-drawer rounded-t-2xl sm:hidden"
-              x-show="filterTags"
-              x-on:click.outside="filterDrawer = false, filterTags = false"
-              x-transition:enter="transition ease-out duration-300"
-              x-transition:enter-start="opacity-0 translate-y-6"
-              x-transition:enter-end="opacity-100 translate-y-0"
-              x-transition:leave="transition ease-in duration-300"
-              x-transition:leave-start="opacity-100 translate-y-0"
-              x-transition:leave-end="opacity-0 translate-y-6">
-              <div class="pt-4 pb-12 overflow-y-auto px-clamp-gap">
-                <h2 class="text-sm tracking-widest uppercase lg:mt-8 opacity-70">Velg type</h2>
-                <ul class="flex flex-wrap items-start mt-2.5 gap-x-2 gap-y-3">
-                  <li>
-                    <input
-                      type="radio"
-                      x-model="typeFilter"
-                      x-on:change="updateCount($refs)"
-                      class="{{ inputClasses }}"
-                      name="filter-type-mobil"
-                      value="alle"
-                      id="filter-type-all-mobile"
-                      checked="checked"
-                    />
-                    <label class="{{ labelClasses }}" for="filter-type-all-mobile">Alle</label>
-                  </li>
-                  {% for item in typeFilter %}
-                    <li>
-                      <input type="radio" x-on:change="updateCount($refs)" x-model="typeFilter" class="{{ inputClasses }}" name="filter-type-mobil" value="{{ item | slugify }}" id="filter-{{ item | slugify }}-mobile" />
-                      <label class="{{ labelClasses }}" for="filter-{{ item | slugify }}-mobile">
-                        {{ item }}
-                      </label>
-                    </li>
-                  {% endfor %}
-                </ul>
-
-                <h2 class="mt-6 text-sm tracking-widest uppercase lg:mt-8 opacity-70">Velg rolle</h2>
-                <ul class="flex flex-wrap items-start mt-2.5 gap-x-2 gap-y-3">
-                  <li>
-                    <input
-                      type="radio"
-                      x-model="roleFilter"
-                      x-on:change="updateCount($refs)"
-                      class="{{ inputClasses }}"
-                      name="filter-role-mobile"
-                      value="alle"
-                      id="filter-role-all-mobile"
-                      checked="checked"
-                    />
-                    <label class="{{ labelClasses }}" for="filter-role-all-mobile">Alle</label>
-                  </li>
-                  {% for item in roleFilter %}
-                    <li>
-                      <input type="radio" x-on:change="updateCount($refs)" x-model="roleFilter" class="{{ inputClasses }}" name="filter-role-mobile" value="{{ item | slugify }}" id="filter-{{ item | slugify }}-mobile" />
-                      <label class="{{ labelClasses }}" for="filter-{{ item | slugify }}-mobile">
-                        {{ item }}
-                      </label>
-                    </li>
-                  {% endfor %}
-                </ul>
+          <div class="fixed inset-0 z-50 grid items-end grid-cols-layout lg:hidden" x-show="filterDrawer" x-bind:class="filterDrawer && 'animate-blur'">
+            <form class="grid bg-white shadow-drawer rounded-t-2xl col-content -mx-clamp-gap md:-mx-6 lg:hidden" x-on:click.outside="filterDrawer = false, filterTags = false"
+            x-on:submit.prevent="filterDrawer = false">
+              <div class="pb-12 overflow-y-auto px-clamp-gap md:px-6 max-h-[60vh]">
+                <div class="grid pt-clamp-gap md:pt-7">
+                  <div class="relative">
+                    <label for="searchFilter-mobile" class="font-semibold sr-only">Søk</label>
+                    <span class="absolute inset-y-0 left-0 grid px-2.5 place-items-center">
+                      {{ '/src/_includes/svg/icons/search.svg' | svgContents('w-6 h-6') | safe }}
+                    </span>
+                    <input id="searchFilter-mobile" type="search" x-model="search" class=" w-full pl-10 pr-3 py-2.5 border border-gray-300 rounded shadow-inner bg-gray-50/50 focus:outline-none focus:ring-2 focus:ring-blue-800">
+                  </div>
+                  {{ filterGroup({
+                    array: typeFilter,
+                    title: 'Velg type',
+                    xModel: 'typeFilter',
+                    inputName: 'filter-type-mobile'
+                  }) }}
+                  {{ filterGroup({
+                    array: roleFilter,
+                    title: 'Velg rolle',
+                    xModel: 'roleFilter',
+                    inputName: 'filter-role-mobile'
+                  }) }}
+                </div>
               </div>
-              <div class="py-4 px-clamp-gap bg-gray-50">
+              <div class="sticky bottom-0 h-2 -mt-2 pointer-events-none bg-gradient-to-t from-black/10 to-black/0"></div>
+              <div class="py-4 px-clamp-gap md:px-6 bg-gray-50">
                 <button class="w-full px-4 py-2 text-white bg-blue-500 rounded-lg" x-on:click="filterTags = false, filterDrawer = false">Vis resultat (<span x-text="count"></span>)</button>
               </div>
-            </div>
-            <div class="absolute inset-x-0 bottom-0 grid py-6 bg-white px-clamp-gap shadow-drawer rounded-t-2xl sm:hidden"
-              x-show="filterSearch"
-              x-on:click.outside="filterDrawer = false, filterSearch = false"
-              x-transition:enter="transition ease-out duration-300"
-              x-transition:enter-start="opacity-0 translate-y-6"
-              x-transition:enter-end="opacity-100 translate-y-0"
-              x-transition:leave="transition ease-in duration-300"
-              x-transition:leave-start="opacity-100 translate-y-0"
-              x-transition:leave-end="opacity-0 translate-y-6">
-              <form class="grid gap-3" x-on:submit.prevent="filterSearch = false, filterDrawer = false">
-                <div class="relative" x-trap="filterSearch">
-                  <label for="searchFilter-mobile" class="font-semibold sr-only">Søk</label>
-                  <span class="absolute inset-y-0 left-0 grid px-2.5 place-items-center">
-                    {{ '/src/_includes/svg/icons/search.svg' | svgContents('w-6 h-6') | safe }}
-                  </span>
-                  <input id="searchFilter-mobile" type="search" x-model="search" class=" w-full pl-10 pr-3 py-2.5 border border-gray-300 rounded shadow-inner bg-gray-50/50 focus:outline-none focus:ring-2 focus:ring-blue-800">
-                </div>
-                <button type="submit" class="px-4 py-3 text-white bg-blue-500 rounded whitespace-nowrap focus:outline-none focus:ring focus:ring-blue-800">Vis resultat (<span x-text="count"></span>)</button>
-              </form>
-            </div>
+            </form>
           </div>
 
-          <div class="hidden sm:block">
-            <h2 class="text-sm tracking-widest uppercase opacity-70">Velg type</h2>
-            <ul class="flex flex-wrap items-start mt-2.5 gap-x-1.5 gap-y-2.5">
-              <li>
-                <input
-                  type="radio"
-                  x-model="typeFilter"
-                  x-on:change="updateCount($refs)"
-                  class="{{ inputClasses }}"
-                  name="filter-type"
-                  value="alle"
-                  id="filter-type-all-desktop"
-                  checked="checked"
-                />
-                <label class="{{ labelClasses }}" for="filter-type-all-desktop">Alle</label>
-              </li>
-              {% for item in typeFilter %}
-                <li>
-                  <input type="radio" x-on:change="updateCount($refs)" x-model="typeFilter" class="{{ inputClasses }}" name="filter-type" value="{{ item | slugify }}" id="filter-{{ item | slugify }}-desktop" />
-                  <label class="{{ labelClasses }}" for="filter-{{ item | slugify }}-desktop">
-                    {{ item }}
-                  </label>
-                </li>
-              {% endfor %}
-            </ul>
-
-            <h2 class="mt-6 text-sm tracking-widest uppercase lg:mt-8 opacity-70">Velg rolle</h2>
-            <ul class="flex flex-wrap items-start mt-2.5 gap-x-1.5 gap-y-2.5">
-              <li>
-                <input
-                  type="radio"
-                  x-model="roleFilter"
-                  x-on:change="updateCount($refs)"
-                  class="{{ inputClasses }}"
-                  name="filter-role"
-                  value="alle"
-                  id="filter-role-all-desktop"
-                  checked="checked"
-                />
-                <label class="{{ labelClasses }}" for="filter-role-all-desktop">Alle</label>
-              </li>
-              {% for item in roleFilter %}
-                <li>
-                  <input type="radio" x-on:change="updateCount($refs)" x-model="roleFilter" class="{{ inputClasses }}" name="filter-role" value="{{ item | slugify }}" id="filter-{{ item | slugify }}-desktop" />
-                  <label class="{{ labelClasses }}" for="filter-{{ item | slugify }}-desktop">
-                    {{ item }}
-                  </label>
-                </li>
-              {% endfor %}
-            </ul>
+          <div class="hidden lg:block">
+            <div class="relative mt-8">
+              <label for="searchFilter-desktop" class="font-semibold sr-only">Søk</label>
+              <span class="absolute inset-y-0 left-0 grid px-2.5 place-items-center">
+                {{ '/src/_includes/svg/icons/search.svg' | svgContents('w-6 h-6') | safe }}
+              </span>
+              <input id="searchFilter-desktop" type="search" x-model="search" class="w-full max-w-xl pl-10 pr-3 py-2.5 border border-gray-300 rounded shadow-inner bg-gray-50/50 focus:outline-none focus:ring focus:ring-blue-800">
+            </div>
+            {{ filterGroup({
+              array: typeFilter,
+              title: 'Velg type',
+              xModel: 'typeFilter',
+              inputName: 'filter-type-desktop'
+            }) }}
+            {{ filterGroup({
+              array: roleFilter,
+              title: 'Velg rolle',
+              xModel: 'roleFilter',
+              inputName: 'filter-role-desktop'
+            }) }}
           </div>
         </div>
 

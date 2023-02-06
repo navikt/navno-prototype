@@ -2,7 +2,13 @@
 
   <div class="relative z-10 grid justify-center bg-gray-100 xs:hidden col-full">
     <button class="flex items-center justify-center gap-2 px-4 py-2 focus:outline-none focus-visible:text-white focus-visible:bg-blue-500" x-on:click="audienceDropdownOpen = !audienceDropdownOpen">
+      {%- if ('samarbeidspartner' in page.fileSlug) -%}
+      <span>{{ menu.audience[2] }}</span>
+      {%- elif ('arbeidsgiver' in page.fileSlug) -%}
+      <span>{{ menu.audience[1] }}</span>
+      {%- elif (not 'produktoversikt-' in page.fileSlug) -%}
       <span>{{ menu.audience[0] }}</span>
+      {%- endif -%}
       {{ '/src/_includes/svg/icons/chevron-down.svg' | svgContents('w-4 h-4') | safe }}
     </button>
     <div class="absolute px-4 mt-px -translate-x-1/2 left-1/2 top-full">
@@ -46,7 +52,13 @@
     {# Audience #}
     <div class="relative hidden px-4 md:px-5 md:self-stretch xs:grid" x-on:click.outside="audienceDropdownOpen = false">
       <button class="flex items-center self-center justify-center gap-4 py-2 pl-3 pr-2 border border-gray-200 rounded fine:hover:bg-deepblue-100 focus:outline-none md:hidden" x-on:click="audienceDropdownOpen = !audienceDropdownOpen">
-        <span>{{ menu.audience[0] }}</span>
+      {%- if ('samarbeidspartner' in page.fileSlug) -%}
+      <span>{{ menu.audience[2] }}</span>
+      {%- elif ('arbeidsgiver' in page.fileSlug) -%}
+      <span>{{ menu.audience[1] }}</span>
+      {%- elif (not 'produktoversikt-' in page.fileSlug) -%}
+      <span>{{ menu.audience[0] }}</span>
+      {%- endif -%}
         {{ '/src/_includes/svg/icons/chevron-down.svg' | svgContents('w-4 h-4') | safe }}
       </button>
       <div class="xs:absolute md:static xs:top-full xs:left-0">
