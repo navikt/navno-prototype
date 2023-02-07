@@ -36,8 +36,15 @@ tags: ['template']
           {% set index = sections.slice(1) %}
           <ul class="mt-1">
             {% for item in index %}
-              <li class="py-1.5"><a class="inline-block text-gray-800 underline md:pl-6 hover:no-underline" href="#{{ item.title | slugify }}">{{ item.title }}</a></li>
+              <li class="py-1.5"><a class="inline-block text-gray-800 underline hover:text-gray-900 md:pl-6 hover:no-underline" href="#{{ item.title | slugify }}">{{ item.title }}</a></li>
             {% endfor %}
+          </ul>
+
+          <h2 class="mt-8 text-xl font-semibold md:pl-6 sm:text-2xl">Nyttig å vite</h2>
+          <ul class="mt-1">
+            <li class="py-1.5"><a class="inline-block text-gray-800 underline hover:text-gray-900 md:pl-6 hover:no-underline" href="#">Klagerettigheter</a></li>
+            <li class="py-1.5"><a class="inline-block text-gray-800 underline hover:text-gray-900 md:pl-6 hover:no-underline" href="#">Lov om barnetrygd</a></li>
+            <li class="py-1.5"><a class="inline-block text-gray-800 underline hover:text-gray-900 md:pl-6 hover:no-underline" href="#">Pensjonsopptjening for omsorgsarbeid</a></li>
           </ul>
         </div>
 

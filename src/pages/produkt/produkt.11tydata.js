@@ -61,18 +61,53 @@ Hvis du bor alene med barn mellom 0 og 3 år og får full overgangsstønad, kan 
     },
     {
       title: "Når utbetales pengene?",
+      icon: "/src/_includes/svg/icons/wallet.svg",
+      contentBlocks: [
+        {
+          type: "markdown",
+          data: `Barnetrygden blir utbetalt en gang per måned.
+          I din utbetalingsoversikt kan du se den kommende utbetalingen din flere dager før utbetalingsdatoen.
+
+          Når på dagen pengene er på konto, vil variere fordi det er banken din som overfører pengene til deg. Utbetalingen kan derfor komme på kontoen din først på ettermiddagen eller kvelden.
+
+### Feriepenger
+Det er ikke feriepenger på denne pengestøtten.
+
+### Skatt
+Det blir ikke trukket skatt.`,
+        },
+      ],
     },
     {
       title: "Hvor lenge kan du få?",
+      icon: "/src/_includes/svg/icons/hourglass.svg",
+      contentBlocks: [
+        {
+          type: "markdown",
+          data: `Du får som regel utvidet barnetrygd fra måneden etter at du blir alene med barn.
+
+          Når du regnes for å være alene med barn, vil variere etter hvilken situasjon du er i. Her er noen eksempler:
+
+* Du har vært gift og er nå separert: Du kan tidligst få utvidet barnetrygd fra måneden etter separasjonsbevilling.
+* Du har vært samboer med felles barn under 16 år: Du kan tidligst få utvidet barnetrygd fra måneden etter at du har fått meklingsattest.
+* Du er ugift og alene med barn fra fødselen: Du kan ha rett til utvidet barnetrygd fra måneden etter fødselen.
+* Du kan få utvidet barnetrygd for inntil 3 år før du søker hvis du har rett til støtten i denne perioden.
+
+Hvis situasjonen din endrer seg slik at du ikke lenger regnes for å være alene med barn, har du ikke lenger rett til utvidet barnetrygd. Utvidet barnetrygd opphører fra måneden etter endringen.`,
+        },
+      ],
     },
     {
       title: "Meld fra om endringer",
+      icon: "/src/_includes/svg/icons/chat.svg",
     },
     {
       title: "Til eller fra utlandet",
+      icon: "/src/_includes/svg/icons/takeoff.svg",
     },
     {
       title: "Søknad og dokumentasjon",
+      icon: "/src/_includes/svg/icons/tasks.svg",
     },
   ],
 };
