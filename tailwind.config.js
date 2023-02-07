@@ -232,6 +232,9 @@ module.exports = {
           },
         },
       },
+      minWidth: {
+        ...defaults.theme.spacing,
+      },
       maxWidth: {
         prose: "76ch",
       },
