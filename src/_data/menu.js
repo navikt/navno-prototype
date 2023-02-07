@@ -2,15 +2,15 @@ module.exports = {
   audience: [
     {
       title: "Privat",
-      href: "/",
+      href: "#",
     },
     {
       title: "Arbeidsgiver",
-      href: "/index-arbeidsgiver.html",
+      href: "#",
     },
     {
       title: "Samarbeidspartner",
-      href: "/index-samarbeidspartner.html",
+      href: "#",
     },
   ],
   areas: {
