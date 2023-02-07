@@ -1,0 +1,25 @@
+---
+title: 'Utvidet barnetrygd'
+description: ''
+order: 4
+bodyClass: ''
+tags: ['template']
+---
+{% extends 'base.njk' %}
+
+{% block content %}
+  <main class="">
+    <div class="grid py-8 grid-cols-layout">
+      <div class="col-feature">
+        <h1>{{ title | safe }}</h1>
+      </div>
+    </div>
+    <div class="grid py-12 grid-cols-layout bg-gray-50">
+      <div class="col-feature grid grid-cols-[1fr_2fr] gap-4">
+        <div class="col-start-2 row-start-1 p-8 bg-white">Kort om</div>
+        <div class="col-start-1 p-8 bg-white">Innhold</div>
+        <div class="col-start-2 row-start-2 p-8 bg-white">Hvem kan få</div>
+      </div>
+    </div>
+  </main>
+{% endblock %}
