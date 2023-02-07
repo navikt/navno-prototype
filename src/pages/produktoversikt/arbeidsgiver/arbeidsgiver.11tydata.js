@@ -8,10 +8,8 @@ const products = [
     contentBlocks: [
       {
         type: "markdown",
-        data: [
-          "### Søk om opptak eller endring i forsikringen",
-          "Et kort avsnitt med tekst",
-        ],
+        data: `### Søk om opptak eller endring i forsikringen
+          Et kort avsnitt med tekst`,
       },
       {
         type: "actions",
@@ -31,7 +29,7 @@ const products = [
       },
       {
         type: "markdown",
-        data: ["### Mer om"],
+        data: `### Mer om`,
       },
       {
         type: "microcards",
@@ -53,10 +51,8 @@ const products = [
     contentBlocks: [
       {
         type: "markdown",
-        data: [
-          "### Søk om opptak eller endring i forsikringen",
-          "Et kort avsnitt med tekst",
-        ],
+        data: `### Søk om opptak eller endring i forsikringen
+     Et kort avsnitt med tekst`,
       },
       {
         type: "actions",
@@ -76,7 +72,7 @@ const products = [
       },
       {
         type: "markdown",
-        data: ["### Mer om"],
+        data: `### Mer om`,
       },
       {
         type: "microcards",
@@ -98,10 +94,8 @@ const products = [
     contentBlocks: [
       {
         type: "markdown",
-        data: [
-          "### Søk om opptak eller endring i forsikringen",
-          "Et kort avsnitt med tekst",
-        ],
+        data: `### Søk om opptak eller endring i forsikringen
+     Et kort avsnitt med tekst`,
       },
       {
         type: "actions",
@@ -121,7 +115,7 @@ const products = [
       },
       {
         type: "markdown",
-        data: ["### Mer om"],
+        data: `### Mer om`,
       },
       {
         type: "microcards",
@@ -144,10 +138,8 @@ const products = [
     contentBlocks: [
       {
         type: "markdown",
-        data: [
-          "### Søk om opptak i forsikringen",
-          "Et kort avsnitt med tekst",
-        ],
+        data: `### Søk om opptak i forsikringen
+          Et kort avsnitt med tekst`,
       },
       {
         type: "actions",
@@ -167,7 +159,7 @@ const products = [
       },
       {
         type: "markdown",
-        data: ["### Mer om"],
+        data: `### Mer om`,
       },
       {
         type: "microcards",
@@ -192,10 +184,8 @@ const products = [
     contentBlocks: [
       {
         type: "markdown",
-        data: [
-          "### Søk om opptak i forsikringen",
-          "Et kort avsnitt med tekst",
-        ],
+        data: `### Søk om opptak i forsikringen
+          Et kort avsnitt med tekst`,
       },
       {
         type: "actions",
@@ -215,10 +205,8 @@ const products = [
       },
       {
         type: "markdown",
-        data: [
-          "### Be om refusjon",
-          "Et kort avsnitt med tekst",
-        ],
+        data: `### Be om refusjon
+          Et kort avsnitt med tekst`,
       },
       {
         type: "actions",
@@ -238,7 +226,7 @@ const products = [
       },
       {
         type: "markdown",
-        data: ["### Mer om"],
+        data: `### Mer om`,
       },
       {
         type: "microcards",
@@ -264,10 +252,8 @@ const products = [
     contentBlocks: [
       {
         type: "markdown",
-        data: [
-          "### Søk om administrasjonstilskudd",
-          "Hvis dere har ansatt en eller flere tolker i full stilling, kan bedriften få dekket administrative merkostnader av NAV.",
-        ],
+        data: `### Søk om administrasjonstilskudd
+          Hvis dere har ansatt en eller flere tolker i full stilling, kan bedriften få dekket administrative merkostnader av NAV.`,
       },
       {
         type: "actions",
@@ -287,7 +273,7 @@ const products = [
       },
       {
         type: "markdown",
-        data: ["### Mer om"],
+        data: `### Mer om`,
       },
       {
         type: "microcards",
@@ -312,10 +298,8 @@ const products = [
     contentBlocks: [
       {
         type: "markdown",
-        data: [
-          "### Søk om funksjonsassistanse",
-          "Tekst",
-        ],
+        data: `### Søk om funksjonsassistanse
+          Tekst`,
       },
       {
         type: "actions",
@@ -335,10 +319,8 @@ const products = [
       },
       {
         type: "markdown",
-        data: [
-          "### Be om refusjon for funksjonsassistanse",
-          "Tekst",
-        ],
+        data: `### Be om refusjon for funksjonsassistanse
+     Tekst`,
       },
       {
         type: "actions",
@@ -358,7 +340,7 @@ const products = [
       },
       {
         type: "markdown",
-        data: ["### Mer om"],
+        data: `### Mer om`,
       },
       {
         type: "microcards",
@@ -384,10 +366,8 @@ const products = [
     contentBlocks: [
       {
         type: "markdown",
-        data: [
-          "### Be om refusjon",
-          "Send regning for utført lese- og sekretærhjelp",
-        ],
+        data: `### Be om refusjon
+          Send regning for utført lese- og sekretærhjelp`,
       },
       {
         type: "actions",
@@ -407,7 +387,7 @@ const products = [
       },
       {
         type: "markdown",
-        data: ["### Mer om"],
+        data: `### Mer om`,
       },
       {
         type: "microcards",
@@ -430,10 +410,8 @@ const products = [
     contentBlocks: [
       {
         type: "markdown",
-        data: [
-          "### Signer avtale om tiltaksgjennomføring",
-          "Avtalen blir inngått mellom arbeidssøkeren, arbeidsgiver og NAV.",
-        ],
+        data: `### Signer avtale om tiltaksgjennomføring
+          Avtalen blir inngått mellom arbeidssøkeren, arbeidsgiver og NAV.`,
       },
       {
         type: "actions",
@@ -449,7 +427,7 @@ const products = [
       },
       {
         type: "markdown",
-        data: ["### Mer om"],
+        data: `### Mer om`,
       },
       {
         type: "microcards",
@@ -475,10 +453,8 @@ const products = [
     contentBlocks: [
       {
         type: "markdown",
-        data: [
-          "### Signer avtale om tiltaksgjennomføring",
-          "Avtalen blir inngått mellom arbeidssøkeren, arbeidsgiver og NAV.",
-        ],
+        data: `### Signer avtale om tiltaksgjennomføring
+          Avtalen blir inngått mellom arbeidssøkeren, arbeidsgiver og NAV.`,
       },
       {
         type: "actions",
@@ -494,10 +470,8 @@ const products = [
       },
       {
         type: "markdown",
-        data: [
-          "### Be om refusjon",
-          "Tekst",
-        ],
+        data: `### Be om refusjon
+          Tekst`,
       },
       {
         type: "actions",
@@ -517,7 +491,7 @@ const products = [
       },
       {
         type: "markdown",
-        data: ["### Mer om"],
+        data: `### Mer om`,
       },
       {
         type: "microcards",
@@ -543,10 +517,8 @@ const products = [
     contentBlocks: [
       {
         type: "markdown",
-        data: [
-          "### Søk om unntak fra arbeidsgiveransvar for sykepenger for kronisk syk arbeidstaker",
-          "Tekst",
-        ],
+        data: `### Søk om unntak fra arbeidsgiveransvar for sykepenger for kronisk syk arbeidstaker
+          Tekst`,
       },
       {
         type: "actions",
@@ -562,10 +534,8 @@ const products = [
       },
       {
         type: "markdown",
-        data: [
-          "### Søk om unntak fra arbeidsgiveransvar for sykepenger for gravid arbeidstaker",
-          "Tekst",
-        ],
+        data: `### Søk om unntak fra arbeidsgiveransvar for sykepenger for gravid arbeidstaker
+          Tekst`,
       },
       {
         type: "actions",
@@ -581,10 +551,8 @@ const products = [
       },
       {
         type: "markdown",
-        data: [
-          "### Be om refusjon av sykepenger",
-          "Når du er unntatt fra arbeidsgiveransvar i arbeidsgiverperioden, kan du be om refusjon for sykepenger du har utbetalt.",
-        ],
+        data: `### Be om refusjon av sykepenger
+          Når du er unntatt fra arbeidsgiveransvar i arbeidsgiverperioden, kan du be om refusjon for sykepenger du har utbetalt.`,
       },
       {
         type: "actions",
@@ -604,7 +572,7 @@ const products = [
       },
       {
         type: "markdown",
-        data: ["### Mer om"],
+        data: `### Mer om`,
       },
       {
         type: "microcards",
@@ -630,10 +598,8 @@ const products = [
     contentBlocks: [
       {
         type: "markdown",
-        data: [
-          "### Signer avtale om tiltaksgjennomføring",
-          "Avtalen blir inngått mellom arbeidssøkeren, arbeidsgiver og NAV.",
-        ],
+        data: `### Signer avtale om tiltaksgjennomføring
+          Avtalen blir inngått mellom arbeidssøkeren, arbeidsgiver og NAV.`,
       },
       {
         type: "actions",
@@ -649,10 +615,8 @@ const products = [
       },
       {
         type: "markdown",
-        data: [
-          "### Be om refusjon",
-          "Tekst",
-        ],
+        data: `### Be om refusjon
+          Tekst`,
       },
       {
         type: "actions",
@@ -672,7 +636,7 @@ const products = [
       },
       {
         type: "markdown",
-        data: ["### Mer om"],
+        data: `### Mer om`,
       },
       {
         type: "microcards",
@@ -698,10 +662,8 @@ const products = [
     contentBlocks: [
       {
         type: "markdown",
-        data: [
-          "### Signer avtale om tiltaksgjennomføring",
-          "Avtalen blir inngått mellom arbeidssøkeren, arbeidsgiver og NAV.",
-        ],
+        data: `### Signer avtale om tiltaksgjennomføring
+     Avtalen blir inngått mellom arbeidssøkeren, arbeidsgiver og NAV.`,
       },
       {
         type: "actions",
@@ -717,10 +679,8 @@ const products = [
       },
       {
         type: "markdown",
-        data: [
-          "### Be om refusjon",
-          "Tekst",
-        ],
+        data: `### Be om refusjon
+     Tekst`,
       },
       {
         type: "actions",
@@ -740,7 +700,7 @@ const products = [
       },
       {
         type: "markdown",
-        data: ["### Mer om"],
+        data: `### Mer om`,
       },
       {
         type: "microcards",
@@ -766,10 +726,8 @@ const products = [
     contentBlocks: [
       {
         type: "markdown",
-        data: [
-          "### Signer avtale om tiltaksgjennomføring",
-          "Avtalen blir inngått mellom arbeidssøkeren, arbeidsgiver og NAV.",
-        ],
+        data: `### Signer avtale om tiltaksgjennomføring
+     Avtalen blir inngått mellom arbeidssøkeren, arbeidsgiver og NAV.`,
       },
       {
         type: "actions",
@@ -785,10 +743,8 @@ const products = [
       },
       {
         type: "markdown",
-        data: [
-          "### Be om refusjon",
-          "Tekst",
-        ],
+        data: `### Be om refusjon
+     Tekst`,
       },
       {
         type: "actions",
@@ -808,7 +764,7 @@ const products = [
       },
       {
         type: "markdown",
-        data: ["### Mer om"],
+        data: `### Mer om`,
       },
       {
         type: "microcards",
@@ -834,10 +790,8 @@ const products = [
     contentBlocks: [
       {
         type: "markdown",
-        data: [
-          "### Søk om tilskudd til ekspertbistand",
-          "Dette søker du om hos Altinn",
-        ],
+        data: `### Søk om tilskudd til ekspertbistand
+     Dette søker du om hos Altinn`,
       },
       {
         type: "actions",
@@ -853,10 +807,8 @@ const products = [
       },
       {
         type: "markdown",
-        data: [
-          "### Be om refusjon",
-          "Tekst",
-        ],
+        data: `### Be om refusjon
+     Tekst`,
       },
       {
         type: "actions",
@@ -876,7 +828,7 @@ const products = [
       },
       {
         type: "markdown",
-        data: ["### Mer om"],
+        data: `### Mer om`,
       },
       {
         type: "microcards",
@@ -899,10 +851,8 @@ const products = [
     contentBlocks: [
       {
         type: "markdown",
-        data: [
-          "### Signer avtale om tiltaksgjennomføring",
-          "Avtalen blir inngått mellom arbeidssøkeren, arbeidsgiver og NAV.",
-        ],
+        data: `### Signer avtale om tiltaksgjennomføring
+     Avtalen blir inngått mellom arbeidssøkeren, arbeidsgiver og NAV.`,
       },
       {
         type: "actions",
@@ -918,7 +868,7 @@ const products = [
       },
       {
         type: "markdown",
-        data: ["### Mer om"],
+        data: `### Mer om`,
       },
       {
         type: "microcards",
@@ -943,10 +893,8 @@ const products = [
     contentBlocks: [
       {
         type: "markdown",
-        data: [
-          "### Søk og signer avtale om tiltaksplass for varig tilrettelagt arbeid i ordinær bedrift",
-          "Tekst",
-        ],
+        data: `### Søk og signer avtale om tiltaksplass for varig tilrettelagt arbeid i ordinær bedrift
+     Tekst`,
       },
       {
         type: "actions",
@@ -966,7 +914,7 @@ const products = [
       },
       {
         type: "markdown",
-        data: ["### Mer om"],
+        data: `### Mer om`,
       },
       {
         type: "microcards",
@@ -989,10 +937,8 @@ const products = [
     contentBlocks: [
       {
         type: "markdown",
-        data: [
-          "### Tilby arbeidspraksis i forbindelse med jobbmestrende oppfølging",
-          "Tilbudet finnes i Nord-Trøndelag, Buskerud, Telemark, Oslo, Rogaland, Vest-Agder og Oppland. Ta kontakt med NAV-kontoret ditt for mer informasjon.",
-        ],
+        data: `### Tilby arbeidspraksis i forbindelse med jobbmestrende oppfølging
+     Tilbudet finnes i Nord-Trøndelag, Buskerud, Telemark, Oslo, Rogaland, Vest-Agder og Oppland. Ta kontakt med NAV-kontoret ditt for mer informasjon.`,
       },
       {
         type: "actions",
@@ -1008,7 +954,7 @@ const products = [
       },
       {
         type: "markdown",
-        data: ["### Mer om"],
+        data: `### Mer om`,
       },
       {
         type: "microcards",
@@ -1041,10 +987,8 @@ const products = [
     contentBlocks: [
       {
         type: "markdown",
-        data: [
-          "### Finn arbeidsgiverlos",
-          "Ta kontakt med ditt nærmeste arbeidslivssenter for å høre om det kan være et tilbud for virksomheten din.",
-        ],
+        data: `### Finn arbeidsgiverlos
+     Ta kontakt med ditt nærmeste arbeidslivssenter for å høre om det kan være et tilbud for virksomheten din.`,
       },
       {
         type: "actions",
@@ -1060,7 +1004,7 @@ const products = [
       },
       {
         type: "markdown",
-        data: ["### Mer om"],
+        data: `### Mer om`,
       },
       {
         type: "microcards",
@@ -1083,10 +1027,8 @@ const products = [
     contentBlocks: [
       {
         type: "markdown",
-        data: [
-          "### Interessert i tilbudet?",
-          "Ta kontakt med ditt nærmeste arbeidslivssenter for å høre om det kan være et tilbud for virksomheten din.",
-        ],
+        data: `### Interessert i tilbudet?
+     Ta kontakt med ditt nærmeste arbeidslivssenter for å høre om det kan være et tilbud for virksomheten din.`,
       },
       {
         type: "actions",
@@ -1102,7 +1044,7 @@ const products = [
       },
       {
         type: "markdown",
-        data: ["### Mer om"],
+        data: `### Mer om`,
       },
       {
         type: "microcards",
@@ -1131,10 +1073,8 @@ const products = [
     contentBlocks: [
       {
         type: "markdown",
-        data: [
-          "### Meld fra om skade eller sykdom i forbindelse med petroleumsvirksomhet til havs",
-          "Tekst",
-        ],
+        data: `### Meld fra om skade eller sykdom i forbindelse med petroleumsvirksomhet til havs
+     Tekst`,
       },
       {
         type: "actions",
@@ -1154,10 +1094,8 @@ const products = [
       },
       {
         type: "markdown",
-        data: [
-          "### Meld fra om skade eller sykdom under arbeid på land",
-          "Du bruker samme skjema enten skaden er påført på norsk eller utenlandsk territorium.",
-        ],
+        data: `### Meld fra om skade eller sykdom under arbeid på land
+     Du bruker samme skjema enten skaden er påført på norsk eller utenlandsk territorium.`,
       },
       {
         type: "actions",
@@ -1177,10 +1115,8 @@ const products = [
       },
       {
         type: "markdown",
-        data: [
-          "### Meld fra om skade eller sykdom under tjeneste på skip eller under fiske/fangst",
-          "Tekst",
-        ],
+        data: `### Meld fra om skade eller sykdom under tjeneste på skip eller under fiske/fangst
+     Tekst`,
       },
       {
         type: "actions",
@@ -1200,10 +1136,8 @@ const products = [
       },
       {
         type: "markdown",
-        data: [
-          "### Meld fra om skade eller sykdom under militær tjenestegjøring",
-          "Tekst",
-        ],
+        data: `### Meld fra om skade eller sykdom under militær tjenestegjøring
+     Tekst`,
       },
       {
         type: "actions",
@@ -1223,10 +1157,8 @@ const products = [
       },
       {
         type: "markdown",
-        data: [
-          "### Meld fra om skade eller sykdom for elev eller student",
-          "Tekst",
-        ],
+        data: `### Meld fra om skade eller sykdom for elev eller student
+     Tekst`,
       },
       {
         type: "actions",
@@ -1246,7 +1178,7 @@ const products = [
       },
       {
         type: "markdown",
-        data: ["### Mer om"],
+        data: `### Mer om`,
       },
       {
         type: "microcards",
@@ -1269,10 +1201,8 @@ const products = [
     contentBlocks: [
       {
         type: "markdown",
-        data: [
-          "### Søk om tilgang til AA-registeret",
-          "Registeret er tilgjengelig for offentlige og noen private aktører.",
-        ],
+        data: `### Søk om tilgang til AA-registeret
+     Registeret er tilgjengelig for offentlige og noen private aktører.`,
       },
       {
         type: "actions",
@@ -1288,10 +1218,8 @@ const products = [
       },
       {
         type: "markdown",
-        data: [
-          "### Rapporter inn arbeidstakere",
-          "Som arbeids- og oppdragsgiver må du rapportere arbeidstakere og frilansere til registeret. Rapporteringen gjør du gjennom a-meldingen hos Altinn.",
-        ],
+        data: `### Rapporter inn arbeidstakere
+     Som arbeids- og oppdragsgiver må du rapportere arbeidstakere og frilansere til registeret. Rapporteringen gjør du gjennom a-meldingen hos Altinn.`,
       },
       {
         type: "actions",
@@ -1307,10 +1235,8 @@ const products = [
       },
       {
         type: "markdown",
-        data: [
-          "### Slå opp i registeret",
-          "Web-oppslag er en tjeneste som lar deg slå opp i registeret.",
-        ],
+        data: `### Slå opp i registeret
+     Web-oppslag er en tjeneste som lar deg slå opp i registeret.`,
       },
       {
         type: "actions",
@@ -1326,10 +1252,8 @@ const products = [
       },
       {
         type: "markdown",
-        data: [
-          "### Få brukerstøtte",
-          "Hjelper deg med ulike oppgaver som har med tilgangen din å gjøre.",
-        ],
+        data: `### Få brukerstøtte
+     Hjelper deg med ulike oppgaver som har med tilgangen din å gjøre.`,
       },
       {
         type: "actions",
@@ -1345,7 +1269,7 @@ const products = [
       },
       {
         type: "markdown",
-        data: ["### Mer om"],
+        data: `### Mer om`,
       },
       {
         type: "microcards",
@@ -1379,10 +1303,8 @@ const products = [
     contentBlocks: [
       {
         type: "markdown",
-        data: [
-          "### Meld fra at du sender en arbeidstaker på midlertidig oppdrag til et annet EØS-land eller Sveits",
-          "Dette skjemaet fyller du ut når arbeidstakeren er midlertidig utstasjonert. Det skal ikke brukes hvis arbeidstakeren regelmessig veksler mellom å arbeide i Norge og ett eller flere andre land.",
-        ],
+        data: `### Meld fra at du sender en arbeidstaker på midlertidig oppdrag til et annet EØS-land eller Sveits
+     Dette skjemaet fyller du ut når arbeidstakeren er midlertidig utstasjonert. Det skal ikke brukes hvis arbeidstakeren regelmessig veksler mellom å arbeide i Norge og ett eller flere andre land.`,
       },
       {
         type: "actions",
@@ -1402,10 +1324,8 @@ const products = [
       },
       {
         type: "markdown",
-        data: [
-          "### Bekreft utsending av arbeidstaker",
-          "Dette skjemaet er et vedlegg til arbeidstakerens søknad om å beholde medlemskapet i folketrygden under opphold utenfor Norge. Når du som arbeidsgiver sender en arbeidstaker på oppdrag i et land utenfor EØS-området, må du fylle ut dette skjemaet.",
-        ],
+        data: `### Bekreft utsending av arbeidstaker
+     Dette skjemaet er et vedlegg til arbeidstakerens søknad om å beholde medlemskapet i folketrygden under opphold utenfor Norge. Når du som arbeidsgiver sender en arbeidstaker på oppdrag i et land utenfor EØS-området, må du fylle ut dette skjemaet.`,
       },
       {
         type: "actions",
@@ -1421,7 +1341,7 @@ const products = [
       },
       {
         type: "markdown",
-        data: ["### Mer om"],
+        data: `### Mer om`,
       },
       {
         type: "microcards",
@@ -1444,10 +1364,8 @@ const products = [
     contentBlocks: [
       {
         type: "markdown",
-        data: [
-          "### Meld fra om permitteringer, masseoppsigelser og/eller reduksjon i arbeidstid",
-          "Tekst",
-        ],
+        data: `### Meld fra om permitteringer, masseoppsigelser og/eller reduksjon i arbeidstid
+     Tekst`,
       },
       {
         type: "actions",
@@ -1463,7 +1381,7 @@ const products = [
       },
       {
         type: "markdown",
-        data: ["### Mer om"],
+        data: `### Mer om`,
       },
       {
         type: "microcards",
@@ -1486,10 +1404,8 @@ const products = [
     contentBlocks: [
       {
         type: "markdown",
-        data: [
-          "### Meld fra om permitteringer, masseoppsigelser og/eller reduksjon i arbeidstid",
-          "Tekst",
-        ],
+        data: `### Meld fra om permitteringer, masseoppsigelser og/eller reduksjon i arbeidstid
+     Tekst`,
       },
       {
         type: "actions",
@@ -1505,7 +1421,7 @@ const products = [
       },
       {
         type: "markdown",
-        data: ["### Mer om"],
+        data: `### Mer om`,
       },
       {
         type: "microcards",
@@ -1527,10 +1443,8 @@ const products = [
     contentBlocks: [
       {
         type: "markdown",
-        data: [
-          "### Endre kontonummer",
-          "Dette gjør du hos Altinn.",
-        ],
+        data: `### Endre kontonummer
+     Dette gjør du hos Altinn.`,
       },
       {
         type: "actions",
@@ -1546,7 +1460,7 @@ const products = [
       },
       {
         type: "markdown",
-        data: ["### Mer om"],
+        data: `### Mer om`,
       },
       {
         type: "microcards",
@@ -1569,10 +1483,8 @@ const products = [
     contentBlocks: [
       {
         type: "markdown",
-        data: [
-          "### Send inntektsmelding",
-          "Dette gjør du hos Altinn.",
-        ],
+        data: `### Send inntektsmelding
+     Dette gjør du hos Altinn.`,
       },
       {
         type: "actions",
@@ -1588,7 +1500,7 @@ const products = [
       },
       {
         type: "markdown",
-        data: ["### Mer om"],
+        data: `### Mer om`,
       },
       {
         type: "microcards",
@@ -1611,10 +1523,8 @@ const products = [
     contentBlocks: [
       {
         type: "markdown",
-        data: [
-          "### Be om tilbakebetaling",
-          "Hvis du har betalt til NAV Innkreving uten at det er trukket fra den ansatte, kan du søke NAV Innkreving om å få tilbakebetalt beløpet. Send henvendelsen via kontaktskjema på altinn.no.",
-        ],
+        data: `### Be om tilbakebetaling
+     Hvis du har betalt til NAV Innkreving uten at det er trukket fra den ansatte, kan du søke NAV Innkreving om å få tilbakebetalt beløpet. Send henvendelsen via kontaktskjema på altinn.no.`,
       },
       {
         type: "actions",
@@ -1630,7 +1540,7 @@ const products = [
       },
       {
         type: "markdown",
-        data: ["### Mer om"],
+        data: `### Mer om`,
       },
       {
         type: "microcards",
@@ -1655,10 +1565,8 @@ const products = [
     contentBlocks: [
       {
         type: "markdown",
-        data: [
-          "### Send inntektsmelding for arbeidstaker",
-          "Dette gjør du hos Altinn.",
-        ],
+        data: `### Send inntektsmelding for arbeidstaker
+     Dette gjør du hos Altinn.`,
       },
       {
         type: "actions",
@@ -1674,10 +1582,8 @@ const products = [
       },
       {
         type: "markdown",
-        data: [
-          "### Send trekkopplysninger for arbeidstaker",
-          "Tekst",
-        ],
+        data: `### Send trekkopplysninger for arbeidstaker
+     Tekst`,
       },
       {
         type: "actions",
@@ -1697,7 +1603,7 @@ const products = [
       },
       {
         type: "markdown",
-        data: ["### Mer om"],
+        data: `### Mer om`,
       },
       {
         type: "microcards",
@@ -1722,10 +1628,8 @@ const products = [
     contentBlocks: [
       {
         type: "markdown",
-        data: [
-          "### Send inntektsmelding for arbeidstaker",
-          "Dette gjør du hos Altinn.",
-        ],
+        data: `### Send inntektsmelding for arbeidstaker
+     Dette gjør du hos Altinn.`,
       },
       {
         type: "actions",
@@ -1741,10 +1645,8 @@ const products = [
       },
       {
         type: "markdown",
-        data: [
-          "### Send trekkopplysninger for arbeidstaker",
-          "Tekst",
-        ],
+        data: `### Send trekkopplysninger for arbeidstaker
+     Tekst`,
       },
       {
         type: "actions",
@@ -1764,7 +1666,7 @@ const products = [
       },
       {
         type: "markdown",
-        data: ["### Mer om"],
+        data: `### Mer om`,
       },
       {
         type: "microcards",
@@ -1789,10 +1691,8 @@ const products = [
     contentBlocks: [
       {
         type: "markdown",
-        data: [
-          "### Send inntektsmelding for arbeidstaker",
-          "Dette gjør du hos Altinn.",
-        ],
+        data: `### Send inntektsmelding for arbeidstaker
+     Dette gjør du hos Altinn.`,
       },
       {
         type: "actions",
@@ -1808,10 +1708,8 @@ const products = [
       },
       {
         type: "markdown",
-        data: [
-          "### Be om refusjon",
-          "Du søker om refusjon ved å sende inn en inntektsmelding. Den sendes enten fra arbeidsgivers eget lønns- og personalsystem eller fra altinn.no.",
-        ],
+        data: `### Be om refusjon
+     Du søker om refusjon ved å sende inn en inntektsmelding. Den sendes enten fra arbeidsgivers eget lønns- og personalsystem eller fra altinn.no.`,
       },
       {
         type: "actions",
@@ -1827,7 +1725,7 @@ const products = [
       },
       {
         type: "markdown",
-        data: ["### Mer om"],
+        data: `### Mer om`,
       },
       {
         type: "microcards",
@@ -1852,10 +1750,8 @@ const products = [
     contentBlocks: [
       {
         type: "markdown",
-        data: [
-          "### Send inntektsmelding for arbeidstaker",
-          "Dette gjør du hos Altinn.",
-        ],
+        data: `### Send inntektsmelding for arbeidstaker
+     Dette gjør du hos Altinn.`,
       },
       {
         type: "actions",
@@ -1871,10 +1767,8 @@ const products = [
       },
       {
         type: "markdown",
-        data: [
-          "### Be om refusjon",
-          "Du søker om refusjon ved å sende inn en inntektsmelding. Den sendes enten fra arbeidsgivers eget lønns- og personalsystem eller fra altinn.no.",
-        ],
+        data: `### Be om refusjon
+     Du søker om refusjon ved å sende inn en inntektsmelding. Den sendes enten fra arbeidsgivers eget lønns- og personalsystem eller fra altinn.no.`,
       },
       {
         type: "actions",
@@ -1890,7 +1784,7 @@ const products = [
       },
       {
         type: "markdown",
-        data: ["### Mer om"],
+        data: `### Mer om`,
       },
       {
         type: "microcards",
@@ -1915,10 +1809,8 @@ const products = [
     contentBlocks: [
       {
         type: "markdown",
-        data: [
-          "### Send inntektsmelding for arbeidstaker",
-          "Dette gjør du hos Altinn.",
-        ],
+        data: `### Send inntektsmelding for arbeidstaker
+     Dette gjør du hos Altinn.`,
       },
       {
         type: "actions",
@@ -1934,10 +1826,8 @@ const products = [
       },
       {
         type: "markdown",
-        data: [
-          "### Be om refusjon",
-          "Du søker om refusjon ved å sende inn en inntektsmelding. Den sendes enten fra arbeidsgivers eget lønns- og personalsystem eller fra altinn.no.",
-        ],
+        data: `### Be om refusjon
+     Du søker om refusjon ved å sende inn en inntektsmelding. Den sendes enten fra arbeidsgivers eget lønns- og personalsystem eller fra altinn.no.`,
       },
       {
         type: "actions",
@@ -1953,7 +1843,7 @@ const products = [
       },
       {
         type: "markdown",
-        data: ["### Mer om"],
+        data: `### Mer om`,
       },
       {
         type: "microcards",
@@ -1978,10 +1868,8 @@ const products = [
     contentBlocks: [
       {
         type: "markdown",
-        data: [
-          "### Send inntektsmelding for arbeidstaker",
-          "Dette gjør du hos Altinn.",
-        ],
+        data: `### Send inntektsmelding for arbeidstaker
+     Dette gjør du hos Altinn.`,
       },
       {
         type: "actions",
@@ -1997,10 +1885,8 @@ const products = [
       },
       {
         type: "markdown",
-        data: [
-          "### Be om refusjon",
-          "Du søker om refusjon ved å sende inn en inntektsmelding. Den sendes enten fra arbeidsgivers eget lønns- og personalsystem eller fra altinn.no.",
-        ],
+        data: `### Be om refusjon
+     Du søker om refusjon ved å sende inn en inntektsmelding. Den sendes enten fra arbeidsgivers eget lønns- og personalsystem eller fra altinn.no.`,
       },
       {
         type: "actions",
@@ -2016,7 +1902,7 @@ const products = [
       },
       {
         type: "markdown",
-        data: ["### Mer om"],
+        data: `### Mer om`,
       },
       {
         type: "microcards",
@@ -2041,10 +1927,8 @@ const products = [
     contentBlocks: [
       {
         type: "markdown",
-        data: [
-          "### Send inntektsmelding for arbeidstaker",
-          "Dette gjør du hos Altinn.",
-        ],
+        data: `### Send inntektsmelding for arbeidstaker
+     Dette gjør du hos Altinn.`,
       },
       {
         type: "actions",
@@ -2060,10 +1944,8 @@ const products = [
       },
       {
         type: "markdown",
-        data: [
-          "### Be om refusjon",
-          "Du søker om refusjon ved å sende inn en inntektsmelding. Den sendes enten fra arbeidsgivers eget lønns- og personalsystem eller fra altinn.no.",
-        ],
+        data: `### Be om refusjon
+     Du søker om refusjon ved å sende inn en inntektsmelding. Den sendes enten fra arbeidsgivers eget lønns- og personalsystem eller fra altinn.no.`,
       },
       {
         type: "actions",
@@ -2079,7 +1961,7 @@ const products = [
       },
       {
         type: "markdown",
-        data: ["### Mer om"],
+        data: `### Mer om`,
       },
       {
         type: "microcards",
@@ -2105,10 +1987,8 @@ const products = [
     contentBlocks: [
       {
         type: "markdown",
-        data: [
-          "### Søk om sykepenger",
-          "Tekst",
-        ],
+        data: `### Søk om sykepenger
+     Tekst`,
       },
       {
         type: "actions",
@@ -2128,10 +2008,8 @@ const products = [
       },
       {
         type: "markdown",
-        data: [
-          "### Send inntektsmelding for arbeidstaker",
-          "Dette gjør du hos Altinn.",
-        ],
+        data: `### Send inntektsmelding for arbeidstaker
+     Dette gjør du hos Altinn.`,
       },
       {
         type: "actions",
@@ -2147,10 +2025,8 @@ const products = [
       },
       {
         type: "markdown",
-        data: [
-          "### Send trekkopplysninger for arbeidstaker",
-          "Tekst",
-        ],
+        data: `### Send trekkopplysninger for arbeidstaker
+     Tekst`,
       },
       {
         type: "actions",
@@ -2170,7 +2046,7 @@ const products = [
       },
       {
         type: "markdown",
-        data: ["### Mer om"],
+        data: `### Mer om`,
       },
       {
         type: "microcards",
@@ -2195,10 +2071,8 @@ const products = [
     contentBlocks: [
       {
         type: "markdown",
-        data: [
-          "### Søk om refusjon",
-          "Tekst",
-        ],
+        data: `### Søk om refusjon
+          Tekst`,
       },
       {
         type: "actions",
@@ -2218,7 +2092,7 @@ const products = [
       },
       {
         type: "markdown",
-        data: ["### Mer om"],
+        data: `### Mer om`,
       },
       {
         type: "microcards",
@@ -2240,10 +2114,8 @@ const products = [
     contentBlocks: [
       {
         type: "markdown",
-        data: [
-          "### Send inn bekreftelse på arbeidsforhold og permittering",
-          "Dette sender du inn når en permittert arbeidstaker har behov for dokumentasjon i forbindelse med dagpengesøknad.",
-        ],
+        data: `### Send inn bekreftelse på arbeidsforhold og permittering
+          Dette sender du inn når en permittert arbeidstaker har behov for dokumentasjon i forbindelse med dagpengesøknad.`,
       },
       {
         type: "actions",
@@ -2263,10 +2135,8 @@ const products = [
       },
       {
         type: "markdown",
-        data: [
-          "### Send inn bekreftelse på sluttårsak eller nedsatt arbeidstid (ikke permittert)",
-          "Dette sender du inn når en oppsagt arbeidstaker har behov for dokumentasjon i forbindelse med dagpengesøknad.",
-        ],
+        data: `### Send inn bekreftelse på sluttårsak eller nedsatt arbeidstid (ikke permittert)
+          Dette sender du inn når en oppsagt arbeidstaker har behov for dokumentasjon i forbindelse med dagpengesøknad.`,
       },
       {
         type: "actions",
@@ -2286,10 +2156,8 @@ const products = [
       },
       {
         type: "markdown",
-        data: [
-          "### Send inn bekreftelse på arbeidsforhold",
-          "Skjemaet gjelder bekreftelse på arbeidsforhold for tidligere ansatt. Det gjelder opparbeidede rettigheter etter EØS regelverket.",
-        ],
+        data: `### Send inn bekreftelse på arbeidsforhold
+     Skjemaet gjelder bekreftelse på arbeidsforhold for tidligere ansatt. Det gjelder opparbeidede rettigheter etter EØS regelverket.`,
       },
       {
         type: "actions",
@@ -2309,7 +2177,7 @@ const products = [
       },
       {
         type: "markdown",
-        data: ["### Mer om"],
+        data: `### Mer om`,
       },
       {
         type: "microcards",
@@ -2331,10 +2199,8 @@ const products = [
     contentBlocks: [
       {
         type: "markdown",
-        data: [
-          "### Send inn opplysninger om boet og kravene",
-          "Dette sender bostyrer inn i forbindelse med søknader om lønnsgarantidekning.",
-        ],
+        data: `### Send inn opplysninger om boet og kravene
+     Dette sender bostyrer inn i forbindelse med søknader om lønnsgarantidekning.`,
       },
       {
         type: "actions",
@@ -2354,7 +2220,7 @@ const products = [
       },
       {
         type: "markdown",
-        data: ["### Mer om"],
+        data: `### Mer om`,
       },
       {
         type: "microcards",
@@ -2376,10 +2242,8 @@ const products = [
     contentBlocks: [
       {
         type: "markdown",
-        data: [
-          "### Se rapport",
-          "Dette gjør du hos Altinn",
-        ],
+        data: `### Se rapport
+     Dette gjør du hos Altinn`,
       },
       {
         type: "actions",
@@ -2395,7 +2259,7 @@ const products = [
       },
       {
         type: "markdown",
-        data: ["### Mer om"],
+        data: `### Mer om`,
       },
       {
         type: "microcards",
@@ -2418,10 +2282,8 @@ const products = [
     contentBlocks: [
       {
         type: "markdown",
-        data: [
-          "### Se rapport",
-          "Dette gjør du hos Altinn",
-        ],
+        data: `### Se rapport
+     Dette gjør du hos Altinn`,
       },
       {
         type: "actions",
@@ -2437,7 +2299,7 @@ const products = [
       },
       {
         type: "markdown",
-        data: ["### Mer om"],
+        data: `### Mer om`,
       },
       {
         type: "microcards",
@@ -2460,10 +2322,8 @@ const products = [
     contentBlocks: [
       {
         type: "markdown",
-        data: [
-          "### Se rapport",
-          "Dette gjør du hos Altinn",
-        ],
+        data: `### Se rapport
+     Dette gjør du hos Altinn`,
       },
       {
         type: "actions",
@@ -2479,7 +2339,7 @@ const products = [
       },
       {
         type: "markdown",
-        data: ["### Mer om"],
+        data: `### Mer om`,
       },
       {
         type: "microcards",
@@ -2502,10 +2362,8 @@ const products = [
     contentBlocks: [
       {
         type: "markdown",
-        data: [
-          "### Se rapport",
-          "Dette gjør du hos Altinn",
-        ],
+        data: `### Se rapport
+     Dette gjør du hos Altinn`,
       },
       {
         type: "actions",
@@ -2521,7 +2379,7 @@ const products = [
       },
       {
         type: "markdown",
-        data: ["### Mer om"],
+        data: `### Mer om`,
       },
       {
         type: "microcards",
@@ -2544,10 +2402,8 @@ const products = [
     contentBlocks: [
       {
         type: "markdown",
-        data: [
-          "### Få tilgang",
-          "Du ber om tilgang hos Altinn",
-        ],
+        data: `### Få tilgang
+     Du ber om tilgang hos Altinn`,
       },
       {
         type: "actions",
@@ -2563,7 +2419,7 @@ const products = [
       },
       {
         type: "markdown",
-        data: ["### Mer om"],
+        data: `### Mer om`,
       },
       {
         type: "microcards",
@@ -2586,10 +2442,8 @@ const products = [
     contentBlocks: [
       {
         type: "markdown",
-        data: [
-          "### Se rapport",
-          "Dette gjør du hos Altinn",
-        ],
+        data: `### Se rapport
+     Dette gjør du hos Altinn`,
       },
       {
         type: "actions",
@@ -2605,7 +2459,7 @@ const products = [
       },
       {
         type: "markdown",
-        data: ["### Mer om"],
+        data: `### Mer om`,
       },
       {
         type: "microcards",
@@ -2628,10 +2482,8 @@ const products = [
     contentBlocks: [
       {
         type: "markdown",
-        data: [
-          "### Oppdater Aa-registeret",
-          "Dette gjør du hos Altinn",
-        ],
+        data: `### Oppdater Aa-registeret
+     Dette gjør du hos Altinn`,
       },
       {
         type: "actions",
@@ -2644,10 +2496,8 @@ const products = [
       },
       {
         type: "markdown",
-        data: [
-          "### Send inntektsmelding",
-          "Dette gjør du hos Altinn.",
-        ],
+        data: `### Send inntektsmelding
+     Dette gjør du hos Altinn.`,
       },
       {
         type: "actions",
@@ -2666,7 +2516,7 @@ const products = [
       },
       {
         type: "markdown",
-        data: ["### Mer om"],
+        data: `### Mer om`,
       },
       {
         type: "microcards",
@@ -2712,6 +2562,7 @@ const getTags = (array, key) => {
 module.exports = {
   products,
   tags: ["template"],
+  activeRole: "Arbeidsgiver",
   typeFilter: getTags(products, "type"),
   areaFilter: getTags(products, "area"),
 };

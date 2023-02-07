@@ -1,4 +1,5 @@
 const plugin = require("tailwindcss/plugin");
+const defaults = require("tailwindcss/defaultConfig");
 
 module.exports = {
   content: [
@@ -13,12 +14,16 @@ module.exports = {
       xs: "540px",
       sm: "720px",
       md: "1024px",
-      lg: "1200px",
+      lg: "1280px",
       xl: "1440px",
       fine: { raw: "(pointer: fine)" },
     },
     fontFamily: {
-      sans: ['"Source Sans Pro"', "Arial", "sans-serif"],
+      sans: [
+        '"Source Sans Pro"',
+        "Arial",
+        "sans-serif",
+      ],
       system: [
         "ui-sans-serif",
         "system-ui",
@@ -233,6 +238,7 @@ module.exports = {
         },
       },
       maxWidth: {
+        ...defaults.theme.spacing,
         prose: "76ch",
       },
       spacing: {

@@ -1,9 +1,9 @@
 <svg width="96" height="96" viewBox="0 0 96 96" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g clip-path="url(#clip0_74_884)">
-<rect x="27.8994" y="38" width="38" height="14" transform="rotate(45 27.8994 38)" fill="rgb(204 226 240)"/>
-<rect x="27.8994" y="38" width="38" height="14" transform="rotate(45 27.8994 38)" fill="rgb(204 226 240)"/>
-<rect x="35" y="64.8408" width="62" height="14" transform="rotate(-45 35 64.8408)" fill="rgb(204 226 240)"/>
-<rect x="35" y="64.8408" width="62" height="14" transform="rotate(-45 35 64.8408)" fill="rgb(204 226 240)"/>
+<rect x="27.8994" y="38" width="38" height="14" transform="rotate(45 27.8994 38)" fill="rgb(204 241 214)"/>
+<rect x="27.8994" y="38" width="38" height="14" transform="rotate(45 27.8994 38)" fill="rgb(204 241 214)"/>
+<rect x="35" y="64.8408" width="62" height="14" transform="rotate(-45 35 64.8408)" fill="rgb(204 241 214)"/>
+<rect x="35" y="64.8408" width="62" height="14" transform="rotate(-45 35 64.8408)" fill="rgb(204 241 214)"/>
 <path d="M33.3572 69.3008C33.3572 76.4016 27.6008 82.158 20.5 82.158V82.158C13.3992 82.158 7.64289 76.4016 7.64289 69.3008L7.64289 56.4737L11.5 58.9998L21 51.9998L21 58.4737L33.3572 50.0527L33.3572 69.3008Z" stroke="#262626" stroke-width="3"/>
 <path d="M20.5 82.158V95.0001" stroke="#262626" stroke-width="3"/>
 <path d="M9.64282 94.9998H31.3571" stroke="#262626" stroke-width="3"/>
