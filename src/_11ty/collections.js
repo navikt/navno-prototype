@@ -1,7 +1,7 @@
 const areaFilter = (collection) => {
   let tagSet = new Set();
   collection
-    .getFilteredByGlob("src/pages/produktoversikt/produkter/**/*.md")
+    .getFilteredByGlob("src/pages/produktoversikt/**/*.md")
     .forEach(function (item) {
       if ("tags" in item.data) {
         let tags = item.data.area;
@@ -37,7 +37,7 @@ const areaFilter = (collection) => {
 const typeFilter = (collection) => {
   let tagSet = new Set();
   collection
-    .getFilteredByGlob("src/pages/produktoversikt/produkter/**/*.md")
+    .getFilteredByGlob("src/pages/produktoversikt/**/*.md")
     .forEach(function (item) {
       if ("tags" in item.data) {
         let tags = item.data.type;
