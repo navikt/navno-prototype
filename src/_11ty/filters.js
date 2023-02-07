@@ -7,7 +7,9 @@ const markdown = (value) => {
     linkify: true,
     typographer: true,
     quotes: "«»",
-  }).render(value);
+  })
+    .disable("code")
+    .render(value);
 };
 
 const markdownInline = (value) => {
