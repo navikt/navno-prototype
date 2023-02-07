@@ -1,9 +1,9 @@
 <svg width="96" height="96" viewBox="0 0 96 96" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g clip-path="url(#clip0_1_3318)">
-<rect x="53" y="22" width="33" height="9" fill="rgb(204 226 240)"/>
-<rect x="17" y="52" width="47" height="15" fill="rgb(204 226 240)"/>
-<rect x="74" y="10" width="33" height="9" transform="rotate(90 74 10)" fill="rgb(204 226 240)"/>
-<rect x="48" y="36" width="47" height="15" transform="rotate(90 48 36)" fill="rgb(204 226 240)"/>
+<rect x="53" y="22" width="33" height="9" fill="rgb(204 241 214)"/>
+<rect x="17" y="52" width="47" height="15" fill="rgb(204 241 214)"/>
+<rect x="74" y="10" width="33" height="9" transform="rotate(90 74 10)" fill="rgb(204 241 214)"/>
+<rect x="48" y="36" width="47" height="15" transform="rotate(90 48 36)" fill="rgb(204 241 214)"/>
 <path d="M26 13.5714H2V29.4286H26V40L50 21.5L26 3V13.5714Z" stroke="#262626" stroke-width="3"/>
 <rect x="42" y="64" width="51" height="30" stroke="#262626" stroke-width="3"/>
 <circle cx="72" cy="74" r="7" stroke="#262626" stroke-width="3"/>

@@ -1,0 +1,44 @@
+---
+title: 'Områdeside X'
+description: ''
+order: 9
+bodyClass: ''
+tags: ['template']
+activeRole: 'Arbeidsgiver'
+---
+{% extends 'base.njk' %}
+
+{% block content %}
+  <main class="">
+    <div class="grid pt-8 bg-white grid-cols-layout">
+      <div class="flex justify-between col-feature">
+        <h1 class="self-center text-3xl font-semibold leading-tight md:text-4xl">Helse og sykdom</h1>
+        {{ '/src/_includes/svg/area-illustrations/helse.svg' | svgContents() | safe }}
+      </div>
+    </div>
+    <div class="grid pt-8 pb-20 bg-deepblue-50 grid-cols-layout md:pt-12 ">
+      <div class="col-feature">
+        <h2 class="-mt-2 text-xl font-semibold sr-only md:text-3xl">Hva gjelder det</h2>
+        <ul class="grid gap-2 mt-4 md:grid-cols-2 sm:gap-3 md:gap-6 lg:grid-cols-3">
+          {% for item in situationList %}
+            <li class="relative flex gap-4 px-4 py-4 bg-white rounded-lg shadow-sm min-h-[12rem]">
+              {% if item.icon %}
+              {{ item.icon | svgContents("self-center flex-none w-12 h-12 md:w-16 md:h-16") | safe }}
+              {% endif %}
+              <div class="flex flex-col flex-1">
+              <h3 class="text-xl leading-snug ">
+                <a class="after:absolute after:inset-0 max-w-[30ch] font-semibold md:text-2xl" href="#">
+                  <span class="">{{ item.title | safe }}</span>
+                </a>
+              </h3>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+              <p class="mt-auto text-sm tracking-wider uppercase opacity-70">{{ item.category }}</p>
+              </div>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+
+  </main>
+{% endblock %}

@@ -4,9 +4,7 @@
 {% for block in product.contentBlocks %}
 
   {% if block.type === 'markdown' %}
-    {% for item in block.data %}
-      {{ item | markdown | safe }}
-    {% endfor %}
+    {{ block.data  | markdown | safe }}
   {% endif %}
 
   {% if block.type === 'actions' %}

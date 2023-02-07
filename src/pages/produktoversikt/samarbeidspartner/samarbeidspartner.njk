@@ -1,8 +1,9 @@
 ---
-title: 'Søknad og skjema fra A til Å'
-description: 'Pengestøtter og tjenester fra NAV for privatpersoner. Du kan søke eller filtrere etter type og område.'
-order: 4
+title: 'Søknad og skjema fra A til Å (samarbeidspartnere)'
+description: 'Pengestøtter og tjenester fra NAV for samarbeidspartnere. Du kan søke eller filtrere etter type og rolle.'
+order: 7
 bodyClass: ''
+permalink: '/produktoversikt-samarbeidspartner/'
 ---
 {% extends 'base.njk' %}
 
@@ -14,18 +15,18 @@ bodyClass: ''
   <main class="py-12 text-lg text-gray-900"
     x-data="{
       typeFilter: new URLSearchParams(location.search).get('type') || 'alle',
-      areaFilter: new URLSearchParams(location.search).get('area') || 'alle',
+      roleFilter: new URLSearchParams(location.search).get('role') || 'alle',
       filterItem(el) {
         const item = el.querySelector('h2').textContent.toLowerCase()
         if (this.search === '') {
           return (
-            el.dataset.type.includes(this.typeFilter)
+            el.dataset.type.split(' ').includes(this.typeFilter)
             &&
-            el.dataset.area.includes(this.areaFilter)
+            el.dataset.role.split(' ').includes(this.roleFilter)
           )
         } else {
           this.typeFilter = 'alle'
-          this.areaFilter = 'alle'
+          this.roleFilter = 'alle'
           return (
             item.includes(this.search.toLowerCase())
           )
@@ -51,9 +52,9 @@ bodyClass: ''
         updateCount();
         clearSearch();
       });
-      $watch('areaFilter', (value) => {
+      $watch('roleFilter', (value) => {
         const url = new URL(window.location.href);
-        url.searchParams.set('area', value);
+        url.searchParams.set('role', value);
         history.replaceState(null, document.title, url.toString());
         updateCount();
         clearSearch();
@@ -88,9 +89,10 @@ bodyClass: ''
           </button>
 
           <div class="fixed inset-0 z-50 grid items-end grid-cols-layout lg:hidden" x-show="filterDrawer" x-bind:class="filterDrawer && 'animate-blur'">
-            <form class="grid bg-white shadow-drawer rounded-t-2xl col-content -mx-clamp-gap md:-mx-6 lg:hidden" x-on:click.outside="filterDrawer = false, filterTags = false" x-on:submit.prevent="filterDrawer = false">
-              <div class="pb-12 overflow-y-auto px-clamp-gap md:px-6 max-h-[60vh]">
-                <div class="relative grid pt-clamp-gap md:pt-7" >
+            <form class="grid bg-white shadow-drawer rounded-t-2xl col-content -mx-clamp-gap md:-mx-6 lg:hidden" x-on:click.outside="filterDrawer = false, filterTags = false"
+            x-on:submit.prevent="filterDrawer = false">
+              <div class="pb-12 overflow-y-auto overscroll-y-contain px-clamp-gap md:px-6 max-h-[60vh]">
+                <div class="grid pt-clamp-gap md:pt-7">
                   <div class="relative">
                     <label for="searchFilter-mobile" class="font-semibold sr-only">Søk</label>
                     <span class="absolute inset-y-0 left-0 grid px-2.5 place-items-center">
@@ -99,16 +101,16 @@ bodyClass: ''
                     <input id="searchFilter-mobile" type="search" x-model="search" class=" w-full pl-10 pr-3 py-2.5 border border-gray-300 rounded shadow-inner bg-gray-50/50 focus:outline-none focus:ring-2 focus:ring-blue-800">
                   </div>
                   {{ filterGroup({
-                    array: collections.typeFilter,
+                    array: typeFilter,
                     title: 'Velg type',
                     xModel: 'typeFilter',
                     inputName: 'filter-type-mobile'
                   }) }}
                   {{ filterGroup({
-                    array: collections.areaFilter,
-                    title: 'Velg område',
-                    xModel: 'areaFilter',
-                    inputName: 'filter-area-mobile'
+                    array: roleFilter,
+                    title: 'Velg rolle',
+                    xModel: 'roleFilter',
+                    inputName: 'filter-role-mobile'
                   }) }}
                 </div>
               </div>
@@ -128,69 +130,71 @@ bodyClass: ''
               <input id="searchFilter-desktop" type="search" x-model="search" class="w-full max-w-xl pl-10 pr-3 py-2.5 border border-gray-300 rounded shadow-inner bg-gray-50/50 focus:outline-none focus:ring focus:ring-blue-800">
             </div>
             {{ filterGroup({
-              array: collections.typeFilter,
+              array: typeFilter,
               title: 'Velg type',
               xModel: 'typeFilter',
               inputName: 'filter-type-desktop'
             }) }}
             {{ filterGroup({
-              array: collections.areaFilter,
-              title: 'Velg område',
-              xModel: 'areaFilter',
-              inputName: 'filter-area-desktop'
+              array: roleFilter,
+              title: 'Velg rolle',
+              xModel: 'roleFilter',
+              inputName: 'filter-role-desktop'
             }) }}
           </div>
         </div>
 
-        <div class="lg:row-start-1">
-          <p class="mb-2">Viser <span x-text="count"></span> av {{ collections.produkt.length }} produkter og tjenester</p>
+        <div class="lg:col-start-1">
+          <p class="mb-2">Viser <span x-text="count"></span> av {{ products.length }} produkter og tjenester</p>
 
           <div class="border-b border-deepblue-100" x-ref="entries" x-show="count !== 0">
-            {% for product in collections.produkt | sort(true, false, 'data.title') | reverse %}
+            {% for product in products | sort(true, false, 'title') | reverse %}
               <div
                 x-data="{ expanded: false }"
-                class="border-t focus-within:z-10 -mx-clamp-gap px-clamp-gap sm:mx-0 sm:px-0 border-deepblue-100"
+                class="border-t focus-within:z-10 -mx-clamp-gap px-clamp-gap sm:-mx-0 sm:px-0 border-deepblue-100"
                 x-bind:class="expanded ? '' : ''"
                 x-show="filterItem($el)"
-                data-type="alle {% for item in product.data.type %}{{ item | slugify }} {% endfor %}"
-                data-area="alle {% for item in product.data.area %}{{ item | slugify }} {% endfor %}">
+                data-type="alle {% for item in product.type %}{{ item | slugify }} {% endfor %}"
+                data-role="alle {% for item in product.role %}{{ item | slugify }} {% endfor %}">
 
                 <div
-                  class="relative z-10 flex items-center gap-4 py-4 -my-px text-left px-clamp-gap -mx-clamp-gap sm:mx-0 sm:px-4 sm:rounded-lg fine:hover:z-20"
+                  class="relative z-10 flex items-center gap-4 py-4 -my-px text-left px-clamp-gap -mx-clamp-gap sm:-mx-2 sm:px-4 sm:rounded-lg fine:hover:z-20"
                   x-bind:class="expanded ? ' fine:hover:bg-deepblue-200 bg-deepblue-50' : 'fine:hover:bg-deepblue-200'">
-                  {% if product.data.icon %}
-                    {{ product.data.icon | svgContents('w-12 h-12 lg:w-14 lg:h-14 shrink-0') | safe }}
+                  {% if product.icon %}
+                    {{ product.icon | svgContents('w-12 h-12 lg:w-14 lg:h-14 shrink-0') | safe }}
                   {% endif %}
                   <div class="grid gap-1">
                     <p class="text-base opacity-80">
-                    {% for item in product.data.type %}
-                      <span>{{ item }}</span>{{ ', ' if product.data.type.length > 1 and not loop.last }}
+                    {% for item in product.type %}
+                      <span>{{ item }}</span>{{ ', ' if product.type.length > 1 and not loop.last }}
                     {% endfor %}
                     </p>
                     <h2 class="text-xl font-semibold leading-tight">
-                      {{ product.data.title | safe }}
+                      {{ product.title | safe }}
                     </h2>
                     <p class="text-base">
-                      {%- for item in product.data.area -%}
+                      {%- for item in product.role -%}
                         <span class="">{{ item }}</span>{{ ', ' if loop.length > 1 and not loop.last }}
                       {%- endfor -%}
                     </p>
                   </div>
-                  <button x-on:click="expanded = !expanded" class="absolute inset-0 flex items-center justify-end w-full pr-4 rounded-lg group focus:outline-none focus-visible:ring focus-visible:ring-inset focus-visible:ring-blue-800" x-bind:aria-expanded="expanded">
+                  <button x-on:click="expanded = !expanded" class="absolute inset-0 flex items-center justify-end pr-4 rounded-lg group focus:outline-none focus-visible:ring focus-visible:ring-inset focus-visible:ring-blue-800" x-bind:aria-expanded="expanded">
                     <span class="sr-only">Vis/skjul innhold</span>
                     {{ '/src/_includes/svg/icons/chevron-down.svg' | svgContents('mr-1.5 w-5 h-5 opacity-50 transition duration-100 group-aria-expanded:rotate-180') | safe }}
                   </button>
                 </div>
 
-                <div class="pt-6 pb-8 px-clamp-gap -mx-clamp-gap relative min-h-[30vh] markdown bg-deepblue-50 sm:mx-0 sm:-mt-2 sm:px-5 sm:rounded-b-lg mb-4" x-bind:hidden="!expanded">
-                  <p>{{ product.data.ingress }}</p>
+                <div class="pt-6 pb-8 px-clamp-gap -mx-clamp-gap relative min-h-[30vh] markdown bg-deepblue-50 sm:-mx-2 sm:-mt-2 sm:px-5 sm:rounded-b-lg mb-4" x-bind:hidden="!expanded">
+                  <p>{{ product.ingress }}</p>
 
-                  {{ product.content | markdown | safe }}
+                  {% if product.contentBlocks %}
+                    {% include "partials/contentBlocks.njk" %}
+                  {% endif %}
                 </div>
 
-                {% if product.data.egenSide %}
+                {% if product.egenSide %}
                 <div x-bind:hidden="!expanded" class="pt-4 pb-6 sm:px-6">
-                  <a class="inline-block mx-auto text-center underline fine:hover:no-underline fine:hover:text-blue-600" href="/produktoversikt/{{ product.data.title | slugify }}.html">Vis som egen side</a>
+                  <a class="inline-block mx-auto text-center underline fine:hover:no-underline fine:hover:text-blue-600" href="/produktoversikt/{{ product.title | slugify }}.html">Vis som egen side</a>
                 </div>
                 {% endif %}
 
@@ -199,7 +203,7 @@ bodyClass: ''
             {% endfor %}
           </div>
           <div x-show="count === 0" class="p-6 py-8 text-center overflow-hidden grid items-center leading-snug rounded-lg bg-gray-100 min-h-[4.75rem] lg:col-span-6">
-            <p class="max-w-prose">Ingen søknader eller skjema er merket med denne kombinasjonen av type og område.</p>
+            <p class="max-w-prose">Ingen søknader eller skjema er merket med denne kombinasjonen av type og rolle.</p>
           </div>
         </div>
 
