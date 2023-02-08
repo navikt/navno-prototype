@@ -9,9 +9,9 @@ area: ["Familie og barn"]
 {%- from "macros/button.njk" import button -%}
 {%- from "macros/microcard.njk" import microcard -%}
 
-### Søk om stønad til barnetilsyn
+### Søk om stønad til skolepenger
 
-Du kan søke så snart du har fått faktura fra barnepassordningen for måneden du søker stønad fra. Dersom du søker stønad til barnetilsyn fra august, må du legge ved faktura for august.
+Du kan søke så snart du har fått faktura eller betalingsvarsel fra skolen, og senest innen 6 måneder etter at du fikk dette.
 
 <div class="grid gap-1.5 sm:flex mt-4">
 {{ button({ text: 'Send søknad', variant: 'primary' }) }}
@@ -23,5 +23,5 @@ Du kan søke så snart du har fått faktura fra barnepassordningen for måneden 
 ### Mer om
 
 <div class="flex gap-1.5">
-{{ microcard({ text: 'Stønad til barnetilsyn for enslig mor eller far', dot: 'bg-green-300' }) }}
+{{ microcard({ text: 'Stønad til skolepenger for enslig mor eller far', dot: 'bg-green-300' }) }}
 </div>
