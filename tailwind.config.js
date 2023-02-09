@@ -242,7 +242,7 @@ module.exports = {
       },
       maxWidth: {
         ...defaults.theme.spacing,
-        prose: "76ch",
+        prose: "64ch",
       },
       spacing: {
         "clamp-gap": "clamp(0.75rem, 0.05rem + 4vw, 6rem)",
