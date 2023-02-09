@@ -685,7 +685,6 @@ const products = [
     type: ["Skjema"],
     role: [
       "Lege",
-      "Hjelpemiddelformidler",
       "Bostyrer",
     ],
     contentBlocks: [
@@ -763,7 +762,7 @@ const products = [
         type: "microcards",
         data: [
           {
-            text: "Seksualtekniske hjelpemidler",
+            text: "Hjelpemidler",
             dot: "bg-green-300",
           },
         ],
@@ -776,7 +775,6 @@ const products = [
     icon: "/src/_includes/svg/pictograms/forerhund.svg",
     type: ["Hjelpemiddel"],
     role: [
-      "Lege",
       "Optiker eller øyelege",
     ],
     contentBlocks: [
@@ -797,6 +795,38 @@ const products = [
         data: [
           {
             text: "Førerhund",
+            dot: "bg-green-300",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    title: "Førerhund",
+    ingress: "Hjelper blinde og svaksynte å ta seg frem innendørs og utendørs.",
+    icon: "/src/_includes/svg/pictograms/forerhund.svg",
+    type: ["Hjelpemiddel"],
+    role: [
+      "Lege",
+    ],
+    contentBlocks: [
+      {
+        type: "markdown",
+        data: `### Send legeerklæring",
+          "NAV krever legeerklæring fra øyelege om nedsatt syn og legeerklæring som viser at vedkommende er helsemessig skikket til å ha førerhund. Erklæringene legges ved søknaden. Det er ikke egne skjemaer for å gi slike erklæringer. (Bør vi lage en felles tekst som brukes alle steder der det skal leveres legeerklæring, men det ikke er et eget skjema for det?)`,
+      },
+      {
+        type: "line",
+      },
+      {
+        type: "markdown",
+        data: `### Mer om`,
+      },
+      {
+        type: "microcards",
+        data: [
+          {
+            text: "Hjelpemidler",
             dot: "bg-green-300",
           },
         ],
@@ -826,7 +856,7 @@ const products = [
         type: "microcards",
         data: [
           {
-            text: "Servicehund",
+            text: "Hjelpemidler",
             dot: "bg-green-300",
           },
         ],
@@ -869,7 +899,7 @@ const products = [
         type: "microcards",
         data: [
           {
-            text: "Bilstønad",
+            text: "Hjelpemidler",
             dot: "bg-green-300",
           },
         ],
@@ -903,7 +933,7 @@ const products = [
         type: "microcards",
         data: [
           {
-            text: "Brystprotese",
+            text: "Hjelpemidler",
             dot: "bg-green-300",
           },
         ],
@@ -933,7 +963,7 @@ const products = [
         type: "microcards",
         data: [
           {
-            text: "Øyeprotese",
+            text: "Hjelpemidler",
             dot: "bg-green-300",
           },
         ],
@@ -966,7 +996,7 @@ const products = [
         type: "microcards",
         data: [
           {
-            text: "Ansiktsprotese",
+            text: "Hjelpemidler",
             dot: "bg-green-300",
           },
         ],
@@ -999,7 +1029,7 @@ const products = [
         type: "microcards",
         data: [
           {
-            text: "Parykk",
+            text: "Hjelpemidler",
             dot: "bg-green-300",
           },
         ],
@@ -1016,7 +1046,6 @@ const products = [
     ],
     role: [
       "Optiker eller øyelege",
-      "Andre",
     ],
     contentBlocks: [
       {
@@ -1027,6 +1056,33 @@ const products = [
       {
         type: "line",
       },
+      {
+        type: "markdown",
+        data: `### Mer om`,
+      },
+      {
+        type: "microcards",
+        data: [
+          {
+            text: "Hjelpemidler",
+            dot: "bg-green-300",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    title: "Lese- og sekretærhjelp",
+    ingress: "Hjelper deg med å lese og skrive når du er blind eller svaksynt.",
+    icon: "/src/_includes/svg/pictograms/neutral.svg",
+    type: [
+      "Pengestøtte",
+      "Hjelpemiddel",
+    ],
+    role: [
+      "Andre",
+    ],
+    contentBlocks: [
       {
         type: "markdown",
         data: `### Send regning for utført lese- og sekretærhjelp",
@@ -1064,7 +1120,7 @@ const products = [
     ],
   },
   {
-    title: "Tolk for hørselshemmede",
+    title: "Tolking for døve, døvblinde og hørselshemmede",
     ingress: "Utfører tolkeoppdrag for døve, døvblinde og hørselshemmede.",
     icon: "/src/_includes/svg/pictograms/tegnspraak.svg",
     type: [
@@ -1089,7 +1145,73 @@ const products = [
         type: "microcards",
         data: [
           {
-            text: "Tolk for hørselshemmede",
+            text: "Hjelpemidler",
+            dot: "bg-green-300",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    title: "Tolking for døve, døvblinde og hørselshemmede",
+    ingress: "Utfører tolkeoppdrag for døve, døvblinde og hørselshemmede.",
+    icon: "/src/_includes/svg/pictograms/tegnspraak.svg",
+    type: [
+      "Tjeneste",
+      "Hjelpemiddel",
+    ],
+    role: ["Andre"],
+    contentBlocks: [
+      {
+        type: "markdown",
+        data: `### Send regning for utført tolkeoppdrag",
+          "Finnes det eget skjema? Timeliste som kan lastes ned?`,
+      },
+      {
+        type: "line",
+      },
+      {
+        type: "markdown",
+        data: `### Mer om`,
+      },
+      {
+        type: "microcards",
+        data: [
+          {
+            text: "Tolking for døve, døvblinde og hørselshemmede",
+            dot: "bg-green-300",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    title: "Språktolking",
+    ingress: "Ingress.",
+    icon: "/src/_includes/svg/pictograms/neutral.svg",
+    type: [
+      "Tjeneste",
+      "Hjelpemiddel",
+    ],
+    role: ["Andre"],
+    contentBlocks: [
+      {
+        type: "markdown",
+        data: `### Send regning for utført tolkeoppdrag",
+          "Finnes det eget skjema? Timeliste som kan lastes ned?`,
+      },
+      {
+        type: "line",
+      },
+      {
+        type: "markdown",
+        data: `### Mer om`,
+      },
+      {
+        type: "microcards",
+        data: [
+          {
+            text: "Tolking for døve, døvblinde og hørselshemmede",
             dot: "bg-green-300",
           },
         ],
@@ -1098,7 +1220,7 @@ const products = [
   },
   {
     title: "Tolk- og ledsagerhjelp for døvblinde",
-    ingress: "Utfører tolkeoppdrag for døve, døvblinde og hørselshemmede.",
+    ingress: "Utfører tolkeoppdrag for døve, døvblinde og hørselshemmede. Siden tolk er et eget produkt, bør dette være spesifikt for ledsagerhjelp? Evt slås sammen med Tolking for døve, døvblinde og hørselshemmede?",
     icon: "/src/_includes/svg/pictograms/neutral.svg",
     type: [
       "Tjeneste",
@@ -1168,7 +1290,7 @@ const products = [
         type: "microcards",
         data: [
           {
-            text: "Høreapparat",
+            text: "Hjelpemidler",
             dot: "bg-green-300",
           },
         ],
@@ -1215,7 +1337,7 @@ const products = [
         type: "microcards",
         data: [
           {
-            text: "Ortopediske sko",
+            text: "Hjelpemidler",
             dot: "bg-green-300",
           },
         ],
@@ -1262,7 +1384,7 @@ const products = [
         type: "microcards",
         data: [
           {
-            text: "Ortoser",
+            text: "Hjelpemidler",
             dot: "bg-green-300",
           },
         ],
@@ -1305,7 +1427,7 @@ const products = [
         type: "microcards",
         data: [
           {
-            text: "Arm- og benproteser",
+            text: "Hjelpemidler",
             dot: "bg-green-300",
           },
         ],
@@ -1339,7 +1461,7 @@ const products = [
         type: "microcards",
         data: [
           {
-            text: "Funksjonsassistanse i arbeidslivet",
+            text: "Hjelpemidler",
             dot: "bg-green-300",
           },
         ],
@@ -1369,7 +1491,7 @@ const products = [
         type: "microcards",
         data: [
           {
-            text: "Grunnmønster og søm av klær",
+            text: "Hjelpemidler",
             dot: "bg-green-300",
           },
         ],
@@ -1844,6 +1966,7 @@ const products = [
     role: [
       "Optiker eller øyelege",
       "Hjelpemiddelformidler",
+      "Lege",
     ],
     contentBlocks: [
       {
@@ -2376,7 +2499,6 @@ const products = [
     ],
     role: [
       "Hjelpemiddelformidler",
-      "Lege",
     ],
     contentBlocks: [
       {
@@ -2400,6 +2522,80 @@ const products = [
       {
         type: "line",
       },
+      {
+        type: "markdown",
+        data: `### Søk om ortopediske hjelpemidler",
+          "Gjelder hvis du skal søke om protese (har ikke disse egne søknader?), ortose, spesialfottøy, aktivitetshjelpemidler for brukere over 26 år, fotseng eller ortopedisk sydd fottøy. Skjemaet fylles ut av legespesialist eller sykehuslege (ved førstegangssøknad eller fornyelse) eller ortopediingeniør (ved fornyelse).`,
+      },
+      {
+        type: "actions",
+        data: [
+          {
+            text: "Send skjema",
+            variant: "primary",
+          },
+        ],
+      },
+      {
+        type: "markdown",
+        data: `Er søknaden om ortopedisk hjelpemiddel fylt ut i legens pasientjournalsystem eller (på papir?) av ortopediingeniør? Da må du skrive ut en førsteside som du legger ved søknaden når du sender søknaden i posten.`,
+      },
+      {
+        type: "actions",
+        data: [
+          {
+            text: "Skriv ut førsteside",
+            variant: "secondary",
+          },
+        ],
+      },
+      {
+        type: "line",
+      },
+      {
+        type: "markdown",
+        data: `### Be om fullmakt",
+          "Skjemaet benyttes når søker gir fullmakt til at søknad kan hentes fra nav.no og fylles ut av behandler/kartlegger i etterkant av kartlegging.`,
+      },
+      {
+        type: "actions",
+        data: [
+          {
+            text: "Send søknad",
+            variant: "primary",
+          },
+        ],
+      },
+      {
+        type: "line",
+      },
+      {
+        type: "markdown",
+        data: `### Mer om`,
+      },
+      {
+        type: "microcards",
+        data: [
+          {
+            text: "Ortopediske hjelpemidler",
+            dot: "bg-green-300",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    title: "Ortopediske hjelpemidler",
+    ingress: "Ingress",
+    icon: "/src/_includes/svg/pictograms/ortopediske-sko.svg",
+    type: [
+      "Pengestøtte",
+      "Hjelpemiddel",
+    ],
+    role: [
+      "Lege",
+    ],
+    contentBlocks: [
       {
         type: "markdown",
         data: `### Søk om ortopedisk hjelpemidler",
@@ -2472,7 +2668,7 @@ const products = [
         type: "microcards",
         data: [
           {
-            text: "Ortopediske hjelpemidler",
+            text: "Hjelpemidler",
             dot: "bg-green-300",
           },
         ],
@@ -2489,7 +2685,6 @@ const products = [
     ],
     role: [
       "Hjelpemiddelformidler",
-      "Lege",
     ],
     contentBlocks: [
       {
@@ -2622,7 +2817,7 @@ const products = [
       {
         type: "markdown",
         data: `### Meld inn behov for hjelpemidler",
-          "Saken sendes til NAV Hjelpemiddelsentral. Saker du har sendt inn digitalt vil være tilgjengelig på innlogget side på nav.no. Der kan du følge status på dine innsendte digitale saker. Søknaden blir også tilgjengelig på nav.no-profilen til innbyggeren du har søkt for.`,
+          "Saken sendes til NAV Hjelpemiddelsentral. Saker du har sendt inn digitalt vil være tilgjengelig på innlogget side på nav.no. Der kan du følge status på dine innsendte digitale saker. Søknaden blir også tilgjengelig på nav.no-profilen til innbyggeren du har søkt for. (Hvilke hjelpemiddelgrupper er denne aktuell for?)`,
       },
       {
         type: "actions",
@@ -2815,7 +3010,7 @@ const products = [
       "Det er viktig at NAV får melding om innleggelse/utskriving ved opphold på alders- og sykehjem da dette kan ha betydning for rettigheter til ytelser eller det kan ha konsekvenser for beregningen av ytelsen eller at ytelsen skal stanses eller reduseres.",
     icon: "/src/_includes/svg/pictograms/slik-gjor-du-det.svg",
     type: ["Skjema"],
-    role: ["Andre"],
+    role: ["Andre", "Ansatt i kommunen"],
     contentBlocks: [
       {
         type: "markdown",
