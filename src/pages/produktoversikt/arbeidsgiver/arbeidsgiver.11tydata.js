@@ -1252,6 +1252,23 @@ const products = [
       },
       {
         type: "markdown",
+        data: `### Få innsyn i Aa-registeret
+     Viser deg hva som er rapportert inn fra bedriften din.`,
+      },
+      {
+        type: "actions",
+        data: [
+          {
+            text: "Logg inn (hos Altinn)",
+            variant: "primary",
+          },
+        ],
+      },
+      {
+        type: "line",
+      },
+      {
+        type: "markdown",
         data: `### Få brukerstøtte
      Hjelper deg med ulike oppgaver som har med tilgangen din å gjøre.`,
       },
