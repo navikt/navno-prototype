@@ -1194,7 +1194,7 @@ const products = [
   {
     title: "AA-registeret",
     ingress:
-      "Aa-registeret forteller hvilke arbeidstakere som er ansatt hos hvilke arbeidsgivere.",
+      "AA-registeret forteller hvilke arbeidstakere som er ansatt hos hvilke arbeidsgivere.",
     icon: "/src/_includes/svg/pictograms/slik-gjor-du-det.svg",
     type: ["Skjema"],
     area: ["Annet"],
@@ -1242,7 +1242,7 @@ const products = [
         type: "actions",
         data: [
           {
-            text: "Slå opp i Aa-registeret (hos Altinn)",
+            text: "Slå opp i AA-registeret (hos Altinn)",
             variant: "primary",
           },
         ],
@@ -1252,7 +1252,7 @@ const products = [
       },
       {
         type: "markdown",
-        data: `### Få innsyn i Aa-registeret
+        data: `### Få innsyn i AA-registeret
      Viser deg hva som er rapportert inn fra bedriften din.`,
       },
       {
