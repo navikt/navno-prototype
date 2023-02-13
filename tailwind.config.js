@@ -237,15 +237,18 @@ module.exports = {
           },
         },
       },
+      listStyleType: {
+        square: "square",
+      },
       minWidth: {
         ...defaults.theme.spacing,
       },
       maxWidth: {
         ...defaults.theme.spacing,
-        prose: "64ch",
+        prose: "72ch",
       },
       spacing: {
-        "clamp-gap": "clamp(0.75rem, 0.05rem + 4vw, 6rem)",
+        "clamp-gap": "clamp(1rem, -3rem + 12vw, 6rem)",
       },
       transitionProperty: {
         custom:

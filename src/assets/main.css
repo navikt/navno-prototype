@@ -4,13 +4,13 @@
 
 @layer base {
   a {
-    text-decoration-thickness: 0.0875rem;
-    text-underline-offset: 0.125em;
+    text-decoration-thickness: 0.075rem;
+    text-underline-offset: 0.15em;
   }
 }
 @layer components {
   :where(.markdown) > *:not(hr, div) {
-    max-width: 64ch;
+    max-width: 72ch;
   }
   :where(.markdown) > :where(*):not(h2, h3, h4, h5) + * {
     margin-block-start: theme("spacing.7");
@@ -60,7 +60,7 @@
 }
 @layer utilities {
   .grid-cols-layout {
-    --_layout-gap: clamp(0.75rem, 0.05rem + 4vw, 6rem);
+    --_layout-gap: clamp(1rem, -3rem + 12vw, 6rem);
     --_layout-full: minmax(var(--_layout-gap), 1fr);
     --_layout-popout: minmax(0, 7rem);
     --_layout-feature: minmax(0, 8rem);
