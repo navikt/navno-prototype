@@ -1,20 +1,10 @@
-<svg width="96" height="96" viewBox="0 0 96 96" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect x="16" y="36" width="64" height="24" fill="rgb(204 241 214)"/>
-<rect x="60" y="16" width="64" height="24" transform="rotate(90 60 16)" fill="rgb(204 241 214)"/>
-<circle cx="50.3637" cy="75.1818" r="8.68182" stroke="#262626" stroke-width="3"/>
-<path d="M12.1818 36H7.09091C4.27928 36 2 38.2793 2 41.0909V56.3636C2 63.3927 7.6982 69.0909 14.7273 69.0909V69.0909C21.7564 69.0909 27.4546 63.3927 27.4546 56.3637V41.0909C27.4546 38.2793 25.1753 36 22.3636 36H17.2727" stroke="#262626" stroke-width="3"/>
-<path d="M14.7275 67.5454V87.909C14.7275 90.7207 17.0068 93 19.8185 93V93C22.6301 93 24.9094 90.7207 24.9094 87.9091V84.0909C24.9094 79.1705 28.8981 75.1818 33.8185 75.1818H42.7276" stroke="#262626" stroke-width="3"/>
-<mask id="path-6-inside-1_1_1803" fill="white">
-<rect x="48" y="5.99988" width="48" height="42" rx="2"/>
-</mask>
-<rect x="48" y="5.99988" width="48" height="42" rx="2" stroke="#262626" stroke-width="6" mask="url(#path-6-inside-1_1_1803)"/>
-<line x1="50" y1="22.4999" x2="94" y2="22.4999" stroke="#262626" stroke-width="3"/>
-<path d="M62 2L62 14" stroke="#262626" stroke-width="3" stroke-linecap="round"/>
-<path d="M62 29.9999L58 29.9999" stroke="#262626" stroke-width="3" stroke-linecap="round"/>
-<path d="M62 38L58 38" stroke="#262626" stroke-width="3" stroke-linecap="round"/>
-<path d="M74 29.9999L70 29.9999" stroke="#262626" stroke-width="3" stroke-linecap="round"/>
-<path d="M74 38L70 38" stroke="#262626" stroke-width="3" stroke-linecap="round"/>
-<path d="M86 29.9999L82 29.9999" stroke="#262626" stroke-width="3" stroke-linecap="round"/>
-<path d="M86 38L82 38" stroke="#262626" stroke-width="3" stroke-linecap="round"/>
-<path d="M82 2L82 14" stroke="#262626" stroke-width="3" stroke-linecap="round"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" fill="none" viewBox="0 0 96 96">
+  <path fill="#CCF1D6" d="M16 36h64v24H16z"/>
+  <path fill="#CCF1D6" d="M60 16v64H36V16z"/>
+  <circle cx="50.4" cy="75.2" r="8.7" stroke="#262626" stroke-width="3"/>
+  <path stroke="#262626" stroke-width="3" d="M12.2 36H7a5 5 0 0 0-5 5v15.4a12.7 12.7 0 0 0 25.5 0V41a5 5 0 0 0-5.1-5.1h-5.1"/>
+  <path stroke="#262626" stroke-width="3" d="M14.7 67.5V88A5 5 0 1 0 25 88v-3.8c0-5 4-9 9-9h8.8"/>
+  <rect width="45" height="39" x="49.5" y="7.5" stroke="#262626" stroke-width="3" rx="2"/>
+  <path stroke="#262626" stroke-width="3" d="M50 22.5h44"/>
+  <path stroke="#262626" stroke-linecap="round" stroke-width="3" d="M62 2v12m0 16h-4m4 8h-4m16-8h-4m4 8h-4m16-8h-4m4 8h-4m0-36v12"/>
 </svg>
