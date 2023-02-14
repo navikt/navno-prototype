@@ -3,8 +3,8 @@
 #}
 
 {% macro filterGroup(params) %}
-<div class="mt-6 lg:mt-8">
-  <h2 class="text-sm tracking-widest uppercase opacity-70">{{ params.title }}</h2>
+<fieldset class="mt-6 lg:mt-8">
+  <legend class="text-sm tracking-widest uppercase opacity-70">{{ params.title }}</legend>
 
   {% set labelClasses = "inline-flex cursor-pointer px-4 pt-1.5 pb-1.5 leading-tight text-base bg-gray-100 rounded-full fine:hover:bg-deepblue-100 peer-checked:bg-deepblue-500 peer-checked:text-white peer-focus:ring-2 peer-focus:ring-deepblue-800" %}
 
@@ -33,5 +33,5 @@
       </li>
     {% endfor %}
   </ul>
-</div>
+</fieldset>
 {% endmacro %}
