@@ -83,6 +83,7 @@ permalink: "/produktoversikt/"
 
         <div class="relative lg:row-start-1 lg:row-span-3 lg:col-start-2" x-data="{ filterDrawer: false }">
           <button
+            type="button"
             class="flex items-center justify-start gap-2.5 pl-3 pr-4 py-3 leading-none text-blue-600 bg-white rounded ring-2 ring-blue-500 hover:bg-blue-100 hover:text-blue-700 lg:hidden"
             x-on:click="filterDrawer = true"
             x-bind:aria-expanded="filterDrawer">
@@ -175,11 +176,11 @@ permalink: "/produktoversikt/"
                     </h2>
                     <p class="text-base">
                       {%- for item in product.data.area -%}
-                        <span class="">{{ item }}</span>{{ ', ' if loop.length > 1 and not loop.last }}
+                        <span>{{ item }}</span>{{ ', ' if loop.length > 1 and not loop.last }}
                       {%- endfor -%}
                     </p>
                   </div>
-                  <button x-on:click="expanded = !expanded" class="absolute inset-0 flex items-center justify-end w-full pr-4 rounded-lg group focus:outline-none focus-visible:ring focus-visible:ring-inset focus-visible:ring-blue-800" aria-expanded="false" x-bind:aria-expanded="expanded">
+                  <button type="button" x-on:click="expanded = !expanded" class="absolute inset-0 flex items-center justify-end w-full pr-4 rounded-lg group focus:outline-none focus-visible:ring focus-visible:ring-inset focus-visible:ring-blue-800" aria-expanded="false" x-bind:aria-expanded="expanded">
                     <span class="sr-only">Vis/skjul innhold</span>
                     {{ '/src/_includes/svg/icons/chevron-down.svg' | svgContents('mr-1.5 w-5 h-5 opacity-50 transition duration-100 group-aria-expanded:rotate-180') | safe }}
                   </button>
