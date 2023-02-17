@@ -443,7 +443,7 @@ const products = [
       },
       {
         type: "markdown",
-        data: `### Send legeerklæring ved arbeidsuførhet",
+        data: `### Send legeerklæring ved arbeidsuførhet
           Noe tekst`,
       },
       {
@@ -596,7 +596,7 @@ const products = [
     contentBlocks: [
       {
         type: "markdown",
-        data: `### Send legeerklæring ved arbeidsuførhet",
+        data: `### Send legeerklæring ved arbeidsuførhet
           Noe tekst`,
       },
       {
@@ -643,7 +643,7 @@ const products = [
     contentBlocks: [
       {
         type: "markdown",
-        data: `### Send legeerklæring ved arbeidsuførhet",
+        data: `### Send legeerklæring ved arbeidsuførhet
           Noe tekst`,
       },
       {
@@ -1085,7 +1085,7 @@ const products = [
     contentBlocks: [
       {
         type: "markdown",
-        data: `### Send regning for utført lese- og sekretærhjelp",
+        data: `### Send regning for utført lese- og sekretærhjelp
           Noe tekst`,
       },
       {
@@ -2971,7 +2971,7 @@ const products = [
     contentBlocks: [
       {
         type: "markdown",
-        data: `### Meld fra om institusjonsopphold",
+        data: `### Meld fra om institusjonsopphold
           Noe tekst`,
       },
       {
@@ -3018,7 +3018,7 @@ const products = [
     contentBlocks: [
       {
         type: "markdown",
-        data: `### Meld fra om innleggelse",
+        data: `### Meld fra om innleggelse
           Noe tekst`,
       },
       {
