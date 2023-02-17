@@ -2647,7 +2647,7 @@ const products = [
       {
         type: "markdown",
         data: `### Be om fullmakt
-          "Skjemaet benyttes når søker gir fullmakt til at søknad kan hentes fra nav.no og fylles ut av behandler/kartlegger i etterkant av kartlegging.`,
+          Skjemaet benyttes når søker gir fullmakt til at søknad kan hentes fra nav.no og fylles ut av behandler/kartlegger i etterkant av kartlegging.`,
       },
       {
         type: "actions",
