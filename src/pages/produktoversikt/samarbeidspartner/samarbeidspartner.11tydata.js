@@ -443,7 +443,7 @@ const products = [
       },
       {
         type: "markdown",
-        data: `### Send legeerklæring ved arbeidsuførhet",
+        data: `### Send legeerklæring ved arbeidsuførhet
           Noe tekst`,
       },
       {
@@ -487,7 +487,7 @@ const products = [
     contentBlocks: [
       {
         type: "markdown",
-        data: `### Send legeerklæring ved arbeidsuførhet",
+        data: `### Send legeerklæring ved arbeidsuførhet
           Noe tekst`,
       },
       {
@@ -596,7 +596,7 @@ const products = [
     contentBlocks: [
       {
         type: "markdown",
-        data: `### Send legeerklæring ved arbeidsuførhet",
+        data: `### Send legeerklæring ved arbeidsuførhet
           Noe tekst`,
       },
       {
@@ -643,7 +643,7 @@ const products = [
     contentBlocks: [
       {
         type: "markdown",
-        data: `### Send legeerklæring ved arbeidsuførhet",
+        data: `### Send legeerklæring ved arbeidsuførhet
           Noe tekst`,
       },
       {
@@ -690,24 +690,24 @@ const products = [
     contentBlocks: [
       {
         type: "markdown",
-        data: `### Sosiale tjenester",
-          "Fullmakt som gjelder sosiale tjenester, skal arkiveres på NAV-kontoret og kan ikke gjøres synlig eller skannes i NAVs systemer på grunn av bestemmelser i Sosialtjenesteloven §44.`,
+        data: `### Sosiale tjenester
+          Fullmakt som gjelder sosiale tjenester, skal arkiveres på NAV-kontoret og kan ikke gjøres synlig eller skannes i NAVs systemer på grunn av bestemmelser i Sosialtjenesteloven §44.`,
       },
       {
         type: "line",
       },
       {
         type: "markdown",
-        data: `### Muntlig fullmakt",
-          "Dersom du ringer sammen med pasienten, kan pasienten gi muntlig fullmakt per telefon. Fullmakten vil kun gjelde for den aktuelle samtalen.`,
+        data: `### Muntlig fullmakt
+          Dersom du ringer sammen med pasienten, kan pasienten gi muntlig fullmakt per telefon. Fullmakten vil kun gjelde for den aktuelle samtalen.`,
       },
       {
         type: "line",
       },
       {
         type: "markdown",
-        data: `### Skriftlig fullmakt via nav.no",
-          "Pasienten kan gi deg fullmakt ved å logge inn og bruke Skriv til oss. Dette tilsvarer signatur fra pasienten.`,
+        data: `### Skriftlig fullmakt via nav.no
+          Pasienten kan gi deg fullmakt ved å logge inn og bruke Skriv til oss. Dette tilsvarer signatur fra pasienten.`,
       },
       {
         type: "line",
@@ -739,8 +739,8 @@ const products = [
     contentBlocks: [
       {
         type: "markdown",
-        data: `### Søk om seksualteknisk hjelpemiddel",
-          "Som lege, bestiller du det seksualtekniske hjelpemidlet direkte fra leverandør. Hjelpemiddelet blir sendt til ditt kontor eller hjem til pasienten.`,
+        data: `### Søk om seksualteknisk hjelpemiddel
+          Som lege, bestiller du det seksualtekniske hjelpemidlet direkte fra leverandør. Hjelpemiddelet blir sendt til ditt kontor eller hjem til pasienten.`,
       },
       {
         type: "actions",
@@ -780,8 +780,8 @@ const products = [
     contentBlocks: [
       {
         type: "markdown",
-        data: `### Send legeerklæring",
-          "NAV krever legeerklæring fra øyelege om nedsatt syn og legeerklæring som viser at vedkommende er helsemessig skikket til å ha førerhund. Erklæringene legges ved søknaden. Det er ikke egne skjemaer for å gi slike erklæringer. (Bør vi lage en felles tekst som brukes alle steder der det skal leveres legeerklæring, men det ikke er et eget skjema for det?)`,
+        data: `### Send legeerklæring
+          NAV krever legeerklæring fra øyelege om nedsatt syn og legeerklæring som viser at vedkommende er helsemessig skikket til å ha førerhund. Erklæringene legges ved søknaden. Det er ikke egne skjemaer for å gi slike erklæringer. (Bør vi lage en felles tekst som brukes alle steder der det skal leveres legeerklæring, men det ikke er et eget skjema for det?)`,
       },
       {
         type: "line",
@@ -812,8 +812,8 @@ const products = [
     contentBlocks: [
       {
         type: "markdown",
-        data: `### Send legeerklæring",
-          "NAV krever legeerklæring fra øyelege om nedsatt syn og legeerklæring som viser at vedkommende er helsemessig skikket til å ha førerhund. Erklæringene legges ved søknaden. Det er ikke egne skjemaer for å gi slike erklæringer. (Bør vi lage en felles tekst som brukes alle steder der det skal leveres legeerklæring, men det ikke er et eget skjema for det?)`,
+        data: `### Send legeerklæring
+          NAV krever legeerklæring fra øyelege om nedsatt syn og legeerklæring som viser at vedkommende er helsemessig skikket til å ha førerhund. Erklæringene legges ved søknaden. Det er ikke egne skjemaer for å gi slike erklæringer. (Bør vi lage en felles tekst som brukes alle steder der det skal leveres legeerklæring, men det ikke er et eget skjema for det?)`,
       },
       {
         type: "line",
@@ -842,8 +842,8 @@ const products = [
     contentBlocks: [
       {
         type: "markdown",
-        data: `### Send legeerklæring",
-          "NAV krever legeerklæring som viser at vedkommende er helsemessig skikket til å ha servicehund. Erklæringen legges ved søknaden. Det er ikke eget skjema for å gi slik erklæring. (Bør vi lage en felles tekst som brukes alle steder der det skal leveres legeerklæring, men det ikke er et eget skjema for det?)`,
+        data: `### Send legeerklæring
+          NAV krever legeerklæring som viser at vedkommende er helsemessig skikket til å ha servicehund. Erklæringen legges ved søknaden. Det er ikke eget skjema for å gi slik erklæring. (Bør vi lage en felles tekst som brukes alle steder der det skal leveres legeerklæring, men det ikke er et eget skjema for det?)`,
       },
       {
         type: "line",
@@ -876,8 +876,8 @@ const products = [
     contentBlocks: [
       {
         type: "markdown",
-        data: `### Skriv legeerklæring for motorkjøretøy",
-          "NAV krever legeerklæring om behovet for motorkjøretøy og søkerens evne til å kjøre bilen. Du skriver ut, signerer og stempler erklæringen, og gir den til søkeren slik at de kan legge den ved søknaden.`,
+        data: `### Skriv legeerklæring for motorkjøretøy
+          NAV krever legeerklæring om behovet for motorkjøretøy og søkerens evne til å kjøre bilen. Du skriver ut, signerer og stempler erklæringen, og gir den til søkeren slik at de kan legge den ved søknaden.`,
       },
       {
         type: "actions",
@@ -919,8 +919,8 @@ const products = [
     contentBlocks: [
       {
         type: "markdown",
-        data: `### Skriv legeerklæring",
-          "NAV krever legeerklæring første gang en pasient søker om brystprotese. Søkeren legger erklæringen ved søknaden. Det er ikke et eget skjema for å gi slik erklæring. (Bør vi lage en felles tekst som brukes alle steder der det skal leveres legeerklæring, men det ikke er et eget skjema for det?)`,
+        data: `### Skriv legeerklæring
+          NAV krever legeerklæring første gang en pasient søker om brystprotese. Søkeren legger erklæringen ved søknaden. Det er ikke et eget skjema for å gi slik erklæring. (Bør vi lage en felles tekst som brukes alle steder der det skal leveres legeerklæring, men det ikke er et eget skjema for det?)`,
       },
       {
         type: "line",
@@ -949,8 +949,8 @@ const products = [
     contentBlocks: [
       {
         type: "markdown",
-        data: `### Skriv legeerklæring",
-          "NAV krever legeerklæring første gang en pasient søker om øyeprotese. Søkeren legger erklæringen ved søknaden. Det er ikke et eget skjema for å gi slik erklæring. (Bør vi lage en felles tekst som brukes alle steder der det skal leveres legeerklæring, men det ikke er et eget skjema for det?)`,
+        data: `### Skriv legeerklæring
+          NAV krever legeerklæring første gang en pasient søker om øyeprotese. Søkeren legger erklæringen ved søknaden. Det er ikke et eget skjema for å gi slik erklæring. (Bør vi lage en felles tekst som brukes alle steder der det skal leveres legeerklæring, men det ikke er et eget skjema for det?)`,
       },
       {
         type: "line",
@@ -1015,8 +1015,8 @@ const products = [
     contentBlocks: [
       {
         type: "markdown",
-        data: `### Skriv legeerklæring",
-          "NAV krever legeerklæring første gang en pasient søker om parykk. Ved alopecia og/eller søknad om utvidet stønadsgrense på grunn av allergi mot syntetisk materiale, er det også nødvendig med erklæring fra spesialist i hudsykdommer. Det er ikke egne skjemaer for å gi slike erklæringer. (Bør vi lage en felles tekst som brukes alle steder der det skal leveres legeerklæring, men det ikke er et eget skjema for det?)`,
+        data: `### Skriv legeerklæring
+          NAV krever legeerklæring første gang en pasient søker om parykk. Ved alopecia og/eller søknad om utvidet stønadsgrense på grunn av allergi mot syntetisk materiale, er det også nødvendig med erklæring fra spesialist i hudsykdommer. Det er ikke egne skjemaer for å gi slike erklæringer. (Bør vi lage en felles tekst som brukes alle steder der det skal leveres legeerklæring, men det ikke er et eget skjema for det?)`,
       },
       {
         type: "line",
@@ -1050,8 +1050,8 @@ const products = [
     contentBlocks: [
       {
         type: "markdown",
-        data: `### Skriv legeerklæring",
-          "NAV krever erklæring fra øyelege eller optiker med diagnose og visus første gang en innbygger søker om lese- og sekretærhjelp. Det er ikke et eget skjema for å gi slik erklæring. (Bør vi lage en felles tekst som brukes alle steder der det skal leveres legeerklæring, men det ikke er et eget skjema for det?)`,
+        data: `### Skriv legeerklæring
+          NAV krever erklæring fra øyelege eller optiker med diagnose og visus første gang en innbygger søker om lese- og sekretærhjelp. Det er ikke et eget skjema for å gi slik erklæring. (Bør vi lage en felles tekst som brukes alle steder der det skal leveres legeerklæring, men det ikke er et eget skjema for det?)`,
       },
       {
         type: "line",
@@ -1085,7 +1085,7 @@ const products = [
     contentBlocks: [
       {
         type: "markdown",
-        data: `### Send regning for utført lese- og sekretærhjelp",
+        data: `### Send regning for utført lese- og sekretærhjelp
           Noe tekst`,
       },
       {
@@ -1131,8 +1131,8 @@ const products = [
     contentBlocks: [
       {
         type: "markdown",
-        data: `### Skriv legeerklæring",
-          "NAV krever erklæring fra hørselssentral eller øre-nese-halsspesialist første gang en innbygger søker om tolkehjelp. Det er ikke et eget skjema for å gi en slik erklæring. (Bør vi lage en felles tekst som brukes alle steder der det skal leveres legeerklæring, men det ikke er et eget skjema for det?)`,
+        data: `### Skriv legeerklæring
+          NAV krever erklæring fra hørselssentral eller øre-nese-halsspesialist første gang en innbygger søker om tolkehjelp. Det er ikke et eget skjema for å gi en slik erklæring. (Bør vi lage en felles tekst som brukes alle steder der det skal leveres legeerklæring, men det ikke er et eget skjema for det?)`,
       },
       {
         type: "line",
@@ -1164,8 +1164,8 @@ const products = [
     contentBlocks: [
       {
         type: "markdown",
-        data: `### Send regning for utført tolkeoppdrag",
-          "Finnes det eget skjema? Timeliste som kan lastes ned?`,
+        data: `### Send regning for utført tolkeoppdrag
+          Finnes det eget skjema? Timeliste som kan lastes ned?`,
       },
       {
         type: "line",
@@ -1197,8 +1197,8 @@ const products = [
     contentBlocks: [
       {
         type: "markdown",
-        data: `### Send regning for utført tolkeoppdrag",
-          "Finnes det eget skjema? Timeliste som kan lastes ned?`,
+        data: `### Send regning for utført tolkeoppdrag
+          Finnes det eget skjema? Timeliste som kan lastes ned?`,
       },
       {
         type: "line",
@@ -1220,7 +1220,8 @@ const products = [
   },
   {
     title: "Tolk- og ledsagerhjelp for døvblinde",
-    ingress: "Utfører tolkeoppdrag for døve, døvblinde og hørselshemmede. Siden tolk er et eget produkt, bør dette være spesifikt for ledsagerhjelp? Evt slås sammen med Tolking for døve, døvblinde og hørselshemmede?",
+    ingress:
+      "Utfører tolkeoppdrag for døve, døvblinde og hørselshemmede. Siden tolk er et eget produkt, bør dette være spesifikt for ledsagerhjelp? Evt slås sammen med Tolking for døve, døvblinde og hørselshemmede?",
     icon: "/src/_includes/svg/pictograms/neutral.svg",
     type: [
       "Tjeneste",
@@ -1230,8 +1231,8 @@ const products = [
     contentBlocks: [
       {
         type: "markdown",
-        data: `### Skriv legeerklæring",
-          "NAV krever erklæring fra hørselssentral eller øre-nese-halsspesialist første gang en innbygger søker om tolke- og ledsagerhjelp. Det er ikke et eget skjema for å gi en slik erklæring. (Bør vi lage en felles tekst som brukes alle steder der det skal leveres legeerklæring, men det ikke er et eget skjema for det?)`,
+        data: `### Skriv legeerklæring
+          NAV krever erklæring fra hørselssentral eller øre-nese-halsspesialist første gang en innbygger søker om tolke- og ledsagerhjelp. Det er ikke et eget skjema for å gi en slik erklæring. (Bør vi lage en felles tekst som brukes alle steder der det skal leveres legeerklæring, men det ikke er et eget skjema for det?)`,
       },
       {
         type: "line",
@@ -1263,8 +1264,8 @@ const products = [
     contentBlocks: [
       {
         type: "markdown",
-        data: `### Skriv begrunnelse",
-          "En øre-nese-halslege må begrunne behovet i et eget felt på søknadsskjemaet.`,
+        data: `### Skriv begrunnelse
+          En øre-nese-halslege må begrunne behovet i et eget felt på søknadsskjemaet.`,
       },
       {
         type: "actions",
@@ -1310,8 +1311,8 @@ const products = [
     contentBlocks: [
       {
         type: "markdown",
-        data: `### Skriv begrunnelse",
-          "Sykehusleger og spesialister i ortopedisk kirurgi må begrunne behovet i et eget felt på søknadsskjemaet (skrives kanskje bare ut førsteside? kan fylles ut i legens epj-system). Avhengig av hvilken type ortopedisk hjelpemiddel det søkes om, kan også andre legespesialister begrunne behovet.`,
+        data: `### Skriv begrunnelse
+          Sykehusleger og spesialister i ortopedisk kirurgi må begrunne behovet i et eget felt på søknadsskjemaet (skrives kanskje bare ut førsteside? kan fylles ut i legens epj-system). Avhengig av hvilken type ortopedisk hjelpemiddel det søkes om, kan også andre legespesialister begrunne behovet.`,
       },
       {
         type: "actions",
@@ -1357,8 +1358,8 @@ const products = [
     contentBlocks: [
       {
         type: "markdown",
-        data: `### Skriv begrunnelse",
-          "Sykehusleger og spesialister i ortopedisk kirurgi må begrunne behovet i et eget felt på søknadsskjemaet (skrives kanskje bare ut førsteside? kan fylles ut i legens epj-system). Avhengig av hvilken type ortopedisk hjelpemiddel det søkes om, kan også andre legespesialister begrunne behovet.`,
+        data: `### Skriv begrunnelse
+          Sykehusleger og spesialister i ortopedisk kirurgi må begrunne behovet i et eget felt på søknadsskjemaet (skrives kanskje bare ut førsteside? kan fylles ut i legens epj-system). Avhengig av hvilken type ortopedisk hjelpemiddel det søkes om, kan også andre legespesialister begrunne behovet.`,
       },
       {
         type: "actions",
@@ -1400,8 +1401,8 @@ const products = [
     contentBlocks: [
       {
         type: "markdown",
-        data: `### Skriv begrunnelse",
-          "Sykehusleger og spesialister i ortopedisk kirurgi må begrunne behovet i et eget felt på søknadsskjemaet (skrives kanskje bare ut førsteside? kan fylles ut i legens epj-system). Avhengig av hvilken type ortopedisk hjelpemiddel det søkes om, kan også andre legespesialister begrunne behovet.`,
+        data: `### Skriv begrunnelse
+          Sykehusleger og spesialister i ortopedisk kirurgi må begrunne behovet i et eget felt på søknadsskjemaet (skrives kanskje bare ut førsteside? kan fylles ut i legens epj-system). Avhengig av hvilken type ortopedisk hjelpemiddel det søkes om, kan også andre legespesialister begrunne behovet.`,
       },
       {
         type: "actions",
@@ -1447,8 +1448,8 @@ const products = [
     contentBlocks: [
       {
         type: "markdown",
-        data: `### Skriv legeerklæring",
-          "Det er bare nødvendig med legeerklæring hvis saksbehandler i NAV etterspør dette. (Bør vi lage en felles tekst som brukes alle steder der det skal leveres legeerklæring, men det ikke er et eget skjema for det?)`,
+        data: `### Skriv legeerklæring
+          Det er bare nødvendig med legeerklæring hvis saksbehandler i NAV etterspør dette. (Bør vi lage en felles tekst som brukes alle steder der det skal leveres legeerklæring, men det ikke er et eget skjema for det?)`,
       },
       {
         type: "line",
@@ -1477,8 +1478,8 @@ const products = [
     contentBlocks: [
       {
         type: "markdown",
-        data: `### Skriv legeerklæring",
-          "Det er bare nødvendig med legeerklæring hvis saksbehandler i NAV etterspør dette. (Bør vi lage en felles tekst som brukes alle steder der det skal leveres legeerklæring, men det ikke er et eget skjema for det?)`,
+        data: `### Skriv legeerklæring
+        Det er bare nødvendig med legeerklæring hvis saksbehandler i NAV etterspør dette. (Bør vi lage en felles tekst som brukes alle steder der det skal leveres legeerklæring, men det ikke er et eget skjema for det?)`,
       },
       {
         type: "line",
@@ -1563,8 +1564,8 @@ const products = [
       },
       {
         type: "markdown",
-        data: `### Send vedlegg til refusjonskrav",
-          "Excel-skjema til bruk når ...?`,
+        data: `### Send vedlegg til refusjonskrav
+        Excel-skjema til bruk når ...?`,
       },
       {
         type: "actions",
@@ -1868,8 +1869,8 @@ const products = [
     contentBlocks: [
       {
         type: "markdown",
-        data: `### Registrer deltakere",
-          "Dette gjør du digitalt i Deltakeroversikten.`,
+        data: `### Registrer deltakere
+          Dette gjør du digitalt i Deltakeroversikten.`,
       },
       {
         type: "actions",
@@ -1928,8 +1929,8 @@ const products = [
     contentBlocks: [
       {
         type: "markdown",
-        data: `### Registrer deltakere",
-          "Dette gjør du digitalt i Deltakeroversikten.`,
+        data: `### Registrer deltakere
+        Dette gjør du digitalt i Deltakeroversikten.`,
       },
       {
         type: "actions",
@@ -1971,8 +1972,8 @@ const products = [
     contentBlocks: [
       {
         type: "markdown",
-        data: `### Be om fullmakt",
-          "Skjemaet benyttes når søker gir fullmakt til at søknad kan hentes fra nav.no og fylles ut av behandler/kartlegger i etterkant av kartlegging.`,
+        data: `### Be om fullmakt
+        Skjemaet benyttes når søker gir fullmakt til at søknad kan hentes fra nav.no og fylles ut av behandler/kartlegger i etterkant av kartlegging.`,
       },
       {
         type: "actions",
@@ -2013,8 +2014,8 @@ const products = [
     contentBlocks: [
       {
         type: "markdown",
-        data: `### Inngå avtale",
-          "For å kunne registrere krav om tilskudd til briller til barn og få riktig utbetaling, må optikerfirmaet ha en avtale om direkte oppgjør med NAV.`,
+        data: `### Inngå avtale
+          For å kunne registrere krav om tilskudd til briller til barn og få riktig utbetaling, må optikerfirmaet ha en avtale om direkte oppgjør med NAV.`,
       },
       {
         type: "actions",
@@ -2030,8 +2031,8 @@ const products = [
       },
       {
         type: "markdown",
-        data: `### Send inn eller slett krav",
-          "Som optiker kan du logge deg på den digitale løsningen og sende krav. På optikers side kan du se alle kravene du selv har sendt inn. Hvis du trenger å korrigere et krav du har sendt inn, gjør du det ved å slette det aktuelle kravet før det har gått syv dager. `,
+        data: `### Send inn eller slett krav
+          Som optiker kan du logge deg på den digitale løsningen og sende krav. På optikers side kan du se alle kravene du selv har sendt inn. Hvis du trenger å korrigere et krav du har sendt inn, gjør du det ved å slette det aktuelle kravet før det har gått syv dager. `,
       },
       {
         type: "actions",
@@ -2072,8 +2073,8 @@ const products = [
     contentBlocks: [
       {
         type: "markdown",
-        data: `### Send pristilbud",
-          "Pristilbud fra optiker er et obligatorisk vedlegg til søknad om irislinser. Det er optiker som skal fylle ut og signere skjemaet. Pristilbudet bør legges ved og sendes samtidig med søknaden. Hvis det ettersendes senere enn to uker etter søknaden, kan NAV Hjelpemiddelsentral avslå søknaden.`,
+        data: `### Send pristilbud
+          Pristilbud fra optiker er et obligatorisk vedlegg til søknad om irislinser. Det er optiker som skal fylle ut og signere skjemaet. Pristilbudet bør legges ved og sendes samtidig med søknaden. Hvis det ettersendes senere enn to uker etter søknaden, kan NAV Hjelpemiddelsentral avslå søknaden.`,
       },
       {
         type: "actions",
@@ -2114,8 +2115,8 @@ const products = [
     contentBlocks: [
       {
         type: "markdown",
-        data: `### Be om hjelp til vurdering og utprøving",
-          "Dette skjemaet bruker du hvis du er fagperson og trenger hjelp til vurdering eller utprøving.`,
+        data: `### Be om hjelp til vurdering og utprøving
+          Dette skjemaet bruker du hvis du er fagperson og trenger hjelp til vurdering eller utprøving.`,
       },
       {
         type: "actions",
@@ -2135,8 +2136,8 @@ const products = [
       },
       {
         type: "markdown",
-        data: `### Søk om andre høreapparat, tinnitusmaskerer eller tilleggsutstyr",
-          "Hørselssentral eller avtalespesialist har ansvar for at skjemaet blir fylt ut og sendt inn. Det er valgfritt å fylle ut søknaden via pasientjournalsystemet eller via NAVs nettsider.`,
+        data: `### Søk om andre høreapparat, tinnitusmaskerer eller tilleggsutstyr
+          Hørselssentral eller avtalespesialist har ansvar for at skjemaet blir fylt ut og sendt inn. Det er valgfritt å fylle ut søknaden via pasientjournalsystemet eller via NAVs nettsider.`,
       },
       {
         type: "actions",
@@ -2169,8 +2170,8 @@ const products = [
       },
       {
         type: "markdown",
-        data: `### Bekreftelse på utlån og tildeling av høreapparat / tinnitusmaskerer / tilleggsutstyr​",
-          "Skjemaet fylles ut og sendes inn av avtalespesialist eller høresentral.`,
+        data: `### Bekreftelse på utlån og tildeling av høreapparat / tinnitusmaskerer / tilleggsutstyr
+          Skjemaet fylles ut og sendes inn av avtalespesialist eller høresentral.`,
       },
       {
         type: "actions",
@@ -2186,8 +2187,8 @@ const products = [
       },
       {
         type: "markdown",
-        data: `### Søk om hjelpemidler (dette er et fellesskjema som brukes for mange hjelpemidler, må ha generisk tekst?)",
-          "Hvis du er hjelpemiddelformidler i kommunen og har fått nødvendige tilganger, kan du nå søke digitalt om et utvalg av enkle hjelpemidler. Når du skal søke på vegne av andre trenger du signert fullmakt.`,
+        data: `### Søk om hjelpemidler (dette er et fellesskjema som brukes for mange hjelpemidler, må ha generisk tekst?)
+          Hvis du er hjelpemiddelformidler i kommunen og har fått nødvendige tilganger, kan du nå søke digitalt om et utvalg av enkle hjelpemidler. Når du skal søke på vegne av andre trenger du signert fullmakt.`,
       },
       {
         type: "actions",
@@ -2207,8 +2208,8 @@ const products = [
       },
       {
         type: "markdown",
-        data: `### Be om fullmakt",
-          "Skjemaet benyttes når søker gir fullmakt til at søknad kan hentes fra nav.no og fylles ut av behandler/kartlegger i etterkant av kartlegging.`,
+        data: `### Be om fullmakt
+          Skjemaet benyttes når søker gir fullmakt til at søknad kan hentes fra nav.no og fylles ut av behandler/kartlegger i etterkant av kartlegging.`,
       },
       {
         type: "actions",
@@ -2249,8 +2250,8 @@ const products = [
     contentBlocks: [
       {
         type: "markdown",
-        data: `### Be om hjelp til vurdering og utprøving",
-          "Dette skjemaet bruker du hvis du er fagperson og trenger hjelp til vurdering eller utprøving.`,
+        data: `### Be om hjelp til vurdering og utprøving
+          Dette skjemaet bruker du hvis du er fagperson og trenger hjelp til vurdering eller utprøving.`,
       },
       {
         type: "actions",
@@ -2270,8 +2271,8 @@ const products = [
       },
       {
         type: "markdown",
-        data: `### Søk om hjelpemidler (dette er et fellesskjema som brukes for mange hjelpemidler, må ha generisk tekst?)",
-          "Hvis du er hjelpemiddelformidler i kommunen og har fått nødvendige tilganger, kan du nå søke digitalt om et utvalg av enkle hjelpemidler. Når du skal søke på vegne av andre trenger du signert fullmakt.`,
+        data: `### Søk om hjelpemidler (dette er et fellesskjema som brukes for mange hjelpemidler, må ha generisk tekst?)
+          Hvis du er hjelpemiddelformidler i kommunen og har fått nødvendige tilganger, kan du nå søke digitalt om et utvalg av enkle hjelpemidler. Når du skal søke på vegne av andre trenger du signert fullmakt.`,
       },
       {
         type: "actions",
@@ -2291,8 +2292,8 @@ const products = [
       },
       {
         type: "markdown",
-        data: `### Be om fullmakt",
-          "Skjemaet benyttes når søker gir fullmakt til at søknad kan hentes fra nav.no og fylles ut av behandler/kartlegger i etterkant av kartlegging.`,
+        data: `### Be om fullmakt
+          Skjemaet benyttes når søker gir fullmakt til at søknad kan hentes fra nav.no og fylles ut av behandler/kartlegger i etterkant av kartlegging.`,
       },
       {
         type: "actions",
@@ -2333,8 +2334,8 @@ const products = [
     contentBlocks: [
       {
         type: "markdown",
-        data: `### Be om hjelp til vurdering og utprøving",
-          "Dette skjemaet bruker du hvis du er fagperson og trenger hjelp til vurdering eller utprøving.`,
+        data: `### Be om hjelp til vurdering og utprøving
+          Dette skjemaet bruker du hvis du er fagperson og trenger hjelp til vurdering eller utprøving.`,
       },
       {
         type: "actions",
@@ -2354,8 +2355,8 @@ const products = [
       },
       {
         type: "markdown",
-        data: `### Søk om hjelpemidler (dette er et fellesskjema som brukes for mange hjelpemidler, må ha generisk tekst?)",
-          "Hvis du er hjelpemiddelformidler i kommunen og har fått nødvendige tilganger, kan du nå søke digitalt om et utvalg av enkle hjelpemidler. Når du skal søke på vegne av andre trenger du signert fullmakt.`,
+        data: `### Søk om hjelpemidler (dette er et fellesskjema som brukes for mange hjelpemidler, må ha generisk tekst?)
+          Hvis du er hjelpemiddelformidler i kommunen og har fått nødvendige tilganger, kan du nå søke digitalt om et utvalg av enkle hjelpemidler. Når du skal søke på vegne av andre trenger du signert fullmakt.`,
       },
       {
         type: "actions",
@@ -2375,8 +2376,8 @@ const products = [
       },
       {
         type: "markdown",
-        data: `### Be om fullmakt",
-          "Skjemaet benyttes når søker gir fullmakt til at søknad kan hentes fra nav.no og fylles ut av behandler/kartlegger i etterkant av kartlegging.`,
+        data: `### Be om fullmakt
+          Skjemaet benyttes når søker gir fullmakt til at søknad kan hentes fra nav.no og fylles ut av behandler/kartlegger i etterkant av kartlegging.`,
       },
       {
         type: "actions",
@@ -2417,8 +2418,8 @@ const products = [
     contentBlocks: [
       {
         type: "markdown",
-        data: `### Be om hjelp til vurdering og utprøving",
-          "Dette skjemaet bruker du hvis du er fagperson og trenger hjelp til vurdering eller utprøving.`,
+        data: `### Be om hjelp til vurdering og utprøving
+          Dette skjemaet bruker du hvis du er fagperson og trenger hjelp til vurdering eller utprøving.`,
       },
       {
         type: "actions",
@@ -2438,8 +2439,8 @@ const products = [
       },
       {
         type: "markdown",
-        data: `### Søk om hjelpemidler (dette er et fellesskjema som brukes for mange hjelpemidler, må ha generisk tekst?)",
-          "Hvis du er hjelpemiddelformidler i kommunen og har fått nødvendige tilganger, kan du nå søke digitalt om et utvalg av enkle hjelpemidler. Når du skal søke på vegne av andre trenger du signert fullmakt.`,
+        data: `### Søk om hjelpemidler (dette er et fellesskjema som brukes for mange hjelpemidler, må ha generisk tekst?)
+          Hvis du er hjelpemiddelformidler i kommunen og har fått nødvendige tilganger, kan du nå søke digitalt om et utvalg av enkle hjelpemidler. Når du skal søke på vegne av andre trenger du signert fullmakt.`,
       },
       {
         type: "actions",
@@ -2459,8 +2460,8 @@ const products = [
       },
       {
         type: "markdown",
-        data: `### Be om fullmakt",
-          "Skjemaet benyttes når søker gir fullmakt til at søknad kan hentes fra nav.no og fylles ut av behandler/kartlegger i etterkant av kartlegging.`,
+        data: `### Be om fullmakt
+          Skjemaet benyttes når søker gir fullmakt til at søknad kan hentes fra nav.no og fylles ut av behandler/kartlegger i etterkant av kartlegging.`,
       },
       {
         type: "actions",
@@ -2503,8 +2504,8 @@ const products = [
     contentBlocks: [
       {
         type: "markdown",
-        data: `### Be om hjelp til vurdering og utprøving",
-          "Dette skjemaet bruker du hvis du er fagperson og trenger hjelp til vurdering eller utprøving.`,
+        data: `### Be om hjelp til vurdering og utprøving
+          Dette skjemaet bruker du hvis du er fagperson og trenger hjelp til vurdering eller utprøving.`,
       },
       {
         type: "actions",
@@ -2524,8 +2525,8 @@ const products = [
       },
       {
         type: "markdown",
-        data: `### Søk om ortopediske hjelpemidler",
-          "Gjelder hvis du skal søke om protese (har ikke disse egne søknader?), ortose, spesialfottøy, aktivitetshjelpemidler for brukere over 26 år, fotseng eller ortopedisk sydd fottøy. Skjemaet fylles ut av legespesialist eller sykehuslege (ved førstegangssøknad eller fornyelse) eller ortopediingeniør (ved fornyelse).`,
+        data: `### Søk om ortopediske hjelpemidler
+          Gjelder hvis du skal søke om protese (har ikke disse egne søknader?), ortose, spesialfottøy, aktivitetshjelpemidler for brukere over 26 år, fotseng eller ortopedisk sydd fottøy. Skjemaet fylles ut av legespesialist eller sykehuslege (ved førstegangssøknad eller fornyelse) eller ortopediingeniør (ved fornyelse).`,
       },
       {
         type: "actions",
@@ -2554,8 +2555,8 @@ const products = [
       },
       {
         type: "markdown",
-        data: `### Be om fullmakt",
-          "Skjemaet benyttes når søker gir fullmakt til at søknad kan hentes fra nav.no og fylles ut av behandler/kartlegger i etterkant av kartlegging.`,
+        data: `### Be om fullmakt
+          Skjemaet benyttes når søker gir fullmakt til at søknad kan hentes fra nav.no og fylles ut av behandler/kartlegger i etterkant av kartlegging.`,
       },
       {
         type: "actions",
@@ -2598,8 +2599,8 @@ const products = [
     contentBlocks: [
       {
         type: "markdown",
-        data: `### Søk om ortopedisk hjelpemidler",
-          "Gjelder hvis du skal søke om protese (har ikke disse egne søknader?), ortose, spesialfottøy, aktivitetshjelpemidler for brukere over 26 år, fotseng eller ortopedisk sydd fottøy. Skjemaet fylles ut av legespesialist eller sykehuslege (ved førstegangssøknad eller fornyelse) eller ortopediingeniør (ved fornyelse).`,
+        data: `### Søk om ortopedisk hjelpemidler
+          Gjelder hvis du skal søke om protese (har ikke disse egne søknader?), ortose, spesialfottøy, aktivitetshjelpemidler for brukere over 26 år, fotseng eller ortopedisk sydd fottøy. Skjemaet fylles ut av legespesialist eller sykehuslege (ved førstegangssøknad eller fornyelse) eller ortopediingeniør (ved fornyelse).`,
       },
       {
         type: "actions",
@@ -2628,8 +2629,8 @@ const products = [
       },
       {
         type: "markdown",
-        data: `### Skriv begrunnelse for behov for ortopediske sko",
-          "Sykehusleger og spesialister i ortopedisk kirurgi må begrunne behovet i et eget felt på søknadsskjemaet (skrives kanskje bare ut førsteside? kan fylles ut i legens epj-system). Avhengig av hvilken type ortopedisk hjelpemiddel det søkes om, kan også andre legespesialister begrunne behovet.`,
+        data: `### Skriv begrunnelse for behov for ortopediske sko
+          Sykehusleger og spesialister i ortopedisk kirurgi må begrunne behovet i et eget felt på søknadsskjemaet (skrives kanskje bare ut førsteside? kan fylles ut i legens epj-system). Avhengig av hvilken type ortopedisk hjelpemiddel det søkes om, kan også andre legespesialister begrunne behovet.`,
       },
       {
         type: "actions",
@@ -2645,8 +2646,8 @@ const products = [
       },
       {
         type: "markdown",
-        data: `### Be om fullmakt",
-          "Skjemaet benyttes når søker gir fullmakt til at søknad kan hentes fra nav.no og fylles ut av behandler/kartlegger i etterkant av kartlegging.`,
+        data: `### Be om fullmakt
+          Skjemaet benyttes når søker gir fullmakt til at søknad kan hentes fra nav.no og fylles ut av behandler/kartlegger i etterkant av kartlegging.`,
       },
       {
         type: "actions",
@@ -2689,8 +2690,8 @@ const products = [
     contentBlocks: [
       {
         type: "markdown",
-        data: `### Be om hjelp til vurdering og utprøving",
-          "Dette skjemaet bruker du hvis du er fagperson og trenger hjelp til vurdering eller utprøving.`,
+        data: `### Be om hjelp til vurdering og utprøving
+          Dette skjemaet bruker du hvis du er fagperson og trenger hjelp til vurdering eller utprøving.`,
       },
       {
         type: "actions",
@@ -2710,8 +2711,8 @@ const products = [
       },
       {
         type: "markdown",
-        data: `### Søk om hjelpemidler (dette er et fellesskjema som brukes for mange hjelpemidler, må ha generisk tekst?)",
-          "Hvis du er hjelpemiddelformidler i kommunen og har fått nødvendige tilganger, kan du nå søke digitalt om et utvalg av enkle hjelpemidler. Når du skal søke på vegne av andre trenger du signert fullmakt.`,
+        data: `### Søk om hjelpemidler (dette er et fellesskjema som brukes for mange hjelpemidler, må ha generisk tekst?)
+          Hvis du er hjelpemiddelformidler i kommunen og har fått nødvendige tilganger, kan du nå søke digitalt om et utvalg av enkle hjelpemidler. Når du skal søke på vegne av andre trenger du signert fullmakt.`,
       },
       {
         type: "actions",
@@ -2731,8 +2732,8 @@ const products = [
       },
       {
         type: "markdown",
-        data: `### Be om fullmakt",
-          "Skjemaet benyttes når søker gir fullmakt til at søknad kan hentes fra nav.no og fylles ut av behandler/kartlegger i etterkant av kartlegging.`,
+        data: `### Be om fullmakt
+          Skjemaet benyttes når søker gir fullmakt til at søknad kan hentes fra nav.no og fylles ut av behandler/kartlegger i etterkant av kartlegging.`,
       },
       {
         type: "actions",
@@ -2770,8 +2771,8 @@ const products = [
     contentBlocks: [
       {
         type: "markdown",
-        data: `### Send inn opplysninger om boet og kravene",
-          "Bostyrers oversendelsesbrev for søknader om lønnsgarantidekning.`,
+        data: `### Send inn opplysninger om boet og kravene
+          Bostyrers oversendelsesbrev for søknader om lønnsgarantidekning.`,
       },
       {
         type: "actions",
@@ -2816,8 +2817,8 @@ const products = [
     contentBlocks: [
       {
         type: "markdown",
-        data: `### Meld inn behov for hjelpemidler",
-          "Saken sendes til NAV Hjelpemiddelsentral. Saker du har sendt inn digitalt vil være tilgjengelig på innlogget side på nav.no. Der kan du følge status på dine innsendte digitale saker. Søknaden blir også tilgjengelig på nav.no-profilen til innbyggeren du har søkt for. (Hvilke hjelpemiddelgrupper er denne aktuell for?)`,
+        data: `### Meld inn behov for hjelpemidler
+          Saken sendes til NAV Hjelpemiddelsentral. Saker du har sendt inn digitalt vil være tilgjengelig på innlogget side på nav.no. Der kan du følge status på dine innsendte digitale saker. Søknaden blir også tilgjengelig på nav.no-profilen til innbyggeren du har søkt for. (Hvilke hjelpemiddelgrupper er denne aktuell for?)`,
       },
       {
         type: "actions",
@@ -2856,8 +2857,8 @@ const products = [
     contentBlocks: [
       {
         type: "markdown",
-        data: `### Krav i forbindelse med oppfostringsbidrag etter barnevernloven",
-          "Hvis kommunen søker om oppfostringsbidrag fra begge foreldrene, må kommunen fylle ut to skjemaer.`,
+        data: `### Krav i forbindelse med oppfostringsbidrag etter barnevernloven
+          Hvis kommunen søker om oppfostringsbidrag fra begge foreldrene, må kommunen fylle ut to skjemaer.`,
       },
       {
         type: "actions",
@@ -2899,8 +2900,8 @@ const products = [
     contentBlocks: [
       {
         type: "markdown",
-        data: `### Last ned skjema for demontering av trappeheis, løfteplattform, sjaktheis eller takheis",
-          "Skjemaet skal fylles ut og returneres sammen med demontert heis.`,
+        data: `### Last ned skjema for demontering av trappeheis, løfteplattform, sjaktheis eller takheis
+          Skjemaet skal fylles ut og returneres sammen med demontert heis.`,
       },
       {
         type: "actions",
@@ -2939,8 +2940,8 @@ const products = [
     contentBlocks: [
       {
         type: "markdown",
-        data: `### Lever oppgjør",
-          "For å få støtten, må verkstedene levere oppgjør gjennom programmet ORTOK.`,
+        data: `### Lever oppgjør
+          For å få støtten, må verkstedene levere oppgjør gjennom programmet ORTOK.`,
       },
       {
         type: "line",
@@ -2970,7 +2971,7 @@ const products = [
     contentBlocks: [
       {
         type: "markdown",
-        data: `### Meld fra om institusjonsopphold",
+        data: `### Meld fra om institusjonsopphold
           Noe tekst`,
       },
       {
@@ -3010,11 +3011,14 @@ const products = [
       "Det er viktig at NAV får melding om innleggelse/utskriving ved opphold på alders- og sykehjem da dette kan ha betydning for rettigheter til ytelser eller det kan ha konsekvenser for beregningen av ytelsen eller at ytelsen skal stanses eller reduseres.",
     icon: "/src/_includes/svg/pictograms/slik-gjor-du-det.svg",
     type: ["Skjema"],
-    role: ["Andre", "Ansatt i kommunen"],
+    role: [
+      "Andre",
+      "Ansatt i kommunen",
+    ],
     contentBlocks: [
       {
         type: "markdown",
-        data: `### Meld fra om innleggelse",
+        data: `### Meld fra om innleggelse
           Noe tekst`,
       },
       {
@@ -3054,8 +3058,8 @@ const products = [
     contentBlocks: [
       {
         type: "markdown",
-        data: `### Meld fra om innleggelse",
-          "Hver enkelt helseinstitusjon må melde fra skriftlig i form av et brev til NAV. Brevet skal sendes til det NAV lokale kontoret en person tilhører. Det jobbes med å lage et Altinn-skjema.`,
+        data: `### Meld fra om innleggelse
+          Hver enkelt helseinstitusjon må melde fra skriftlig i form av et brev til NAV. Brevet skal sendes til det NAV lokale kontoret en person tilhører. Det jobbes med å lage et Altinn-skjema.`,
       },
       {
         type: "line",
