@@ -6,7 +6,6 @@ type: ["Pengestøtte"]
 area: ["Familie og barn"]
 ---
 
-
 {%- from "macros/button.njk" import button -%}
 {%- from "macros/microcard.njk" import microcard -%}
 
@@ -19,7 +18,7 @@ Du bruker denne søknaden både når du søker om foreldrepenger første gang og
 {{ button({ text: 'Ettersend dokumentasjon', variant: 'secondary' }) }}
 </div>
 
-<hr class="my-8 border-deepblue-100" />
+<div class="my-8 border-deepblue-100 border-t"></div>
 
 ### Send inn opplysninger om inntekt som selvstendig næringsdrivende eller frilanser
 
@@ -28,7 +27,7 @@ Du bruker denne søknaden både når du søker om foreldrepenger første gang og
 {{ button({ text: 'Ettersend dokumentasjon', variant: 'secondary' }) }}
 </div>
 
-<hr class="my-8 border-deepblue-100" />
+<div class="my-8 border-deepblue-100 border-t"></div>
 
 ### Mer om
 

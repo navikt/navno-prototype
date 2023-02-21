@@ -19,7 +19,7 @@ Du bruker samme søknad både hvis du er permittert og ikke. Du kan søke om dag
 {{ button({ text: 'Ettersend dokumentasjon', variant: 'secondary' }) }}
 </div>
 
-<hr class="my-8 border-deepblue-100" />
+<div class="my-8 border-t border-deepblue-100"></div>
 
 ### Søk om å beholde dagpengene mens du tar utdanning eller opplæring
 
@@ -30,7 +30,7 @@ Du kan søke om å kombinere dagpenger med utdanning eller opplæring.
 {{ button({ text: 'Ettersend dokumentasjon', variant: 'secondary' }) }}
 </div>
 
-<hr class="my-8 border-deepblue-100" />
+<div class="my-8 border-t border-deepblue-100"></div>
 
 ### Søk om å beholde dagpengene under etablering av egen virksomhet
 
@@ -41,7 +41,7 @@ Dersom du allerede mottar dagpenger, kan du søke om å beholde disse under etab
 {{ button({ text: 'Ettersend dokumentasjon', variant: 'secondary' }) }}
 </div>
 
-<hr class="my-8 border-deepblue-100" />
+<div class="my-8 border-t border-deepblue-100"></div>
 
 ### Søk om attest for overføring av dagpengerettigheter til et annet EØS-land
 
@@ -52,7 +52,7 @@ Hvis du har opparbeidet deg rettigheter til dagpenger i Norge og flytter til et 
 {{ button({ text: 'Ettersend dokumentasjon', variant: 'secondary' }) }}
 </div>
 
-<hr class="my-8 border-deepblue-100" />
+<div class="my-8 border-t border-deepblue-100"></div>
 
 ### Søk om å beholde dagpengene mens du søker jobb i et annet EØS-land
 
@@ -63,7 +63,7 @@ Dersom du allerede mottar dagpenger, kan du søke om å få beholde dagpengene i
 {{ button({ text: 'Ettersend dokumentasjon', variant: 'secondary' }) }}
 </div>
 
-<hr class="my-8 border-deepblue-100" />
+<div class="my-8 border-t border-deepblue-100"></div>
 
 ### Mer om
 

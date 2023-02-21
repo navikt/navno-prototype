@@ -19,7 +19,7 @@ Tekst
 {{ button({ text: 'Ettersend dokumentasjon', variant: 'secondary' }) }}
 </div>
 
-<hr class="my-8 border-deepblue-100" />
+<div class="my-8 border-deepblue-100 border-t"></div>
 
 ### Overskrift 2
 
