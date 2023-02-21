@@ -95,12 +95,14 @@ permalink: "/produktoversikt/"
             <form class="grid bg-white shadow-drawer rounded-t-2xl col-content -mx-clamp-gap md:-mx-6 lg:hidden" x-on:click.outside="filterDrawer = false, filterTags = false" x-on:submit.prevent="filterDrawer = false">
               <div class="pb-12 overflow-y-auto overscroll-y-contain px-clamp-gap md:px-6 max-h-[60vh]">
                 <div class="relative grid pt-clamp-gap md:pt-7" >
-                  <div class="relative">
-                    <label for="searchFilter-mobile" class="font-semibold sr-only">Søk</label>
+                  <div>
+                    <label for="searchFilter-mobile" class="text-sm tracking-widest uppercase opacity-70">Søk</label>
+                    <div class="relative">
                     <span class="absolute inset-y-0 left-0 grid px-2.5 place-items-center">
                       {{ '/src/_includes/svg/icons/search.svg' | svgContents('w-6 h-6') | safe }}
                     </span>
                     <input id="searchFilter-mobile" type="search" x-model="search" class=" w-full pl-10 pr-3 py-2.5 border border-gray-300 rounded shadow-inner bg-gray-50/50 focus:outline-none focus:ring-2 focus:ring-blue-800">
+                    </div>
                   </div>
                   {{ filterGroup({
                     array: collections.typeFilter,
@@ -124,12 +126,14 @@ permalink: "/produktoversikt/"
           </div>
 
           <div class="hidden lg:block">
-            <div class="relative mt-8">
-              <label for="searchFilter-desktop" class="font-semibold sr-only">Søk</label>
-              <span class="absolute inset-y-0 left-0 grid px-2.5 place-items-center">
-                {{ '/src/_includes/svg/icons/search.svg' | svgContents('w-6 h-6') | safe }}
-              </span>
-              <input id="searchFilter-desktop" type="search" x-model="search" class="w-full max-w-xl pl-10 pr-3 py-2.5 border border-gray-300 rounded shadow-inner bg-gray-50/50 focus:outline-none focus:ring focus:ring-blue-800">
+            <div class="-mt-1">
+              <label for="searchFilter-desktop" class="text-sm tracking-widest uppercase opacity-70">Søk</label>
+              <div class="relative mt-2">
+                <span class="absolute inset-y-0 left-0 grid px-2.5 place-items-center">
+                  {{ '/src/_includes/svg/icons/search.svg' | svgContents('w-6 h-6') | safe }}
+                </span>
+                <input id="searchFilter-desktop" type="search" x-model="search" class="w-full max-w-xl pl-10 pr-3 py-2.5 border border-gray-300 rounded shadow-inner bg-gray-50/50 focus:outline-none focus:ring focus:ring-blue-800">
+              </div>
             </div>
             {{ filterGroup({
               array: collections.typeFilter,
@@ -160,21 +164,20 @@ permalink: "/produktoversikt/"
                 data-area="alle {% for item in product.data.area %}{{ item | slugify }} {% endfor %}">
 
                 <div
-                  class="relative z-10 flex items-center gap-4 py-4 -my-px text-left px-clamp-gap -mx-clamp-gap sm:-mx-2 sm:px-4 sm:rounded-lg fine:hover:z-20"
+                  class="relative z-10 flex items-center gap-4 py-5 -my-px text-left px-clamp-gap -mx-clamp-gap sm:-mx-2 sm:px-4 sm:rounded-lg fine:hover:z-20"
                   x-bind:class="expanded ? ' fine:hover:bg-deepblue-200 bg-deepblue-50' : 'fine:hover:bg-deepblue-200'">
                   {% if product.data.icon %}
                     {{ product.data.icon | svgContents('w-12 h-12 lg:w-14 lg:h-14 shrink-0') | safe }}
                   {% endif %}
-                  <div class="grid gap-1">
-                    <p class="text-base opacity-80">
-                    {% for item in product.data.type %}
-                      <span>{{ item }}</span>{{ ', ' if product.data.type.length > 1 and not loop.last }}
-                    {% endfor %}
-                    </p>
+                  <div class="grid gap-0.5">
                     <h2 class="text-xl font-semibold leading-tight">
                       {{ product.data.title | safe }}
                     </h2>
-                    <p class="text-base">
+                    {# <p class="text-base">{{ product.data.ingress }}</p> #}
+                    <p class="text-base opacity-80">
+                      {% for item in product.data.type %}
+                        <span>{{ item }}</span>,
+                      {% endfor %}
                       {%- for item in product.data.area -%}
                         <span>{{ item }}</span>{{ ', ' if loop.length > 1 and not loop.last }}
                       {%- endfor -%}
@@ -190,13 +193,12 @@ permalink: "/produktoversikt/"
                   <p>{{ product.data.ingress }}</p>
 
                   {{ product.content | markdown | safe }}
+
+                  {% if product.data.egenSide %}
+                    <a class="inline-block mx-auto text-center underline fine:hover:no-underline fine:hover:text-blue-600" href="/produktoversikt/{{ product.data.title | slugify }}.html">Vis som egen side</a>
+                  {% endif %}
                 </div>
 
-                {% if product.data.egenSide %}
-                <div x-bind:hidden="!expanded" class="pt-4 pb-6 sm:px-6">
-                  <a class="inline-block mx-auto text-center underline fine:hover:no-underline fine:hover:text-blue-600" href="/produktoversikt/{{ product.data.title | slugify }}.html">Vis som egen side</a>
-                </div>
-                {% endif %}
 
               </div>
 
