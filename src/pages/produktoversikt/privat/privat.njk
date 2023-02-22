@@ -114,16 +114,16 @@ permalink: "/produktoversikt/"
                     </div>
                   </div>
                   {{ filterGroup({
-                    array: collections.typeFilter,
-                    title: 'Velg type',
-                    xModel: 'typeFilter',
-                    inputName: 'filter-type-mobile'
-                  }) }}
-                  {{ filterGroup({
                     array: collections.areaFilter,
                     title: 'Velg område',
                     xModel: 'areaFilter',
                     inputName: 'filter-area-mobile'
+                  }) }}
+                  {{ filterGroup({
+                    array: collections.typeFilter,
+                    title: 'Velg type',
+                    xModel: 'typeFilter',
+                    inputName: 'filter-type-mobile'
                   }) }}
                 </div>
               </div>
@@ -159,16 +159,16 @@ permalink: "/produktoversikt/"
               </div>
             </div>
             {{ filterGroup({
-              array: collections.typeFilter,
-              title: 'Velg type',
-              xModel: 'typeFilter',
-              inputName: 'filter-type-desktop'
-            }) }}
-            {{ filterGroup({
               array: collections.areaFilter,
               title: 'Velg område',
               xModel: 'areaFilter',
               inputName: 'filter-area-desktop'
+            }) }}
+            {{ filterGroup({
+              array: collections.typeFilter,
+              title: 'Velg type',
+              xModel: 'typeFilter',
+              inputName: 'filter-type-desktop'
             }) }}
           </div>
         </div>
