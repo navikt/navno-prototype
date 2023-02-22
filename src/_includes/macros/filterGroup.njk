@@ -1,28 +1,28 @@
 {#
-  params = { title, array, inputName, xModel }
+  params = { title, array, value }
 #}
 
 {% macro filterGroup(params) %}
 <fieldset class="mt-6 lg:mt-8">
   <legend class="text-sm tracking-widest uppercase opacity-70">{{ params.title }}</legend>
 
-  {% set buttonClasses = "inline-flex cursor-pointer px-4 pt-1.5 pb-1.5 leading-tight text-base bg-gray-100 rounded-full focus:ring-2" %}
+  {% set buttonClasses = "inline-flex cursor-pointer px-4 pt-1.5 pb-1.5 leading-tight text-base rounded-full focus:ring-2" %}
 
   <ul class="flex flex-wrap items-start mt-2.5 gap-x-2 gap-y-3">
     <li>
       <button
         type="button"
         class="{{ buttonClasses }}"
-        x-on:click="{{ params.xModel }} = 'alle', updateCount($refs)"
-        x-bind:class="{{ params.xModel }} === 'alle' ? 'text-white bg-deepblue-500' : 'fine:hover:bg-deepblue-100'"
+        x-on:click="{{ params.value }} = 'alle', updateCount($refs)"
+        x-bind:class="{{ params.value }} === 'alle' ? 'text-white bg-deepblue-500' : 'bg-gray-100 fine:hover:bg-deepblue-100'"
       >Alle</button>
     </li>
     {% for item in params.array %}
       <button
         type="button"
         class="{{ buttonClasses }}"
-        x-on:click="{{ params.xModel }} = '{{ item | slugify }}', updateCount($refs)"
-        x-bind:class="{{ params.xModel }} === '{{ item | slugify }}' ? 'text-white bg-deepblue-500' : 'fine:hover:bg-deepblue-100'"
+        x-on:click="{{ params.value }} = '{{ item | slugify }}', updateCount($refs)"
+        x-bind:class="{{ params.value }} === '{{ item | slugify }}' ? 'text-white bg-deepblue-500' : 'bg-gray-100 fine:hover:bg-deepblue-100'"
       >{{ item }}</button>
       </li>
     {% endfor %}
