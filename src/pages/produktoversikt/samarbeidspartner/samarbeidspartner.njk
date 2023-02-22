@@ -88,17 +88,27 @@ permalink: '/produktoversikt-samarbeidspartner/'
             <span>Søk eller velg type og område</span>
           </button>
 
-          <div class="fixed inset-0 z-50 grid items-end grid-cols-layout lg:hidden" x-show="filterDrawer" x-bind:class="filterDrawer && 'animate-blur'">
-            <form class="grid bg-white shadow-drawer rounded-t-2xl col-content -mx-clamp-gap md:-mx-6 lg:hidden" x-on:click.outside="filterDrawer = false, filterTags = false"
-            x-on:submit.prevent="filterDrawer = false">
-              <div class="pb-12 overflow-y-auto overscroll-y-contain px-clamp-gap md:px-6 max-h-[60vh]">
-                <div class="grid pt-clamp-gap md:pt-7">
-                  <div class="relative">
-                    <label for="searchFilter-mobile" class="font-semibold sr-only">Søk</label>
-                    <span class="absolute inset-y-0 left-0 grid px-2.5 place-items-center">
-                      {{ '/src/_includes/svg/icons/search.svg' | svgContents('w-6 h-6') | safe }}
-                    </span>
-                    <input id="searchFilter-mobile" type="search" x-model="search" class=" w-full pl-10 pr-3 py-2.5 border border-gray-300 rounded shadow-inner bg-gray-50/50 focus:outline-none focus:ring-2 focus:ring-blue-800">
+          <div
+            class="fixed inset-y-0 right-0 z-50 w-10/12 max-w-md lg:hidden"
+            x-show="filterDrawer"
+            x-transition:enter="transition ease-out duration-300"
+            x-transition:enter-start="translate-x-full opacity-0"
+            x-transition:enter-end="translate-x-0 opacity-100"
+            x-transition:leave="transition ease-in duration-300"
+            x-transition:leave-start="translate-x-0 opacity-100"
+            x-transition:leave-end="translate-x-full opacity-0"
+          >
+            <form class="flex flex-col h-full bg-white shadow-drawer col-content lg:hidden" x-on:click.outside="filterDrawer = false, filterTags = false">
+              <div class="flex-1 px-6 pb-12 overflow-y-auto overscroll-y-contain">
+                <div class="relative grid pt-6" >
+                  <div>
+                    <label for="searchFilter-mobile" class="text-sm tracking-widest uppercase opacity-70">Søk</label>
+                    <div class="relative mt-1">
+                      <span class="absolute inset-y-0 left-0 grid px-2.5 place-items-center">
+                        {{ '/src/_includes/svg/icons/search.svg' | svgContents('w-6 h-6') | safe }}
+                      </span>
+                      <input id="searchFilter-mobile" type="search" x-model="search" class=" w-full pl-10 pr-3 py-2.5 border border-gray-300 rounded shadow-inner bg-gray-50/50 focus:outline-none focus:ring-2 focus:ring-blue-800">
+                    </div>
                   </div>
                   {{ filterGroup({
                     array: typeFilter,
@@ -120,14 +130,30 @@ permalink: '/produktoversikt-samarbeidspartner/'
               </div>
             </form>
           </div>
+          <button
+            type="button"
+            class="fixed inset-0 z-40 bg-black/25"
+            x-show="filterDrawer"
+            x-on:click="filterDrawer = false"
+            x-transition:enter="transition ease-out duration-200"
+            x-transition:enter-start="opacity-0"
+            x-transition:enter-end="opacity-100"
+            x-transition:leave="transition ease-in duration-200"
+            x-transition:leave-start="opacity-100"
+            x-transition:leave-end="opacity-0"
+          >
+            <span class="sr-only">Lukk</span>
+          </button>
 
           <div class="hidden lg:block">
-            <div class="relative mt-8">
-              <label for="searchFilter-desktop" class="font-semibold sr-only">Søk</label>
-              <span class="absolute inset-y-0 left-0 grid px-2.5 place-items-center">
-                {{ '/src/_includes/svg/icons/search.svg' | svgContents('w-6 h-6') | safe }}
-              </span>
-              <input id="searchFilter-desktop" type="search" x-model="search" class="w-full max-w-xl pl-10 pr-3 py-2.5 border border-gray-300 rounded shadow-inner bg-gray-50/50 focus:outline-none focus:ring focus:ring-blue-800">
+            <div class="relative mt-1">
+              <label for="searchFilter-mobile" class="text-sm tracking-widest uppercase opacity-70">Søk</label>
+              <div class="relative mt-1">
+                <span class="absolute inset-y-0 left-0 grid px-2.5 place-items-center">
+                  {{ '/src/_includes/svg/icons/search.svg' | svgContents('w-6 h-6') | safe }}
+                </span>
+                <input id="searchFilter-desktop" type="search" x-model="search" class="w-full max-w-xl pl-10 pr-3 py-2.5 border border-gray-300 rounded shadow-inner bg-gray-50/50 focus:outline-none focus:ring focus:ring-blue-800">
+              </div>
             </div>
             {{ filterGroup({
               array: typeFilter,
