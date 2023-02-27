@@ -186,7 +186,7 @@ permalink: "/produktoversikt/"
                   class="relative z-10 flex items-center gap-4 py-5 -my-px text-left px-clamp-gap -mx-clamp-gap sm:-mx-2 sm:px-4 sm:rounded-lg fine:hover:bg-deepblue-100 focus-within:z-20"
                   x-bind:class="expanded ? 'bg-deepblue-50 ring-2 ring-inset ring-deepblue-400' : ''">
                   {% if product.data.icon %}
-                    {{ product.data.icon | svgContents('w-12 h-12 lg:w-14 lg:h-14 shrink-0') | safe }}
+                    {{ product.data.icon | svgContents('w-12 h-12 shrink-0') | safe }}
                   {% endif %}
                   <div class="grid gap-0.5">
                     <h2 class="text-xl font-semibold leading-tight">
@@ -208,7 +208,7 @@ permalink: "/produktoversikt/"
                   </button>
                 </div>
 
-                <div class="pt-6 pb-8 px-clamp-gap -mx-clamp-gap relative min-h-[30vh] markdown bg-deepblue-50 sm:-mx-2 sm:-mt-2 sm:px-20 sm:rounded-b-lg mb-4" x-bind:hidden="!expanded" hidden>
+                <div class="pt-6 pb-8 px-clamp-gap -mx-clamp-gap relative min-h-[20vh] markdown bg-deepblue-50 sm:-mx-2 sm:-mt-2 sm:px-20 sm:rounded-b-lg mb-4" x-bind:hidden="!expanded" hidden>
                   <p>{{ product.data.ingress }}</p>
 
                   {{ product.content | markdown | safe }}
