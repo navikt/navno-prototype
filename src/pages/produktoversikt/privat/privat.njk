@@ -202,7 +202,7 @@ permalink: "/produktoversikt/"
                       {%- endfor -%}
                     </p>
                   </div>
-                  <button type="button" x-on:click="expanded = !expanded" class="absolute inset-0 flex items-center justify-end w-full pr-4 rounded-lg group focus:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-blue-800" aria-expanded="false" x-bind:aria-expanded="expanded">
+                  <button type="button" x-on:click="expanded = !expanded" class="absolute inset-0 flex items-center justify-end w-full pr-4 rounded-lg group focus:outline-none focus-visible:ring focus-visible:ring-inset focus-visible:ring-blue-800" aria-expanded="false" x-bind:aria-expanded="expanded">
                     <span class="sr-only">Vis</span>
                     {{ '/src/_includes/svg/icons/chevron-down.svg' | svgContents('mr-1.5 w-5 h-5 text-deepblue-400 fine:group-hover:text-deepblue-600 group-aria-expanded:text-deepblue-600 transition duration-100 group-aria-expanded:rotate-180') | safe }}
                   </button>
