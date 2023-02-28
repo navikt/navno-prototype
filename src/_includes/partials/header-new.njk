@@ -17,7 +17,7 @@
     <div class="absolute px-4 mt-px -translate-x-1/2 left-1/2 top-full">
       <ul class="overflow-hidden text-gray-900 bg-white divide-y divide-gray-300 rounded shadow-xl max-w-max ring-1 ring-gray-200"  x-show="audienceDropdownOpen" x-on:click.outside="audienceDropdownOpen = false">
         {% for item in audience %}
-          <li aria-selected="{{ 'true' if loop.index === 1 else 'false' }}" class="grid">
+          <li class="grid">
             <a href="{{ item.href or '#' }}" class="py-2 px-3 border-l-4 fine:hover:bg-gray-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-800 {{ 'border-blue-500' if activeRole === item.title or activeRole === '' else 'border-transparent fine:hover:border-gray-300/75 opacity-70' }}">
               {{ item.title | safe }}
             </a>

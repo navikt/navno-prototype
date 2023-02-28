@@ -18,13 +18,14 @@
       >Alle</button>
     </li>
     {% for item in params.array %}
+    <li>
       <button
         type="button"
         class="{{ buttonClasses }}"
         x-on:click="{{ params.value }} = '{{ item | slugify }}', updateCount($refs)"
         x-bind:class="{{ params.value }} === '{{ item | slugify }}' ? 'text-white bg-deepblue-500' : 'bg-gray-100 fine:hover:bg-deepblue-100'"
       >{{ item }}</button>
-      </li>
+    </li>
     {% endfor %}
   </ul>
 </fieldset>
