@@ -1,74 +1,82 @@
-<header class="relative z-40 isolate grid grid-cols-layout shadow-border bg-white {% if page.fileSlug === 'forsiden' %}shadow{% endif %}" >
+{% set audience = audienceOverride or menu.audience %}
 
+<header class="relative z-40 grid bg-white isolate grid-cols-layout shadow-border" >
+
+  {# Audience Dropdown #}
   <div class="relative z-10 grid justify-center bg-gray-100 xs:hidden col-full">
-    <button class="flex items-center justify-center gap-2 px-4 py-2 focus:outline-none focus-visible:text-white focus-visible:bg-blue-500" x-on:click="audienceDropdownOpen = !audienceDropdownOpen" x-on:click.outside="audienceDropdownOpen = false">
-      <span>{{ menu.audience[0] }}</span>
+    <button class="flex items-center justify-center gap-2 px-4 py-2 focus:outline-none focus-visible:text-white focus-visible:bg-blue-500" x-on:click="audienceDropdownOpen = !audienceDropdownOpen">
+      {%- if ('samarbeidspartner' in page.fileSlug) -%}
+      <span>{{ menu.audience[2].title }}</span>
+      {%- elif ('arbeidsgiver' in page.fileSlug) -%}
+      <span>{{ menu.audience[1].title }}</span>
+      {%- elif (not 'produktoversikt-' in page.fileSlug) -%}
+      <span>{{ menu.audience[0].title }}</span>
+      {%- endif -%}
       {{ '/src/_includes/svg/icons/chevron-down.svg' | svgContents('w-4 h-4') | safe }}
     </button>
     <div class="absolute px-4 mt-px -translate-x-1/2 left-1/2 top-full">
-      <ul class="overflow-hidden text-gray-900 bg-white divide-y divide-gray-300 rounded shadow-xl max-w-max ring-1 ring-gray-200" role="tablist" x-show="audienceDropdownOpen">
-        {% for item in menu.audience %}
-        <li role="tab" aria-selected="{{ 'true' if loop.index === 1 else 'false' }}" class="grid">
-          <a href="#" class="py-2 px-3 border-l-4 fine:hover:bg-gray-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-800 {{ 'border-blue-500' if loop.index === 1 else 'border-transparent' }}">
-            {{ item }}
-          </a>
-        </li>
+      <ul class="overflow-hidden text-gray-900 bg-white divide-y divide-gray-300 rounded shadow-xl max-w-max ring-1 ring-gray-200"  x-show="audienceDropdownOpen" x-on:click.outside="audienceDropdownOpen = false">
+        {% for item in audience %}
+          <li aria-selected="{{ 'true' if loop.index === 1 else 'false' }}" class="grid">
+            <a href="{{ item.href or '#' }}" class="py-2 px-3 border-l-4 fine:hover:bg-gray-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-800 {{ 'border-blue-500' if activeRole === item.title or activeRole === '' else 'border-transparent fine:hover:border-gray-300/75 opacity-70' }}">
+              {{ item.title | safe }}
+            </a>
+          </li>
         {% endfor %}
       </ul>
     </div>
   </div>
 
-  <nav class="flex items-center w-full gap-4 col-feature">
+  <nav class="flex items-center w-full gap-8 col-feature">
     {# Logo #}
-    <button x-on:click="indexOpen = !indexOpen" class="text-[#C30000] fine:hover:text-[#DE2E2E] block focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-800 py-2.5 px-2 -mx-2 rounded-sm">
-      {{ '/src/_includes/svg/logo.svg' | svgContents('w-[72px] h-auto') | safe }}
+    <a href="/" class="text-red-500 fine:hover:text-red-400 block focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-800 py-2.5 px-2 -mx-2 rounded-sm">
+      {{ '/src/_includes/svg/logo.svg' | svgContents('w-[75px] h-auto') | safe }}
       <span class="sr-only">NAV</span>
-    </button>
+    </a>
 
     {# Audience #}
-    <div class="relative hidden px-4 md:px-5 md:self-stretch xs:grid">
+    <div class="relative hidden px-4 md:px-5 md:self-stretch xs:grid" x-on:click.outside="audienceDropdownOpen = false">
       <button class="flex items-center self-center justify-center gap-4 py-2 pl-3 pr-2 border border-gray-200 rounded fine:hover:bg-deepblue-100 focus:outline-none md:hidden" x-on:click="audienceDropdownOpen = !audienceDropdownOpen">
-        <span>{{ menu.audience[0] }}</span>
+      {%- if ('samarbeidspartner' in page.fileSlug) -%}
+      <span>{{ audience[2].title }}</span>
+      {%- elif ('arbeidsgiver' in page.fileSlug) -%}
+      <span>{{ audience[1].title }}</span>
+      {%- elif (not 'produktoversikt-' in page.fileSlug) -%}
+      <span>{{ audience[0].title }}</span>
+      {%- endif -%}
         {{ '/src/_includes/svg/icons/chevron-down.svg' | svgContents('w-4 h-4') | safe }}
       </button>
       <div class="xs:absolute md:static xs:top-full xs:left-0">
-      <ul class="justify-center overflow-hidden text-lg bg-white border border-gray-200 divide-y divide-gray-200 rounded shadow-lg md:rounded-none md:bg-transparent md:shadow-none md:border-0 md:divide-y-0 md:gap-4 md:flex" role="tablist" x-bind:class="audienceDropdownOpen ? 'grid' : 'hidden md:flex'">
-        {% for item in menu.audience %}
-        <li role="tab" aria-selected="{{ 'true' if loop.index === 1 else 'false' }}" class="grid">
-          <a href="#" class="focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-800 flex items-center py-2 px-3 md:px-0.5 md:pb-5 text-gray-900 border-l-4 md:border-l-0 md:border-b-4 md:pt-6 {{ 'border-blue-500 font-semibold' if loop.index === 1 else 'border-transparent fine:hover:border-gray-300/75 opacity-70' }}">
-            {{ item | replace('person', "") }}
-          </a>
-        </li>
-        {% endfor %}
-      </ul>
+        <ul class="justify-center overflow-hidden text-lg bg-white border border-gray-200 divide-y divide-gray-200 rounded shadow-lg md:rounded-none md:bg-transparent md:shadow-none md:border-0 md:divide-y-0 md:gap-4 md:flex" x-bind:class="audienceDropdownOpen ? 'grid' : 'hidden md:flex'">
+          {% for item in audience %}
+            <li class="grid">
+              <a href="{{ item.href or '#' }}" class="focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-800 flex items-center py-2 px-3 md:px-0.5 md:pb-5 text-gray-900 border-l-4 md:border-l-0 md:border-b-4 md:pt-6 {{ 'border-blue-500' if activeRole === item.title else 'border-transparent fine:hover:border-gray-300/75 opacity-70' }}">
+                {{ item.title }} {{ item.active }}
+              </a>
+            </li>
+          {% endfor %}
+        </ul>
       </div>
     </div>
 
     {# Menu Buttons #}
-    {% set menuButtonClasses = "flex flex-col sm:flex-row items-center justify-center py-2.5 px-3 leading-none font-semibold sm:gap-1 text-blue-500 sm:rounded md:px-4 sm:text-lg fine:hover:bg-deepblue-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-800" %}
-    <div class="flex items-end gap-2 ml-auto sm:py-4 md:py-3">
-      <button class="{{ menuButtonClasses }}" x-on:click="notifyOpen = !notifyOpen, menuOpen = false" x-bind:class="notifyOpen && 'bg-deepblue-50'">
+    {% set menuButtonClasses = "flex-0 flex-col sm:flex-row items-center justify-center py-2 pl-2.5 pr-3 leading-none font-semibold sm:gap-2.5 text-blue-500 sm:rounded sm:text-lg fine:hover:bg-deepblue-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-800" %}
+
+    <div class="flex items-end gap-0.5 ml-auto py-2 sm:py-4 whitespace-nowrap">
+      <button class="flex {{ menuButtonClasses }}" type="button">
         <span class="relative">
-          {{ '/src/_includes/svg/icons/notification.svg' | svgContents('w-7 h-7') | safe }}
-          <span class="absolute block w-2 h-2 bg-red-400 rounded-full top-1 ring-2 ring-red-100/50 -left-1"></span>
+          {{ '/src/_includes/svg/icons/menu.svg' | svgContents('w-6 h-6') | safe }}
         </span>
-        <span class="mt-px">Varsel</span>
-      </button>
-      <button class="{{ menuButtonClasses }}" type="button" x-on:click="menuOpen = !menuOpen, notifyOpen = false" x-bind:class="menuOpen && 'bg-deepblue-50'">
-        <template x-if="!menuOpen">
-          {{ '/src/_includes/svg/icons/menusearch.svg' | svgContents('w-7 h-7 shrink-0 pointer-events-none') | safe }}
-        </template>
-        <template x-if="menuOpen">
-          {{ '/src/_includes/svg/icons/close.svg' | svgContents('w-7 h-7 shrink-0 pointer-events-none') | safe }}
-        </template>
         <span class="mt-px">Meny</span>
+      </button>
+      <button class="hidden sm:flex {{ menuButtonClasses }}" type="button">
+          {{ '/src/_includes/svg/icons/search.svg' | svgContents('w-6 h-6 shrink-0 pointer-events-none') | safe }}
+        <span class="mt-px">Søk</span>
+      </button>
+      <button class="flex {{ menuButtonClasses }}" type="button">
+          {{ '/src/_includes/svg/icons/login.svg' | svgContents('w-6 h-6 shrink-0 pointer-events-none') | safe }}
+        <span class="mt-px">Logg inn</span>
       </button>
     </div>
   </nav>
 </header>
-
-{% include "partials/navigation.njk" %}
-{% include "partials/notifications.njk" %}
-
-{# Overlay #}
-<button class="fixed inset-0 z-30 w-full h-full bg-black/30 " x-bind:class="(menuOpen || notifyOpen) ? 'animate-fade-in' : 'hidden'" x-on:click="menuOpen = false, notifyOpen = false" x-on:keyup.escape.window="menuOpen = false, notifyOpen = false"></button>

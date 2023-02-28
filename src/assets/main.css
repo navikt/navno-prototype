@@ -90,32 +90,4 @@
   .col-full {
     grid-column: full;
   }
-  @media (min-width: theme("screens.md")) {
-    .md\:col-content {
-      grid-column: content;
-    }
-    .md\:col-popout {
-      grid-column: popout;
-    }
-    .md\:col-feature {
-      grid-column: feature;
-    }
-    .md\:col-full {
-      grid-column: full;
-    }
-  }
-  @media (min-width: theme("screens.lg")) {
-    .lg\:col-content {
-      grid-column: content;
-    }
-    .lg\:col-popout {
-      grid-column: popout;
-    }
-    .lg\:col-feature {
-      grid-column: feature;
-    }
-    .lg\:col-full {
-      grid-column: full;
-    }
-  }
 }
