@@ -1,5 +1,5 @@
 ---
-title: 'Søknad og skjema fra A til Å (privat)'
+title: 'Søknad og skjema fra A til Å'
 description: 'Pengestøtter og tjenester fra NAV for privatpersoner. Du kan søke eller filtrere etter type og område.'
 order: 5
 bodyClass: ''
@@ -66,7 +66,7 @@ permalink: "/produktoversikt/"
       });
       updateCount()">
     <div class="grid grid-cols-layout">
-      <div class="relative w-full col-content lg:col-feature">
+      <div class="relative col-content lg:col-feature">
 
         <div class="hidden float-right pb-8 mt-2 ml-24 xs:block sm:pb-0 sm:-mb-8">
           {{ '/src/_includes/svg/pictograms/support.svg' | svgContents('w-[12vw] h-auto overflow-hidden max-w-[7rem]') | safe }}
@@ -91,57 +91,80 @@ permalink: "/produktoversikt/"
             <span>Søk eller velg type og område</span>
           </button>
 
-          <div class="fixed inset-0 z-50 grid items-end grid-cols-layout lg:hidden" x-show="filterDrawer" x-bind:class="filterDrawer && 'animate-blur'">
-            <form class="grid bg-white shadow-drawer rounded-t-2xl col-content -mx-clamp-gap md:-mx-6 lg:hidden" x-on:click.outside="filterDrawer = false, filterTags = false" x-on:submit.prevent="filterDrawer = false">
-              <div class="pb-12 overflow-y-auto overscroll-y-contain px-clamp-gap md:px-6 max-h-[60vh]">
-                <div class="relative grid pt-clamp-gap md:pt-7" >
-                  <div class="relative">
-                    <label for="searchFilter-mobile" class="font-semibold sr-only">Søk</label>
+          <div
+            class="fixed inset-y-0 right-0 z-50 w-10/12 max-w-md lg:hidden"
+            x-show="filterDrawer"
+            x-transition:enter="transition ease-out duration-300"
+            x-transition:enter-start="translate-x-full opacity-0"
+            x-transition:enter-end="translate-x-0 opacity-100"
+            x-transition:leave="transition ease-in duration-300"
+            x-transition:leave-start="translate-x-0 opacity-100"
+            x-transition:leave-end="translate-x-full opacity-0"
+          >
+            <form class="flex flex-col h-full bg-white shadow-drawer col-content lg:hidden" x-on:click.outside="filterDrawer = false, filterTags = false">
+              <div class="flex-1 px-6 pb-12 overflow-y-auto overscroll-y-contain">
+                <div class="relative grid pt-6" >
+                  <div>
+                    <label for="searchFilter-mobile" class="text-sm tracking-widest uppercase opacity-70">Søk</label>
+                    <div class="relative mt-1">
                     <span class="absolute inset-y-0 left-0 grid px-2.5 place-items-center">
                       {{ '/src/_includes/svg/icons/search.svg' | svgContents('w-6 h-6') | safe }}
                     </span>
                     <input id="searchFilter-mobile" type="search" x-model="search" class=" w-full pl-10 pr-3 py-2.5 border border-gray-300 rounded shadow-inner bg-gray-50/50 focus:outline-none focus:ring-2 focus:ring-blue-800">
+                    </div>
                   </div>
-                  {{ filterGroup({
-                    array: collections.typeFilter,
-                    title: 'Velg type',
-                    xModel: 'typeFilter',
-                    inputName: 'filter-type-mobile'
-                  }) }}
                   {{ filterGroup({
                     array: collections.areaFilter,
                     title: 'Velg område',
-                    xModel: 'areaFilter',
-                    inputName: 'filter-area-mobile'
+                    value: 'areaFilter'
+                  }) }}
+                  {{ filterGroup({
+                    array: collections.typeFilter,
+                    title: 'Velg type',
+                    value: 'typeFilter'
                   }) }}
                 </div>
               </div>
               <div class="sticky bottom-0 h-2 -mt-2 pointer-events-none bg-gradient-to-t from-black/10 to-black/0"></div>
-              <div class="py-4 px-clamp-gap md:px-6 bg-gray-50">
+              <div class="px-6 py-4 bg-gray-50">
                 <button class="w-full px-4 py-2 text-white bg-blue-500 rounded-lg" x-on:click="filterTags = false, filterDrawer = false">Vis resultat (<span x-text="count"></span>)</button>
               </div>
             </form>
           </div>
+          <button
+            type="button"
+            class="fixed inset-0 z-40 bg-black/25"
+            x-show="filterDrawer"
+            x-on:click="filterDrawer = false"
+            x-transition:enter="transition ease-out duration-200"
+            x-transition:enter-start="opacity-0"
+            x-transition:enter-end="opacity-100"
+            x-transition:leave="transition ease-in duration-200"
+            x-transition:leave-start="opacity-100"
+            x-transition:leave-end="opacity-0"
+          >
+            <span class="sr-only">Lukk</span>
+          </button>
 
           <div class="hidden lg:block">
-            <div class="relative mt-8">
-              <label for="searchFilter-desktop" class="font-semibold sr-only">Søk</label>
-              <span class="absolute inset-y-0 left-0 grid px-2.5 place-items-center">
-                {{ '/src/_includes/svg/icons/search.svg' | svgContents('w-6 h-6') | safe }}
-              </span>
-              <input id="searchFilter-desktop" type="search" x-model="search" class="w-full max-w-xl pl-10 pr-3 py-2.5 border border-gray-300 rounded shadow-inner bg-gray-50/50 focus:outline-none focus:ring focus:ring-blue-800">
+            <div>
+              <label for="searchFilter-desktop" class="text-sm tracking-widest uppercase opacity-70">Søk</label>
+              <div class="relative mt-1">
+                <span class="absolute inset-y-0 left-0 grid px-2.5 place-items-center">
+                  {{ '/src/_includes/svg/icons/search.svg' | svgContents('w-6 h-6') | safe }}
+                </span>
+                <input id="searchFilter-desktop" type="search" x-model="search" class="w-full max-w-xl pl-10 pr-3 py-2.5 border border-gray-300 rounded shadow-inner bg-gray-50/50 focus:outline-none focus:ring focus:ring-blue-800">
+              </div>
             </div>
-            {{ filterGroup({
-              array: collections.typeFilter,
-              title: 'Velg type',
-              xModel: 'typeFilter',
-              inputName: 'filter-type-desktop'
-            }) }}
             {{ filterGroup({
               array: collections.areaFilter,
               title: 'Velg område',
-              xModel: 'areaFilter',
-              inputName: 'filter-area-desktop'
+              value: 'areaFilter'
+            }) }}
+            {{ filterGroup({
+              array: collections.typeFilter,
+              title: 'Velg type',
+              value: 'typeFilter'
             }) }}
           </div>
         </div>
@@ -160,43 +183,41 @@ permalink: "/produktoversikt/"
                 data-area="alle {% for item in product.data.area %}{{ item | slugify }} {% endfor %}">
 
                 <div
-                  class="relative z-10 flex items-center gap-4 py-4 -my-px text-left px-clamp-gap -mx-clamp-gap sm:-mx-2 sm:px-4 sm:rounded-lg fine:hover:z-20"
-                  x-bind:class="expanded ? ' fine:hover:bg-deepblue-200 bg-deepblue-50' : 'fine:hover:bg-deepblue-200'">
+                  class="relative z-10 flex items-center gap-4 py-5 -my-px text-left rounded sm:rounded px-clamp-gap -mx-clamp-gap sm:px-4 sm:mx-0 ring-2 fine:hover:bg-deepblue-100 focus-within:z-20"
+                  x-bind:class="expanded ? 'bg-deepblue-50 ring-deepblue-400' : 'ring-transparent fine:hover:ring-deepblue-100'">
                   {% if product.data.icon %}
-                    {{ product.data.icon | svgContents('w-12 h-12 lg:w-14 lg:h-14 shrink-0') | safe }}
+                    {{ product.data.icon | svgContents('w-12 h-12 shrink-0') | safe }}
                   {% endif %}
-                  <div class="grid gap-1">
-                    <p class="text-base opacity-80">
-                    {% for item in product.data.type %}
-                      <span>{{ item }}</span>{{ ', ' if product.data.type.length > 1 and not loop.last }}
-                    {% endfor %}
-                    </p>
+                  <div class="grid gap-0.5">
                     <h2 class="text-xl font-semibold leading-tight">
                       {{ product.data.title | safe }}
                     </h2>
-                    <p class="text-base">
+                    {# <p class="text-base">{{ product.data.ingress }}</p> #}
+                    <p class="pr-12 text-base opacity-80">
+                      {% for item in product.data.type %}
+                        <span>{{ item }}</span>,
+                      {% endfor %}
                       {%- for item in product.data.area -%}
                         <span>{{ item }}</span>{{ ', ' if loop.length > 1 and not loop.last }}
                       {%- endfor -%}
                     </p>
                   </div>
-                  <button type="button" x-on:click="expanded = !expanded" class="absolute inset-0 flex items-center justify-end w-full pr-4 rounded-lg group focus:outline-none focus-visible:ring focus-visible:ring-inset focus-visible:ring-blue-800" aria-expanded="false" x-bind:aria-expanded="expanded">
-                    <span class="sr-only">Vis/skjul innhold</span>
-                    {{ '/src/_includes/svg/icons/chevron-down.svg' | svgContents('mr-1.5 w-5 h-5 opacity-50 transition duration-100 group-aria-expanded:rotate-180') | safe }}
+                  <button type="button" x-on:click="expanded = !expanded" class="absolute inset-0 flex items-center justify-end w-full pr-4 rounded-sm sm:rounded group focus:outline-none focus-visible:ring focus-visible:ring-inset focus-visible:ring-blue-800 focus-visible:ring-offset-2 focus-visible:ring-offset-white" aria-expanded="false" x-bind:aria-expanded="expanded">
+                    <span class="sr-only">Vis</span>
+                    {{ '/src/_includes/svg/icons/chevron-down.svg' | svgContents('mr-1.5 w-5 h-5 text-deepblue-400 fine:group-hover:text-deepblue-600 group-aria-expanded:text-deepblue-600 transition duration-100 group-aria-expanded:rotate-180') | safe }}
                   </button>
                 </div>
 
-                <div class="pt-6 pb-8 px-clamp-gap -mx-clamp-gap relative min-h-[30vh] markdown bg-deepblue-50 sm:-mx-2 sm:-mt-2 sm:px-5 sm:rounded-b-lg mb-4" x-bind:hidden="!expanded" hidden>
+                <div class="pt-6 pb-8 px-clamp-gap -mx-clamp-gap relative min-h-[20vh] markdown bg-deepblue-50 sm:mx-0 sm:-mt-2 sm:px-20 sm:rounded-b-lg mb-4" x-bind:hidden="!expanded" hidden>
                   <p>{{ product.data.ingress }}</p>
 
                   {{ product.content | markdown | safe }}
+
+                  {% if product.data.egenSide %}
+                    <a class="inline-block mx-auto text-center underline fine:hover:no-underline fine:hover:text-blue-600" href="/produktoversikt/{{ product.data.title | slugify }}.html">Vis som egen side</a>
+                  {% endif %}
                 </div>
 
-                {% if product.data.egenSide %}
-                <div x-bind:hidden="!expanded" class="pt-4 pb-6 sm:px-6">
-                  <a class="inline-block mx-auto text-center underline fine:hover:no-underline fine:hover:text-blue-600" href="/produktoversikt/{{ product.data.title | slugify }}.html">Vis som egen side</a>
-                </div>
-                {% endif %}
 
               </div>
 

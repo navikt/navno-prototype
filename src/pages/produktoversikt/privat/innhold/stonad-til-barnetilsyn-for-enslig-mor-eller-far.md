@@ -6,7 +6,6 @@ type: ["Pengestøtte"]
 area: ["Familie og barn"]
 ---
 
-
 {%- from "macros/button.njk" import button -%}
 {%- from "macros/microcard.njk" import microcard -%}
 
@@ -19,7 +18,7 @@ Du kan søke så snart du har fått faktura fra barnepassordningen for måneden 
 {{ button({ text: 'Ettersend dokumentasjon', variant: 'secondary' }) }}
 </div>
 
-<hr class="my-8 border-deepblue-100" />
+<div class="my-8 border-deepblue-100 border-t"></div>
 
 ### Mer om
 

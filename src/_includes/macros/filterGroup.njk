@@ -1,36 +1,31 @@
 {#
-  params = { title, array, inputName, xModel }
+  params = { title, array, value }
 #}
 
 {% macro filterGroup(params) %}
 <fieldset class="mt-6 lg:mt-8">
   <legend class="text-sm tracking-widest uppercase opacity-70">{{ params.title }}</legend>
 
-  {% set labelClasses = "inline-flex cursor-pointer px-4 pt-1.5 pb-1.5 leading-tight text-base bg-gray-100 rounded-full fine:hover:bg-deepblue-100 peer-checked:bg-deepblue-500 peer-checked:text-white peer-focus:ring-2 peer-focus:ring-deepblue-800" %}
-
-  {% set inputClasses = "absolute opacity-0 pointer-events-none peer" %}
+  {% set buttonClasses = "inline-flex cursor-pointer px-4 pt-1.5 pb-1.5 leading-tight text-base rounded-full focus:ring-2" %}
 
   <ul class="flex flex-wrap items-start mt-2.5 gap-x-2 gap-y-3">
     <li>
-      <input
-        type="radio"
-        x-model="{{ params.xModel }}"
-        x-on:change="updateCount($refs)"
-        class="{{ inputClasses }}"
-        name="{{ params.inputName }}"
-        value="alle"
-        id="{{ params.inputName }}-all"
-        checked="checked"
-      />
-      <label class="{{ labelClasses }}" for="{{ params.inputName }}-all">Alle</label>
+      <button
+        type="button"
+        class="{{ buttonClasses }}"
+        x-on:click="{{ params.value }} = 'alle', updateCount($refs)"
+        x-bind:class="{{ params.value }} === 'alle' ? 'text-white bg-deepblue-500' : 'bg-gray-100 fine:hover:bg-deepblue-100'"
+      >Alle</button>
     </li>
     {% for item in params.array %}
-      <li>
-        <input type="radio" x-on:change="updateCount($refs)" x-model="{{ params.xModel }}" class="{{ inputClasses }}" name="{{ params.inputName }}" value="{{ item | slugify }}" id="filter-{{ item | slugify }}-{{ loop.index }}-{{ params.inputName }}" />
-        <label class="{{ labelClasses }}" for="filter-{{ item | slugify }}-{{ loop.index }}-{{ params.inputName }}">
-          {{ item }}
-        </label>
-      </li>
+    <li>
+      <button
+        type="button"
+        class="{{ buttonClasses }}"
+        x-on:click="{{ params.value }} = '{{ item | slugify }}', updateCount($refs)"
+        x-bind:class="{{ params.value }} === '{{ item | slugify }}' ? 'text-white bg-deepblue-500' : 'bg-gray-100 fine:hover:bg-deepblue-100'"
+      >{{ item }}</button>
+    </li>
     {% endfor %}
   </ul>
 </fieldset>

@@ -178,10 +178,10 @@ module.exports = {
     },
     extend: {
       animation: {
-        dropdown: "dropdown 100ms cubic-bezier(0.3, 0.6, 0.25, 1) forwards",
+        dropdown: "dropdown 200ms cubic-bezier(0.3, 0.6, 0.25, 1) forwards",
         enter: "enter 500ms cubic-bezier(0.3, 0.6, 0.25, 1.45) forwards",
-        "fade-in": "fade-in 700ms cubic-bezier(0.3, 0.6, 0.25, 1) forwards",
-        blur: "blur 300ms cubic-bezier(0.3, 0.6, 0.25, 1) forwards",
+        "fade-in": "fade-in 500ms cubic-bezier(0.3, 0.6, 0.25, 1) forwards",
+        blur: "blur 200ms cubic-bezier(0.3, 0.6, 0.25, 1) forwards",
       },
       backgroundImage: {
         "gradient-diagonal":
@@ -206,6 +206,9 @@ module.exports = {
         dropdown: {
           "0%": {
             transform: "translateY(-3rem)",
+            opacity: "0",
+          },
+          "50%": {
             opacity: "0",
           },
           "100%": {
