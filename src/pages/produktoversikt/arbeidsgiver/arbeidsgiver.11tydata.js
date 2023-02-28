@@ -2578,7 +2578,6 @@ const getTags = (array, key) => {
 
 module.exports = {
   products,
-  tags: ["template"],
   activeRole: "Arbeidsgiver",
   typeFilter: getTags(products, "type"),
   areaFilter: getTags(products, "area"),
