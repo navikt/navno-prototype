@@ -178,6 +178,7 @@ module.exports = {
     },
     extend: {
       animation: {
+        openDrawer: "openDrawer 200ms cubic-bezier(0.3, 0.6, 0.25, 1) forwards",
         dropdown: "dropdown 200ms cubic-bezier(0.3, 0.6, 0.25, 1) forwards",
         enter: "enter 500ms cubic-bezier(0.3, 0.6, 0.25, 1.45) forwards",
         "fade-in": "fade-in 500ms cubic-bezier(0.3, 0.6, 0.25, 1) forwards",
@@ -216,10 +217,18 @@ module.exports = {
             opacity: "1",
           },
         },
-        enter: {
+        openDrawer: {
+          from: {
+            transform: "translate3d(50%, 0, 0)",
+            opacity: "0",
+          },
           to: {
             transform: "translate3d(0, 0, 0)",
+            opacity: "1",
           },
+        },
+        enter: {
+          to: { transform: "translate3d(0, 0, 0)" },
         },
         blur: {
           from: {

@@ -7,65 +7,126 @@ tags: ['template']
 {% extends 'base.njk' %}
 
 {% block content %}
-  <main class="min-h-[61vh] py-8 text-lg md:pt-12 md:pb-20 text-gray-900 px-clamp-gap">
-    <div class="grid max-w-screen-lg mx-auto md:grid-cols-[2.2fr_0.8fr] md:gap-x-24">
+  <main class="min-h-[61vh] py-8 text-lg md:pt-12 md:pb-20 text-gray-900 grid grid-cols-layout">
+    <div class="col-content md:col-feature md:grid md:grid-cols-[1.8fr_1.2fr] md:gap-x-24 items-start" x-data="{ filterOpen: false, searchFilter: 'innhold' }">
 
-      {# Tittel og søk #}
+      {# Tittel og søkefelt #}
       <div class="col-start-1 row-start-1">
-        <h1 class="text-3xl font-semibold leading-tight md:text-4xl">{{ title | safe }}</h1>
+        <h1 class="text-3xl font-semibold leading-tight md:text-4xl">
+          {{ title | safe }}
+        </h1>
 
-        <div class="mt-6 max-w-prose">
+        {# Søkefelt #}
+        <div class="w-full mt-6">
           <form class="flex rounded focus-within:ring focus-within:ring-blue-800 focus-within:ring-offset-2 focus-within:ring-offset-white">
             <label class="sr-only" for="search">Søk</label>
             <input class="flex-1 px-3 py-2 border border-gray-300 rounded-l focus:outline-none" type="search" id="search">
-            <button class="px-6 py-3 text-white bg-blue-500 rounded-r" type="submit">Søk</button>
+            <button class="px-6 py-3 text-white bg-blue-500 rounded-r focus:outline-none focus-visible:ring focus-visible:ring-blue-800 focus-visible:ring-offset-1 focus-visible:ring-offset-white focus:rounded" type="submit">Søk</button>
           </form>
         </div>
       </div>
 
-      {# Filter #}
-      <div class="mt-8 md:mt-16 md:row-start-1 md:col-start-2 md:row-span-2">
-        <fieldset>
-          <legend class="text-xl font-semibold">Søkefilter</legend>
-          <div class="mt-2">
-            {% for item in filters %}
-              <div class="flex flex-wrap py-1">
-                <input class="w-5 h-5 mr-2 align-middle peer" id="{{ item.title | slugify }}-root" type="radio" name="radio" />
-                <label class="flex items-baseline justify-between flex-1 gap-3" for="{{ item.title | slugify }}-root">
-                  <span class="flex-1 pointer-events-none">{{ item.title | safe }}</span>
-                  <span>{{ item.title | length }}</span>
-                </label>
-                {% if item.children.length %}
-                <fieldset class="hidden w-full pt-1 pb-4 peer-checked:block pl-7">
-                  <legend class="sr-only">🤷‍♂️</legend>
-                  <ol class="">
-                    {% for subitem in item.children %}
-                    <li class="flex items-baseline">
-                      <input class="w-4 h-4 mr-2" type="checkbox" name="{{ item.title | slugify }}-sublevel" id="{{ subitem | slugify }}-sublevel" />
-                      <label class="-translate-y-0.5 flex-1 inline-flex justify-between items-baseline" for="{{ subitem | slugify }}-sublevel">
-                        {{ subitem | safe }}
-                        <span>{{ subitem.length }}</span>
-                      </label>
-                    </li>
-                    {% endfor %}
-                  </ol>
-                </fieldset>
-                {% endif %}
+      {# Sortering og filter #}
+      <div class="relative z-20 mt-8 md:row-start-1 isolate md:sticky md:top-6 md:col-start-2 grid-flow-dense md:row-span-2 ">
+        <div class="flex flex-col w-10/12 max-w-md bg-white" x-bind:class="filterOpen ? 'p-4 fixed inset-y-0 h-full md:static z-30 right-0 animate-openDrawer shadow-lg' : 'hidden md:block'">
+          {# Sortering #}
+          <fieldset class="">
+            <legend class="px-3 text-xl font-semibold">Sortering</legend>
+            <div class="px-3">
+              <span class="flex items-center gap-2">
+                <input class="inline-block w-5 h-5" name="sort" id="bestResult" type="radio" checked>
+                <label for="bestResult" class="py-1">Beste treff</label>
+              </span>
+              <span class="flex items-center gap-2">
+                <input class="inline-block w-5 h-5" name="sort" id="dateResult" type="radio">
+                <label for="dateResult" class="py-1">Dato</label>
+              </span>
+            </div>
+          </fieldset>
+
+          {# Søkefilter #}
+          <div class="mt-8">
+            <fieldset>
+              <legend class="px-3 text-xl font-semibold">Søkefilter</legend>
+              <div class="mt-2">
+                {% for item in filters %}
+                  <div class="mx-2 border-t border-gray-200" aria-hidden="true"></div>
+                  <div
+                    class="flex flex-wrap px-3 py-2 rounded"
+                    x-bind:class="searchFilter === '{{ item.title | slugify }}' && 'bg-gray-100 ring-1 ring-gray-100 relative z-10'"
+
+                  >
+                    <button
+                      type="button"
+                      class="flex items-baseline flex-1 gap-2 px-3 py-2 -mx-3 -my-1 text-left rounded"
+                      x-on:click="searchFilter = '{{ item.title | slugify }}'"
+                    >
+                      <span
+                        class="pr-2"
+                        x-bind:class="searchFilter === '{{ item.title | slugify }}' && 'font-semibold'"
+                      >{{ item.title | safe }}</span>
+                      <span class="ml-auto text-right">{{ (item.title | length * 4) }}</span>
+                    </button>
+                    {% if item.children.length %}
+                    <fieldset
+                      class="w-full py-0.5 pl-0.5"
+                      x-bind:class="searchFilter === '{{ item.title | slugify }}' ? '' : 'hidden'"
+                    >
+                      <legend class="sr-only">Underkategorier</legend>
+                      <ol class="">
+                        {% for subitem in item.children %}
+                        <li class="flex items-baseline">
+                          <input class="w-4 h-4 mr-2 translate-y-0.5" type="checkbox" name="{{ item.title | slugify }}-sublevel" id="{{ subitem | slugify }}-sublevel" />
+                          <label class="inline-flex items-baseline justify-between flex-1 gap-2 py-2" for="{{ subitem | slugify }}-sublevel">
+                            <span class="pr-2">{{ subitem | safe }}</span>
+                            <span class="ml-auto text-right">{{ subitem.length }}</span>
+                          </label>
+                        </li>
+                        {% endfor %}
+                      </ol>
+                    </fieldset>
+                    {% endif %}
+                  </div>
+                {% endfor %}
               </div>
-            {% endfor %}
+            </fieldset>
           </div>
-        </fieldset>
+
+          <button type="button" x-on:click="filterOpen = false" x-show="filterOpen" class="px-4 py-2 mt-auto text-white bg-blue-500 rounded" x-bind:aria-expanded="filterOpen">
+            Vis resultat
+          </button>
+
+        </div>
+
+        <button type="button" x-on:click="filterOpen = false" class="fixed inset-0 bg-black/5" x-bind:aria-expanded="filterOpen" x-bind:class="filterOpen ? 'animate-fade-in md:hidden' : 'hidden'">
+          <span class="sr-only">Skjul filter</span>
+        </button>
       </div>
 
       {# Resultat #}
-      <div class="grid mt-4 divide-y divide-gray-200 md:mt-12">
-        {% for item in range(1,10) %}
-          <article class="py-4">
-            <h3><a class="text-2xl font-semibold text-blue-500 hover:underline hover:text-blue-600" href="#">Title</a></h3>
-            <p class="mt-0.5">Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
-            <p class="mt-3 text-base">Publisert 01.12.2019</p>
-          </article>
-        {% endfor %}
+      <div class="mt-8 md:row-start-2 md:col-start-1">
+        <div class="flex items-baseline justify-between gap-8">
+        <h2 class="leading-snug">74 treff på <strong>«penger»</strong> i&nbsp;innhold</h2>
+          <button
+            class="flex items-center gap-1 ml-auto font-semibold leading-snug text-right text-blue-500 rounded md:hidden"
+            type="button"
+            x-on:click="filterOpen = !filterOpen"
+            x-bind:aria-expanded="filterOpen"
+          >
+            <span>Vis søkefilter</span>
+            {{ '/src/_includes/svg/icons/chevron-right.svg' | svgContents('w-5 h-5 rotate-180') | safe }}
+          </button>
+        </div>
+
+        <div class="grid mt-2">
+          {% for item in range(1,10) %}
+            <article class="py-4 border-t border-gray-200">
+              <h3><a class="text-2xl font-semibold leading-tight text-blue-500 hover:underline hover:text-blue-600" href="#">Title</a></h3>
+              <p class="">Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+              <p class="mt-2 text-base opacity-75">Publisert 01.12.2019</p>
+            </article>
+          {% endfor %}
+        </div>
       </div>
     </div>
   </main>
