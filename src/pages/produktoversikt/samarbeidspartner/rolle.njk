@@ -19,6 +19,8 @@
 {%- from "macros/microcard.njk" import microcard -%}
 {%- from "macros/filterGroup.njk" import filterGroup -%}
 
+{% set productsLength = products | filterByRole(role) | length %}
+
 {% block content %}
   <main class="py-12 text-lg text-gray-900"
     x-data="{
@@ -75,10 +77,10 @@
     </div>
 
     <div class="grid mt-8 lg:mt-12 grid-cols-layout">
-      <div class="grid w-full gap-8 pb-20 lg:gap-x-16 lg:items-start lg:grid-cols-sidebar col-content lg:col-feature">
+      <div class="grid w-full gap-8 pb-20 lg:gap-x-16 lg:items-start lg:grid-flow-dense lg:grid-cols-sidebar col-content lg:col-feature lg:auto-rows-min">
 
-        {% if products | filterByRole(role) | length > 10 %}
-        <div class="relative lg:row-start-1 lg:row-span-3 lg:col-start-2 lg:sticky lg:top-4" x-data="{ filterDrawer: false }">
+        {% if productsLength > 10 %}
+        <div class="relative lg:row-start-1 lg:col-start-2" x-data="{ filterDrawer: false }">
           <button
             class="flex items-center justify-start gap-2.5 pl-3 pr-4 py-3 leading-none text-blue-600 bg-white rounded ring-2 ring-blue-500 hover:bg-blue-100 hover:text-blue-700 lg:hidden"
             x-on:click="filterDrawer = true"
@@ -156,22 +158,21 @@
         </div>
         {% endif %}
 
-        <div class="lg:col-start-1">
-          <p class="mb-2">Viser <span x-text="count"></span> av {{ products | filterByRole(role) | length }} produkter og tjenester</p>
+        <div class="lg:col-start-1 lg:row-span-3">
+          <p class="mb-2">Viser <span x-text="count"></span> av {{ productsLength }} produkter og tjenester</p>
 
-          <div class="border-b border-deepblue-100" x-ref="entries" x-show="count !== 0">
+          <div class="border-b border-deepblue-100 -mx-clamp-gap sm:mx-0 py-0.5" x-ref="entries" x-show="count !== 0">
             {% for product in products | sort(true, false, 'title') | reverse %}
               {% if role in product.role %}
               <div
-                x-data="{ expanded: false }"
-                class="border-t focus-within:z-10 -mx-clamp-gap px-clamp-gap sm:mx-0 sm:px-0 border-deepblue-100"
-                x-bind:class="expanded ? '' : ''"
+                x-data="{ expanded: {{ 'true' if productsLength === 1 else 'false' }} }"
+                class="relative z-10 border-t border-gray-200 fine:hover:z-20"
                 x-show="filterItem($el)"
                 data-type="alle {% for item in product.type %}{{ item | slugify }} {% endfor %}"
               >
                 <div
-                  class="relative z-10 flex items-center gap-4 py-5 -my-px text-left rounded sm:rounded px-clamp-gap -mx-clamp-gap sm:px-4 sm:mx-0 ring-2 fine:hover:bg-deepblue-100 focus-within:z-20"
-                  x-bind:class="expanded ? 'bg-deepblue-50 ring-deepblue-400' : 'ring-transparent fine:hover:ring-deepblue-100'">
+                  class="relative flex items-center gap-4 py-5 text-left rounded-lg px-clamp-gap sm:px-4 focus-within:z-20"
+                  x-bind:class="expanded ? 'bg-deepblue-50 ring-1 ring-deepblue-50 fine:hover:bg-deepblue-100' : 'fine:hover:bg-deepblue-100'">
                   {% if product.icon %}
                     {{ product.icon | svgContents('w-12 h-12 shrink-0') | safe }}
                   {% endif %}
@@ -190,13 +191,26 @@
                       {%- endfor -%}
                     </p> #}
                   </div>
-                  <button type="button" x-on:click="expanded = !expanded" class="absolute inset-0 flex items-center justify-end w-full pr-4 rounded-sm sm:rounded group focus:outline-none focus-visible:ring focus-visible:ring-inset focus-visible:ring-blue-800 focus-visible:ring-offset-2 focus-visible:ring-offset-white" aria-expanded="false" x-bind:aria-expanded="expanded">
-                    <span class="sr-only">Vis</span>
-                    {{ '/src/_includes/svg/icons/chevron-down.svg' | svgContents('mr-1.5 w-5 h-5 opacity-50 transition duration-100 group-aria-expanded:rotate-180') | safe }}
-                  </button>
+                  {% if productsLength > 1 %}
+                    <button
+                      type="button"
+                      x-on:click="expanded = !expanded"
+                      class="absolute inset-0 flex items-center justify-end w-full pr-4 rounded-sm sm:rounded-lg group focus:outline-none focus-visible:ring focus-visible:ring-inset focus-visible:ring-blue-800 focus-visible:ring-offset-2 focus-visible:ring-offset-white"
+                      aria-expanded="false"
+                      x-bind:class="expanded ? 'ring ring-white' : 'fine:hover:ring fine:hover:ring-white'"
+                      x-bind:aria-expanded="expanded"
+                    >
+                      <span class="sr-only">Vis</span>
+                      {{ '/src/_includes/svg/icons/chevron-down.svg' | svgContents('mr-1.5 w-5 h-5 opacity-50 transition duration-100 group-aria-expanded:rotate-180') | safe }}
+                    </button>
+                  {% endif %}
+
                 </div>
 
-                <div class="pt-6 pb-8 px-clamp-gap -mx-clamp-gap relative min-h-[20vh] markdown bg-deepblue-50 sm:mx-0 sm:-mt-2 sm:px-20 sm:rounded-b-lg mb-4" x-bind:hidden="!expanded" hidden>
+                <div
+                  class="pt-5 pb-8 px-clamp-gap relative min-h-[20vh] markdown sm:px-20 mb-4"
+                  {% if productsLength > 1 %}x-bind:hidden="!expanded" hidden{% endif %}
+                >
                   <p>{{ product.ingress }}</p>
 
                   {% if product.contentBlocks %}
@@ -219,7 +233,7 @@
           </div>
         </div>
 
-        <div class="p-4 bg-orange-100 rounded-lg lg:col-start-1 lg:px-6 lg:py-5">
+        <div class="p-4 bg-orange-100 rounded-lg lg:px-6 lg:py-5 lg:col-start-2 lg:mt-8">
           <h3 class="text-xl font-semibold">
             Klage eller anke på vedtak?
           </h3>
