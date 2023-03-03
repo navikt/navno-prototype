@@ -28,74 +28,77 @@ tags: ['template']
 
       {# Sortering og filter #}
       <div class="relative z-20 mt-8 md:row-start-1 isolate md:sticky md:top-6 md:col-start-2 grid-flow-dense md:row-span-2 ">
-        <div class="flex flex-col w-10/12 max-w-md bg-white" x-bind:class="filterOpen ? 'p-4 fixed inset-y-0 h-full md:static z-30 right-0 animate-openDrawer shadow-lg' : 'hidden md:block'">
-          {# Sortering #}
-          <fieldset class="">
-            <legend class="px-3 text-xl font-semibold">Sortering</legend>
-            <div class="px-3">
-              <span class="flex items-center gap-2">
-                <input class="inline-block w-5 h-5" name="sort" id="bestResult" type="radio" checked>
-                <label for="bestResult" class="py-1">Beste treff</label>
-              </span>
-              <span class="flex items-center gap-2">
-                <input class="inline-block w-5 h-5" name="sort" id="dateResult" type="radio">
-                <label for="dateResult" class="py-1">Dato</label>
-              </span>
-            </div>
-          </fieldset>
+          <div class="fixed inset-y-0 right-0 z-30 flex flex-col w-10/12 h-full max-w-md bg-white shadow-lg md:bg-transparent md:shadow-none md:static" x-bind:class="filterOpen ? ' animate-openDrawer ' : 'hidden md:block'">
 
-          {# Søkefilter #}
-          <div class="mt-8">
-            <fieldset>
-              <legend class="px-3 text-xl font-semibold">Søkefilter</legend>
-              <div class="mt-2">
-                {% for item in filters %}
-                  <div class="mx-2 border-t border-gray-200" aria-hidden="true"></div>
-                  <div
-                    class="flex flex-wrap px-3 py-2 rounded"
-                    x-bind:class="searchFilter === '{{ item.title | slugify }}' && 'bg-gray-100 ring-1 ring-gray-100 relative z-10'"
-
-                  >
-                    <button
-                      type="button"
-                      class="flex items-baseline flex-1 gap-2 px-3 py-2 -mx-3 -my-1 text-left rounded"
-                      x-on:click="searchFilter = '{{ item.title | slugify }}'"
-                    >
-                      <span
-                        class="pr-2"
-                        x-bind:class="searchFilter === '{{ item.title | slugify }}' && 'font-semibold'"
-                      >{{ item.title | safe }}</span>
-                      <span class="ml-auto text-right">{{ (item.title | length * 4) }}</span>
-                    </button>
-                    {% if item.children.length %}
-                    <fieldset
-                      class="w-full py-0.5 pl-0.5"
-                      x-bind:class="searchFilter === '{{ item.title | slugify }}' ? '' : 'hidden'"
-                    >
-                      <legend class="sr-only">Underkategorier</legend>
-                      <ol class="">
-                        {% for subitem in item.children %}
-                        <li class="flex items-baseline">
-                          <input class="w-4 h-4 mr-2 translate-y-0.5" type="checkbox" name="{{ item.title | slugify }}-sublevel" id="{{ subitem | slugify }}-sublevel" />
-                          <label class="inline-flex items-baseline justify-between flex-1 gap-2 py-2" for="{{ subitem | slugify }}-sublevel">
-                            <span class="pr-2">{{ subitem | safe }}</span>
-                            <span class="ml-auto text-right">{{ subitem.length }}</span>
-                          </label>
-                        </li>
-                        {% endfor %}
-                      </ol>
-                    </fieldset>
-                    {% endif %}
-                  </div>
-                {% endfor %}
+          <div class="flex-1 p-5 overflow-y-auto">
+            {# Sortering #}
+            <fieldset class="">
+              <legend class="text-xl font-semibold ">Sortering</legend>
+              <div class="">
+                <span class="flex items-center gap-2">
+                  <input class="inline-block w-5 h-5" name="sort" id="bestResult" type="radio" checked>
+                  <label for="bestResult" class="py-1">Beste treff</label>
+                </span>
+                <span class="flex items-center gap-2">
+                  <input class="inline-block w-5 h-5" name="sort" id="dateResult" type="radio">
+                  <label for="dateResult" class="py-1">Dato</label>
+                </span>
               </div>
             </fieldset>
+
+            {# Søkefilter #}
+            <div class="mt-8">
+              <fieldset>
+                <legend class="text-xl font-semibold">Søkefilter</legend>
+                <div class="mt-2">
+                  {% for item in filters %}
+                    <div
+                      class="flex flex-wrap "
+                      x-bind:class="searchFilter === '{{ item.title | slugify }}' ? 'isolate z-10 fine:hover:z-20' : ''"
+
+                    >
+                      <button
+                        type="button"
+                        class="flex items-baseline flex-1 gap-2 px-3 py-1.5 leading-normal -my-px text-left fine:hover:z-20"
+                        x-bind:class="searchFilter === '{{ item.title | slugify }}' ? 'cursor-default border-l-4 border-blue-500' : 'fine:hover:bg-blue-50'"
+                        x-on:click="searchFilter = '{{ item.title | slugify }}'"
+                      >
+                        <span
+                          class="pr-2"
+                          x-bind:class="searchFilter === '{{ item.title | slugify }}' && 'font-semibold'"
+                        >{{ item.title | safe }}</span>
+                        <span class="ml-auto text-right">{{ (item.title | length * 4) }}</span>
+                      </button>
+                      {% if item.children.length %}
+                      <fieldset
+                        class="w-full pl-4 pr-3 mb-6"
+                        x-bind:class="searchFilter === '{{ item.title | slugify }}' ? '' : 'hidden'"
+                      >
+                        <legend class="sr-only">Underkategorier</legend>
+                        <ol class="pl-0.5">
+                          {% for subitem in item.children %}
+                          <li class="flex items-baseline">
+                            <input class="w-4 h-4 mr-2 translate-y-0.5" type="checkbox" name="{{ item.title | slugify }}-sublevel" id="{{ subitem | slugify }}-sublevel" />
+                            <label class="inline-flex items-baseline justify-between flex-1 gap-2 py-1.5" for="{{ subitem | slugify }}-sublevel">
+                              <span class="pr-2">{{ subitem | safe }}</span>
+                              <span class="ml-auto text-right">{{ subitem.length }}</span>
+                            </label>
+                          </li>
+                          {% endfor %}
+                        </ol>
+                      </fieldset>
+                      {% endif %}
+                    </div>
+                  {% endfor %}
+                </div>
+              </fieldset>
+            </div>
           </div>
-
-          <button type="button" x-on:click="filterOpen = false" x-show="filterOpen" class="px-4 py-2 mt-auto text-white bg-blue-500 rounded" x-bind:aria-expanded="filterOpen">
-            Vis resultat
-          </button>
-
+          <div class="p-5 border-t border-gray-100 bg-gray-50 md:hidden">
+            <button type="button" x-on:click="filterOpen = false" class="w-full px-4 py-2 mt-auto text-white bg-blue-500 rounded" x-bind:aria-expanded="filterOpen">
+              Vis resultat
+            </button>
+          </div>
         </div>
 
         <button type="button" x-on:click="filterOpen = false" class="fixed inset-0 bg-black/5" x-bind:aria-expanded="filterOpen" x-bind:class="filterOpen ? 'animate-fade-in md:hidden' : 'hidden'">
@@ -108,13 +111,15 @@ tags: ['template']
         <div class="flex items-baseline justify-between gap-8">
         <h2 class="leading-snug">74 treff på <strong>«penger»</strong> i&nbsp;innhold</h2>
           <button
-            class="flex items-center gap-1 ml-auto font-semibold leading-snug text-right text-blue-500 rounded md:hidden"
+            class="flex items-baseline gap-1.5 ml-auto font-semibold leading-snug text-right text-blue-500 rounded md:hidden"
             type="button"
             x-on:click="filterOpen = !filterOpen"
             x-bind:aria-expanded="filterOpen"
           >
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6 translate-y-1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 13.5V3.75m0 9.75a1.5 1.5 0 010 3m0-3a1.5 1.5 0 000 3m0 3.75V16.5m12-3V3.75m0 9.75a1.5 1.5 0 010 3m0-3a1.5 1.5 0 000 3m0 3.75V16.5m-6-9V3.75m0 3.75a1.5 1.5 0 010 3m0-3a1.5 1.5 0 000 3m0 9.75V10.5" /></svg>
             <span>Vis søkefilter</span>
-            {{ '/src/_includes/svg/icons/chevron-right.svg' | svgContents('w-5 h-5 rotate-180') | safe }}
+
+            {# {{ '/src/_includes/svg/icons/chevron-right.svg' | svgContents('w-5 h-5 rotate-180') | safe }} #}
           </button>
         </div>
 
