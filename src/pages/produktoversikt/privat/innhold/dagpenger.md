@@ -15,7 +15,7 @@ egenSide: true
 Du bruker samme søknad både hvis du er permittert og ikke. Du kan søke om dagpenger for første gang eller om å gjenoppta dagpenger.
 
 <div class="grid gap-1.5 sm:flex mt-4">
-{{ button({ text: 'Send søknad', variant: 'primary' }) }}
+{{ button({ text: 'Send søknad', href: '/soknad-og-skjema/dagpenger/', variant: 'primary' }) }}
 {{ button({ text: 'Ettersend dokumentasjon', variant: 'secondary' }) }}
 </div>
 

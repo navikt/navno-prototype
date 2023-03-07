@@ -10,18 +10,18 @@
     }
   },
   eleventyComputed: {
-    title: "{{ product.data.title }}",
+    title: "Søknad om {{ product.data.title | lower }}",
     permalink: "/soknad-og-skjema/{{ product.data.title | slug }}/"
   }
 }
 ---
-{% extends 'base.njk' %}
+{% extends 'base-basic.njk' %}
 
 {% block content %}
   <main class="min-h-[50vh]">
     <div class="grid grid-cols-layout">
-      <div class="pt-12 pb-8 col-content">
-        <h1 class="mt-1 text-5xl font-semibold">{{ product.title | safe }}</h1>
+      <div class="pt-12 pb-8 col-popout">
+        <h1 class="mt-1 text-5xl font-semibold">{{ title | safe }}</h1>
         {% if product.data.ingress %}
         <div class="mt-4 text-lg max-w-prose">
           <p class="mt-1 text-xl">{{ product.data.ingress | safe }}</p>
@@ -31,7 +31,7 @@
     </div>
 
     <div class="grid pb-12 bg-white grid-cols-layout min-h-[40vh]">
-      <div class="text-lg col-content">
+      <div class="text-lg col-popout">
         <p><a class="px-4 py-3 text-white bg-blue-500 rounded" href="#">Start søknad</a></p>
       </div>
     </div>

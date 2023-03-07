@@ -18,8 +18,12 @@ const markdownInline = (value) => {
   }).renderInline(value);
 };
 
+const filterByRole = (array, role) => {
+  return array.filter((item) => item.role.includes(role));
+};
+
 const console = (value) => {
   return util.inspect(value);
 };
 
-module.exports = { markdown, markdownInline, console };
+module.exports = { markdown, markdownInline, filterByRole, console };

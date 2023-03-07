@@ -90,4 +90,7 @@
   .col-full {
     grid-column: full;
   }
+  .test:hover + * {
+    border-color: transparent;
+  }
 }
