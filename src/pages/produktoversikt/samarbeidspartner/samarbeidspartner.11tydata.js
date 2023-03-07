@@ -805,9 +805,7 @@ const products = [
     ingress: "Hjelper blinde og svaksynte å ta seg frem innendørs og utendørs.",
     icon: "/src/_includes/svg/pictograms/forerhund.svg",
     type: ["Hjelpemiddel"],
-    role: [
-      "Lege",
-    ],
+    role: ["Lege, tannlege eller annen behandler"],
     contentBlocks: [
       {
         type: "markdown",
@@ -2966,7 +2964,10 @@ const products = [
       "Det er egne regler for å beregne økonomiske ytelser under institusjonsopphold og i fengsel. NAV har derfor behov for rask informasjon fra Kriminalomsorgen når en person kommer i varetekt eller soner en fengselsdom.",
     icon: "/src/_includes/svg/pictograms/slik-gjor-du-det.svg",
     type: ["Skjema"],
-    role: ["Ansatt i NAV-kontor, kommunen eller fylkeskommunen", "Andre"],
+    role: [
+      "Ansatt i NAV-kontor, kommunen eller fylkeskommunen",
+      "Andre",
+    ],
     contentBlocks: [
       {
         type: "markdown",
@@ -3012,7 +3013,7 @@ const products = [
     type: ["Skjema"],
     role: [
       "Andre",
-      "Ansatt i NAV-kontor, kommunen eller fylkeskommunen"
+      "Ansatt i NAV-kontor, kommunen eller fylkeskommunen",
     ],
     contentBlocks: [
       {
@@ -3053,7 +3054,10 @@ const products = [
       "Det er viktig at helseinstitusjoner melder raskt om personens opphold på helseinstitusjon. Dette har påvirkning på personens ytelser fra NAV, i form av at ytelser kan stanses eller reduseres.",
     icon: "/src/_includes/svg/pictograms/slik-gjor-du-det.svg",
     type: ["Skjema"],
-    role: ["Andre", "Ansatt i NAV-kontor, kommunen eller fylkeskommunen"],
+    role: [
+      "Andre",
+      "Ansatt i NAV-kontor, kommunen eller fylkeskommunen",
+    ],
     contentBlocks: [
       {
         type: "markdown",
