@@ -182,9 +182,7 @@ permalink: "/produktoversikt/"
                 data-type="alle {% for item in product.data.type %}{{ item | slugify }} {% endfor %}"
                 data-area="alle {% for item in product.data.area %}{{ item | slugify }} {% endfor %}">
 
-                <div
-                  class="relative z-10 flex items-center gap-4 py-5 -my-px text-left rounded sm:rounded px-clamp-gap -mx-clamp-gap sm:px-4 sm:mx-0 ring-2 fine:hover:bg-deepblue-100 focus-within:z-20"
-                  x-bind:class="expanded ? 'bg-deepblue-50 ring-deepblue-400' : 'ring-transparent fine:hover:ring-deepblue-100'">
+                <div class="relative flex items-center gap-4 py-5 text-left rounded-lg px-clamp-gap sm:px-4 focus-within:z-20" x-bind:class="expanded ? 'bg-deepblue-50 ring-1 ring-deepblue-50 fine:hover:bg-deepblue-100' : 'fine:hover:bg-deepblue-100'">
                   {% if product.data.icon %}
                     {{ product.data.icon | svgContents('w-12 h-12 shrink-0') | safe }}
                   {% endif %}
@@ -202,25 +200,23 @@ permalink: "/produktoversikt/"
                       {%- endfor -%}
                     </p>
                   </div>
-                  <button type="button" x-on:click="expanded = !expanded" class="absolute inset-0 flex items-center justify-end w-full pr-4 rounded-sm sm:rounded group focus:outline-none focus-visible:ring focus-visible:ring-inset focus-visible:ring-blue-800 focus-visible:ring-offset-2 focus-visible:ring-offset-white" aria-expanded="false" x-bind:aria-expanded="expanded">
+                  <button
+                      type="button"
+                      x-on:click="expanded = !expanded"
+                      class="absolute inset-0 flex items-center justify-end w-full pr-4 rounded-sm sm:rounded-lg group focus:outline-none focus-visible:ring focus-visible:ring-inset focus-visible:ring-blue-800 focus-visible:ring-offset-2 focus-visible:ring-offset-white"
+                      aria-expanded="false"
+                      x-bind:class="expanded ? 'ring ring-white' : 'fine:hover:ring fine:hover:ring-white'"
+                      x-bind:aria-expanded="expanded">
                     <span class="sr-only">Vis</span>
                     {{ '/src/_includes/svg/icons/chevron-down.svg' | svgContents('mr-1.5 w-5 h-5 text-deepblue-400 fine:group-hover:text-deepblue-600 group-aria-expanded:text-deepblue-600 transition duration-100 group-aria-expanded:rotate-180') | safe }}
                   </button>
                 </div>
 
-                <div class="pt-6 pb-8 px-clamp-gap -mx-clamp-gap relative min-h-[20vh] markdown bg-deepblue-50 sm:mx-0 sm:-mt-2 sm:px-20 sm:rounded-b-lg mb-4" x-bind:hidden="!expanded" hidden>
+                <div class="pt-5 pb-8 px-clamp-gap relative min-h-[20vh] markdown sm:px-20 mb-4" x-bind:hidden="!expanded" hidden>
                   <p>{{ product.data.ingress }}</p>
-
                   {{ product.content | markdown | safe }}
-
-                  {% if product.data.egenSide %}
-                    <a class="inline-block mx-auto text-center underline fine:hover:no-underline fine:hover:text-blue-600" href="/produktoversikt/{{ product.data.title | slugify }}.html">Vis som egen side</a>
-                  {% endif %}
                 </div>
-
-
               </div>
-
             {% endfor %}
           </div>
           <div x-show="count === 0" class="p-6 py-8 text-center overflow-hidden grid items-center leading-snug rounded-lg bg-gray-100 min-h-[4.75rem] lg:col-span-6">

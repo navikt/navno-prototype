@@ -191,7 +191,6 @@
                       {%- endfor -%}
                     </p> #}
                   </div>
-                  {% if productsLength > 1 %}
                     <button
                       type="button"
                       x-on:click="expanded = !expanded"
@@ -203,27 +202,16 @@
                       <span class="sr-only">Vis</span>
                       {{ '/src/_includes/svg/icons/chevron-down.svg' | svgContents('mr-1.5 w-5 h-5 opacity-50 transition duration-100 group-aria-expanded:rotate-180') | safe }}
                     </button>
-                  {% endif %}
 
                 </div>
 
-                <div
-                  class="pt-5 pb-8 px-clamp-gap relative min-h-[20vh] markdown sm:px-20 mb-4"
-                  {% if productsLength > 1 %}x-bind:hidden="!expanded" hidden{% endif %}
-                >
+                <div class="pt-5 pb-8 px-clamp-gap relative min-h-[20vh] markdown sm:px-20 mb-4" x-bind:hidden="!expanded" hidden>
                   <p>{{ product.ingress }}</p>
 
                   {% if product.contentBlocks %}
                     {% include "partials/contentBlocks.njk" %}
                   {% endif %}
                 </div>
-
-                {% if product.egenSide %}
-                <div x-bind:hidden="!expanded" class="pt-4 pb-6 sm:px-6">
-                  <a class="inline-block mx-auto text-center underline fine:hover:no-underline fine:hover:text-blue-600" href="/produktoversikt/{{ product.title | slugify }}.html">Vis som egen side</a>
-                </div>
-                {% endif %}
-
               </div>
               {% endif %}
             {% endfor %}

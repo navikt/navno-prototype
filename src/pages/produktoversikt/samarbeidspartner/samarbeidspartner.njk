@@ -28,10 +28,10 @@ permalink: '/produktoversikt-samarbeidspartner/'
 
     <div class="grid mt-8 lg:mt-12 grid-cols-layout">
       <div class="grid w-full gap-8 pb-20 lg:gap-x-16 lg:items-start col-content lg:col-feature">
-        <ul>
+        <ul class="columns-[36ch]">
         {% for item in roleFilter %}
           <li class="py-1">
-            <a class="inline-flex px-4 py-2 rounded bg-deepblue-50" href="/produktoversikt-samarbeidspartner/{{ item | slugify }}/">{{ item | safe }}</a>
+            <a class="flex px-4 py-2 rounded bg-deepblue-50 fine:hover:bg-deepblue-100" href="/produktoversikt-samarbeidspartner/{{ item | slugify }}/">{{ item | safe }}</a>
           </li>
         {% endfor %}
         </ul>
