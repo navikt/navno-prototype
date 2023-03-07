@@ -8,11 +8,11 @@ tags: ['template']
 
 {% block content %}
   <main class="min-h-[61vh] py-8 text-lg md:pt-12 md:pb-20 text-gray-900 grid grid-cols-layout">
-    <div class="col-content md:col-feature md:grid md:grid-cols-[1.8fr_1.2fr] md:gap-x-24 items-start" x-data="{ filterOpen: false, searchFilter: 'innhold' }">
+    <div class="col-content md:col-feature md:grid md:grid-cols-[1.8fr_1.2fr] md:gap-x-12 items-start" x-data="{ filterOpen: false, searchFilter: 'innhold' }">
 
       {# Tittel og søkefelt #}
       <div class="col-start-1 row-start-1">
-        <h1 class="text-3xl font-semibold leading-tight md:text-4xl">
+        <h1 class="text-3xl font-semibold leading-tight tracking-normal md:text-4xl">
           {{ title | safe }}
         </h1>
 
@@ -27,7 +27,7 @@ tags: ['template']
       </div>
 
       {# Sortering og filter #}
-      <div class="relative z-20 mt-8 md:row-start-1 isolate md:sticky md:top-6 md:col-start-2 grid-flow-dense md:row-span-2 ">
+      <div class="relative z-20 mt-8 md:mt-12 md:row-start-1 isolate md:col-start-2 grid-flow-dense md:row-span-2 ">
           <div class="fixed inset-y-0 right-0 z-30 flex flex-col w-10/12 h-full max-w-md bg-white shadow-lg md:bg-transparent md:shadow-none md:static" x-bind:class="filterOpen ? ' animate-openDrawer ' : 'hidden md:block'">
 
           <div class="flex-1 p-5 overflow-y-auto">
@@ -54,13 +54,13 @@ tags: ['template']
                   {% for item in filters %}
                     <div
                       class="flex flex-wrap "
-                      x-bind:class="searchFilter === '{{ item.title | slugify }}' ? 'isolate z-10 fine:hover:z-20' : ''"
+                      x-bind:class="searchFilter === '{{ item.title | slugify }}' ? 'isolate z-10 border-l-4 border-blue-500 ml-0.5 {{ 'mb-3' if item.children.length }}' : ''"
 
                     >
                       <button
                         type="button"
-                        class="flex items-baseline flex-1 gap-2 px-3 py-1.5 leading-normal -my-px text-left fine:hover:z-20"
-                        x-bind:class="searchFilter === '{{ item.title | slugify }}' ? 'cursor-default border-l-4 border-blue-500' : 'fine:hover:bg-blue-50'"
+                        class="flex items-baseline flex-1 gap-2 py-2.5 pr-2 leading-snug text-left transition-all duration-200 ease-out rounded-md"
+                        x-bind:class="searchFilter === '{{ item.title | slugify }}' ? 'cursor-default pl-3' : 'fine:hover:bg-blue-50 fine:hover:pl-2'"
                         x-on:click="searchFilter = '{{ item.title | slugify }}'"
                       >
                         <span
@@ -71,21 +71,21 @@ tags: ['template']
                       </button>
                       {% if item.children.length %}
                       <fieldset
-                        class="w-full pl-4 pr-3 mb-6"
+                        class="w-full pl-4 pr-2"
                         x-bind:class="searchFilter === '{{ item.title | slugify }}' ? '' : 'hidden'"
                       >
                         <legend class="sr-only">Underkategorier</legend>
-                        <ol class="pl-0.5">
+                        <ul>
                           {% for subitem in item.children %}
                           <li class="flex items-baseline">
-                            <input class="w-4 h-4 mr-2 translate-y-0.5" type="checkbox" name="{{ item.title | slugify }}-sublevel" id="{{ subitem | slugify }}-sublevel" />
+                            <input class="w-4 h-4 mr-2 translate-y-0.5 -translate-x-0.5" type="checkbox" name="{{ item.title | slugify }}-sublevel" id="{{ subitem | slugify }}-sublevel" />
                             <label class="inline-flex items-baseline justify-between flex-1 gap-2 py-1.5" for="{{ subitem | slugify }}-sublevel">
                               <span class="pr-2">{{ subitem | safe }}</span>
                               <span class="ml-auto text-right">{{ subitem.length }}</span>
                             </label>
                           </li>
                           {% endfor %}
-                        </ol>
+                        </ul>
                       </fieldset>
                       {% endif %}
                     </div>
