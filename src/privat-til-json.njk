@@ -1,0 +1,22 @@
+---
+permalink: "/ettersendelse.11tydata.js"
+---
+const products = [
+{%- for item in collections.produkt %}
+  {
+    title: "{{ item.data.title }}",
+    ingress: "{{ item.data.ingress | striptags }}",
+    icon: "{{ item.data.icon }}",
+    type: {{ item.data.type | console | safe }},
+    area: {{ item.data.area | console | safe }},
+    contentBlocks: [`{{ item.content | safe }}`],
+  },
+{%- endfor %}
+]
+{#
+    title: "Sykepengeforsikring for selvstendig næringsdrivende",
+    ingress: "Forsikring for å få bedre dekning når du blir sykmeldt.",
+    icon: "/src/_includes/svg/pictograms/sykepenger.svg",
+    type: ["Forsikring"],
+    area: ["Helse og sykdom"],
+#}

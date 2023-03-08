@@ -24,7 +24,7 @@ order: 7
       </div>
       <div class="relative pb-8 col-narrow lg:col-normal">
         <div class="mt-12 text-lg max-w-prose markup">
-          <form>
+          <form x-data="{ applicationFormat: '' }">
             <fieldset>
               <legend class="font-semibold">Hvordan vil du sende søknaden?</legend>
               <ul class="grid mt-1 justify-items-start">
@@ -39,6 +39,27 @@ order: 7
                   <label class="py-1.5 flex before:w-6 before:h-6 before:bg-white before:border-2 before:border-gray-600 hover:before:border-blue-500 before:rounded-full gap-2 hover:before:bg-blue-50 cursor-pointer peer-checked:before:bg-blue-500 before:ring-2 before:ring-white before:ring-inset" for="field-2">
                     <span>Send i posten</span>
                   </label>
+                </li>
+              </ul>
+            </fieldset>
+            <fieldset class="mt-7" x-show="applicationFormat === 'papir'">
+              <legend class="font-semibold">Hva skal du søke om?</legend>
+              <ul class="grid mt-1 justify-items-start">
+                <li class="relative">
+                  <input class="absolute w-6 h-6 rounded-full -z-10 appearance-none focus:outline-none focus:bg-deepblue-800 top-1.5 peer focus:ring focus:ring-deepblue-800" type="radio" name="application-type" value="" id="field-3">
+                  <label class="py-1.5 flex before:w-6 before:h-6 before:bg-white before:border-2 before:border-gray-600 hover:before:border-blue-500 before:rounded-full gap-2 hover:before:bg-blue-50 cursor-pointer peer-checked:before:bg-blue-500 before:ring-2 before:ring-white before:ring-inset" for="field-3">Søke om dagpenger (ikke permittert)</label>
+                </li>
+                <li class="relative">
+                  <input class="absolute w-6 h-6 rounded-full -z-10 appearance-none focus:outline-none focus:bg-deepblue-800 top-1.5 peer focus:ring focus:ring-deepblue-800" type="radio" name="application-type" value="" id="field-4">
+                  <label class="py-1.5 flex before:w-6 before:h-6 before:bg-white before:border-2 before:border-gray-600 hover:before:border-blue-500 before:rounded-full gap-2 hover:before:bg-blue-50 cursor-pointer peer-checked:before:bg-blue-500 before:ring-2 before:ring-white before:ring-inset" for="field-4">Søke om dagpenger ved permittering</label>
+                </li>
+                <li class="relative">
+                  <input class="absolute w-6 h-6 rounded-full -z-10 appearance-none focus:outline-none focus:bg-deepblue-800 top-1.5 peer focus:ring focus:ring-deepblue-800" type="radio" name="application-type" value="" id="field-5">
+                  <label class="py-1.5 flex before:w-6 before:h-6 before:bg-white before:border-2 before:border-gray-600 hover:before:border-blue-500 before:rounded-full gap-2 hover:before:bg-blue-50 cursor-pointer peer-checked:before:bg-blue-500 before:ring-2 before:ring-white before:ring-inset" for="field-5">Søke om å gjenoppta dagpenger (ikke permittert)</label>
+                </li>
+                <li class="relative">
+                  <input class="absolute w-6 h-6 rounded-full -z-10 appearance-none focus:outline-none focus:bg-deepblue-800 top-1.5 peer focus:ring focus:ring-deepblue-800" type="radio" name="application-type" value="" id="field-6">
+                  <label class="py-1.5 flex before:w-6 before:h-6 before:bg-white before:border-2 before:border-gray-600 hover:before:border-blue-500 before:rounded-full gap-2 hover:before:bg-blue-50 cursor-pointer peer-checked:before:bg-blue-500 before:ring-2 before:ring-white before:ring-inset" for="field-6">Søke om å gjenoppta dagpenger ved permittering</label>
                 </li>
               </ul>
             </fieldset>

@@ -13,6 +13,7 @@ const {
 const { timestampNow } = require("./src/_11ty/shortcodes.js");
 const { minifyHtml } = require("./src/_11ty/transforms.js");
 const { typeFilter, areaFilter } = require("./src/_11ty/collections.js");
+const compression = require("compression");
 
 module.exports = function (eleventyConfig) {
   // Eleventy Plugins

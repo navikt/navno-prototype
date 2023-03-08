@@ -1,10 +1,9 @@
 ---
-title: 'Søknad og skjema fra A til Å'
-description: 'Pengestøtter og tjenester fra NAV for privatpersoner. Du kan søke eller filtrere etter type og område.'
+title: 'Ettersende dokumentasjon fra A til Å'
+description: 'Ingress??'
 tags: ['template']
-order: '5'
-activeRole: "Privat"
-permalink: "/produktoversikt/"
+order: 6
+permalink: '/ettersende-dokumentasjon/'
 ---
 {% extends 'base.njk' %}
 
@@ -21,9 +20,9 @@ permalink: "/produktoversikt/"
         const item = el.querySelector('h2').textContent.toLowerCase()
         if (this.search === '') {
           return (
-            el.dataset.type.includes(this.typeFilter)
+            el.dataset.type.split(' ').includes(this.typeFilter)
             &&
-            el.dataset.area.includes(this.areaFilter)
+            el.dataset.area.split(' ').includes(this.areaFilter)
           )
         } else {
           this.typeFilter = 'alle'
@@ -65,15 +64,15 @@ permalink: "/produktoversikt/"
       });
       updateCount()">
     <div class="grid grid-cols-layout">
-      <div class="relative col-narrow lg:col-wide">
+      <div class="relative w-full col-narrow lg:col-wide">
 
         <div class="hidden float-right pb-8 mt-2 ml-24 xs:block sm:pb-0 sm:-mb-8">
-          {{ '/src/_includes/svg/pictograms/support.svg' | svgContents('w-[12vw] h-auto overflow-hidden max-w-[7rem]') | safe }}
+          {{ '/src/_includes/svg/pictograms/support.svg' | svgContents('w-[12vw] h-auto overflow-hidden max-w-[7rem] aspect-square') | safe }}
         </div>
 
-        <h1 class="text-3xl font-semibold leading-tight md:text-5xl md:leading-tight">{{ title | safe }}</h1>
+        <h1 class="text-3xl font-semibold leading-tight md:text-5xl md:leading-tight">{{ title }}</h1>
 
-        <p class="max-w-2xl mt-2 text-xl md:mt-3 md:text-2xl">{{ description | safe }}</p>
+        <p class="max-w-2xl mt-2 text-xl md:mt-3 md:text-2xl">{{ description }}</p>
       </div>
     </div>
 
@@ -82,7 +81,6 @@ permalink: "/produktoversikt/"
 
         <div class="relative lg:row-start-1 lg:row-span-3 lg:col-start-2" x-data="{ filterDrawer: false }">
           <button
-            type="button"
             class="flex items-center justify-start gap-2.5 pl-3 pr-4 py-3 leading-none text-blue-600 bg-white rounded ring-2 ring-blue-500 hover:bg-blue-100 hover:text-blue-700 lg:hidden"
             x-on:click="filterDrawer = true"
             x-bind:aria-expanded="filterDrawer">
@@ -106,10 +104,10 @@ permalink: "/produktoversikt/"
                   <div>
                     <label for="searchFilter-mobile" class="text-sm tracking-widest uppercase opacity-70">Søk</label>
                     <div class="relative mt-1">
-                    <span class="absolute inset-y-0 left-0 grid px-2.5 place-items-center">
-                      {{ '/src/_includes/svg/icons/search.svg' | svgContents('w-6 h-6') | safe }}
-                    </span>
-                    <input id="searchFilter-mobile" type="search" x-model="search" class=" w-full pl-10 pr-3 py-2.5 border border-gray-300 rounded shadow-inner bg-gray-50/50 focus:outline-none focus:ring-2 focus:ring-blue-800">
+                      <span class="absolute inset-y-0 left-0 grid px-2.5 place-items-center">
+                        {{ '/src/_includes/svg/icons/search.svg' | svgContents('w-6 h-6') | safe }}
+                      </span>
+                      <input id="searchFilter-mobile" type="search" x-model="search" class=" w-full pl-10 pr-3 py-2.5 border border-gray-300 rounded shadow-inner bg-gray-50/50 focus:outline-none focus:ring-2 focus:ring-blue-800">
                     </div>
                   </div>
                   {{ filterGroup({
@@ -125,7 +123,7 @@ permalink: "/produktoversikt/"
                 </div>
               </div>
               <div class="sticky bottom-0 h-2 -mt-2 pointer-events-none bg-gradient-to-t from-black/10 to-black/0"></div>
-              <div class="px-6 py-4 bg-gray-50">
+              <div class="py-4 px-clamp-gap md:px-6 bg-gray-50">
                 <button class="w-full px-4 py-2 text-white bg-blue-500 rounded-lg" x-on:click="filterTags = false, filterDrawer = false">Vis resultat (<span x-text="count"></span>)</button>
               </div>
             </form>
@@ -168,7 +166,7 @@ permalink: "/produktoversikt/"
           </div>
         </div>
 
-        <div class="lg:row-start-1">
+        <div class="lg:col-start-1">
           <p class="mb-2">Viser <span x-text="count"></span> av {{ products.length }} produkter og tjenester</p>
 
           <div class="border-b border-deepblue-100" x-ref="entries" x-show="count !== 0">
@@ -184,17 +182,18 @@ permalink: "/produktoversikt/"
                   {% if product.icon %}
                     {{ product.icon | svgContents('w-12 h-12 shrink-0') | safe }}
                   {% endif %}
-                  <div class="grid gap-0.5">
+                  <div class="grid gap-1">
+                    <p class="text-base opacity-80">
+                    </p>
                     <h2 class="text-xl font-semibold leading-tight">
                       {{ product.title | safe }}
                     </h2>
-                    {# <p class="text-base">{{ product.ingress }}</p> #}
-                    <p class="pr-12 text-base opacity-80">
+                    <p class="text-base">
                       {% for item in product.type %}
                         <span>{{ item }}</span>,
                       {% endfor %}
                       {%- for item in product.area -%}
-                        <span>{{ item }}</span>{{ ', ' if loop.length > 1 and not loop.last }}
+                        <span class="">{{ item }}</span>{{ ', ' if loop.length > 1 and not loop.last }}
                       {%- endfor -%}
                     </p>
                   </div>
@@ -206,18 +205,15 @@ permalink: "/produktoversikt/"
                       x-bind:class="expanded ? 'ring ring-white' : 'fine:hover:ring fine:hover:ring-white'"
                       x-bind:aria-expanded="expanded">
                     <span class="sr-only">Vis</span>
-                    {{ '/src/_includes/svg/icons/chevron-down.svg' | svgContents('mr-1.5 w-5 h-5 text-deepblue-400 fine:group-hover:text-deepblue-600 group-aria-expanded:text-deepblue-600 transition duration-100 group-aria-expanded:rotate-180') | safe }}
+                    {{ '/src/_includes/svg/icons/chevron-down.svg' | svgContents('mr-1.5 w-5 h-5 opacity-50 transition duration-100 group-aria-expanded:rotate-180') | safe }}
                   </button>
                 </div>
 
                 <div class="pt-5 pb-8 px-clamp-gap relative min-h-[20vh] markdown sm:px-20 mb-4" x-bind:hidden="!expanded" hidden>
                   <p>{{ product.ingress }}</p>
+
                   {% if product.contentBlocks %}
                     {% include "partials/contentBlocks.njk" %}
-                  {% else %}
-                  <div class="mt-4 italic">
-                    <p>Innhold om søknader eller skjema er ikke lagt inn enda.</p>
-                  </div>
                   {% endif %}
                 </div>
               </div>
