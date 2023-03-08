@@ -18,10 +18,6 @@ const products = [
             text: "Send søknad",
             variant: "primary",
           },
-          {
-            text: "Ettersend dokumentasjon",
-            variant: "secondary",
-          },
         ],
       },
       {
@@ -60,10 +56,6 @@ const products = [
           {
             text: "Send søknad",
             variant: "primary",
-          },
-          {
-            text: "Ettersend dokumentasjon",
-            variant: "secondary",
           },
         ],
       },
@@ -104,10 +96,6 @@ const products = [
             text: "Send søknad",
             variant: "primary",
           },
-          {
-            text: "Ettersend dokumentasjon",
-            variant: "secondary",
-          },
         ],
       },
       {
@@ -147,10 +135,6 @@ const products = [
           {
             text: "Send søknad",
             variant: "primary",
-          },
-          {
-            text: "Ettersend dokumentasjon",
-            variant: "secondary",
           },
         ],
       },
@@ -194,10 +178,6 @@ const products = [
             text: "Send søknad",
             variant: "primary",
           },
-          {
-            text: "Ettersend dokumentasjon",
-            variant: "secondary",
-          },
         ],
       },
       {
@@ -214,10 +194,6 @@ const products = [
           {
             text: "Send skjema",
             variant: "primary",
-          },
-          {
-            text: "Ettersend dokumentasjon",
-            variant: "secondary",
           },
         ],
       },
@@ -262,10 +238,6 @@ const products = [
             text: "Send søknad",
             variant: "primary",
           },
-          {
-            text: "Ettersend dokumentasjon",
-            variant: "secondary",
-          },
         ],
       },
       {
@@ -308,10 +280,6 @@ const products = [
             text: "Send søknad",
             variant: "primary",
           },
-          {
-            text: "Ettersend dokumentasjon",
-            variant: "secondary",
-          },
         ],
       },
       {
@@ -328,10 +296,6 @@ const products = [
           {
             text: "Send skjema",
             variant: "primary",
-          },
-          {
-            text: "Ettersend dokumentasjon",
-            variant: "secondary",
           },
         ],
       },
@@ -375,10 +339,6 @@ const products = [
           {
             text: "Send skjema",
             variant: "primary",
-          },
-          {
-            text: "Ettersend dokumentasjon",
-            variant: "secondary",
           },
         ],
       },
@@ -480,10 +440,6 @@ const products = [
             text: "Send skjema",
             variant: "primary",
           },
-          {
-            text: "Ettersend dokumentasjon",
-            variant: "secondary",
-          },
         ],
       },
       {
@@ -561,10 +517,6 @@ const products = [
             text: "Send skjema",
             variant: "primary",
           },
-          {
-            text: "Ettersend dokumentasjon",
-            variant: "secondary",
-          },
         ],
       },
       {
@@ -624,10 +576,6 @@ const products = [
           {
             text: "Send skjema",
             variant: "primary",
-          },
-          {
-            text: "Ettersend dokumentasjon",
-            variant: "secondary",
           },
         ],
       },
@@ -689,10 +637,6 @@ const products = [
             text: "Send skjema",
             variant: "primary",
           },
-          {
-            text: "Ettersend dokumentasjon",
-            variant: "secondary",
-          },
         ],
       },
       {
@@ -753,10 +697,6 @@ const products = [
             text: "Send skjema",
             variant: "primary",
           },
-          {
-            text: "Ettersend dokumentasjon",
-            variant: "secondary",
-          },
         ],
       },
       {
@@ -816,10 +756,6 @@ const products = [
           {
             text: "Send skjema",
             variant: "primary",
-          },
-          {
-            text: "Ettersend dokumentasjon",
-            variant: "secondary",
           },
         ],
       },
@@ -902,10 +838,6 @@ const products = [
           {
             text: "Send søknad",
             variant: "primary",
-          },
-          {
-            text: "Ettersend dokumentasjon",
-            variant: "secondary",
           },
         ],
       },
@@ -1083,10 +1015,6 @@ const products = [
             text: "Send skjema",
             variant: "primary",
           },
-          {
-            text: "Ettersend dokumentasjon",
-            variant: "secondary",
-          },
         ],
       },
       {
@@ -1103,10 +1031,6 @@ const products = [
           {
             text: "Send skjema",
             variant: "primary",
-          },
-          {
-            text: "Ettersend dokumentasjon",
-            variant: "secondary",
           },
         ],
       },
@@ -1125,10 +1049,6 @@ const products = [
             text: "Send skjema",
             variant: "primary",
           },
-          {
-            text: "Ettersend dokumentasjon",
-            variant: "secondary",
-          },
         ],
       },
       {
@@ -1146,10 +1066,6 @@ const products = [
             text: "Send skjema",
             variant: "primary",
           },
-          {
-            text: "Ettersend dokumentasjon",
-            variant: "secondary",
-          },
         ],
       },
       {
@@ -1166,10 +1082,6 @@ const products = [
           {
             text: "Send skjema",
             variant: "primary",
-          },
-          {
-            text: "Ettersend dokumentasjon",
-            variant: "secondary",
           },
         ],
       },
@@ -1609,10 +1521,6 @@ const products = [
             text: "Send skjema",
             variant: "primary",
           },
-          {
-            text: "Ettersend dokumentasjon",
-            variant: "secondary",
-          },
         ],
       },
       {
@@ -1671,10 +1579,6 @@ const products = [
           {
             text: "Send skjema",
             variant: "primary",
-          },
-          {
-            text: "Ettersend dokumentasjon",
-            variant: "secondary",
           },
         ],
       },
@@ -2014,10 +1918,6 @@ const products = [
             text: "Send søknad",
             variant: "primary",
           },
-          {
-            text: "Ettersend dokumentasjon",
-            variant: "secondary",
-          },
         ],
       },
       {
@@ -2051,10 +1951,6 @@ const products = [
           {
             text: "Send skjema",
             variant: "primary",
-          },
-          {
-            text: "Ettersend dokumentasjon",
-            variant: "secondary",
           },
         ],
       },
@@ -2098,10 +1994,6 @@ const products = [
             text: "Send søknad",
             variant: "primary",
           },
-          {
-            text: "Ettersend dokumentasjon",
-            variant: "secondary",
-          },
         ],
       },
       {
@@ -2141,10 +2033,6 @@ const products = [
             text: "Send skjema",
             variant: "primary",
           },
-          {
-            text: "Ettersend dokumentasjon",
-            variant: "secondary",
-          },
         ],
       },
       {
@@ -2162,10 +2050,6 @@ const products = [
             text: "Send skjema",
             variant: "primary",
           },
-          {
-            text: "Ettersend dokumentasjon",
-            variant: "secondary",
-          },
         ],
       },
       {
@@ -2182,10 +2066,6 @@ const products = [
           {
             text: "Send skjema",
             variant: "primary",
-          },
-          {
-            text: "Ettersend dokumentasjon",
-            variant: "secondary",
           },
         ],
       },
@@ -2225,10 +2105,6 @@ const products = [
           {
             text: "Send skjema",
             variant: "primary",
-          },
-          {
-            text: "Ettersend dokumentasjon",
-            variant: "secondary",
           },
         ],
       },
