@@ -16,7 +16,6 @@ Du bruker samme søknad både hvis du er permittert og ikke. Du kan søke om dag
 
 <div class="grid gap-1.5 sm:flex mt-4">
 {{ button({ text: 'Send søknad', href: '/soknad-og-skjema/dagpenger/', variant: 'primary' }) }}
-{{ button({ text: 'Ettersend dokumentasjon', variant: 'secondary' }) }}
 </div>
 
 <div class="my-8 border-t border-deepblue-100"></div>
@@ -27,7 +26,6 @@ Du kan søke om å kombinere dagpenger med utdanning eller opplæring.
 
 <div class="grid gap-1.5 sm:flex mt-4">
 {{ button({ text: 'Send søknad', variant: 'primary' }) }}
-{{ button({ text: 'Ettersend dokumentasjon', variant: 'secondary' }) }}
 </div>
 
 <div class="my-8 border-t border-deepblue-100"></div>
@@ -38,7 +36,6 @@ Dersom du allerede mottar dagpenger, kan du søke om å beholde disse under etab
 
 <div class="grid gap-1.5 sm:flex mt-4">
 {{ button({ text: 'Send søknad', variant: 'primary' }) }}
-{{ button({ text: 'Ettersend dokumentasjon', variant: 'secondary' }) }}
 </div>
 
 <div class="my-8 border-t border-deepblue-100"></div>
@@ -49,7 +46,6 @@ Hvis du har opparbeidet deg rettigheter til dagpenger i Norge og flytter til et 
 
 <div class="grid gap-1.5 sm:flex mt-4">
 {{ button({ text: 'Send søknad', variant: 'primary' }) }}
-{{ button({ text: 'Ettersend dokumentasjon', variant: 'secondary' }) }}
 </div>
 
 <div class="my-8 border-t border-deepblue-100"></div>
@@ -60,7 +56,6 @@ Dersom du allerede mottar dagpenger, kan du søke om å få beholde dagpengene i
 
 <div class="grid gap-1.5 sm:flex mt-4">
 {{ button({ text: 'Send søknad', variant: 'primary' }) }}
-{{ button({ text: 'Ettersend dokumentasjon', variant: 'secondary' }) }}
 </div>
 
 <div class="my-8 border-t border-deepblue-100"></div>

@@ -16,7 +16,6 @@ Du bruker denne søknaden både når du søker om foreldrepenger første gang og
 
 <div class="grid gap-1.5 sm:flex mt-4">
 {{ button({ text: 'Send søknad', href: '/soknad-og-skjema/foreldrepenger/', variant: 'primary' }) }}
-{{ button({ text: 'Ettersend dokumentasjon', variant: 'secondary' }) }}
 </div>
 
 <div class="my-8 border-t border-deepblue-100"></div>
@@ -25,7 +24,6 @@ Du bruker denne søknaden både når du søker om foreldrepenger første gang og
 
 <div class="grid gap-1.5 sm:flex mt-4">
 {{ button({ text: 'Send søknad', variant: 'primary' }) }}
-{{ button({ text: 'Ettersend dokumentasjon', variant: 'secondary' }) }}
 </div>
 
 <div class="my-8 border-t border-deepblue-100"></div>

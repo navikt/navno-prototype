@@ -16,7 +16,6 @@ Hvis du har BankID, er det raskt og enkelt å søke overgangsstønad digitalt. D
 
 <div class="grid gap-1.5 sm:flex">
 {{ button({ text: 'Send søknad', variant: 'primary' }) }}
-{{ button({ text: 'Ettersend dokumentasjon', variant: 'secondary' }) }}
 </div>
 
 <hr class="border-deepblue-100" />
@@ -27,5 +26,4 @@ Dette er en midlertidig ordning som er opprettet som følge av koronasituasjonen
 
 <div class="grid gap-1.5 sm:flex">
 {{ button({ text: 'Send søknad', variant: 'primary' }) }}
-{{ button({ text: 'Ettersend dokumentasjon', variant: 'secondary' }) }}
 </div>
