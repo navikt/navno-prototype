@@ -1722,6 +1722,184 @@ const products = [
     ],
   },
   {
+    title: "Dagpenger 2",
+    ingress:
+      "Har du blitt arbeidsledig, kan du ha rett til dagpenger eller annen økonomisk støtte fra NAV, og hjelp til å komme i arbeid.",
+    icon: "/src/_includes/svg/pictograms/dagpenger.svg",
+    type: ["Pengestøtte"],
+    area: ["Arbeid"],
+    contentBlocks: [
+      {
+        type: "markdown",
+        data: `### Søk om dagpenger
+        Du bruker samme søknad både hvis du er permittert og ikke. Du kan søke om dagpenger for første gang eller om å gjenoppta dagpenger.`,
+      },
+      {
+        type: "actions",
+        data: [
+          {
+            text: "Send digital søknad",
+            variant: "primary",
+          },
+        ],
+      },
+      {
+        type: "line",
+      },
+
+      {
+        type: "markdown",
+        data: `### Søk om dagpenger ved permittering`,
+      },
+      {
+        type: "actions",
+        data: [
+          {
+            text: "Send søknad i posten",
+            variant: "primary",
+          },
+        ],
+      },
+      {
+        type: "line",
+      },
+
+      {
+        type: "markdown",
+        data: `### Søk om dagpenger når du ikke er permittert`,
+      },
+      {
+        type: "actions",
+        data: [
+          {
+            text: "Send søknad i posten",
+            variant: "primary",
+          },
+        ],
+      },
+      {
+        type: "line",
+      },
+
+      {
+        type: "markdown",
+        data: `### Søk om å gjenoppta dagpenger ved permittering`,
+      },
+      {
+        type: "actions",
+        data: [
+          {
+            text: "Send søknad i posten",
+            variant: "primary",
+          },
+        ],
+      },
+      {
+        type: "line",
+      },
+
+      {
+        type: "markdown",
+        data: `### Søk om å gjenoppta dagpenger når du ikke er permittert`,
+      },
+      {
+        type: "actions",
+        data: [
+          {
+            text: "Send søknad i posten",
+            variant: "primary",
+          },
+        ],
+      },
+      {
+        type: "line",
+      },
+
+      {
+        type: "markdown",
+        data: `### Søk om å beholde dagpengene mens du tar utdanning eller opplæring
+        Du kan søke om å kombinere dagpenger med utdanning eller opplæring.`,
+      },
+      {
+        type: "actions",
+        data: [
+          {
+            text: "Send søknad",
+            variant: "primary",
+          },
+        ],
+      },
+      {
+        type: "line",
+      },
+      {
+        type: "markdown",
+        data: `### Søk om å beholde dagpengene under etablering av egen virksomhet
+        Dersom du allerede mottar dagpenger, kan du søke om å beholde disse under etablering av egen virksomhet i inntil 12 måneder.`,
+      },
+      {
+        type: "actions",
+        data: [
+          {
+            text: "Send søknad",
+            variant: "primary",
+          },
+        ],
+      },
+
+      {
+        type: "line",
+      },
+      {
+        type: "markdown",
+        data: `### Søk om attest for overføring av dagpengerettigheter til et annet EØS-land
+        Hvis du har opparbeidet deg rettigheter til dagpenger i Norge og flytter til et annet EØS-land, trenger du PD U1-attest for å dokumentere rettighetene dine.`,
+      },
+      {
+        type: "actions",
+        data: [
+          {
+            text: "Send søknad",
+            variant: "primary",
+          },
+        ],
+      },
+      {
+        type: "line",
+      },
+      {
+        type: "markdown",
+        data: `### Søk om å beholde dagpengene mens du søker jobb i et annet EØS-land
+        Dersom du allerede mottar dagpenger, kan du søke om å få beholde dagpengene i inntil tre måneder mens du søker arbeid i et annet EØS-land. Du må ha mottatt dagpenger i Norge i minst fire uker før du søker.`,
+      },
+      {
+        type: "actions",
+        data: [
+          {
+            text: "Send søknad",
+            variant: "primary",
+          },
+        ],
+      },
+      {
+        type: "line",
+      },
+      {
+        type: "markdown",
+        data: `### Mer om`,
+      },
+      {
+        type: "microcards",
+        data: [
+          {
+            text: "Dagpenger",
+            dot: "bg-green-300",
+          },
+        ],
+      },
+    ],
+  },
+  {
     title: "Parykk",
     ingress: "Erstatter eget hår på hele hodet, eller deler av hodet.",
     icon: "/src/_includes/svg/pictograms/parykk.svg",
