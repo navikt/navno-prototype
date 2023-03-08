@@ -26,10 +26,10 @@ permalink: '/produktoversikt-samarbeidspartner/'
     </div>
 
     <div class="grid mt-8 lg:mt-12 grid-cols-layout">
-      <div class="grid w-full gap-8 pb-20 lg:gap-x-16 lg:items-start col-content lg:col-feature">
-        <ul class="text-xl divide-y divide-gray-300">
+      <div class="grid w-full gap-8 pb-20 lg:gap-x-16 lg:items-start col-narrow lg:col-wide">
+        <ul class="text-xl max-w-prose">
         {% for item in roleFilter %}
-          <li>
+          <li class="border-t border-gray-300">
             <a class="relative z-10 flex px-3 py-3 -mx-3 rounded ring-1 ring-transparent fine:hover:ring-deepblue-50 fine:hover:bg-deepblue-50" href="/produktoversikt-samarbeidspartner/{{ item | slugify }}/">{{ item | safe }}</a>
           </li>
         {% endfor %}

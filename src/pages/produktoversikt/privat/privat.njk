@@ -174,9 +174,8 @@ permalink: "/produktoversikt/"
           <div class="border-b border-deepblue-100" x-ref="entries" x-show="count !== 0">
             {% for product in collections.produkt | sort(true, false, 'data.title') | reverse %}
               <div
-                x-data="{ expanded: true }"
+                x-data="{ expanded: false }"
                 class="border-t focus-within:z-10 -mx-clamp-gap px-clamp-gap sm:mx-0 sm:px-0 border-deepblue-100"
-                x-bind:class="expanded ? '' : ''"
                 x-show="filterItem($el)"
                 data-type="alle {% for item in product.data.type %}{{ item | slugify }} {% endfor %}"
                 data-area="alle {% for item in product.data.area %}{{ item | slugify }} {% endfor %}">

@@ -172,25 +172,24 @@ permalink: '/produktoversikt-arbeidsgiver/'
               <div
                 x-data="{ expanded: false }"
                 class="border-t focus-within:z-10 -mx-clamp-gap px-clamp-gap sm:mx-0 sm:px-0 border-deepblue-100"
-                x-bind:class="expanded ? '' : ''"
                 x-show="filterItem($el)"
                 data-type="alle {% for item in product.type %}{{ item | slugify }} {% endfor %}"
                 data-area="alle {% for item in product.area %}{{ item | slugify }} {% endfor %}">
 
                 <div class="relative flex items-center gap-4 py-5 text-left rounded-lg px-clamp-gap sm:px-4 focus-within:z-20" x-bind:class="expanded ? 'bg-deepblue-50 ring-1 ring-deepblue-50 fine:hover:bg-deepblue-100' : 'fine:hover:bg-deepblue-100'">
                   {% if product.icon %}
-                    {{ product.icon | svgContents('w-12 h-12 lg:w-14 lg:h-14 shrink-0') | safe }}
+                    {{ product.icon | svgContents('w-12 h-12 shrink-0') | safe }}
                   {% endif %}
                   <div class="grid gap-1">
                     <p class="text-base opacity-80">
-                    {% for item in product.type %}
-                      <span>{{ item }}</span>{{ ', ' if product.type.length > 1 and not loop.last }}
-                    {% endfor %}
                     </p>
                     <h2 class="text-xl font-semibold leading-tight">
                       {{ product.title | safe }}
                     </h2>
                     <p class="text-base">
+                      {% for item in product.type %}
+                        <span>{{ item }}</span>,
+                      {% endfor %}
                       {%- for item in product.area -%}
                         <span class="">{{ item }}</span>{{ ', ' if loop.length > 1 and not loop.last }}
                       {%- endfor -%}
