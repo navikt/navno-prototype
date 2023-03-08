@@ -10,7 +10,7 @@ permalink: '/index.html'
 {% block content %}
   <main class="text-gray-900" x-bind:inert="menuOpen || notifyOpen">
     <div class="grid py-8 bg-white grid-cols-layout md:py-12">
-      <div class="col-feature">
+      <div class="col-wide">
         <h2 class="-mt-2 text-xl font-semibold md:text-3xl">Hva kan vi hjelpe deg med?</h2>
         <ul class="grid gap-2 mx-auto mt-4 lg:grid-cols-3 sm:grid-cols-2 sm:gap-4 md:gap-6">
           {% for area in areaList %}
@@ -30,7 +30,7 @@ permalink: '/index.html'
     </div>
 
     <div class="grid py-8 grid-cols-layout md:pb-12 bg-red-50">
-      <div class="col-feature">
+      <div class="col-wide">
         <h2 class="-mt-2 text-xl font-semibold md:text-3xl">Snarveier</h2>
         <ul class="grid gap-2 mt-4 md:grid-cols-2 sm:gap-3 md:gap-6 lg:grid-cols-3">
           {% for shortcut in shortcutsList %}
@@ -50,7 +50,7 @@ permalink: '/index.html'
 
 
     <div class="grid py-8 mt-1 grid-cols-layout md:pb-12 bg-deepblue-50">
-      <div class="col-feature">
+      <div class="col-wide">
         <h2 class="-mt-2 text-xl font-semibold md:text-3xl">Søke og ettersende</h2>
         <ul class="grid gap-2 mt-4 sm:gap-3 md:gap-6 md:grid-cols-2">
           {% for form in formsList %}
@@ -68,7 +68,7 @@ permalink: '/index.html'
     </div>
 
     <div class="grid py-8 mt-1 grid-cols-layout bg-gray-50 md:pb-12">
-      <div class="col-feature">
+      <div class="col-wide">
         <h2 class="-mt-2 text-xl font-semibold md:text-3xl">Aktuelt</h2>
         <div class="grid gap-2 mt-4 sm:gap-4 md:gap-6 sm:grid-cols-2">
           {% for news in newsList %}
@@ -82,7 +82,7 @@ permalink: '/index.html'
     </div>
 
     <div class="grid pt-10 pb-12 bg-white grid-cols-layout md:pb-16">
-      <div class="col-feature">
+      <div class="col-wide">
         <h2 class="-mt-2 text-xl font-semibold md:text-3xl">Kontakt oss</h2>
         <div class="grid gap-8 mt-4 sm:gap-4 md:gap-6 sm:grid-cols-2">
           <div class="relative grid gap-2 px-6 py-6 bg-blue-50 rounded-t-3xl rounded-r-3xl group">

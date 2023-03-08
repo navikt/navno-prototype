@@ -16,7 +16,6 @@ Tekst
 
 <div class="grid gap-1.5 sm:flex mt-4">
 {{ button({ text: 'Send søknad', variant: 'primary' }) }}
-{{ button({ text: 'Ettersend dokumentasjon', variant: 'secondary' }) }}
 </div>
 
 <div class="my-8 border-deepblue-100 border-t"></div>
@@ -27,7 +26,6 @@ Du kan søke om å kombinere dagpenger med utdanning eller opplæring.
 
 <div class="grid gap-1.5 sm:flex mt-4">
 {{ button({ text: 'Send søknad', variant: 'primary' }) }}
-{{ button({ text: 'Ettersend dokumentasjon', variant: 'secondary' }) }}
 </div>
 
 ### Mer om

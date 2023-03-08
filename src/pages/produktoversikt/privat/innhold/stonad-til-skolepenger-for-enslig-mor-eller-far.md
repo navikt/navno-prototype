@@ -15,7 +15,6 @@ Du kan søke så snart du har fått faktura eller betalingsvarsel fra skolen, og
 
 <div class="grid gap-1.5 sm:flex mt-4">
 {{ button({ text: 'Send søknad', variant: 'primary' }) }}
-{{ button({ text: 'Ettersend dokumentasjon', variant: 'secondary' }) }}
 </div>
 
 <div class="my-8 border-deepblue-100 border-t"></div>
