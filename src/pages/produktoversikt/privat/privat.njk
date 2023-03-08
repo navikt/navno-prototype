@@ -213,7 +213,13 @@ permalink: "/produktoversikt/"
 
                 <div class="pt-5 pb-8 px-clamp-gap relative min-h-[20vh] markdown sm:px-20 mb-4" x-bind:hidden="!expanded" hidden>
                   <p>{{ product.data.ingress }}</p>
+                  {% if product.content %}
                   {{ product.content | markdown | safe }}
+                  {% else %}
+                  <div class="mt-4 italic">
+                    <p>Innhold om søknader eller skjema er ikke lagt inn enda.</p>
+                  </div>
+                  {% endif %}
                 </div>
               </div>
             {% endfor %}
