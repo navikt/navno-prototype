@@ -4,6 +4,7 @@ ingress: "Foreldrepengene skal erstatte inntekten din når du skal være hjemme 
 icon: "/src/_includes/svg/pictograms/foreldrepenger.svg"
 type: ["Pengestøtte"]
 area: ["Familie og barn"]
+egenSide: true
 ---
 
 {%- from "macros/button.njk" import button -%}
@@ -14,11 +15,11 @@ area: ["Familie og barn"]
 Du bruker denne søknaden både når du søker om foreldrepenger første gang og hvis du skal søke om endring eller nytt uttak av foreldrepenger.
 
 <div class="grid gap-1.5 sm:flex mt-4">
-{{ button({ text: 'Send søknad', variant: 'primary' }) }}
+{{ button({ text: 'Send søknad', href: '/soknad-og-skjema/foreldrepenger/', variant: 'primary' }) }}
 {{ button({ text: 'Ettersend dokumentasjon', variant: 'secondary' }) }}
 </div>
 
-<div class="my-8 border-deepblue-100 border-t"></div>
+<div class="my-8 border-t border-deepblue-100"></div>
 
 ### Send inn opplysninger om inntekt som selvstendig næringsdrivende eller frilanser
 
@@ -27,7 +28,7 @@ Du bruker denne søknaden både når du søker om foreldrepenger første gang og
 {{ button({ text: 'Ettersend dokumentasjon', variant: 'secondary' }) }}
 </div>
 
-<div class="my-8 border-deepblue-100 border-t"></div>
+<div class="my-8 border-t border-deepblue-100"></div>
 
 ### Mer om
 

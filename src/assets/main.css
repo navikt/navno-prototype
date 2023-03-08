@@ -62,30 +62,30 @@
   .grid-cols-layout {
     --_layout-gap: clamp(1rem, -3rem + 12vw, 6rem);
     --_layout-full: minmax(var(--_layout-gap), 1fr);
-    --_layout-popout: minmax(0, 7rem);
-    --_layout-feature: minmax(0, 8rem);
-    --_layout-content: min(50rem, 100% - (var(--_layout-gap) * 2));
+    --_layout-normal: minmax(0, 7rem);
+    --_layout-wide: minmax(0, 8rem);
+    --_layout-narrow: min(50rem, 100% - (var(--_layout-gap) * 2));
 
     grid-template-columns:
       [full-start] var(--_layout-full)
-      [feature-start] var(--_layout-feature)
-      [popout-start] var(--_layout-popout)
-      [content-start] var(--_layout-content) [content-end]
-      var(--_layout-popout) [popout-end]
-      var(--_layout-feature) [feature-end]
+      [wide-start] var(--_layout-wide)
+      [normal-start] var(--_layout-normal)
+      [narrow-start] var(--_layout-narrow) [narrow-end]
+      var(--_layout-normal) [normal-end]
+      var(--_layout-wide) [wide-end]
       var(--_layout-full) [full-end];
   }
   .grid-cols-layout > * {
-    grid-column: content;
+    grid-column: narrow;
   }
-  .col-content {
-    grid-column: content;
+  .col-narrow {
+    grid-column: narrow;
   }
-  .col-popout {
-    grid-column: popout;
+  .col-normal {
+    grid-column: normal;
   }
-  .col-feature {
-    grid-column: feature;
+  .col-wide {
+    grid-column: wide;
   }
   .col-full {
     grid-column: full;

@@ -1,8 +1,7 @@
 ---
 title: 'Søknad og skjema fra A til Å'
 description: 'Pengestøtter og tjenester fra NAV for samarbeidspartnere. Du kan søke eller filtrere etter type og rolle.'
-order: 7
-bodyClass: ''
+order: '3'
 permalink: '/produktoversikt-samarbeidspartner/'
 ---
 {% extends 'base.njk' %}
@@ -14,7 +13,7 @@ permalink: '/produktoversikt-samarbeidspartner/'
 {% block content %}
   <main class="py-12 text-lg text-gray-900">
     <div class="grid grid-cols-layout">
-      <div class="relative w-full col-content lg:col-feature">
+      <div class="relative w-full col-narrow lg:col-wide">
 
         <div class="hidden float-right pb-8 mt-2 ml-24 xs:block sm:pb-0 sm:-mb-8">
           {{ '/src/_includes/svg/pictograms/support.svg' | svgContents('w-[12vw] h-auto overflow-hidden max-w-[7rem]') | safe }}
@@ -27,7 +26,7 @@ permalink: '/produktoversikt-samarbeidspartner/'
     </div>
 
     <div class="grid mt-8 lg:mt-12 grid-cols-layout">
-      <div class="grid w-full gap-8 pb-20 lg:gap-x-16 lg:items-start col-content lg:col-feature">
+      <div class="grid w-full gap-8 pb-20 lg:gap-x-16 lg:items-start col-narrow lg:col-wide">
         <ul class="columns-[36ch]">
         {% for item in roleFilter %}
           <li class="py-1">

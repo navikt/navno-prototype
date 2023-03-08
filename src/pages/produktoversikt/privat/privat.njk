@@ -1,9 +1,8 @@
 ---
 title: 'Søknad og skjema fra A til Å'
 description: 'Pengestøtter og tjenester fra NAV for privatpersoner. Du kan søke eller filtrere etter type og område.'
-order: 5
-bodyClass: ''
 tags: ['template']
+order: '5'
 activeRole: "Privat"
 permalink: "/produktoversikt/"
 ---
@@ -66,7 +65,7 @@ permalink: "/produktoversikt/"
       });
       updateCount()">
     <div class="grid grid-cols-layout">
-      <div class="relative col-content lg:col-feature">
+      <div class="relative col-narrow lg:col-wide">
 
         <div class="hidden float-right pb-8 mt-2 ml-24 xs:block sm:pb-0 sm:-mb-8">
           {{ '/src/_includes/svg/pictograms/support.svg' | svgContents('w-[12vw] h-auto overflow-hidden max-w-[7rem]') | safe }}
@@ -79,9 +78,9 @@ permalink: "/produktoversikt/"
     </div>
 
     <div class="grid mt-8 lg:mt-12 grid-cols-layout">
-      <div class="grid w-full gap-8 pb-20 lg:gap-x-16 lg:items-start lg:grid-cols-sidebar col-content lg:col-feature">
+      <div class="grid w-full gap-8 pb-20 lg:gap-x-16 lg:items-start lg:grid-cols-sidebar col-narrow lg:col-wide">
 
-        <div class="relative lg:row-start-1 lg:row-span-3 lg:col-start-2 lg:sticky lg:top-4" x-data="{ filterDrawer: false }">
+        <div class="relative lg:row-start-1 lg:row-span-3 lg:col-start-2" x-data="{ filterDrawer: false }">
           <button
             type="button"
             class="flex items-center justify-start gap-2.5 pl-3 pr-4 py-3 leading-none text-blue-600 bg-white rounded ring-2 ring-blue-500 hover:bg-blue-100 hover:text-blue-700 lg:hidden"
@@ -101,7 +100,7 @@ permalink: "/produktoversikt/"
             x-transition:leave-start="translate-x-0 opacity-100"
             x-transition:leave-end="translate-x-full opacity-0"
           >
-            <form class="flex flex-col h-full bg-white shadow-drawer col-content lg:hidden" x-on:click.outside="filterDrawer = false, filterTags = false">
+            <form class="flex flex-col h-full bg-white shadow-drawer col-narrow lg:hidden" x-on:click.outside="filterDrawer = false, filterTags = false">
               <div class="flex-1 px-6 pb-12 overflow-y-auto overscroll-y-contain">
                 <div class="relative grid pt-6" >
                   <div>
@@ -175,7 +174,7 @@ permalink: "/produktoversikt/"
           <div class="border-b border-deepblue-100" x-ref="entries" x-show="count !== 0">
             {% for product in collections.produkt | sort(true, false, 'data.title') | reverse %}
               <div
-                x-data="{ expanded: false }"
+                x-data="{ expanded: true }"
                 class="border-t focus-within:z-10 -mx-clamp-gap px-clamp-gap sm:mx-0 sm:px-0 border-deepblue-100"
                 x-bind:class="expanded ? '' : ''"
                 x-show="filterItem($el)"

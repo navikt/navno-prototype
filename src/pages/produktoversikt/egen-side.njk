@@ -21,7 +21,7 @@
 {% block content %}
   <main class="min-h-[50vh]">
     <div class="grid grid-cols-layout">
-      <div class="pt-12 pb-8 col-content">
+      <div class="pt-12 pb-8 col-narrow">
 
         <a href="/produktoversikt/?area={{ product.data.area | slugify }}&type={{ product.data.type | slugify }}" class="font-semibold tracking-wide text-blue-500 uppercase fine:hover:underline">Søknad og skjema fra A til Å</a>
         <h1 class="mt-1 text-5xl font-semibold">{{ product.title | safe }}</h1>
@@ -34,7 +34,7 @@
     </div>
 
     <div class="grid pb-12 bg-white grid-cols-layout min-h-[40vh]">
-      <div class="text-lg col-content">
+      <div class="text-lg col-narrow">
         <div class="max-w-prose markdown">
           {{ product.content | markdown | safe }}
         </div>
