@@ -5,7 +5,7 @@ const products = [
       "I sakene hvor det er aktuelt, kan du som tannlege bli bedt om å fylle ut en tannlegeerklæring.",
     icon: "/src/_includes/svg/pictograms/slik-gjor-du-det.svg",
     type: ["Skjema"],
-    role: ["Tannlege"],
+    role: ["Lege, tannlege eller annen behandler"],
     contentBlocks: [
       {
         type: "markdown",
@@ -46,7 +46,7 @@ const products = [
       "Hvis skaden eller sykdommen blir godkjent som yrkesskade, vil pasienten kunne få dekket utgifter til ulik helsehjelp.",
     icon: "/src/_includes/svg/pictograms/slik-gjor-du-det.svg",
     type: ["Skjema"],
-    role: ["Lege"],
+    role: ["Lege, tannlege eller annen behandler"],
     contentBlocks: [
       {
         type: "markdown",
@@ -95,7 +95,7 @@ const products = [
       "Når en må være borte fra jobb for å pleie og ta vare på et barn som er, eller har vært, innlagt eller til behandling på sykehus.",
     icon: "/src/_includes/svg/pictograms/pleiepenger-sykt-barn.svg",
     type: ["Pengestøtte"],
-    role: ["Lege"],
+    role: ["Lege, tannlege eller annen behandler"],
     contentBlocks: [
       {
         type: "markdown",
@@ -127,7 +127,7 @@ const products = [
       "Når en må være borte fra jobb for å ta vare på en person over 18 år, som er utviklingshemmet og svært alvorlig syk.",
     icon: "/src/_includes/svg/pictograms/pleiepenger-utviklingshemmet.svg",
     type: ["Pengestøtte"],
-    role: ["Lege"],
+    role: ["Lege, tannlege eller annen behandler"],
     contentBlocks: [
       {
         type: "markdown",
@@ -158,7 +158,7 @@ const products = [
       "Når en må være borte fra jobb for å ta vare på en person som er i livets sluttfase.",
     icon: "/src/_includes/svg/pictograms/pleiepenger-livets-sluttfase.svg",
     type: ["Pengestøtte"],
-    role: ["Lege"],
+    role: ["Lege, tannlege eller annen behandler"],
     contentBlocks: [
       {
         type: "markdown",
@@ -198,7 +198,7 @@ const products = [
       "Når en må være borte fra jobb for å få opplæring for et barn eller en voksen, som har en funksjonshemning eller langvarig sykdom.",
     icon: "/src/_includes/svg/pictograms/opplaeringspenger.svg",
     type: ["Pengestøtte"],
-    role: ["Lege"],
+    role: ["Lege, tannlege eller annen behandler"],
     contentBlocks: [
       {
         type: "markdown",
@@ -238,7 +238,7 @@ const products = [
       "Når en må være hjemme med barn som for eksempel har fått omgangssyke.",
     icon: "/src/_includes/svg/pictograms/omsorgspenger.svg",
     type: ["Pengestøtte"],
-    role: ["Lege"],
+    role: ["Lege, tannlege eller annen behandler"],
     contentBlocks: [
       {
         type: "markdown",
@@ -278,7 +278,7 @@ const products = [
       "Gir økonomisk støtte til ekstrautgifter når pasienten har en varig skade, sykdom eller funksjonsnedsettelse.",
     icon: "/src/_includes/svg/pictograms/grunnstonad.svg",
     type: ["Pengestøtte"],
-    role: ["Lege"],
+    role: ["Lege, tannlege eller annen behandler"],
     contentBlocks: [
       {
         type: "markdown",
@@ -309,7 +309,7 @@ const products = [
       "Økonomisk støtte til barn eller voksne som trenger langvarig, privat pleie og tilsyn.",
     icon: "/src/_includes/svg/pictograms/hjelpestonad.svg",
     type: ["Pengestøtte"],
-    role: ["Lege"],
+    role: ["Lege, tannlege eller annen behandler"],
     contentBlocks: [
       {
         type: "markdown",
@@ -340,7 +340,7 @@ const products = [
       "Økonomisk støtte til barn under 18 år når behovet for pleie og tilsyn er vesentlig enn det ordinær hjelpestønad kan dekke.",
     icon: "/src/_includes/svg/pictograms/hjelpestonad.svg",
     type: ["Pengestøtte"],
-    role: ["Lege"],
+    role: ["Lege, tannlege eller annen behandler"],
     contentBlocks: [
       {
         type: "markdown",
@@ -371,7 +371,7 @@ const products = [
       "Erstatter inntekten din når pasienten ikke kan jobbe på grunn av sykdom eller skade.",
     icon: "/src/_includes/svg/pictograms/sykepenger.svg",
     type: ["Pengestøtte"],
-    role: ["Lege"],
+    role: ["Lege, tannlege eller annen behandler"],
     contentBlocks: [
       {
         type: "markdown",
@@ -479,7 +479,7 @@ const products = [
       "Sikrer pasienten inntekt i perioder de har behov for hjelp fra NAV på grunn av sykdom eller skade.",
     icon: "/src/_includes/svg/pictograms/aap.svg",
     type: ["Pengestøtte"],
-    role: ["Lege"],
+    role: ["Lege, tannlege eller annen behandler"],
     contentBlocks: [
       {
         type: "markdown",
@@ -519,7 +519,7 @@ const products = [
       "Sikrer pasienten inntekt hvis inntektsevnen er varig redusert på grunn av sykdom eller skade.",
     icon: "/src/_includes/svg/pictograms/uforetrygd.svg",
     type: ["Pengestøtte"],
-    role: ["Lege"],
+    role: ["Lege, tannlege eller annen behandler"],
     contentBlocks: [
       {
         type: "markdown",
@@ -576,7 +576,7 @@ const products = [
       "Sikrer pasienten inntekt hvis inntektsevnen er varig redusert på grunn av sykdom eller skade.",
     icon: "/src/_includes/svg/pictograms/neutral.svg",
     type: ["Pengestøtte"],
-    role: ["Lege"],
+    role: ["Lege, tannlege eller annen behandler"],
     contentBlocks: [
       {
         type: "markdown",
@@ -617,8 +617,7 @@ const products = [
     icon: "/src/_includes/svg/pictograms/slik-gjor-du-det.svg",
     type: ["Skjema"],
     role: [
-      "Lege",
-      "Annen behandler",
+      "Lege, tannlege eller annen behandler",
     ],
     contentBlocks: [
       {
@@ -660,7 +659,7 @@ const products = [
     icon: "/src/_includes/svg/pictograms/slik-gjor-du-det.svg",
     type: ["Skjema"],
     role: [
-      "Lege",
+      "Lege, tannlege eller annen behandler",
       "Bostyrer",
     ],
     contentBlocks: [
@@ -711,7 +710,7 @@ const products = [
       "Pengestøtte",
       "Hjelpemiddel",
     ],
-    role: ["Lege"],
+    role: ["Lege, tannlege eller annen behandler"],
     contentBlocks: [
       {
         type: "markdown",
@@ -782,9 +781,7 @@ const products = [
     ingress: "Hjelper blinde og svaksynte å ta seg frem innendørs og utendørs.",
     icon: "/src/_includes/svg/pictograms/forerhund.svg",
     type: ["Hjelpemiddel"],
-    role: [
-      "Lege",
-    ],
+    role: ["Lege, tannlege eller annen behandler"],
     contentBlocks: [
       {
         type: "markdown",
@@ -814,7 +811,7 @@ const products = [
     ingress: "Hjelper pasienter med fysiske funksjonsnedsettelser i hverdagen.",
     icon: "/src/_includes/svg/pictograms/neutral.svg",
     type: ["Hjelpemiddel"],
-    role: ["Lege"],
+    role: ["Lege, tannlege eller annen behandler"],
     contentBlocks: [
       {
         type: "markdown",
@@ -848,7 +845,7 @@ const products = [
       "Pengestøtte",
       "Hjelpemiddel",
     ],
-    role: ["Lege"],
+    role: ["Lege, tannlege eller annen behandler"],
     contentBlocks: [
       {
         type: "markdown",
@@ -891,7 +888,7 @@ const products = [
       "Pengestøtte",
       "Hjelpemiddel",
     ],
-    role: ["Lege"],
+    role: ["Lege, tannlege eller annen behandler"],
     contentBlocks: [
       {
         type: "markdown",
@@ -921,7 +918,7 @@ const products = [
     ingress: "Erstatter øyet når en mangler et øye, eller har skadet øyet.",
     icon: "/src/_includes/svg/pictograms/oyeprotese.svg",
     type: ["Hjelpemiddel"],
-    role: ["Lege"],
+    role: ["Lege, tannlege eller annen behandler"],
     contentBlocks: [
       {
         type: "markdown",
@@ -954,7 +951,7 @@ const products = [
       "Pengestøtte",
       "Hjelpemiddel",
     ],
-    role: ["Lege"],
+    role: ["Lege, tannlege eller annen behandler"],
     contentBlocks: [
       {
         type: "markdown",
@@ -987,7 +984,7 @@ const products = [
       "Pengestøtte",
       "Hjelpemiddel",
     ],
-    role: ["Lege"],
+    role: ["Lege, tannlege eller annen behandler"],
     contentBlocks: [
       {
         type: "markdown",
@@ -1099,7 +1096,7 @@ const products = [
       "Tjeneste",
       "Hjelpemiddel",
     ],
-    role: ["Lege"],
+    role: ["Lege, tannlege eller annen behandler"],
     contentBlocks: [
       {
         type: "markdown",
@@ -1199,7 +1196,7 @@ const products = [
       "Tjeneste",
       "Hjelpemiddel",
     ],
-    role: ["Lege"],
+    role: ["Lege, tannlege eller annen behandler"],
     contentBlocks: [
       {
         type: "markdown",
@@ -1232,7 +1229,7 @@ const products = [
       "Pengestøtte",
       "Hjelpemiddel",
     ],
-    role: ["Lege"],
+    role: ["Lege, tannlege eller annen behandler"],
     contentBlocks: [
       {
         type: "markdown",
@@ -1275,7 +1272,7 @@ const products = [
       "Pengestøtte",
       "Hjelpemiddel",
     ],
-    role: ["Lege"],
+    role: ["Lege, tannlege eller annen behandler"],
     contentBlocks: [
       {
         type: "markdown",
@@ -1318,7 +1315,7 @@ const products = [
       "Pengestøtte",
       "Hjelpemiddel",
     ],
-    role: ["Lege"],
+    role: ["Lege, tannlege eller annen behandler"],
     contentBlocks: [
       {
         type: "markdown",
@@ -1357,7 +1354,7 @@ const products = [
     ingress: "Erstatter en manglende kroppsdel.",
     icon: "/src/_includes/svg/pictograms/arm-og-benprotese.svg",
     type: ["Hjelpemiddel"],
-    role: ["Lege"],
+    role: ["Lege, tannlege eller annen behandler"],
     contentBlocks: [
       {
         type: "markdown",
@@ -1400,7 +1397,7 @@ const products = [
       "Tjeneste",
       "Hjelpemiddel",
     ],
-    role: ["Lege"],
+    role: ["Lege, tannlege eller annen behandler"],
     contentBlocks: [
       {
         type: "markdown",
@@ -1430,7 +1427,7 @@ const products = [
     ingress: "Brukes som grunnlag for å skreddersy klær.",
     icon: "/src/_includes/svg/pictograms/neutral.svg",
     type: ["Pengestøtte"],
-    role: ["Lege"],
+    role: ["Lege, tannlege eller annen behandler"],
     contentBlocks: [
       {
         type: "markdown",
@@ -1911,7 +1908,7 @@ const products = [
     role: [
       "Optiker eller øyelege",
       "Hjelpemiddelformidler",
-      "Lege",
+      "Lege, tannlege eller annen behandler",
     ],
     contentBlocks: [
       {
@@ -2498,7 +2495,7 @@ const products = [
       "Hjelpemiddel",
     ],
     role: [
-      "Lege",
+      "Lege, tannlege eller annen behandler",
     ],
     contentBlocks: [
       {
@@ -2704,7 +2701,7 @@ const products = [
     type: ["Hjelpemiddel"],
     role: [
       "Hjelpemiddelformidler",
-      "Ansatt i kommunen",
+      "Ansatt i NAV-kontor, kommunen eller fylkeskommunen",
     ],
     contentBlocks: [
       {
@@ -2745,7 +2742,7 @@ const products = [
       "Hvis kommunen overtar omsorgen for et barn, kan kommunen kreve et oppfostringsbidrag fra foreldrene hvis de har betalingsevne og det er rimelig ut fra situasjonen.",
     icon: "/src/_includes/svg/pictograms/slik-gjor-du-det.svg",
     type: ["Pengestøtte"],
-    role: ["Ansatt i kommunen"],
+    role: ["Ansatt i NAV-kontor, kommunen eller fylkeskommunen"],
     contentBlocks: [
       {
         type: "markdown",
@@ -2784,7 +2781,7 @@ const products = [
     ingress: "Ingress",
     icon: "/src/_includes/svg/pictograms/slik-gjor-du-det.svg",
     type: ["Skjema"],
-    role: ["Ortopedisk verksted"],
+    role: ["Hjelpemiddelformidler"],
     contentBlocks: [
       {
         type: "markdown",
@@ -2824,7 +2821,7 @@ const products = [
       "De ortopediske verkstedene som har avtale med NAV, forplikter seg til å levere elektronisk oppgjør.",
     icon: "/src/_includes/svg/pictograms/slik-gjor-du-det.svg",
     type: ["Skjema"],
-    role: ["Ortopedisk verksted"],
+    role: ["Hjelpemiddelformidler"],
     contentBlocks: [
       {
         type: "markdown",
@@ -2855,7 +2852,10 @@ const products = [
       "Det er egne regler for å beregne økonomiske ytelser under institusjonsopphold og i fengsel. NAV har derfor behov for rask informasjon fra Kriminalomsorgen når en person kommer i varetekt eller soner en fengselsdom.",
     icon: "/src/_includes/svg/pictograms/slik-gjor-du-det.svg",
     type: ["Skjema"],
-    role: ["Andre"],
+    role: [
+      "Ansatt i NAV-kontor, kommunen eller fylkeskommunen",
+      "Andre",
+    ],
     contentBlocks: [
       {
         type: "markdown",
@@ -2897,7 +2897,7 @@ const products = [
     type: ["Skjema"],
     role: [
       "Andre",
-      "Ansatt i kommunen",
+      "Ansatt i NAV-kontor, kommunen eller fylkeskommunen",
     ],
     contentBlocks: [
       {
@@ -2938,7 +2938,10 @@ const products = [
       "Det er viktig at helseinstitusjoner melder raskt om personens opphold på helseinstitusjon. Dette har påvirkning på personens ytelser fra NAV, i form av at ytelser kan stanses eller reduseres.",
     icon: "/src/_includes/svg/pictograms/slik-gjor-du-det.svg",
     type: ["Skjema"],
-    role: ["Andre"],
+    role: [
+      "Andre",
+      "Ansatt i NAV-kontor, kommunen eller fylkeskommunen",
+    ],
     contentBlocks: [
       {
         type: "markdown",
