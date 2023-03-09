@@ -54,7 +54,7 @@
           <ul class="mt-2">
             {% for link in menu.shortcuts.linkList %}
               <li>
-                <a class="inline-flex items-center gap-3 px-2 py-1 -mx-2 text-lg leading-normal text-blue-500 underline rounded fine:hover:text-blue-80 fine:hover:bg-deepblue-50 fine:hover:no-underline" href="#">
+                <a class="inline-flex items-center gap-3 px-2 py-1.5 -mx-2 text-lg leading-normal text-blue-500 rounded fine:hover:text-blue-80 fine:hover:bg-deepblue-50 fine:hover:underline" href="#">
                   {% if link.icon %}
                     {{ link.icon | svgContents('w-6 h-6 opacity-80') | safe }}
                   {% endif %}
