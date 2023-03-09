@@ -12,15 +12,15 @@
     </title>
     <meta name="description" content="..." />
 
-    {% include "partials/fonts.njk" %}
+    {%- include "partials/fonts.njk" -%}
 
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2299%22>🧑‍💻</text></svg>" />
     <link rel="preconnect" href="https://www.nav.no" crossorigin />
     <link rel="preload" href="/assets/fonts/SourceSans3-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="/assets/main.min.css" type="text/css" />
-    {% block styles %}{% endblock %}
+    {%- block styles -%}{%- endblock -%}
     <script src="/assets/alpine.min.js" type="text/javascript" defer></script>
-    {% block script %}{% endblock %}
+    {%- block script -%}{%- endblock -%}
   </head>
   <body
     class="min-h-full leading-normal overflow-x-hidden overflow-y-scroll {{ bodyClass }}"
@@ -31,11 +31,11 @@
       notifyOpen: false
     }">
     <div class="relative z-10 bg-white" >
-    {% include "partials/banner.njk" %}
-    {% include "partials/header-new.njk" %}
-    {% block content %}{% endblock %}
-    {% include "partials/footer.njk" %}
-    {% include "partials/prototypeNav.njk" %}
+    {%- include "partials/banner.njk" -%}
+    {%- include "partials/header-new.njk" -%}
+    {%- block content -%}{%- endblock -%}
+    {%- include "partials/footer.njk" -%}
+    {%- include "partials/prototypeNav.njk" -%}
     </div>
   </body>
 </html>

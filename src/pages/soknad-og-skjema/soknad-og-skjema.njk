@@ -4,9 +4,9 @@ description: 'Grunnoppsett for søknader'
 order: 10
 tags: ['template']
 ---
-{% extends 'base-basic.njk' %}
+{%- extends 'base-basic.njk' -%}
 
-{% block content %}
+{%- block content -%}
   <main class="min-h-[61vh] text-lg text-gray-900">
     <div class="grid bg-white grid-cols-layout ">
       <div class="relative flex justify-between pt-8 col-narrow lg:col-normal">
@@ -37,25 +37,25 @@ tags: ['template']
             </div>
             <div class="px-4 py-3" x-show="stepperOpen">
               <ol class="navds-stepper">
-                {% for item in stepperList %}
+                {%- for item in stepperList -%}
                   <li class="navds-stepper__item">
                     <span class="navds-stepper__line navds-stepper__line--1" aria-hidden="true"></span>
                     <a href="#" class="navds-stepper__step
-                      {% if item.state === 'active' %}navds-stepper__step--active{% endif %}
-                      {% if item.state === 'complete' %}navds-stepper__step--complete{% endif %}">
+                      {%- if item.state === 'active' -%}navds-stepper__step--active{%- endif -%}
+                      {%- if item.state === 'complete' -%}navds-stepper__step--complete{%- endif -%}">
                       <span class="navds-stepper__marker" aria-hidden="true">
-                        {% if item.state === 'complete' %}
+                        {%- if item.state === 'complete' -%}
                           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" focusable="false"   aria-hidden="true"><path d="M7 13L10 16L17.5 8.5" stroke="currentColor" stroke-width="2" /></svg>
 
-                        {% else %}
+                        {%- else -%}
                           {{ loop.index }}
-                        {% endif %}
+                        {%- endif -%}
                       </span>
                       <span class="navds-stepper__content">{{ item.text }}</span>
                     </a>
                     <span class="navds-stepper__line navds-stepper__line--2" aria-hidden="true"></span>
                   </li>
-                {% endfor %}
+                {%- endfor -%}
               </ol>
 
             </div>
@@ -63,25 +63,25 @@ tags: ['template']
 
           <div class="hidden pt-10 md:block md:col-start-2">
             <ol class="navds-stepper">
-              {% for item in stepperList %}
+              {%- for item in stepperList -%}
                 <li class="navds-stepper__item">
                   <span class="navds-stepper__line navds-stepper__line--1" aria-hidden="true"></span>
                   <a href="#" class="navds-stepper__step
-                    {% if item.state === 'active' %}navds-stepper__step--active{% endif %}
-                    {% if item.state === 'complete' %}navds-stepper__step--complete{% endif %}">
+                    {%- if item.state === 'active' -%}navds-stepper__step--active{%- endif -%}
+                    {%- if item.state === 'complete' -%}navds-stepper__step--complete{%- endif -%}">
                     <span class="navds-stepper__marker" aria-hidden="true">
-                      {% if item.state === 'complete' %}
+                      {%- if item.state === 'complete' -%}
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" focusable="false"   aria-hidden="true"><path d="M7 13L10 16L17.5 8.5" stroke="currentColor" stroke-width="2" /></svg>
 
-                      {% else %}
+                      {%- else -%}
                         {{ loop.index }}
-                      {% endif %}
+                      {%- endif -%}
                     </span>
                     <span class="navds-stepper__content">{{ item.text }}</span>
                   </a>
                   <span class="navds-stepper__line navds-stepper__line--2" aria-hidden="true"></span>
                 </li>
-              {% endfor %}
+              {%- endfor -%}
             </ol>
           </div>
 
@@ -114,9 +114,9 @@ tags: ['template']
     </div>
   </div>
 </main>
-{% endblock %}
+{%- endblock -%}
 
-{% block styles %}
+{%- block styles -%}
   <style>
     .select {
       background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='none' %3E%3Cpath d='M18 9L12 15L6 9' stroke='%23404040' stroke-width='1.75'%3E%3C/path%3E%3C/svg%3E") no-repeat calc(100% - 0.5rem) 50%;
@@ -216,5 +216,5 @@ tags: ['template']
       border-color: var(--navds-global-color-gray-600);
     }
   </style>
-{% endblock %}
-{% block script %}{% endblock %}
+{%- endblock -%}
+{%- block script -%}{%- endblock -%}

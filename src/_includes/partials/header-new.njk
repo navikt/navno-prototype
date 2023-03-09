@@ -1,4 +1,4 @@
-{% set audience = audienceOverride or menu.audience %}
+{%- set audience = audienceOverride or menu.audience -%}
 
 <header class="relative z-40 grid bg-white isolate grid-cols-layout shadow-border" >
 
@@ -16,13 +16,13 @@
     </button>
     <div class="absolute px-4 mt-px -translate-x-1/2 left-1/2 top-full">
       <ul class="overflow-hidden text-gray-900 bg-white divide-y divide-gray-300 rounded shadow-xl max-w-max ring-1 ring-gray-200"  x-show="audienceDropdownOpen" x-on:click.outside="audienceDropdownOpen = false">
-        {% for item in audience %}
+        {%- for item in audience -%}
           <li class="grid">
             <a href="{{ item.href or '#' }}" class="py-2 px-3 border-l-4 fine:hover:bg-gray-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-800 {{ 'border-blue-500' if activeRole === item.title or activeRole === '' else 'border-transparent fine:hover:border-gray-300/75 opacity-70' }}">
               {{ item.title | safe }}
             </a>
           </li>
-        {% endfor %}
+        {%- endfor -%}
       </ul>
     </div>
   </div>
@@ -48,19 +48,19 @@
       </button>
       <div class="xs:absolute md:static xs:top-full xs:left-0">
         <ul class="justify-center text-lg bg-white border border-gray-200 divide-y divide-gray-200 rounded shadow-lg md:rounded-none md:bg-transparent md:shadow-none md:border-0 md:divide-y-0 md:gap-4 md:flex" x-bind:class="audienceDropdownOpen ? 'grid' : 'hidden md:flex'">
-          {% for item in audience %}
+          {%- for item in audience -%}
             <li class="grid">
               <a href="{{ item.href or '#' }}" class="focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-800 flex items-center py-2 px-3 md:px-0.5 md:pb-5 text-gray-900 border-l-4 md:border-l-0 md:border-b-4 md:pt-6 {{ 'border-blue-500' if activeRole === item.title else 'border-transparent fine:hover:border-gray-300/75 opacity-70' }}">
                 {{ item.title }} {{ item.active }}
               </a>
             </li>
-          {% endfor %}
+          {%- endfor -%}
         </ul>
       </div>
     </div>
 
     {# Menu Buttons #}
-    {% set menuButtonClasses = "flex flex-col sm:flex-row items-center justify-center py-2.5 px-3 leading-none font-semibold sm:gap-1 text-blue-500 sm:rounded md:px-4 sm:text-lg fine:hover:bg-deepblue-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-800" %}
+    {%- set menuButtonClasses = "flex flex-col sm:flex-row items-center justify-center py-2.5 px-3 leading-none font-semibold sm:gap-1 text-blue-500 sm:rounded md:px-4 sm:text-lg fine:hover:bg-deepblue-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-800" -%}
     <div class="flex items-end gap-2 ml-auto sm:py-4 md:py-3">
       <button class="{{ menuButtonClasses }}" x-on:click="notifyOpen = !notifyOpen, menuOpen = false" x-bind:class="notifyOpen && 'bg-deepblue-50'">
         <span class="relative">
@@ -82,8 +82,8 @@
   </nav>
 </header>
 
-{% include "partials/navigation.njk" %}
-{% include "partials/notifications.njk" %}
+{%- include "partials/navigation.njk" -%}
+{%- include "partials/notifications.njk" -%}
 
 {# Overlay #}
 <button class="fixed inset-0 z-30 w-full h-full bg-black/30 " x-bind:class="(menuOpen || notifyOpen) ? 'animate-fade-in' : 'hidden'" x-on:click="menuOpen = false, notifyOpen = false" x-on:keyup.escape.window="menuOpen = false, notifyOpen = false"></button>

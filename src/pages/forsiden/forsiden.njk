@@ -5,26 +5,26 @@ tags: ['template']
 order: 1
 permalink: '/index.html'
 ---
-{% extends 'base.njk' %}
+{%- extends 'base.njk' -%}
 
-{% block content %}
+{%- block content -%}
   <main class="text-gray-900" x-bind:inert="menuOpen || notifyOpen">
     <div class="grid py-8 bg-white grid-cols-layout md:py-12">
       <div class="col-wide">
         <h2 class="-mt-2 text-xl font-semibold md:text-3xl">Hva kan vi hjelpe deg med?</h2>
         <ul class="grid gap-2 mx-auto mt-4 lg:grid-cols-3 sm:grid-cols-2 sm:gap-4 md:gap-6">
-          {% for area in areaList %}
+          {%- for area in areaList -%}
             <li>
               <a class="relative flex items-center justify-between gap-4 z-10 bg-deepblue-50 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600 fine:hover:text-blue-600 fine:hover:shadow-xl fine:hover:bg-gray-100 focus:shadow-xl min-h-[7rem] lg:min-h-[9rem] pl-6 pr-[40%] py-2 overflow-hidden group c-area-card" href="#">
                 <div class="text-xl font-semibold leading-snug md:text-2xl group-fine:hover:underline">
                   {{ area.title | safe }}
                 </div>
-                {% if area.icon %}
+                {%- if area.icon -%}
                   {{ area.icon | svgContents("-z-10 right-0 h-full w-auto rounded-lg self-stretch absolute inset-y-0 pointer-events-none") | safe }}
-                {% endif %}
+                {%- endif -%}
               </a>
             </li>
-          {% endfor %}
+          {%- endfor -%}
         </ul>
       </div>
     </div>
@@ -33,16 +33,16 @@ permalink: '/index.html'
       <div class="col-wide">
         <h2 class="-mt-2 text-xl font-semibold md:text-3xl">Snarveier</h2>
         <ul class="grid gap-2 mt-4 md:grid-cols-2 sm:gap-3 md:gap-6 lg:grid-cols-3">
-          {% for shortcut in shortcutsList %}
+          {%- for shortcut in shortcutsList -%}
             <li>
               <a class="flex items-center gap-4 py-4 pl-5 pr-8 transition duration-300 ease-out bg-white rounded-lg shadow-sm sm:py-6 group fine:hover:text-blue-600 fine:hover:shadow-lg fine:hover:underline focus:outline-none focus:ring-2 focus:ring-blue-600" href="#">
-                {% if shortcut.icon %}
+                {%- if shortcut.icon -%}
                   {{ shortcut.icon | svgContents("w-12 h-12 md:w-16 md:h-16") | safe }}
-                {% endif %}
+                {%- endif -%}
                 <span class="max-w-[30ch] text-xl leading-snug font-semibold md:text-2xl">{{ shortcut.title | safe }}</span>
               </a>
             </li>
-          {% endfor %}
+          {%- endfor -%}
 
         </ul>
       </div>
@@ -53,16 +53,16 @@ permalink: '/index.html'
       <div class="col-wide">
         <h2 class="-mt-2 text-xl font-semibold md:text-3xl">Søke og ettersende</h2>
         <ul class="grid gap-2 mt-4 sm:gap-3 md:gap-6 md:grid-cols-2">
-          {% for form in formsList %}
+          {%- for form in formsList -%}
             <li>
               <a class="flex items-center gap-4 py-4 pl-5 pr-8 transition duration-300 ease-out bg-white rounded-lg shadow-sm sm:py-6 group fine:hover:text-blue-600 fine:hover:shadow-lg fine:hover:underline focus:outline-none focus:ring-2 focus:ring-blue-600" href="{{ form.href or '#'}}">
-                {% if form.icon %}
+                {%- if form.icon -%}
                   {{ form.icon | svgContents("w-12 h-12 md:w-16 md:h-16") | safe }}
-                {% endif %}
+                {%- endif -%}
                 <span class="max-w-[30ch] text-xl leading-snug font-semibold md:text-2xl">{{ form.title | safe }}</span>
               </a>
             </li>
-          {% endfor %}
+          {%- endfor -%}
         </ul>
       </div>
     </div>
@@ -71,12 +71,12 @@ permalink: '/index.html'
       <div class="col-wide">
         <h2 class="-mt-2 text-xl font-semibold md:text-3xl">Aktuelt</h2>
         <div class="grid gap-2 mt-4 sm:gap-4 md:gap-6 sm:grid-cols-2">
-          {% for news in newsList %}
+          {%- for news in newsList -%}
             <a class="grid gap-2 px-6 py-6 duration-300 ease-out bg-white rounded-lg shadow-sm group transition-custom fine:hover:text-blue-600 fine:hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-600" href="#">
               <span class="max-w-[30ch] text-xl font-semibold md:text-2xl group-fine:hover:text-blue-600 group-fine:hover:underline">{{ news.title | safe }}</span>
               <span class="text-lg opacity-70">{{ news.date }}</span>
             </a>
-          {% endfor %}
+          {%- endfor -%}
         </div>
       </div>
     </div>
@@ -105,9 +105,9 @@ permalink: '/index.html'
     </div>
 
   </main>
-{% endblock %}
+{%- endblock -%}
 
-{% block styles %}
+{%- block styles -%}
   <style>
     @media (prefers-reduced-motion: no-preference) and (pointer:fine) {
       .c-area-card,
@@ -185,4 +185,4 @@ permalink: '/index.html'
       }
     }
   </style>
-{% endblock %}
+{%- endblock -%}

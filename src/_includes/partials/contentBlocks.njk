@@ -1,15 +1,15 @@
 {%- from "macros/button.njk" import button -%}
 {%- from "macros/microcard.njk" import microcard -%}
 
-{% for block in product.contentBlocks %}
+{%- for block in product.contentBlocks -%}
 
-  {% if block.type === 'markdown' %}
+  {%- if block.type === 'markdown' -%}
     {{ block.data  | markdown | safe }}
-  {% endif %}
+  {%- endif -%}
 
-  {% if block.type === 'actions' %}
+  {%- if block.type === 'actions' -%}
   <div class="grid gap-1.5 sm:flex mt-3">
-    {% for item in block.data %}
+    {%- for item in block.data -%}
       {{ button(
         {
           text: item.text,
@@ -17,20 +17,20 @@
           variant: item.variant
         }
       ) }}
-    {% endfor %}
+    {%- endfor -%}
   </div>
-  {% endif %}
+  {%- endif -%}
 
-  {% if block.type === 'microcards' %}
+  {%- if block.type === 'microcards' -%}
     <div class="flex flex-wrap gap-1.5">
-    {% for item in block.data %}
+    {%- for item in block.data -%}
       {{ microcard(item) }}
-    {% endfor %}
+    {%- endfor -%}
   </div>
-  {% endif %}
+  {%- endif -%}
 
-  {% if block.type === 'line' %}
+  {%- if block.type === 'line' -%}
     <div class="border-t border-deepblue-100"></div>
-  {% endif %}
+  {%- endif -%}
 
-{% endfor %}
+{%- endfor -%}

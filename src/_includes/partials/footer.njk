@@ -10,20 +10,20 @@
     </div>
     <div class="pt-8 border-t border-white/10">
       <div class="sm:columns-2 md:columns-3">
-        {% for section in footer.links %}
+        {%- for section in footer.links -%}
           <div class="mb-8 sm:pr-8 md:mb-0">
             <h2 class="text-sm font-semibold tracking-widest uppercase text-deepblue-300">
               {{ section.title | safe }}
             </h2>
             <ul class="mt-2 mb-7 break-inside-avoid">
-              {% for item in section.linkList %}
+              {%- for item in section.linkList -%}
                 <li class="py-1 pr-2 break-before-avoid">
                   <a class="fine:hover:underline fine:hover:text-orange-200" href="#">{{ item.text }}</a>
                 </li>
-              {% endfor %}
+              {%- endfor -%}
             </ul>
           </div>
-        {% endfor %}
+        {%- endfor -%}
 
         <div class="-mt-2.5">
           <a href="#" class="inline-flex items-center gap-2 px-3 sm:-mx-3 py-1.5 bg-deepblue-700 border border-deepblue-600 fine:hover:border-deepblue-400/50 fine:hover:bg-deepblue-600 rounded fine:hover:shadow-lg fine:hover:text-orange-200">
@@ -37,9 +37,9 @@
 
     <div class="flex flex-col justify-between mt-6 sm:flex-row-reverse">
       <div class="flex flex-col justify-between gap-3 mt-6 sm:gap-6 sm:flex-row sm:self-end">
-        {% for link in footer.legal %}
+        {%- for link in footer.legal -%}
           <a class="fine:hover:underline fine:hover:text-orange-200" href="#">{{ link.text }}</a>
-        {% endfor %}
+        {%- endfor -%}
       </div>
 
       <div class="grid gap-2 mt-16">

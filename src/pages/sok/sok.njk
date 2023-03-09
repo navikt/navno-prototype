@@ -3,9 +3,9 @@ title: 'Søk på nav.no'
 description: 'Resultatside'
 order: 12
 ---
-{% extends 'base.njk' %}
+{%- extends 'base.njk' -%}
 
-{% block content %}
+{%- block content -%}
   <main class="min-h-[61vh] py-8 text-lg md:pt-12 md:pb-20 text-gray-900 grid grid-cols-layout">
     <div class="col-narrow md:col-wide md:grid md:grid-cols-[1.8fr_1.2fr] md:gap-x-12 items-start" x-data="{ filterOpen: false, searchFilter: 'innhold' }">
 
@@ -50,7 +50,7 @@ order: 12
               <fieldset>
                 <legend class="text-xl font-semibold">Søkefilter</legend>
                 <div class="mt-2">
-                  {% for item in filters %}
+                  {%- for item in filters -%}
                     <div
                       class="flex flex-wrap "
                       x-bind:class="searchFilter === '{{ item.title | slugify }}' ? 'isolate z-10 border-l-4 border-blue-500 ml-0.5 {{ 'mb-3' if item.children.length }}' : ''"
@@ -68,14 +68,14 @@ order: 12
                         >{{ item.title | safe }}</span>
                         <span class="ml-auto text-right">{{ (item.title | length * 4) }}</span>
                       </button>
-                      {% if item.children.length %}
+                      {%- if item.children.length -%}
                       <fieldset
                         class="w-full pl-4 pr-2"
                         x-bind:class="searchFilter === '{{ item.title | slugify }}' ? '' : 'hidden'"
                       >
                         <legend class="sr-only">Underkategorier</legend>
                         <ul>
-                          {% for subitem in item.children %}
+                          {%- for subitem in item.children -%}
                           <li class="flex items-baseline">
                             <input class="w-4 h-4 mr-2 translate-y-0.5 -translate-x-0.5" type="checkbox" name="{{ item.title | slugify }}-sublevel" id="{{ subitem | slugify }}-sublevel" />
                             <label class="inline-flex items-baseline justify-between flex-1 gap-2 py-1.5" for="{{ subitem | slugify }}-sublevel">
@@ -83,12 +83,12 @@ order: 12
                               <span class="ml-auto text-right">{{ subitem.length }}</span>
                             </label>
                           </li>
-                          {% endfor %}
+                          {%- endfor -%}
                         </ul>
                       </fieldset>
-                      {% endif %}
+                      {%- endif -%}
                     </div>
-                  {% endfor %}
+                  {%- endfor -%}
                 </div>
               </fieldset>
             </div>
@@ -123,17 +123,17 @@ order: 12
         </div>
 
         <div class="grid mt-2">
-          {% for item in range(1,10) %}
+          {%- for item in range(1,10) -%}
             <article class="py-4 border-t border-gray-200">
               <h3><a class="text-2xl font-semibold leading-tight text-blue-500 hover:underline hover:text-blue-600" href="#">Title</a></h3>
               <p class="">Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
               <p class="mt-2 text-base opacity-75">Publisert 01.12.2019</p>
             </article>
-          {% endfor %}
+          {%- endfor -%}
         </div>
       </div>
     </div>
   </main>
-{% endblock %}
+{%- endblock -%}
 
-{% block script %}{% endblock %}
+{%- block script -%}{%- endblock -%}

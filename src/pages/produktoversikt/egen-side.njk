@@ -16,20 +16,20 @@
   }
 }
 ---
-{% extends 'base.njk' %}
+{%- extends 'base.njk' -%}
 
-{% block content %}
+{%- block content -%}
   <main class="min-h-[50vh]">
     <div class="grid grid-cols-layout">
       <div class="pt-12 pb-8 col-narrow">
 
         <a href="/produktoversikt/?area={{ product.data.area | slugify }}&type={{ product.data.type | slugify }}" class="font-semibold tracking-wide text-blue-500 uppercase fine:hover:underline">Søknad og skjema fra A til Å</a>
         <h1 class="mt-1 text-5xl font-semibold">{{ product.title | safe }}</h1>
-        {% if product.data.ingress %}
+        {%- if product.data.ingress -%}
         <div class="mt-4 text-lg max-w-prose">
           <p class="mt-1 text-xl">{{ product.data.ingress | safe }}</p>
         </div>
-        {% endif %}
+        {%- endif -%}
       </div>
     </div>
 
@@ -42,7 +42,7 @@
     </div>
   </main>
 
-{% endblock %}
+{%- endblock -%}
 
-{% block styles %}{% endblock %}
-{% block script %}{% endblock %}
+{%- block styles -%}{%- endblock -%}
+{%- block script -%}{%- endblock -%}

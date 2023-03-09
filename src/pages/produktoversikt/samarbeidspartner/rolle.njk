@@ -13,15 +13,15 @@
 }
 ---
 
-{% extends 'base.njk' %}
+{%- extends 'base.njk' -%}
 
 {%- from "macros/button.njk" import button -%}
 {%- from "macros/microcard.njk" import microcard -%}
 {%- from "macros/filterGroup.njk" import filterGroup -%}
 
-{% set productsLength = products | filterByRole(role) | length %}
+{%- set productsLength = products | filterByRole(role) | length -%}
 
-{% block content %}
+{%- block content -%}
   <main class="py-12 text-lg text-gray-900"
     x-data="{
       typeFilter: new URLSearchParams(location.search).get('type') || 'alle',
@@ -79,7 +79,7 @@
     <div class="grid mt-8 lg:mt-12 grid-cols-layout">
       <div class="grid w-full gap-8 pb-20 lg:gap-x-16 lg:items-start lg:grid-flow-dense lg:grid-cols-sidebar col-narrow lg:col-wide lg:auto-rows-min">
 
-        {% if productsLength > 10 %}
+        {%- if productsLength > 10 -%}
         <div class="relative lg:row-start-1 lg:col-start-2" x-data="{ filterDrawer: false }">
           <button
             class="flex items-center justify-start gap-2.5 pl-3 pr-4 py-3 leading-none text-blue-600 bg-white rounded ring-2 ring-blue-500 hover:bg-blue-100 hover:text-blue-700 lg:hidden"
@@ -156,16 +156,16 @@
             }) }}
           </div>
         </div>
-        {% endif %}
+        {%- endif -%}
 
         <div class="lg:col-start-1 lg:row-span-3">
           <p class="mb-2">Viser <span x-text="count"></span> av {{ productsLength }} produkter og tjenester</p>
 
           <div class="border-b border-deepblue-100 -mx-clamp-gap sm:mx-0 py-0.5" x-ref="entries" x-show="count !== 0">
-            {% for product in products | sort(true, false, 'title') | reverse %}
-              {% if role in product.role %}
+            {%- for product in products | sort(true, false, 'title') | reverse -%}
+              {%- if role in product.role -%}
               <div
-                x-data="{ expanded: {{ 'true' if productsLength === 1 else 'false' }} }"
+                x-data="{ expanded: false }"
                 class="relative z-10 border-t border-gray-200 fine:hover:z-20"
                 x-show="filterItem($el)"
                 data-type="alle {% for item in product.type %}{{ item | slugify }} {% endfor %}"
@@ -173,17 +173,17 @@
                 <div
                   class="relative flex items-center gap-4 py-5 text-left rounded-lg px-clamp-gap sm:px-4 focus-within:z-20"
                   x-bind:class="expanded ? 'bg-deepblue-50 ring-1 ring-deepblue-50 fine:hover:bg-deepblue-100' : 'fine:hover:bg-deepblue-100'">
-                  {% if product.icon %}
+                  {%- if product.icon -%}
                     {{ product.icon | svgContents('w-12 h-12 shrink-0') | safe }}
-                  {% endif %}
+                  {%- endif -%}
                   <div class="grid gap-1">
                     <h2 class="text-xl font-semibold leading-tight">
                       {{ product.title | safe }}
                     </h2>
                     <p class="text-base opacity-80">
-                    {% for item in product.type %}
+                    {%- for item in product.type -%}
                       <span>{{ item }}</span>{{ ', ' if product.type.length > 1 and not loop.last }}
-                    {% endfor %}
+                    {%- endfor -%}
                     </p>
                     {# <p class="text-base">
                       {%- for item in product.role -%}
@@ -208,13 +208,13 @@
                 <div class="pt-5 pb-8 px-clamp-gap relative min-h-[20vh] markdown sm:px-20 mb-4" x-bind:hidden="!expanded" hidden>
                   <p>{{ product.ingress }}</p>
 
-                  {% if product.contentBlocks %}
-                    {% include "partials/contentBlocks.njk" %}
-                  {% endif %}
+                  {%- if product.contentBlocks -%}
+                    {%- include "partials/contentBlocks.njk" -%}
+                  {%- endif -%}
                 </div>
               </div>
-              {% endif %}
-            {% endfor %}
+              {%- endif -%}
+            {%- endfor -%}
           </div>
           <div x-show="count === 0" class="p-6 py-8 text-center overflow-hidden grid items-center leading-snug rounded-lg bg-gray-100 min-h-[4.75rem] lg:col-span-6">
             <p class="max-w-prose">Ingen søknader eller skjema er merket med denne kombinasjonen av type og rolle.</p>
@@ -232,4 +232,4 @@
       </div>
     </div>
   </main>
-{% endblock %}
+{%- endblock -%}

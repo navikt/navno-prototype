@@ -6,13 +6,13 @@ order: '5'
 activeRole: "Privat"
 permalink: "/produktoversikt/"
 ---
-{% extends 'base.njk' %}
+{%- extends 'base.njk' -%}
 
 {%- from "macros/button.njk" import button -%}
 {%- from "macros/microcard.njk" import microcard -%}
 {%- from "macros/filterGroup.njk" import filterGroup -%}
 
-{% block content %}
+{%- block content -%}
   <main class="py-12 text-lg text-gray-900"
     x-data="{
       typeFilter: new URLSearchParams(location.search).get('type') || 'alle',
@@ -172,7 +172,7 @@ permalink: "/produktoversikt/"
           <p class="mb-2">Viser <span x-text="count"></span> av {{ products.length }} produkter og tjenester</p>
 
           <div class="border-b border-deepblue-100" x-ref="entries" x-show="count !== 0">
-            {% for product in products | sort(true, false, 'title') | reverse %}
+            {%- for product in products | sort(true, false, 'title') | reverse -%}
               <div
                 x-data="{ expanded: false }"
                 class="border-t focus-within:z-10 -mx-clamp-gap px-clamp-gap sm:mx-0 sm:px-0 border-deepblue-100"
@@ -181,18 +181,18 @@ permalink: "/produktoversikt/"
                 data-area="alle {% for item in product.area %}{{ item | slugify }} {% endfor %}">
 
                 <div class="relative flex items-center gap-4 py-5 text-left rounded-lg px-clamp-gap sm:px-4 focus-within:z-20" x-bind:class="expanded ? 'bg-deepblue-50 ring-1 ring-deepblue-50 fine:hover:bg-deepblue-100' : 'fine:hover:bg-deepblue-100'">
-                  {% if product.icon %}
+                  {%- if product.icon -%}
                     {{ product.icon | svgContents('w-12 h-12 shrink-0') | safe }}
-                  {% endif %}
+                  {%- endif -%}
                   <div class="grid gap-0.5">
                     <h2 class="text-xl font-semibold leading-tight">
                       {{ product.title | safe }}
                     </h2>
                     {# <p class="text-base">{{ product.ingress }}</p> #}
                     <p class="pr-12 text-base opacity-80">
-                      {% for item in product.type %}
+                      {%- for item in product.type -%}
                         <span>{{ item }}</span>,
-                      {% endfor %}
+                      {%- endfor -%}
                       {%- for item in product.area -%}
                         <span>{{ item }}</span>{{ ', ' if loop.length > 1 and not loop.last }}
                       {%- endfor -%}
@@ -212,16 +212,16 @@ permalink: "/produktoversikt/"
 
                 <div class="pt-5 pb-8 px-clamp-gap relative min-h-[20vh] markdown sm:px-20 mb-4" x-bind:hidden="!expanded" hidden>
                   <p>{{ product.ingress }}</p>
-                  {% if product.contentBlocks %}
-                    {% include "partials/contentBlocks.njk" %}
-                  {% else %}
+                  {%- if product.contentBlocks -%}
+                    {%- include "partials/contentBlocks.njk" -%}
+                  {%- else -%}
                   <div class="mt-4 italic">
                     <p>Innhold om søknader eller skjema er ikke lagt inn enda.</p>
                   </div>
-                  {% endif %}
+                  {%- endif -%}
                 </div>
               </div>
-            {% endfor %}
+            {%- endfor -%}
           </div>
           <div x-show="count === 0" class="p-6 py-8 text-center overflow-hidden grid items-center leading-snug rounded-lg bg-gray-100 min-h-[4.75rem] lg:col-span-6">
             <p class="max-w-prose">Ingen søknader eller skjema er merket med denne kombinasjonen av type og område.</p>
@@ -239,4 +239,4 @@ permalink: "/produktoversikt/"
       </div>
     </div>
   </main>
-{% endblock %}
+{%- endblock -%}

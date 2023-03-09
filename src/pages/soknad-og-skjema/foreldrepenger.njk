@@ -6,9 +6,9 @@ tags: ['template']
 permalink: "/soknad-og-skjema/{{ page.fileSlug }}/"
 order: 8
 ---
-{% extends 'base-basic.njk' %}
+{%- extends 'base-basic.njk' -%}
 
-{% block content %}
+{%- block content -%}
   <main class="min-h-[70vh]">
     <div class="grid grid-cols-layout">
       <div class="relative pt-8 col-narrow lg:col-normal">
@@ -69,7 +69,7 @@ order: 8
     </div>
   </main>
 
-{% endblock %}
+{%- endblock -%}
 
-{% block styles %}{% endblock %}
-{% block script %}{% endblock %}
+{%- block styles -%}{%- endblock -%}
+{%- block script -%}{%- endblock -%}

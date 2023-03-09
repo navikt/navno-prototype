@@ -2,7 +2,7 @@
 permalink: false
 ---
 const products = [
-{%- for item in collections.produkt %}
+{%- for item in collections.produkt -%}
   {
     title: "{{ item.data.title }}",
     ingress: "{{ item.data.ingress | striptags }}",
@@ -11,7 +11,7 @@ const products = [
     area: {{ item.data.area | console | safe }},
     contentBlocks: [`{{ item.content | safe }}`],
   },
-{%- endfor %}
+{%- endfor -%}
 ]
 {#
     title: "Sykepengeforsikring for selvstendig næringsdrivende",
