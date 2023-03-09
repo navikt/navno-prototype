@@ -1871,6 +1871,53 @@ const products = [
         ],
       },
       {
+        type: "markdown",
+        data: `### Send oversikt over arbeidstimer`,
+      },
+      {
+        type: "actions",
+        data: [
+          {
+            text: "Send inn",
+            variant: "primary",
+          },
+        ],
+      },
+      {
+        type: "line",
+      },
+      {
+        type: "markdown",
+        data: `### Send egenerklæring for overdragelse av lønnskrav`,
+      },
+      {
+        type: "actions",
+        data: [
+          {
+            text: "Send inn",
+            variant: "primary",
+          },
+        ],
+      },
+      {
+        type: "line",
+      },
+      {
+        type: "markdown",
+        data: `### Send inn næringsfaglig vurdering av etableringsplaner
+        Dette sender du inn hvis du får dagpenger, arbeidsavklaringspenger (AAP) eller overgangsstønad og ønsker å beholde pengestøtten mens du etablerer egen virksomhet.
+        Du må innhente en næringsfaglig vurdering av etableringsplanene dine fra fylkeskommunen, kommunen eller en annen kompetent instans, før NAV kan behandle søknaden.`,
+      },
+      {
+        type: "actions",
+        data: [
+          {
+            text: "Send inn",
+            variant: "primary",
+          },
+        ],
+      },
+      {
         type: "line",
       },
       {
@@ -1913,10 +1960,10 @@ const products = [
       {
         type: "line",
       },
-
       {
         type: "markdown",
-        data: `### Søk om dagpenger ved permittering`,
+        data: `### Søk om dagpenger ved permittering
+        Hvis du ikke vil søke om dagpenger digitalt, kan du sende søknaden i posten.`,
       },
       {
         type: "actions",
@@ -1933,7 +1980,8 @@ const products = [
 
       {
         type: "markdown",
-        data: `### Søk om dagpenger når du ikke er permittert`,
+        data: `### Søk om dagpenger når du ikke er permittert
+        Hvis du ikke vil søke om dagpenger digitalt, kan du sende søknaden i posten.`,
       },
       {
         type: "actions",
@@ -1950,7 +1998,8 @@ const products = [
 
       {
         type: "markdown",
-        data: `### Søk om å gjenoppta dagpenger ved permittering`,
+        data: `### Søk om å gjenoppta dagpenger ved permittering
+        Hvis du ikke vil søke om dagpenger digitalt, kan du sende søknaden i posten.`,
       },
       {
         type: "actions",
@@ -1967,7 +2016,8 @@ const products = [
 
       {
         type: "markdown",
-        data: `### Søk om å gjenoppta dagpenger når du ikke er permittert`,
+        data: `### Søk om å gjenoppta dagpenger når du ikke er permittert
+        Hvis du ikke vil søke om dagpenger digitalt, kan du sende søknaden i posten.`,
       },
       {
         type: "actions",
