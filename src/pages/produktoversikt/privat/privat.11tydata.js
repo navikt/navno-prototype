@@ -501,10 +501,66 @@ const products = [
   {
     title: "Kontantstøtte",
     ingress:
-      "Kontantstøtte er penger du kan få hvis du har barn mellom 1 og 2 år som ikke har fått tildelt fulltidsplass i barnehage.",
+      "Pengestøtte når du har barn mellom 1 og 2 år som ikke har fått fulltidsplass i barnehage.",
     icon: "/src/_includes/svg/pictograms/kontantstotte.svg",
     type: ["Pengestøtte"],
     area: ["Familie og barn"],
+    contentBlocks: [
+      {
+        type: "markdown",
+        data: `### Søk om kontantstøtte
+        Du kan tidligst søke den måneden barnet fyller ett år.
+        Hvis dere som er foreldre bor sammen, søker én av dere.
+        Hvis dere bor hver for dere, er det den barnet bor fast sammen med som kan søke om kontantstøtte.
+        Hvis dere har inngått en skriftlig avtale om delt bosted etter barneloven § 36, kan dere bli enige om å dele kontantstøtten. Dere må søke om kontantstøtte hver for dere.`,
+      },
+      {
+        type: "actions",
+        data: [
+          {
+            text: "Send søknad",
+            variant: "primary",
+          },
+        ],
+      },
+      {
+        type: "markdown",
+        data: `Du kan ikke få etterbetalt kontantstøtte for mer enn 3 måneder før den kalendermåneden du søkte.`,
+      },
+      {
+        type: "line",
+      },
+      {
+        type: "markdown",
+        data: `### Send tilleggsskjema for utbetaling av støtten i et annet EØS-land
+        Dette skjemaet bruker du hvis du jobber i Norge og barnet ditt bor i et annet EØS-land. Skjemaet er et vedlegg til søknaden.`,
+      },
+      {
+        type: "actions",
+        data: [
+          {
+            text: "Send søknad",
+            variant: "primary",
+          },
+        ],
+      },
+      {
+        type: "line",
+      },
+      {
+        type: "markdown",
+        data: `### Mer om`,
+      },
+      {
+        type: "microcards",
+        data: [
+          {
+            text: "Kontantstøtte",
+            dot: "bg-green-300",
+          },
+        ],
+      },
+    ],
   },
   {
     title: "Kontonummer internasjonalt – slik endrer du",
@@ -1362,6 +1418,114 @@ const products = [
     ],
   },
   {
+    title: "Foreldrepenger (testversjon)",
+    ingress:
+      "Foreldrepengene skal erstatte inntekten din når du skal være hjemme med barnet i forbindelse med fødsel eller adopsjon.",
+    icon: "/src/_includes/svg/pictograms/foreldrepenger.svg",
+    type: ["Pengestøtte"],
+    area: ["Familie og barn"],
+    contentBlocks: [
+      {
+        type: "markdown",
+        data: `### Søk om foreldrepenger digitalt
+        Du bruker denne søknaden både når du søker om foreldrepenger første gang og hvis du skal søke om endring eller nytt uttak av foreldrepenger.`,
+      },
+      {
+        type: "actions",
+        data: [
+          {
+            text: "Send søknad",
+            href: "/soknad-og-skjema/foreldrepenger/",
+            variant: "primary",
+          },
+        ],
+      },
+      {
+        type: "line",
+      },
+      {
+        type: "markdown",
+        data: `### Søk om foreldrepenger ved fødsel
+        Hvis du ikke vil søke om foreldrepenger digitalt, kan du sende søknaden i posten.`,
+      },
+      {
+        type: "actions",
+        data: [
+          {
+            text: "Send søknad i posten",
+            variant: "primary",
+          },
+        ],
+      },
+      {
+        type: "line",
+      },
+      {
+        type: "markdown",
+        data: `### Søk om foreldrepenger ved adopsjon
+        Hvis du ikke vil søke om foreldrepenger digitalt, kan du sende søknaden i posten.`,
+      },
+      {
+        type: "actions",
+        data: [
+          {
+            text: "Send søknad i posten",
+            variant: "primary",
+          },
+        ],
+      },
+      {
+        type: "line",
+      },
+      {
+        type: "markdown",
+        data: `### Søk om endring eller nytt uttak av foreldrepenger
+        Hvis du ikke vil søke om endring eller nytt uttak av foreldrepenger digitalt, kan du sende søknaden i posten.`,
+      },
+      {
+        type: "actions",
+        data: [
+          {
+            text: "Send søknad i posten",
+            variant: "primary",
+          },
+        ],
+      },
+      {
+        type: "line",
+      },
+      {
+        type: "markdown",
+        data: `### Send inn opplysninger om inntekt som selvstendig næringsdrivende eller frilanser`,
+      },
+      {
+        type: "actions",
+        data: [
+          {
+            text: "Send søknad",
+            variant: "primary",
+          },
+        ],
+      },
+      {
+        type: "line",
+      },
+      {
+        type: "markdown",
+        data: `### Mer om`,
+      },
+      {
+        type: "microcards",
+        data: [
+          {
+            text: "Dagpenger",
+            dot: "bg-green-300",
+          },
+        ],
+      },
+    ],
+  },
+  {
     title: "Stønad til barnetilsyn for enslig mor eller far",
     ingress:
       "Dekker deler av utgiftene til barnehage, skolefritidsordning (SFO) eller dagmamma når du er alene med barn og er i arbeid.",
@@ -1725,7 +1889,7 @@ const products = [
     ],
   },
   {
-    title: "Dagpenger 2",
+    title: "Dagpenger (testversjon)",
     ingress:
       "Har du blitt arbeidsledig, kan du ha rett til dagpenger eller annen økonomisk støtte fra NAV, og hjelp til å komme i arbeid.",
     icon: "/src/_includes/svg/pictograms/dagpenger.svg",
