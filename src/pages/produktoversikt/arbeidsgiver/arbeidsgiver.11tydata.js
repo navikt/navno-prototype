@@ -469,7 +469,10 @@ const products = [
       "Tiltak",
       "Refusjon",
     ],
-    area: ["Inkludering og tilrettelegging"],
+    area: [
+      "Inkludering og tilrettelegging",
+      "Helse og sykdom",
+    ],
     contentBlocks: [
       {
         type: "markdown",
