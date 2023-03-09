@@ -782,7 +782,8 @@ const products = [
     contentBlocks: [
       {
         type: "markdown",
-        data: `Du bruker samme søknad både hvis du søker for første gang og hvis du søker forlengelse eller utvidelse av stønadstiden din.
+        data: `### Søk om overgangsstønad
+        Du bruker samme søknad både hvis du søker for første gang og hvis du søker forlengelse eller utvidelse av stønadstiden din.
         Hvis du har BankID, er det raskt og enkelt å søke overgangsstønad digitalt. Den digitale søknaden tilpasser spørsmålene til situasjonen din, og du får beskjed underveis hvis du må dokumentere noen av opplysningene dine.`,
       },
       {
@@ -1321,6 +1322,7 @@ const products = [
         data: [
           {
             text: "Send søknad",
+            href: "/soknad-og-skjema/foreldrepenger/",
             variant: "primary",
           },
         ],
@@ -1630,6 +1632,7 @@ const products = [
         data: [
           {
             text: "Send søknad",
+            href: "/soknad-og-skjema/dagpenger/",
             variant: "primary",
           },
         ],
