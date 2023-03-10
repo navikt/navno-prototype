@@ -3,72 +3,49 @@ title: 'Søknadside'
 description: 'Grunnoppsett for søknader'
 order: 10
 tags: ['template']
+bodyClass: 'bg-white'
 ---
 {%- extends 'base-basic.njk' -%}
 
 {%- block content -%}
-  <main class="min-h-[61vh] text-lg text-gray-900">
-    <div class="grid bg-white grid-cols-layout ">
-      <div class="relative flex justify-between pt-8 col-narrow lg:col-normal">
-        <div class="order-2 hidden ml-24 xs:block">
-          {{ '/src/_includes/svg/pictograms/soknad-og-skjema.svg' | svgContents('w-[12vw] h-auto overflow-hidden max-w-[6rem]') | safe }}
-        </div>
-        <div>
-          <p class="mt-3 text-base tracking-wider uppercase opacity-70">
-            Søknad
-          </p>
-          <h1 class="mt-1 text-3xl font-semibold leading-tight md:text-5xl md:leading-tight">Søknad om dagpenger</h1>
-        </div>
+  <main class="grid py-8 text-lg md:py-12 grid-cols-layout">
+    <div class="relative col-wide grid sm:grid-cols-[6rem_auto] gap-x-8 items-start mb-12">
+
+      {# Pictogram #}
+      {{ '/src/_includes/svg/pictograms/soknad-og-skjema.svg' | svgContents('w-full h-auto max-w-20 md:ml-2 text-green-800 absolute right-0 -top-1.5 sm:relative') | safe }}
+
+      {# Intro #}
+      <div class="sm:col-start-2 sm:row-start-1">
+        <h1 class="text-3xl font-semibold leading-tight md:text-5xl md:leading-tight">Søknad om dagpenger</h1>
+        <p class="mt-2 text-base tracking-wider uppercase opacity-70">
+          Søknad
+        </p>
       </div>
-      <div class="relative py-8 col-narrow lg:col-normal">
-        <div class="md:grid md:grid-flow-row-dense md:gap-20 md:grid-cols-[2.2fr_0.8fr]">
-          <div class="mb-3 -mx-3 md:col-start-1 md:hidden" x-data="{ stepperOpen: false }" x-bind:class="stepperOpen && 'bg-gray-50 xs:rounded md:bg-transparent'">
-            <div class="relative py-3 pr-3 pl-9 fine:hover:bg-blue-50 xs:rounded">
-              <div class="flex items-center gap-3 ">
-                <h2 class="text-2xl font-semibold">Arbeidsforhold i EØS</h2>
-                <button class="absolute inset-0 flex items-start px-2 pt-4" x-on:click="stepperOpen = !stepperOpen">
-                  <span class="sr-only">Vis seksjoner</span>
-                  <svg class="flex-none w-6 h-6 pointer-events-none" x-bind:class="stepperOpen && 'rotate-180'" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false" >
-                    <path d="M18 9L12 15L6 9" stroke="currentColor" stroke-width="2" />
-                  </svg>
-                </button>
-              </div>
-              <p class="text-sm">Steg 5 av 14</p>
-            </div>
-            <div class="px-4 py-3" x-show="stepperOpen">
-              <ol class="navds-stepper">
-                {%- for item in stepperList -%}
-                  <li class="navds-stepper__item">
-                    <span class="navds-stepper__line navds-stepper__line--1" aria-hidden="true"></span>
-                    <a href="#" class="navds-stepper__step
-                      {%- if item.state === 'active' -%}navds-stepper__step--active{%- endif -%}
-                      {%- if item.state === 'complete' -%}navds-stepper__step--complete{%- endif -%}">
-                      <span class="navds-stepper__marker" aria-hidden="true">
-                        {%- if item.state === 'complete' -%}
-                          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" focusable="false"   aria-hidden="true"><path d="M7 13L10 16L17.5 8.5" stroke="currentColor" stroke-width="2" /></svg>
 
-                        {%- else -%}
-                          {{ loop.index }}
-                        {%- endif -%}
-                      </span>
-                      <span class="navds-stepper__content">{{ item.text }}</span>
-                    </a>
-                    <span class="navds-stepper__line navds-stepper__line--2" aria-hidden="true"></span>
-                  </li>
-                {%- endfor -%}
-              </ol>
+      <div class="sm:col-start-2 md:grid md:grid-cols-[2.1fr_0.9fr] gap-x-16 items-start gap-4 mt-12">
 
+        {# Stepper (mobile) #}
+        <div class="mb-3 rounded-lg max-w-prose md:col-start-1 md:hidden bg-blue-50" x-data="{ stepperOpen: false }" x-bind:class="stepperOpen && 'bg-gray-50 rounded-lg md:bg-transparent'">
+          <div class="relative px-4 py-3 rounded-lg fine:hover:bg-blue-50">
+            <div class="flex items-center gap-3 pr-8">
+              <h2 class="text-2xl font-semibold">Arbeidsforhold i EØS</h2>
+              <button class="absolute inset-0 flex items-center justify-end px-4 rounded-lg" x-on:click="stepperOpen = !stepperOpen">
+                <span class="sr-only">Vis seksjoner</span>
+                <svg class="flex-none w-6 h-6 -translate-y-px pointer-events-none" x-bind:class="stepperOpen && 'rotate-180'" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false" >
+                  <path d="M18 9L12 15L6 9" stroke="currentColor" stroke-width="1.75" opacity="0.8" />
+                </svg>
+              </button>
             </div>
+            <p class="text-base">Steg 5 av 14</p>
           </div>
-
-          <div class="hidden pt-10 md:block md:col-start-2">
+          <div class="px-4 py-3" x-show="stepperOpen">
             <ol class="navds-stepper">
               {%- for item in stepperList -%}
                 <li class="navds-stepper__item">
                   <span class="navds-stepper__line navds-stepper__line--1" aria-hidden="true"></span>
                   <a href="#" class="navds-stepper__step
-                    {%- if item.state === 'active' -%}navds-stepper__step--active{%- endif -%}
-                    {%- if item.state === 'complete' -%}navds-stepper__step--complete{%- endif -%}">
+                    {% if item.state === 'active' %}navds-stepper__step--active{% endif %}
+                    {% if item.state === 'complete' %}navds-stepper__step--complete{% endif %}">
                     <span class="navds-stepper__marker" aria-hidden="true">
                       {%- if item.state === 'complete' -%}
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" focusable="false"   aria-hidden="true"><path d="M7 13L10 16L17.5 8.5" stroke="currentColor" stroke-width="2" /></svg>
@@ -83,43 +60,72 @@ tags: ['template']
                 </li>
               {%- endfor -%}
             </ol>
-          </div>
 
-          <div class="mt-6 md:mt-0 md:col-start-1">
-            <div class="max-w-prose">
-              <div class="hidden mt-6 mb-4 md:block">
-                <h2 class="text-2xl font-semibold">Arbeidsforhold i EØS</h2>
-                <p class="text-sm">Steg 5 av 14</p>
-              </div>
-
-              <p>NAV har registrert følgende kontaktinformasjon. Du kan gjøre endringer på&nbsp;<strong>Min&nbsp;side</strong>.</p>
-
-              <div class="mt-6">
-                <label class="font-semibold" for="country">Hvilket land bor du i?</label>
-                <p class="text-base">Med bostedsland mener vi ditt vanlige oppholdssted, som er der du eier eller leier bolig og tilbringer mesteparten av tiden din.</p>
-                <select id="country" class="select w-full px-2.5 py-2 mt-3 border border-gray-300 rounded appearance-none">
-                  <option checked>Velg land</option>
-                  <option value="1">Sveits</option>
-                  <option value="2">Ikke Sveits</option>
-                </select>
-              </label>
-            </div>
-
-            <div class="h-[800px] bg-white mt-12"></div>
           </div>
         </div>
+
+        {# Stepper (desktop) #}
+        <div class="hidden md:block md:col-start-2 sm:row-start-1">
+          <ol class="navds-stepper">
+            {%- for item in stepperList -%}
+              <li class="navds-stepper__item">
+                <span class="navds-stepper__line navds-stepper__line--1" aria-hidden="true"></span>
+                <a href="#" class="navds-stepper__step
+                  {% if item.state === 'active' %}navds-stepper__step--active{% endif %}
+                  {% if item.state === 'complete' %}navds-stepper__step--complete{% endif %}">
+                  <span class="navds-stepper__marker" aria-hidden="true">
+                    {%- if item.state === 'complete' -%}
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" focusable="false"   aria-hidden="true"><path d="M7 13L10 16L17.5 8.5" stroke="currentColor" stroke-width="2" /></svg>
+
+                    {%- else -%}
+                      {{ loop.index }}
+                    {%- endif -%}
+                  </span>
+                  <span class="navds-stepper__content">{{ item.text }}</span>
+                </a>
+                <span class="navds-stepper__line navds-stepper__line--2" aria-hidden="true"></span>
+              </li>
+            {%- endfor -%}
+          </ol>
+        </div>
+
+        {# Main content #}
+        <div class="md:col-start-1 sm:row-start-1">
+          <div class="max-w-prose">
+            <div class="hidden mb-7 md:block">
+              <h2 class="text-2xl font-semibold">Arbeidsforhold i EØS</h2>
+              <p class="text-base">Steg 5 av 14</p>
+            </div>
+
+            <p>NAV har registrert følgende kontaktinformasjon. Du kan gjøre endringer på&nbsp;<strong>Min&nbsp;side</strong>.</p>
+
+            <div class="p-4 mt-6 rounded md:p-6 bg-gray-50">
+              <label class="font-semibold" for="country">Hvilket land bor du i?</label>
+              <p class="text-base">Med bostedsland mener vi ditt vanlige oppholdssted, som er der du eier eller leier bolig og tilbringer mesteparten av tiden din.</p>
+              <select id="country" class="bg-white select w-full px-2.5 py-2 mt-3 border border-gray-300 rounded appearance-none">
+                <option checked>Velg land</option>
+                <option value="1">Sveits</option>
+                <option value="2">Ikke Sveits</option>
+              </select>
+            </label>
+          </div>
+
+          <div class="h-[800px] bg-white mt-12"></div>
+        </div>
+      </div>
 
       </div>
 
     </div>
-  </div>
 </main>
 {%- endblock -%}
 
 {%- block styles -%}
   <style>
     .select {
-      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='none' %3E%3Cpath d='M18 9L12 15L6 9' stroke='%23404040' stroke-width='1.75'%3E%3C/path%3E%3C/svg%3E") no-repeat calc(100% - 0.5rem) 50%;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='none' %3E%3Cpath d='M18 9L12 15L6 9' stroke='%23404040' stroke-width='1.75'%3E%3C/path%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: calc(100% - 0.5rem) 50%;
     }
     .navds-stepper {
       --navds-global-color-gray-600: rgba(112, 112, 112, 1);
@@ -127,6 +133,7 @@ tags: ['template']
       --navds-global-color-deepblue-500: rgba(0, 91, 130, 1);
       --navds-global-color-blue-800: rgba(0, 52, 125, 1);
       --navds-global-color-blue-500: rgba(0, 103, 197, 1);
+      --navds-global-color-blue-50: rgba(230, 240, 255, 1);
       --navds-global-color-white: rgba(255, 255, 255, 1);
 
       --navds-stepper-marker-size: 1.75rem;
@@ -146,11 +153,11 @@ tags: ['template']
       grid-template-rows: [line-1] auto [content-start marker] var(--navds-stepper-marker-size) [line-2] auto [content-end];
       grid-template-columns: [marker] var(--navds-stepper-marker-size) [content] auto;
       justify-items: start;
-      gap: 0.5rem;
+      gap: 0.25rem 0.5rem;
     }
     .navds-stepper__line {
-      background-color: var(--navds-global-color-gray-400);
-      width: 0.125rem;
+      background-color: var(--navds-global-color-blue-500);
+      width: 1.5px;
       height: 100%;
       min-height: 0.5rem;
       justify-self: center;
@@ -179,7 +186,8 @@ tags: ['template']
       place-items: center;
       width: var(--navds-stepper-marker-size);
       height: var(--navds-stepper-marker-size);
-      border: 2px solid currentColor;
+      border: 2px solid transparent;
+      background-color: var(--navds-global-color-blue-50);
       border-radius: 999px;
       line-height: 1;
       flex-shrink: 0;
@@ -201,8 +209,11 @@ tags: ['template']
     :where(.navds-stepper__step--active) .navds-stepper__content {
       color: var(--navds-global-color-deepblue-500);
     }
-    :where(.navds-stepper__step:not(.navds-stepper__step--active):hover) .navds-stepper__content {
+    :where(.navds-stepper__step--complete) .navds-stepper__content {
       text-decoration: underline;
+    }
+    :where(.navds-stepper__step:not(.navds-stepper__step--active):hover) .navds-stepper__content {
+      text-decoration: none;
     }
     :where(.navds-stepper__step--active, .navds-stepper__step--complete) .navds-stepper__marker {
       color: var(--navds-global-color-white);
