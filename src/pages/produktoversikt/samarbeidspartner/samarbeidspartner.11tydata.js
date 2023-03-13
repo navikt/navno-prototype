@@ -2075,8 +2075,8 @@ const products = [
     contentBlocks: [
       {
         type: "markdown",
-        data: `### Registrer deltakere
-        Dette gjør du digitalt i Deltakeroversikten.`,
+        data: `### Hold oversikt og send endringer til NAV
+        Hold oversikt over deltakere på tiltaket og kommuniser med NAV om endringer i deltakeroversikten.`,
       },
       {
         type: "actions",
@@ -3174,7 +3174,7 @@ const products = [
   {
     title: "Jobbklubb",
     ingress: "",
-    icon: "/src/_includes/svg/pictograms/slik-gjor-du-det.svg",
+    icon: "/src/_includes/svg/pictograms/neutral.svg",
     type: ["Tiltak"],
     role: [
       "Tiltaksarrangør",
