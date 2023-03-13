@@ -1791,40 +1791,40 @@ const products = [
     type: ["Tiltak"],
     role: ["Tiltaksarrangør"],
     contentBlocks: [
-      {
-        type: "markdown",
-        data: `### Registrer deltakere
-          Dette gjør du digitalt i Deltakeroversikten.`,
-      },
-      {
-        type: "actions",
-        data: [
-          {
-            text: "Bruk deltakeroversikten",
-            variant: "primary",
-          },
-        ],
-      },
-      {
-        type: "markdown",
-        data: `Hvis du ikke har mulighet til å bruke deltakeroversikten, kan du sende fremmøteoversikt i posten.`,
-      },
-      {
-        type: "actions",
-        data: [
-          {
-            text: "Send oversikt i posten",
-            variant: "secondary",
-          },
-          {
-            text: "Ettersend dokumentasjon i posten",
-            variant: "secondary",
-          },
-        ],
-      },
-      {
-        type: "line",
-      },
+      // {
+      //   type: "markdown",
+      //   data: `### Registrer deltakere
+      //     Dette gjør du digitalt i Deltakeroversikten.`,
+      // },
+      // {
+      //   type: "actions",
+      //   data: [
+      //     {
+      //       text: "Bruk deltakeroversikten",
+      //       variant: "primary",
+      //     },
+      //   ],
+      // },
+      // {
+      //   type: "markdown",
+      //   data: `Hvis du ikke har mulighet til å bruke deltakeroversikten, kan du sende fremmøteoversikt i posten.`,
+      // },
+      // {
+      //   type: "actions",
+      //   data: [
+      //     {
+      //       text: "Send oversikt i posten",
+      //       variant: "secondary",
+      //     },
+      //     {
+      //       text: "Ettersend dokumentasjon i posten",
+      //       variant: "secondary",
+      //     },
+      //   ],
+      // },
+      // {
+      //   type: "line",
+      // },
       {
         type: "markdown",
         data: `### Hold oversikt og send endringer til NAV
@@ -2075,8 +2075,8 @@ const products = [
     contentBlocks: [
       {
         type: "markdown",
-        data: `### Registrer deltakere
-        Dette gjør du digitalt i Deltakeroversikten.`,
+        data: `### Hold oversikt og send endringer til NAV
+        Hold oversikt over deltakere på tiltaket og kommuniser med NAV om endringer i deltakeroversikten.`,
       },
       {
         type: "actions",
@@ -3174,11 +3174,10 @@ const products = [
   {
     title: "Jobbklubb",
     ingress: "",
-    icon: "/src/_includes/svg/pictograms/slik-gjor-du-det.svg",
-    type: ["Skjema"],
+    icon: "/src/_includes/svg/pictograms/neutral.svg",
+    type: ["Tiltak"],
     role: [
-      "Ansatt i NAV-kontor, kommunen eller fylkeskommunen",
-      "Andre",
+      "Tiltaksarrangør",
     ],
     contentBlocks: [
       {
