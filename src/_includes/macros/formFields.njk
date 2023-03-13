@@ -1,0 +1,21 @@
+{% macro radio(args) %}
+<div class="relative inline-block">
+  <input class="absolute w-6 h-6 rounded-full -z-10 appearance-none focus:outline-none focus:bg-deepblue-800 top-1.5 peer focus:ring focus:ring-deepblue-800" type="radio" name="{{ args.name }}" value="{{ args.value }}" id="{{ args.id }}">
+  <label class="py-1.5 flex before:w-6 before:h-6 before:bg-white before:border-2 before:border-gray-600 hover:before:border-blue-500 before:rounded-full gap-2 hover:before:bg-blue-50 cursor-pointer peer-checked:before:bg-blue-500 before:ring-2 before:ring-white before:ring-inset" for="{{ args.id }}">
+    <span>{{ args.label }}</span>
+  </label>
+</div>
+{% endmacro %}
+
+
+{% macro text(args) %}
+  <div class="relative">
+    <label for="{{ args.id }}" class="grid gap-0.5">
+      <span class="font-semibold">{{ args.label }}</span>
+      {%- if args.description -%}
+      <span>{{ args.description }}</span>
+      {%- endif -%}
+    </label>
+    <input class="w-full px-2 py-2 mt-1 text-lg leading-snug border border-gray-300 rounded hover:border-gray-400" type="text" name="{{ args.name }}" id="{{ args.id }}">
+  </div>
+{% endmacro %}
