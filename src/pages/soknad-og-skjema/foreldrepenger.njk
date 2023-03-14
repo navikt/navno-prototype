@@ -27,7 +27,7 @@ order: 8
           <form x-data="{ applicationFormat: '' }">
             <fieldset>
               <legend class="font-semibold">Hvordan vil du sende søknaden?</legend>
-              <ul class="grid mt-1 justify-items-start">
+              <ul class="mt-1 grid justify-items-start">
                 <li class="relative">
                   <input class="absolute w-6 h-6 rounded-full -z-10 appearance-none focus:outline-none focus:bg-deepblue-800 top-1.5 peer focus:ring focus:ring-deepblue-800" type="radio" name="application-format" x-model="applicationFormat" value="digital" id="field-1">
                   <label class="py-1.5 flex before:w-6 before:h-6 before:bg-white before:border-2 before:border-gray-600 hover:before:border-blue-500 before:rounded-full gap-2 hover:before:bg-blue-50 cursor-pointer peer-checked:before:bg-blue-500 before:ring-2 before:ring-white before:ring-inset" for="field-1">
@@ -44,7 +44,7 @@ order: 8
             </fieldset>
             <fieldset class="mt-7" x-show="applicationFormat === 'papir'">
               <legend class="font-semibold">Hva skal du søke om?</legend>
-              <ul class="grid mt-1 justify-items-start">
+              <ul class="mt-1 grid justify-items-start">
                 <li class="relative">
                   <input class="absolute w-6 h-6 rounded-full -z-10 appearance-none focus:outline-none focus:bg-deepblue-800 top-1.5 peer focus:ring focus:ring-deepblue-800" type="radio" name="application-type" value="" id="field-3">
                   <label class="py-1.5 flex before:w-6 before:h-6 before:bg-white before:border-2 before:border-gray-600 hover:before:border-blue-500 before:rounded-full gap-2 hover:before:bg-blue-50 cursor-pointer peer-checked:before:bg-blue-500 before:ring-2 before:ring-white before:ring-inset" for="field-3">Søke om foreldrepenger ved fødsel</label>

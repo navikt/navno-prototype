@@ -77,8 +77,8 @@ permalink: "/produktoversikt/"
       </div>
     </div>
 
-    <div class="grid mt-8 lg:mt-12 grid-cols-layout">
-      <div class="grid w-full gap-8 pb-20 lg:gap-x-16 lg:items-start lg:grid-cols-sidebar col-narrow lg:col-wide">
+    <div class="mt-8 grid lg:mt-12 grid-cols-layout">
+      <div class="w-full pb-20 grid gap-8 lg:gap-x-16 lg:items-start lg:grid-cols-sidebar col-narrow lg:col-wide">
 
         <div class="relative lg:row-start-1 lg:row-span-3 lg:col-start-2" x-data="{ filterDrawer: false }">
           <button
@@ -102,7 +102,7 @@ permalink: "/produktoversikt/"
           >
             <form class="flex flex-col h-full bg-white shadow-drawer col-narrow lg:hidden" x-on:click.outside="filterDrawer = false, filterTags = false">
               <div class="flex-1 px-6 pb-12 overflow-y-auto overscroll-y-contain">
-                <div class="relative grid pt-6" >
+                <div class="relative pt-6 grid" >
                   <div>
                     <label for="searchFilter-mobile" class="text-sm tracking-widest uppercase opacity-70">Søk</label>
                     <div class="relative mt-1">
@@ -180,7 +180,7 @@ permalink: "/produktoversikt/"
                 data-type="alle {% for item in product.type %}{{ item | slugify }} {% endfor %}"
                 data-area="alle {% for item in product.area %}{{ item | slugify }} {% endfor %}">
 
-                <div class="relative flex items-center gap-4 py-5 text-left rounded-lg px-clamp-gap sm:px-4 focus-within:z-20" x-bind:class="expanded ? 'bg-deepblue-50 ring-1 ring-deepblue-50 fine:hover:bg-deepblue-100' : 'fine:hover:bg-deepblue-100'">
+                <div class="relative flex items-center py-5 text-left rounded-lg gap-4 px-clamp-gap sm:px-4 focus-within:z-20" x-bind:class="expanded ? 'bg-deepblue-50 ring-1 ring-deepblue-50 fine:hover:bg-deepblue-100' : 'fine:hover:bg-deepblue-100'">
                   {%- if product.icon -%}
                     {{ product.icon | svgContents('w-12 h-12 shrink-0') | safe }}
                   {%- endif -%}
