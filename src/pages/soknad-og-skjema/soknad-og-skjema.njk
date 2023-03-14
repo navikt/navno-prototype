@@ -35,15 +35,15 @@ bodyClass: 'bg-white'
 {% endmacro %}
 
 {%- block content -%}
-  <main class="grid py-8 text-lg md:py-12 grid-cols-layout" x-data="{ stepperOpen: false }">
-    <div class="relative col-wide max-w-prose md:max-w-none mx-auto md:mx-0 grid md:grid-cols-[6rem_auto] gap-x-8 items-start mb-12">
+  <main class="grid py-8 text-lg grid-cols-layout" x-data="{ stepperOpen: false }">
+    <div class="relative col-wide max-w-prose md:max-w-none mx-auto md:mx-0 grid md:grid-cols-[6rem_auto] gap-x-8 items-start mb-12 w-full">
 
       {# Pictogram #}
       {{ '/src/_includes/svg/pictograms/soknad-og-skjema.svg' | svgContents('w-full h-auto max-w-20 md:ml-2 text-green-800 absolute right-0 -top-2 md:relative hidden xs:block') | safe }}
 
       {# Intro #}
       <div class="md:col-start-2 md:row-start-1">
-        <h1 class="text-3xl font-semibold leading-tight md:text-5xl md:leading-tight">Søknad om dagpenger</h1>
+        <h1 class="text-3xl font-semibold leading-tight md:text-5xl md:leading-tight">Søknad om [navn på søknad]</h1>
         <p class="mt-2 text-base tracking-wider uppercase opacity-70">
           Søknad
         </p>
@@ -53,15 +53,15 @@ bodyClass: 'bg-white'
 
         {# Stepper (mobile) #}
         <div class="rounded-lg max-w-prose md:col-start-1 md:hidden">
-          <div class="relative px-4 py-3 rounded-lg bg-deepblue-50">
-            <h2 class="text-2xl font-semibold">Arbeidsforhold i EØS</h2>
-            <button class="absolute inset-0 flex items-start justify-end px-3.5 pt-5 rounded-lg ring-2 ring-deepblue-50 fine:hover:ring-blue-500" x-on:click="stepperOpen = !stepperOpen">
+          <div class="relative px-3 py-2 rounded-md bg-deepblue-50">
+            <h2 class="text-2xl font-semibold">Overskrift for steg 5</h2>
+            <button class="absolute inset-0 flex items-start justify-end pl-3 pr-4 pt-3.5 rounded-md ring-2 ring-deepblue-50 fine:hover:ring-blue-500" x-on:click="stepperOpen = !stepperOpen">
               <span class="sr-only">Vis seksjoner</span>
               <svg class="flex-none w-6 h-6 -translate-y-px pointer-events-none" x-bind:class="stepperOpen && 'rotate-180'" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false" >
                 <path d="M18 9L12 15L6 9" stroke="currentColor" stroke-width="2" opacity="0.8" />
               </svg>
             </button>
-            <div class="mt-1.5 -mx-0.5 mb-2 overflow-hidden rounded-full bg-deepblue-100">
+            <div class="mt-1.5 -mx-px mb-2 pointer-events-none -translate-y-px overflow-hidden rounded-full bg-deepblue-100">
               <div class="h-3 bg-deepblue-500" style="width: calc((5 / 14) * 100%)"></div>
             </div>
             <p class="text-base">Steg 5 av 14</p>
@@ -79,31 +79,86 @@ bodyClass: 'bg-white'
         {# Main content #}
         <div class="md:col-start-1 md:row-start-1">
           <div class="max-w-prose">
+
+            {# Step Heading #}
             <div class="hidden md:block">
-              <h2 class="text-2xl font-semibold">Arbeidsforhold i EØS</h2>
-              <div class="mt-1.5 mb-2 overflow-hidden rounded-full bg-deepblue-100">
+              <h2 class="text-2xl font-semibold">Overskrift for steg 5</h2>
+              <div class="mt-1.5 mb-2  -translate-y-px overflow-hidden rounded-full bg-deepblue-100">
                 <div class="h-3 bg-deepblue-500" style="width: calc((5 / 14) * 100%)"></div>
               </div>
               <p class="text-base">Steg 5 av 14</p>
             </div>
 
-            {% for field in formFields %}
+            {# FormFields #}
+            <div class="grid gap-10 mt-10">
+
+              {# Dynamisk feltgruppe #}
+              <div x-data="{ showFieldGroup: false }">
+                <p class="grid gap-0.5">
+                  <span class="font-semibold">Dynamisk feltgruppe</span>
+                  <span class="text-base">Beskrivelse ...</span>
+                </p>
+                <div class="grid gap-3 mt-3">
+                  <div class="relative px-3 py-3 bg-gray-100 rounded fine:hover:bg-blue-50 min-h-8">
+                    <p class="font-semibold">Tittel</p>
+                    <button class="absolute inset-0 rounded" type="button">
+                      <span class="sr-only">Endre eller oppdater info</span>
+                    </button>
+                    <button class="absolute grid w-8 h-8 -translate-y-1/2 rounded-sm place-items-center right-3 top-1/2 fine:hover:bg-blue-600/10" type="button">
+                      {{ '/src/_includes/svg/icons/close.svg' | svgContents('w-5 h-5 stroke-semibold') | safe }}
+                      <span class="sr-only">Slett feltgruppe</span>
+                    </button>
+                  </div>
+                  <div class="z-50 p-4 bg-white rounded shadow-xl md:p-6 ring ring-white" x-show="showFieldGroup">
+                    {{ form.textinput({ label: 'Tekstfelt' }) }}
+                    <div class="mt-6">
+                      <fieldset>
+                        <legend class="font-semibold">Radioknapper</legend>
+                          <p class="text-base">Beskrivelse</p>
+                        <ul class="mt-1">
+                          <li>{{ form.radio({ label: 'Alternativ 1', name: 'ølkjenwe', id: 'qwerty1' }) }}</li>
+                          <li>{{ form.radio({ label: 'Alternativ 2', name: 'ølkjenwe', id: 'qwerty2' }) }}</li>
+                          <li>{{ form.radio({ label: 'Alternativ 3', name: 'ølkjenwe', id: 'qwerty3' }) }}</li>
+                        </ul>
+                      </fieldset>
+                    </div>
+
+                    <div class="inline-flex gap-2 mt-6">
+                      <button class="font-semibold py-2.5 min-w-32 px-4 rounded bg-blue-500 fine:hover:bg-blue-600 text-white" type="button" x-on:click="showFieldGroup = false">Lagre</button>
+                      <button class="font-semibold py-2.5 text-blue-500 min-w-32 px-4 rounded ring-2 ring-inset ring-blue-500 fine:hover:bg-blue-50 bg-white mr-auto" type="button" x-on:click="showFieldGroup = false">Avbryt</button>
+                    </div>
+
+                  </div>
+                  <div class="fixed inset-0 z-40 bg-black/10" x-show="showFieldGroup" x-transition.opacity></div>
+                </div>
+                <button
+                  type="button"
+                  class="flex items-center gap-1 py-2 mt-2 font-semibold text-blue-500 bg-white rounded group"
+                  x-on:click="showFieldGroup = !showFieldGroup"
+                  x-show="!showFieldGroup"
+                >
+                  {{ '/src/_includes/svg/icons/add.svg' | svgContents('w-6 h-6 stroke-semibold') | safe }}
+                  <span class="group-hover:underline">Legg til feltgruppe …</span>
+                </button>
+              </div>
+
+              {% for field in formFields %}
               {% if field.type === 'select' %}
-                <div class="mt-8">
+                <div class="">
                   <label class="font-semibold" for="country">{{ field.label }}</label>
                   {% if field.description %}
                   <p class="text-base">{{ field.description }}</p>
                   {% endif %}
-                  <select id="country" class="bg-white bg-select w-full px-2.5 py-2 mt-3 border border-gray-300 hover:border-gray-400 rounded appearance-none">
+                  <select id="country" class="w-full px-3 py-2.5 mt-3 bg-white border border-gray-300 rounded appearance-none bg-select hover:border-gray-400">
                     {% for option in field.options %}
-                    <option {{ 'checked' if loop.first }}>{{ option }}</option>
+                    <option {{ 'checked' if loop.first }}>{{ option.label }}</option>
                     {% endfor %}
                   </select>
                 </div>
               {% endif %}
 
               {% if field.type === 'radios' %}
-                <div class="mt-8">
+                <div class="">
                   <fieldset>
                     <legend class="font-semibold">{{ field.legend }}</legend>
                     {% if field.description %}
@@ -111,7 +166,7 @@ bodyClass: 'bg-white'
                     {% endif %}
                     <ul class="mt-1">
                       {% for option in field.options %}
-                        <li>{{ form.radio({ label: option, name: field.name, id: (field.name + '-' + option | slugify) }) }}</li>
+                        <li>{{ form.radio({ label: option.label, description: option.description, name: field.name, id: (field.name + '-' + option.label | slugify) }) }}</li>
                       {% endfor %}
                     </ul>
                   </fieldset>
@@ -119,7 +174,7 @@ bodyClass: 'bg-white'
               {% endif %}
 
               {% if field.type === 'checkboxes' %}
-                <div class="mt-8">
+                <div class="">
                   <fieldset>
                     <legend class="font-semibold">{{ field.legend }}</legend>
                     {% if field.description %}
@@ -127,154 +182,38 @@ bodyClass: 'bg-white'
                     {% endif %}
                     <ul class="mt-1">
                       {% for option in field.options %}
-                        <li>{{ form.radio({ label: option, name: field.name, id: (field.name + '-' + option | slugify) }) }}</li>
+                        <li>{{ form.checkbox({ label: option.label, description: option.description, name: field.name, id: (field.name + '-' + option.label | slugify) }) }}</li>
                       {% endfor %}
                     </ul>
                   </fieldset>
                 </div>
               {% endif %}
 
-            {% endfor %}
-            <p class="mt-8"></p>
+              {% if field.type === 'textinput' %}
+                <div class="">
+                  {{ form.textinput({ label: field.label, description: field.description, id: 'text1' }) }}
+                </div>
+              {% endif %}
 
+              {% if field.type === 'textarea' %}
+                <div class="">
+                  {{ form.textarea({ label: field.label, description: field.description, id: 'text2' }) }}
+                </div>
+              {% endif %}
 
-          <div class="mt-8">
-            {{ form.text({ label: 'Spørsmål 3', id: 'text1' }) }}
+              {% endfor %}
+
+            </div>
+            <div class="grid justify-center grid-cols-4 mt-12 gap-x-2 gap-y-4">
+              <button class="col-span-2 px-4 py-2.5 leading-snug font-semibold text-blue-500 bg-white rounded fine:hover:bg-blue-50 ring-2 ring-inset ring-blue-500" type="button">Forrige steg</button>
+              <button class="col-span-2 px-4 py-2.5 leading-snug font-semibold text-white bg-blue-500 rounded fine:hover:bg-blue-600" type="button">Neste steg</button>
+              <button class="col-span-2 col-start-2 px-4 py-2.5 leading-snug font-semibold text-blue-500 rounded fine:hover:bg-blue-50" type="button">Avbryt …</button>
+            </div>
           </div>
-
-          <div class="h-[800px] bg-white mt-12"></div>
         </div>
-      </div>
 
       </div>
 
     </div>
 </main>
 {%- endblock -%}
-
-{%- block styles -%}
-  <style>
-    .bg-select {
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='none' %3E%3Cpath d='M18 9L12 15L6 9' stroke='%23404040' stroke-width='1.75'%3E%3C/path%3E%3C/svg%3E");
-      background-repeat: no-repeat;
-      background-position: calc(100% - 0.5rem) 50%;
-    }
-    .navds-stepper {
-      --navds-global-color-gray-600: rgba(112, 112, 112, 1);
-      --navds-global-color-gray-400: rgba(176, 176, 176, 1);
-      --navds-global-color-gray-300: rgba(207, 207, 207, 1);
-      --navds-global-color-gray-100: rgba(241, 241, 241, 1);
-      --navds-global-color-deepblue-500: rgba(0, 91, 130, 1);
-      --navds-global-color-blue-800: rgba(0, 52, 125, 1);
-      --navds-global-color-blue-500: rgba(0, 103, 197, 1);
-      --navds-global-color-blue-50: rgba(230, 240, 255, 1);
-      --navds-global-color-white: rgba(255, 255, 255, 1);
-      --navds-stepper-marker-size: 1.75rem;
-      --navds-stepper-marker-color: currentColor;
-      display: flex;
-      flex-direction: column;
-      align-items: start;
-    }
-    .navds-stepper--horizontal {
-      text-align: center;
-    }
-    .navds-stepper__item {
-      flex: 1 1 100%;
-      display: grid;
-      grid-template-rows: [line-1] auto [content-start marker] var(--navds-stepper-marker-size) [line-2] auto [content-end];
-      grid-template-columns: [marker] var(--navds-stepper-marker-size) [content] auto;
-      justify-items: start;
-      gap: 0.25rem 0.75rem;
-      position: relative;
-    }
-    .navds-stepper__line {
-      background-color: var(--navds-global-color-gray-300);
-      width: 1.5px;
-      height: 100%;
-      min-height: 0.875rem;
-      justify-self: center;
-      grid-column: 1;
-    }
-    .navds-stepper__line--1 {
-      grid-row: line-1;
-      display: none;
-    }
-    .navds-stepper__line--2 {
-      grid-row: line-2;
-    }
-
-    :where(.navds-stepper__item:last-of-type) .navds-stepper__line--2 {
-      display: none;
-    }
-    .navds-stepper__step {
-      display: contents;
-    }
-    :where(.navds-stepper__step):focus {
-      outline: 3px solid var(--navds-global-color-blue-800);
-      isolation: isolate;
-    }
-    .navds-stepper__marker {
-      display: inline-grid;
-      place-items: center;
-      width: var(--navds-stepper-marker-size);
-      height: var(--navds-stepper-marker-size);
-      {# box-shadow: 0 0 0 2px var(--navds-global-color-blue-50); #}
-      background-color: var(--navds-global-color-gray-100);
-      border-radius: 999px;
-      font-weight: 600;
-      line-height: 1;
-      flex-shrink: 0;
-      grid-column: marker;
-      grid-row: marker;
-      color: var(--navds-stepper-marker-color);
-    }
-    .navds-stepper__content {
-      display: block;
-      width: fit-content;
-      grid-column: content;
-      grid-row: content;
-      margin-bottom: 1.25rem;
-      max-width: 44ch;
-      padding-top: 0.075rem;
-    }
-    a:where(.navds-stepper__content) {
-      color: var(--navds-global-color-blue-500);
-      text-decoration: underline;
-    }
-    a:where(.navds-stepper__content):after {
-      content: " ";
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0.875rem;
-    }
-    .navds-stepper__step:hover a:where(.navds-stepper__content) {
-      text-decoration: none;
-    }
-
-    /* Active & Complete */
-    :where(.navds-stepper__step--active) {
-      font-weight: 600;
-    }
-    :where(.navds-stepper__step--active) .navds-stepper__content {
-      color: var(--navds-global-color-blue-800);
-    }
-    :where(.navds-stepper__step--complete) {
-      color: var(--navds-global-color-blue-500);
-    }
-    :where(.navds-stepper__step:not(.navds-stepper__step--active)):hover .navds-stepper__content {
-      text-decoration: none;
-    }
-    :where(.navds-stepper__step--active) .navds-stepper__marker {
-      color: var(--navds-global-color-white);
-    }
-    :where(.navds-stepper__step--active) .navds-stepper__marker {
-      background-color: var(--navds-global-color-deepblue-500);
-    }
-    :where(.navds-stepper__step--complete) .navds-stepper__marker {
-      background-color: var(--navds-global-color-blue-50);
-    }
-  </style>
-{%- endblock -%}
-{%- block script -%}{%- endblock -%}

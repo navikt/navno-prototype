@@ -252,12 +252,25 @@ module.exports = {
       listStyleType: {
         square: "square",
       },
+      minHeight: {
+        ...defaults.theme.spacing,
+      },
+      maxHeight: {
+        ...defaults.theme.spacing,
+      },
       minWidth: {
         ...defaults.theme.spacing,
       },
       maxWidth: {
         ...defaults.theme.spacing,
         prose: "75ch",
+      },
+      ringWidth: {
+        6: "6px",
+      },
+      ringOffesetWidth: {
+        3: "3px",
+        6: "6px",
       },
       spacing: {
         "clamp-gap": "clamp(1rem, -3rem + 12vw, 6rem)",

@@ -9,8 +9,8 @@ order: 7
 {%- extends 'base-basic.njk' -%}
 
 {%- block content -%}
-  <main class="grid py-8 text-lg md:py-12 grid-cols-layout" x-data="{ stepperOpen: false }">
-    <div class="relative col-wide max-w-prose md:max-w-none mx-auto md:mx-0 grid md:grid-cols-[6rem_auto] gap-x-8 items-start mb-12">
+  <main class="grid py-8 text-lg grid-cols-layout" x-data="{ stepperOpen: false }">
+    <div class="relative col-wide max-w-prose md:max-w-none mx-auto md:mx-0 grid md:grid-cols-[6rem_auto] gap-x-8 items-start mb-12 w-full">
 
       {# Pictogram #}
       {{ '/src/_includes/svg/pictograms/soknad-og-skjema.svg' | svgContents('w-full h-auto max-w-20 md:ml-2 text-green-800 absolute right-0 -top-2 md:relative hidden xs:block') | safe }}
@@ -32,7 +32,7 @@ order: 7
               <legend class="font-semibold">Hvordan vil du sende søknaden?</legend>
               <ul class="grid mt-1 justify-items-start">
                 <li class="relative">
-                  <input class="absolute w-6 h-6 rounded-full -z-10 appearance-none focus:outline-none focus:bg-deepblue-800 top-1.5 peer focus:ring focus:ring-deepblue-800" type="radio" name="application-format" x-model="applicationFormat" value="digital" id="field-1">
+                  <input class="absolute w-6 h-6 rounded-full -z-10 appearance-none focus:outline-none focus:bg-deepblue-800 top-1.5 peer focus:ring focus:ring-deepblue-800" type="radio" name="application-format" x-model="applicationFormat" value="digital" id="field-1" checked="checked">
                   <label class="py-1.5 flex before:w-6 before:h-6 before:bg-white before:border-2 before:border-gray-600 hover:before:border-blue-500 before:rounded-full gap-2 hover:before:bg-blue-50 cursor-pointer peer-checked:before:bg-blue-500 before:ring-2 before:ring-white before:ring-inset" for="field-1">
                     <span>Send digitalt (du blir bedt om å logge inn)</span>
                   </label>
