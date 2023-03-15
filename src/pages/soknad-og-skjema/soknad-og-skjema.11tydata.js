@@ -1,10 +1,10 @@
 const stepperItems = [
   { text: "Steg 1", state: "complete" },
   { text: "Steg 2", state: "complete" },
-  { text: "Steg 3", state: "complete" },
+  { text: "Steg 3 med mye tekst som går over flere linjer", state: "complete" },
   { text: "Steg 4", state: "complete" },
   { text: "Steg 5", state: "active" },
-  { text: "Steg 6" },
+  { text: "Steg 6 med mye tekst som går over flere linjer" },
   { text: "Steg 7" },
   { text: "Steg 8" },
   { text: "Steg 9" },

@@ -70,9 +70,6 @@
     --navds-global-color-white: rgba(255, 255, 255, 1);
     --navds-stepper-marker-size: 1.75rem;
     --navds-stepper-marker-color: currentColor;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
   }
   .navds-stepper--horizontal {
     text-align: center;
@@ -107,10 +104,7 @@
   :where(.navds-stepper__item:last-of-type) .navds-stepper__line--2 {
     display: none;
   }
-  .navds-stepper__step {
-    display: contents;
-  }
-  :where(.navds-stepper__step):focus {
+  :where(.navds-stepper__item):focus {
     outline: 3px solid var(--navds-global-color-blue-800);
     isolation: isolate;
   }
@@ -150,31 +144,27 @@
     right: 0;
     bottom: 0.875rem;
   }
-  .navds-stepper__step:hover a:where(.navds-stepper__content) {
+  a:hover:where(.navds-stepper__content) {
     text-decoration: none;
   }
 
   /* Active & Complete */
-  :where(.navds-stepper__step--active) {
+  :where(.navds-stepper__item--active) {
     font-weight: 600;
   }
-  :where(.navds-stepper__step--active) .navds-stepper__content {
+  :where(.navds-stepper__item--active) .navds-stepper__content {
     color: var(--navds-global-color-blue-800);
   }
-  :where(.navds-stepper__step--complete) {
+  :where(.navds-stepper__item--complete) {
     color: var(--navds-global-color-blue-500);
   }
-  :where(.navds-stepper__step:not(.navds-stepper__step--active)):hover
-    .navds-stepper__content {
-    text-decoration: none;
-  }
-  :where(.navds-stepper__step--active) .navds-stepper__marker {
+  :where(.navds-stepper__item--active) .navds-stepper__marker {
     color: var(--navds-global-color-white);
   }
-  :where(.navds-stepper__step--active) .navds-stepper__marker {
+  :where(.navds-stepper__item--active) .navds-stepper__marker {
     background-color: var(--navds-global-color-deepblue-500);
   }
-  :where(.navds-stepper__step--complete) .navds-stepper__marker {
+  :where(.navds-stepper__item--complete) .navds-stepper__marker {
     background-color: var(--navds-global-color-blue-50);
   }
 }

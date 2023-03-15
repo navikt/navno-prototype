@@ -12,22 +12,20 @@ bodyClass: 'bg-white'
 {% macro stepperList(stepperList) %}
   <ol class="navds-stepper">
     {%- for item in stepperItems -%}
-      <li class="navds-stepper__item">
+      <li class="navds-stepper__item {{ 'navds-stepper__item--active' if item.state === 'active' }} {{ 'navds-stepper__item--complete' if item.state === 'complete' }}">
         <span class="navds-stepper__line navds-stepper__line--1" aria-hidden="true"></span>
-        <span class="navds-stepper__step {{ 'navds-stepper__step--active' if item.state === 'active' }} {{ 'navds-stepper__step--complete' if item.state === 'complete' }}">
-          <span class="navds-stepper__marker" aria-hidden="true">
-            {%- if item.state === 'complete' -%}
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" focusable="false" aria-hidden="true"><path d="M7 13L10 16L17.5 8.5" stroke="currentColor" stroke-width="2" /></svg>
-            {%- else -%}
-              {{ loop.index }}
-            {%- endif -%}
-          </span>
+        <span class="navds-stepper__marker" aria-hidden="true">
           {%- if item.state === 'complete' -%}
-            <a href="#" class="navds-stepper__content">{{ item.text }}</a>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" focusable="false" aria-hidden="true"><path d="M7 13L10 16L17.5 8.5" stroke="currentColor" stroke-width="2" /></svg>
           {%- else -%}
-            <span class="navds-stepper__content">{{ item.text }}</span>
+            {{ loop.index }}
           {%- endif -%}
         </span>
+        {%- if item.state === 'complete' -%}
+          <a href="#" class="navds-stepper__content">{{ item.text }}</a>
+        {%- else -%}
+          <span class="navds-stepper__content">{{ item.text }}</span>
+        {%- endif -%}
         <span class="navds-stepper__line navds-stepper__line--2" aria-hidden="true"></span>
       </li>
     {%- endfor -%}
