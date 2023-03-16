@@ -13,7 +13,7 @@ const stepperItems = [
   { text: "Steg 12" },
 ];
 
-const formFields = [
+const formBlocks = [
   {
     type: "select",
     label: "Nedtrekksliste",
@@ -62,4 +62,4 @@ const formFields = [
   },
 ];
 
-module.exports = { stepperItems, formFields };
+module.exports = { stepperItems, formBlocks };

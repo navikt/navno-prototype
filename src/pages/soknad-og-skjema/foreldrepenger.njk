@@ -9,25 +9,28 @@ order: 8
 {%- extends 'base-basic.njk' -%}
 
 {%- block content -%}
-  <main class="min-h-[70vh]">
-    <div class="grid grid-cols-layout">
-      <div class="relative pt-8 col-narrow lg:col-normal">
-        <div class="hidden float-right pb-8 ml-24 xs:block sm:pb-0 sm:-mb-8">
-          {{ '/src/_includes/svg/pictograms/soknad-og-skjema.svg' | svgContents('w-[12vw] h-auto overflow-hidden max-w-[6rem]') | safe }}
-        </div>
+  <main class="grid py-8 text-lg grid-cols-layout min-h-[70vh]" x-data="{ stepperOpen: false }">
+    <div class="relative col-wide max-w-prose md:max-w-none mx-auto md:mx-0 grid md:grid-cols-[6rem_auto] gap-x-8 items-start mb-12 w-full auto-rows-min">
+
+      {# Pictogram #}
+      {{ '/src/_includes/svg/pictograms/soknad-og-skjema.svg' | svgContents('w-full h-auto max-w-20 md:ml-2 text-green-800 absolute right-0 -top-2 md:relative hidden xs:block') | safe }}
+
+      {# Intro #}
+      <div class="md:col-start-2 md:row-start-1">
         <h1 class="text-3xl font-semibold leading-tight md:text-5xl md:leading-tight">{{ title | safe }}</h1>
-        <p class="mt-3 tracking-wider uppercase opacity-70">
+        <p class="mt-2 text-base tracking-wider uppercase opacity-70">
           {{ kicker | upper }}
           {{ '–' if form }}
           {{ form | safe }}
         </p>
       </div>
-      <div class="relative pb-8 col-narrow lg:col-normal">
+
+      <div class="md:col-start-2 md:grid md:grid-cols-[2.2fr_0.8fr] gap-x-16 items-start gap-4">
         <div class="mt-12 text-lg max-w-prose markup">
-          <form x-data="{ applicationFormat: '' }">
+          <form x-data="{ applicationFormat: 'digital' }">
             <fieldset>
               <legend class="font-semibold">Hvordan vil du sende søknaden?</legend>
-              <ul class="mt-1 grid justify-items-start">
+              <ul class="grid mt-1 justify-items-start">
                 <li class="relative">
                   <input class="absolute w-6 h-6 rounded-full -z-10 appearance-none focus:outline-none focus:bg-deepblue-800 top-1.5 peer focus:ring focus:ring-deepblue-800" type="radio" name="application-format" x-model="applicationFormat" value="digital" id="field-1">
                   <label class="py-1.5 flex before:w-6 before:h-6 before:bg-white before:border-2 before:border-gray-600 hover:before:border-blue-500 before:rounded-full gap-2 hover:before:bg-blue-50 cursor-pointer peer-checked:before:bg-blue-500 before:ring-2 before:ring-white before:ring-inset" for="field-1">
@@ -44,7 +47,7 @@ order: 8
             </fieldset>
             <fieldset class="mt-7" x-show="applicationFormat === 'papir'">
               <legend class="font-semibold">Hva skal du søke om?</legend>
-              <ul class="mt-1 grid justify-items-start">
+              <ul class="grid mt-1 justify-items-start">
                 <li class="relative">
                   <input class="absolute w-6 h-6 rounded-full -z-10 appearance-none focus:outline-none focus:bg-deepblue-800 top-1.5 peer focus:ring focus:ring-deepblue-800" type="radio" name="application-type" value="" id="field-3">
                   <label class="py-1.5 flex before:w-6 before:h-6 before:bg-white before:border-2 before:border-gray-600 hover:before:border-blue-500 before:rounded-full gap-2 hover:before:bg-blue-50 cursor-pointer peer-checked:before:bg-blue-500 before:ring-2 before:ring-white before:ring-inset" for="field-3">Søke om foreldrepenger ved fødsel</label>

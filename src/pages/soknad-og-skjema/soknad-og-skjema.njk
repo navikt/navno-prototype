@@ -34,10 +34,10 @@ bodyClass: 'bg-white'
 
 {%- block content -%}
   <main class="grid py-8 text-lg grid-cols-layout" x-data="{ stepperOpen: false }">
-    <div class="relative col-wide max-w-prose md:max-w-none mx-auto md:mx-0 grid md:grid-cols-[6rem_auto] gap-x-8 items-start mb-12 w-full">
+    <div class="relative col-wide max-w-prose md:max-w-none mx-auto md:mx-0 grid md:grid-cols-[6rem_auto] gap-x-8 items-start mb-12 w-full md:pr-24">
 
       {# Pictogram #}
-      {{ '/src/_includes/svg/pictograms/soknad-og-skjema.svg' | svgContents('w-full h-auto max-w-20 md:ml-2 text-green-800 absolute right-0 -top-2 md:relative hidden xs:block') | safe }}
+      {{ '/src/_includes/svg/pictograms/soknad-og-skjema.svg' | svgContents('w-full h-auto max-w-20 md:ml-2 text-green-800 absolute right-0 -top-3 md:-top-1 md:relative hidden xs:block') | safe }}
 
       {# Intro #}
       <div class="md:col-start-2 md:row-start-1">
@@ -87,7 +87,7 @@ bodyClass: 'bg-white'
               <p class="text-base">Steg 5 av 14</p>
             </div>
 
-            {# FormFields #}
+            {# FormBlocks #}
             <div class="grid gap-10 mt-10">
 
               {# Dynamisk feltgruppe #}
@@ -96,42 +96,45 @@ bodyClass: 'bg-white'
                   <span class="font-semibold">Dynamisk feltgruppe</span>
                   <span class="text-base">Beskrivelse ...</span>
                 </p>
-                <div class="grid gap-3 mt-3">
-                  <div class="relative px-3 py-3 bg-gray-100 rounded fine:hover:bg-blue-50 min-h-8">
-                    <p class="font-semibold">Tittel</p>
+
+                <div class="grid mt-2 border border-gray-300 divide-y divide-gray-300 rounded">
+                  <div class="relative px-3 py-3 bg-white rounded-t fine:hover:bg-blue-50">
+                    <p class="font-semibold">Feltgruppe 1</p>
                     <button class="absolute inset-0 rounded" type="button">
                       <span class="sr-only">Endre eller oppdater info</span>
                     </button>
-                    <button class="absolute grid w-8 h-8 -translate-y-1/2 rounded-sm place-items-center right-3 top-1/2 fine:hover:bg-blue-600/10" type="button">
-                      {{ '/src/_includes/svg/icons/close.svg' | svgContents('w-5 h-5 stroke-semibold') | safe }}
-                      <span class="sr-only">Slett feltgruppe</span>
+                  </div>
+                  <div class="relative px-3 py-3 bg-white rounded-b fine:hover:bg-blue-50">
+                    <p class="font-semibold">Feltgruppe 2</p>
+                    <button class="absolute inset-0 rounded" type="button">
+                      <span class="sr-only">Endre eller oppdater info</span>
                     </button>
                   </div>
-                  <div class="z-50 p-4 bg-white rounded shadow-xl md:p-6 ring ring-white" x-show="showFieldGroup">
-                    {{ form.textinput({ label: 'Tekstfelt' }) }}
-                    <div class="mt-6">
-                      <fieldset>
-                        <legend class="font-semibold">Radioknapper</legend>
-                          <p class="text-base">Beskrivelse</p>
-                        <ul class="mt-1">
-                          <li>{{ form.radio({ label: 'Alternativ 1', name: 'ølkjenwe', id: 'qwerty1' }) }}</li>
-                          <li>{{ form.radio({ label: 'Alternativ 2', name: 'ølkjenwe', id: 'qwerty2' }) }}</li>
-                          <li>{{ form.radio({ label: 'Alternativ 3', name: 'ølkjenwe', id: 'qwerty3' }) }}</li>
-                        </ul>
-                      </fieldset>
-                    </div>
-
-                    <div class="inline-flex gap-2 mt-6">
-                      <button class="font-semibold py-2.5 min-w-32 px-4 rounded bg-blue-500 fine:hover:bg-blue-600 text-white" type="button" x-on:click="showFieldGroup = false">Lagre</button>
-                      <button class="font-semibold py-2.5 text-blue-500 min-w-32 px-4 rounded ring-2 ring-inset ring-blue-500 fine:hover:bg-blue-50 bg-white mr-auto" type="button" x-on:click="showFieldGroup = false">Avbryt</button>
-                    </div>
-
-                  </div>
-                  <div class="fixed inset-0 z-40 bg-black/10" x-show="showFieldGroup" x-transition.opacity></div>
                 </div>
+
+                <div class="relative z-50 mt-2 bg-white border border-gray-300 rounded shadow" x-show="showFieldGroup">
+                  <div class="p-4 md:p-6">
+                  {{ form.textinput({ label: 'Tekstfelt' }) }}
+                  <fieldset class="mt-6 ">
+                    <legend class="font-semibold">Radioknapper</legend>
+                      <p class="text-base">Beskrivelse</p>
+                    <ul class="mt-1">
+                      <li>{{ form.radio({ label: 'Alternativ 1', name: 'ølkjenwe', id: 'qwerty1' }) }}</li>
+                      <li>{{ form.radio({ label: 'Alternativ 2', name: 'ølkjenwe', id: 'qwerty2' }) }}</li>
+                      <li>{{ form.radio({ label: 'Alternativ 3', name: 'ølkjenwe', id: 'qwerty3' }) }}</li>
+                    </ul>
+                  </fieldset>
+                  </div>
+                  <div class="flex justify-start gap-2 px-4 py-3 rounded-b bg-gray-50">
+                    <button class="font-semibold py-2.5 min-w-24 px-4 rounded bg-blue-500 fine:hover:bg-blue-600 text-white" type="button" x-on:click="showFieldGroup = false">Lagre</button>
+                    <button class="font-semibold py-2.5 text-blue-500 min-w-24 px-4 rounded ring-2 ring-inset ring-blue-500 fine:hover:bg-blue-50 bg-white mr-auto" type="button" x-on:click="showFieldGroup = false">Avbryt</button>
+                    <button class="font-semibold py-2.5 text-red-500 min-w-24 px-4 rounded  fine:hover:bg-red-500 fine:hover:text-white" type="button" x-on:click="showFieldGroup = false">Slett feltgruppe …</button>
+                  </div>
+                </div>
+
                 <button
                   type="button"
-                  class="flex items-center gap-1 py-2 mt-2 font-semibold text-blue-500 bg-white rounded group"
+                  class="flex items-center gap-1 py-2 mt-2 font-semibold text-blue-500 group"
                   x-on:click="showFieldGroup = !showFieldGroup"
                   x-show="!showFieldGroup"
                 >
@@ -140,62 +143,73 @@ bodyClass: 'bg-white'
                 </button>
               </div>
 
-              {% for field in formFields %}
-              {% if field.type === 'select' %}
+              {% for block in formBlocks %}
+              {% if block.type === 'select' %}
                 <div class="">
-                  <label class="font-semibold" for="country">{{ field.label }}</label>
-                  {% if field.description %}
-                  <p class="text-base">{{ field.description }}</p>
+                  <label class="font-semibold" for="country">{{ block.label }}</label>
+                  {% if block.description %}
+                  <p class="text-base">{{ block.description }}</p>
                   {% endif %}
                   <select id="country" class="w-full px-3 py-2.5 mt-3 bg-white border border-gray-300 rounded appearance-none bg-select hover:border-gray-400">
-                    {% for option in field.options %}
+                    {% for option in block.options %}
                     <option {{ 'checked' if loop.first }}>{{ option.label }}</option>
                     {% endfor %}
                   </select>
                 </div>
               {% endif %}
 
-              {% if field.type === 'radios' %}
+
+              {% if block.type === 'infobox' %}
+              <div class="flex items-start gap-3 p-4 border rounded border-lightblue-200 bg-lightblue-50">
+                {{ '/src/_includes/svg/icons/info-colored.svg' | svgContents('w-6 h-6 shrink-0 translate-y-0.5') | safe }}
+                <div class="grid gap-1">
+                  <h3 class="text-xl font-semibold">Lorem, ipsum dolor sit amet consectetur</h3>
+                  <p>Doloribus reprehenderit, odit vel totam ipsam et quisquam iste at inventore dolores fugit itaque deleniti eius tenetur, deserunt qui optio a voluptatibus?</p>
+                </div>
+              </div>
+              {% endif %}
+
+              {% if block.type === 'radios' %}
                 <div class="">
                   <fieldset>
-                    <legend class="font-semibold">{{ field.legend }}</legend>
-                    {% if field.description %}
-                      <p class="text-base">{{ field.description }}</p>
+                    <legend class="font-semibold">{{ block.legend }}</legend>
+                    {% if block.description %}
+                      <p class="text-base">{{ block.description }}</p>
                     {% endif %}
                     <ul class="mt-1">
-                      {% for option in field.options %}
-                        <li>{{ form.radio({ label: option.label, description: option.description, name: field.name, id: (field.name + '-' + option.label | slugify) }) }}</li>
+                      {% for option in block.options %}
+                        <li>{{ form.radio({ label: option.label, description: option.description, name: block.name, id: (block.name + '-' + option.label | slugify) }) }}</li>
                       {% endfor %}
                     </ul>
                   </fieldset>
                 </div>
               {% endif %}
 
-              {% if field.type === 'checkboxes' %}
+              {% if block.type === 'checkboxes' %}
                 <div class="">
                   <fieldset>
-                    <legend class="font-semibold">{{ field.legend }}</legend>
-                    {% if field.description %}
-                      <p class="text-base">{{ field.description }}</p>
+                    <legend class="font-semibold">{{ block.legend }}</legend>
+                    {% if block.description %}
+                      <p class="text-base">{{ block.description }}</p>
                     {% endif %}
                     <ul class="mt-1">
-                      {% for option in field.options %}
-                        <li>{{ form.checkbox({ label: option.label, description: option.description, name: field.name, id: (field.name + '-' + option.label | slugify) }) }}</li>
+                      {% for option in block.options %}
+                        <li>{{ form.checkbox({ label: option.label, description: option.description, name: block.name, id: (block.name + '-' + option.label | slugify) }) }}</li>
                       {% endfor %}
                     </ul>
                   </fieldset>
                 </div>
               {% endif %}
 
-              {% if field.type === 'textinput' %}
+              {% if block.type === 'textinput' %}
                 <div class="">
-                  {{ form.textinput({ label: field.label, description: field.description, id: 'text1' }) }}
+                  {{ form.textinput({ label: block.label, description: block.description, id: 'text1' }) }}
                 </div>
               {% endif %}
 
-              {% if field.type === 'textarea' %}
+              {% if block.type === 'textarea' %}
                 <div class="">
-                  {{ form.textarea({ label: field.label, description: field.description, id: 'text2' }) }}
+                  {{ form.textarea({ label: block.label, description: block.description, id: 'text2' }) }}
                 </div>
               {% endif %}
 
