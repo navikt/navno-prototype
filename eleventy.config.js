@@ -57,7 +57,7 @@ module.exports = function (eleventyConfig) {
     enabled: true,
     showVersion: true,
     port: 8888,
-    middleware: [compression()],
+    // middleware: [compression()],
   });
 
   eleventyConfig.setDataDeepMerge(true);
