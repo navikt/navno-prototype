@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prototype-banner</title>
+  <link rel="preconnect" href="https://www.nav.no" crossorigin />
+  <link rel="preload" href="https://cdn.nav.no/aksel/fonts/SourceSans3-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <style>
+    /* latin */
+    @font-face {
+      font-family: "Source Sans Pro";
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+      src: url("https://cdn.nav.no/aksel/fonts/SourceSans3-normal.woff2") format("woff2");
+      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+        U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212,
+        U+2215, U+FEFF, U+FFFD;
+    }
+
+    /* latin */
+    @font-face {
+      font-family: "Source Sans Pro";
+      font-weight: 400;
+      font-style: italic;
+      font-display: swap;
+      src: url("https://cdn.nav.no/aksel/fonts/SourceSans3-italic.woff2") format("woff2");
+      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+        U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212,
+        U+2215, U+FEFF, U+FFFD;
+    }
+
+    /* latin */
+    @font-face {
+      font-family: "Source Sans Pro";
+      font-weight: 600;
+      font-style: normal;
+      font-display: swap;
+      src: url("https://cdn.nav.no/aksel/fonts/SourceSans3-normal.woff2") format("woff2");
+      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+        U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212,
+        U+2215, U+FEFF, U+FFFD;
+    }
+  </style>
+  <style>
+    body {
+      -webkit-font-smoothing: antialiased;
+      margin: 0;
+    }
+    .prototype-banner {
+      font: 1.25rem/1.5 'Source Sans Pro', Arial, sans-serif;
+      background-color: #003453;
+      border-image: repeating-linear-gradient(-64.3deg, #ffc166, #ffc166 10px, #00243a 10px, #00243a 20px) 20;
+      border-top-width: 8px;
+      border-top-style: solid;
+      color: #e6f1f8;
+      padding: 1.5rem 1rem;
+    }
+    .prototype-banner__wrapper {
+      max-width: 40rem;
+      margin-left: auto;
+      margin-right: auto;
+      display: flex;
+      gap: 1.25rem;
+      align-items: start;
+    }
+    .prototype-banner__icon {
+      background-color: #00243a;
+      border-radius: 100vw;
+      padding: 0.5rem;
+      width: 3rem;
+      height: 3rem;
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+    }
+    .prototype-banner__icon svg {
+      width: 1.75rem;
+      height: 1.75rem;
+    }
+    .prototype-banner__content {
+      max-width: 50ch;
+    }
+    .prototype-banner__content p {
+      margin: 0;
+    }
+    .prototype-banner__content a {
+      color: #66a5f4
+    }
+    .prototype-banner__content a:hover {
+      color: #ffc166
+    }
+  </style>
+</head>
+<body>
+  <aside aria-label="Prototype-banner" class="prototype-banner">
+    <div class="prototype-banner__wrapper">
+      <div class="prototype-banner__icon">
+        <svg width="24" height="24" fill="none" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <path fill="currentColor" fill-rule="evenodd" d="M14 6v6a1 1 0 1 0 2 0V8.07A8 8 0 0 1 20 15v2.67L21 19H3l1-1.33V15a8 8 0 0 1 4-6.93V12a1 1 0 1 0 2 0V6.01a1 1 0 0 1 .84-.9l.19-.03a6 6 0 0 1 1.94 0l.2.03a1 1 0 0 1 .83.9Zm8 9v2l1.8 2.4A1 1 0 0 1 23 21H1a1 1 0 0 1-.8-1.6L2 17v-2a10 10 0 0 1 6.01-9.17 3 3 0 0 1 2.5-2.7l.2-.02a8 8 0 0 1 2.59 0l.19.03a3 3 0 0 1 2.5 2.69A10 10 0 0 1 22 15Zm-11 0a1 1 0 1 0 0 2h2a1 1 0 1 0 0-2h-2Z" clip-rule="evenodd"/>
+        </svg>
+      </div>
+      <div class="prototype-banner__content">
+        <p><strong>Hei!</strong> Dette er en bare en prototype til testing og utvikling.
+        <a href="https://www.nav.no/">Her er lenken til nav.no</a> om du har kommet feil.</p>
+      </div>
+    </div>
+  </aside>
+</body>
+</html>
