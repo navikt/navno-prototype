@@ -170,7 +170,7 @@
 }
 @layer utilities {
   .grid-cols-layout {
-    --_layout-gap: clamp(1rem, -3rem + 8vw, 6rem);
+    --_layout-gap: clamp(1rem, -3rem + 12vw, 6rem);
     --_layout-full: minmax(var(--_layout-gap), 1fr);
     --_layout-normal: minmax(0, 7rem);
     --_layout-wide: minmax(0, 8rem);

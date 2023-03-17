@@ -9,16 +9,18 @@ order: 4
 {%- from "macros/microcard.njk" import microcard -%}
 
 {%- block content -%}
-  <main class="grid py-8 text-lg grid-cols-layout">
-    <div class="relative col-wide max-w-prose md:max-w-none mx-auto md:mx-0 grid md:grid-cols-[6rem_auto] gap-x-8 items-start mb-12 w-full md:pr-24">
-      {{ '/src/_includes/svg/pictograms/utvidet-barnetrygd.svg' | svgContents('w-full h-auto max-w-20 md:ml-1 text-green-800 absolute right-0 md:relative hidden xs:block') | safe }}
+  <main class="grid py-8 text-lg md:py-12 grid-cols-layout">
+    <div class="relative col-default md:col-wide md:mx-0 grid sm:grid-cols-[6rem_auto] gap-x-8 items-start mb-12 md:pr-12">
+      {{ '/src/_includes/svg/pictograms/utvidet-barnetrygd.svg' | svgContents('w-full h-auto max-w-20 sm:ml-1 top-2 text-green-800 absolute right-0 sm:relative') | safe }}
 
       <div class="sm:col-start-2 sm:row-start-1">
-        <p class="text-base tracking-wider uppercase opacity-70">Pengestøtte</p>
         <h1 class="min-w-0 pr-24 mt-0.5 text-3xl font-semibold leading-tight sm:pr-0 sm:text-5xl sm:leading-tight">Utvidet barnetrygd</h1>
-        <p class="flex items-center gap-3 mt-5 text-base opacity-70">
-          Oppdatert 22. desember 2022
+        <p class="mt-6 text-base opacity-80">
+          <span class="tracking-wider uppercase">Pengestøtte</span>
+          <span class="px-1"> — </span>
+          <span>Oppdatert 22. desember 2022</span>
         </p>
+
       </div>
 
       {# Intro #}
@@ -27,7 +29,22 @@ order: 4
           <p>Du kan få utvidet barnetrygd når du bor alene med barn under 18 år. Dette er barnetrygd for et barn mer enn du faktisk bor sammen med.</p>
 
           <p>Du kan også få småbarnstillegg. Dette er et tillegg til utvidet barnetrygd for enslige forsørgere som har barn mellom 0 og 3 år, og som også mottar full overgangsstønad.</p>
+
+          <h4 class="text-xl font-semibold">Utvidet barnetrygd er aktuelt for deg som</h4>
+          <div class="flex mt-1.5 flex-wrap gap-2">
+              {{ microcard({
+                text: 'Er helt eller delvis alene med barn',
+                class: 'fine:hover:bg-orange-100 fine:hover:shadow-none',
+                dot: 'bg-orange-300'
+              }) }}
+              {{ microcard({
+                text: 'Er alene med barn fordi den andre forelderen er død',
+                class: 'fine:hover:bg-orange-100 fine:hover:shadow-none',
+                dot: 'bg-orange-300'
+              }) }}
+          </div>
         </div>
+
 
         {# Innholdsfortegnelse #}
         <div class="w-full max-w-3xl mt-6 md:sticky md:col-start-2 md:top-4 md:row-span-2 md:mx-0 md:max-w-none md:-mt-1.5 md:pl-6 md:border-l md:border-gray-200">
@@ -51,9 +68,9 @@ order: 4
         <div class="grid w-full max-w-3xl gap-4 md:row-start-2 md:mx-0 md:max-w-none">
 
           {# Filter #}
-          <div class="px-6 py-4 mt-4 sm:px-8 sm:py-6 bg-blue-50 max-w-prose">
-            <h2 class="text-xl font-semibold">Hva er situasjonen din</h2>
-            <p>Fortell oss litt om situasjonen din, så viser vi bare den informasjonen som er relevant for deg.</p>
+          <div class="px-6 py-4 mt-8 rounded sm:px-8 sm:py-6 bg-blue-50 max-w-prose">
+            <h2 class="text-xl font-semibold">Hva er situasjonen din?</h2>
+            <p>Velg situasjonen som passer for deg, så viser vi bare informasjon om den.</p>
 
             <button class="flex items-center justify-between w-full gap-3 px-4 py-2.5 mt-4 bg-white border-b-2 border-gray-400 md:max-w-max" type="button">
               <span>Tilpass innholdet</span>
@@ -64,20 +81,25 @@ order: 4
           {# Innhold #}
           {%- for section in sections -%}
             {%- if not loop.first -%}
-            <div class="relative p-6 grid bg-gray-50 rounded max-w-prose sm:p-8 {{ 'mt-12 pt-8 sm:pt-12' if section.icon }}" id="{{ section.title | slugify }}">
-              {%- if section.icon -%}
-              <div class="absolute top-0 inline-grid p-4 mx-auto -translate-x-1/2 -translate-y-1/2 bg-green-200 rounded-full left-1/2 justify-self-center">
-                {{ section.icon | svgContents('w-6 h-6 sm:w-7 sm:h-7') | safe }}
-              </div>
-              {%- endif -%}
+            <div class="relative grid mt-10 max-w-prose" id="{{ section.title | slugify }}">
 
-              <h2 class="text-3xl font-semibold sm:text-4xl sm:leading-snug {{ 'md:-mt-2' if section.icon }}">{{ section.title | safe }}</h2>
-              <a href="#" class="inline-flex items-center gap-2 mt-4 mb-8 text-base text-blue-500 hover:underline hover:text-blue-600">
-                {{ '/src/_includes/svg/icons/link.svg' | svgContents('w-4 h-4') | safe }}
-                <span>Kopier lenke</span>
+              <h2 class="flex items-baseline gap-2 sm:gap-4 text-2xl font-semibold sm:text-3xl sm:leading-snug {{ 'md:-mt-2' if section.icon }}">
+                {%- if section.icon -%}
+                <span class="inline-grid p-3 text-green-900 translate-y-px bg-green-100 rounded-full sm:-ml-16">
+                {{ section.icon | svgContents('w-5 h-5 sm:w-6 sm:h-6') | safe }}
+                </span>
+                {%- endif -%}
+                {{ section.title | safe }}
+              </h2>
+
+              <a href="#" class="inline-flex items-center gap-1.5 mt-2 mb-4 text-base text-blue-500 hover:underline hover:text-blue-600">
+                <span># Kopier lenke</span>
+                {# {{ '/src/_includes/svg/icons/link.svg' | svgContents('w-3.5 h-3.5') | safe }} #}
               </a>
-              <div class="markdown">
+
+              <div class="grid gap-4">
               {%- for block in section.contentBlocks -%}
+
                 {%- if block.type === 'markdown' -%}
                   <div class="markdown">
                     {{ block.data  | markdown | safe }}
@@ -102,16 +124,19 @@ order: 4
                   <h4 class="text-xl font-semibold">{{ block.title | safe }}</h4>
                   <div class="flex mt-1 flex-wrap gap-1.5">
                     {%- for item in block.data -%}
-                      {{ microcard(item) }}
+                      {{ microcard({
+                        text: item.text,
+                        dot: item.dot
+                      }) }}
                     {%- endfor -%}
                   </div>
                 {%- endif -%}
 
                 {%- if block.type === 'tiles' -%}
                   <h4 class="text-xl font-semibold">{{ block.title | safe }}</h4>
-                  <div class="grid gap-3 mt-1">
+                  <div class="grid mt-1 border-b border-gray-300">
                     {%- for item in block.data -%}
-                      <div class="relative flex items-center gap-4 px-4 py-3 bg-white rounded-lg shadow-sm hover:shadow hover:z-10 transition-colors duration-200 ease-out {{ item.hover }} ring-1 ring-gray-500/5">
+                      <div class="relative flex items-center gap-4 px-4 py-3 fine:hover:z-10 {{ item.theme }} border-t border-gray-300">
                         {{ item.icon | svgContents('max-w-16 h-auto w-[calc(8vw+1rem)]') | safe }}
                         <a class="flex-1 text-xl font-semibold leading-snug after:absolute after:inset-0" href="#">{{ item.title }}</a>
                       </div>

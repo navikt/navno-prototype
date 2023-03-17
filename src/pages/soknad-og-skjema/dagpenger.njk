@@ -9,11 +9,11 @@ order: 7
 {%- extends 'base-basic.njk' -%}
 
 {%- block content -%}
-  <main class="grid py-8 text-lg grid-cols-layout min-h-[70vh]" x-data="{ stepperOpen: false }">
+  <main class="grid py-8 md:py-12 text-lg grid-cols-layout min-h-[70vh]" x-data="{ stepperOpen: false }">
     <div class="relative col-wide max-w-prose md:max-w-none mx-auto md:mx-0 grid md:grid-cols-[6rem_auto] gap-x-8 items-start mb-12 w-full auto-rows-min">
 
       {# Pictogram #}
-      {{ '/src/_includes/svg/pictograms/soknad-og-skjema.svg' | svgContents('w-full h-auto max-w-20 md:ml-2 text-green-800 absolute right-0 -top-2 md:relative hidden xs:block') | safe }}
+      {{ '/src/_includes/svg/pictograms/soknad-og-skjema.svg' | svgContents('w-full h-auto max-w-20 md:ml-2 text-green-800 absolute right-0 md:relative hidden xs:block') | safe }}
 
       {# Intro #}
       <div class="md:col-start-2 md:row-start-1">
