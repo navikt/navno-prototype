@@ -70,9 +70,8 @@
     --navds-global-color-white: rgba(255, 255, 255, 1);
     --navds-stepper-marker-size: 1.75rem;
     --navds-stepper-marker-color: currentColor;
-  }
-  .navds-stepper--horizontal {
-    text-align: center;
+    display: grid;
+    justify-items: start;
   }
   .navds-stepper__item {
     flex: 1 1 100%;
