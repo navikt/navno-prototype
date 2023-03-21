@@ -15,6 +15,10 @@ const stepperItems = [
 
 const formBlocks = [
   {
+    type: "markdown",
+    data: `Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit ex aut ratione blanditiis asperiores quis fuga debitis fugit? Officia, quibusdam amet! Hic eum ab reprehenderit dolorum alias nihil autem modi.`,
+  },
+  {
     type: "select",
     label: "Nedtrekksliste",
     description: "Beskrivelse",
@@ -54,6 +58,13 @@ const formBlocks = [
     label: "Tekstfelt",
     description: "Beskrivelse ...",
     size: "",
+  },
+  {
+    type: "infobox",
+    title: "Lorem, ipsum dolor sit amet consectetur",
+    content: `Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit ex aut ratione blanditiis asperiores quis fuga debitis fugit? Officia, quibusdam amet! Hic eum ab reprehenderit dolorum alias nihil autem modi.`,
+    icon: "/src/_includes/svg/icons/info-colored.svg",
+    theme: "",
   },
   {
     type: "textarea",
