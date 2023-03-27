@@ -1,5 +1,5 @@
 ---
-title: 'Søknad og skjema fra A til Å'
+title: 'Søknad og skjema fra A til Å'
 description: 'Velg pengestøtten eller tjenesten det gjelder. Du kan søke eller velge type og område.'
 tags: ['template']
 order: '5'
@@ -9,11 +9,13 @@ permalink: "/produktoversikt/"
 {%- extends 'base.njk' -%}
 
 {%- from "macros/button.njk" import button -%}
+{%- from "macros/tile.njk" import tile -%}
 {%- from "macros/microcard.njk" import microcard -%}
 {%- from "macros/filterGroup.njk" import filterGroup -%}
 
 {%- block content -%}
-  <main class="py-12 text-lg text-gray-900"
+  <main
+    class="grid py-8 text-lg md:py-12 grid-cols-layout"
     x-data="{
       typeFilter: new URLSearchParams(location.search).get('type') || 'alle',
       areaFilter: new URLSearchParams(location.search).get('area') || 'alle',
@@ -63,27 +65,30 @@ permalink: "/produktoversikt/"
       $watch('search', (value) => {
         updateCount()
       });
-      updateCount()">
-    <div class="grid grid-cols-layout">
-      <div class="relative col-narrow lg:col-wide">
+      updateCount()"
+  >
+    <div class="relative col-wide max-w-prose md:max-w-none mx-auto md:mx-0 grid md:grid-cols-[6rem_auto] gap-x-8 items-start mb-12 w-full">
 
-        <div class="hidden float-right pb-8 mt-2 ml-24 xs:block sm:pb-0 sm:-mb-8">
-          {{ '/src/_includes/svg/pictograms/support.svg' | svgContents('w-[12vw] h-auto overflow-hidden max-w-[7rem]') | safe }}
-        </div>
 
+      {# Pictogram #}
+      {{ '/src/_includes/svg/pictograms/support.svg' | svgContents('w-full h-auto max-w-20 md:ml-2 text-green-800 absolute right-0 md:relative') | safe }}
+
+      {# Intro #}
+      <div class="pr-28 md:col-start-2 md:row-start-1 md:pr-0">
+        <p class="text-base tracking-wider uppercase opacity-70">
+          Oversikt
+        </p>
         <h1 class="text-3xl font-semibold leading-tight md:text-5xl md:leading-tight">{{ title | safe }}</h1>
-
         <p class="max-w-2xl mt-2 text-xl md:mt-3 md:text-2xl">{{ description | safe }}</p>
       </div>
-    </div>
 
-    <div class="grid mt-8 lg:mt-12 grid-cols-layout">
-      <div class="grid w-full gap-8 pb-20 lg:gap-x-16 lg:items-start lg:grid-cols-sidebar col-narrow lg:col-wide">
 
-        <div class="relative lg:row-start-1 lg:row-span-3 lg:col-start-2" x-data="{ filterDrawer: false }">
+      <div class="md:col-start-2 md:grid md:grid-cols-[2fr_1fr] gap-x-16 items-start gap-4 mt-8">
+
+        <div class="md:mt-8 md:col-start-2 md:row-start-1" x-data="{ filterDrawer: false }">
           <button
             type="button"
-            class="flex items-center justify-start gap-2.5 pl-3 pr-4 py-3 leading-none text-blue-600 bg-white rounded ring-2 ring-blue-500 hover:bg-blue-100 hover:text-blue-700 lg:hidden"
+            class="flex items-center justify-start gap-2.5 pl-3 pr-4 py-3 leading-none text-blue-600 bg-white rounded ring-2 ring-blue-500 hover:bg-blue-100 hover:text-blue-700 md:hidden"
             x-on:click="filterDrawer = true"
             x-bind:aria-expanded="filterDrawer">
             {{ '/src/_includes/svg/icons/filter.svg' | svgContents('w-5 h-5') | safe }}
@@ -130,6 +135,7 @@ permalink: "/produktoversikt/"
               </div>
             </form>
           </div>
+
           <button
             type="button"
             class="fixed inset-0 z-40 bg-black/25"
@@ -145,7 +151,7 @@ permalink: "/produktoversikt/"
             <span class="sr-only">Lukk</span>
           </button>
 
-          <div class="hidden lg:block">
+          <div class="hidden md:block">
             <div>
               <label for="searchFilter-desktop" class="text-sm tracking-widest uppercase opacity-70">Søk</label>
               <div class="relative mt-1">
@@ -168,7 +174,7 @@ permalink: "/produktoversikt/"
           </div>
         </div>
 
-        <div class="lg:row-start-1">
+        <div class="mt-8 md:col-start-1 md:row-start-1">
           <p class="mb-2">Viser <span x-text="count"></span> av {{ products.length }} produkter og tjenester</p>
 
           <div class="border-b border-deepblue-100" x-ref="entries" x-show="count !== 0">
@@ -210,10 +216,12 @@ permalink: "/produktoversikt/"
                   </button>
                 </div>
 
-                <div class="pt-5 pb-8 px-clamp-gap relative min-h-[20vh] markdown sm:px-20 mb-4" x-bind:hidden="!expanded" hidden>
+                <div class="pt-5 pb-8 px-clamp-gap relative min-h-[20vh] markdown sm:pl-20 sm:pr-0 mb-4" x-bind:hidden="!expanded" hidden>
                   <p>{{ product.ingress }}</p>
                   {%- if product.contentBlocks -%}
+                    {%- for block in product.contentBlocks -%}
                     {%- include "partials/contentBlocks.njk" -%}
+                    {%- endfor -%}
                   {%- else -%}
                   <div class="mt-4 italic">
                     <p>Innhold om søknader eller skjema er ikke lagt inn enda.</p>
@@ -235,7 +243,6 @@ permalink: "/produktoversikt/"
           <p class="mt-2 max-w-prose">Hvis du har fått et vedtak fra NAV og du er uenig i vedtaket, har du rett til å klage eller anke.</p>
           <p class="mb-2 mt-7"><a href="#" class="underline text-deepblue-600 fine:hover:no-underline fine:hover:text-deepblue-700">Les mer om dine klagerettigheter</a>.</p>
         </div>
-
       </div>
     </div>
   </main>

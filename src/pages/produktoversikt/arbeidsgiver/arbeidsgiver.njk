@@ -6,6 +6,7 @@ permalink: '/produktoversikt-arbeidsgiver/'
 {%- extends 'base.njk' -%}
 
 {%- from "macros/button.njk" import button -%}
+{%- from "macros/tile.njk" import tile -%}
 {%- from "macros/microcard.njk" import microcard -%}
 {%- from "macros/filterGroup.njk" import filterGroup -%}
 
@@ -212,8 +213,10 @@ permalink: '/produktoversikt-arbeidsgiver/'
                   <p>{{ product.ingress }}</p>
 
                   {%- if product.contentBlocks -%}
+                    {%- for block in product.contentBlocks -%}
                     {%- include "partials/contentBlocks.njk" -%}
-                  {%- endif -%}
+                    {%- endfor -%}
+                 {%- endif -%}
                 </div>
               </div>
             {%- endfor -%}

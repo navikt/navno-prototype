@@ -37,7 +37,9 @@
       notifyOpen: false
     }">
     <div class="relative z-10 bg-white" >
+    {%- if environment === 'production' -%}
     {%- include "partials/banner.njk" -%}
+    {%- endif -%}
 
     <header class="relative z-10 grid bg-white isolate grid-cols-layout shadow-border" >
       <nav class="flex items-center w-full gap-8 col-wide">

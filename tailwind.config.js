@@ -198,6 +198,14 @@ module.exports = {
       fontSize: {
         squishy: "clamp(2rem, 10vw + 10%, 8rem)",
       },
+      flexBasis: {
+        side: "min(100%, 36rem)",
+        main: "min(100%, 48rem)",
+      },
+      flexShrink: {
+        1: "1",
+        5: "5",
+      },
       gridTemplateColumns: {
         areas: "repeat(auto-fit, minmax(32ch, 1fr))",
         cards: "repeat(auto-fill, minmax(32ch, 1fr))",

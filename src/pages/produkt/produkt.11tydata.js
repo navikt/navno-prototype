@@ -1,7 +1,6 @@
 module.exports = {
   sections: [
     {
-      title: "Kort om utvidet barnetrygd",
       contentBlocks: [
         {
           type: "markdown",
@@ -18,7 +17,7 @@ module.exports = {
               dot: "bg-orange-300",
             },
             {
-              text: "Er alene med barn fordi den andre forelderen er død",
+              text: "Er alene med barn fordi den andre forelderen er død",
               dot: "bg-orange-300",
             },
           ],
@@ -49,14 +48,12 @@ Hvis du bor alene med barn mellom 0 og 3 år og får full overgangsstønad, kan 
             {
               title: "Overgangsstønad til enslig mor eller far",
               icon: "/src/_includes/svg/pictograms/overgangsstonad-enslig-foreldre.svg",
-              theme:
-                "fine:hover:bg-green-200 fine:hover:ring fine:hover:ring-green-200 fine:hover:rounded-lg fine:hover:border-transparent",
+              theme: "bg-green-200 rounded-lg fine:hover:bg-green-100",
             },
             {
               title: "Finn ut hva du kan ha rett til når du er alene med barn",
               icon: "/src/_includes/svg/pictograms/veiviser-neutral.svg",
-              theme:
-                "fine:hover:bg-deepblue-200 fine:hover:ring fine:hover:ring-deepblue-200 fine:hover:rounded-lg fine:hover:border-transparent",
+              theme: "bg-deepblue-200 rounded-lg fine:hover:bg-deepblue-100",
             },
           ],
         },
@@ -82,8 +79,28 @@ Hvis du bor alene med barn mellom 0 og 3 år og får full overgangsstønad, kan 
       contentBlocks: [
         {
           type: "markdown",
-          data: `Barnetrygden blir utbetalt en gang per måned.
-          I din utbetalingsoversikt kan du se den kommende utbetalingen din flere dager før utbetalingsdatoen.
+          data: `Barnetrygden blir utbetalt en gang per måned.`,
+        },
+        {
+          type: "expander",
+          title: "Vis utbetalingsdatoer",
+          data: `### Utbetalingsdatoer i 2023
+- 31\. januar
+- 28\. februar
+- 31\. mars
+- 28\. april
+- 31\. mai
+- 30\. juni
+- 31\. juli
+- 31\. august
+- 29\. september
+- 31\. oktober
+- 30\. november
+- 15\. desember`,
+        },
+        {
+          type: "markdown",
+          data: `I din utbetalingsoversikt kan du se den kommende utbetalingen din flere dager før utbetalingsdatoen.
 
           Når på dagen pengene er på konto, vil variere fordi det er banken din som overfører pengene til deg. Utbetalingen kan derfor komme på kontoen din først på ettermiddagen eller kvelden.
 

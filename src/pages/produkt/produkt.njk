@@ -13,76 +13,66 @@ order: 4
     <div class="relative col-default md:col-wide md:mx-0 grid sm:grid-cols-[6rem_auto] gap-x-8 items-start mb-12 sm:pr-20 md:pr-0">
       {{ '/src/_includes/svg/pictograms/utvidet-barnetrygd.svg' | svgContents('w-full h-auto max-w-20 sm:ml-1 top-2 text-green-800 absolute right-0 sm:relative') | safe }}
 
-      <div class="sm:col-start-2 sm:row-start-1">
-        <h1 class="min-w-0 pr-24 mt-0.5 text-3xl font-semibold leading-tight sm:pr-0 sm:text-5xl sm:leading-tight">Utvidet barnetrygd</h1>
-        <p class="mt-6 text-base opacity-80">
+      <div class="pr-28 sm:col-start-2 sm:row-start-1 md:pr-0">
+        <h1 class="min-w-0 mt-0.5 text-3xl font-semibold leading-tight sm:text-5xl sm:leading-tight">Utvidet barnetrygd</h1>
+        <p class="grid flex-wrap mt-6 text-base sm:flex gap-x-4 opacity-80">
           <span class="tracking-wider uppercase">Pengestøtte</span>
-          <span class="px-1"> — </span>
-          <span>Oppdatert 22. desember 2022</span>
+          <span class="hidden sm:block" aria-hidden="true">|</span>
+          <span class="inline-block">Oppdatert 22. desember 2022</span>
         </p>
-
       </div>
 
-      {# Intro #}
+
       <div class="sm:col-start-2 grid md:grid-cols-[2fr_1fr] gap-x-16 items-start gap-4 mt-8">
-        <div class="markdown">
-          <p>Du kan få utvidet barnetrygd når du bor alene med barn under 18 år. Dette er barnetrygd for et barn mer enn du faktisk bor sammen med.</p>
 
-          <p>Du kan også få småbarnstillegg. Dette er et tillegg til utvidet barnetrygd for enslige forsørgere som har barn mellom 0 og 3 år, og som også mottar full overgangsstønad.</p>
-
-          <h4 class="text-xl font-semibold">Utvidet barnetrygd er aktuelt for deg som</h4>
-          <div class="flex mt-1.5 flex-wrap gap-2">
-              {{ microcard({
-                text: 'Er helt eller delvis alene med barn',
-                class: 'fine:hover:bg-orange-100 fine:hover:shadow-none',
-                dot: 'bg-orange-300'
-              }) }}
-              {{ microcard({
-                text: 'Er alene med barn fordi den andre forelderen er død',
-                class: 'fine:hover:bg-orange-100 fine:hover:shadow-none',
-                dot: 'bg-orange-300'
-              }) }}
-          </div>
+        {# Intro #}
+        <div class="grid w-full max-w-3xl gap-4 md:mx-0 md:max-w-none">
+          {%- for section in sections.slice(0, 1) -%}
+            {%- for block in section.contentBlocks -%}
+              {%- include "partials/contentBlocks.njk" -%}
+            {%- endfor -%}
+          {%- endfor -%}
         </div>
 
-
         {# Innholdsfortegnelse #}
-        <div class="w-full max-w-3xl mt-6 md:sticky md:col-start-2 md:top-4 md:row-span-2 md:mx-0 md:max-w-none md:-mt-1.5 md:pl-6 md:border-l md:border-gray-200">
-          <h2 class="text-xl font-semibold">Innhold</h2>
+        <div class="w-full max-w-3xl mt-6 md:sticky md:col-start-2 md:top-0 md:row-span-2 md:mx-0 md:max-w-none md:-mt-1.5 border-l border-gray-200 overflow-hidden py-2 overflow-y-auto max-h-[100dvh]">
+          <div class="">
+          <h2 class="pl-3 text-xl font-semibold md:pl-6">Innhold</h2>
           {%- set index = sections.slice(1) -%}
-          <ul class="pt-1">
+          <ul class="grid justify-start gap-1.5 pt-1">
             {%- for item in index -%}
-              <li class="py-1.5 text-lg"><a class="text-blue-500 underline decoration-blue-300 hover:text-blue-800 md:pl-0.5 hover:no-underline" href="#{{ item.title | slugify }}">{{ item.title }}</a></li>
+              <li class="py-1 text-lg  border-l-4 pl-3 md:pl-6 {{ 'border-green-400' if loop.first else 'border-transparent fine:hover:border-gray-200' }}">
+                <a class="inline-flex p0.5-1 text-blue-500 underline decoration-blue-300 hover:text-blue-800 hover:no-underline" href="#{{ item.title | slugify }}">{{ item.title }}</a>
+              </li>
             {%- endfor -%}
           </ul>
 
-          <h2 class="mt-8 text-xl font-semibold">Nyttig å vite</h2>
-          <ul class="pt-1">
-            <li class="py-1.5 text-lg"><a class="text-blue-500 underline decoration-blue-300 hover:text-blue-800 md:pl-0.5 hover:no-underline" href="#">Klagerettigheter</a></li>
-            <li class="py-1.5 text-lg"><a class="text-blue-500 underline decoration-blue-300 hover:text-blue-800 md:pl-0.5 hover:no-underline" href="#">Lov om barnetrygd</a></li>
-            <li class="py-1.5 text-lg"><a class="text-blue-500 underline decoration-blue-300 hover:text-blue-800 md:pl-0.5 hover:no-underline" href="#">Pensjonsopptjening for omsorgsarbeid</a></li>
+          <h2 class="pl-3 mt-8 text-xl font-semibold md:pl-6">Nyttig å vite</h2>
+          <ul class="grid justify-start gap-1.5 pt-1">
+            <li class="py-1 pl-3 text-lg border-l-4 border-transparent fine:hover:border-gray-200 md:pl-6"><a class="inline-flex py-0.5 text-blue-500 underline decoration-blue-300 hover:text-blue-800 hover:no-underline" href="#">Klagerettigheter</a></li>
+            <li class="py-1 pl-3 text-lg border-l-4 border-transparent fine:hover:border-gray-200 md:pl-6"><a class="inline-flex py-0.5 text-blue-500 underline decoration-blue-300 hover:text-blue-800 hover:no-underline" href="#">Lov om barnetrygd</a></li>
+            <li class="py-1 pl-3 text-lg border-l-4 border-transparent fine:hover:border-gray-200 md:pl-6"><a class="inline-flex py-0.5 text-blue-500 underline decoration-blue-300 hover:text-blue-800 hover:no-underline" href="#">Pensjonsopptjening for omsorgsarbeid</a></li>
           </ul>
+          </div>
         </div>
 
         {# Filter + Innhold #}
         <div class="grid w-full max-w-3xl gap-4 md:row-start-2 md:mx-0 md:max-w-none">
 
           {# Filter #}
-          <div class="px-6 py-4 mt-8 rounded sm:px-8 sm:py-6 bg-blue-50 max-w-prose">
+          <div class="px-6 py-4 mt-8 rounded-lg sm:px-8 sm:py-6 bg-blue-50 max-w-prose">
             <h2 class="text-xl font-semibold">Hva er situasjonen din?</h2>
             <p>Velg situasjonen som passer for deg, så viser vi bare informasjon om den.</p>
 
-            <button class="flex items-center justify-between w-full gap-3 px-4 py-2.5 mt-4 bg-white border-b-2 border-gray-400 md:max-w-max" type="button">
-              <span>Tilpass innholdet</span>
-              {{ '/src/_includes/svg/icons/chevron-down.svg' | svgContents('w-4 h-4') | safe }}
-            </button>
+            <select class="flex items-center rounded-none justify-between w-full gap-3 pl-4 pr-12 py-2.5 mt-4 bg-white border-b-2 border-gray-400 md:max-w-max bg-select appearance-none">
+              <option>Tilpass innholdet</option>
+            </select>
           </div>
 
           {# Innhold #}
-          {%- for section in sections -%}
-            {%- if not loop.first -%}
-            <div class="relative grid mt-10 max-w-prose" id="{{ section.title | slugify }}">
-
+          {%- for section in sections.slice(1) -%}
+            <div class="relative grid mt-12 max-w-prose" id="{{ section.title | slugify }}">
+              {% if section.title %}
               <h2 class="flex items-baseline gap-2 sm:gap-4 text-2xl font-semibold sm:text-3xl sm:leading-snug {{ 'md:-mt-2' if section.icon }}">
                 {%- if section.icon -%}
                 <span class="inline-grid p-3 text-green-900 translate-y-px bg-green-100 rounded-full sm:-ml-16">
@@ -96,62 +86,16 @@ order: 4
                 <span># Kopier lenke</span>
                 {# {{ '/src/_includes/svg/icons/link.svg' | svgContents('w-3.5 h-3.5') | safe }} #}
               </a>
+              {% endif %}
 
-              <div class="grid gap-4">
+              <div class="grid gap-8">
               {%- for block in section.contentBlocks -%}
-
-                {%- if block.type === 'markdown' -%}
-                  <div class="markdown">
-                    {{ block.data  | markdown | safe }}
-                  </div>
-                {%- endif -%}
-
-                {%- if block.type === 'actions' -%}
-                <div class="grid gap-1.5 sm:flex">
-                  {%- for item in block.data -%}
-                    {{ button(
-                      {
-                        text: item.text,
-                        href: '#',
-                        variant: item.variant
-                      }
-                    ) }}
-                  {%- endfor -%}
-                </div>
-                {%- endif -%}
-
-                {%- if block.type === 'microcards' -%}
-                  <h4 class="text-xl font-semibold">{{ block.title | safe }}</h4>
-                  <div class="flex mt-1 flex-wrap gap-1.5">
-                    {%- for item in block.data -%}
-                      {{ microcard({
-                        text: item.text,
-                        dot: item.dot
-                      }) }}
-                    {%- endfor -%}
-                  </div>
-                {%- endif -%}
-
-                {%- if block.type === 'tiles' -%}
-                  <h4 class="text-xl font-semibold">{{ block.title | safe }}</h4>
-                  <div class="grid mt-1 border-b border-gray-300">
-                    {%- for item in block.data -%}
-                      <div class="relative flex items-center gap-4 px-4 py-3 fine:hover:z-10 {{ item.theme }} border-t border-gray-300">
-                        {{ item.icon | svgContents('max-w-16 h-auto w-[calc(8vw+1rem)]') | safe }}
-                        <a class="flex-1 text-xl font-semibold leading-snug after:absolute after:inset-0" href="#">{{ item.title }}</a>
-                      </div>
-                    {%- endfor -%}
-                  </div>
-                {%- endif -%}
-
-                {%- if block.type === 'line' -%}
-                  <hr class="border-deepblue-100" />
-                {%- endif -%}
-
+              <div class="markdown">
+                {%- include "partials/contentBlocks.njk" -%}
+              </div>
               {%- endfor -%}
               </div>
             </div>
-            {%- endif -%}
           {%- endfor -%}
         </div>
       </div>

@@ -37,7 +37,10 @@
       notifyOpen: false
     }">
     <div class="relative z-10 bg-white" >
+    {%- if environment === 'production' -%}
     {%- include "partials/banner.njk" -%}
+    {%- endif -%}
+
     {%- include "partials/header.njk" -%}
     {%- block content -%}{%- endblock -%}
     {%- include "partials/footer.njk" -%}
