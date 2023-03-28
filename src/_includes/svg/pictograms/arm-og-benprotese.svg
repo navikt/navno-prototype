@@ -1,9 +1,9 @@
 <svg width="96" height="96" viewBox="0 0 96 96" fill="none" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
 <g clip-path="url(#clip0_74_945)">
-<rect x="28.6152" y="24" width="38" height="14" transform="rotate(90 28.6152 24)" fill="rgb(204 241 214)"/>
-<rect x="2" y="36.3848" width="38" height="14" fill="rgb(204 241 214)"/>
-<rect x="58" y="96" width="56" height="14" transform="rotate(-90 58 96)" fill="rgb(204 241 214)"/>
-<rect x="37" y="61" width="56" height="14" fill="rgb(204 241 214)"/>
+<rect x="28.6152" y="24" width="38" height="14" transform="rotate(90 28.6152 24)" fill="var(--pictogram, rgb(204 241 214))"/>
+<rect x="2" y="36.3848" width="38" height="14" fill="var(--pictogram, rgb(204 241 214))"/>
+<rect x="58" y="96" width="56" height="14" transform="rotate(-90 58 96)" fill="var(--pictogram, rgb(204 241 214))"/>
+<rect x="37" y="61" width="56" height="14" fill="var(--pictogram, rgb(204 241 214))"/>
 <path d="M79.3986 53.4492L74.086 73.276M74.086 73.276L63.4222 70.4187L50.7888 74.117L39.1085 73.9145C37.6675 73.8895 36.3946 74.8488 36.0216 76.2409L35.8631 76.8324C34.8779 80.5094 37.3649 84.2102 41.1416 84.687L46.4975 85.3632L51.8801 86.0428C56.5994 86.6386 61.2103 87.9017 65.5743 89.7944L72.2823 92.7035C76.2399 94.4199 80.7097 91.7261 81.041 87.4251L81.9679 75.388L74.086 73.276Z" stroke="#262626" stroke-width="3"/>
 <path d="M77.3171 28.0991L93.8759 32.536L92.7443 36.7591C91.1594 42.674 88.2166 48.1376 84.1498 52.7157V52.7157C81.4592 55.7445 76.466 54.4065 75.6503 50.4383V50.4383C74.4174 44.4401 74.6007 38.2371 76.1855 32.3222L77.3171 28.0991Z" stroke="#262626" stroke-width="3"/>
 <path d="M35.9999 40.1352L13.9999 27.6351" stroke="#262626" stroke-width="3"/>

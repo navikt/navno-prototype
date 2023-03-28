@@ -1,8 +1,8 @@
 <svg width="96" height="96" viewBox="0 0 96 96" fill="none" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
 <g clip-path="url(#clip0_1_1102)">
-<circle cx="62" cy="54" r="12" fill="rgb(204 241 214)"/>
-<circle cx="38" cy="70" r="8" fill="rgb(204 241 214)"/>
-<circle cx="42.5" cy="25.5" r="16.5" fill="rgb(204 241 214)"/>
+<circle cx="62" cy="54" r="12" fill="var(--pictogram, rgb(204 241 214))"/>
+<circle cx="38" cy="70" r="8" fill="var(--pictogram, rgb(204 241 214))"/>
+<circle cx="42.5" cy="25.5" r="16.5" fill="var(--pictogram, rgb(204 241 214))"/>
 <path d="M90 70.8889V65.9574C90 63.7718 88.2282 62 86.0426 62H53.9574C51.7718 62 50 63.7718 50 65.9574V90.0425C50 92.2282 51.7718 94 53.9574 94H86.0426C88.2282 94 90 92.2282 90 90.0425V84.3268" stroke="#262626" stroke-width="3.42"/>
 <path d="M73.71 78.0001C73.71 74.5262 76.5261 71.7101 80 71.7101H92.0426C93.2838 71.7101 94.29 72.7163 94.29 73.9576V82.0427C94.29 83.2839 93.2838 84.2901 92.0426 84.2901H80C76.5261 84.2901 73.71 81.474 73.71 78.0001Z" stroke="#262626" stroke-width="3.42"/>
 <path d="M85.5325 62.29H56.4464L81.0577 50.3573L85.5325 62.29Z" stroke="#262626" stroke-width="3.42"/>

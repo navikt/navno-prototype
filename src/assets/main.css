@@ -166,10 +166,16 @@
   :where(.navds-stepper__item--active) .navds-stepper__marker {
     background-color: var(--navds-global-color-deepblue-500);
   }
+  .c-product-tile {
+    --pictogram: rgb(204 226 240 / 1);
+  }
+  .c-product-tile:hover {
+    --pictogram: rgb(255 255 255 / 1);
+  }
 }
 @layer utilities {
   .grid-cols-layout {
-    --_layout-gap: clamp(1rem, -3rem + 12vw, 6rem);
+    --_layout-gap: clamp(1rem, -2rem + 8vw, 6rem);
     --_layout-full: minmax(var(--_layout-gap), 1fr);
     --_layout-normal: minmax(0, 7rem);
     --_layout-wide: minmax(0, 8rem);
