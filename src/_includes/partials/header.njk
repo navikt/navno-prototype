@@ -3,7 +3,7 @@
 <header class="relative z-10 grid bg-white isolate grid-cols-layout shadow-border" >
 
   {# Audience Dropdown #}
-  <div class="relative z-10 grid justify-center bg-gray-100 xs:hidden col-full isolate">
+  <div class="relative z-10 justify-center hidden bg-gray-100 col-full isolate">
     <button class="flex items-center justify-center gap-2 px-4 py-2 focus:outline-none focus-visible:text-white focus-visible:bg-blue-500" x-on:click="audienceDropdownOpen = !audienceDropdownOpen">
       {%- if ('samarbeidspartner' in page.fileSlug) -%}
       <span>{{ menu.audience[2].title }}</span>

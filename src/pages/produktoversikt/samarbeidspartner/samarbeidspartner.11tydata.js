@@ -2112,7 +2112,7 @@ const products = [
     type: ["Skjema"],
     role: [
       "Optiker eller øyelege",
-      "Hjelpemiddelformidler",
+      "Hjelpemiddel&shy;formidler",
       "Lege, tannlege eller annen behandler",
     ],
     contentBlocks: [
@@ -2257,7 +2257,7 @@ const products = [
       "Pengestøtte",
       "Hjelpemiddel",
     ],
-    role: ["Hjelpemiddelformidler"],
+    role: ["Hjelpemiddel&shy;formidler"],
     contentBlocks: [
       {
         type: "markdown",
@@ -2326,7 +2326,7 @@ const products = [
       {
         type: "markdown",
         data: `### Søk om hjelpemidler (dette er et fellesskjema som brukes for mange hjelpemidler, må ha generisk tekst?)
-          Hvis du er hjelpemiddelformidler i kommunen og har fått nødvendige tilganger, kan du nå søke digitalt om et utvalg av enkle hjelpemidler. Når du skal søke på vegne av andre trenger du signert fullmakt.`,
+          Hvis du er Hjelpemiddel&shy;formidler i kommunen og har fått nødvendige tilganger, kan du nå søke digitalt om et utvalg av enkle hjelpemidler. Når du skal søke på vegne av andre trenger du signert fullmakt.`,
       },
       {
         type: "actions",
@@ -2380,7 +2380,7 @@ const products = [
       "Pengestøtte",
       "Hjelpemiddel",
     ],
-    role: ["Hjelpemiddelformidler"],
+    role: ["Hjelpemiddel&shy;formidler"],
     contentBlocks: [
       {
         type: "markdown",
@@ -2402,7 +2402,7 @@ const products = [
       {
         type: "markdown",
         data: `### Søk om hjelpemidler (dette er et fellesskjema som brukes for mange hjelpemidler, må ha generisk tekst?)
-          Hvis du er hjelpemiddelformidler i kommunen og har fått nødvendige tilganger, kan du nå søke digitalt om et utvalg av enkle hjelpemidler. Når du skal søke på vegne av andre trenger du signert fullmakt.`,
+          Hvis du er Hjelpemiddel&shy;formidler i kommunen og har fått nødvendige tilganger, kan du nå søke digitalt om et utvalg av enkle hjelpemidler. Når du skal søke på vegne av andre trenger du signert fullmakt.`,
       },
       {
         type: "actions",
@@ -2456,7 +2456,7 @@ const products = [
       "Pengestøtte",
       "Hjelpemiddel",
     ],
-    role: ["Hjelpemiddelformidler"],
+    role: ["Hjelpemiddel&shy;formidler"],
     contentBlocks: [
       {
         type: "markdown",
@@ -2478,7 +2478,7 @@ const products = [
       {
         type: "markdown",
         data: `### Søk om hjelpemidler (dette er et fellesskjema som brukes for mange hjelpemidler, må ha generisk tekst?)
-          Hvis du er hjelpemiddelformidler i kommunen og har fått nødvendige tilganger, kan du nå søke digitalt om et utvalg av enkle hjelpemidler. Når du skal søke på vegne av andre trenger du signert fullmakt.`,
+          Hvis du er Hjelpemiddel&shy;formidler i kommunen og har fått nødvendige tilganger, kan du nå søke digitalt om et utvalg av enkle hjelpemidler. Når du skal søke på vegne av andre trenger du signert fullmakt.`,
       },
       {
         type: "actions",
@@ -2532,7 +2532,7 @@ const products = [
       "Pengestøtte",
       "Hjelpemiddel",
     ],
-    role: ["Hjelpemiddelformidler"],
+    role: ["Hjelpemiddel&shy;formidler"],
     contentBlocks: [
       {
         type: "markdown",
@@ -2554,7 +2554,7 @@ const products = [
       {
         type: "markdown",
         data: `### Søk om hjelpemidler (dette er et fellesskjema som brukes for mange hjelpemidler, må ha generisk tekst?)
-          Hvis du er hjelpemiddelformidler i kommunen og har fått nødvendige tilganger, kan du nå søke digitalt om et utvalg av enkle hjelpemidler. Når du skal søke på vegne av andre trenger du signert fullmakt.`,
+          Hvis du er Hjelpemiddel&shy;formidler i kommunen og har fått nødvendige tilganger, kan du nå søke digitalt om et utvalg av enkle hjelpemidler. Når du skal søke på vegne av andre trenger du signert fullmakt.`,
       },
       {
         type: "actions",
@@ -2609,7 +2609,7 @@ const products = [
       "Hjelpemiddel",
     ],
     role: [
-      "Hjelpemiddelformidler",
+      "Hjelpemiddel&shy;formidler",
     ],
     contentBlocks: [
       {
@@ -2791,7 +2791,7 @@ const products = [
       "Hjelpemiddel",
     ],
     role: [
-      "Hjelpemiddelformidler",
+      "Hjelpemiddel&shy;formidler",
     ],
     contentBlocks: [
       {
@@ -2814,7 +2814,7 @@ const products = [
       {
         type: "markdown",
         data: `### Søk om hjelpemidler (dette er et fellesskjema som brukes for mange hjelpemidler, må ha generisk tekst?)
-          Hvis du er hjelpemiddelformidler i kommunen og har fått nødvendige tilganger, kan du nå søke digitalt om et utvalg av enkle hjelpemidler. Når du skal søke på vegne av andre trenger du signert fullmakt.`,
+          Hvis du er Hjelpemiddel&shy;formidler i kommunen og har fått nødvendige tilganger, kan du nå søke digitalt om et utvalg av enkle hjelpemidler. Når du skal søke på vegne av andre trenger du signert fullmakt.`,
       },
       {
         type: "actions",
@@ -2905,7 +2905,7 @@ const products = [
     icon: "/src/_includes/svg/pictograms/slik-gjor-du-det.svg",
     type: ["Hjelpemiddel"],
     role: [
-      "Hjelpemiddelformidler",
+      "Hjelpemiddel&shy;formidler",
       "Ansatt i NAV-kontor, kommunen eller fylkeskommunen",
     ],
     contentBlocks: [
@@ -2986,7 +2986,7 @@ const products = [
     ingress: "Ingress",
     icon: "/src/_includes/svg/pictograms/slik-gjor-du-det.svg",
     type: ["Skjema"],
-    role: ["Hjelpemiddelformidler"],
+    role: ["Hjelpemiddel&shy;formidler"],
     contentBlocks: [
       {
         type: "markdown",
@@ -3026,7 +3026,7 @@ const products = [
       "De ortopediske verkstedene som har avtale med NAV, forplikter seg til å levere elektronisk oppgjør.",
     icon: "/src/_includes/svg/pictograms/slik-gjor-du-det.svg",
     type: ["Skjema"],
-    role: ["Hjelpemiddelformidler"],
+    role: ["Hjelpemiddel&shy;formidler"],
     contentBlocks: [
       {
         type: "markdown",

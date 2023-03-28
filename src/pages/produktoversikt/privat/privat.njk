@@ -69,7 +69,6 @@ permalink: "/produktoversikt/"
   >
     <div class="relative col-wide max-w-prose md:max-w-none mx-auto md:mx-0 grid md:grid-cols-[6rem_auto] gap-x-8 items-start mb-12 w-full">
 
-
       {# Pictogram #}
       {{ '/src/_includes/svg/pictograms/support.svg' | svgContents('w-full h-auto max-w-20 md:ml-2 text-green-800 absolute right-0 md:relative') | safe }}
 
@@ -107,7 +106,7 @@ permalink: "/produktoversikt/"
           >
             <form class="flex flex-col h-full bg-white shadow-drawer col-narrow lg:hidden" x-on:click.outside="filterDrawer = false, filterTags = false">
               <div class="flex-1 px-6 pb-12 overflow-y-auto overscroll-y-contain">
-                <div class="relative grid pt-6" >
+                <div class="relative grid gap-8 pt-6">
                   <div>
                     <label for="searchFilter-mobile" class="text-sm tracking-widest uppercase opacity-70">Søk</label>
                     <div class="relative mt-1">
@@ -120,12 +119,14 @@ permalink: "/produktoversikt/"
                   {{ filterGroup({
                     array: areaFilter,
                     title: 'Velg område',
-                    value: 'areaFilter'
+                    value: 'areaFilter',
+                    showAll: true
                   }) }}
                   {{ filterGroup({
                     array: typeFilter,
                     title: 'Velg type',
-                    value: 'typeFilter'
+                    value: 'typeFilter',
+                    showAll: true
                   }) }}
                 </div>
               </div>
@@ -151,7 +152,7 @@ permalink: "/produktoversikt/"
             <span class="sr-only">Lukk</span>
           </button>
 
-          <div class="hidden md:block">
+          <div class="hidden gap-8 md:grid">
             <div>
               <label for="searchFilter-desktop" class="text-sm tracking-widest uppercase opacity-70">Søk</label>
               <div class="relative mt-1">
@@ -164,12 +165,14 @@ permalink: "/produktoversikt/"
             {{ filterGroup({
               array: areaFilter,
               title: 'Velg område',
-              value: 'areaFilter'
+              value: 'areaFilter',
+                  showAll: true
             }) }}
             {{ filterGroup({
               array: typeFilter,
               title: 'Velg type',
-              value: 'typeFilter'
+              value: 'typeFilter',
+              showAll: true
             }) }}
           </div>
         </div>
