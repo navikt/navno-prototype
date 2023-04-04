@@ -48,7 +48,7 @@ module.exports = {
     {
       title: "Ettersende dokumentasjon",
       href: "/ettersende-dokumentasjon/",
-      icon: "/src/_includes/svg/pictograms/utbetalingsdatoer-bla.svg",
+      icon: "/src/_includes/svg/pictograms/utbetalingsdatoer.svg",
     },
     // {
     //   title: "Klage og anke",

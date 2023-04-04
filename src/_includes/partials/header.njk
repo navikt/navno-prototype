@@ -1,9 +1,9 @@
-{% set audience = audienceOverride or menu.audience %}
+{%- set audience = audienceOverride or menu.audience -%}
 
 <header class="relative z-10 grid bg-white isolate grid-cols-layout shadow-border" >
 
   {# Audience Dropdown #}
-  <div class="relative z-10 grid justify-center bg-gray-100 xs:hidden col-full isolate">
+  <div class="relative z-10 justify-center hidden bg-gray-100 col-full isolate">
     <button class="flex items-center justify-center gap-2 px-4 py-2 focus:outline-none focus-visible:text-white focus-visible:bg-blue-500" x-on:click="audienceDropdownOpen = !audienceDropdownOpen">
       {%- if ('samarbeidspartner' in page.fileSlug) -%}
       <span>{{ menu.audience[2].title }}</span>
@@ -16,13 +16,13 @@
     </button>
     <div class="absolute px-4 mt-px -translate-x-1/2 left-1/2 top-full">
       <ul class="overflow-hidden text-gray-900 bg-white divide-y divide-gray-300 rounded shadow-xl max-w-max ring-1 ring-gray-200"  x-show="audienceDropdownOpen" x-on:click.outside="audienceDropdownOpen = false">
-        {% for item in audience %}
+        {%- for item in audience -%}
           <li class="grid">
-            <a href="{{ item.href or '#' }}" class="py-2 px-3 border-l-4 fine:hover:bg-gray-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-800 {{ 'border-blue-500' if activeRole === item.title or activeRole === '' else 'border-transparent fine:hover:border-gray-300/75 opacity-70' }}">
+            <a href="{{ item.href or '#' }}" class="py-2 px-3 border-l-4 fine:hover:bg-gray-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-800 {{ 'border-blue-500' if activeRole === item.title or activeRole === '' else 'border-transparent fine:hover:border-gray-300/75 text-gray-700' }}">
               {{ item.title | safe }}
             </a>
           </li>
-        {% endfor %}
+        {%- endfor -%}
       </ul>
     </div>
   </div>
@@ -46,21 +46,21 @@
       {%- endif -%}
         {{ '/src/_includes/svg/icons/chevron-down.svg' | svgContents('w-4 h-4') | safe }}
       </button>
-      <div class="xs:absolute md:static xs:top-full xs:left-0">
-        <ul class="justify-center overflow-hidden text-lg bg-white border border-gray-200 divide-y divide-gray-200 rounded shadow-lg md:rounded-none md:bg-transparent md:shadow-none md:border-0 md:divide-y-0 md:gap-4 md:flex" x-bind:class="audienceDropdownOpen ? 'grid' : 'hidden md:flex'">
-          {% for item in audience %}
+      <div class="flex flex-col xs:absolute md:static xs:top-full xs:left-0">
+        <ul class="justify-center flex-1 overflow-hidden text-lg bg-white border border-gray-200 divide-y divide-gray-200 rounded shadow-lg md:rounded-none md:bg-transparent md:shadow-none md:border-0 md:divide-y-0 md:gap-4 md:pt-3 md:flex" x-bind:class="audienceDropdownOpen ? 'grid' : 'hidden md:flex'">
+          {%- for item in audience -%}
             <li class="grid">
-              <a href="{{ item.href or '#' }}" class="focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-800 flex items-center py-2 px-3 md:px-0.5 md:pb-5 text-gray-900 border-l-4 md:border-l-0 md:border-b-4 md:pt-6 {{ 'border-blue-500' if activeRole === item.title else 'border-transparent fine:hover:border-gray-300/75 opacity-70' }}">
+              <a href="{{ item.href or '#' }}" class="focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-800 flex items-center py-2 px-3 md:px-0.5 md:pb-4 text-gray-900 border-l-4 md:border-l-0 md:border-b-4 {{ 'border-blue-500' if activeRole === item.title else 'border-transparent fine:hover:border-gray-300/75 text-gray-700' }}">
                 {{ item.title }} {{ item.active }}
               </a>
             </li>
-          {% endfor %}
+          {%- endfor -%}
         </ul>
       </div>
     </div>
 
     {# Menu Buttons #}
-    {% set menuButtonClasses = "flex-0 flex-col sm:flex-row items-center justify-center py-2 pl-2.5 pr-3 leading-none font-semibold sm:gap-2.5 text-blue-500 sm:rounded sm:text-lg fine:hover:bg-deepblue-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-800" %}
+    {%- set menuButtonClasses = "flex-0 flex-col sm:flex-row items-center justify-center py-2 pl-2.5 pr-3 leading-none font-semibold sm:gap-2.5 text-blue-500 sm:rounded sm:text-lg fine:hover:bg-deepblue-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-800" -%}
 
     <div class="flex items-end gap-0.5 ml-auto py-2 sm:py-4 whitespace-nowrap">
       <button class="flex {{ menuButtonClasses }}" type="button">

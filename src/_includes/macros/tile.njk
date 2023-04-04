@@ -1,0 +1,6 @@
+{% macro tile(args) %}
+ <div class="relative flex items-center gap-4 px-4 py-3 fine:hover:z-10 {{ args.theme }}">
+  {{ args.icon | svgContents('max-w-16 h-auto w-[calc(8vw+1rem)]') | safe }}
+  <a class="flex-1 text-xl font-semibold leading-snug after:absolute after:inset-0" href="#">{{ args.title }}</a>
+</div>
+{% endmacro %}

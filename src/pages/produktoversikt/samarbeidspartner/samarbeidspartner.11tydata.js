@@ -1460,10 +1460,78 @@ const products = [
     type: ["Tiltak"],
     role: ["Tiltaksarrangør"],
     contentBlocks: [
+      // {
+      //   type: "markdown",
+      //   data: `### Registrer deltakere
+      //     Dette gjør du digitalt i Deltakeroversikten.`,
+      // },
+      // {
+      //   type: "actions",
+      //   data: [
+      //     {
+      //       text: "Bruk deltakeroversikten",
+      //       variant: "primary",
+      //     },
+      //   ],
+      // },
+      // {
+      //   type: "markdown",
+      //   data: `Hvis du ikke har mulighet til å bruke deltakeroversikten, kan du sende fremmøteoversikt på papir.`,
+      // },
+      // {
+      //   type: "actions",
+      //   data: [
+      //     {
+      //       text: "Send oversikt i posten",
+      //       variant: "secondary",
+      //     },
+      //     {
+      //       text: "Ettersend dokumentasjon i posten",
+      //       variant: "secondary",
+      //     },
+      //   ],
+      // },
+      // {
+      //   type: "line",
+      // },
+      // {
+      //   type: "markdown",
+      //   data: `### Send refusjonskrav
+      //     Noe tekst`,
+      // },
+      // {
+      //   type: "actions",
+      //   data: [
+      //     {
+      //       text: "Send skjema",
+      //       variant: "primary",
+      //     },
+      //   ],
+      // },
+      // {
+      //   type: "line",
+      // },
+      // {
+      //   type: "markdown",
+      //   data: `### Send vedlegg til refusjonskrav
+      //   Excel-skjema til bruk når ...?`,
+      // },
+      // {
+      //   type: "actions",
+      //   data: [
+      //     {
+      //       text: "Last ned skjema",
+      //       variant: "secondary",
+      //     },
+      //   ],
+      // },
+      // {
+      //   type: "line",
+      // },
       {
         type: "markdown",
-        data: `### Registrer deltakere
-          Dette gjør du digitalt i Deltakeroversikten.`,
+        data: `### Hold oversikt og send endringer til NAV
+        Hold oversikt over deltakere på tiltaket og kommuniser med NAV om endringer i deltakeroversikten.`,
       },
       {
         type: "actions",
@@ -1475,35 +1543,18 @@ const products = [
         ],
       },
       {
-        type: "markdown",
-        data: `Hvis du ikke har mulighet til å bruke deltakeroversikten, kan du sende fremmøteoversikt på papir.`,
-      },
-      {
-        type: "actions",
-        data: [
-          {
-            text: "Send oversikt i posten",
-            variant: "secondary",
-          },
-          {
-            text: "Ettersend dokumentasjon i posten",
-            variant: "secondary",
-          },
-        ],
-      },
-      {
         type: "line",
       },
       {
         type: "markdown",
-        data: `### Send refusjonskrav
-          Noe tekst`,
+        data: `### Førsteside til rapporter om deltaker
+        Skal du sende inn statusrapport, sluttrapport eller plan for enkeltbrukere på tiltaket? Da må du hente førsteside for å kunne sende dokumenter.`,
       },
       {
         type: "actions",
         data: [
           {
-            text: "Send skjema",
+            text: "Hent førsteside",
             variant: "primary",
           },
         ],
@@ -1513,15 +1564,15 @@ const products = [
       },
       {
         type: "markdown",
-        data: `### Send vedlegg til refusjonskrav
-        Excel-skjema til bruk når ...?`,
+        data: `### Send refusjonskrav
+        Noe tekst`,
       },
       {
         type: "actions",
         data: [
           {
-            text: "Last ned skjema",
-            variant: "secondary",
+            text: "Send skjema",
+            variant: "primary",
           },
         ],
       },
@@ -1554,10 +1605,24 @@ const products = [
     type: ["Tiltak"],
     role: ["Tiltaksarrangør"],
     contentBlocks: [
+      // {
+      //   type: "markdown",
+      //   data: `### Registrer deltakere
+      //     Dette gjør du digitalt i Deltakeroversikten.`,
+      // },
+      // {
+      //   type: "actions",
+      //   data: [
+      //     {
+      //       text: "Bruk deltakeroversikten",
+      //       variant: "primary",
+      //     },
+      //   ],
+      // },
       {
         type: "markdown",
-        data: `### Registrer deltakere
-          Dette gjør du digitalt i Deltakeroversikten.`,
+        data: `### Hold oversikt og send endringer til NAV
+        Hold oversikt over deltakere på tiltaket og kommuniser med NAV om endringer i deltakeroversikten.`,
       },
       {
         type: "actions",
@@ -1568,20 +1633,37 @@ const products = [
           },
         ],
       },
+      // {
+      //   type: "markdown",
+      //   data: `Hvis du ikke har mulighet til å bruke deltakeroversikten, kan du sende fremmøteoversikt på papir.`,
+      // },
+      // {
+      //   type: "actions",
+      //   data: [
+      //     {
+      //       text: "Send oversikt i posten",
+      //       variant: "secondary",
+      //     },
+      //     {
+      //       text: "Ettersend dokumentasjon i posten",
+      //       variant: "secondary",
+      //     },
+      //   ],
+      // },
+      {
+        type: "line",
+      },
       {
         type: "markdown",
-        data: `Hvis du ikke har mulighet til å bruke deltakeroversikten, kan du sende fremmøteoversikt på papir.`,
+        data: `### Førsteside til rapporter om deltaker
+        Skal du sende inn statusrapport, sluttrapport eller plan for enkeltbrukere på tiltaket? Da må du hente førsteside for å kunne sende dokumenter.`,
       },
       {
         type: "actions",
         data: [
           {
-            text: "Send oversikt i posten",
-            variant: "secondary",
-          },
-          {
-            text: "Ettersend dokumentasjon i posten",
-            variant: "secondary",
+            text: "Hent førsteside",
+            variant: "primary",
           },
         ],
       },
@@ -1602,23 +1684,23 @@ const products = [
           },
         ],
       },
-      {
-        type: "line",
-      },
-      {
-        type: "markdown",
-        data: `### Send vedlegg til refusjonskrav
-          Excel-skjema til bruk når ...?`,
-      },
-      {
-        type: "actions",
-        data: [
-          {
-            text: "Last ned skjema",
-            variant: "secondary",
-          },
-        ],
-      },
+      // {
+      //   type: "line",
+      // },
+      // {
+      //   type: "markdown",
+      //   data: `### Send vedlegg til refusjonskrav
+      //     Excel-skjema til bruk når ...?`,
+      // },
+      // {
+      //   type: "actions",
+      //   data: [
+      //     {
+      //       text: "Last ned skjema",
+      //       variant: "secondary",
+      //     },
+      //   ],
+      // },
       {
         type: "line",
       },
@@ -1668,6 +1750,27 @@ const products = [
       },
       {
         type: "markdown",
+        data: `### Send fremmøteskjema ved deltakelse
+        Dette brukes for å dokumentere deltakelse på tiltaket. `,
+      },
+      {
+        type: "actions",
+        data: [
+          {
+            text: "Send skjema",
+            variant: "primary",
+          },
+          {
+            text: "Ettersend dokumentasjon",
+            variant: "secondary",
+          },
+        ],
+      },
+      {
+        type: "line",
+      },
+      {
+        type: "markdown",
         data: `### Mer om`,
       },
       {
@@ -1688,10 +1791,44 @@ const products = [
     type: ["Tiltak"],
     role: ["Tiltaksarrangør"],
     contentBlocks: [
+      // {
+      //   type: "markdown",
+      //   data: `### Registrer deltakere
+      //     Dette gjør du digitalt i Deltakeroversikten.`,
+      // },
+      // {
+      //   type: "actions",
+      //   data: [
+      //     {
+      //       text: "Bruk deltakeroversikten",
+      //       variant: "primary",
+      //     },
+      //   ],
+      // },
+      // {
+      //   type: "markdown",
+      //   data: `Hvis du ikke har mulighet til å bruke deltakeroversikten, kan du sende fremmøteoversikt i posten.`,
+      // },
+      // {
+      //   type: "actions",
+      //   data: [
+      //     {
+      //       text: "Send oversikt i posten",
+      //       variant: "secondary",
+      //     },
+      //     {
+      //       text: "Ettersend dokumentasjon i posten",
+      //       variant: "secondary",
+      //     },
+      //   ],
+      // },
+      // {
+      //   type: "line",
+      // },
       {
         type: "markdown",
-        data: `### Registrer deltakere
-          Dette gjør du digitalt i Deltakeroversikten.`,
+        data: `### Hold oversikt og send endringer til NAV
+        Hold oversikt over deltakere på tiltaket og kommuniser med NAV om endringer i deltakeroversikten.`,
       },
       {
         type: "actions",
@@ -1703,19 +1840,19 @@ const products = [
         ],
       },
       {
+        type: "line",
+      },
+      {
         type: "markdown",
-        data: `Hvis du ikke har mulighet til å bruke deltakeroversikten, kan du sende fremmøteoversikt i posten.`,
+        data: `### Førsteside til rapporter om deltaker
+        Skal du sende inn statusrapport, sluttrapport eller plan for enkeltbrukere på tiltaket? Da må du hente førsteside for å kunne sende dokumenter.`,
       },
       {
         type: "actions",
         data: [
           {
-            text: "Send oversikt i posten",
-            variant: "secondary",
-          },
-          {
-            text: "Ettersend dokumentasjon i posten",
-            variant: "secondary",
+            text: "Hent førsteside",
+            variant: "primary",
           },
         ],
       },
@@ -1748,10 +1885,44 @@ const products = [
     type: ["Tiltak"],
     role: ["Tiltaksarrangør"],
     contentBlocks: [
+      // {
+      //   type: "markdown",
+      //   data: `### Registrer deltakere
+      //     Dette gjør du digitalt i Deltakeroversikten.`,
+      // },
+      // {
+      //   type: "actions",
+      //   data: [
+      //     {
+      //       text: "Bruk deltakeroversikten",
+      //       variant: "primary",
+      //     },
+      //   ],
+      // },
+      // {
+      //   type: "markdown",
+      //   data: `Hvis du ikke har mulighet til å bruke deltakeroversikten, kan du sende fremmøteoversikt i posten.`,
+      // },
+      // {
+      //   type: "actions",
+      //   data: [
+      //     {
+      //       text: "Send oversikt i posten",
+      //       variant: "secondary",
+      //     },
+      //     {
+      //       text: "Ettersend dokumentasjon i posten",
+      //       variant: "secondary",
+      //     },
+      //   ],
+      // },
+      // {
+      //   type: "line",
+      // },
       {
         type: "markdown",
-        data: `### Registrer deltakere
-          Dette gjør du digitalt i Deltakeroversikten.`,
+        data: `### Hold oversikt og send endringer til NAV
+        Hold oversikt over deltakere på tiltaket og kommuniser med NAV om endringer i deltakeroversikten.`,
       },
       {
         type: "actions",
@@ -1763,19 +1934,19 @@ const products = [
         ],
       },
       {
+        type: "line",
+      },
+      {
         type: "markdown",
-        data: `Hvis du ikke har mulighet til å bruke deltakeroversikten, kan du sende fremmøteoversikt i posten.`,
+        data: `### Førsteside til rapporter om deltaker
+        Skal du sende inn statusrapport, sluttrapport eller plan for enkeltbrukere på tiltaket? Da må du hente førsteside for å kunne sende dokumenter.`,
       },
       {
         type: "actions",
         data: [
           {
-            text: "Send oversikt i posten",
-            variant: "secondary",
-          },
-          {
-            text: "Ettersend dokumentasjon i posten",
-            variant: "secondary",
+            text: "Hent førsteside",
+            variant: "primary",
           },
         ],
       },
@@ -1808,10 +1979,44 @@ const products = [
     type: ["Tiltak"],
     role: ["Tiltaksarrangør"],
     contentBlocks: [
+      // {
+      //   type: "markdown",
+      //   data: `### Registrer deltakere
+      //     Dette gjør du digitalt i Deltakeroversikten.`,
+      // },
+      // {
+      //   type: "actions",
+      //   data: [
+      //     {
+      //       text: "Bruk deltakeroversikten",
+      //       variant: "primary",
+      //     },
+      //   ],
+      // },
+      // {
+      //   type: "markdown",
+      //   data: `Hvis du ikke har mulighet til å bruke deltakeroversikten, kan du sende fremmøteoversikt i posten.`,
+      // },
+      // {
+      //   type: "actions",
+      //   data: [
+      //     {
+      //       text: "Send oversikt i posten",
+      //       variant: "secondary",
+      //     },
+      //     {
+      //       text: "Ettersend dokumentasjon i posten",
+      //       variant: "secondary",
+      //     },
+      //   ],
+      // },
+      // {
+      //   type: "line",
+      // },
       {
         type: "markdown",
-        data: `### Registrer deltakere
-          Dette gjør du digitalt i Deltakeroversikten.`,
+        data: `### Hold oversikt og send endringer til NAV
+        Hold oversikt over deltakere på tiltaket og kommuniser med NAV om endringer i deltakeroversikten.`,
       },
       {
         type: "actions",
@@ -1823,19 +2028,19 @@ const products = [
         ],
       },
       {
+        type: "line",
+      },
+      {
         type: "markdown",
-        data: `Hvis du ikke har mulighet til å bruke deltakeroversikten, kan du sende fremmøteoversikt i posten.`,
+        data: `### Førsteside til rapporter om deltaker
+        Skal du sende inn statusrapport, sluttrapport eller plan for enkeltbrukere på tiltaket? Da må du hente førsteside for å kunne sende dokumenter.`,
       },
       {
         type: "actions",
         data: [
           {
-            text: "Send oversikt i posten",
-            variant: "secondary",
-          },
-          {
-            text: "Ettersend dokumentasjon i posten",
-            variant: "secondary",
+            text: "Hent førsteside",
+            variant: "primary",
           },
         ],
       },
@@ -1870,8 +2075,8 @@ const products = [
     contentBlocks: [
       {
         type: "markdown",
-        data: `### Registrer deltakere
-        Dette gjør du digitalt i Deltakeroversikten.`,
+        data: `### Hold oversikt og send endringer til NAV
+        Hold oversikt over deltakere på tiltaket og kommuniser med NAV om endringer i deltakeroversikten.`,
       },
       {
         type: "actions",
@@ -1907,7 +2112,7 @@ const products = [
     type: ["Skjema"],
     role: [
       "Optiker eller øyelege",
-      "Hjelpemiddelformidler",
+      "Hjelpemiddel&shy;formidler",
       "Lege, tannlege eller annen behandler",
     ],
     contentBlocks: [
@@ -2052,7 +2257,7 @@ const products = [
       "Pengestøtte",
       "Hjelpemiddel",
     ],
-    role: ["Hjelpemiddelformidler"],
+    role: ["Hjelpemiddel&shy;formidler"],
     contentBlocks: [
       {
         type: "markdown",
@@ -2121,7 +2326,7 @@ const products = [
       {
         type: "markdown",
         data: `### Søk om hjelpemidler (dette er et fellesskjema som brukes for mange hjelpemidler, må ha generisk tekst?)
-          Hvis du er hjelpemiddelformidler i kommunen og har fått nødvendige tilganger, kan du nå søke digitalt om et utvalg av enkle hjelpemidler. Når du skal søke på vegne av andre trenger du signert fullmakt.`,
+          Hvis du er Hjelpemiddel&shy;formidler i kommunen og har fått nødvendige tilganger, kan du nå søke digitalt om et utvalg av enkle hjelpemidler. Når du skal søke på vegne av andre trenger du signert fullmakt.`,
       },
       {
         type: "actions",
@@ -2175,7 +2380,7 @@ const products = [
       "Pengestøtte",
       "Hjelpemiddel",
     ],
-    role: ["Hjelpemiddelformidler"],
+    role: ["Hjelpemiddel&shy;formidler"],
     contentBlocks: [
       {
         type: "markdown",
@@ -2197,7 +2402,7 @@ const products = [
       {
         type: "markdown",
         data: `### Søk om hjelpemidler (dette er et fellesskjema som brukes for mange hjelpemidler, må ha generisk tekst?)
-          Hvis du er hjelpemiddelformidler i kommunen og har fått nødvendige tilganger, kan du nå søke digitalt om et utvalg av enkle hjelpemidler. Når du skal søke på vegne av andre trenger du signert fullmakt.`,
+          Hvis du er Hjelpemiddel&shy;formidler i kommunen og har fått nødvendige tilganger, kan du nå søke digitalt om et utvalg av enkle hjelpemidler. Når du skal søke på vegne av andre trenger du signert fullmakt.`,
       },
       {
         type: "actions",
@@ -2251,7 +2456,7 @@ const products = [
       "Pengestøtte",
       "Hjelpemiddel",
     ],
-    role: ["Hjelpemiddelformidler"],
+    role: ["Hjelpemiddel&shy;formidler"],
     contentBlocks: [
       {
         type: "markdown",
@@ -2273,7 +2478,7 @@ const products = [
       {
         type: "markdown",
         data: `### Søk om hjelpemidler (dette er et fellesskjema som brukes for mange hjelpemidler, må ha generisk tekst?)
-          Hvis du er hjelpemiddelformidler i kommunen og har fått nødvendige tilganger, kan du nå søke digitalt om et utvalg av enkle hjelpemidler. Når du skal søke på vegne av andre trenger du signert fullmakt.`,
+          Hvis du er Hjelpemiddel&shy;formidler i kommunen og har fått nødvendige tilganger, kan du nå søke digitalt om et utvalg av enkle hjelpemidler. Når du skal søke på vegne av andre trenger du signert fullmakt.`,
       },
       {
         type: "actions",
@@ -2327,7 +2532,7 @@ const products = [
       "Pengestøtte",
       "Hjelpemiddel",
     ],
-    role: ["Hjelpemiddelformidler"],
+    role: ["Hjelpemiddel&shy;formidler"],
     contentBlocks: [
       {
         type: "markdown",
@@ -2349,7 +2554,7 @@ const products = [
       {
         type: "markdown",
         data: `### Søk om hjelpemidler (dette er et fellesskjema som brukes for mange hjelpemidler, må ha generisk tekst?)
-          Hvis du er hjelpemiddelformidler i kommunen og har fått nødvendige tilganger, kan du nå søke digitalt om et utvalg av enkle hjelpemidler. Når du skal søke på vegne av andre trenger du signert fullmakt.`,
+          Hvis du er Hjelpemiddel&shy;formidler i kommunen og har fått nødvendige tilganger, kan du nå søke digitalt om et utvalg av enkle hjelpemidler. Når du skal søke på vegne av andre trenger du signert fullmakt.`,
       },
       {
         type: "actions",
@@ -2404,7 +2609,7 @@ const products = [
       "Hjelpemiddel",
     ],
     role: [
-      "Hjelpemiddelformidler",
+      "Hjelpemiddel&shy;formidler",
     ],
     contentBlocks: [
       {
@@ -2586,7 +2791,7 @@ const products = [
       "Hjelpemiddel",
     ],
     role: [
-      "Hjelpemiddelformidler",
+      "Hjelpemiddel&shy;formidler",
     ],
     contentBlocks: [
       {
@@ -2609,7 +2814,7 @@ const products = [
       {
         type: "markdown",
         data: `### Søk om hjelpemidler (dette er et fellesskjema som brukes for mange hjelpemidler, må ha generisk tekst?)
-          Hvis du er hjelpemiddelformidler i kommunen og har fått nødvendige tilganger, kan du nå søke digitalt om et utvalg av enkle hjelpemidler. Når du skal søke på vegne av andre trenger du signert fullmakt.`,
+          Hvis du er Hjelpemiddel&shy;formidler i kommunen og har fått nødvendige tilganger, kan du nå søke digitalt om et utvalg av enkle hjelpemidler. Når du skal søke på vegne av andre trenger du signert fullmakt.`,
       },
       {
         type: "actions",
@@ -2700,7 +2905,7 @@ const products = [
     icon: "/src/_includes/svg/pictograms/slik-gjor-du-det.svg",
     type: ["Hjelpemiddel"],
     role: [
-      "Hjelpemiddelformidler",
+      "Hjelpemiddel&shy;formidler",
       "Ansatt i NAV-kontor, kommunen eller fylkeskommunen",
     ],
     contentBlocks: [
@@ -2781,7 +2986,7 @@ const products = [
     ingress: "Ingress",
     icon: "/src/_includes/svg/pictograms/slik-gjor-du-det.svg",
     type: ["Skjema"],
-    role: ["Hjelpemiddelformidler"],
+    role: ["Hjelpemiddel&shy;formidler"],
     contentBlocks: [
       {
         type: "markdown",
@@ -2821,7 +3026,7 @@ const products = [
       "De ortopediske verkstedene som har avtale med NAV, forplikter seg til å levere elektronisk oppgjør.",
     icon: "/src/_includes/svg/pictograms/slik-gjor-du-det.svg",
     type: ["Skjema"],
-    role: ["Hjelpemiddelformidler"],
+    role: ["Hjelpemiddel&shy;formidler"],
     contentBlocks: [
       {
         type: "markdown",
@@ -2961,6 +3166,52 @@ const products = [
           {
             text: "Meld fra om innleggelse på helseinstitusjon",
             dot: "bg-lightblue-300",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    title: "Jobbklubb",
+    ingress: "",
+    icon: "/src/_includes/svg/pictograms/neutral.svg",
+    type: ["Tiltak"],
+    role: [
+      "Tiltaksarrangør",
+    ],
+    contentBlocks: [
+      {
+        type: "markdown",
+        data: `### Send refusjonskrav for opplæring
+        Dette skjemaet brukes av tiltaksarrangør som har fått tilsagn fra NAV for opplæringstiltak (AMO-kurs eller ordinær utdanning) og som skal be om refusjon av tilsagnsbeløp.`,
+      },
+      {
+        type: "actions",
+        data: [
+          {
+            text: "Send skjema",
+            variant: "primary",
+          },
+        ],
+      },
+      {
+        type: "line",
+      },
+      {
+        type: "markdown",
+        data: `### Send fremmøteskjema ved deltakelse
+        Dette brukes for å dokumentere deltakelse på tiltaket. `,
+      },
+      {
+        type: "actions",
+        data: [
+          {
+            text: "Send skjema",
+            variant: "primary",
+          },
+          {
+            text: "Ettersend dokumentasjon",
+            variant: "secondary",
           },
         ],
       },

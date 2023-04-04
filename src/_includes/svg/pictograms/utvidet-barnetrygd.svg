@@ -1,22 +1,22 @@
 <svg width="96" height="96" viewBox="0 0 96 96" fill="none" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
 <g clip-path="url(#clip0_1_2149)">
-<rect x="46" width="4" height="12" fill="rgb(204 241 214)"/>
-<rect x="46" y="84" width="4" height="12" fill="rgb(204 241 214)"/>
-<rect x="12" y="46" width="4" height="12" transform="rotate(90 12 46)" fill="rgb(204 241 214)"/>
-<rect x="96" y="46" width="4" height="12" transform="rotate(90 96 46)" fill="rgb(204 241 214)"/>
-<rect x="31.5303" y="80.0742" width="4" height="12" transform="rotate(24 31.5303 80.0742)" fill="rgb(204 241 214)"/>
-<rect x="65.6963" y="3.33643" width="4" height="12" transform="rotate(24 65.6963 3.33643)" fill="rgb(204 241 214)"/>
-<rect x="20.7144" y="71.5688" width="4" height="12" transform="rotate(46 20.7144 71.5688)" fill="rgb(204 241 214)"/>
-<rect x="81.1392" y="13.2178" width="4" height="12" transform="rotate(46 81.1392 13.2178)" fill="rgb(204 241 214)"/>
-<rect x="13.8721" y="59.6313" width="4" height="12" transform="rotate(68 13.8721 59.6313)" fill="rgb(204 241 214)"/>
-<rect x="91.7556" y="28.1646" width="4" height="12" transform="rotate(68 91.7556 28.1646)" fill="rgb(204 241 214)"/>
-<rect x="15.5894" y="31.5303" width="4" height="12" transform="rotate(114 15.5894 31.5303)" fill="rgb(204 241 214)"/>
-<rect x="92.3271" y="65.6963" width="4" height="12" transform="rotate(114 92.3271 65.6963)" fill="rgb(204 241 214)"/>
-<rect x="24.0947" y="20.7148" width="4" height="12" transform="rotate(136 24.0947 20.7148)" fill="rgb(204 241 214)"/>
-<rect x="82.446" y="81.1392" width="4" height="12" transform="rotate(136 82.446 81.1392)" fill="rgb(204 241 214)"/>
-<rect x="36.0322" y="13.8726" width="4" height="12" transform="rotate(158 36.0322 13.8726)" fill="rgb(204 241 214)"/>
-<rect x="67.4995" y="91.7559" width="4" height="12" transform="rotate(158 67.4995 91.7559)" fill="rgb(204 241 214)"/>
-<circle cx="47" cy="47" r="26" fill="rgb(204 241 214)"/>
+<rect x="46" width="4" height="12" fill="var(--pictogram, rgb(204 241 214))"/>
+<rect x="46" y="84" width="4" height="12" fill="var(--pictogram, rgb(204 241 214))"/>
+<rect x="12" y="46" width="4" height="12" transform="rotate(90 12 46)" fill="var(--pictogram, rgb(204 241 214))"/>
+<rect x="96" y="46" width="4" height="12" transform="rotate(90 96 46)" fill="var(--pictogram, rgb(204 241 214))"/>
+<rect x="31.5303" y="80.0742" width="4" height="12" transform="rotate(24 31.5303 80.0742)" fill="var(--pictogram, rgb(204 241 214))"/>
+<rect x="65.6963" y="3.33643" width="4" height="12" transform="rotate(24 65.6963 3.33643)" fill="var(--pictogram, rgb(204 241 214))"/>
+<rect x="20.7144" y="71.5688" width="4" height="12" transform="rotate(46 20.7144 71.5688)" fill="var(--pictogram, rgb(204 241 214))"/>
+<rect x="81.1392" y="13.2178" width="4" height="12" transform="rotate(46 81.1392 13.2178)" fill="var(--pictogram, rgb(204 241 214))"/>
+<rect x="13.8721" y="59.6313" width="4" height="12" transform="rotate(68 13.8721 59.6313)" fill="var(--pictogram, rgb(204 241 214))"/>
+<rect x="91.7556" y="28.1646" width="4" height="12" transform="rotate(68 91.7556 28.1646)" fill="var(--pictogram, rgb(204 241 214))"/>
+<rect x="15.5894" y="31.5303" width="4" height="12" transform="rotate(114 15.5894 31.5303)" fill="var(--pictogram, rgb(204 241 214))"/>
+<rect x="92.3271" y="65.6963" width="4" height="12" transform="rotate(114 92.3271 65.6963)" fill="var(--pictogram, rgb(204 241 214))"/>
+<rect x="24.0947" y="20.7148" width="4" height="12" transform="rotate(136 24.0947 20.7148)" fill="var(--pictogram, rgb(204 241 214))"/>
+<rect x="82.446" y="81.1392" width="4" height="12" transform="rotate(136 82.446 81.1392)" fill="var(--pictogram, rgb(204 241 214))"/>
+<rect x="36.0322" y="13.8726" width="4" height="12" transform="rotate(158 36.0322 13.8726)" fill="var(--pictogram, rgb(204 241 214))"/>
+<rect x="67.4995" y="91.7559" width="4" height="12" transform="rotate(158 67.4995 91.7559)" fill="var(--pictogram, rgb(204 241 214))"/>
+<circle cx="47" cy="47" r="26" fill="var(--pictogram, rgb(204 241 214))"/>
 <path d="M58.0419 17.2721C56.3037 10.7848 60.554 4.00944 67.5352 2.13881C74.5165 0.268189 81.5851 4.01069 83.3233 10.4979C83.9668 12.8995 83.7896 15.3406 82.9569 17.5577" stroke="currentColor" stroke-width="3"/>
 <mask id="path-19-inside-1_1_2149" fill="white">
 <path fill-rule="evenodd" clip-rule="evenodd" d="M54.7939 18.8C54.508 17.733 55.1412 16.6363 56.2081 16.3505L66.4993 13.5929C77.1687 10.7341 88.1354 17.0657 90.9942 27.7351L95.447 44.3528C96.0187 46.4867 94.7524 48.68 92.6185 49.2518L76.5317 53.5623C70.1301 55.2776 63.5501 51.4786 61.8348 45.077L61.6995 44.5723L48.6349 38.5416L36.5914 40.6537C34.8677 40.8624 33.4871 39.2846 33.9415 37.6255L37.8248 23.4466C38.2792 21.7875 40.2812 21.0963 41.6674 22.1199L51.0773 29.3203L57.7412 29.7995L54.7939 18.8Z"/>

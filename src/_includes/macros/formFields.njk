@@ -1,0 +1,49 @@
+{% macro radio(args) %}
+<div class="relative inline-grid grid-cols-[1.5rem_auto] gap-x-2 py-2.5">
+  <input class="row-start-1 col-start-1 w-6 h-6 rounded-full appearance-none focus:outline-none focus:bg-deepblue-800 top-1.5 peer focus:ring focus:ring-deepblue-800" type="radio" name="{{ args.name }}" value="{{ args.value }}" id="{{ args.id }}" {% if args.xModel.length %}x-model="{{ args.xModel }}"{% endif %} {{ 'checked' if args.checked }}>
+  <div aria-hidden="true" class="z-10 w-6 h-6 col-start-1 row-start-1 bg-white border-2 border-gray-600 rounded-full pointer-events-none hover:border-blue-500 hover:bg-blue-50 peer-checked:bg-blue-500 ring-2 ring-white ring-inset"></div>
+  <label class="row-start-1 ol-start-2" for="{{ args.id }}">
+    {{ args.label | safe }}
+  </label>
+  {%- if args.description -%}
+  <p class="max-w-lg col-start-2 mt-0.5 text-base">{{ args.description | safe }}</p>
+  {%- endif -%}
+</div>
+{% endmacro %}
+
+{% macro checkbox(args) %}
+<div class="relative inline-grid grid-cols-[1.5rem_auto] gap-x-2 pt-2 pb-2">
+  <input class="row-start-1 col-start-1 w-6 h-6 rounded appearance-none focus:outline-none focus:bg-deepblue-800 top-1.5 peer focus:ring-2 focus:ring-deepblue-800" type="radio" name="{{ args.name }}" value="{{ args.value }}" id="{{ args.id }}">
+  <div aria-hidden="true" class="z-10 w-6 h-6 col-start-1 row-start-1 bg-white border-2 border-gray-600 rounded pointer-events-none hover:border-blue-500 hover:bg-blue-50 peer-checked:bg-blue-500 peer-checked:bg-checkbox ring-1 ring-white ring-inset"></div>
+  <label class="col-start-2 row-start-1" for="{{ args.id }}">
+    {{ args.label }}
+  </label>
+  {%- if args.description -%}
+  <p class="col-start-2 text-base">{{ args.description }}</p>
+  {%- endif -%}
+</div>
+{% endmacro %}
+
+{% macro textinput(args) %}
+  <div class="relative grid justify-items-start">
+    <label for="{{ args.id }}" class="grid gap-0.5">
+      <span class="font-semibold">{{ args.label }}</span>
+      {%- if args.description -%}
+      <span class="text-base">{{ args.description }}</span>
+      {%- endif -%}
+    </label>
+    <input class="w-full px-2 py-2 mt-2.5 text-lg leading-snug border border-gray-300 rounded hover:border-gray-400" type="text" name="{{ args.name }}" id="{{ args.id }}">
+  </div>
+{% endmacro %}
+
+{% macro textarea(args) %}
+  <div class="relative grid justify-items-start">
+    <label for="{{ args.id }}" class="grid gap-0.5">
+      <span class="font-semibold">{{ args.label }}</span>
+      {%- if args.description -%}
+      <span class="text-base">{{ args.description }}</span>
+      {%- endif -%}
+    </label>
+    <textarea class="w-full px-2 py-2 mt-2.5 text-lg leading-snug border border-gray-300 rounded hover:border-gray-400" rows="{{ args.rows or '3' }}" cols="{{ args.cols or '33' }}" name="{{ args.name }}" id="{{ args.id }}">
+  </div>
+{% endmacro %}

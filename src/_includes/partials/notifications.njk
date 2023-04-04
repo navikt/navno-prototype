@@ -6,9 +6,9 @@
 
         <div>
           <h2 class="text-xl font-semibold">Mine oppgaver</h2>
-          <div class="grid gap-1 mt-2">
-            {% for task in notifications.myTasks %}
-              <a class="grid gap-1 px-4 py-3 bg-white rounded-lg fine:hover:ring-2 fine:hover:ring-blue-600" href="#">
+          <div class="mt-2 grid gap-1">
+            {%- for task in notifications.myTasks -%}
+              <a class="px-4 py-3 bg-white rounded-lg grid gap-1 fine:hover:ring-2 fine:hover:ring-blue-600" href="#">
                 <div class="flex items-baseline justify-between gap-4">
                   <h3 class="text-lg font-semibold">{{ task.title | safe }}</h3>
                   <p class="text-sm opacity-70">{{ task.date }}</p>
@@ -16,21 +16,21 @@
                 <p class="text-lg leading-snug">{{ task.description }}</p>
                 <div class="flex items-center justify-between mt-2">
                   <div class="flex flex-wrap gap-1">
-                    {% for tag in task.tags %}
+                    {%- for tag in task.tags -%}
                       <span class="px-2 text-gray-700 leading-none py-1.5 text-sm tracking-wide uppercase rounded-sm {{ tag.color or "bg-gray-200" }}">{{ tag.title | safe }}</span>
-                    {% endfor %}
+                    {%- endfor -%}
                   </div>
                   {{ '/src/_includes/svg/icons/chevron-right.svg' | svgContents('opacity-50 w-5 h-5') | safe }}
                 </div>
               </a>
-            {% endfor %}
+            {%- endfor -%}
           </div>
         </div>
 
         <div class="mt-6">
           <h3 class="text-xl font-semibold">Innboks</h3>
-          <div class="grid gap-1 mt-2">
-            {% for message in notifications.myInbox %}
+          <div class="mt-2 grid gap-1">
+            {%- for message in notifications.myInbox -%}
               <a class="fine:hover:ring-2 fine:hover:ring-blue-600 grid gap-3 items-start grid-cols-[2.25rem_1fr] py-3 px-4 rounded-md bg-white" href="#">
                 <div class="grid text-xl mt-2 font-semibold text-white rounded-full place-items-center aspect-square {{ message.color or "bg-gray-300" }}" aria-hidden="true">
                   <span class="-mr-px text-center">{{ message.title | first }}</span>
@@ -42,19 +42,19 @@
                   </div>
                   <p class="mt-1 text-lg leading-tight">{{ message.description }}</p>
 
-                  {% if message.tags %}
+                  {%- if message.tags -%}
                     <div class="flex items-center justify-between pb-1 mt-2">
                       <div class="flex flex-wrap gap-1">
-                        {% for tag in message.tags %}
+                        {%- for tag in message.tags -%}
                           <span class="px-2 text-gray-700 leading-none py-1.5 text-sm tracking-wide uppercase bg-gray-200 rounded-sm">{{ tag }}</span>
-                        {% endfor %}
+                        {%- endfor -%}
                       </div>
                     </div>
-                  {% endif %}
+                  {%- endif -%}
 
                 </div>
               </a>
-            {% endfor %}
+            {%- endfor -%}
           </div>
         </div>
 

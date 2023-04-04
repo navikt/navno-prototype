@@ -4,17 +4,17 @@ description: ''
 order: 3
 bodyClass: 'bg-white'
 ---
-{% extends 'base.njk' %}
+{%- extends 'base.njk' -%}
 
-{% block content %}
+{%- block content -%}
   <main class="min-h-[61vh] text-lg text-gray-800">
 
-    <div class="grid pt-8 pb-4 grid-cols-layout ">
+    <div class="pt-8 pb-4 grid grid-cols-layout ">
       <div class="col-narrow">
         <h1 class="text-3xl font-semibold leading-tight text-gray-900 md:text-4xl">
           NAV Andeby
         </h1>
-        <p class="flex items-baseline gap-4 mt-1">
+        <p class="flex items-baseline mt-1 gap-4">
           <span class="text-sm tracking-wider text-gray-700 uppercase">
             NAV kontor
           </span>
@@ -24,7 +24,7 @@ bodyClass: 'bg-white'
       </div>
     </div>
 
-    <div class="grid pt-4 pb-20 grid-cols-layout md:pt-6">
+    <div class="pt-4 pb-20 grid grid-cols-layout md:pt-6">
       <div class="col-narrow">
         <div class="max-w-prose">
 
@@ -77,24 +77,24 @@ bodyClass: 'bg-white'
       </div>
     </div>
 
-    <div class="grid pb-12 bg-gray-100 grid-cols-layout">
+    <div class="pb-12 bg-gray-100 grid grid-cols-layout">
       <div class="col-narrow">
         <div class="max-w-prose">
 
-          {% for box in boxes %}
+          {%- for box in boxes -%}
             {{ iconBox(box) }}
-          {% endfor %}
+          {%- endfor -%}
 
         </div>
       </div>
     </div>
 
   </main>
-{% endblock %}
+{%- endblock -%}
 
-{% macro iconBox(box) %}
+{%- macro iconBox(box) -%}
   <div class="grid isolate">
-    <div class="z-10 grid w-16 mx-auto translate-y-1/2 bg-blue-100 rounded-full place-items-center aspect-square">
+    <div class="z-10 w-16 mx-auto bg-blue-100 rounded-full grid translate-y-1/2 place-items-center aspect-square">
       {{ box.icon | svgContents('w-7 h-7 shrink-0') | safe }}
     </div>
     <div class="px-6 py-8 bg-white md:py-12 md:px-10">
@@ -104,7 +104,7 @@ bodyClass: 'bg-white'
       </div>
     </div>
   </div>
-{% endmacro %}
+{%- endmacro -%}
 
-{% block styles %}{% endblock %}
-{% block script %}{% endblock %}
+{%- block styles -%}{%- endblock -%}
+{%- block script -%}{%- endblock -%}

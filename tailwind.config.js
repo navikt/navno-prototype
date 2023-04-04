@@ -12,7 +12,7 @@ module.exports = {
   theme: {
     screens: {
       xs: "540px",
-      sm: "720px",
+      sm: "800px",
       md: "1024px",
       lg: "1280px",
       xl: "1440px",
@@ -198,6 +198,14 @@ module.exports = {
       fontSize: {
         squishy: "clamp(2rem, 10vw + 10%, 8rem)",
       },
+      flexBasis: {
+        side: "min(100%, 36rem)",
+        main: "min(100%, 48rem)",
+      },
+      flexShrink: {
+        1: "1",
+        5: "5",
+      },
       gridTemplateColumns: {
         areas: "repeat(auto-fit, minmax(32ch, 1fr))",
         cards: "repeat(auto-fill, minmax(32ch, 1fr))",
@@ -252,12 +260,26 @@ module.exports = {
       listStyleType: {
         square: "square",
       },
+      minHeight: {
+        ...defaults.theme.spacing,
+      },
+      maxHeight: {
+        ...defaults.theme.spacing,
+      },
       minWidth: {
         ...defaults.theme.spacing,
       },
       maxWidth: {
         ...defaults.theme.spacing,
-        prose: "72ch",
+        prose: "75ch",
+      },
+      ringWidth: {
+        6: "6px",
+        12: "12px",
+      },
+      ringOffesetWidth: {
+        3: "3px",
+        6: "6px",
       },
       spacing: {
         "clamp-gap": "clamp(1rem, -3rem + 12vw, 6rem)",
