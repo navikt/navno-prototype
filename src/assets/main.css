@@ -16,7 +16,7 @@
     margin-block-start: theme("spacing.7");
   }
   .markdown > *:where(h2, h3, h4, h5) + * {
-    margin-block-start: theme("spacing.1");
+    margin-block-start: theme("spacing.[1.5]");
   }
   .markdown > p a {
     text-decoration: underline;

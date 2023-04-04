@@ -16,6 +16,7 @@ permalink: '/produktoversikt-samarbeidspartner/'
     x-data="{
       typeFilter: new URLSearchParams(location.search).get('type') || 'alle',
       roleFilter: new URLSearchParams(location.search).get('role') || 'alle',
+      roleSelected: '',
       filterItem(el) {
         const item = el.querySelector('h2').textContent.toLowerCase()
         if (this.search === '') {
@@ -38,6 +39,12 @@ permalink: '/produktoversikt-samarbeidspartner/'
         $nextTick(() => {
           let count = Array.from(this.$refs.entries.children).filter(element => window.getComputedStyle(element).display !== 'none').length;
           this.count = count
+        })
+      },
+      setRole(test) {
+        $nextTick(() => {
+          console.log(test)
+          this.roleSelected = test
         })
       },
       clearSearch() {
@@ -171,7 +178,7 @@ permalink: '/produktoversikt-samarbeidspartner/'
         </div>
 
         <div class="md:col-start-1 md:row-start-1">
-          <p class="mb-2">Viser <span x-text="count"></span> av {{ products.length }} produkter og tjenester</p>
+          <p class="mb-2">Viser <span x-text="count"></span> av {{ products.length }} produkter og tjenester <template x-if="roleSelected != ''"><span>for <strong x-text="roleSelected.toLowerCase()"></strong></span></template></p>
 
           <div class="border-b border-deepblue-100" x-ref="entries" x-show="count !== 0">
             {%- for product in products | sort(true, false, 'title') | reverse -%}
@@ -231,7 +238,7 @@ permalink: '/produktoversikt-samarbeidspartner/'
           </div>
         </div>
 
-        <div class="p-4 bg-orange-100 rounded-lg md:col-start-1 md:px-6 md:py-5">
+        <div class="p-4 mt-8 bg-orange-100 rounded-lg md:col-start-1 md:px-6 md:py-5">
           <h3 class="text-xl font-semibold">
             Klage eller anke på vedtak?
           </h3>
@@ -241,14 +248,15 @@ permalink: '/produktoversikt-samarbeidspartner/'
 
       </div>
 
-      <div class="mt-12 md:col-start-2" x-show="roleFilter === 'alle'">
+      <div class="mt-10 md:col-start-2" x-show="roleFilter === 'alle'">
         <ul class="grid gap-3 xs:grid-cols-2 md:gap-4 md:grid-cols-3">
           {% for item in roleFilter %}
           <li class="grid">
-            <a class="relative z-10 flex px-4 py-4 rounded-lg bg-deepblue-100 fine:hover:bg-blue-50 xs:min-h-24" href="/produktoversikt-samarbeidspartner/?role={{ item | slugify }}&type=alle">{{ item | safe }}</a>
+            <button class="relative z-10 flex px-4 py-4 text-left rounded-lg bg-deepblue-100 fine:hover:bg-blue-50 xs:min-h-24" x-on:click="roleFilter = '{{ item | slugify }}', updateCount($refs), setRole('{{ item | safe }}')">{{ item | safe }}</button>
           </li>
           {% endfor %}
         </ul>
       </div>
+    </div>
   </main>
 {%- endblock -%}

@@ -275,6 +275,7 @@ module.exports = {
       },
       ringWidth: {
         6: "6px",
+        12: "12px",
       },
       ringOffesetWidth: {
         3: "3px",

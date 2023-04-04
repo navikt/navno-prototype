@@ -1,7 +1,5 @@
 ---js
 {
-  title: 'Forslag til oppsett for søknader',
-  description: 'Forslag til oppsett for søknader',
   order: 10,
   bodyClass: 'bg-white',
   pagination: {
@@ -10,8 +8,9 @@
     alias: "step",
   },
   eleventyComputed: {
-    title: "{{ step.title }}",
-    permalink: "/soknad-og-skjema/aap/{{ step.title | slugify }}/",
+    title: 'Søknad om dagpenger',
+    stepTitle: "{{ step.title }}",
+    permalink: "/soknad-og-skjema/dagpenger/{{ step.title | slugify }}/",
     blocks: "{{ step.formBlocks }}"
   }
 }
@@ -24,7 +23,7 @@
 {% macro stepperList(formSteps) %}
   <ol class="navds-stepper">
     {%- for item in formSteps.slice(1, -1) -%}
-      <li class="navds-stepper__item {{ 'navds-stepper__item--active' if item.title === step.title }} {{ 'navds-stepper__item--complete' if item.state === 'complete' }}">
+      <li class="navds-stepper__item {{ 'navds-stepper__item--active' if item.title === stepTitle }} {{ 'navds-stepper__item--complete' if item.state === 'complete' }}">
         <span class="navds-stepper__line navds-stepper__line--1" aria-hidden="true"></span>
         <span class="navds-stepper__marker" aria-hidden="true">
           {%- if item.state === 'complete' -%}
@@ -54,13 +53,13 @@
 
       {# Intro #}
       <div class="pr-28 md:col-start-2 md:row-start-1 md:pr-0">
-        <h1 class="text-3xl font-semibold leading-tight md:text-5xl md:leading-tight">Søknad om arbeids&shy;avklarings&shy;penger (AAP)</h1>
+        <h1 class="text-3xl font-semibold leading-tight md:text-5xl md:leading-tight">{{ title | safe }}</h1>
         <p class="mt-2 text-base tracking-wider uppercase opacity-70">
           Søknad
         </p>
       </div>
 
-      <div class="items-start gap-4 mt-8 md:col-start-2 md:flex gap-x-16 md:mt-12" id="{{ step.title | slugify }}">
+      <div class="items-start gap-4 mt-8 md:col-start-2 md:flex gap-x-16 md:mt-12" id="{{ stepTitle | slugify }}">
 
         {# Stepper (desktop) #}
         {% if (pagination.pageNumber > 0) and (pagination.pageNumber < (formSteps.length - 1)) %}
@@ -76,7 +75,7 @@
             {# Stepper (mobile) #}
             <div class="mb-10 rounded-lg max-w-prose md:col-start-1 md:hidden">
             <div class="relative px-3 py-2 rounded-md bg-deepblue-50">
-              <h2 class="text-2xl font-semibold">{{ step.title | safe }}</h2>
+              <h2 class="text-2xl font-semibold">{{ stepTitle | safe }}</h2>
               <button class="absolute inset-0 flex items-start justify-end pl-3 pr-4 pt-3.5 text-blue-600 fine:hover:text-blue-800 rounded-md ring-2 ring-deepblue-50 fine:hover:ring-blue-500" x-on:click="stepperOpen = !stepperOpen">
                 <span class="sr-only">Vis seksjoner</span>
                 <svg class="flex-none w-6 h-6 -translate-y-px pointer-events-none" x-bind:class="stepperOpen && 'rotate-180'" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false" >
@@ -101,7 +100,7 @@
             {% if (pagination.pageNumber > 0) and (pagination.pageNumber < (formSteps.length - 1)) %}
             {# Step Heading #}
             <div class="hidden mb-10 md:block">
-              <h2 class="text-2xl font-semibold">{{ step.title | safe }}</h2>
+              <h2 class="text-2xl font-semibold">{{ stepTitle | safe }}</h2>
 
               {# Progressbar #}
               <div class="mt-1.5 mb-2  -translate-y-px overflow-hidden rounded-full bg-deepblue-100">
@@ -134,7 +133,7 @@
               {% endif %}
 
               {% if pagination.page.previous %}
-                <a class="px-4 py-3 font-semibold leading-snug text-center text-blue-500 rounded fine:hover:bg-blue-50" href="/soknad-og-skjema/aap/">Avbryt …</a>
+                <a class="px-4 py-3 font-semibold leading-snug text-center rounded fine:hover:bg-blue-50" href="/soknad-og-skjema/aap/">Avbryt …</a>
               {% endif %}
             </div>
           </div>

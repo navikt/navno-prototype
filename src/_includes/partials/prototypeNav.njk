@@ -3,10 +3,13 @@
     <h2 class="text-base font-semibold tracking-widest uppercase col-wide text-deepblue-300">Sider i prototypen</h2>
     <ul class="divide-y divide-gray-400/25 col-wide">
     {%- for page in collections.template | sort(false, false, 'data.order') -%}
-      <li class="">
-        <a href="{{ page.url }}" class="inline-block py-4 fine:hover:text-blue-300 fine:hover:underline decoration-from-font underline-offset-4">
-        {{ page.data.title | safe }}
+      <li class="py-4">
+        <a href="{{ page.url }}" class="inline-block fine:hover:text-blue-300 fine:hover:underline decoration-from-font underline-offset-4">
+          {{ page.data.title | safe }}
         </a>
+        {% if page.data.type %}
+        <span class="block mt-1 text-sm uppercase text-deepblue-200">{{ page.data.type | safe }}</span>
+        {% endif %}
       </li>
     {%- endfor -%}
     </ul>

@@ -1,12 +1,15 @@
 ---
+type: 'Mellomsteg'
 title: Søk om arbeids&shy;avklarings&shy;penger (AAP)
 kicker: Søknad
-form: 'NAV-XXXXXX'
 tags: ['template']
 permalink: "/soknad-og-skjema/{{ page.fileSlug }}/"
 order: 7
 ---
 {%- extends 'base-basic.njk' -%}
+
+{%- from "macros/button.njk" import button -%}
+{%- import "macros/formFields.njk" as form -%}
 
 {%- block content -%}
   <main class="grid py-8 md:py-12 text-lg grid-cols-layout min-h-[70vh]" x-data="{ stepperOpen: false }">
@@ -20,34 +23,41 @@ order: 7
         <h1 class="text-3xl font-semibold leading-tight md:text-5xl md:leading-tight">{{ title | safe }}</h1>
         <p class="mt-2 text-base tracking-wider uppercase opacity-70">
           {{ kicker | upper }}
-          {{ '–' if form }}
-          {{ form | safe }}
+          {{ '–' if formId }}
+          {{ formId | safe }}
         </p>
       </div>
 
       <div class="md:col-start-2 md:grid md:grid-cols-[2.2fr_0.8fr] gap-x-16 items-start gap-4">
         <div class="text-lg max-w-prose markdown">
 
-          <form class="mt-12" x-data="{ applicationFormat: 'digital' }">
+          <form class="mt-12">
             <fieldset>
               <legend class="font-semibold">Hvordan vil du sende søknaden?</legend>
               <ul class="grid mt-2 justify-items-start">
                 <li class="relative">
-                  <input class="absolute w-6 h-6 rounded-full appearance-none -z-10 focus:outline-none focus:bg-deepblue-800 top-1 peer focus:ring focus:ring-deepblue-800" type="radio" name="application-format" x-model="applicationFormat" value="digital" id="field-1" checked="checked">
-                  <label class="flex gap-2 py-1 cursor-pointer before:w-6 before:h-6 before:bg-white before:border-2 before:border-gray-600 hover:before:border-blue-500 before:rounded-full hover:before:bg-blue-50 peer-checked:before:bg-blue-500 before:ring-2 before:ring-white before:ring-inset" for="field-1">
-                    <span>Send digitalt (du blir bedt om å logge inn)</span>
-                  </label>
+                  {{ form.radio({
+                    label: 'Send digitalt',
+                    description: 'Du blir bedt om å logge inn',
+                    name: 'application-format',
+                    id: 'field-1a',
+                    value: 'digital',
+                    checked: true
+                  }) }}
                 </li>
                 <li class="relative">
-                  <input class="absolute w-6 h-6 rounded-full appearance-none -z-10 focus:outline-none focus:bg-deepblue-800 top-1 peer focus:ring focus:ring-deepblue-800" type="radio" name="application-format" x-model="applicationFormat" value="papir" id="field-2">
-                  <label class="flex gap-2 py-1 cursor-pointer before:w-6 before:h-6 before:bg-white before:border-2 before:border-gray-600 hover:before:border-blue-500 before:rounded-full hover:before:bg-blue-50 peer-checked:before:bg-blue-500 before:ring-2 before:ring-white before:ring-inset" for="field-2">
-                    <span>Send i posten</span>
-                  </label>
+                  {{ form.radio({
+                    label: 'Send i posten',
+                    description: 'Fyll ut søknaden før du skriver den ut. Du trenger ikke å logge inn.',
+                    name: 'application-format',
+                    value: 'post',
+                    id: 'field-2a'
+                  }) }}
                 </li>
               </ul>
             </fieldset>
             <div class="mt-7">
-              <a class="inline-flex px-6 py-2.5 text-white bg-blue-500 fine:hover:bg-blue-600 rounded focus-visible:outline-none focus-visible:ring focus-visible:ring-blue-800 focus-visible:ring-offset-1 focus-visible:ring-offset-white" href="/soknad-og-skjema/aap/intro/">Start søknad</a>
+              <a class="inline-flex px-6 py-2.5 text-white bg-blue-500 fine:hover:bg-blue-600 rounded focus-visible:outline-none focus-visible:ring focus-visible:ring-blue-800 focus-visible:ring-offset-1 focus-visible:ring-offset-white" href="/soknad-og-skjema/aap/intro/">Neste</a>
             </div>
           </form>
         </div>
