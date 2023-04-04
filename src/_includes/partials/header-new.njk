@@ -1,6 +1,6 @@
 {%- set audience = audienceOverride or menu.audience -%}
 
-<header class="relative z-40 grid bg-white isolate grid-cols-layout shadow-border" >
+<header class="relative z-40 grid bg-white grid-cols-layout shadow-border" >
 
   <nav class="flex items-center w-full gap-8 col-wide">
     {# Logo #}
@@ -10,7 +10,7 @@
     </a>
 
     {# Audience #}
-    <div class="relative hidden px-4 md:px-5 md:self-stretch xs:grid" x-on:click.outside="audienceDropdownOpen = false">
+    <div class="relative hidden px-4 py-3 isolate md:py-0 md:px-5 md:self-stretch xs:grid" x-on:click.outside="audienceDropdownOpen = false">
       <button class="flex items-center self-center justify-center gap-4 py-2 pl-3 pr-2 border border-gray-200 rounded fine:hover:bg-deepblue-100 focus:outline-none md:hidden" x-on:click="audienceDropdownOpen = !audienceDropdownOpen">
       {%- if ('samarbeidspartner' in page.fileSlug) -%}
       <span>{{ audience[2].title }}</span>
@@ -21,7 +21,7 @@
       {%- endif -%}
         {{ '/src/_includes/svg/icons/chevron-down.svg' | svgContents('w-4 h-4') | safe }}
       </button>
-      <div class="xs:absolute md:static xs:top-full xs:left-0">
+      <div class="z-50 xs:absolute md:static xs:top-full xs:left-0">
         <ul class="justify-center text-lg bg-white border border-gray-200 divide-y divide-gray-200 rounded shadow-lg md:rounded-none md:bg-transparent md:shadow-none md:border-0 md:divide-y-0 md:gap-4 md:flex" x-bind:class="audienceDropdownOpen ? 'grid' : 'hidden md:flex'">
           {%- for item in audience -%}
             <li class="grid">
@@ -35,15 +35,19 @@
     </div>
 
     {# Menu Buttons #}
-    {%- set menuButtonClasses = "flex flex-col sm:flex-row items-center justify-center py-2.5 px-3 leading-none font-semibold sm:gap-1 text-blue-500 sm:rounded md:px-4 sm:text-lg fine:hover:bg-deepblue-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-800" -%}
-    <div class="flex items-end gap-2 ml-auto sm:py-4 md:py-3">
+    {%- set menuButtonClasses = "flex flex-col sm:flex-row items-center justify-center py-1.5 pl-2.5 pr-3 leading-none font-semibold gap-1 text-blue-500 rounded min-w-16 sm:py-2.5 sm:text-lg fine:hover:bg-deepblue-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-800 group" -%}
+    <div class="flex items-end gap-1.5 ml-auto py-1 sm:py-3 -mr-2 sm:mr-0">
       <button class="{{ menuButtonClasses }}" x-on:click="notifyOpen = !notifyOpen, menuOpen = false" x-bind:class="notifyOpen && 'bg-deepblue-50'">
         <span class="relative">
-          {{ '/src/_includes/svg/icons/notification.svg' | svgContents('w-7 h-7') | safe }}
-          <span class="absolute block w-2 h-2 bg-red-400 rounded-full top-0 ring-2 ring-red-100/50 -left-1.5"></span>
+          {{ '/src/_includes/svg/icons/person-circle.svg' | svgContents('w-7 h-7') | safe }}
+          <span class="absolute right-0 block w-2 h-2 bg-red-400 rounded-full top-0.5" x-bind:class="notifyOpen ? 'ring-2 ring-deepblue-50' : 'ring-2 ring-white fine:group-hover:ring-deepblue-50'"></span>
         </span>
-        <span class="mt-px">Varsel</span>
+        <span class="mt-px sm:hidden">Min side</span>
+        <span class="hidden mt-px sm:inline-block">Isac Norland</span>
       </button>
+
+      <span class="self-stretch w-px my-2 bg-gray-300 sm:m-1" aria-hidden="true"></span>
+
       <button class="{{ menuButtonClasses }}" type="button" x-on:click="menuOpen = !menuOpen, notifyOpen = false" x-bind:class="menuOpen && 'bg-deepblue-50'">
         <template x-if="!menuOpen">
           {{ '/src/_includes/svg/icons/menusearch.svg' | svgContents('w-7 h-7 shrink-0 pointer-events-none') | safe }}
@@ -69,7 +73,7 @@
       {%- endif -%}
       {{ '/src/_includes/svg/icons/chevron-down.svg' | svgContents('w-4 h-4') | safe }}
     </button>
-    <div class="absolute px-4 mt-px -translate-x-1/2 left-1/2 top-full">
+    <div class="absolute z-50 px-4 mt-px -translate-x-1/2 left-1/2 top-full">
       <ul class="overflow-hidden text-gray-900 bg-white divide-y divide-gray-300 rounded shadow-xl max-w-max ring-1 ring-gray-200"  x-show="audienceDropdownOpen" x-on:click.outside="audienceDropdownOpen = false">
         {%- for item in audience -%}
           <li class="grid">
@@ -87,4 +91,4 @@
 {%- include "partials/notifications.njk" -%}
 
 {# Overlay #}
-<button class="fixed inset-0 z-30 w-full h-full bg-black/30 " x-bind:class="(menuOpen || notifyOpen) ? 'animate-fade-in' : 'hidden'" x-on:click="menuOpen = false, notifyOpen = false" x-on:keyup.escape.window="menuOpen = false, notifyOpen = false"></button>
+<button class="fixed inset-0 z-30 w-full h-full bg-black/50" x-bind:class="(menuOpen || notifyOpen) ? 'animate-fade-in' : 'hidden'" x-on:click="menuOpen = false, notifyOpen = false" x-on:keyup.escape.window="menuOpen = false, notifyOpen = false"></button>

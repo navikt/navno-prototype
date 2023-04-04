@@ -1,63 +1,74 @@
 {# Notifications #}
-<aside class="relative">
+<aside class="relative" x-data="{ newNotifications: true }">
   <div class="max-w-screen-xl mx-auto sm:w-[90%] relative">
-    <div class="absolute sm:right-0 z-50 mb-10 bg-gray-100 rounded-b-lg shadow-xl md:ml-auto md:max-w-md top-full md:overscroll-contain inset-x-0 sm:inset-x-auto md:max-h-[80vh] md:overflow-y-auto fancy-scroll" x-bind:class="!notifyOpen ? 'hidden' : 'opacity-0 animate-dropdown'">
-      <div class="p-5 md:p-8">
-
-        <div>
-          <h2 class="text-xl font-semibold">Mine oppgaver</h2>
-          <div class="mt-2 grid gap-1">
-            {%- for task in notifications.myTasks -%}
-              <a class="px-4 py-3 bg-white rounded-lg grid gap-1 fine:hover:ring-2 fine:hover:ring-blue-600" href="#">
-                <div class="flex items-baseline justify-between gap-4">
-                  <h3 class="text-lg font-semibold">{{ task.title | safe }}</h3>
-                  <p class="text-sm opacity-70">{{ task.date }}</p>
+    <div class="absolute w-full sm:right-0 z-40 mb-10 bg-white rounded-b-lg shadow-xl sm:ml-auto sm:max-w-xl top-full inset-x-0 sm:inset-x-auto sm:max-h-[80vh]" x-bind:class="!notifyOpen ? 'hidden' : 'opacity-0 animate-dropdown'">
+      <div class="px-6">
+        <p class="grid pt-5 pb-4" x-on:click="newNotifications = !newNotifications">
+          <span class="text-sm tracking-wider uppercase opacity-80">Logget inn</span>
+          <span class="text-2xl font-semibold">Isac Norland</span>
+        </p>
+        <p class="border-t border-gray-200">
+          <a href="#" class="flex items-center gap-2 py-4 -mt-px fine:hover:-mx-6 fine:hover:px-6 fine:hover:bg-blue-500 fine:hover:text-white">
+            {{ '/src/_includes/svg/icons/user.svg' | svgContents() | safe }}
+            <span>Min side</span>
+          </a>
+        </p>
+      </div>
+      <div class="bg-gray-100 p-6 max-h-[55vh] overflow-y-auto overscroll-contain fancy-scroll shadow-inner" x-show="newNotifications">
+        <h2 class="text-lg font-semibold">Varsler</h2>
+        <h3 class="mt-3 text-sm tracking-wider uppercase opacity-80">Oppgaver</h3>
+        <div class="grid gap-1 mt-2">
+          {%- for task in notifications.myTasks -%}
+            <a class="grid gap-1 px-4 py-3 bg-white rounded-lg fine:hover:ring-2 fine:hover:ring-blue-600" href="#">
+              <h3 class="text-lg font-semibold leading-snug">{{ task.title | safe }}</h3>
+              <p class="text-base opacity-80">{{ task.timestamp }}</p>
+              <div class="flex items-center justify-between mt-2">
+                <div class="flex flex-wrap gap-1">
+                  <span class="grid w-6 h-6 text-white bg-orange-600 rounded place-items-center">
+                    {{ '/src/_includes/svg/icons/tasks-filled.svg' | svgContents('w-4 h-4') | safe }}
+                  </span>
+                  {%- for tag in task.tags -%}
+                    <span class="px-2 text-gray-700 leading-none py-1.5 text-sm rounded {{ tag.color or "bg-gray-100" }}">{{ tag.title | safe }}</span>
+                  {%- endfor -%}
                 </div>
-                <p class="text-lg leading-snug">{{ task.description }}</p>
-                <div class="flex items-center justify-between mt-2">
-                  <div class="flex flex-wrap gap-1">
-                    {%- for tag in task.tags -%}
-                      <span class="px-2 text-gray-700 leading-none py-1.5 text-sm tracking-wide uppercase rounded-sm {{ tag.color or "bg-gray-200" }}">{{ tag.title | safe }}</span>
-                    {%- endfor -%}
-                  </div>
-                  {{ '/src/_includes/svg/icons/chevron-right.svg' | svgContents('opacity-50 w-5 h-5') | safe }}
-                </div>
-              </a>
-            {%- endfor -%}
-          </div>
+                {{ '/src/_includes/svg/icons/chevron-right.svg' | svgContents('opacity-50 w-5 h-5') | safe }}
+              </div>
+            </a>
+          {%- endfor -%}
         </div>
 
-        <div class="mt-6">
-          <h3 class="text-xl font-semibold">Innboks</h3>
-          <div class="mt-2 grid gap-1">
-            {%- for message in notifications.myInbox -%}
-              <a class="fine:hover:ring-2 fine:hover:ring-blue-600 grid gap-3 items-start grid-cols-[2.25rem_1fr] py-3 px-4 rounded-md bg-white" href="#">
-                <div class="grid text-xl mt-2 font-semibold text-white rounded-full place-items-center aspect-square {{ message.color or "bg-gray-300" }}" aria-hidden="true">
-                  <span class="-mr-px text-center">{{ message.title | first }}</span>
-                </div>
-                <div>
-                  <div class="flex items-baseline justify-between gap-4">
-                    <h3 class="text-lg font-semibold">{{ message.title | safe }}</h3>
-                    <p class="text-sm opacity-70">{{ message.date }}</p>
-                  </div>
-                  <p class="mt-1 text-lg leading-tight">{{ message.description }}</p>
+        <h3 class="mt-6 text-sm tracking-wider uppercase opacity-80">Beskjeder</h3>
+        <div class="grid gap-1 mt-2">
+          {%- for message in notifications.myMessages -%}
+            <a class="px-4 py-3 bg-white rounded-md fine:hover:ring-2 fine:hover:ring-blue-600" href="#">
+              <div>
+                <h3 class="text-lg font-semibold leading-snug">{{ message.title | safe }}</h3>
+                <p class="text-base opacity-80">{{ message.timestamp }}</p>
 
-                  {%- if message.tags -%}
-                    <div class="flex items-center justify-between pb-1 mt-2">
-                      <div class="flex flex-wrap gap-1">
-                        {%- for tag in message.tags -%}
-                          <span class="px-2 text-gray-700 leading-none py-1.5 text-sm tracking-wide uppercase bg-gray-200 rounded-sm">{{ tag }}</span>
-                        {%- endfor -%}
-                      </div>
+                {%- if message.tags -%}
+                  <div class="flex items-center justify-between pb-1 mt-2">
+                    <div class="flex flex-wrap gap-1">
+                      <span class="grid w-6 h-6 text-white rounded bg-lightblue-600 place-items-center">
+                        {{ '/src/_includes/svg/icons/chat-filled.svg' | svgContents('w-4 h-4') | safe }}
+                      </span>
+                      {%- for tag in message.tags -%}
+                        <span class="px-2 text-gray-700 leading-none py-1.5 text-sm rounded {{ tag.color or "bg-gray-100" }}">{{ tag }}</span>
+                      {%- endfor -%}
                     </div>
-                  {%- endif -%}
+                  </div>
+                {%- endif -%}
 
-                </div>
-              </a>
-            {%- endfor -%}
-          </div>
+              </div>
+            </a>
+          {%- endfor -%}
         </div>
-
+      </div>
+      <div class="px-6">
+        <div x-show="!newNotifications" class="border-t border-gray-200"></div>
+        <a href="#" class="flex items-center gap-2 py-4 rounded-b-lg fine:hover:-mx-6 fine:hover:px-6 fine:hover:bg-blue-500 fine:hover:text-white">
+          {{ '/src/_includes/svg/icons/logout.svg' | svgContents() | safe }}
+          <span>Logg ut</span>
+        </a>
       </div>
     </div>
   </div>
