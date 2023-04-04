@@ -69,21 +69,10 @@ order: 7
               </ul>
             </fieldset>
 
-            <fieldset
-              class="" x-show="applicationStep === 2"
-              x-transition:enter="transition ease-out duration-500"
-              x-transition:enter-start="opacity-0 -translate-y-1"
-              x-transition:enter-end="opacity-100"
-            >
+            <fieldset class="" x-show="applicationStep === 2">
               <legend class="font-semibold">Hva skal du søke om?</legend>
               <ul class="grid mt-1 justify-items-start">
-                <li
-                  class="relative"
-                  x-show="applicationFormat === 'post'"
-                  x-transition:enter="transition ease-out duration-300 delay-75"
-                  x-transition:enter-start="opacity-0 -translate-y-1"
-                  x-transition:enter-end="opacity-100"
-                >
+                <li class="relative">
                   {{ form.radio({
                     label: 'Dagpenger når du ikke er permittert',
                     description: '',
