@@ -10,29 +10,17 @@
     </a>
 
     {# Audience #}
-    {# <div class="relative hidden px-4 py-3 isolate md:py-0 md:px-5 md:self-stretch xs:grid" x-on:click.outside="audienceDropdownOpen = false">
-      <button class="flex items-center self-center justify-center gap-4 py-2 pl-3 pr-2 border border-gray-200 rounded fine:hover:bg-deepblue-100 focus:outline-none md:hidden" x-on:click="audienceDropdownOpen = !audienceDropdownOpen">
-      {%- if ('samarbeidspartner' in page.fileSlug) -%}
-      <span>{{ audience[2].title }}</span>
-      {%- elif ('arbeidsgiver' in page.fileSlug) -%}
-      <span>{{ audience[1].title }}</span>
-      {%- elif (not 'produktoversikt-' in page.fileSlug) -%}
-      <span>{{ audience[0].title }}</span>
-      {%- endif -%}
-        {{ '/src/_includes/svg/icons/chevron-down.svg' | svgContents('w-4 h-4') | safe }}
-      </button>
-      <div class="z-50 xs:absolute md:static xs:top-full xs:left-0">
-        <ul class="justify-center text-lg bg-white border border-gray-200 divide-y divide-gray-200 rounded shadow-lg md:rounded-none md:bg-transparent md:shadow-none md:border-0 md:divide-y-0 md:gap-4 md:flex" x-bind:class="audienceDropdownOpen ? 'grid' : 'hidden md:flex'">
-          {%- for item in audience -%}
-            <li class="grid">
-              <a href="{{ item.href or '#' }}" class="focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-800 flex items-center py-2 px-3 md:px-0.5 md:pb-5 text-gray-900 border-l-4 md:border-l-0 md:border-b-4 md:pt-6 {{ 'border-blue-500' if activeRole === item.title else 'border-transparent fine:hover:border-gray-300/75 opacity-70' }}">
-                {{ item.title }} {{ item.active }}
-              </a>
-            </li>
-          {%- endfor -%}
-        </ul>
-      </div>
-    </div> #}
+    <div class="relative self-stretch hidden px-5 isolate md:grid">
+      <ul class="flex justify-center gap-4 text-lg">
+        {%- for item in audience -%}
+          <li class="grid">
+            <a href="{{ item.href or '#' }}" class="focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-800 flex items-center px-0.5 pb-5 text-gray-900 border-b-4 pt-6 {{ 'border-blue-500' if activeRole === item.title else 'border-transparent fine:hover:border-gray-300/75 opacity-70' }}">
+              {{ item.title }} {{ item.active }}
+            </a>
+          </li>
+        {%- endfor -%}
+      </ul>
+    </div>
 
     {# Menu Buttons #}
     {%- set menuButtonClasses = "flex flex-col sm:flex-row items-center justify-center py-1.5 pl-2.5 pr-3 leading-none font-semibold gap-1 text-blue-500 rounded min-w-16 sm:py-2.5 sm:text-lg fine:hover:bg-deepblue-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-800 group" -%}
@@ -62,8 +50,8 @@
 </header>
 
 {# Audience Dropdown #}
-<div class="relative z-50 grid justify-center bg-gray-100 isolate col-full">
-  <button class="flex items-center fine:hover:bg-gray-200 text-lg justify-center gap-2 px-4 w-full py-1.5 focus:outline-none focus-visible:text-white focus-visible:bg-blue-500" x-on:click="audienceDropdownOpen = !audienceDropdownOpen">
+<div class="relative z-50 grid justify-center bg-gray-100 isolate col-full md:hidden">
+  <button class="flex items-center fine:hover:underline text-lg justify-center gap-2 px-4 w-full py-1.5 focus:outline-none focus-visible:text-white focus-visible:bg-blue-500" x-on:click="audienceDropdownOpen = !audienceDropdownOpen">
     {%- if ('samarbeidspartner' in page.fileSlug) -%}
     <span>{{ menu.audience[2].title }}</span>
     {%- elif ('arbeidsgiver' in page.fileSlug) -%}
@@ -73,16 +61,18 @@
     {%- endif -%}
     {{ '/src/_includes/svg/icons/chevron-down.svg' | svgContents('w-4 h-4') | safe }}
   </button>
-  <div class="absolute z-50 px-4 mt-px -translate-x-1/2 left-1/2 top-full">
-    <ul class="overflow-hidden text-gray-900 bg-white divide-y divide-gray-300 rounded shadow-xl max-w-max ring-1 ring-gray-200"  x-show="audienceDropdownOpen" x-on:click.outside="audienceDropdownOpen = false">
-      {%- for item in audience -%}
-        <li class="grid">
-          <a href="{{ item.href or '#' }}" class="py-2 px-3 border-l-4 fine:hover:bg-gray-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-800 {{ 'border-blue-500' if activeRole === item.title or activeRole === '' else 'border-transparent fine:hover:border-gray-300/75 opacity-70' }}">
-            {{ item.title | safe }}
-          </a>
-        </li>
-      {%- endfor -%}
-    </ul>
+  <div class="absolute z-50 w-full -translate-x-1/2 left-1/2 top-full">
+    <div class="grid items-start bg-gray-100 grid-cols-layout">
+      <ul class="grid pt-4 pb-6 text-gray-900 sm:grid-flow-col auto-cols-fr gap-y-1 gap-x-3 col-wide"  x-show="audienceDropdownOpen" x-on:click.outside="audienceDropdownOpen = false">
+        {%- for item in audience -%}
+          <li class="grid flex-1">
+            <a x-on:click="audienceDropdownOpen = false" href="{{ item.href or '#' }}" class="py-2 px-3 bg-white border-2 rounded-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-800 {{ 'border-blue-500' if activeRole === item.title or activeRole === '' else 'border-transparent fine:hover:border-gray-400' }}">
+              {{ item.title | safe }}
+            </a>
+          </li>
+        {%- endfor -%}
+      </ul>
+    </div>
   </div>
 </div>
 

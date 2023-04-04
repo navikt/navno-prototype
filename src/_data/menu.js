@@ -2,14 +2,17 @@ module.exports = {
   audience: [
     {
       title: "Privat",
+      description: "Lorem ipsum dolor sit amet",
       href: "#",
     },
     {
       title: "Arbeidsgiver",
+      description: "Lorem ipsum dolor sit amet",
       href: "#",
     },
     {
       title: "Samarbeidspartner",
+      description: "Lorem ipsum dolor sit amet",
       href: "#",
     },
   ],
