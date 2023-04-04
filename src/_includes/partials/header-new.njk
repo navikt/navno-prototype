@@ -28,7 +28,7 @@
       <button class="{{ menuButtonClasses }}" x-on:click="notifyOpen = !notifyOpen, menuOpen = false" x-bind:class="notifyOpen && 'bg-deepblue-50'">
         <span class="relative">
           {{ '/src/_includes/svg/icons/person-circle.svg' | svgContents('w-7 h-7') | safe }}
-          <span class="absolute right-0 block w-2 h-2 bg-red-400 rounded-full top-0.5" x-bind:class="notifyOpen ? 'ring-2 ring-deepblue-50' : 'ring-2 ring-white fine:group-hover:ring-deepblue-50'"></span>
+          <span x-show="newNotifications" class="absolute right-0 block w-2 h-2 bg-red-400 rounded-full top-0.5" x-bind:class="notifyOpen ? 'ring-2 ring-deepblue-50' : 'ring-2 ring-white fine:group-hover:ring-deepblue-50'"></span>
         </span>
         <span class="mt-px sm:hidden">Min side</span>
         <span class="hidden mt-px sm:inline-block">Isac Norland</span>
