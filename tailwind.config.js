@@ -282,7 +282,7 @@ module.exports = {
         6: "6px",
       },
       spacing: {
-        "clamp-gap": "clamp(1rem, -3rem + 12vw, 6rem)",
+        "clamp-gap": "clamp(1rem, -2rem + 8vw, 6rem)",
       },
       transitionProperty: {
         custom:
