@@ -1,14 +1,14 @@
 <aside x-ref="prototypeMenu" aria-label="Sider i prototypen" class="grid items-center min-h-screen font-mono text-xl text-white bg-deepblue-800 md:text-2xl">
   <div class="grid grid-cols-layout py-clamp-gap">
-    <h2 class="text-base font-semibold tracking-widest uppercase col-wide text-deepblue-300">Sider i prototypen</h2>
-    <ul class="divide-y divide-gray-400/25 col-wide">
+    <h2 class="text-lg font-semibold tracking-widest uppercase col-wide text-deepblue-300">Sider i prototypen</h2>
+    <ul class="mt-4 col-wide">
     {%- for page in collections.template | sort(false, false, 'data.order') -%}
-      <li class="py-4">
+      <li class="grid items-center justify-start py-4 border-t border-gray-400/25 min-h-24">
         <a href="{{ page.url }}" class="inline-block fine:hover:text-blue-300 fine:hover:underline decoration-from-font underline-offset-4">
           {{ page.data.title | safe }}
         </a>
         {% if page.data.type %}
-        <span class="block mt-1 text-sm uppercase text-deepblue-200">{{ page.data.type | safe }}</span>
+        <span class="block text-sm uppercase text-deepblue-200">{{ page.data.type | safe }}</span>
         {% endif %}
       </li>
     {%- endfor -%}
