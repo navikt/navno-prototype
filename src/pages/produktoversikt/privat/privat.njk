@@ -222,31 +222,36 @@ permalink: "/produktoversikt/"
 
                 <div class="pt-5 pb-12 px-clamp-gap relative min-h-[20vh] markdown sm:pl-20 sm:pr-0 mb-8" x-bind:hidden="!expanded" hidden>
                   <p>{{ product.ingress }}</p>
+
                   {%- if product.contentBlocks -%}
                     {%- for block in product.contentBlocks -%}
                     {%- include "partials/contentBlocks.njk" -%}
                     {%- endfor -%}
                   {%- else -%}
-                  <div class="mt-4 italic">
-                    <p>Innhold om søknader eller skjema er ikke lagt inn enda.</p>
-                  </div>
+                    <div class="mt-4 italic">
+                      <p>Innhold om søknader eller skjema er ikke lagt inn enda.</p>
+                    </div>
                   {%- endif -%}
                 </div>
               </div>
             {%- endfor -%}
           </div>
+
           <div x-show="count === 0" class="p-6 py-8 text-center overflow-hidden grid items-center leading-snug rounded-lg bg-gray-100 min-h-[4.75rem] lg:col-span-6">
             <p class="max-w-prose">Ingen søknader eller skjema er merket med denne kombinasjonen av type og område.</p>
           </div>
+
+          <div class="p-4 mt-8 bg-orange-100 rounded-lg lg:px-6 lg:py-5">
+            <h3 class="text-xl font-semibold">
+              Klage eller anke på vedtak?
+            </h3>
+            <p class="mt-2 max-w-prose">Hvis du har fått et vedtak fra NAV og du er uenig i vedtaket, har du rett til å klage eller anke.</p>
+            <p class="mb-2 mt-7"><a href="#" class="underline text-deepblue-600 fine:hover:no-underline fine:hover:text-deepblue-700">Les mer om dine klagerettigheter</a>.</p>
+          </div>
+
         </div>
 
-        <div class="p-4 bg-orange-100 rounded-lg lg:col-start-1 lg:px-6 lg:py-5">
-          <h3 class="text-xl font-semibold">
-            Klage eller anke på vedtak?
-          </h3>
-          <p class="mt-2 max-w-prose">Hvis du har fått et vedtak fra NAV og du er uenig i vedtaket, har du rett til å klage eller anke.</p>
-          <p class="mb-2 mt-7"><a href="#" class="underline text-deepblue-600 fine:hover:no-underline fine:hover:text-deepblue-700">Les mer om dine klagerettigheter</a>.</p>
-        </div>
+
       </div>
     </div>
   </main>
