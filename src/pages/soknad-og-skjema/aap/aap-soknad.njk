@@ -85,9 +85,9 @@
 
               {# Progressbar #}
               <div class="mt-1.5 -mx-px mb-2 pointer-events-none -translate-y-px overflow-hidden rounded-full bg-deepblue-100">
-                <div class="h-3 bg-deepblue-500" style="width: calc(({{ pagination.pageNumber }} / {{ formSteps.length }}) * 100%)"></div>
+                <div class="h-3 bg-deepblue-500" style="width: calc(({{ pagination.pageNumber }} / {{ formSteps.length - 2 }}) * 100%)"></div>
               </div>
-              <p class="text-base">Steg {{ pagination.pageNumber }} av {{ formSteps.length }}</p>
+              <p class="text-base">Steg {{ pagination.pageNumber }} av {{ formSteps.length - 2 }}</p>
             </div>
             <div class="px-3 py-4" x-show="stepperOpen">
               {{ stepperList(formSteps) }}
@@ -104,10 +104,10 @@
 
               {# Progressbar #}
               <div class="mt-1.5 mb-2  -translate-y-px overflow-hidden rounded-full bg-deepblue-100">
-                <div class="h-3 bg-deepblue-500" style="width: calc(({{ pagination.pageNumber }} / {{ formSteps.length }}) * 100%)"></div>
+                <div class="h-3 bg-deepblue-500" style="width: calc(({{ pagination.pageNumber }} / {{ formSteps.length - 2 }}) * 100%)"></div>
               </div>
             <p class="text-base">Steg {{ pagination.pageNumber
-               }} av {{ formSteps.length }}</p>
+               }} av {{ formSteps.length - 2 }}</p>
             </div>
             {% endif %}
 
