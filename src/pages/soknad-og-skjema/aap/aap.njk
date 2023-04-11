@@ -1,0 +1,72 @@
+---
+type: 'Mellomsteg'
+title: Søk om arbeids&shy;avklarings&shy;penger (AAP)
+kicker: Søknad
+tags: ['template']
+permalink: "/soknad-og-skjema/{{ page.fileSlug }}/"
+order: 7
+---
+{%- extends 'base-basic.njk' -%}
+
+{%- from "macros/button.njk" import button -%}
+{%- import "macros/formFields.njk" as form -%}
+
+{%- block content -%}
+  <main class="grid py-8 md:py-12 text-lg grid-cols-layout min-h-[70vh]" x-data="{ stepperOpen: false }">
+    <div class="relative col-wide max-w-prose md:max-w-none mx-auto md:mx-0 grid md:grid-cols-[6rem_auto] gap-x-8 items-start mb-12 w-full auto-rows-min">
+
+      {# Pictogram #}
+      {{ '/src/_includes/svg/pictograms/soknad-og-skjema.svg' | svgContents('w-full h-auto max-w-20 md:ml-2 text-green-800 absolute right-0 md:relative hidden xs:block') | safe }}
+
+      {# Intro #}
+      <div class="xs:pr-28 md:pr-0 md:col-start-2 md:row-start-1">
+        <h1 class="text-3xl font-semibold leading-tight md:text-5xl md:leading-tight">{{ title | safe }}</h1>
+        <p class="mt-2 text-base tracking-wider uppercase opacity-70">
+          {{ kicker | upper }}
+          {{ '–' if formId }}
+          {{ formId | safe }}
+        </p>
+      </div>
+
+      <div class="md:col-start-2 md:grid md:grid-cols-[2.2fr_0.8fr] gap-x-16 items-start gap-4">
+        <div class="text-lg max-w-prose markdown">
+
+          <form class="mt-12">
+            <fieldset>
+              <legend class="font-semibold">Hvordan vil du sende søknaden?</legend>
+              <ul class="grid mt-2 justify-items-start">
+                <li class="relative">
+                  {{ form.radio({
+                    label: 'Send digitalt',
+                    description: 'Du blir bedt om å logge inn',
+                    name: 'application-format',
+                    id: 'field-1a',
+                    value: 'digital',
+                    checked: true
+                  }) }}
+                </li>
+                <li class="relative">
+                  {{ form.radio({
+                    label: 'Send i posten',
+                    description: 'Fyll ut søknaden før du skriver den ut. Du trenger ikke å logge inn.',
+                    name: 'application-format',
+                    value: 'post',
+                    id: 'field-2a'
+                  }) }}
+                </li>
+              </ul>
+            </fieldset>
+            <div class="mt-7">
+              <a class="inline-flex px-6 py-2.5 text-white bg-blue-500 fine:hover:bg-blue-600 rounded focus-visible:outline-none focus-visible:ring focus-visible:ring-blue-800 focus-visible:ring-offset-1 focus-visible:ring-offset-white" href="/soknad-og-skjema/aap/intro/">Neste</a>
+            </div>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+{%- endblock -%}
+
+{%- block styles -%}{%- endblock -%}
+{%- block script -%}{%- endblock -%}

@@ -1,6 +1,6 @@
 <svg width="96" height="96" viewBox="0 0 96 96" fill="none" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
 <g clip-path="url(#clip0_1_2383)">
-<path d="M60.1806 55.8724L35.26 80.793L16.7071 62.2401L41.6277 37.3195L31.1052 26.7969L79.0166 18.4835L70.7031 66.3949L60.1806 55.8724Z" fill="rgb(204 241 214)"/>
+<path d="M60.1806 55.8724L35.26 80.793L16.7071 62.2401L41.6277 37.3195L31.1052 26.7969L79.0166 18.4835L70.7031 66.3949L60.1806 55.8724Z" fill="var(--pictogram, rgb(204 241 214))"/>
 <path d="M2 96.0001V81.1699C2 75.6471 6.47715 71.1699 12 71.1699H34C39.5228 71.1699 44 75.6471 44 81.1699V96.0001" stroke="#262626" stroke-width="3" stroke-linejoin="round"/>
 <path d="M11.5454 67.6226V49M34.4545 49V67.6226" stroke="#262626" stroke-width="3" stroke-linejoin="round"/>
 <path d="M9.63623 81.6503H36.3635" stroke="#262626" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>

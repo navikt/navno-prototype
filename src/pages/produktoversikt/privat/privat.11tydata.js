@@ -38,6 +38,137 @@ const products = [
       "Arbeid",
       "Helse og sykdom",
     ],
+    contentBlocks: [
+      {
+        type: "markdown",
+        data: `### Søk om arbeidsavklaringspenger (AAP)
+        For at vi skal vurdere om du har rett til AAP, må du søke om det. Du kan tidligst få AAP fra den dagen du søker.`,
+      },
+      {
+        type: "actions",
+        data: [
+          {
+            text: "Send søknad",
+            href: "/soknad-og-skjema/aap/",
+            variant: "primary",
+          },
+        ],
+      },
+      {
+        type: "line",
+      },
+      {
+        type: "markdown",
+        data: `### Søk om å beholde AAP under opphold i utlandet
+        Du trenger ikke å søke hvis du er EU/EØS-borger eller sveitsisk statsborger og skal oppholde deg innenfor EU/EØS eller Sveits.`,
+      },
+      {
+        type: "actions",
+        data: [
+          {
+            text: "Send søknad",
+            href: "/soknad-og-skjema/aap/",
+            variant: "primary",
+          },
+        ],
+      },
+      {
+        type: "line",
+      },
+      {
+        type: "markdown",
+        data: `### Søk om reisestønad
+        Du kan søke om reisetilskudd for å dekke ekstrautgifter til reise til og fra arbeids-og undervisningsstedet, hvis du på grunn av sykdom eller skade ikke kan reise på vanlig måte.
+
+        Du må legge ved en legeerklæring som viser at du ikke kan reise på vanlig måte, og at du ellers ville vært sykmeldt.`,
+      },
+      {
+        type: "actions",
+        data: [
+          {
+            text: "Send søknad",
+            href: "/soknad-og-skjema/aap/",
+            variant: "primary",
+          },
+        ],
+      },
+      {
+        type: "line",
+      },
+      {
+        type: "markdown",
+        data: `### Søk om AAP under etablering av egen virksomhet (utviklingsfase)
+        Dersom du allerede mottar arbeidsavklaringspenger, kan du søke om å beholde disse under etablering av egen virksomhet. Du kan beholde dem i en utviklingsfase på inntil 6 måneder. Du må søke før bedriften starter opp.
+
+        Vedleggsskjemaet "Næringsfaglig vurdering av etableringsplaner" må legges ved søknaden. Det skal fylles ut av fylkeskommunen,  kommunen, eller en annen kompetent instans.`,
+      },
+      {
+        type: "actions",
+        data: [
+          {
+            text: "Send søknad",
+            href: "/soknad-og-skjema/aap/",
+            variant: "primary",
+          },
+        ],
+      },
+      {
+        type: "line",
+      },
+      {
+        type: "markdown",
+        data: `### Søk om AAP under etablering av egen virksomhet (oppstartfase)
+        Dersom du allerede mottar arbeidsavklaringspenger, kan du søke om å beholde disse under etablering av egen virksomhet. Du kan beholde dem i en oppstartsfase på inntil 3 måneder. Du må søke før bedriften starter opp.
+
+        Vedleggsskjemaet "Næringsfaglig vurdering av etableringsplaner" må legges ved søknaden. Det skal fylles ut av fylkeskommunen, kommunen, eller en annen kompetent instans.`,
+      },
+      {
+        type: "actions",
+        data: [
+          {
+            text: "Send søknad",
+            href: "/soknad-og-skjema/aap/",
+            variant: "primary",
+          },
+        ],
+      },
+      {
+        type: "line",
+      },
+      {
+        type: "markdown",
+        data: `### Send inn næringsfaglig vurdering av etableringsplaner
+        Dette sender du inn hvis du søker om å beholde dagpenger, arbeidsavklaringspenger (AAP) eller overgangsstønad mens du etablerer egen virksomhet.
+
+        Du må innhente en næringsfaglig vurdering av etableringsplanene dine fra fylkeskommunen, kommunen eller en annen kompetent instans, før NAV kan behandle søknaden.`,
+      },
+      {
+        type: "actions",
+        data: [
+          {
+            text: "Send søknad",
+            href: "/soknad-og-skjema/aap/",
+            variant: "primary",
+          },
+        ],
+      },
+      {
+        type: "line",
+      },
+      {
+        type: "markdown",
+        data: `### Mer om`,
+      },
+      {
+        type: "microcards",
+        data: [
+          {
+            text: "Arbeidsavklaringspenger (AAP)",
+            dot: "bg-green-300",
+          },
+        ],
+      },
+    ],
   },
   {
     title: "Arbeidsforberedende trening",

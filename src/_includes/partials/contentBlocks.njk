@@ -1,36 +1,141 @@
-{%- from "macros/button.njk" import button -%}
-{%- from "macros/microcard.njk" import microcard -%}
 
-{% for block in product.contentBlocks %}
 
-  {% if block.type === 'markdown' %}
-    {{ block.data  | markdown | safe }}
-  {% endif %}
+{# Markdown #}
+{%- if block.type === 'markdown' -%}
+  {{ block.data  | markdown | safe }}
+{%- endif -%}
 
-  {% if block.type === 'actions' %}
-  <div class="grid gap-1.5 sm:flex mt-3">
-    {% for item in block.data %}
-      {{ button(
-        {
-          text: item.text,
-          href: item.href,
-          variant: item.variant
-        }
-      ) }}
-    {% endfor %}
+{# Actions #}
+{%- if block.type === 'actions' -%}
+<div class="grid gap-1.5 sm:flex mt-3">
+  {%- for item in block.data -%}
+    {{ button(
+      {
+        text: item.text,
+        href: item.href,
+        variant: item.variant
+      }
+    ) }}
+  {%- endfor -%}
+</div>
+{%- endif -%}
+
+{# Microcards #}
+{%- if block.type === 'microcards' -%}
+<div>
+  {%- if block.title -%}
+  <h4 class="font-semibold">{{ block.title | safe }}</h4>
+  {%- endif -%}
+  <div class="flex flex-wrap gap-1.5 mt-2">
+  {%- for item in block.data -%}
+    {{ microcard(item) }}
+  {%- endfor -%}
   </div>
-  {% endif %}
+</div>
+{%- endif -%}
 
-  {% if block.type === 'microcards' %}
-    <div class="flex flex-wrap gap-1.5">
-    {% for item in block.data %}
-      {{ microcard(item) }}
-    {% endfor %}
+{# Line #}
+{%- if block.type === 'line' -%}
+  <div class="border-t border-deepblue-100"></div>
+{%- endif -%}
+
+{# Expander #}
+{%- if block.type === 'expander' -%}
+  <div class="border-b-2 border-blue-400" x-data="{ isExpanded: false }">
+    <button class="w-full py-2.5 pl-4 pr-24 text-left rounded bg-select bg-blue-50" x-on:click="isExpanded = !isExpanded" x-bind:aria-expanded="isExpanded" type="button" >{{ block.title | safe }}</button>
+    <div class="p-4 rounded-b md:p-6 bg-gray-50 markdown" x-show="isExpanded" x-bind:hidden="!isExpanded">
+      {{ block.data | markdown | safe }}
+    </div>
   </div>
-  {% endif %}
+{%- endif -%}
 
-  {% if block.type === 'line' %}
-    <div class="border-t border-deepblue-100"></div>
+{# Tiles #}
+{%- if block.type === 'tiles' -%}
+  {% if block.title %}
+  <h4 class="text-xl font-semibold">{{ block.title | safe }}</h4>
   {% endif %}
+  <div class="grid gap-1.5 mt-1">
+    {%- for item in block.data -%}
+      {{ tile(item) }}
+    {%- endfor -%}
+  </div>
+{%- endif -%}
 
-{% endfor %}
+{# Select #}
+{% if block.type === 'select' %}
+  <div class="p-4 rounded bg-gray-50">
+    <label class="font-semibold" for="country">{{ block.label }}</label>
+    {% if block.description %}
+    <p class="text-base">{{ block.description }}</p>
+    {% endif %}
+    <select id="country" class="w-full px-3 py-2.5 mt-3 bg-white border border-gray-300 rounded appearance-none bg-select hover:border-gray-400">
+      {% for option in block.options %}
+      <option {{ 'checked' if loop.first }}>{{ option.label }}</option>
+      {% endfor %}
+    </select>
+  </div>
+{% endif %}
+
+{# Infobox #}
+{% if block.type === 'infobox' %}
+<div class="flex items-start gap-3 p-4 border rounded border-lightblue-200 bg-lightblue-50">
+  {{ block.icon | svgContents('w-6 h-6 shrink-0 translate-y-0.5') | safe }}
+  <div class="grid gap-1 markdown">
+    <h3 class="text-xl font-semibold">{{ block.title }}</h3>
+    {{ block.content | markdown | safe }}
+  </div>
+</div>
+{% endif %}
+
+{# Radios #}
+{% if block.type === 'radios' %}
+  <div class="p-4 rounded bg-gray-50">
+    <fieldset>
+      <legend class="font-semibold">{{ block.legend }}</legend>
+      {% if block.description %}
+        <p class="text-base">{{ block.description }}</p>
+      {% endif %}
+      <ul class="mt-1">
+        {% for option in block.options %}
+          <li>{{ form.radio({ label: option.label, description: option.description, name: block.name, id: (block.name + '-' + option.label | slugify) }) }}</li>
+        {% endfor %}
+      </ul>
+    </fieldset>
+  </div>
+{% endif %}
+
+{# Checkboxes #}
+{% if block.type === 'checkboxes' %}
+  <div class="p-4 rounded bg-gray-50">
+    <fieldset>
+      <legend class="font-semibold">{{ block.legend }}</legend>
+      {% if block.description %}
+        <p class="text-base">{{ block.description }}</p>
+      {% endif %}
+      <ul class="mt-1">
+        {% for option in block.options %}
+          <li>{{ form.checkbox({ label: option.label, description: option.description, name: block.name, id: (block.name + '-' + option.label | slugify) }) }}</li>
+        {% endfor %}
+      </ul>
+    </fieldset>
+  </div>
+{% endif %}
+
+{# Text Input #}
+{% if block.type === 'textinput' %}
+  <div class="p-4 rounded bg-gray-50">
+    {{ form.textinput({ label: block.label, description: block.description, id: 'text1' }) }}
+  </div>
+{% endif %}
+
+{# Text Area #}
+{% if block.type === 'textarea' %}
+  <div class="p-4 rounded bg-gray-50">
+    {{ form.textarea({ label: block.label, description: block.description, id: 'text2' }) }}
+  </div>
+{% endif %}
+
+
+
+
+

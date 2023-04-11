@@ -4,13 +4,13 @@ description: 'Nyheter og statistikk.'
 order: 15
 bodyClass: 'bg-gray-100'
 ---
-{% extends 'base.njk' %}
+{%- extends 'base.njk' -%}
 
-{% block content %}
+{%- block content -%}
   <main class="min-h-[61vh] text-lg text-gray-800">
-    <div class="grid pt-8 pb-20 bg-white md:pt-12 grid-cols-layout">
+    <div class="pt-8 pb-20 bg-white grid md:pt-12 grid-cols-layout">
       <div class="col-normal">
-        <p class="flex items-center gap-2 text-purple-600">
+        <p class="flex items-center text-purple-600 gap-2">
           <svg xmlns="http://www.w3.org/2000/svg" class="flex-none w-7 h-7 -mb-0.5" width="24" height="24" fill="none" viewBox="0 0 24 24" aria-hidden="true" focusable="false" >
             <path stroke="#634689" stroke-width="1.5" d="m9.5 12.5 2.5 1 2.5 1.5V6L12 7.5l-2.5 1m-5 2c0-1.1.9-2 2-2h3v4h-3a2 2 0 0 1-2-2ZM7 13l2.5 6.5m8-9H21M17 6l3-2m-3 11 3 2" />
           </svg>
@@ -33,7 +33,7 @@ bodyClass: 'bg-gray-100'
 
           <p class="mt-7">– De høye strømprisene vi har sett de siste månedene har så langt ikke resultert i noen økning i antallet permitterte, sier Holte.</p>
 
-          <figure class="grid gap-3 p-3 bg-white shadow-sm mt-7">
+          <figure class="p-3 bg-white grid gap-3 shadow-sm mt-7">
             <img src="/assets/images/artikkel-figur-1.webp" alt="" width="768" height="430">
             <figcaption class="text-base text-gray-700">
               <p>
@@ -42,7 +42,7 @@ bodyClass: 'bg-gray-100'
             </figcaption>
           </figure>
 
-          <figure class="grid gap-3 p-3 bg-white shadow-sm mt-7">
+          <figure class="p-3 bg-white grid gap-3 shadow-sm mt-7">
             <img src="/assets/images/artikkel-figur-2.webp" alt="" width="768" height="430">
             <figcaption class="text-base text-gray-700">
               <p>
@@ -112,7 +112,7 @@ bodyClass: 'bg-gray-100'
       </div>
     </div>
   </main>
-{% endblock %}
+{%- endblock -%}
 
-{% block styles %}{% endblock %}
-{% block script %}{% endblock %}
+{%- block styles -%}{%- endblock -%}
+{%- block script -%}{%- endblock -%}

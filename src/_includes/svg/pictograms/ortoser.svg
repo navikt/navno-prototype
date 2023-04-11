@@ -1,9 +1,9 @@
 <svg width="96" height="96" viewBox="0 0 96 96" fill="none" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
 <g clip-path="url(#clip0_19_256)">
-<rect x="27.8994" y="38" width="38" height="14" transform="rotate(45 27.8994 38)" fill="rgb(204 241 214)"/>
-<rect x="27.8994" y="38" width="38" height="14" transform="rotate(45 27.8994 38)" fill="rgb(204 241 214)"/>
-<rect x="35" y="64.8406" width="62" height="14" transform="rotate(-45 35 64.8406)" fill="rgb(204 241 214)"/>
-<rect x="35" y="64.8406" width="62" height="14" transform="rotate(-45 35 64.8406)" fill="rgb(204 241 214)"/>
+<rect x="27.8994" y="38" width="38" height="14" transform="rotate(45 27.8994 38)" fill="var(--pictogram, rgb(204 241 214))"/>
+<rect x="27.8994" y="38" width="38" height="14" transform="rotate(45 27.8994 38)" fill="var(--pictogram, rgb(204 241 214))"/>
+<rect x="35" y="64.8406" width="62" height="14" transform="rotate(-45 35 64.8406)" fill="var(--pictogram, rgb(204 241 214))"/>
+<rect x="35" y="64.8406" width="62" height="14" transform="rotate(-45 35 64.8406)" fill="var(--pictogram, rgb(204 241 214))"/>
 <path d="M15.9072 26.8612V9.62812C15.9072 7.43175 17.6877 5.65125 19.8841 5.65125V5.65125C22.0805 5.65125 23.861 7.43175 23.861 9.62812V21.5587" stroke="#262626" stroke-width="3"/>
 <path d="M15.9075 48.0713L4.55234 36.7162C3.38722 35.551 2.98039 33.8277 3.50144 32.2645V32.2645C4.4085 29.5433 7.65476 28.4295 10.0414 30.0206L21.21 37.4663" stroke="#262626" stroke-width="3"/>
 <path d="M23.8611 26.8611V6.97675C23.8611 4.78038 25.6416 2.99988 27.838 2.99988V2.99988C30.0343 2.99988 31.8148 4.78039 31.8148 6.97675V25.3698" stroke="#262626" stroke-width="3"/>

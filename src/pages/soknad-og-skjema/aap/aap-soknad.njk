@@ -1,0 +1,147 @@
+---js
+{
+  order: 10,
+  bodyClass: 'bg-white',
+  pagination: {
+    data: "formSteps",
+    size: 1,
+    alias: "step",
+  },
+  eleventyComputed: {
+    title: 'Søknad om arbeids&shy;avklarings&shy;penger (AAP)',
+    stepTitle: "{{ step.title }}",
+    permalink: "/soknad-og-skjema/aap/{{ step.title | slugify }}/",
+    blocks: "{{ step.formBlocks }}"
+  }
+}
+---
+
+{%- extends 'base-basic.njk' -%}
+
+{%- import "macros/formFields.njk" as form -%}
+
+{% macro stepperList(formSteps) %}
+  <ol class="navds-stepper">
+    {%- for item in formSteps.slice(1, -1) -%}
+      <li class="navds-stepper__item {{ 'navds-stepper__item--active' if item.title === step.title }} {{ 'navds-stepper__item--complete' if item.state === 'complete' }}">
+        <span class="navds-stepper__line navds-stepper__line--1" aria-hidden="true"></span>
+        <span class="navds-stepper__marker" aria-hidden="true">
+          {%- if item.state === 'complete' -%}
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" focusable="false" aria-hidden="true"><path d="M7 13L10 16L17.5 8.5" stroke="currentColor" stroke-width="2" /></svg>
+          {%- else -%}
+            {{ loop.index }}
+          {%- endif -%}
+        </span>
+        {%- if item.link -%}
+          <a href="/soknad-og-skjema/aap/{{ item.title | slugify }}/" class="navds-stepper__content">{{ item.title }}</a>
+        {%- else -%}
+          <span class="navds-stepper__content">{{ item.title }}</span>
+        {%- endif -%}
+        <span class="navds-stepper__line navds-stepper__line--2" aria-hidden="true"></span>
+      </li>
+    {%- endfor -%}
+  </ol>
+{% endmacro %}
+
+{%- block content -%}
+
+  <main class="grid py-8 text-lg md:py-12 grid-cols-layout" x-data="{ stepperOpen: false }">
+    <div class="relative col-wide max-w-prose md:max-w-none mx-auto md:mx-0 grid md:grid-cols-[6rem_auto] gap-x-8 items-start mb-12 w-full">
+
+      {# Pictogram #}
+      {{ '/src/_includes/svg/pictograms/soknad-og-skjema.svg' | svgContents('w-full h-auto max-w-20 md:ml-2 text-green-800 absolute right-0 md:relative') | safe }}
+
+      {# Intro #}
+      <div class="pr-28 md:col-start-2 md:row-start-1 md:pr-0">
+        <h1 class="text-3xl font-semibold leading-tight md:text-5xl md:leading-tight">{{ title | safe }}</h1>
+        <p class="mt-2 text-base tracking-wider uppercase opacity-70">
+          Søknad
+        </p>
+      </div>
+
+      <div class="items-start gap-4 mt-8 md:col-start-2 md:flex gap-x-16 md:mt-12" id="{{ stepTitle | slugify }}">
+
+        {# Stepper (desktop) #}
+        {% if (pagination.pageNumber > 0) and (pagination.pageNumber < (formSteps.length - 1)) %}
+        <div class="hidden mt-6 md:block md:order-2 basis-side shrink-5">
+          {{ stepperList(formSteps) }}
+        </div>
+        {% endif %}
+
+        {# Main content #}
+        <div class="md:order-1 basis-main shrink-1">
+
+          {% if (pagination.pageNumber > 0) and (pagination.pageNumber < (formSteps.length - 1)) %}
+            {# Stepper (mobile) #}
+            <div class="mb-10 rounded-lg max-w-prose md:col-start-1 md:hidden">
+            <div class="relative py-2 rounded-md fine:hover:bg-deepblue-50">
+              <h2 class="text-2xl font-semibold">{{ stepTitle | safe }}</h2>
+              <button class="absolute inset-0 flex items-start justify-end pr-0.5 pt-3.5 fine:hover:text-blue-800 rounded fine:hover:ring-12 fine:hover:ring-deepblue-50" x-on:click="stepperOpen = !stepperOpen">
+                <span class="sr-only">Vis seksjoner</span>
+                <svg class="flex-none w-6 h-6 -translate-y-px pointer-events-none" x-bind:class="stepperOpen && 'rotate-180'" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false" >
+                  <path d="M18 9L12 15L6 9" stroke="currentColor" stroke-width="2" opacity="0.8" />
+                </svg>
+              </button>
+
+              {# Progressbar #}
+              <div class="mt-1.5 -mx-px mb-2 pointer-events-none -translate-y-px overflow-hidden rounded-full bg-deepblue-100">
+                <div class="h-3 bg-deepblue-500" style="width: calc(({{ pagination.pageNumber }} / {{ formSteps.length - 2 }}) * 100%)"></div>
+              </div>
+              <p class="text-base">Steg {{ pagination.pageNumber }} av {{ formSteps.length - 2 }}</p>
+            </div>
+            <div class="px-3 py-4" x-show="stepperOpen">
+              {{ stepperList(formSteps) }}
+            </div>
+            </div>
+          {% endif %}
+
+          <div class="max-w-prose">
+
+            {% if (pagination.pageNumber > 0) and (pagination.pageNumber < (formSteps.length - 1)) %}
+            {# Step Heading #}
+            <div class="hidden mb-10 md:block">
+              <h2 class="text-2xl font-semibold">{{ stepTitle | safe }}</h2>
+
+              {# Progressbar #}
+              <div class="mt-1.5 mb-2  -translate-y-px overflow-hidden rounded-full bg-deepblue-100">
+                <div class="h-3 bg-deepblue-500" style="width: calc(({{ pagination.pageNumber }} / {{ formSteps.length - 2 }}) * 100%)"></div>
+              </div>
+            <p class="text-base">Steg {{ pagination.pageNumber
+               }} av {{ formSteps.length - 2 }}</p>
+            </div>
+            {% endif %}
+
+            {# Content Blocks #}
+            <div class="markdown">
+              {% if step.contentBlocks %}
+                {% for block in step.contentBlocks %}
+                  {% include "partials/contentBlocks.njk" %}
+                {% endfor %}
+                {% else %}
+                <div class="grid bg-blue-50 place-items-center aspect-square">Skjemafelter</div>
+              {% endif %}
+            </div>
+
+            {# Navigation #}
+            <div class="grid gap-2 mt-12 xs:flex">
+              {% if pagination.pageNumber < (formSteps.length - 2) %}
+                <a href="/soknad-og-skjema/aap/{{ pagination.page.next.title | slugify }}/" class="px-8 py-3 font-semibold leading-snug text-center text-white bg-blue-500 rounded fine:hover:bg-blue-600" type="button">Neste steg</a>
+              {% endif %}
+
+              {% if (pagination.pageNumber > 1) %}
+                <a href="/soknad-og-skjema/aap/{{ pagination.page.previous.title | slugify }}/" class="px-8 py-3 font-semibold leading-snug text-center text-blue-500 bg-white rounded fine:hover:bg-blue-50 ring-2 ring-inset ring-blue-500" type="button">Forrige steg</a>
+              {% endif %}
+
+              {% if pagination.page.previous %}
+                <a class="px-8 py-3 font-semibold leading-snug text-center rounded fine:hover:bg-blue-50" href="/soknad-og-skjema/aap/">Avbryt</a>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+
+    </div>
+</main>
+{%- endblock -%}
