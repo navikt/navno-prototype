@@ -33,7 +33,7 @@
           {%- endif -%}
         </span>
         {%- if item.link -%}
-          <a href="/soknad-og-skjema/aap/{{ item.title | slugify }}/" class="navds-stepper__content">{{ item.title }}</a>
+          <a href="/soknad-og-skjema/dagpenger/{{ item.title | slugify }}/" class="navds-stepper__content">{{ item.title }}</a>
         {%- else -%}
           <span class="navds-stepper__content">{{ item.title }}</span>
         {%- endif -%}
@@ -85,9 +85,9 @@
 
               {# Progressbar #}
               <div class="mt-1.5 -mx-px mb-2 pointer-events-none -translate-y-px overflow-hidden rounded-full bg-deepblue-100">
-                <div class="h-3 bg-deepblue-500" style="width: calc(({{ pagination.pageNumber }} / {{ formSteps.length }}) * 100%)"></div>
+                <div class="h-3 bg-deepblue-500" style="width: calc(({{ pagination.pageNumber }} / {{ formSteps.length - 2 }}) * 100%)"></div>
               </div>
-              <p class="text-base">Steg {{ pagination.pageNumber }} av {{ formSteps.length }}</p>
+              <p class="text-base">Steg {{ pagination.pageNumber }} av {{ formSteps.length - 2 }}</p>
             </div>
             <div class="px-3 py-4" x-show="stepperOpen">
               {{ stepperList(formSteps) }}
@@ -104,10 +104,10 @@
 
               {# Progressbar #}
               <div class="mt-1.5 mb-2  -translate-y-px overflow-hidden rounded-full bg-deepblue-100">
-                <div class="h-3 bg-deepblue-500" style="width: calc(({{ pagination.pageNumber }} / {{ formSteps.length }}) * 100%)"></div>
+                <div class="h-3 bg-deepblue-500" style="width: calc(({{ pagination.pageNumber }} / {{ formSteps.length - 2 }}) * 100%)"></div>
               </div>
             <p class="text-base">Steg {{ pagination.pageNumber
-               }} av {{ formSteps.length }}</p>
+               }} av {{ formSteps.length - 2 }}</p>
             </div>
             {% endif %}
 
@@ -125,15 +125,15 @@
             {# Navigation #}
             <div class="grid gap-2 mt-12">
               {% if pagination.pageNumber < (formSteps.length - 2) %}
-                <a href="/soknad-og-skjema/aap/{{ pagination.page.next.title | slugify }}/" class="px-4 py-3 font-semibold leading-snug text-center text-white bg-blue-500 rounded fine:hover:bg-blue-600" type="button"><span class="font-normal">Neste steg:</span> {{ pagination.page.next.title }}</a>
+                <a href="/soknad-og-skjema/dagpenger/{{ pagination.page.next.title | slugify }}/" class="px-4 py-3 font-semibold leading-snug text-center text-white bg-blue-500 rounded fine:hover:bg-blue-600" type="button">Neste</a>
               {% endif %}
 
               {% if (pagination.pageNumber > 1) %}
-                <a href="/soknad-og-skjema/aap/{{ pagination.page.previous.title | slugify }}/" class="px-4 py-3 font-semibold leading-snug text-center text-blue-500 bg-white rounded fine:hover:bg-blue-50 ring-2 ring-inset ring-blue-500" type="button"><span class="font-normal">Forrige steg:</span> {{ pagination.page.previous.title }}</a>
+                <a href="/soknad-og-skjema/dagpenger/{{ pagination.page.previous.title | slugify }}/" class="px-4 py-3 font-semibold leading-snug text-center text-blue-500 bg-white rounded fine:hover:bg-blue-50 ring-2 ring-inset ring-blue-500" type="button">Forrige</a>
               {% endif %}
 
               {% if pagination.page.previous %}
-                <a class="px-4 py-3 font-semibold leading-snug text-center rounded fine:hover:bg-blue-50" href="/soknad-og-skjema/aap/">Avbryt …</a>
+                <a class="px-4 py-3 font-semibold leading-snug text-center rounded fine:hover:bg-blue-50" href="/soknad-og-skjema/dagpenger/">Avbryt …</a>
               {% endif %}
             </div>
           </div>

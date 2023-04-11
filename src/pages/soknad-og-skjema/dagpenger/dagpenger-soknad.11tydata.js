@@ -4,45 +4,27 @@ const formSteps = [
     contentBlocks: [
       {
         type: "markdown",
-        data: `## Søknadsdato er viktig for eventuell utbetaling av AAP
-        Vanligvis kan du tidligst få AAP fra den dagen du søker.
-
-        Hvis du mottar sykepenger, får du vanligvis AAP fra første dag etter at sykepengene dine er ferdig.
-
-        Du kan søke om AAP selv om om du ikke har mottatt sykepenger.
-
-### Hvis du får AAP gjelder dette
-
-* Du har rett til oppfølging av NAV
-* Du har plikt til å bidra til å avklare om du kan beholde eller komme i jobb
-* Du må sende inn meldekort hver 14. dag
-* Du har plikt til å gi beskjed hvis situasjonen din endrer seg
-* Hvis du får penger du ikke har rett til, er du forberedt på å betale disse tilbake`,
+        data: `Intro`,
       },
     ],
   },
   {
-    title: "Startdato",
+    title: "Steg 1",
     state: "complete",
     link: true,
   },
   {
-    title: "Bosted og jobb",
+    title: "Steg 2",
     state: "complete",
     link: true,
   },
   {
-    title: "Yrkesskade",
+    title: "Steg 3",
     state: "complete",
     link: true,
   },
   {
-    title: "Kontaktperson for helseopplysninger",
-    state: "complete",
-    link: true,
-  },
-  {
-    title: "Barnetillegg",
+    title: "Steg 4",
     state: "active",
     link: true,
     contentBlocks: [
@@ -107,23 +89,12 @@ const formSteps = [
     ],
   },
   {
-    title: "Student",
+    title: "Steg 5",
     link: true,
   },
   {
-    title: "Utbetalinger",
+    title: "Steg 6",
     link: true,
-  },
-  {
-    title: "Vedlegg og tilleggsinformasjon",
-    link: true,
-  },
-  {
-    title: "Oppsummering",
-    link: true,
-  },
-  {
-    title: "Kvittering",
   },
 ];
 
