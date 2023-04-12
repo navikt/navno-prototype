@@ -180,8 +180,8 @@ module.exports = {
       animation: {
         openDrawer: "openDrawer 200ms cubic-bezier(0.3, 0.6, 0.25, 1) forwards",
         dropdown: "dropdown 200ms cubic-bezier(0.3, 0.6, 0.25, 1) forwards",
-        enter: "enter 500ms cubic-bezier(0.3, 0.6, 0.25, 1.45) forwards",
-        "fade-in": "fade-in 500ms cubic-bezier(0.3, 0.6, 0.25, 1) forwards",
+        enter: "enter 300ms cubic-bezier(0.3, 0.6, 0.25, 1.45) forwards",
+        "fade-in": "fade-in 600ms cubic-bezier(0.3, 0.6, 0.25, 1) forwards",
         blur: "blur 200ms cubic-bezier(0.3, 0.6, 0.25, 1) forwards",
       },
       backgroundImage: {
@@ -213,11 +213,8 @@ module.exports = {
       },
       keyframes: {
         dropdown: {
-          "0%": {
+          "0%, 10%": {
             transform: "translateY(-3rem)",
-            opacity: "0",
-          },
-          "50%": {
             opacity: "0",
           },
           "100%": {
@@ -249,10 +246,10 @@ module.exports = {
           },
         },
         "fade-in": {
-          from: {
+          "0%, 5%": {
             opacity: 0,
           },
-          to: {
+          "100%": {
             opacity: 1,
           },
         },

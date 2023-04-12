@@ -2,17 +2,19 @@
 <nav class="relative">
   <div class="absolute inset-x-0 z-40 grid pt-6 pb-12 bg-white shadow-xl grid-cols-layout md:pt-8 top-full" x-bind:class="!menuOpen ? 'hidden' : 'opacity-0 animate-dropdown'">
 
-    <div class="grid gap-x-12 gap-y-8 col-wide md:grid-flow-col-dense md:grid-cols-5 md:grid-rows-[1fr_auto]">
+    <div class="grid gap-x-12 gap-y-12 col-wide md:grid-flow-col-dense md:grid-cols-5 md:grid-rows-[1fr_auto]">
 
       {# Områder #}
-      <div class="flex-1 row-start-1 md:pr-4 sm:col-span-3 md:col-span-2 md:row-span-2">
-        <h3 class="text-sm tracking-widest uppercase opacity-70">{{ menu.areas.title | safe }}</h3>
-        <ul class="grid gap-1 mt-2">
+      <div class="flex-1 row-start-1 md:pr-4 md:col-span-2 md:row-span-2">
+        <h3 class="text-sm tracking-widest uppercase opacity-80">{{ menu.areas.title | safe }}</h3>
+        <ul class="grid gap-3 mt-2 sm:grid-cols-2 md:grid-cols-1">
           {%- for link in menu.areas.linkList -%}
-            <li class="break-inside-avoid">
-              <a class="inline-flex items-center gap-2.5 pl-2 pr-4 py-1.5 -mx-2 leading-normal text-blue-500 group rounded fine:hover:text-blue-600 fine:hover:bg-deepblue-50 " href="#">
+            <li class="">
+              <a class="inline-flex items-center gap-2 pr-4 leading-normal text-center text-blue-500 rounded group fine:hover:text-deepblue-600 fine:hover:underline" href="#">
                 {%- if link.icon -%}
-                  {{ link.icon | svgContents('w-7 h-7 opacity-90') | safe }}
+                  <span class="grid p-2 rounded-full bg-blue-50 place-items-center group-hover:bg-deepblue-600 group-hover:text-white">
+                    {{ link.icon | svgContents('w-6 h-6') | safe }}
+                  </span>
                 {%- endif -%}
                 <span class="mt-px text-lg group-hover:underline">{{ link.text }}</span>
               </a>
@@ -22,12 +24,12 @@
       </div>
 
       {# Snarveier #}
-      <div class="flex flex-col sm:row-start-1 sm:col-span-2 md:col-span-3">
-        <h3 class="text-sm tracking-widest uppercase opacity-70">{{ menu.shortcuts.title | safe }}</h3>
-        <ul class="mt-2 md:columns-2">
+      <div class="flex flex-col md:row-start-1 md:col-span-3">
+        <h3 class="text-sm tracking-widest uppercase opacity-80">{{ menu.shortcuts.title | safe }}</h3>
+        <ul class="mt-1 xs:columns-2 xl:columns-3">
           {%- for link in menu.shortcuts.linkList -%}
             <li class="py-0.5">
-              <a class="inline-flex items-center gap-3 px-2 py-1 -mx-2 text-lg leading-normal text-blue-500 rounded fine:hover:text-blue-80 fine:hover:bg-deepblue-50 fine:hover:underline" href="#">
+              <a class="inline-flex items-center gap-3 px-2 py-1 -mx-2 text-lg leading-normal text-blue-500 rounded fine:hover:text-blue-80 fine:hover:text-deepblue-500 fine:hover:underline" href="#">
                 {%- if link.icon -%}
                   {{ link.icon | svgContents('w-6 h-6 opacity-80') | safe }}
                 {%- endif -%}
@@ -39,8 +41,8 @@
       </div>
 
       {# Søk #}
-      <form class="w-full col-start-1 gap-2 sm:col-span-5 md:max-w-4xl md:col-span-4 md:row-start-2 md:pr-20">
-        <label class="text-sm tracking-widest uppercase opacity-70" for="search">Søk</label>
+      <form class="w-full col-start-1 gap-2 md:max-w-4xl md:col-span-4 md:row-start-2 md:pr-20">
+        <label class="text-sm tracking-widest uppercase opacity-80" for="search">Søk</label>
         <div class="flex mt-2">
           <input class="flex-1 p-2 text-lg border border-gray-300 rounded-l focus:outline-none focus:rounded focus:z-10 focus:ring focus:ring-blue-800" id="search" type="text">
           <button class="flex items-center col-start-2 row-start-1 gap-2 px-6 py-2 text-xl text-white bg-blue-500 rounded-r fine:hover:bg-blue-600 focus:outline-none focus:rounded focus:z-10 focus:ring focus:ring-blue-800 focus:ring-offset-1 focus:ring-offset-white focus:bg-blue-600" type="submit">

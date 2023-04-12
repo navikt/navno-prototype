@@ -43,10 +43,6 @@ module.exports = {
         text: "Hjelpemidler og tilrettelegging",
         icon: "/src/_includes/svg/icons/wheelchair.svg",
       },
-      {
-        text: "Pengestøtter og tjenester fra NAV",
-        icon: "/src/_includes/svg/icons/tasks.svg",
-      },
     ],
   },
   shortcuts: {
