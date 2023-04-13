@@ -171,7 +171,7 @@ permalink: '/ettersende-dokumentasjon/'
         </div>
 
         <div class="md:col-start-1 md:row-start-1">
-          <p class="mb-2">Viser <span x-text="count"></span> av {{ products.length }} produkter og tjenester</p>
+          <p class="mb-2">Viser <span x-text="count"></span> av {{ products.length }} ytelser og tjenester</p>
 
           <div class="border-b border-deepblue-100" x-ref="entries" x-show="count !== 0">
             {%- for product in products | sort(true, false, 'title') | reverse -%}
