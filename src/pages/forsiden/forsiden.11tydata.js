@@ -42,7 +42,7 @@ module.exports = {
   formsList: [
     {
       title: "Søknad og skjema",
-      href: "/produktoversikt/",
+      href: "/soknad-og-skjema/",
       icon: "/src/_includes/svg/pictograms/soknad-og-skjema.svg",
     },
     {

@@ -5,11 +5,11 @@
   {# Audience Dropdown #}
   <div class="relative z-10 justify-center hidden bg-gray-100 col-full isolate">
     <button class="flex items-center justify-center gap-2 px-4 py-2 focus:outline-none focus-visible:text-white focus-visible:bg-blue-500" x-on:click="audienceDropdownOpen = !audienceDropdownOpen">
-      {%- if ('samarbeidspartner' in page.fileSlug) -%}
+      {%- if ('samarbeidspartner' in page.url) -%}
       <span>{{ menu.audience[2].title }}</span>
-      {%- elif ('arbeidsgiver' in page.fileSlug) -%}
+      {%- elif ('arbeidsgiver' in page.url) -%}
       <span>{{ menu.audience[1].title }}</span>
-      {%- elif (not 'produktoversikt-' in page.fileSlug) -%}
+      {%- elif (not 'soknad-og-skjema-' in page.url) -%}
       <span>{{ menu.audience[0].title }}</span>
       {%- endif -%}
       {{ '/src/_includes/svg/icons/chevron-down.svg' | svgContents('w-4 h-4') | safe }}
@@ -37,11 +37,11 @@
     {# Audience #}
     <div class="relative hidden px-4 md:px-5 md:self-stretch xs:grid" x-on:click.outside="audienceDropdownOpen = false">
       <button class="flex items-center self-center justify-center gap-4 py-2 pl-3 pr-2 border border-gray-200 rounded fine:hover:bg-deepblue-100 focus:outline-none md:hidden" x-on:click="audienceDropdownOpen = !audienceDropdownOpen">
-      {%- if ('samarbeidspartner' in page.fileSlug) -%}
+      {%- if ('samarbeidspartner' in page.url) -%}
       <span>{{ audience[2].title }}</span>
-      {%- elif ('arbeidsgiver' in page.fileSlug) -%}
+      {%- elif ('arbeidsgiver' in page.url) -%}
       <span>{{ audience[1].title }}</span>
-      {%- elif (not 'produktoversikt-' in page.fileSlug) -%}
+      {%- elif (not 'soknad-og-skjema-' in page.url) -%}
       <span>{{ audience[0].title }}</span>
       {%- endif -%}
         {{ '/src/_includes/svg/icons/chevron-down.svg' | svgContents('w-4 h-4') | safe }}

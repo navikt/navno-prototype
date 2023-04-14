@@ -9,7 +9,7 @@
       <span>{{ menu.audience[2].title }}</span>
       {%- elif ('arbeidsgiver' in page.fileSlug) -%}
       <span>{{ menu.audience[1].title }}</span>
-      {%- elif (not 'produktoversikt-' in page.fileSlug) -%}
+      {%- elif (not 'soknad-og-skjema-' in page.fileSlug) -%}
       <span>{{ menu.audience[0].title }}</span>
       {%- endif -%}
       {{ '/src/_includes/svg/icons/chevron-down.svg' | svgContents('w-4 h-4') | safe }}

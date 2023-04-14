@@ -1,9 +1,20 @@
+---js
+{
+  title: 'Søknad og skjema',
+  kicker: 'fra A til Å',
+  pagination: {
+    data: "roleFilter",
+    size: 1,
+    alias: "role",
+  },
+  eleventyComputed: {
+    roleSlug: "{{ role | slugify }}",
+    permalink: "/soknad-og-skjema-samarbeidspartner/{{ role | slugify }}/",
+    description: 'Søknader og skjema for {{ role | lowerfirst }}'
+  }
+}
 ---
-title: 'Søknad og skjema'
-kicker: 'Fra A til Å'
-description: 'Pengestøtter og tjenester fra NAV for arbeidsgivere. Du kan søke eller filtrere etter type og område.'
-permalink: '/produktoversikt-arbeidsgiver/'
----
+
 {%- extends 'base.njk' -%}
 
 {%- from "macros/button.njk" import button -%}
@@ -11,23 +22,38 @@ permalink: '/produktoversikt-arbeidsgiver/'
 {%- from "macros/microcard.njk" import microcard -%}
 {%- from "macros/filterGroup.njk" import filterGroup -%}
 
+{% macro rolePills(roleTitle) %}
+  {# <fieldset class="">
+    <legend class="text-sm tracking-widest uppercase opacity-70">{{ roleTitle }}</legend>
+    <ul class="flex flex-wrap items-start mt-2.5 gap-x-2 gap-y-3">
+      {%- for item in roleFilter -%}
+      <li>
+        <a
+          href="/soknad-og-skjema-samarbeidspartner/{{ item | slugify }}/"
+          x-bind:href="'/person/prototype/soknad-og-skjema-samarbeidspartner/{{ item | slugify }}/?type=' + typeFilter"
+          class="inline-flex cursor-pointer px-4 pt-1.5 pb-1.5 leading-tight text-base text-left rounded-full focus:ring-2 {{ 'text-white bg-deepblue-500' if (item | slugify) === (roleSlug) else 'bg-deepblue-50 fine:hover:bg-deepblue-100' }}"
+        >{{ item | safe }}</a>
+      </li>
+      {%- endfor -%}
+    </ul>
+  </fieldset> #}
+{% endmacro %}
+
+
+{%- set productsLength = products | filterByRole(role) | length -%}
+
 {%- block content -%}
-  <main
-    class="grid py-8 text-lg md:py-12 grid-cols-layout"
+  <main class="grid py-12 text-lg text-gray-900 grid-cols-layout"
     x-data="{
       typeFilter: new URLSearchParams(location.search).get('type') || 'alle',
-      areaFilter: new URLSearchParams(location.search).get('area') || 'alle',
       filterItem(el) {
         const item = el.querySelector('h2').textContent.toLowerCase()
         if (this.search === '') {
           return (
             el.dataset.type.split(' ').includes(this.typeFilter)
-            &&
-            el.dataset.area.split(' ').includes(this.areaFilter)
           )
         } else {
           this.typeFilter = 'alle'
-          this.areaFilter = 'alle'
           return (
             item.includes(this.search.toLowerCase())
           )
@@ -53,18 +79,11 @@ permalink: '/produktoversikt-arbeidsgiver/'
         updateCount();
         clearSearch();
       });
-      $watch('areaFilter', (value) => {
-        const url = new URL(window.location.href);
-        url.searchParams.set('area', value);
-        history.replaceState(null, document.title, url.toString());
-        updateCount();
-        clearSearch();
-      });
       $watch('search', (value) => {
         updateCount()
       });
       updateCount()"
-    >
+  >
     <div class="relative col-wide max-w-prose md:max-w-none mx-auto md:mx-0 grid md:grid-cols-[6rem_auto] gap-x-8 items-start mb-12 w-full">
 
       {# Pictogram #}
@@ -74,18 +93,20 @@ permalink: '/produktoversikt-arbeidsgiver/'
       <div class="pr-28 md:col-start-2 md:row-start-1 md:pr-0">
         <h1 class="text-3xl font-semibold leading-tight md:text-5xl md:leading-tight">{{ title | safe }}</h1>
         <p class="mt-2 text-sm tracking-wider text-gray-700 uppercase">{{ kicker | safe }}</p>
-        <p class="max-w-2xl mt-8 text-xl md:mt-3 md:text-2xl">{{ description | safe }}</p>
+        <p class="max-w-2xl mt-8 text-xl md:text-2xl">{{ description | safe }}. <a class="text-blue-500 underline hover:no-underline hover:text-deepblue-600" href="/soknad-og-skjema-samarbeidspartner/">Bytt rolle</a>.
+</p>
       </div>
 
       <div class="md:col-start-2 md:grid md:grid-cols-[2fr_1fr] gap-x-16 items-start gap-4 mt-8">
 
+        {%- if productsLength > 10 -%}
         <div class="md:col-start-2 md:row-start-1" x-data="{ filterDrawer: false }">
           <button
-            class="flex items-center justify-start gap-2.5 pl-3 pr-4 py-3 mb-8 leading-none text-blue-600 bg-white rounded ring-2 ring-blue-500 hover:bg-blue-100 hover:text-blue-700 md:hidden"
+            class="flex items-center mb-8 justify-start gap-2.5 pl-3 pr-4 py-3 leading-none text-blue-600 bg-white rounded ring-2 ring-blue-500 hover:bg-blue-100 hover:text-blue-700 md:hidden"
             x-on:click="filterDrawer = true"
             x-bind:aria-expanded="filterDrawer">
             {{ '/src/_includes/svg/icons/filter.svg' | svgContents('w-5 h-5') | safe }}
-            <span>Søk eller velg type og område</span>
+            <span>Søk eller velg tjenestetype</span>
           </button>
 
           <div
@@ -101,18 +122,14 @@ permalink: '/produktoversikt-arbeidsgiver/'
             <form class="flex flex-col h-full bg-white shadow-drawer col-narrow md:hidden" x-on:click.outside="filterDrawer = false, filterTags = false">
               <div class="flex-1 px-6 pb-12 overflow-y-auto overscroll-y-contain">
                 <div class="relative grid gap-8 pt-6" >
-                  {{ filterGroup({
-                    array: areaFilter,
-                    title: 'Velg område',
-                    value: 'areaFilter',
-                    showAll: true
-                  }) }}
+                  {{ rolePills('Velg rolle') }}
                   {{ filterGroup({
                     array: typeFilter,
                     title: 'Velg type',
                     value: 'typeFilter',
                     showAll: true
                   }) }}
+
                   <div>
                     <label for="searchFilter-mobile" class="text-sm tracking-widest uppercase opacity-70">Søk</label>
                     <div class="relative mt-1">
@@ -125,11 +142,12 @@ permalink: '/produktoversikt-arbeidsgiver/'
                 </div>
               </div>
               <div class="sticky bottom-0 h-2 -mt-2 pointer-events-none bg-gradient-to-t from-black/10 to-black/0"></div>
-              <div class="py-4 px-clamp-gap md:px-6 bg-gray-50">
+              <div class="px-6 py-4 bg-gray-50">
                 <button type="button" class="w-full px-4 py-2 text-white bg-blue-500 rounded-lg" x-on:click="filterTags = false, filterDrawer = false">Vis resultat (<span x-text="count"></span>)</button>
               </div>
             </form>
           </div>
+
           <button
             type="button"
             class="fixed inset-0 z-40 bg-black/25"
@@ -146,19 +164,14 @@ permalink: '/produktoversikt-arbeidsgiver/'
           </button>
 
           <div class="hidden gap-8 md:grid">
-            {{ filterGroup({
-              array: areaFilter,
-              title: 'Velg område',
-              value: 'areaFilter',
-              showAll: true
-            }) }}
+            {{ rolePills('Velg rolle') }}
             {{ filterGroup({
               array: typeFilter,
               title: 'Velg type',
               value: 'typeFilter',
               showAll: true
             }) }}
-            <div>
+            <div class="">
               <label for="searchFilter-desktop" class="text-sm tracking-widest uppercase opacity-70">Søk</label>
               <div class="relative mt-1">
                 <span class="absolute inset-y-0 left-0 grid px-2.5 place-items-center">
@@ -169,49 +182,48 @@ permalink: '/produktoversikt-arbeidsgiver/'
             </div>
           </div>
         </div>
+        {%- endif -%}
 
         <div class="md:col-start-1 md:row-start-1">
-          <p class="mb-2">Viser <span x-text="count"></span> av {{ products.length }} ytelser og tjenester</p>
+          <p class="mt-3 mb-2">Viser <span x-text="count"></span> av {{ productsLength }}  tjenester</p>
 
           <div class="border-b border-deepblue-100" x-ref="entries" x-show="count !== 0">
             {%- for product in products | sort(true, false, 'title') | reverse -%}
+              {%- if role in product.role -%}
               <div
                 x-data="{ expanded: false }"
-                class="border-t focus-within:z-10 sm:mx-0 sm:px-0 border-deepblue-100 c-product-tile"
+                class="border-t focus-within:z-10 c-product-tile border-deepblue-100"
                 x-show="filterItem($el)"
                 data-type="alle {% for item in product.type %}{{ item | slugify }} {% endfor %}"
-                data-area="alle {% for item in product.area %}{{ item | slugify }} {% endfor %}"
               >
-
                 <div class="relative flex items-center gap-4 p-4 pr-8 text-left rounded-lg md:py-6 focus-within:z-20" x-bind:class="expanded ? 'bg-deepblue-50 ring-1 ring-deepblue-50 fine:hover:bg-deepblue-100' : 'fine:hover:bg-deepblue-100'">
+
                   {%- if product.icon -%}
                     {{ product.icon | svgContents('w-12 h-12 shrink-0') | safe }}
                   {%- endif -%}
+
                   <div class="grid gap-1">
                     <h2 class="text-xl font-semibold leading-tight">
                       {{ product.title | safe }}
                     </h2>
-                    {# <p class="text-base">{{ product.ingress }}</p> #}
-                    <p class="pr-12 text-base opacity-80">
-                      {% for item in product.type %}
-                        <span>{{ item }}</span>,
-                      {% endfor %}
-                      {% for item in product.area %}
-                        <span>{{ item }}</span>{{ ', ' if loop.length > 1 and not loop.last }}
-                      {% endfor %}
+                    <p class="text-base opacity-80">
+                    {%- for item in product.type -%}
+                      <span>{{ item }}</span>{{ ', ' if product.type.length > 1 and not loop.last }}
+                    {%- endfor -%}
                     </p>
                   </div>
-                  <button
-                    type="button"
-                    x-on:click="expanded = !expanded"
-                    class="absolute inset-0 flex items-center justify-end w-full pr-3 rounded-sm sm:rounded-lg group focus:outline-none focus-visible:ring focus-visible:ring-inset focus-visible:ring-blue-800 focus-visible:ring-offset-2 focus-visible:ring-offset-white"
-                    aria-expanded="false"
-                    x-bind:class="expanded ? 'ring ring-white' : 'fine:hover:ring fine:hover:ring-white'"
-                    x-bind:aria-expanded="expanded"
-                  >
-                    <span class="sr-only">Vis</span>
-                    {{ '/src/_includes/svg/icons/chevron-down.svg' | svgContents('mr-1.5 w-5 h-5 opacity-50 transition duration-100 group-aria-expanded:rotate-180') | safe }}
-                  </button>
+                    <button
+                      type="button"
+                      x-on:click="expanded = !expanded"
+                      class="absolute inset-0 flex items-center justify-end w-full pr-4 rounded-sm sm:rounded-lg group focus:outline-none focus-visible:ring focus-visible:ring-inset focus-visible:ring-blue-800 focus-visible:ring-offset-2 focus-visible:ring-offset-white"
+                      aria-expanded="false"
+                      x-bind:class="expanded ? 'ring ring-white' : 'fine:hover:ring fine:hover:ring-white'"
+                      x-bind:aria-expanded="expanded"
+                    >
+                      <span class="sr-only">Vis</span>
+                      {{ '/src/_includes/svg/icons/chevron-down.svg' | svgContents('mr-1.5 w-5 h-5 opacity-50 transition duration-100 group-aria-expanded:rotate-180') | safe }}
+                    </button>
+
                 </div>
 
                 <div class="pt-5 pb-8 px-clamp-gap relative min-h-[20vh] markdown sm:px-20 mb-4" x-bind:hidden="!expanded" hidden>
@@ -221,23 +233,17 @@ permalink: '/produktoversikt-arbeidsgiver/'
                     {%- for block in product.contentBlocks -%}
                     {%- include "partials/contentBlocks.njk" -%}
                     {%- endfor -%}
-                 {%- endif -%}
+                  {%- endif -%}
                 </div>
               </div>
+              {%- endif -%}
             {%- endfor -%}
           </div>
-          <div x-show="count === 0" class="p-6 py-8 text-center overflow-hidden grid items-center leading-snug rounded-lg bg-gray-100 min-h-[4.75rem] md:col-span-6">
-            <p class="max-w-prose">Ingen søknader eller skjema er merket med denne kombinasjonen av type og område.</p>
-          </div>
-
-          <div class="p-4 mt-8 bg-orange-100 rounded-lg md:px-6 md:py-5">
-            <h3 class="text-xl font-semibold">
-              Klage eller anke på vedtak?
-            </h3>
-            <p class="mt-2 max-w-prose">Hvis du har fått et vedtak fra NAV og du er uenig i vedtaket, har du rett til å klage eller anke.</p>
-            <p class="mb-2 mt-7"><a href="#" class="underline text-deepblue-600 fine:hover:no-underline fine:hover:text-deepblue-700">Les mer om dine klagerettigheter</a>.</p>
+          <div x-show="count === 0" class="p-6 py-8 text-center overflow-hidden grid items-center leading-snug rounded-lg bg-gray-100 min-h-[4.75rem] lg:col-span-6">
+            <p class="max-w-prose">Ingen søknader eller skjema er merket med denne kombinasjonen av type og rolle.</p>
           </div>
         </div>
+
       </div>
     </div>
   </main>

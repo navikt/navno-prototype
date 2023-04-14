@@ -49,7 +49,7 @@ const products = [
         data: [
           {
             text: "Send søknad",
-            href: "/soknad-og-skjema/aap/",
+            href: "/soknad/aap/",
             variant: "primary",
           },
         ],
@@ -67,7 +67,7 @@ const products = [
         data: [
           {
             text: "Send søknad",
-            href: "/soknad-og-skjema/aap/",
+            href: "/soknad/aap/",
             variant: "primary",
           },
         ],
@@ -87,7 +87,7 @@ const products = [
         data: [
           {
             text: "Send søknad",
-            href: "/soknad-og-skjema/aap/",
+            href: "/soknad/aap/",
             variant: "primary",
           },
         ],
@@ -107,7 +107,7 @@ const products = [
         data: [
           {
             text: "Send søknad",
-            href: "/soknad-og-skjema/aap/",
+            href: "/soknad/aap/",
             variant: "primary",
           },
         ],
@@ -127,7 +127,7 @@ const products = [
         data: [
           {
             text: "Send søknad",
-            href: "/soknad-og-skjema/aap/",
+            href: "/soknad/aap/",
             variant: "primary",
           },
         ],
@@ -147,7 +147,7 @@ const products = [
         data: [
           {
             text: "Send søknad",
-            href: "/soknad-og-skjema/aap/",
+            href: "/soknad/aap/",
             variant: "primary",
           },
         ],
@@ -1509,7 +1509,7 @@ const products = [
         data: [
           {
             text: "Send søknad",
-            href: "/soknad-og-skjema/foreldrepenger/",
+            href: "/soknad/foreldrepenger/",
             variant: "primary",
           },
         ],
@@ -1566,7 +1566,7 @@ const products = [
         data: [
           {
             text: "Send søknad",
-            href: "/soknad-og-skjema/foreldrepenger/",
+            href: "/soknad/foreldrepenger/",
             variant: "primary",
           },
         ],
@@ -1927,7 +1927,7 @@ const products = [
         data: [
           {
             text: "Send søknad",
-            href: "/soknad-og-skjema/dagpenger/",
+            href: "/soknad/dagpenger/",
             variant: "primary",
           },
         ],

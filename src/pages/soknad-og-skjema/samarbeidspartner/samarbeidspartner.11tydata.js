@@ -1053,7 +1053,7 @@ const products = [
       "Hjelpemiddel",
     ],
     role: [
-      "Andre",
+      "Andre samarbeidspartnere",
     ],
     contentBlocks: [
       {
@@ -1129,7 +1129,7 @@ const products = [
       "Tjeneste",
       "Hjelpemiddel",
     ],
-    role: ["Andre"],
+    role: ["Andre samarbeidspartnere"],
     contentBlocks: [
       {
         type: "markdown",
@@ -1162,7 +1162,7 @@ const products = [
       "Tjeneste",
       "Hjelpemiddel",
     ],
-    role: ["Andre"],
+    role: ["Andre samarbeidspartnere"],
     contentBlocks: [
       {
         type: "markdown",
@@ -3059,7 +3059,7 @@ const products = [
     type: ["Skjema"],
     role: [
       "Ansatt i NAV-kontor, kommunen eller fylkeskommunen",
-      "Andre",
+      "Andre samarbeidspartnere",
     ],
     contentBlocks: [
       {
@@ -3101,7 +3101,7 @@ const products = [
     icon: "/src/_includes/svg/pictograms/slik-gjor-du-det.svg",
     type: ["Skjema"],
     role: [
-      "Andre",
+      "Andre samarbeidspartnere",
       "Ansatt i NAV-kontor, kommunen eller fylkeskommunen",
     ],
     contentBlocks: [
@@ -3144,7 +3144,7 @@ const products = [
     icon: "/src/_includes/svg/pictograms/slik-gjor-du-det.svg",
     type: ["Skjema"],
     role: [
-      "Andre",
+      "Andre samarbeidspartnere",
       "Ansatt i NAV-kontor, kommunen eller fylkeskommunen",
     ],
     contentBlocks: [
@@ -3238,8 +3238,8 @@ const getTags = (array, key) => {
 
   return [...tagSet].sort((a, b) => {
     if (a == b) return 0;
-    if (a == "Andre") return 1;
-    if (b == "Andre") return -1;
+    if (a == "Andre samarbeidspartnere") return 1;
+    if (b == "Andre samarbeidspartnere") return -1;
 
     if (a < b) return -1;
     if (a > b) return 1;

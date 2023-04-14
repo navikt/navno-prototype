@@ -2,15 +2,15 @@ module.exports = {
   audienceOverride: [
     {
       title: "Privat",
-      href: "/produktoversikt/",
+      href: "/soknad-og-skjema/",
     },
     {
       title: "Arbeidsgiver",
-      href: "/produktoversikt-arbeidsgiver/",
+      href: "/soknad-og-skjema-arbeidsgiver/",
     },
     {
       title: "Samarbeidspartner",
-      href: "/produktoversikt-samarbeidspartner/",
+      href: "/soknad-og-skjema-samarbeidspartner/",
     },
   ],
 };

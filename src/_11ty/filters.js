@@ -26,4 +26,14 @@ const console = (value) => {
   return util.inspect(value);
 };
 
-module.exports = { markdown, markdownInline, filterByRole, console };
+const lowerfirst = (value) => {
+  return value.charAt(0).toLowerCase() + value.slice(1);
+};
+
+module.exports = {
+  markdown,
+  markdownInline,
+  filterByRole,
+  console,
+  lowerfirst,
+};
