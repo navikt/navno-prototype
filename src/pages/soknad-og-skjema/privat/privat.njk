@@ -228,8 +228,14 @@ permalink: "/soknad-og-skjema/"
                     {%- include "partials/contentBlocks.njk" -%}
                     {%- endfor -%}
                   {%- else -%}
-                    <div class="mt-4 italic">
-                      <p>Innhold om søknader eller skjema er ikke lagt inn enda.</p>
+                    <div class="mt-4">
+                      {# <p class="italic">Innhold om søknader eller skjema er ikke lagt inn enda.</p> #}
+
+                      {{ button({
+                        text: 'Send søknad',
+                        href: '/soknad/temp-' + (product.title | slugify) + '.html',
+                        variant: 'primary'
+                      }) }}
                     </div>
                   {%- endif -%}
                 </div>

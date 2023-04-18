@@ -4,7 +4,7 @@ const util = require("util");
 const markdown = (value) => {
   return new markdownIt({
     html: true,
-    linkify: true,
+    linkify: false,
     typographer: true,
     quotes: "«»",
   })

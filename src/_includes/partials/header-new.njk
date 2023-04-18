@@ -5,11 +5,11 @@
   {# Audience Dropdown #}
   <div class="relative z-50 grid justify-center bg-gray-100 isolate col-full md:hidden">
     <button class="flex items-center fine:hover:underline text-lg justify-center gap-2 px-4 w-full py-1.5 focus:outline-none focus-visible:text-white focus-visible:bg-blue-500" x-on:click="audienceDropdownOpen = !audienceDropdownOpen, menuOpen = false, notifyOpen = false">
-      {%- if ('samarbeidspartner' in page.fileSlug) -%}
+      {%- if ('samarbeidspartner' in (page.url | string)) -%}
       <span>{{ menu.audience[2].title }}</span>
-      {%- elif ('arbeidsgiver' in page.fileSlug) -%}
+      {%- elif ('arbeidsgiver' in (page.url | string)) -%}
       <span>{{ menu.audience[1].title }}</span>
-      {%- elif (not 'soknad-og-skjema-' in page.fileSlug) -%}
+      {%- elif (not 'soknad-og-skjema-' in (page.url | string)) -%}
       <span>{{ menu.audience[0].title }}</span>
       {%- endif -%}
       {{ '/src/_includes/svg/icons/chevron-down.svg' | svgContents('w-4 h-4') | safe }}

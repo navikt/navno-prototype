@@ -1469,6 +1469,7 @@ const products = [
         data: [
           {
             text: "Be om innsyn",
+            href: "/soknad/temp-aa-registeret-fa-innsyn.html",
             variant: "primary",
           },
         ],
@@ -1526,6 +1527,7 @@ const products = [
         data: [
           {
             text: "Send søknad",
+            href: "/soknad/temp-foreldrepenger.html",
             variant: "primary",
           },
         ],

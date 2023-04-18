@@ -141,7 +141,29 @@ fileList:
                 </li>
               </ul>
             </fieldset>
-            <div x-show="applicationStep === 3">
+
+            <div class="" x-show="applicationStep === 3">
+              <h3 class="text-xl font-semibold">Last ned papirsøknad</h3>
+              <p class="mt-1">Du skriver ut en papirsøknad som du fyller ut for hånd og sender i posten. Du trenger ikke å logge inn.</p>
+
+              <fieldset class="mt-8">
+                <legend class="font-semibold">Hva skal du søke om?</legend>
+                <ul class="grid mt-1 justify-items-start">
+                {% for item in fileList %}
+                  <li class="relative">
+                    {{ form.radio({
+                      label: item.title,
+                      description: '',
+                      name: 'print-pdf',
+                      id: 'field-' + loop.index + 'c'
+                    }) }}
+                  </li>
+                  {% endfor %}
+                </ul>
+              </fieldset>
+            </div>
+
+            {# <div x-show="applicationStep === 3">
               <h3 class="text-xl font-semibold">Last ned papirsøknad</h3>
               <p class="mt-1">Du skriver ut en papirsøknad som du fyller ut for hånd og sender i posten. Du trenger ikke å logge inn.</p>
               <ul class="grid gap-1.5 mt-8">
@@ -157,7 +179,15 @@ fileList:
                   </li>
                 {% endfor %}
               </ul>
+            </div> #}
+
+            <div class="mt-7" x-show="(applicationStep === 1) && (applicationFormat === 'digital')">
+              <a
+                class="inline-flex px-6 py-2.5 text-white bg-blue-500 fine:hover:bg-blue-600 rounded focus-visible:outline-none focus-visible:ring focus-visible:ring-blue-800 focus-visible:ring-offset-1 focus-visible:ring-offset-white"
+                href="/soknad/dagpenger/intro/"
+              >Neste</a>
             </div>
+
             <div class="mt-7" x-show="(applicationStep === 1) && (applicationFormat === 'post')">
               <button
                 class="inline-flex px-6 py-2.5 text-white bg-blue-500 fine:hover:bg-blue-600 rounded focus-visible:outline-none focus-visible:ring focus-visible:ring-blue-800 focus-visible:ring-offset-1 focus-visible:ring-offset-white"
@@ -165,6 +195,7 @@ fileList:
                 x-on:click="applicationStep = 2"
               >Neste</button>
             </div>
+
             <div class="mt-7" x-show="(applicationStep === 1) && (applicationFormat === 'pdf')">
               <button
                 class="inline-flex px-6 py-2.5 text-white bg-blue-500 fine:hover:bg-blue-600 rounded focus-visible:outline-none focus-visible:ring focus-visible:ring-blue-800 focus-visible:ring-offset-1 focus-visible:ring-offset-white"
@@ -172,14 +203,27 @@ fileList:
                 x-on:click="applicationStep = 3"
               >Neste</button>
             </div>
-            <div class="mt-7">
+
+
+
+            <div class="mt-7" x-show="(applicationStep === 2)">
               <a
-                x-show="(applicationStep === 2) || (applicationFormat === 'digital')"
                 class="inline-flex px-6 py-2.5 text-white bg-blue-500 fine:hover:bg-blue-600 rounded focus-visible:outline-none focus-visible:ring focus-visible:ring-blue-800 focus-visible:ring-offset-1 focus-visible:ring-offset-white"
                 href="/soknad/dagpenger/intro/"
               >Neste</a>
               <button
-                x-show="(applicationStep === 2) || (applicationStep === 3)"
+                class="inline-flex px-6 py-2.5 text-blue-500 ring-2 ring-inset ring-blue-500 fine:hover:bg-blue-50 rounded focus-visible:outline-none focus-visible:ring focus-visible:ring-offset-1 focus-visible:ring-offset-white"
+                type="button"
+                x-on:click="applicationStep = 1"
+              >Tilbake</button>
+            </div>
+
+            <div class="mt-7" x-show="(applicationStep === 3)">
+              <button
+                class="inline-flex px-6 py-2.5 text-white bg-blue-500 fine:hover:bg-blue-600 rounded focus-visible:outline-none focus-visible:ring focus-visible:ring-blue-800 focus-visible:ring-offset-1 focus-visible:ring-offset-white"
+                type="button"
+              >Neste</button>
+              <button
                 class="inline-flex px-6 py-2.5 text-blue-500 ring-2 ring-inset ring-blue-500 fine:hover:bg-blue-50 rounded focus-visible:outline-none focus-visible:ring focus-visible:ring-offset-1 focus-visible:ring-offset-white"
                 type="button"
                 x-on:click="applicationStep = 1"

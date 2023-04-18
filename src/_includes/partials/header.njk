@@ -5,11 +5,11 @@
   {# Audience Dropdown #}
   <div class="relative z-10 justify-center hidden bg-gray-100 col-full isolate">
     <button class="flex items-center justify-center gap-2 px-4 py-2 focus:outline-none focus-visible:text-white focus-visible:bg-blue-500" x-on:click="audienceDropdownOpen = !audienceDropdownOpen">
-      {%- if ('samarbeidspartner' in page.url) -%}
+      {%- if ('samarbeidspartner' in (page.url | string)) -%}
       <span>{{ menu.audience[2].title }}</span>
-      {%- elif ('arbeidsgiver' in page.url) -%}
+      {%- elif ('arbeidsgiver' in (page.url | string)) -%}
       <span>{{ menu.audience[1].title }}</span>
-      {%- elif (not 'soknad-og-skjema-' in page.url) -%}
+      {%- elif (not 'soknad-og-skjema-' in (page.url | string)) -%}
       <span>{{ menu.audience[0].title }}</span>
       {%- endif -%}
       {{ '/src/_includes/svg/icons/chevron-down.svg' | svgContents('w-4 h-4') | safe }}
@@ -37,11 +37,11 @@
     {# Audience #}
     <div class="relative hidden px-4 md:px-5 md:self-stretch xs:grid" x-on:click.outside="audienceDropdownOpen = false">
       <button class="flex items-center self-center justify-center gap-4 py-2 pl-3 pr-2 border border-gray-200 rounded fine:hover:bg-deepblue-100 focus:outline-none md:hidden" x-on:click="audienceDropdownOpen = !audienceDropdownOpen">
-      {%- if ('samarbeidspartner' in page.url) -%}
+      {%- if ('samarbeidspartner' in (page.url | string)) -%}
       <span>{{ audience[2].title }}</span>
-      {%- elif ('arbeidsgiver' in page.url) -%}
+      {%- elif ('arbeidsgiver' in (page.url | string)) -%}
       <span>{{ audience[1].title }}</span>
-      {%- elif (not 'soknad-og-skjema-' in page.url) -%}
+      {%- elif (not 'soknad-og-skjema-' in (page.url | string)) -%}
       <span>{{ audience[0].title }}</span>
       {%- endif -%}
         {{ '/src/_includes/svg/icons/chevron-down.svg' | svgContents('w-4 h-4') | safe }}
@@ -50,7 +50,7 @@
         <ul class="justify-center flex-1 overflow-hidden text-lg bg-white border border-gray-200 divide-y divide-gray-200 rounded shadow-lg md:rounded-none md:bg-transparent md:shadow-none md:border-0 md:divide-y-0 md:gap-4 md:pt-3 md:flex" x-bind:class="audienceDropdownOpen ? 'grid' : 'hidden md:flex'">
           {%- for item in audience -%}
             <li class="grid">
-              <a href="{{ item.href or '#' }}" class="focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-800 flex items-center py-2 px-3 md:px-0.5 md:pb-4 text-gray-900 border-l-4 md:border-l-0 md:border-b-4 {{ 'border-blue-500' if activeRole === item.title else 'border-transparent fine:hover:border-gray-300/75 text-gray-700' }}">
+              <a href="{{ item.href or '#' }}" class="focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-800 flex items-center py-2 px-3 md:px-0.5 md:pb-4 text-gray-900 border-l-4 md:border-l-0 md:border-b-4 {{ 'border-blue-500 font-semibold' if activeRole === item.title else 'border-transparent fine:hover:border-gray-300/75 text-gray-700' }}">
                 {{ item.title }} {{ item.active }}
               </a>
             </li>

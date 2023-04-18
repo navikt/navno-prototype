@@ -16,6 +16,7 @@ const products = [
         data: [
           {
             text: "Send søknad",
+            href: "/soknad/temp-sykepengeforsikring-for-selvstendig-naeringsdrivende-arb.html",
             variant: "primary",
           },
         ],
@@ -55,6 +56,7 @@ const products = [
         data: [
           {
             text: "Send søknad",
+            href: "/soknad/temp-sykepengeforsikring-for-jordbrukere-og-reindriftsutovere-arb.html",
             variant: "primary",
           },
         ],
@@ -94,6 +96,7 @@ const products = [
         data: [
           {
             text: "Send søknad",
+            href: "/soknad/temp-sykepengeforsikring-for-frilansere-arb.html",
             variant: "primary",
           },
         ],
@@ -134,6 +137,7 @@ const products = [
         data: [
           {
             text: "Send søknad",
+            href: "/soknad/temp-frivillig-yrkesskadetrygd-arb.html",
             variant: "primary",
           },
         ],
@@ -176,6 +180,7 @@ const products = [
         data: [
           {
             text: "Send søknad",
+            href: "/soknad/temp-forsikring-for-sma-bedrifter-arb.html",
             variant: "primary",
           },
         ],
@@ -186,13 +191,14 @@ const products = [
       {
         type: "markdown",
         data: `### Be om refusjon
-          Et kort avsnitt med tekst`,
+        Et kort avsnitt med tekst`,
       },
       {
         type: "actions",
         data: [
           {
             text: "Send skjema",
+            href: "/soknad/temp-forsikring-for-sma-bedrifter-arb.html",
             variant: "primary",
           },
         ],
@@ -236,6 +242,7 @@ const products = [
         data: [
           {
             text: "Send søknad",
+            href: "/soknad/temp-tolk-pa-arbeidsplassen-arb.html",
             variant: "primary",
           },
         ],
@@ -278,6 +285,7 @@ const products = [
         data: [
           {
             text: "Send søknad",
+            href: "/soknad/temp-funksjonsassistanse-i-arbeidslivet-arb.html",
             variant: "primary",
           },
         ],
@@ -288,13 +296,14 @@ const products = [
       {
         type: "markdown",
         data: `### Be om refusjon for funksjonsassistanse
-     Tekst`,
+        Tekst`,
       },
       {
         type: "actions",
         data: [
           {
             text: "Send skjema",
+            href: "/soknad/temp-funksjonsassistanse-i-arbeidslivet-arb.html",
             variant: "primary",
           },
         ],
@@ -338,6 +347,7 @@ const products = [
         data: [
           {
             text: "Send skjema",
+            href: "/soknad/temp-lese-og-sekretaerhjelp-arb.html",
             variant: "primary",
           },
         ],
@@ -378,6 +388,7 @@ const products = [
         data: [
           {
             text: "Signer avtale",
+            href: "/soknad/temp-arbeidstrening-arb.html",
             variant: "primary",
           },
         ],
@@ -421,6 +432,7 @@ const products = [
         data: [
           {
             text: "Signer avtale",
+            href: "/soknad/temp-inkluderingstilskudd-arb.html",
             variant: "primary",
           },
         ],
@@ -431,13 +443,14 @@ const products = [
       {
         type: "markdown",
         data: `### Be om refusjon
-          Tekst`,
+        Tekst`,
       },
       {
         type: "actions",
         data: [
           {
             text: "Send skjema",
+            href: "/soknad/temp-inkluderingstilskudd-arb.html",
             variant: "primary",
           },
         ],
@@ -484,6 +497,7 @@ const products = [
         data: [
           {
             text: "Send søknad",
+            href: "/soknad/temp-dekking-av-sykepenger-i-arbeidsgiverperioden-arb.html",
             variant: "primary",
           },
         ],
@@ -494,13 +508,14 @@ const products = [
       {
         type: "markdown",
         data: `### Søk om unntak fra arbeidsgiveransvar for sykepenger for gravid arbeidstaker
-          Tekst`,
+        Tekst`,
       },
       {
         type: "actions",
         data: [
           {
             text: "Send søknad",
+            href: "/soknad/temp-dekking-av-sykepenger-i-arbeidsgiverperioden-arb.html",
             variant: "primary",
           },
         ],
@@ -511,13 +526,14 @@ const products = [
       {
         type: "markdown",
         data: `### Be om refusjon av sykepenger
-          Når du er unntatt fra arbeidsgiveransvar i arbeidsgiverperioden, kan du be om refusjon for sykepenger du har utbetalt.`,
+        Når du er unntatt fra arbeidsgiveransvar i arbeidsgiverperioden, kan du be om refusjon for sykepenger du har utbetalt.`,
       },
       {
         type: "actions",
         data: [
           {
             text: "Send skjema",
+            href: "/soknad/temp-dekking-av-sykepenger-i-arbeidsgiverperioden-arb.html",
             variant: "primary",
           },
         ],
@@ -561,6 +577,7 @@ const products = [
         data: [
           {
             text: "Signer avtale",
+            href: "/soknad/temp-mentor-arb.html",
             variant: "primary",
           },
         ],
@@ -571,13 +588,14 @@ const products = [
       {
         type: "markdown",
         data: `### Be om refusjon
-          Tekst`,
+        Tekst`,
       },
       {
         type: "actions",
         data: [
           {
             text: "Send skjema",
+            href: "/soknad/temp-mentor-arb.html",
             variant: "primary",
           },
         ],
@@ -621,6 +639,7 @@ const products = [
         data: [
           {
             text: "Signer avtale",
+            href: "/soknad/temp-midlertidig-lonnstilskudd-arb.html",
             variant: "primary",
           },
         ],
@@ -631,13 +650,14 @@ const products = [
       {
         type: "markdown",
         data: `### Be om refusjon
-     Tekst`,
+        Tekst`,
       },
       {
         type: "actions",
         data: [
           {
             text: "Send skjema",
+            href: "/soknad/temp-midlertidig-lonnstilskudd-arb.html",
             variant: "primary",
           },
         ],
@@ -681,6 +701,7 @@ const products = [
         data: [
           {
             text: "Signer avtale",
+            href: "/soknad/temp-varig-lonnstilskudd-arb.html",
             variant: "primary",
           },
         ],
@@ -698,6 +719,7 @@ const products = [
         data: [
           {
             text: "Send skjema",
+            href: "/soknad/temp-varig-lonnstilskudd-arb.html",
             variant: "primary",
           },
         ],
@@ -741,6 +763,7 @@ const products = [
         data: [
           {
             text: "Send søknad (hos Altinn)",
+            href: "/soknad/temp-tilskudd-til-ekspertbistand-arb.html",
             variant: "primary",
           },
         ],
@@ -758,6 +781,7 @@ const products = [
         data: [
           {
             text: "Send skjema",
+            href: "/soknad/temp-tilskudd-til-ekspertbistand-arb.html",
             variant: "primary",
           },
         ],
@@ -798,6 +822,7 @@ const products = [
         data: [
           {
             text: "Signer avtale",
+            href: "/soknad/temp-tilskudd-til-sommerjobb-arb.html",
             variant: "primary",
           },
         ],
@@ -840,6 +865,7 @@ const products = [
         data: [
           {
             text: "Send søknad",
+            href: "/soknad/temp-varig-tilrettelagt-arbeid-i-ordinaer-bedrift-arb.html",
             variant: "primary",
           },
         ],
@@ -880,6 +906,7 @@ const products = [
         data: [
           {
             text: "Finn ditt NAV-kontor",
+            href: "/soknad/temp-jobbmestrende-oppfolging-arb.html",
             variant: "primary",
           },
         ],
@@ -930,6 +957,7 @@ const products = [
         data: [
           {
             text: "Finn NAV Arbeidslivssenter",
+            href: "/soknad/temp-arbeidsgiverlos-arb.html",
             variant: "primary",
           },
         ],
@@ -970,6 +998,7 @@ const products = [
         data: [
           {
             text: "Finn NAV Arbeidslivssenter",
+            href: "/soknad/temp-kurspakken-sees-i-morgen-arb.html",
             variant: "primary",
           },
         ],
@@ -1016,6 +1045,7 @@ const products = [
         data: [
           {
             text: "Send skjema",
+            href: "/soknad/temp-arbeidsradgiving-ark-arbeid-og-helse-arb.html",
             variant: "primary",
           },
         ],
@@ -1026,13 +1056,14 @@ const products = [
       {
         type: "markdown",
         data: `### Meld fra om skade eller sykdom under arbeid på land
-     Du bruker samme skjema enten skaden er påført på norsk eller utenlandsk territorium.`,
+        Du bruker samme skjema enten skaden er påført på norsk eller utenlandsk territorium.`,
       },
       {
         type: "actions",
         data: [
           {
             text: "Send skjema",
+            href: "/soknad/temp-arbeidsradgiving-ark-arbeid-og-helse-arb.html",
             variant: "primary",
           },
         ],
@@ -1043,13 +1074,14 @@ const products = [
       {
         type: "markdown",
         data: `### Meld fra om skade eller sykdom under tjeneste på skip eller under fiske/fangst
-     Tekst`,
+        Tekst`,
       },
       {
         type: "actions",
         data: [
           {
             text: "Send skjema",
+            href: "/soknad/temp-arbeidsradgiving-ark-arbeid-og-helse-arb.html",
             variant: "primary",
           },
         ],
@@ -1067,6 +1099,7 @@ const products = [
         data: [
           {
             text: "Send skjema",
+            href: "/soknad/temp-arbeidsradgiving-ark-arbeid-og-helse-arb.html",
             variant: "primary",
           },
         ],
@@ -1077,13 +1110,14 @@ const products = [
       {
         type: "markdown",
         data: `### Meld fra om skade eller sykdom for elev eller student
-     Tekst`,
+        Tekst`,
       },
       {
         type: "actions",
         data: [
           {
             text: "Send skjema",
+            href: "/soknad/temp-arbeidsradgiving-ark-arbeid-og-helse-arb.html",
             variant: "primary",
           },
         ],
@@ -1124,6 +1158,7 @@ const products = [
         data: [
           {
             text: "Søk om tilgang (hos Altinn)",
+            href: "/soknad/temp-aa-registeret-arb.html",
             variant: "primary",
           },
         ],
@@ -1134,13 +1169,14 @@ const products = [
       {
         type: "markdown",
         data: `### Rapporter inn arbeidstakere
-     Som arbeids- og oppdragsgiver må du rapportere arbeidstakere og frilansere til registeret. Rapporteringen gjør du gjennom a-meldingen hos Altinn.`,
+        Som arbeids- og oppdragsgiver må du rapportere arbeidstakere og frilansere til registeret. Rapporteringen gjør du gjennom a-meldingen hos Altinn.`,
       },
       {
         type: "actions",
         data: [
           {
             text: "Rapporter til registeret (hos Altinn)",
+            href: "/soknad/temp-aa-registeret-arb.html",
             variant: "primary",
           },
         ],
@@ -1151,13 +1187,14 @@ const products = [
       {
         type: "markdown",
         data: `### Slå opp i registeret
-     Web-oppslag er en tjeneste som lar deg slå opp i registeret.`,
+        Web-oppslag er en tjeneste som lar deg slå opp i registeret.`,
       },
       {
         type: "actions",
         data: [
           {
             text: "Slå opp i AA-registeret (hos Altinn)",
+            href: "/soknad/temp-aa-registeret-arb.html",
             variant: "primary",
           },
         ],
@@ -1168,13 +1205,14 @@ const products = [
       {
         type: "markdown",
         data: `### Få innsyn i AA-registeret
-     Viser deg hva som er rapportert inn fra bedriften din.`,
+        Viser deg hva som er rapportert inn fra bedriften din.`,
       },
       {
         type: "actions",
         data: [
           {
             text: "Logg inn (hos Altinn)",
+            href: "/soknad/temp-aa-registeret-arb.html",
             variant: "primary",
           },
         ],
@@ -1185,13 +1223,14 @@ const products = [
       {
         type: "markdown",
         data: `### Få brukerstøtte
-     Hjelper deg med ulike oppgaver som har med tilgangen din å gjøre.`,
+        Hjelper deg med ulike oppgaver som har med tilgangen din å gjøre.`,
       },
       {
         type: "actions",
         data: [
           {
             text: "Logg inn (hos Altinn)",
+            href: "/soknad/temp-aa-registeret-arb.html",
             variant: "primary",
           },
         ],
@@ -1243,6 +1282,7 @@ const products = [
         data: [
           {
             text: "Send skjema digitalt (hos Altinn)",
+            href: "/soknad/temp-medlemskap-i-folketrygden-for-utsendte-arbeidstakere-arb.html",
             variant: "primary",
           },
           {
@@ -1257,13 +1297,14 @@ const products = [
       {
         type: "markdown",
         data: `### Bekreft utsending av arbeidstaker
-     Dette skjemaet er et vedlegg til arbeidstakerens søknad om å beholde medlemskapet i folketrygden under opphold utenfor Norge. Når du som arbeidsgiver sender en arbeidstaker på oppdrag i et land utenfor EØS-området, må du fylle ut dette skjemaet.`,
+        Dette skjemaet er et vedlegg til arbeidstakerens søknad om å beholde medlemskapet i folketrygden under opphold utenfor Norge. Når du som arbeidsgiver sender en arbeidstaker på oppdrag i et land utenfor EØS-området, må du fylle ut dette skjemaet.`,
       },
       {
         type: "actions",
         data: [
           {
             text: "Send skjema",
+            href: "/soknad/temp-medlemskap-i-folketrygden-for-utsendte-arbeidstakere-arb.html",
             variant: "primary",
           },
         ],
@@ -1304,6 +1345,7 @@ const products = [
         data: [
           {
             text: "Send skjema",
+            href: "/soknad/temp-permittere-arb.html",
             variant: "primary",
           },
         ],
@@ -1344,6 +1386,7 @@ const products = [
         data: [
           {
             text: "Send skjema",
+            href: "/soknad/temp-meld-fra-om-nedbemanning-arb.html",
             variant: "primary",
           },
         ],
@@ -1383,6 +1426,7 @@ const products = [
         data: [
           {
             text: "Send skjema (hos Altinn)",
+            href: "/soknad/temp-kontonummer-for-bedriten-slik-endrer-du-arb.html",
             variant: "primary",
           },
         ],
@@ -1423,6 +1467,7 @@ const products = [
         data: [
           {
             text: "Send skjema (hos Altinn)",
+            href: "/soknad/temp-inntektsmelding-send-inn-arb.html",
             variant: "primary",
           },
         ],
@@ -1463,6 +1508,7 @@ const products = [
         data: [
           {
             text: "Til kontaktskjema (hos Altinn)",
+            href: "/soknad/temp-utleggstrekk-fra-nav-innkreving-arb.html",
             variant: "primary",
           },
         ],
@@ -1505,6 +1551,7 @@ const products = [
         data: [
           {
             text: "Send skjema (hos Altinn)",
+            href: "/soknad/temp-foreldrepenger-arb.html",
             variant: "primary",
           },
         ],
@@ -1515,13 +1562,14 @@ const products = [
       {
         type: "markdown",
         data: `### Send trekkopplysninger for arbeidstaker
-     Tekst`,
+        Tekst`,
       },
       {
         type: "actions",
         data: [
           {
             text: "Send skjema",
+            href: "/soknad/temp-foreldrepenger-arb.html",
             variant: "primary",
           },
         ],
@@ -1564,6 +1612,7 @@ const products = [
         data: [
           {
             text: "Send skjema (hos Altinn)",
+            href: "/soknad/temp-svangerskapspenger-arb.html",
             variant: "primary",
           },
         ],
@@ -1574,13 +1623,14 @@ const products = [
       {
         type: "markdown",
         data: `### Send trekkopplysninger for arbeidstaker
-     Tekst`,
+        Tekst`,
       },
       {
         type: "actions",
         data: [
           {
             text: "Send skjema",
+            href: "/soknad/temp-svangerskapspenger-arb.html",
             variant: "primary",
           },
         ],
@@ -1623,6 +1673,7 @@ const products = [
         data: [
           {
             text: "Send skjema (hos Altinn)",
+            href: "/soknad/temp-pleiepenger-for-sykt-barn-arb.html",
             variant: "primary",
           },
         ],
@@ -1633,13 +1684,14 @@ const products = [
       {
         type: "markdown",
         data: `### Be om refusjon
-     Du søker om refusjon ved å sende inn en inntektsmelding. Den sendes enten fra arbeidsgivers eget lønns- og personalsystem eller fra altinn.no.`,
+        Du søker om refusjon ved å sende inn en inntektsmelding. Den sendes enten fra arbeidsgivers eget lønns- og personalsystem eller fra altinn.no.`,
       },
       {
         type: "actions",
         data: [
           {
             text: "Send skjema (hos Altinn)",
+            href: "/soknad/temp-pleiepenger-for-sykt-barn-arb.html",
             variant: "primary",
           },
         ],
@@ -1682,6 +1734,7 @@ const products = [
         data: [
           {
             text: "Send skjema (hos Altinn)",
+            href: "/soknad/temp-pleiepenger-for-utviklingshemmet-person-over-18-ar-arb.html",
             variant: "primary",
           },
         ],
@@ -1699,6 +1752,7 @@ const products = [
         data: [
           {
             text: "Send skjema (hos Altinn)",
+            href: "/soknad/temp-pleiepenger-for-utviklingshemmet-person-over-18-ar-arb.html",
             variant: "primary",
           },
         ],
@@ -1741,6 +1795,7 @@ const products = [
         data: [
           {
             text: "Send skjema (hos Altinn)",
+            href: "/soknad/temp-pleiepenger-i-livets-sluttfase-arb.html",
             variant: "primary",
           },
         ],
@@ -1751,13 +1806,14 @@ const products = [
       {
         type: "markdown",
         data: `### Be om refusjon
-     Du søker om refusjon ved å sende inn en inntektsmelding. Den sendes enten fra arbeidsgivers eget lønns- og personalsystem eller fra altinn.no.`,
+        Du søker om refusjon ved å sende inn en inntektsmelding. Den sendes enten fra arbeidsgivers eget lønns- og personalsystem eller fra altinn.no.`,
       },
       {
         type: "actions",
         data: [
           {
             text: "Send skjema (hos Altinn)",
+            href: "/soknad/temp-pleiepenger-i-livets-sluttfase-arb.html",
             variant: "primary",
           },
         ],
@@ -1800,6 +1856,7 @@ const products = [
         data: [
           {
             text: "Send skjema (hos Altinn)",
+            href: "/soknad/temp-opplaeringspenger-arb.html",
             variant: "primary",
           },
         ],
@@ -1810,13 +1867,14 @@ const products = [
       {
         type: "markdown",
         data: `### Be om refusjon
-     Du søker om refusjon ved å sende inn en inntektsmelding. Den sendes enten fra arbeidsgivers eget lønns- og personalsystem eller fra altinn.no.`,
+        Du søker om refusjon ved å sende inn en inntektsmelding. Den sendes enten fra arbeidsgivers eget lønns- og personalsystem eller fra altinn.no.`,
       },
       {
         type: "actions",
         data: [
           {
             text: "Send skjema (hos Altinn)",
+            href: "/soknad/temp-opplaeringspenger-arb.html",
             variant: "primary",
           },
         ],
@@ -1859,6 +1917,7 @@ const products = [
         data: [
           {
             text: "Send skjema (hos Altinn)",
+            href: "/soknad/temp-omsorgspenger-arb.html",
             variant: "primary",
           },
         ],
@@ -1869,13 +1928,14 @@ const products = [
       {
         type: "markdown",
         data: `### Be om refusjon
-     Du søker om refusjon ved å sende inn en inntektsmelding. Den sendes enten fra arbeidsgivers eget lønns- og personalsystem eller fra altinn.no.`,
+        Du søker om refusjon ved å sende inn en inntektsmelding. Den sendes enten fra arbeidsgivers eget lønns- og personalsystem eller fra altinn.no.`,
       },
       {
         type: "actions",
         data: [
           {
             text: "Send skjema (hos Altinn)",
+            href: "/soknad/temp-omsorgspenger-arb.html",
             variant: "primary",
           },
         ],
@@ -1919,6 +1979,7 @@ const products = [
         data: [
           {
             text: "Send søknad",
+            href: "/soknad/temp-sykepenger-arb.html",
             variant: "primary",
           },
         ],
@@ -1929,13 +1990,14 @@ const products = [
       {
         type: "markdown",
         data: `### Send inntektsmelding for arbeidstaker
-     Dette gjør du hos Altinn.`,
+        Dette gjør du hos Altinn.`,
       },
       {
         type: "actions",
         data: [
           {
             text: "Send skjema (hos Altinn)",
+            href: "/soknad/temp-sykepenger-arb.html",
             variant: "primary",
           },
         ],
@@ -1946,13 +2008,14 @@ const products = [
       {
         type: "markdown",
         data: `### Send trekkopplysninger for arbeidstaker
-     Tekst`,
+        Tekst`,
       },
       {
         type: "actions",
         data: [
           {
             text: "Send skjema",
+            href: "/soknad/temp-sykepenger-arb.html",
             variant: "primary",
           },
         ],
@@ -1995,6 +2058,7 @@ const products = [
         data: [
           {
             text: "Send søknad",
+            href: "/soknad/temp-reisepenger-arb.html",
             variant: "primary",
           },
         ],
@@ -2034,6 +2098,7 @@ const products = [
         data: [
           {
             text: "Send skjema",
+            href: "/soknad/temp-dagpenger-arb.html",
             variant: "primary",
           },
         ],
@@ -2044,13 +2109,14 @@ const products = [
       {
         type: "markdown",
         data: `### Send inn bekreftelse på sluttårsak eller nedsatt arbeidstid (ikke permittert)
-          Dette sender du inn når en oppsagt arbeidstaker har behov for dokumentasjon i forbindelse med dagpengesøknad.`,
+        Dette sender du inn når en oppsagt arbeidstaker har behov for dokumentasjon i forbindelse med dagpengesøknad.`,
       },
       {
         type: "actions",
         data: [
           {
             text: "Send skjema",
+            href: "/soknad/temp-dagpenger-arb.html",
             variant: "primary",
           },
         ],
@@ -2061,13 +2127,14 @@ const products = [
       {
         type: "markdown",
         data: `### Send inn bekreftelse på arbeidsforhold
-     Skjemaet gjelder bekreftelse på arbeidsforhold for tidligere ansatt. Det gjelder opparbeidede rettigheter etter EØS regelverket.`,
+        Skjemaet gjelder bekreftelse på arbeidsforhold for tidligere ansatt. Det gjelder opparbeidede rettigheter etter EØS regelverket.`,
       },
       {
         type: "actions",
         data: [
           {
             text: "Send skjema",
+            href: "/soknad/temp-dagpenger-arb.html",
             variant: "primary",
           },
         ],
@@ -2107,6 +2174,7 @@ const products = [
         data: [
           {
             text: "Send skjema",
+            href: "/soknad/temp-lonnsgaranti-arb.html",
             variant: "primary",
           },
         ],
@@ -2146,6 +2214,7 @@ const products = [
         data: [
           {
             text: "Til Altinn-innboks",
+            href: "/soknad/temp-fakturapsesifikasjon-for-pensjonsytelser-arb.html",
             variant: "primary",
           },
         ],
@@ -2186,6 +2255,7 @@ const products = [
         data: [
           {
             text: "Til Altinn-innboks",
+            href: "/soknad/temp-skatteoppgjorsrapport-til-kemnere-arb.html",
             variant: "primary",
           },
         ],
@@ -2226,6 +2296,7 @@ const products = [
         data: [
           {
             text: "Til Altinn-innboks",
+            href: "/soknad/temp-trekkoppgjorsrapport-arb.html",
             variant: "primary",
           },
         ],
@@ -2266,6 +2337,7 @@ const products = [
         data: [
           {
             text: "Til Altinn-innboks",
+            href: "/soknad/temp-oppgjorsrapport-arb.html",
             variant: "primary",
           },
         ],
@@ -2306,6 +2378,7 @@ const products = [
         data: [
           {
             text: "Be om tilgang (hos Altinn)",
+            href: "/soknad/temp-arbeidsgivertjenester-fa-tilgang-arb.html",
             variant: "primary",
           },
         ],
@@ -2346,6 +2419,7 @@ const products = [
         data: [
           {
             text: "Til Altinn-innboks",
+            href: "/soknad/temp-trekkhendelser-til-kemner-og-namsmann-arb.html",
             variant: "primary",
           },
         ],
@@ -2386,6 +2460,7 @@ const products = [
         data: [
           {
             text: "Rapporter til registeret (hos Altinn)",
+            href: "/soknad/temp-refusjon-fra-nav-ved-virksomhetsoverdragelser-arb.html",
             variant: "primary",
           },
         ],
@@ -2393,13 +2468,14 @@ const products = [
       {
         type: "markdown",
         data: `### Send inntektsmelding
-     Dette gjør du hos Altinn.`,
+        Dette gjør du hos Altinn.`,
       },
       {
         type: "actions",
         data: [
           {
             text: "Send skjema (hos Altinn)",
+            href: "/soknad/temp-refusjon-fra-nav-ved-virksomhetsoverdragelser-arb.html",
             variant: "primary",
           },
         ],

@@ -93,13 +93,12 @@
       <div class="pr-28 md:col-start-2 md:row-start-1 md:pr-0">
         <h1 class="text-3xl font-semibold leading-tight md:text-5xl md:leading-tight">{{ title | safe }}</h1>
         <p class="mt-2 text-sm tracking-wider text-gray-700 uppercase">{{ kicker | safe }}</p>
-        <p class="max-w-2xl mt-8 text-xl md:text-2xl">{{ description | safe }}. <a class="text-blue-500 underline hover:no-underline hover:text-deepblue-600" href="/soknad-og-skjema-samarbeidspartner/">Bytt rolle</a>.
-</p>
+        <p class="max-w-2xl mt-8 text-xl md:text-2xl">{{ description | safe }}. <a class="text-blue-500 underline hover:no-underline hover:text-deepblue-600" href="/soknad-og-skjema-samarbeidspartner/">Bytt rolle</a>.</p>
       </div>
 
       <div class="md:col-start-2 md:grid md:grid-cols-[2fr_1fr] gap-x-16 items-start gap-4 mt-8">
 
-        {%- if productsLength > 10 -%}
+        {%- if productsLength > 7 -%}
         <div class="md:col-start-2 md:row-start-1" x-data="{ filterDrawer: false }">
           <button
             class="flex items-center mb-8 justify-start gap-2.5 pl-3 pr-4 py-3 leading-none text-blue-600 bg-white rounded ring-2 ring-blue-500 hover:bg-blue-100 hover:text-blue-700 md:hidden"
