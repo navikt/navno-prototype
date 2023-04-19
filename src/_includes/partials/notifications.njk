@@ -1,7 +1,7 @@
 {# Notifications #}
 <aside class="grid grid-cols-layout">
   <div class="relative col-full sm:col-wide">
-    <div class="absolute w-full sm:right-0 z-40 mb-10 bg-white rounded-b-lg shadow-xl sm:ml-auto sm:max-w-xl top-full inset-x-0 sm:inset-x-auto md:max-h-[92vh]" x-bind:class="!notifyOpen ? 'hidden' : 'opacity-0 animate-dropdown'">
+    <div class="absolute w-full sm:right-0 z-40 mb-10 bg-white rounded-b-lg shadow-xl sm:ml-auto sm:max-w-xl top-full inset-x-0 sm:inset-x-auto md:max-h-[92vh]" x-bind:class="notifyOpen ? 'opacity-0 animate-dropdown' : 'hidden'">
       <div class="px-clamp-gap sm:px-6">
         <p class="grid pt-5 pb-4" x-on:click="newNotifications = !newNotifications">
           <span class="text-sm tracking-wider uppercase opacity-80">Logget inn</span>
@@ -67,12 +67,12 @@
         </div>
         <div class="sticky inset-x-0 bottom-0 h-3 bg-gradient-to-t from-gray-100 to-transparent"></div>
       </div>
-      <div class="px-clamp-gap sm:px-6">
-        <div x-show="!newNotifications" class="border-t border-gray-200"></div>
-        <a href="#" class="flex items-center gap-2 py-3 text-lg text-blue-500 rounded-b-lg -mx-clamp-gap px-clamp-gap sm:fine:hover:-mx-6 sm:fine:hover:px-6 fine:hover:bg-blue-500 fine:hover:text-white">
+      <div class="grid">
+        <div x-show="!newNotifications" class="border-t border-gray-200 mx-clamp-gap sm:mx-clamp-gap"></div>
+        <button class="flex items-center gap-2 py-3 text-lg text-blue-500 rounded-b-lg px-clamp-gap fine:hover:bg-blue-500 fine:hover:text-white sm:px-6" x-on:click="loggedIn = false, notifyOpen = false">
           {{ '/src/_includes/svg/icons/logout.svg' | svgContents() | safe }}
           <span>Logg ut</span>
-        </a>
+        </button>
       </div>
     </div>
   </div>
