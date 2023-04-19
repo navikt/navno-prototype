@@ -10,7 +10,6 @@ const products = [
       {
         type: "markdown",
         data: `### Send tannlegelegeerklæring
-          Noe tekst
         `,
       },
       {
@@ -380,8 +379,7 @@ const products = [
     contentBlocks: [
       {
         type: "markdown",
-        data: `### Send vurdering av arbeidsmulighet ved sykmelding
-          Noe tekst`,
+        data: `### Send vurdering av arbeidsmulighet ved sykmelding`,
       },
       {
         type: "actions",
@@ -398,8 +396,7 @@ const products = [
       },
       {
         type: "markdown",
-        data: `### Send vurdering av arbeidsmulighet ved 7 uker
-          Noe tekst`,
+        data: `### Send vurdering av arbeidsmulighet ved 7 uker`,
       },
       {
         type: "actions",
@@ -416,8 +413,7 @@ const products = [
       },
       {
         type: "markdown",
-        data: `### Send vurdering av arbeidsmulighet ved 17 uker
-          Noe tekst`,
+        data: `### Send vurdering av arbeidsmulighet ved 17 uker`,
       },
       {
         type: "actions",
@@ -434,8 +430,7 @@ const products = [
       },
       {
         type: "markdown",
-        data: `### Send vurdering av arbeidsmulighet ved 39 uker
-          Noe tekst`,
+        data: `### Send vurdering av arbeidsmulighet ved 39 uker`,
       },
       {
         type: "actions",
@@ -452,8 +447,7 @@ const products = [
       },
       {
         type: "markdown",
-        data: `### Send legeerklæring ved arbeidsuførhet
-          Noe tekst`,
+        data: `### Send legeerklæring ved arbeidsuførhet`,
       },
       {
         type: "actions",
@@ -493,8 +487,7 @@ const products = [
     contentBlocks: [
       {
         type: "markdown",
-        data: `### Send legeerklæring ved arbeidsuførhet
-          Noe tekst`,
+        data: `### Send legeerklæring ved arbeidsuførhet`,
       },
       {
         type: "actions",
@@ -534,8 +527,7 @@ const products = [
     contentBlocks: [
       {
         type: "markdown",
-        data: `### Send legeerklæring ved arbeidsuførhet
-          Noe tekst`,
+        data: `### Send legeerklæring ved arbeidsuførhet`,
       },
       {
         type: "actions",
@@ -552,8 +544,7 @@ const products = [
       },
       {
         type: "markdown",
-        data: `### Send detaljert legeerklæring ved arbeidsuførhet i forbindelse med uføresøknader til andre EU/EØS-land
-          Noe tekst`,
+        data: `### Send detaljert legeerklæring ved arbeidsuførhet i forbindelse med uføresøknader til andre EU/EØS-land`,
       },
       {
         type: "actions",
@@ -593,8 +584,7 @@ const products = [
     contentBlocks: [
       {
         type: "markdown",
-        data: `### Send legeerklæring ved arbeidsuførhet
-          Noe tekst`,
+        data: `### Send legeerklæring ved arbeidsuførhet`,
       },
       {
         type: "actions",
@@ -636,8 +626,7 @@ const products = [
     contentBlocks: [
       {
         type: "markdown",
-        data: `### Send legeerklæring ved arbeidsuførhet
-          Noe tekst`,
+        data: `### Send legeerklæring ved arbeidsuførhet`,
       },
       {
         type: "actions",
@@ -1497,8 +1486,7 @@ const products = [
       },
       {
         type: "markdown",
-        data: `### Send refusjonskrav
-          Noe tekst`,
+        data: `### Send refusjonskrav`,
       },
       {
         type: "actions",
@@ -2696,8 +2684,7 @@ const products = [
     contentBlocks: [
       {
         type: "markdown",
-        data: `### Meld fra om institusjonsopphold
-          Noe tekst`,
+        data: `### Meld fra om institusjonsopphold`,
       },
       {
         type: "actions",
@@ -2740,8 +2727,7 @@ const products = [
     contentBlocks: [
       {
         type: "markdown",
-        data: `### Meld fra om innleggelse
-          Noe tekst`,
+        data: `### Meld fra om innleggelse`,
       },
       {
         type: "actions",

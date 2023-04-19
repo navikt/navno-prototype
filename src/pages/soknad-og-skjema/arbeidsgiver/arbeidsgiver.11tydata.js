@@ -8,8 +8,7 @@ const products = [
     contentBlocks: [
       {
         type: "markdown",
-        data: `### Søk om opptak eller endring i forsikringen
-          Et kort avsnitt med tekst`,
+        data: `### Søk om opptak eller endring i forsikringen`,
       },
       {
         type: "actions",
@@ -129,8 +128,7 @@ const products = [
     contentBlocks: [
       {
         type: "markdown",
-        data: `### Søk om opptak i forsikringen
-          Et kort avsnitt med tekst`,
+        data: `### Søk om opptak i forsikringen`,
       },
       {
         type: "actions",
@@ -172,8 +170,7 @@ const products = [
     contentBlocks: [
       {
         type: "markdown",
-        data: `### Søk om opptak i forsikringen
-          Et kort avsnitt med tekst`,
+        data: `### Søk om opptak i forsikringen`,
       },
       {
         type: "actions",
@@ -267,7 +264,8 @@ const products = [
   },
   {
     title: "Funksjonsassistanse i arbeidslivet",
-    ingress: "Ingress her …",
+    ingress:
+      "Ansatte kan få assistanse til å gjøre praktiske oppgaver når det er nødvendig for å kunne utføre jobben.   ",
     icon: "/src/_includes/svg/pictograms/neutral.svg",
     type: [
       "Tjeneste",
@@ -295,8 +293,7 @@ const products = [
       },
       {
         type: "markdown",
-        data: `### Be om refusjon for funksjonsassistanse
-        Tekst`,
+        data: `### Be om refusjon for funksjonsassistanse`,
       },
       {
         type: "actions",
@@ -442,8 +439,7 @@ const products = [
       },
       {
         type: "markdown",
-        data: `### Be om refusjon
-        Tekst`,
+        data: `### Be om refusjon`,
       },
       {
         type: "actions",
@@ -507,8 +503,7 @@ const products = [
       },
       {
         type: "markdown",
-        data: `### Søk om unntak fra arbeidsgiveransvar for sykepenger for gravid arbeidstaker
-        Tekst`,
+        data: `### Søk om unntak fra arbeidsgiveransvar for sykepenger for gravid arbeidstaker`,
       },
       {
         type: "actions",
@@ -587,8 +582,7 @@ const products = [
       },
       {
         type: "markdown",
-        data: `### Be om refusjon
-        Tekst`,
+        data: `### Be om refusjon`,
       },
       {
         type: "actions",
@@ -649,8 +643,7 @@ const products = [
       },
       {
         type: "markdown",
-        data: `### Be om refusjon
-        Tekst`,
+        data: `### Be om refusjon`,
       },
       {
         type: "actions",
@@ -847,7 +840,8 @@ const products = [
   },
   {
     title: "Varig tilrettelagt arbeid i ordinær bedrift",
-    ingress: "Ingress her …",
+    ingress:
+      "Personer som har uføretrygd, men har mulighet til å gjøre tilpassede oppgaver, kan få tilrettelagt arbeid gjennom arbeidsgiver.",
     icon: "/src/_includes/svg/pictograms/neutral.svg",
     type: [
       "Tiltak",
@@ -931,7 +925,8 @@ const products = [
   },
   {
     title: "NAV Arbeidslivssenter",
-    ingress: "Ingress her …",
+    ingress:
+      "Virksomheter med høyt sykefravær kan be om støtte og oppfølging fra NAV Arbeidslivssenter.",
     icon: "/src/_includes/svg/pictograms/neutral.svg",
     type: ["Veiledning"],
     area: [
@@ -1023,7 +1018,8 @@ const products = [
   },
   {
     title: "Arbeidsrådgiving ARK (arbeid og helse)",
-    ingress: "Ingress her …",
+    ingress:
+      "NAV Arbeidsrådgivning veileder om arbeidsmuligheter og tiltak for å komme i arbeid.",
     icon: "/src/_includes/svg/pictograms/neutral.svg",
     type: ["Veiledning"],
     area: ["Helse og sykdom"],
@@ -1073,8 +1069,7 @@ const products = [
       },
       {
         type: "markdown",
-        data: `### Meld fra om skade eller sykdom under tjeneste på skip eller under fiske/fangst
-        Tekst`,
+        data: `### Meld fra om skade eller sykdom under tjeneste på skip eller under fiske/fangst`,
       },
       {
         type: "actions",
@@ -1109,8 +1104,7 @@ const products = [
       },
       {
         type: "markdown",
-        data: `### Meld fra om skade eller sykdom for elev eller student
-        Tekst`,
+        data: `### Meld fra om skade eller sykdom for elev eller student`,
       },
       {
         type: "actions",
@@ -1267,7 +1261,8 @@ const products = [
   },
   {
     title: "Medlemskap i folketrygden for utsendte arbeidstakere",
-    ingress: "Ingress her …",
+    ingress:
+      "Når ansatte skal på oppdrag i utlandet, kan de i visse tilfeller beholde medlemskap i folketrygden.",
     icon: "/src/_includes/svg/pictograms/slik-gjor-du-det.svg",
     type: ["Skjema"],
     area: ["Annet"],
@@ -1411,7 +1406,8 @@ const products = [
   },
   {
     title: "Kontonummer for bedriften - slik endrer du",
-    ingress: "Ingress her …",
+    ingress:
+      "NAV bruker bankkontonummeret ved refusjon av sykepenger, foreldrepenger, stønader ved barns sykdom, pleie-, opplærings- og omsorgspenger og tilskudd til sommerjobb.",
     icon: "/src/_includes/svg/pictograms/slik-gjor-du-det.svg",
     type: ["Skjema"],
     area: ["Annet"],
@@ -1533,7 +1529,8 @@ const products = [
   },
   {
     title: "Foreldrepenger",
-    ingress: "Ingress her …",
+    ingress:
+      "Foreldrepengene skal erstatte inntekten til arbeidstaker i forbindelse med fødsel eller adopsjon.",
     icon: "/src/_includes/svg/pictograms/foreldrepenger.svg",
     type: [
       "Pengestøtte til ansatt",
@@ -1561,8 +1558,7 @@ const products = [
       },
       {
         type: "markdown",
-        data: `### Send trekkopplysninger for arbeidstaker
-        Tekst`,
+        data: `### Send trekkopplysninger for arbeidstaker`,
       },
       {
         type: "actions",
@@ -1594,7 +1590,8 @@ const products = [
   },
   {
     title: "Svangerskapspenger",
-    ingress: "Ingress her …",
+    ingress:
+      "Ansatte som ikke kan fortsette å jobbe under svangerskapet fordi det kan medføre risiko for barnet, kan få svangerskapspenger.",
     icon: "/src/_includes/svg/pictograms/svangerskapspenger.svg",
     type: [
       "Pengestøtte til ansatt",
@@ -1622,8 +1619,7 @@ const products = [
       },
       {
         type: "markdown",
-        data: `### Send trekkopplysninger for arbeidstaker
-        Tekst`,
+        data: `### Send trekkopplysninger for arbeidstaker`,
       },
       {
         type: "actions",
@@ -1655,7 +1651,8 @@ const products = [
   },
   {
     title: "Pleiepenger for sykt barn",
-    ingress: "Ingress her …",
+    ingress:
+      "Refusjon for utbetalt lønn når en ansatt må være borte fra jobb for å pleie et barn som har vært innlagt eller til behandling på sykehus.",
     icon: "/src/_includes/svg/pictograms/pleiepenger-sykt-barn.svg",
     type: [
       "Pengestøtte til ansatt",
@@ -1716,7 +1713,8 @@ const products = [
   },
   {
     title: "Pleiepenger for utviklingshemmet person over 18 år",
-    ingress: "Ingress her …",
+    ingress:
+      "Refusjon for lønn når en arbeidstaker må være borte fra jobb for å være sammen med en utviklingshemmet og svært alvorlig syk person over 18 år.",
     icon: "/src/_includes/svg/pictograms/pleiepenger-utviklingshemmet.svg",
     type: [
       "Pengestøtte til ansatt",
@@ -1777,7 +1775,8 @@ const products = [
   },
   {
     title: "Pleiepenger i livets sluttfase",
-    ingress: "Ingress her …",
+    ingress:
+      "Refusjon for utbetalt lønn når en ansatt må være borte fra jobb for å ta vare på en person som er i livets sluttfase.",
     icon: "/src/_includes/svg/pictograms/pleiepenger-livets-sluttfase.svg",
     type: [
       "Pengestøtte til ansatt",
@@ -1838,7 +1837,8 @@ const products = [
   },
   {
     title: "Opplæringspenger",
-    ingress: "Ingress her …",
+    ingress:
+      "Refusjon for utbetalt lønn når en ansatt må være borte fra jobb for å få opplæring for et barn eller en voksen som har en funksjonshemning eller langvarig sykdom.",
     icon: "/src/_includes/svg/pictograms/opplaeringspenger.svg",
     type: [
       "Pengestøtte til ansatt",
@@ -1899,7 +1899,8 @@ const products = [
   },
   {
     title: "Omsorgspenger",
-    ingress: "Ingress her …",
+    ingress:
+      "Refusjon for utbetalt lønn ved omsorgsdager («hjemme med sykt barn-dager»).",
     icon: "/src/_includes/svg/pictograms/omsorgspenger.svg",
     type: [
       "Pengestøtte til ansatt",
@@ -1972,7 +1973,7 @@ const products = [
       {
         type: "markdown",
         data: `### Søk om sykepenger
-     Tekst`,
+     `,
       },
       {
         type: "actions",
@@ -2007,8 +2008,7 @@ const products = [
       },
       {
         type: "markdown",
-        data: `### Send trekkopplysninger for arbeidstaker
-        Tekst`,
+        data: `### Send trekkopplysninger for arbeidstaker`,
       },
       {
         type: "actions",
@@ -2040,7 +2040,8 @@ const products = [
   },
   {
     title: "Reisetilskudd",
-    ingress: "Ingress her …",
+    ingress:
+      "Ansatte kan få reisetilskudd i stedet for sykepenger hvis det gjør at den ansatte kan være helt eller delvis i arbeid.",
     icon: "/src/_includes/svg/pictograms/neutral.svg",
     type: [
       "Pengestøtte til ansatt",
@@ -2083,7 +2084,8 @@ const products = [
   },
   {
     title: "Dagpenger",
-    ingress: "Ingress her …",
+    ingress:
+      "Personer som har blitt permittert eller arbeidsledig kan ha rett til dagpenger.",
     icon: "/src/_includes/svg/pictograms/dagpenger.svg",
     type: ["Pengestøtte til ansatt"],
     area: ["Permittering og nedbemanning"],
@@ -2159,7 +2161,8 @@ const products = [
   },
   {
     title: "Lønnsgaranti",
-    ingress: "Ingress her …",
+    ingress:
+      "Lønnsgarantien skal sikre at den ansatte får utbetalt lønn, feriepenger og annen betaling for arbeid den har til gode når arbeidsgiveren ikke kan betale ved for eksempel konkurs.",
     icon: "/src/_includes/svg/pictograms/neutral.svg",
     type: ["Pengestøtte til ansatt"],
     area: ["Permittering og nedbemanning"],
