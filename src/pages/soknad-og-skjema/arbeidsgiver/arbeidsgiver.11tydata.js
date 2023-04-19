@@ -377,7 +377,7 @@ const products = [
     contentBlocks: [
       {
         type: "markdown",
-        data: `### Signer avtale om tiltaksgjennomføring
+        data: `### Inngå avtale
           Avtalen blir inngått mellom arbeidssøkeren, arbeidsgiver og NAV.`,
       },
       {
@@ -421,7 +421,7 @@ const products = [
     contentBlocks: [
       {
         type: "markdown",
-        data: `### Signer avtale om tiltaksgjennomføring
+        data: `### Inngå avtale
           Avtalen blir inngått mellom arbeidssøkeren, arbeidsgiver og NAV.`,
       },
       {
@@ -564,7 +564,7 @@ const products = [
     contentBlocks: [
       {
         type: "markdown",
-        data: `### Signer avtale om tiltaksgjennomføring
+        data: `### Inngå avtale
           Avtalen blir inngått mellom arbeidssøkeren, arbeidsgiver og NAV.`,
       },
       {
@@ -625,7 +625,7 @@ const products = [
     contentBlocks: [
       {
         type: "markdown",
-        data: `### Signer avtale om tiltaksgjennomføring
+        data: `### Inngå avtale
      Avtalen blir inngått mellom arbeidssøkeren, arbeidsgiver og NAV.`,
       },
       {
@@ -686,7 +686,7 @@ const products = [
     contentBlocks: [
       {
         type: "markdown",
-        data: `### Signer avtale om tiltaksgjennomføring
+        data: `### Inngå avtale
      Avtalen blir inngått mellom arbeidssøkeren, arbeidsgiver og NAV.`,
       },
       {
@@ -807,7 +807,7 @@ const products = [
     contentBlocks: [
       {
         type: "markdown",
-        data: `### Signer avtale om tiltaksgjennomføring
+        data: `### Inngå avtale
      Avtalen blir inngått mellom arbeidssøkeren, arbeidsgiver og NAV.`,
       },
       {
