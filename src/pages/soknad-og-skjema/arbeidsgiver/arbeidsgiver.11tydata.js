@@ -47,8 +47,7 @@ const products = [
     contentBlocks: [
       {
         type: "markdown",
-        data: `### Søk om opptak eller endring i forsikringen
-     Et kort avsnitt med tekst`,
+        data: `### Søk om opptak eller endring i forsikringen`,
       },
       {
         type: "actions",
@@ -87,8 +86,7 @@ const products = [
     contentBlocks: [
       {
         type: "markdown",
-        data: `### Søk om opptak eller endring i forsikringen
-     Et kort avsnitt med tekst`,
+        data: `### Søk om opptak eller endring i forsikringen`,
       },
       {
         type: "actions",
@@ -187,8 +185,7 @@ const products = [
       },
       {
         type: "markdown",
-        data: `### Be om refusjon
-        Et kort avsnitt med tekst`,
+        data: `### Be om refusjon`,
       },
       {
         type: "actions",
@@ -275,8 +272,7 @@ const products = [
     contentBlocks: [
       {
         type: "markdown",
-        data: `### Søk om funksjonsassistanse
-          Tekst`,
+        data: `### Søk om funksjonsassistanse`,
       },
       {
         type: "actions",
@@ -485,8 +481,7 @@ const products = [
     contentBlocks: [
       {
         type: "markdown",
-        data: `### Søk om unntak fra arbeidsgiveransvar for sykepenger for kronisk syk arbeidstaker
-          Tekst`,
+        data: `### Søk om unntak fra arbeidsgiveransvar for sykepenger for kronisk syk arbeidstaker`,
       },
       {
         type: "actions",
@@ -704,8 +699,7 @@ const products = [
       },
       {
         type: "markdown",
-        data: `### Be om refusjon
-     Tekst`,
+        data: `### Be om refusjon`,
       },
       {
         type: "actions",
@@ -766,8 +760,7 @@ const products = [
       },
       {
         type: "markdown",
-        data: `### Be om refusjon
-     Tekst`,
+        data: `### Be om refusjon`,
       },
       {
         type: "actions",
@@ -851,8 +844,7 @@ const products = [
     contentBlocks: [
       {
         type: "markdown",
-        data: `### Søk og signer avtale om tiltaksplass for varig tilrettelagt arbeid i ordinær bedrift
-     Tekst`,
+        data: `### Søk og signer avtale om tiltaksplass for varig tilrettelagt arbeid i ordinær bedrift`,
       },
       {
         type: "actions",
@@ -1023,6 +1015,18 @@ const products = [
     icon: "/src/_includes/svg/pictograms/neutral.svg",
     type: ["Veiledning"],
     area: ["Helse og sykdom"],
+    contentBlocks: [
+      {
+        type: "actions",
+        data: [
+          {
+            text: "Knappetekst",
+            href: "/soknad/temp-arbeidsradgiving-ark-arbeid-og-helse-arb.html",
+            variant: "primary"
+          }
+        ]
+      }
+    ]
   },
   {
     title: "Yrkesskade eller yrkessykdom - meld fra til NAV",
@@ -1033,8 +1037,7 @@ const products = [
     contentBlocks: [
       {
         type: "markdown",
-        data: `### Meld fra om skade eller sykdom i forbindelse med petroleumsvirksomhet til havs
-     Tekst`,
+        data: `### Meld fra om skade eller sykdom i forbindelse med petroleumsvirksomhet til havs`,
       },
       {
         type: "actions",
@@ -1086,8 +1089,7 @@ const products = [
       },
       {
         type: "markdown",
-        data: `### Meld fra om skade eller sykdom under militær tjenestegjøring
-     Tekst`,
+        data: `### Meld fra om skade eller sykdom under militær tjenestegjøring`,
       },
       {
         type: "actions",
@@ -1332,8 +1334,7 @@ const products = [
     contentBlocks: [
       {
         type: "markdown",
-        data: `### Meld fra om permitteringer, masseoppsigelser og/eller reduksjon i arbeidstid
-     Tekst`,
+        data: `### Meld fra om permitteringer, masseoppsigelser og/eller reduksjon i arbeidstid`,
       },
       {
         type: "actions",
@@ -1373,8 +1374,7 @@ const products = [
     contentBlocks: [
       {
         type: "markdown",
-        data: `### Meld fra om permitteringer, masseoppsigelser og/eller reduksjon i arbeidstid
-     Tekst`,
+        data: `### Meld fra om permitteringer, masseoppsigelser og/eller reduksjon i arbeidstid`,
       },
       {
         type: "actions",
@@ -2051,8 +2051,7 @@ const products = [
     contentBlocks: [
       {
         type: "markdown",
-        data: `### Søk om refusjon
-          Tekst`,
+        data: `### Søk om refusjon`,
       },
       {
         type: "actions",
