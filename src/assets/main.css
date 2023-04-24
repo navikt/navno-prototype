@@ -175,10 +175,10 @@
 }
 @layer utilities {
   .grid-cols-layout {
-    --_layout-gap: clamp(1rem, -2rem + 10vw, 6rem);
+    --_layout-gap: clamp(0.75rem, -2rem + 10vw, 6rem);
     --_layout-full: minmax(var(--_layout-gap), 1fr);
-    --_layout-normal: minmax(0, 12rem);
-    --_layout-wide: minmax(0, 8rem);
+    --_layout-normal: minmax(0, 10rem);
+    --_layout-wide: minmax(0, 10rem);
     --_layout-narrow: min(40rem, 100% - (var(--_layout-gap) * 2));
 
     grid-template-columns:
