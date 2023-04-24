@@ -1,26 +1,28 @@
 ---
 title: 'Søknad og skjema'
 kicker: 'fra A til Å'
-description: 'Søknader og skjema for samarbeidspartnere. Velg rollen som passer best for deg.'
+description: 'Finn søknad og skjema til pengestøtter og tjenester for samarbeidspartnere fra NAV'
 permalink: '/soknad-og-skjema-samarbeidspartner/'
 ---
 {%- extends 'base.njk' -%}
 
 {%- block content -%}
-  <main class="grid py-12 text-lg text-gray-900 grid-cols-layout">
-    <div class="relative col-wide max-w-prose md:max-w-none mx-auto md:mx-0 grid md:grid-cols-[6rem_auto] md:pr-24 gap-x-8 items-start mb-12 w-full">
+  {% include "partials/language.njk" %}
+
+  <main class="grid pb-4 text-lg md:pb-12 grid-cols-layout">
+    <div class="relative col-wide max-w-prose md:max-w-none mx-auto md:mx-0 md:grid md:grid-cols-[6rem_auto] gap-x-8 items-start mb-12 w-full">
 
       {# Pictogram #}
-      {{ '/src/_includes/svg/pictograms/support.svg' | svgContents('w-full h-auto max-w-20 md:ml-2 text-green-800 absolute right-0 md:relative') | safe }}
+      {{ '/src/_includes/svg/pictograms/support.svg' | svgContents('w-full h-auto max-w-20 ml-6 md:ml-2 text-green-800 float-right md:float-none row-start-1') | safe }}
 
       {# Intro #}
-      <div class="pr-28 md:col-start-2 md:row-start-1 md:pr-0">
+      <div class="md:col-start-2 md:row-start-1">
         <h1 class="text-3xl font-semibold leading-tight md:text-5xl md:leading-tight">{{ title | safe }}</h1>
         <p class="mt-2 text-sm tracking-wider text-gray-700 uppercase">{{ kicker | safe }}</p>
-        <p class="max-w-2xl mt-8 text-xl md:text-2xl">{{ description | safe }}</p>
+        <p class="max-w-2xl mt-6 text-xl md:text-2xl">{{ description | safe }}</p>
       </div>
 
-      <div class="mt-10 md:col-start-2">
+      <div class="mt-8 md:col-start-2">
         <ul class="gap-12 text-xl lg:columns-2">
           {% for item in roleFilter %}
           <li class="-mb-px border-t border-b border-gray-200 break-inside-avoid">
