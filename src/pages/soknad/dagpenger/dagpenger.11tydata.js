@@ -6,6 +6,7 @@ const preSteps = [
         title: "Send digitalt",
         description:
           "Det er enklest og raskest å søke digitalt. Du blir bedt om å logge inn.",
+        href: "/soknad/dagpenger/intro/"
       },
       {
         title: "Send i posten",
