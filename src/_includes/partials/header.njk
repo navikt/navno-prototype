@@ -1,10 +1,10 @@
 {%- set audience = audienceOverride or menu.audience -%}
 
-<div class="bg-gray-100 md:hidden px-clamp-gap">
+<div class="bg-gray-100 border-b border-gray-200/50 md:hidden px-clamp-gap">
   <ul class="flex justify-around flex-1 max-w-sm gap-2 mx-auto text-base">
     {%- for item in audience -%}
       <li class="grid">
-        <a href="{{ item.href or '#' }}" class="focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-800 flex items-center pt-2 pb-1.5 border-b-3 {{ 'font-semibold border-blue-500' if activeRole === item.title else 'border-transparent fine:hover:border-gray-300' }}">
+        <a href="{{ item.href or '#' }}" class="translate-y-px focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-800 flex items-center pt-2 pb-1.5 border-b-3 {{ 'font-semibold border-blue-500' if activeRole === item.title else 'border-transparent fine:hover:border-gray-300' }}">
           {{ item.title }} {{ item.active }}
         </a>
       </li>
@@ -17,13 +17,13 @@
 
   <nav class="flex items-center w-full gap-8 col-wide">
     {# Logo #}
-    <a href="/" class="text-red-500 fine:hover:text-red-400 block focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-800 py-2.5 px-2 -mx-2 rounded-sm">
+    <a href="/" class="text-red-500 fine:hover:text-red-400 block focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-800 py-2.5 px-2 -mx-1.5 rounded-sm">
       {{ '/src/_includes/svg/logo.svg' | svgContents('w-[75px] h-auto') | safe }}
       <span class="sr-only">NAV</span>
     </a>
 
     {# Audience #}
-    <div class="relative hidden md:px-5 md:self-stretch md:grid">
+    <div class="relative hidden md:pl-12 md:self-stretch md:grid">
       <button class="flex items-center self-center justify-center gap-6 py-2.5 pl-3 pr-2 border border-gray-300 rounded fine:hover:bg-deepblue-100 fine:hover:border-deepblue-200 focus:outline-none md:hidden" x-on:click="audienceDropdownOpen = !audienceDropdownOpen">
       {%- if ('samarbeidspartner' in (page.url | string)) -%}
       <span>{{ audience[2].title }}</span>
