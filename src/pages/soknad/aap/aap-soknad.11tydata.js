@@ -35,6 +35,28 @@ const formSteps = [
     title: "Yrkesskade",
     state: "complete",
     link: true,
+    contentBlocks: [
+      {
+        type: "radios",
+        legend:
+          "Har du en yrkessykdom eller yrkesskade som påvirker hvor mye du kan jobbe?",
+        description: "",
+        name: "single-choice",
+        options: [
+          { label: "Ja" },
+          { label: "Nei" },
+        ],
+      },
+      {
+        type: "markdown",
+        class: "p-4 rounded bg-deepblue-50 xs:p-8",
+        data: `Hvis arbeidsevnen din er nedsatt som følge av en yrkesskade eller yrkessykdom, blir saken din behandlet etter andre regler. Dette kan gi deg noen fordeler.
+
+        **Med yrkesskade** mener vi en skade du har fått som følge av en arbeidsulykke.
+
+        **Med yrkessykdom** mener vi en sykdom du har fått på grunn av skadelig påvirkning fra arbeidsmiljøet. I tillegg må sykdommen være nevnt i [forskrift om yrkessykdommer](#) (lovdata.no, åpnes i ny fane).`,
+      },
+    ],
   },
   {
     title: "Kontaktperson for helseopplysninger",

@@ -1,31 +1,19 @@
 {%- set audience = audienceOverride or menu.audience -%}
 
-<header class="relative z-10 grid bg-white isolate grid-cols-layout shadow-border" >
+<div class="bg-gray-100 md:hidden px-clamp-gap">
+  <ul class="flex justify-around flex-1 max-w-sm gap-2 mx-auto text-base">
+    {%- for item in audience -%}
+      <li class="grid">
+        <a href="{{ item.href or '#' }}" class="focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-800 flex items-center pt-2 pb-1.5 border-b-3 {{ 'font-semibold border-blue-500' if activeRole === item.title else 'border-transparent fine:hover:border-gray-300' }}">
+          {{ item.title }} {{ item.active }}
+        </a>
+      </li>
+    {%- endfor -%}
+  </ul>
+</div>
 
-  {# Audience Dropdown #}
-  <div class="relative z-10 justify-center hidden bg-gray-100 col-full isolate">
-    <button class="flex items-center justify-center gap-2 px-4 py-2 focus:outline-none focus-visible:text-white focus-visible:bg-blue-500" x-on:click="audienceDropdownOpen = !audienceDropdownOpen">
-      {%- if ('samarbeidspartner' in page.fileSlug) -%}
-      <span>{{ menu.audience[2].title }}</span>
-      {%- elif ('arbeidsgiver' in page.fileSlug) -%}
-      <span>{{ menu.audience[1].title }}</span>
-      {%- elif (not 'produktoversikt-' in page.fileSlug) -%}
-      <span>{{ menu.audience[0].title }}</span>
-      {%- endif -%}
-      {{ '/src/_includes/svg/icons/chevron-down.svg' | svgContents('w-4 h-4') | safe }}
-    </button>
-    <div class="absolute px-4 mt-px -translate-x-1/2 left-1/2 top-full">
-      <ul class="overflow-hidden text-gray-900 bg-white divide-y divide-gray-300 rounded shadow-xl max-w-max ring-1 ring-gray-200"  x-show="audienceDropdownOpen" x-on:click.outside="audienceDropdownOpen = false">
-        {%- for item in audience -%}
-          <li class="grid">
-            <a href="{{ item.href or '#' }}" class="py-2 px-3 border-l-4 fine:hover:bg-gray-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-800 {{ 'border-blue-500' if activeRole === item.title or activeRole === '' else 'border-transparent fine:hover:border-gray-300/75 text-gray-700' }}">
-              {{ item.title | safe }}
-            </a>
-          </li>
-        {%- endfor -%}
-      </ul>
-    </div>
-  </div>
+
+<header class="relative z-10 grid bg-white isolate grid-cols-layout shadow-border">
 
   <nav class="flex items-center w-full gap-8 col-wide">
     {# Logo #}
@@ -35,22 +23,22 @@
     </a>
 
     {# Audience #}
-    <div class="relative hidden px-4 md:px-5 md:self-stretch xs:grid" x-on:click.outside="audienceDropdownOpen = false">
-      <button class="flex items-center self-center justify-center gap-4 py-2 pl-3 pr-2 border border-gray-200 rounded fine:hover:bg-deepblue-100 focus:outline-none md:hidden" x-on:click="audienceDropdownOpen = !audienceDropdownOpen">
-      {%- if ('samarbeidspartner' in page.fileSlug) -%}
+    <div class="relative hidden md:px-5 md:self-stretch md:grid">
+      <button class="flex items-center self-center justify-center gap-6 py-2.5 pl-3 pr-2 border border-gray-300 rounded fine:hover:bg-deepblue-100 fine:hover:border-deepblue-200 focus:outline-none md:hidden" x-on:click="audienceDropdownOpen = !audienceDropdownOpen">
+      {%- if ('samarbeidspartner' in (page.url | string)) -%}
       <span>{{ audience[2].title }}</span>
-      {%- elif ('arbeidsgiver' in page.fileSlug) -%}
+      {%- elif ('arbeidsgiver' in (page.url | string)) -%}
       <span>{{ audience[1].title }}</span>
-      {%- elif (not 'produktoversikt-' in page.fileSlug) -%}
+      {%- elif (not 'soknad-og-skjema-' in (page.url | string)) -%}
       <span>{{ audience[0].title }}</span>
       {%- endif -%}
         {{ '/src/_includes/svg/icons/chevron-down.svg' | svgContents('w-4 h-4') | safe }}
       </button>
-      <div class="flex flex-col xs:absolute md:static xs:top-full xs:left-0">
-        <ul class="justify-center flex-1 overflow-hidden text-lg bg-white border border-gray-200 divide-y divide-gray-200 rounded shadow-lg md:rounded-none md:bg-transparent md:shadow-none md:border-0 md:divide-y-0 md:gap-4 md:pt-3 md:flex" x-bind:class="audienceDropdownOpen ? 'grid' : 'hidden md:flex'">
+      <div class="static flex flex-col">
+        <ul class="flex justify-center flex-1 gap-4 pt-3 overflow-hidden text-lg" x-bind:class="audienceDropdownOpen ? 'grid' : 'flex'">
           {%- for item in audience -%}
             <li class="grid">
-              <a href="{{ item.href or '#' }}" class="focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-800 flex items-center py-2 px-3 md:px-0.5 md:pb-4 text-gray-900 border-l-4 md:border-l-0 md:border-b-4 {{ 'border-blue-500' if activeRole === item.title else 'border-transparent fine:hover:border-gray-300/75 text-gray-700' }}">
+              <a href="{{ item.href or '#' }}" class="focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-800 flex items-center py-2 px-0.5 pb-4 text-gray-900 border-b-4 {{ 'border-blue-500 font-semibold' if activeRole === item.title else 'border-transparent fine:hover:border-gray-300/75 text-gray-700' }}">
                 {{ item.title }} {{ item.active }}
               </a>
             </li>

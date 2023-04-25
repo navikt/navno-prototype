@@ -1,0 +1,13 @@
+  <div class="grid pt-4 pb-8 md:pb-4 grid-cols-layout">
+    <div class="relative z-10 flex w-full mx-auto sm:flex-row-reverse col-wide isolate" x-data="{ languageDropdown: false }">
+      <button type="button" class="px-3 py-2.5 flex gap-2 items-center border border-gray-300 rounded w-56 hover:bg-gray-100" x-on:click="languageDropdown = !languageDropdown">
+        {{ '/src/_includes/svg/icons/globe.svg' | svgContents('w-5 h-5 opacity-60') | safe }}
+        <span class="pr-6 mr-auto">Språk/Language</span>
+        {{ '/src/_includes/svg/icons/chevron-down.svg' | svgContents('w-5 h-5') | safe }}
+      </button>
+      <div x-show="languageDropdown" class="absolute left-0 z-30 grid w-40 mt-1 bg-white rounded shadow-lg top-full md:left-auto md:right-0">
+        <button type="button" class="py-2.5 px-3 text-left hover:bg-gray-50">Nynorsk</button>
+        <button type="button" class="py-2.5 px-3 text-left hover:bg-gray-50">English</button>
+      </div>
+    </div>
+  </div>

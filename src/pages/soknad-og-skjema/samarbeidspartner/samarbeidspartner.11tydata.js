@@ -1,6 +1,6 @@
 const products = [
   {
-    title: "Tannelegerklæring ved yrkesskade",
+    title: "Tannlegeerklæring ved yrkesskade",
     ingress:
       "I sakene hvor det er aktuelt, kan du som tannlege bli bedt om å fylle ut en tannlegeerklæring.",
     icon: "/src/_includes/svg/pictograms/slik-gjor-du-det.svg",
@@ -10,7 +10,6 @@ const products = [
       {
         type: "markdown",
         data: `### Send tannlegelegeerklæring
-          Noe tekst
         `,
       },
       {
@@ -18,6 +17,7 @@ const products = [
         data: [
           {
             text: "Send skjema",
+            href: "/soknad/temp-tannlegeerklaering-ved-yrkesskade-sam.html",
             variant: "primary",
           },
         ],
@@ -67,6 +67,7 @@ const products = [
         data: [
           {
             text: "Send skjema (hos Arbeidstilsynet",
+            href: "/soknad/temp-yrkesskade-eller-yrkessykdom-sam.html",
             variant: "primary",
           },
         ],
@@ -170,6 +171,7 @@ const products = [
         data: [
           {
             text: "Skriv ut legeerklæring",
+            href: "/soknad/temp-pleiepenger-i-livets-sluttfase-sam.html",
             variant: "secondary",
           },
         ],
@@ -210,6 +212,7 @@ const products = [
         data: [
           {
             text: "Send legeerklæring i søknad",
+            href: "/soknad/temp-opplaeringspenger-sam.html",
             variant: "primary",
           },
         ],
@@ -250,6 +253,7 @@ const products = [
         data: [
           {
             text: "Send skjema",
+            href: "/soknad/temp-omsorgspenger-sam.html",
             variant: "primary",
           },
         ],
@@ -375,14 +379,14 @@ const products = [
     contentBlocks: [
       {
         type: "markdown",
-        data: `### Send vurdering av arbeidsmulighet ved sykmelding
-          Noe tekst`,
+        data: `### Send vurdering av arbeidsmulighet ved sykmelding`,
       },
       {
         type: "actions",
         data: [
           {
             text: "Send skjema",
+            href: "/soknad/temp-sykepenger-sam.html",
             variant: "primary",
           },
         ],
@@ -392,14 +396,14 @@ const products = [
       },
       {
         type: "markdown",
-        data: `### Send vurdering av arbeidsmulighet ved 7 uker
-          Noe tekst`,
+        data: `### Send vurdering av arbeidsmulighet ved 7 uker`,
       },
       {
         type: "actions",
         data: [
           {
             text: "Send skjema",
+            href: "/soknad/temp-sykepenger-sam.html",
             variant: "primary",
           },
         ],
@@ -409,14 +413,14 @@ const products = [
       },
       {
         type: "markdown",
-        data: `### Send vurdering av arbeidsmulighet ved 17 uker
-          Noe tekst`,
+        data: `### Send vurdering av arbeidsmulighet ved 17 uker`,
       },
       {
         type: "actions",
         data: [
           {
             text: "Send skjema",
+            href: "/soknad/temp-sykepenger-sam.html",
             variant: "primary",
           },
         ],
@@ -426,14 +430,14 @@ const products = [
       },
       {
         type: "markdown",
-        data: `### Send vurdering av arbeidsmulighet ved 39 uker
-          Noe tekst`,
+        data: `### Send vurdering av arbeidsmulighet ved 39 uker`,
       },
       {
         type: "actions",
         data: [
           {
             text: "Send skjema",
+            href: "/soknad/temp-sykepenger-sam.html",
             variant: "primary",
           },
         ],
@@ -443,14 +447,14 @@ const products = [
       },
       {
         type: "markdown",
-        data: `### Send legeerklæring ved arbeidsuførhet
-          Noe tekst`,
+        data: `### Send legeerklæring ved arbeidsuførhet`,
       },
       {
         type: "actions",
         data: [
           {
             text: "Send skjema",
+            href: "/soknad/temp-sykepenger-sam.html",
             variant: "primary",
           },
         ],
@@ -483,14 +487,14 @@ const products = [
     contentBlocks: [
       {
         type: "markdown",
-        data: `### Send legeerklæring ved arbeidsuførhet
-          Noe tekst`,
+        data: `### Send legeerklæring ved arbeidsuførhet`,
       },
       {
         type: "actions",
         data: [
           {
             text: "Send skjema",
+            href: "/soknad/temp-arbeidsavklaringspenger-aap-sam.html",
             variant: "primary",
           },
         ],
@@ -523,14 +527,14 @@ const products = [
     contentBlocks: [
       {
         type: "markdown",
-        data: `### Send legeerklæring ved arbeidsuførhet
-          Noe tekst`,
+        data: `### Send legeerklæring ved arbeidsuførhet`,
       },
       {
         type: "actions",
         data: [
           {
             text: "Send skjema",
+            href: "/soknad/temp-uforetrygd-sam.html",
             variant: "primary",
           },
         ],
@@ -540,14 +544,14 @@ const products = [
       },
       {
         type: "markdown",
-        data: `### Send detaljert legeerklæring ved arbeidsuførhet i forbindelse med uføresøknader til andre EU/EØS-land
-          Noe tekst`,
+        data: `### Send detaljert legeerklæring ved arbeidsuførhet i forbindelse med uføresøknader til andre EU/EØS-land`,
       },
       {
         type: "actions",
         data: [
           {
             text: "Send skjema",
+            href: "/soknad/temp-uforetrygd-sam.html",
             variant: "primary",
           },
         ],
@@ -580,14 +584,14 @@ const products = [
     contentBlocks: [
       {
         type: "markdown",
-        data: `### Send legeerklæring ved arbeidsuførhet
-          Noe tekst`,
+        data: `### Send legeerklæring ved arbeidsuførhet`,
       },
       {
         type: "actions",
         data: [
           {
             text: "Send skjema",
+            href: "/soknad/temp-supplerende-stonad-til-ufore-flyktninger-sam.html",
             variant: "primary",
           },
         ],
@@ -611,7 +615,7 @@ const products = [
     ],
   },
   {
-    title: "Legeerklæringved arbeidsuførhet",
+    title: "Legeerklæring ved arbeidsuførhet",
     ingress:
       "Denne brukes i forbindelse med søknad om sykepenger(?), arbeidsavklaringspenger (AAP), uføretrygd og supplerende stønad for uføre flyktninger. Erklæringen kan skrives av lege, psykolog, fysioterapeut, manuellterapeut eller kiropraktor dersom NAV etterspør dette.",
     icon: "/src/_includes/svg/pictograms/slik-gjor-du-det.svg",
@@ -622,14 +626,14 @@ const products = [
     contentBlocks: [
       {
         type: "markdown",
-        data: `### Send legeerklæring ved arbeidsuførhet
-          Noe tekst`,
+        data: `### Send legeerklæring ved arbeidsuførhet`,
       },
       {
         type: "actions",
         data: [
           {
             text: "Send skjema",
+            href: "/soknad/temp-legeerklaering-ved-arbeidsuforhet-sam.html",
             variant: "primary",
           },
         ],
@@ -722,6 +726,7 @@ const products = [
         data: [
           {
             text: "Send søknad",
+            href: "/soknad/temp-seksualtekniske-hjelpemidler-sam.html",
             variant: "primary",
           },
         ],
@@ -751,6 +756,7 @@ const products = [
     type: ["Hjelpemiddel"],
     role: [
       "Optiker eller øyelege",
+      "Lege, tannlege eller annen behandler",
     ],
     contentBlocks: [
       {
@@ -770,36 +776,6 @@ const products = [
         data: [
           {
             text: "Førerhund",
-            dot: "bg-green-300",
-          },
-        ],
-      },
-    ],
-  },
-  {
-    title: "Førerhund",
-    ingress: "Hjelper blinde og svaksynte å ta seg frem innendørs og utendørs.",
-    icon: "/src/_includes/svg/pictograms/forerhund.svg",
-    type: ["Hjelpemiddel"],
-    role: ["Lege, tannlege eller annen behandler"],
-    contentBlocks: [
-      {
-        type: "markdown",
-        data: `### Send legeerklæring
-          NAV krever legeerklæring fra øyelege om nedsatt syn og legeerklæring som viser at vedkommende er helsemessig skikket til å ha førerhund. Erklæringene legges ved søknaden. Det er ikke egne skjemaer for å gi slike erklæringer. (Bør vi lage en felles tekst som brukes alle steder der det skal leveres legeerklæring, men det ikke er et eget skjema for det?)`,
-      },
-      {
-        type: "line",
-      },
-      {
-        type: "markdown",
-        data: `### Mer om`,
-      },
-      {
-        type: "microcards",
-        data: [
-          {
-            text: "Hjelpemidler",
             dot: "bg-green-300",
           },
         ],
@@ -857,6 +833,7 @@ const products = [
         data: [
           {
             text: "Skriv legeerklæring",
+            href: "/soknad/temp-bilstonad-sam.html",
             variant: "primary",
           },
         ],
@@ -1019,6 +996,7 @@ const products = [
     ],
     role: [
       "Optiker eller øyelege",
+      "Andre samarbeidspartnere",
     ],
     contentBlocks: [
       {
@@ -1045,50 +1023,6 @@ const products = [
     ],
   },
   {
-    title: "Lese- og sekretærhjelp",
-    ingress: "Hjelper deg med å lese og skrive når du er blind eller svaksynt.",
-    icon: "/src/_includes/svg/pictograms/neutral.svg",
-    type: [
-      "Pengestøtte",
-      "Hjelpemiddel",
-    ],
-    role: [
-      "Andre",
-    ],
-    contentBlocks: [
-      {
-        type: "markdown",
-        data: `### Send regning for utført lese- og sekretærhjelp
-          Noe tekst`,
-      },
-      {
-        type: "actions",
-        data: [
-          {
-            text: "Send skjema",
-            variant: "primary",
-          },
-        ],
-      },
-      {
-        type: "line",
-      },
-      {
-        type: "markdown",
-        data: `### Mer om`,
-      },
-      {
-        type: "microcards",
-        data: [
-          {
-            text: "Lese- og sekretærhjelp",
-            dot: "bg-green-300",
-          },
-        ],
-      },
-    ],
-  },
-  {
     title: "Tolking for døve, døvblinde og hørselshemmede",
     ingress: "Utfører tolkeoppdrag for døve, døvblinde og hørselshemmede.",
     icon: "/src/_includes/svg/pictograms/tegnspraak.svg",
@@ -1096,7 +1030,10 @@ const products = [
       "Tjeneste",
       "Hjelpemiddel",
     ],
-    role: ["Lege, tannlege eller annen behandler"],
+    role: [
+      "Lege, tannlege eller annen behandler",
+      "Andre samarbeidspartnere",
+    ],
     contentBlocks: [
       {
         type: "markdown",
@@ -1122,39 +1059,6 @@ const products = [
     ],
   },
   {
-    title: "Tolking for døve, døvblinde og hørselshemmede",
-    ingress: "Utfører tolkeoppdrag for døve, døvblinde og hørselshemmede.",
-    icon: "/src/_includes/svg/pictograms/tegnspraak.svg",
-    type: [
-      "Tjeneste",
-      "Hjelpemiddel",
-    ],
-    role: ["Andre"],
-    contentBlocks: [
-      {
-        type: "markdown",
-        data: `### Send regning for utført tolkeoppdrag
-          Finnes det eget skjema? Timeliste som kan lastes ned?`,
-      },
-      {
-        type: "line",
-      },
-      {
-        type: "markdown",
-        data: `### Mer om`,
-      },
-      {
-        type: "microcards",
-        data: [
-          {
-            text: "Tolking for døve, døvblinde og hørselshemmede",
-            dot: "bg-green-300",
-          },
-        ],
-      },
-    ],
-  },
-  {
     title: "Språktolking",
     ingress: "Ingress.",
     icon: "/src/_includes/svg/pictograms/neutral.svg",
@@ -1162,7 +1066,7 @@ const products = [
       "Tjeneste",
       "Hjelpemiddel",
     ],
-    role: ["Andre"],
+    role: ["Andre samarbeidspartnere"],
     contentBlocks: [
       {
         type: "markdown",
@@ -1241,6 +1145,7 @@ const products = [
         data: [
           {
             text: "Send søknad",
+            href: "/soknad/temp-horeapparat-sam.html",
             variant: "primary",
           },
         ],
@@ -1284,6 +1189,7 @@ const products = [
         data: [
           {
             text: "Send søknad",
+            href: "/soknad/temp-ortopediske-sko-sam.html",
             variant: "primary",
           },
         ],
@@ -1327,6 +1233,7 @@ const products = [
         data: [
           {
             text: "Send søknad",
+            href: "/soknad/temp-ortroser-sam.html",
             variant: "primary",
           },
         ],
@@ -1366,6 +1273,7 @@ const products = [
         data: [
           {
             text: "Send søknad",
+            href: "/soknad/temp-arm-og-benproteser-sam.html",
             variant: "primary",
           },
         ],
@@ -1460,74 +1368,6 @@ const products = [
     type: ["Tiltak"],
     role: ["Tiltaksarrangør"],
     contentBlocks: [
-      // {
-      //   type: "markdown",
-      //   data: `### Registrer deltakere
-      //     Dette gjør du digitalt i Deltakeroversikten.`,
-      // },
-      // {
-      //   type: "actions",
-      //   data: [
-      //     {
-      //       text: "Bruk deltakeroversikten",
-      //       variant: "primary",
-      //     },
-      //   ],
-      // },
-      // {
-      //   type: "markdown",
-      //   data: `Hvis du ikke har mulighet til å bruke deltakeroversikten, kan du sende fremmøteoversikt på papir.`,
-      // },
-      // {
-      //   type: "actions",
-      //   data: [
-      //     {
-      //       text: "Send oversikt i posten",
-      //       variant: "secondary",
-      //     },
-      //     {
-      //       text: "Ettersend dokumentasjon i posten",
-      //       variant: "secondary",
-      //     },
-      //   ],
-      // },
-      // {
-      //   type: "line",
-      // },
-      // {
-      //   type: "markdown",
-      //   data: `### Send refusjonskrav
-      //     Noe tekst`,
-      // },
-      // {
-      //   type: "actions",
-      //   data: [
-      //     {
-      //       text: "Send skjema",
-      //       variant: "primary",
-      //     },
-      //   ],
-      // },
-      // {
-      //   type: "line",
-      // },
-      // {
-      //   type: "markdown",
-      //   data: `### Send vedlegg til refusjonskrav
-      //   Excel-skjema til bruk når ...?`,
-      // },
-      // {
-      //   type: "actions",
-      //   data: [
-      //     {
-      //       text: "Last ned skjema",
-      //       variant: "secondary",
-      //     },
-      //   ],
-      // },
-      // {
-      //   type: "line",
-      // },
       {
         type: "markdown",
         data: `### Hold oversikt og send endringer til NAV
@@ -1538,6 +1378,7 @@ const products = [
         data: [
           {
             text: "Bruk deltakeroversikten",
+            href: "/soknad/temp-arbeidsforberedende-trening-sam.html",
             variant: "primary",
           },
         ],
@@ -1555,6 +1396,7 @@ const products = [
         data: [
           {
             text: "Hent førsteside",
+            href: "/soknad/temp-arbeidsforberedende-trening-sam.html",
             variant: "primary",
           },
         ],
@@ -1572,6 +1414,7 @@ const products = [
         data: [
           {
             text: "Send skjema",
+            href: "/soknad/temp-arbeidsforberedende-trening-sam.html",
             variant: "primary",
           },
         ],
@@ -1605,20 +1448,6 @@ const products = [
     type: ["Tiltak"],
     role: ["Tiltaksarrangør"],
     contentBlocks: [
-      // {
-      //   type: "markdown",
-      //   data: `### Registrer deltakere
-      //     Dette gjør du digitalt i Deltakeroversikten.`,
-      // },
-      // {
-      //   type: "actions",
-      //   data: [
-      //     {
-      //       text: "Bruk deltakeroversikten",
-      //       variant: "primary",
-      //     },
-      //   ],
-      // },
       {
         type: "markdown",
         data: `### Hold oversikt og send endringer til NAV
@@ -1629,27 +1458,11 @@ const products = [
         data: [
           {
             text: "Bruk deltakeroversikten",
+            href: "/soknad/temp-varig-tilrettelagt-arbeid-i-skjermet-virksomhet-sam.html",
             variant: "primary",
           },
         ],
       },
-      // {
-      //   type: "markdown",
-      //   data: `Hvis du ikke har mulighet til å bruke deltakeroversikten, kan du sende fremmøteoversikt på papir.`,
-      // },
-      // {
-      //   type: "actions",
-      //   data: [
-      //     {
-      //       text: "Send oversikt i posten",
-      //       variant: "secondary",
-      //     },
-      //     {
-      //       text: "Ettersend dokumentasjon i posten",
-      //       variant: "secondary",
-      //     },
-      //   ],
-      // },
       {
         type: "line",
       },
@@ -1663,6 +1476,7 @@ const products = [
         data: [
           {
             text: "Hent førsteside",
+            href: "/soknad/temp-varig-tilrettelagt-arbeid-i-skjermet-virksomhet-sam.html",
             variant: "primary",
           },
         ],
@@ -1672,35 +1486,18 @@ const products = [
       },
       {
         type: "markdown",
-        data: `### Send refusjonskrav
-          Noe tekst`,
+        data: `### Send refusjonskrav`,
       },
       {
         type: "actions",
         data: [
           {
             text: "Send skjema",
+            href: "/soknad/temp-varig-tilrettelagt-arbeid-i-skjermet-virksomhet-sam.html",
             variant: "primary",
           },
         ],
       },
-      // {
-      //   type: "line",
-      // },
-      // {
-      //   type: "markdown",
-      //   data: `### Send vedlegg til refusjonskrav
-      //     Excel-skjema til bruk når ...?`,
-      // },
-      // {
-      //   type: "actions",
-      //   data: [
-      //     {
-      //       text: "Last ned skjema",
-      //       variant: "secondary",
-      //     },
-      //   ],
-      // },
       {
         type: "line",
       },
@@ -1741,6 +1538,7 @@ const products = [
         data: [
           {
             text: "Send skjema",
+            href: "/soknad/temp-arbeidsmarkedsopplaering-amo-sam.html",
             variant: "primary",
           },
         ],
@@ -1758,6 +1556,7 @@ const products = [
         data: [
           {
             text: "Send skjema",
+            href: "/soknad/temp-arbeidsmarkedsopplaering-amo-sam.html",
             variant: "primary",
           },
           {
@@ -1791,40 +1590,6 @@ const products = [
     type: ["Tiltak"],
     role: ["Tiltaksarrangør"],
     contentBlocks: [
-      // {
-      //   type: "markdown",
-      //   data: `### Registrer deltakere
-      //     Dette gjør du digitalt i Deltakeroversikten.`,
-      // },
-      // {
-      //   type: "actions",
-      //   data: [
-      //     {
-      //       text: "Bruk deltakeroversikten",
-      //       variant: "primary",
-      //     },
-      //   ],
-      // },
-      // {
-      //   type: "markdown",
-      //   data: `Hvis du ikke har mulighet til å bruke deltakeroversikten, kan du sende fremmøteoversikt i posten.`,
-      // },
-      // {
-      //   type: "actions",
-      //   data: [
-      //     {
-      //       text: "Send oversikt i posten",
-      //       variant: "secondary",
-      //     },
-      //     {
-      //       text: "Ettersend dokumentasjon i posten",
-      //       variant: "secondary",
-      //     },
-      //   ],
-      // },
-      // {
-      //   type: "line",
-      // },
       {
         type: "markdown",
         data: `### Hold oversikt og send endringer til NAV
@@ -1835,6 +1600,7 @@ const products = [
         data: [
           {
             text: "Bruk deltakeroversikten",
+            href: "/soknad/temp-oppfolging-sam.html",
             variant: "primary",
           },
         ],
@@ -1852,6 +1618,7 @@ const products = [
         data: [
           {
             text: "Hent førsteside",
+            href: "/soknad/temp-oppfolging-sam.html",
             variant: "primary",
           },
         ],
@@ -1885,40 +1652,6 @@ const products = [
     type: ["Tiltak"],
     role: ["Tiltaksarrangør"],
     contentBlocks: [
-      // {
-      //   type: "markdown",
-      //   data: `### Registrer deltakere
-      //     Dette gjør du digitalt i Deltakeroversikten.`,
-      // },
-      // {
-      //   type: "actions",
-      //   data: [
-      //     {
-      //       text: "Bruk deltakeroversikten",
-      //       variant: "primary",
-      //     },
-      //   ],
-      // },
-      // {
-      //   type: "markdown",
-      //   data: `Hvis du ikke har mulighet til å bruke deltakeroversikten, kan du sende fremmøteoversikt i posten.`,
-      // },
-      // {
-      //   type: "actions",
-      //   data: [
-      //     {
-      //       text: "Send oversikt i posten",
-      //       variant: "secondary",
-      //     },
-      //     {
-      //       text: "Ettersend dokumentasjon i posten",
-      //       variant: "secondary",
-      //     },
-      //   ],
-      // },
-      // {
-      //   type: "line",
-      // },
       {
         type: "markdown",
         data: `### Hold oversikt og send endringer til NAV
@@ -1929,6 +1662,7 @@ const products = [
         data: [
           {
             text: "Bruk deltakeroversikten",
+            href: "/soknad/temp-avklaring-sam.html",
             variant: "primary",
           },
         ],
@@ -1946,6 +1680,7 @@ const products = [
         data: [
           {
             text: "Hent førsteside",
+            href: "/soknad/temp-avklaring-sam.html",
             variant: "primary",
           },
         ],
@@ -1979,40 +1714,6 @@ const products = [
     type: ["Tiltak"],
     role: ["Tiltaksarrangør"],
     contentBlocks: [
-      // {
-      //   type: "markdown",
-      //   data: `### Registrer deltakere
-      //     Dette gjør du digitalt i Deltakeroversikten.`,
-      // },
-      // {
-      //   type: "actions",
-      //   data: [
-      //     {
-      //       text: "Bruk deltakeroversikten",
-      //       variant: "primary",
-      //     },
-      //   ],
-      // },
-      // {
-      //   type: "markdown",
-      //   data: `Hvis du ikke har mulighet til å bruke deltakeroversikten, kan du sende fremmøteoversikt i posten.`,
-      // },
-      // {
-      //   type: "actions",
-      //   data: [
-      //     {
-      //       text: "Send oversikt i posten",
-      //       variant: "secondary",
-      //     },
-      //     {
-      //       text: "Ettersend dokumentasjon i posten",
-      //       variant: "secondary",
-      //     },
-      //   ],
-      // },
-      // {
-      //   type: "line",
-      // },
       {
         type: "markdown",
         data: `### Hold oversikt og send endringer til NAV
@@ -2023,6 +1724,7 @@ const products = [
         data: [
           {
             text: "Bruk deltakeroversikten",
+            href: "/soknad/temp-arbeidsrettet-rehabilitering-sam.html",
             variant: "primary",
           },
         ],
@@ -2040,6 +1742,7 @@ const products = [
         data: [
           {
             text: "Hent førsteside",
+            href: "/soknad/temp-arbeidsrettet-rehabilitering-sam.html",
             variant: "primary",
           },
         ],
@@ -2083,6 +1786,7 @@ const products = [
         data: [
           {
             text: "Bruk deltakeroversikten",
+            href: "/soknad/temp-deltageroveriskt-for-tiltaksarrangorer-sam.html",
             variant: "primary",
           },
         ],
@@ -2126,6 +1830,7 @@ const products = [
         data: [
           {
             text: "Send søknad",
+            href: "/soknad/temp-fullmakt-til-a-soke-om-hjelpemidler-sam.html",
             variant: "primary",
           },
         ],
@@ -2168,6 +1873,7 @@ const products = [
         data: [
           {
             text: "Inngå avtale",
+            href: "/soknad/temp-briller-til-barn-sam.html",
             variant: "primary",
           },
         ],
@@ -2185,6 +1891,7 @@ const products = [
         data: [
           {
             text: "Til optikerportalen",
+            href: "/soknad/temp-briller-til-barn-sam.html",
             variant: "primary",
           },
         ],
@@ -2227,6 +1934,7 @@ const products = [
         data: [
           {
             text: "Send skjema",
+            href: "/soknad/temp-irislinse-sam.html",
             variant: "primary",
           },
         ],
@@ -2269,6 +1977,7 @@ const products = [
         data: [
           {
             text: "Send skjema",
+            href: "/soknad/temp-horselshjelpemidler-sam.html",
             variant: "primary",
           },
         ],
@@ -2279,13 +1988,14 @@ const products = [
       {
         type: "markdown",
         data: `### Søk om andre høreapparat, tinnitusmaskerer eller tilleggsutstyr
-          Hørselssentral eller avtalespesialist har ansvar for at skjemaet blir fylt ut og sendt inn. Det er valgfritt å fylle ut søknaden via pasientjournalsystemet eller via NAVs nettsider.`,
+        Hørselssentral eller avtalespesialist har ansvar for at skjemaet blir fylt ut og sendt inn. Det er valgfritt å fylle ut søknaden via pasientjournalsystemet eller via NAVs nettsider.`,
       },
       {
         type: "actions",
         data: [
           {
             text: "Send søknad digitalt",
+            href: "/soknad/temp-horselshjelpemidler-sam.html",
             variant: "primary",
           },
         ],
@@ -2299,6 +2009,7 @@ const products = [
         data: [
           {
             text: "Skriv ut førsteside for å sende i posten",
+            href: "/soknad/temp-horselshjelpemidler-sam.html",
             variant: "secondary",
           },
         ],
@@ -2316,6 +2027,7 @@ const products = [
         data: [
           {
             text: "Send skjema",
+            href: "/soknad/temp-horselshjelpemidler-sam.html",
             variant: "primary",
           },
         ],
@@ -2333,6 +2045,7 @@ const products = [
         data: [
           {
             text: "Send skjema",
+            href: "/soknad/temp-horselshjelpemidler-sam.html",
             variant: "primary",
           },
         ],
@@ -2350,6 +2063,7 @@ const products = [
         data: [
           {
             text: "Send søknad",
+            href: "/soknad/temp-horselshjelpemidler-sam.html",
             variant: "primary",
           },
         ],
@@ -2392,6 +2106,7 @@ const products = [
         data: [
           {
             text: "Send skjema",
+            href: "/soknad/temp-hjelpemidler-til-tale-og-sprak-sam.html",
             variant: "primary",
           },
         ],
@@ -2409,6 +2124,7 @@ const products = [
         data: [
           {
             text: "Send skjema",
+            href: "/soknad/temp-hjelpemidler-til-tale-og-sprak-sam.html",
             variant: "primary",
           },
         ],
@@ -2426,6 +2142,7 @@ const products = [
         data: [
           {
             text: "Send søknad",
+            href: "/soknad/temp-hjelpemidler-til-tale-og-sprak-sam.html",
             variant: "primary",
           },
         ],
@@ -2468,6 +2185,7 @@ const products = [
         data: [
           {
             text: "Send skjema",
+            href: "/soknad/temp-hjelpemidler-for-a-huske-planlegge-og-organisere-sam.html",
             variant: "primary",
           },
         ],
@@ -2478,13 +2196,14 @@ const products = [
       {
         type: "markdown",
         data: `### Søk om hjelpemidler (dette er et fellesskjema som brukes for mange hjelpemidler, må ha generisk tekst?)
-          Hvis du er Hjelpemiddelformidler i kommunen og har fått nødvendige tilganger, kan du nå søke digitalt om et utvalg av enkle hjelpemidler. Når du skal søke på vegne av andre trenger du signert fullmakt.`,
+        Hvis du er Hjelpemiddelformidler i kommunen og har fått nødvendige tilganger, kan du nå søke digitalt om et utvalg av enkle hjelpemidler. Når du skal søke på vegne av andre trenger du signert fullmakt.`,
       },
       {
         type: "actions",
         data: [
           {
             text: "Send skjema",
+            href: "/soknad/temp-hjelpemidler-for-a-huske-planlegge-og-organisere-sam.html",
             variant: "primary",
           },
         ],
@@ -2502,6 +2221,7 @@ const products = [
         data: [
           {
             text: "Send søknad",
+            href: "/soknad/temp-hjelpemidler-for-a-huske-planlegge-og-organisere-sam.html",
             variant: "primary",
           },
         ],
@@ -2531,6 +2251,7 @@ const products = [
     type: [
       "Pengestøtte",
       "Hjelpemiddel",
+      "Skjema",
     ],
     role: ["Hjelpemiddelformidler"],
     contentBlocks: [
@@ -2544,6 +2265,7 @@ const products = [
         data: [
           {
             text: "Send skjema",
+            href: "/soknad/temp-bevegelseshjelpemidler-sam.html",
             variant: "primary",
           },
         ],
@@ -2561,6 +2283,7 @@ const products = [
         data: [
           {
             text: "Send skjema",
+            href: "/soknad/temp-bevegelseshjelpemidler-sam.html",
             variant: "primary",
           },
         ],
@@ -2578,6 +2301,22 @@ const products = [
         data: [
           {
             text: "Send søknad",
+            href: "/soknad/temp-bevegelseshjelpemidler-sam.html",
+            variant: "primary",
+          },
+        ],
+      },
+      {
+        type: "markdown",
+        data: `### Last ned skjema for demontering av trappeheis, løfteplattform, sjaktheis eller takheis
+          Skjemaet skal fylles ut og returneres sammen med demontert heis.`,
+      },
+      {
+        type: "actions",
+        data: [
+          {
+            text: "Last ned skjema",
+            href: "/soknad/temp-bevegelseshjelpemidler-sam.html",
             variant: "primary",
           },
         ],
@@ -2610,6 +2349,7 @@ const products = [
     ],
     role: [
       "Hjelpemiddelformidler",
+      "Lege, tannlege eller annen behandler",
     ],
     contentBlocks: [
       {
@@ -2622,6 +2362,7 @@ const products = [
         data: [
           {
             text: "Send skjema",
+            href: "/soknad/temp-ortopediske-hjelpemidler-sam.html",
             variant: "primary",
           },
         ],
@@ -2639,6 +2380,7 @@ const products = [
         data: [
           {
             text: "Send skjema",
+            href: "/soknad/temp-ortopediske-hjelpemidler-sam.html",
             variant: "primary",
           },
         ],
@@ -2652,6 +2394,7 @@ const products = [
         data: [
           {
             text: "Skriv ut førsteside",
+            href: "/soknad/temp-ortopediske-hjelpemidler-sam.html",
             variant: "secondary",
           },
         ],
@@ -2669,6 +2412,7 @@ const products = [
         data: [
           {
             text: "Send søknad",
+            href: "/soknad/temp-ortopediske-hjelpemidler-sam.html",
             variant: "primary",
           },
         ],
@@ -2685,97 +2429,6 @@ const products = [
         data: [
           {
             text: "Ortopediske hjelpemidler",
-            dot: "bg-green-300",
-          },
-        ],
-      },
-    ],
-  },
-  {
-    title: "Ortopediske hjelpemidler",
-    ingress: "Ingress",
-    icon: "/src/_includes/svg/pictograms/ortopediske-sko.svg",
-    type: [
-      "Pengestøtte",
-      "Hjelpemiddel",
-    ],
-    role: [
-      "Lege, tannlege eller annen behandler",
-    ],
-    contentBlocks: [
-      {
-        type: "markdown",
-        data: `### Søk om ortopedisk hjelpemidler
-          Gjelder hvis du skal søke om protese (har ikke disse egne søknader?), ortose, spesialfottøy, aktivitetshjelpemidler for brukere over 26 år, fotseng eller ortopedisk sydd fottøy. Skjemaet fylles ut av legespesialist eller sykehuslege (ved førstegangssøknad eller fornyelse) eller ortopediingeniør (ved fornyelse).`,
-      },
-      {
-        type: "actions",
-        data: [
-          {
-            text: "Send skjema",
-            variant: "primary",
-          },
-        ],
-      },
-      {
-        type: "markdown",
-        data: `Er søknaden om ortopedisk hjelpemiddel fylt ut i legens pasientjournalsystem eller (på papir?) av ortopediingeniør? Da må du skrive ut en førsteside som du legger ved søknaden når du sender søknaden i posten.`,
-      },
-      {
-        type: "actions",
-        data: [
-          {
-            text: "Skriv ut førsteside",
-            variant: "secondary",
-          },
-        ],
-      },
-      {
-        type: "line",
-      },
-      {
-        type: "markdown",
-        data: `### Skriv begrunnelse for behov for ortopediske sko
-          Sykehusleger og spesialister i ortopedisk kirurgi må begrunne behovet i et eget felt på søknadsskjemaet (skrives kanskje bare ut førsteside? kan fylles ut i legens epj-system). Avhengig av hvilken type ortopedisk hjelpemiddel det søkes om, kan også andre legespesialister begrunne behovet.`,
-      },
-      {
-        type: "actions",
-        data: [
-          {
-            text: "Send søknad",
-            variant: "primary",
-          },
-        ],
-      },
-      {
-        type: "line",
-      },
-      {
-        type: "markdown",
-        data: `### Be om fullmakt
-          Skjemaet benyttes når søker gir fullmakt til at søknad kan hentes fra nav.no og fylles ut av behandler/kartlegger i etterkant av kartlegging.`,
-      },
-      {
-        type: "actions",
-        data: [
-          {
-            text: "Send søknad",
-            variant: "primary",
-          },
-        ],
-      },
-      {
-        type: "line",
-      },
-      {
-        type: "markdown",
-        data: `### Mer om`,
-      },
-      {
-        type: "microcards",
-        data: [
-          {
-            text: "Hjelpemidler",
             dot: "bg-green-300",
           },
         ],
@@ -2804,6 +2457,7 @@ const products = [
         data: [
           {
             text: "Send skjema",
+            href: "/soknad/temp-hjelpemidler-for-a-lese-og-skrive-sam.html",
             variant: "primary",
           },
         ],
@@ -2821,6 +2475,7 @@ const products = [
         data: [
           {
             text: "Send skjema",
+            href: "/soknad/temp-hjelpemidler-for-a-lese-og-skrive-sam.html",
             variant: "primary",
           },
         ],
@@ -2838,6 +2493,7 @@ const products = [
         data: [
           {
             text: "Send søknad",
+            href: "/soknad/temp-hjelpemidler-for-a-lese-og-skrive-sam.html",
             variant: "primary",
           },
         ],
@@ -2877,6 +2533,7 @@ const products = [
         data: [
           {
             text: "Send skjema",
+            href: "/soknad/temp-lonnsgaranti-sam.html",
             variant: "primary",
           },
         ],
@@ -2919,6 +2576,7 @@ const products = [
         data: [
           {
             text: "Send skjema",
+            href: "/soknad/temp-meld-behov-for-hjelpemidler-sam.html",
             variant: "primary",
           },
         ],
@@ -2959,6 +2617,7 @@ const products = [
         data: [
           {
             text: "Send skjema",
+            href: "/soknad/temp-oppfostringsbidrag-sam.html",
             variant: "primary",
           },
         ],
@@ -2975,45 +2634,6 @@ const products = [
         data: [
           {
             text: "Oppfostringsbidrag",
-            dot: "bg-lightblue-300",
-          },
-        ],
-      },
-    ],
-  },
-  {
-    title: "Demontering av heis",
-    ingress: "Ingress",
-    icon: "/src/_includes/svg/pictograms/slik-gjor-du-det.svg",
-    type: ["Skjema"],
-    role: ["Hjelpemiddelformidler"],
-    contentBlocks: [
-      {
-        type: "markdown",
-        data: `### Last ned skjema for demontering av trappeheis, løfteplattform, sjaktheis eller takheis
-          Skjemaet skal fylles ut og returneres sammen med demontert heis.`,
-      },
-      {
-        type: "actions",
-        data: [
-          {
-            text: "Last ned skjema",
-            variant: "primary",
-          },
-        ],
-      },
-      {
-        type: "line",
-      },
-      {
-        type: "markdown",
-        data: `### Mer om`,
-      },
-      {
-        type: "microcards",
-        data: [
-          {
-            text: "Demontering av heis",
             dot: "bg-lightblue-300",
           },
         ],
@@ -3059,19 +2679,19 @@ const products = [
     type: ["Skjema"],
     role: [
       "Ansatt i NAV-kontor, kommunen eller fylkeskommunen",
-      "Andre",
+      "Andre samarbeidspartnere",
     ],
     contentBlocks: [
       {
         type: "markdown",
-        data: `### Meld fra om institusjonsopphold
-          Noe tekst`,
+        data: `### Meld fra om institusjonsopphold`,
       },
       {
         type: "actions",
         data: [
           {
             text: "Send skjema",
+            href: "/soknad/temp-opphold-i-kriminalomsorgen-meld-fra-sam.html",
             variant: "primary",
           },
         ],
@@ -3101,20 +2721,20 @@ const products = [
     icon: "/src/_includes/svg/pictograms/slik-gjor-du-det.svg",
     type: ["Skjema"],
     role: [
-      "Andre",
+      "Andre samarbeidspartnere",
       "Ansatt i NAV-kontor, kommunen eller fylkeskommunen",
     ],
     contentBlocks: [
       {
         type: "markdown",
-        data: `### Meld fra om innleggelse
-          Noe tekst`,
+        data: `### Meld fra om innleggelse`,
       },
       {
         type: "actions",
         data: [
           {
             text: "Send skjema",
+            href: "/soknad/temp-opphold-pa-alders-eller-sykehjem-meld-fra-sam.html",
             variant: "primary",
           },
         ],
@@ -3144,7 +2764,7 @@ const products = [
     icon: "/src/_includes/svg/pictograms/slik-gjor-du-det.svg",
     type: ["Skjema"],
     role: [
-      "Andre",
+      "Andre samarbeidspartnere",
       "Ansatt i NAV-kontor, kommunen eller fylkeskommunen",
     ],
     contentBlocks: [
@@ -3190,6 +2810,7 @@ const products = [
         data: [
           {
             text: "Send skjema",
+            href: "/soknad/temp-jobbklubb-sam.html",
             variant: "primary",
           },
         ],
@@ -3207,10 +2828,12 @@ const products = [
         data: [
           {
             text: "Send skjema",
+            href: "/soknad/temp-jobbklubb-sam.html",
             variant: "primary",
           },
           {
             text: "Ettersend dokumentasjon",
+            href: "/soknad/temp-jobbklubb-sam.html",
             variant: "secondary",
           },
         ],
@@ -3238,8 +2861,8 @@ const getTags = (array, key) => {
 
   return [...tagSet].sort((a, b) => {
     if (a == b) return 0;
-    if (a == "Andre") return 1;
-    if (b == "Andre") return -1;
+    if (a == "Andre samarbeidspartnere") return 1;
+    if (b == "Andre samarbeidspartnere") return -1;
 
     if (a < b) return -1;
     if (a > b) return 1;

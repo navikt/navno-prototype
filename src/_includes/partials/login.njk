@@ -1,0 +1,14 @@
+{# Notifications #}
+<aside class="grid grid-cols-layout">
+  <div class="relative col-full sm:col-wide">
+    <div class="absolute w-full sm:right-0 z-40 mb-10 bg-white rounded-b-lg shadow-xl sm:ml-auto sm:max-w-xl top-full inset-x-0 sm:inset-x-auto md:max-h-[92vh]" x-bind:class="loginOpen ? 'opacity-0 animate-dropdown' : 'hidden'">
+      <div class="p-8 text-lg min-h-64">
+        <p>Noe her</p>
+
+
+        <button class="inline-block px-6 py-2.5 mt-8 text-center text-white bg-blue-500 rounded hover:bg-blue-600" x-on:click="loggedIn = true, loginOpen = false">Logg inn</button>
+      </div>
+    </div>
+  </div>
+
+</aside>

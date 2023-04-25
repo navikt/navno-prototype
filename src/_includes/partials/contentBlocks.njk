@@ -2,7 +2,9 @@
 
 {# Markdown #}
 {%- if block.type === 'markdown' -%}
-  {{ block.data  | markdown | safe }}
+  <div class="markdown {{ block.class }}">
+    {{ block.data  | markdown | safe }}
+  </div>
 {%- endif -%}
 
 {# Actions #}
@@ -22,7 +24,7 @@
 
 {# Microcards #}
 {%- if block.type === 'microcards' -%}
-<div>
+<div class="!mt-1">
   {%- if block.title -%}
   <h4 class="font-semibold">{{ block.title | safe }}</h4>
   {%- endif -%}
@@ -89,7 +91,7 @@
 
 {# Radios #}
 {% if block.type === 'radios' %}
-  <div class="p-4 rounded bg-gray-50">
+  <div class="{{ block.class }}">
     <fieldset>
       <legend class="font-semibold">{{ block.legend }}</legend>
       {% if block.description %}
@@ -106,7 +108,7 @@
 
 {# Checkboxes #}
 {% if block.type === 'checkboxes' %}
-  <div class="p-4 rounded bg-gray-50">
+  <div class="{{ block.class }}">
     <fieldset>
       <legend class="font-semibold">{{ block.legend }}</legend>
       {% if block.description %}
@@ -123,14 +125,14 @@
 
 {# Text Input #}
 {% if block.type === 'textinput' %}
-  <div class="p-4 rounded bg-gray-50">
+  <div class="{{ block.class }}">
     {{ form.textinput({ label: block.label, description: block.description, id: 'text1' }) }}
   </div>
 {% endif %}
 
 {# Text Area #}
 {% if block.type === 'textarea' %}
-  <div class="p-4 rounded bg-gray-50">
+  <div class="{{ block.class }}">
     {{ form.textarea({ label: block.label, description: block.description, id: 'text2' }) }}
   </div>
 {% endif %}

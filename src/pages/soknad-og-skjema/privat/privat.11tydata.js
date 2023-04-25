@@ -49,7 +49,7 @@ const products = [
         data: [
           {
             text: "Send søknad",
-            href: "/soknad-og-skjema/aap/",
+            href: "/soknad/aap/",
             variant: "primary",
           },
         ],
@@ -67,7 +67,7 @@ const products = [
         data: [
           {
             text: "Send søknad",
-            href: "/soknad-og-skjema/aap/",
+            href: "/soknad/aap/",
             variant: "primary",
           },
         ],
@@ -87,7 +87,7 @@ const products = [
         data: [
           {
             text: "Send søknad",
-            href: "/soknad-og-skjema/aap/",
+            href: "/soknad/aap/",
             variant: "primary",
           },
         ],
@@ -107,7 +107,7 @@ const products = [
         data: [
           {
             text: "Send søknad",
-            href: "/soknad-og-skjema/aap/",
+            href: "/soknad/aap/",
             variant: "primary",
           },
         ],
@@ -127,7 +127,7 @@ const products = [
         data: [
           {
             text: "Send søknad",
-            href: "/soknad-og-skjema/aap/",
+            href: "/soknad/aap/",
             variant: "primary",
           },
         ],
@@ -147,7 +147,7 @@ const products = [
         data: [
           {
             text: "Send søknad",
-            href: "/soknad-og-skjema/aap/",
+            href: "/soknad/aap/",
             variant: "primary",
           },
         ],
@@ -1469,6 +1469,7 @@ const products = [
         data: [
           {
             text: "Be om innsyn",
+            href: "/soknad/temp-aa-registeret-fa-innsyn.html",
             variant: "primary",
           },
         ],
@@ -1509,7 +1510,7 @@ const products = [
         data: [
           {
             text: "Send søknad",
-            href: "/soknad-og-skjema/foreldrepenger/",
+            href: "/soknad/foreldrepenger/",
             variant: "primary",
           },
         ],
@@ -1526,6 +1527,7 @@ const products = [
         data: [
           {
             text: "Send søknad",
+            href: "/soknad/temp-foreldrepenger.html",
             variant: "primary",
           },
         ],
@@ -1566,7 +1568,7 @@ const products = [
         data: [
           {
             text: "Send søknad",
-            href: "/soknad-og-skjema/foreldrepenger/",
+            href: "/soknad/foreldrepenger/",
             variant: "primary",
           },
         ],
@@ -1927,7 +1929,7 @@ const products = [
         data: [
           {
             text: "Send søknad",
-            href: "/soknad-og-skjema/dagpenger/",
+            href: "/soknad/dagpenger/",
             variant: "primary",
           },
         ],

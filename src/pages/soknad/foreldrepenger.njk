@@ -1,27 +1,10 @@
 ---
 type: 'Mellomsteg'
-title: 'Søk om dagpenger'
+title: 'Søk om foreldrepenger'
 kicker: 'Søknad'
 tags: ['template']
-permalink: "/soknad-og-skjema/{{ page.fileSlug }}/"
+permalink: "/soknad/{{ page.fileSlug }}/"
 order: 7
-fileList:
-  -
-    title: Søknad om dagpenger når du er arbeidsledig
-    type: PDF
-    filesize: 100 kB
-  -
-    title: Søknad om dagpenger når du er permittert
-    type: PDF
-    filesize: 100 kB
-  -
-    title: Søknad om å gjenoppta dagpenger når du er permittert
-    type: PDF
-    filesize: 100 kB
-  -
-    title: Søknad om å gjenoppta dagpenger når du er permittert
-    type: PDF
-    filesize: 100 kB
 ---
 {%- extends 'base-basic.njk' -%}
 
@@ -70,16 +53,6 @@ fileList:
                     name: 'application-format',
                     value: 'post',
                     id: 'field-2a',
-                    xModel: 'applicationFormat'
-                  }) }}
-                </li>
-                <li class="relative">
-                  {{ form.radio({
-                    label: 'Last ned papirsøknad (pdf)',
-                    description: 'Skriv ut en papirsøknad som du fyller ut for hånd og sender i posten. Du trenger ikke å logge inn.',
-                    name: 'application-format',
-                    value: 'pdf',
-                    id: 'field-3a',
                     xModel: 'applicationFormat'
                   }) }}
                 </li>
@@ -141,23 +114,6 @@ fileList:
                 </li>
               </ul>
             </fieldset>
-            <div x-show="applicationStep === 3">
-              <h3 class="text-xl font-semibold">Last ned papirsøknad</h3>
-              <p class="mt-1">Du skriver ut en papirsøknad som du fyller ut for hånd og sender i posten. Du trenger ikke å logge inn.</p>
-              <ul class="grid gap-1.5 mt-8">
-                {% for item in fileList %}
-                  <li>
-                    <a href="#" class="flex items-start gap-2 pt-2 pb-1.5 pl-3 pr-6 text-blue-500 rounded-lg bg-gray-100 fine:hover:text-deepblue-600 group fine:hover:bg-gray-50">
-                      {{ '/src/_includes/svg/icons/download.svg' | svgContents('w-6 h-6 shrink-0 translate-y-0.5') | safe }}
-                      <span class="grid">
-                        <span class="font-semibold underline group-hover:no-underline">{{ item.title }}</span>
-                        <span class="text-base text-gray-700">{{ item.type }} {{ item.filesize }}</span>
-                      </span>
-                    </a>
-                  </li>
-                {% endfor %}
-              </ul>
-            </div>
             <div class="mt-7" x-show="(applicationStep === 1) && (applicationFormat === 'post')">
               <button
                 class="inline-flex px-6 py-2.5 text-white bg-blue-500 fine:hover:bg-blue-600 rounded focus-visible:outline-none focus-visible:ring focus-visible:ring-blue-800 focus-visible:ring-offset-1 focus-visible:ring-offset-white"
@@ -165,18 +121,11 @@ fileList:
                 x-on:click="applicationStep = 2"
               >Neste</button>
             </div>
-            <div class="mt-7" x-show="(applicationStep === 1) && (applicationFormat === 'pdf')">
-              <button
-                class="inline-flex px-6 py-2.5 text-white bg-blue-500 fine:hover:bg-blue-600 rounded focus-visible:outline-none focus-visible:ring focus-visible:ring-blue-800 focus-visible:ring-offset-1 focus-visible:ring-offset-white"
-                type="button"
-                x-on:click="applicationStep = 3"
-              >Neste</button>
-            </div>
             <div class="mt-7">
               <a
                 x-show="(applicationStep === 2) || (applicationFormat === 'digital')"
                 class="inline-flex px-6 py-2.5 text-white bg-blue-500 fine:hover:bg-blue-600 rounded focus-visible:outline-none focus-visible:ring focus-visible:ring-blue-800 focus-visible:ring-offset-1 focus-visible:ring-offset-white"
-                href="/soknad-og-skjema/dagpenger/intro/"
+                href="#"
               >Neste</a>
               <button
                 x-show="(applicationStep === 2) || (applicationStep === 3)"

@@ -9,6 +9,7 @@ const {
   markdownInline,
   console,
   filterByRole,
+  lowerfirst,
 } = require("./src/_11ty/filters.js");
 const { timestampNow } = require("./src/_11ty/shortcodes.js");
 const { minifyHtml } = require("./src/_11ty/transforms.js");
@@ -41,6 +42,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter("markdownInline", markdownInline);
   eleventyConfig.addFilter("console", console);
   eleventyConfig.addFilter("filterByRole", filterByRole);
+  eleventyConfig.addFilter("lowerfirst", lowerfirst);
 
   // Templating collections
   eleventyConfig.addCollection("typeFilter", typeFilter);

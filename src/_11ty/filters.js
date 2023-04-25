@@ -4,7 +4,7 @@ const util = require("util");
 const markdown = (value) => {
   return new markdownIt({
     html: true,
-    linkify: true,
+    linkify: false,
     typographer: true,
     quotes: "«»",
   })
@@ -26,4 +26,14 @@ const console = (value) => {
   return util.inspect(value);
 };
 
-module.exports = { markdown, markdownInline, filterByRole, console };
+const lowerfirst = (value) => {
+  return value.charAt(0).toLowerCase() + value.slice(1);
+};
+
+module.exports = {
+  markdown,
+  markdownInline,
+  filterByRole,
+  console,
+  lowerfirst,
+};
