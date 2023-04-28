@@ -1,25 +1,35 @@
----
-type: 'Mellomsteg'
-title: Søk om arbeids&shy;avklarings&shy;penger (AAP)
-kicker: Søknad
-tags: ['template']
-permalink: "/soknad/{{ page.fileSlug }}/"
-order: 7
+---js
+{
+  type: "Mellomsteg",
+  tags: ["template"],
+  pagination: {
+    data: "preSteps",
+    size: 1,
+    alias: "step",
+  },
+  eleventyComputed: {
+    title: 'Søk om arbeids&shy;avklarings&shy;penger (AAP)',
+    kicker: "Søknad",
+    stepTitle: "{{ step.title }}",
+    permalink: "/soknad/aap/",
+  }
+}
 ---
 {%- extends 'base-basic.njk' -%}
 
 {%- from "macros/button.njk" import button -%}
 {%- import "macros/formFields.njk" as form -%}
 
+
 {%- block content -%}
   <main class="grid py-8 md:py-12 text-lg grid-cols-layout min-h-[70vh]" x-data="{ stepperOpen: false }">
-    <div class="relative col-wide max-w-prose md:max-w-none mx-auto md:mx-0 grid md:grid-cols-[6rem_auto] gap-x-8 items-start mb-12 w-full auto-rows-min">
+    <div class="relative col-wide max-w-prose md:max-w-none mx-auto md:mx-0 md:grid md:grid-cols-[6rem_auto] md:gap-8 items-start mb-12 w-full auto-rows-min">
 
       {# Pictogram #}
-      {{ '/src/_includes/svg/pictograms/soknad-og-skjema.svg' | svgContents('w-full h-auto max-w-20 md:ml-2 text-green-800 absolute right-0 md:relative hidden xs:block') | safe }}
+      {{ '/src/_includes/svg/pictograms/soknad-og-skjema.svg' | svgContents('w-full h-auto max-w-20 md:ml-2 text-green-800 float-right ml-8') | safe }}
 
       {# Intro #}
-      <div class="xs:pr-28 md:pr-0 md:col-start-2 md:row-start-1">
+      <div class="md:col-start-2 md:row-start-1">
         <h1 class="text-3xl font-semibold leading-tight md:text-5xl md:leading-tight">{{ title | safe }}</h1>
         <p class="mt-2 text-base tracking-wider uppercase opacity-70">
           {{ kicker | upper }}
@@ -28,40 +38,35 @@ order: 7
         </p>
       </div>
 
-      <div class="md:col-start-2 md:grid md:grid-cols-[2.2fr_0.8fr] gap-x-16 items-start gap-4">
-        <div class="text-lg max-w-prose markdown">
-
-          <form class="mt-12">
-            <fieldset>
-              <legend class="font-semibold">Hvordan vil du sende søknaden?</legend>
-              <ul class="grid mt-2 justify-items-start">
-                <li class="relative">
-                  {{ form.radio({
-                    label: 'Send digitalt',
-                    description: 'Du blir bedt om å logge inn',
-                    name: 'application-format',
-                    id: 'field-1a',
-                    value: 'digital',
-                    checked: true
-                  }) }}
-                </li>
-                <li class="relative">
-                  {{ form.radio({
-                    label: 'Send i posten',
-                    description: 'Fyll ut søknaden før du skriver den ut. Du trenger ikke å logge inn.',
-                    name: 'application-format',
-                    value: 'post',
-                    id: 'field-2a'
-                  }) }}
-                </li>
-              </ul>
-            </fieldset>
-            <div class="mt-7">
-              <a class="inline-flex px-6 py-2.5 text-white bg-blue-500 fine:hover:bg-blue-600 rounded focus-visible:outline-none focus-visible:ring focus-visible:ring-blue-800 focus-visible:ring-offset-1 focus-visible:ring-offset-white" href="/soknad/aap/intro/">Neste</a>
+      <div class="md:col-start-2">
+        <div class="mt-6 text-lg max-w-prose">
+          {% if step.markdown %}
+            <div class="markdown">
+              {{ step.markdown | markdown | safe }}
             </div>
-          </form>
-        </div>
+          {% endif %}
 
+          <h2 class="mt-8 text-xl font-semibold">{{ step.question }}</h2>
+          <ul class="grid gap-2 mt-2">
+            {% for answer in step.answers %}
+            <li>
+              <a href="{{ answer.href or '#' }}" class="flex items-center justify-between gap-4 px-4 py-3 border border-gray-400 rounded group sm:px-6 sm:py-4 hover:border-gray-600 hover:bg-blue-50 min-h-20">
+                <span class="grid">
+                <span class="text-xl font-semibold">{{ answer.title }}</span>
+                <span>{{ answer.description }}</span>
+                </span>
+                {{ '/src/_includes/svg/icons/chevron-right.svg' | svgContents('w-5 h-5 opacity-80 group-hover:translate-x-1 transition') | safe }}
+              </a>
+            </li>
+            {% endfor %}
+          </ul>
+
+          {% if pagination.pageNumber > 0 %}
+          <div class="mt-8">
+            <a class="font-semibold text-blue-500 underline hover:no-underline hover:text-deepblue-600" href="/soknad-og-skjema/dagpenger-1/">Tilbake</a>
+          </div>
+          {% endif %}
+        </div>
       </div>
     </div>
   </main>

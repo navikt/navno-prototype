@@ -1,9 +1,9 @@
-<aside x-ref="prototypeMenu" aria-label="Sider i prototypen" class="grid items-center min-h-screen font-mono text-xl text-white bg-deepblue-800 md:text-2xl">
+<aside x-ref="prototypeMenu" aria-label="Sider i prototypen" class="grid items-center min-h-screen font-mono text-xl text-white bg-gradient-to-b from-deepblue-800 via-deepblue-900 to-deepblue-900 md:text-2xl">
   <div class="grid grid-cols-layout py-clamp-gap">
     <h2 class="text-lg font-semibold tracking-widest uppercase col-wide text-deepblue-300">Sider i prototypen</h2>
     <ul class="mt-4 col-wide">
     {%- for page in collections.template | sort(false, false, 'data.order') -%}
-      <li class="grid items-center justify-start py-4 border-t border-gray-400/25 min-h-24">
+      <li class="grid items-center justify-start py-4 border-t border-deepblue-700 min-h-24">
         <a href="{{ page.url }}" class="inline-block fine:hover:text-blue-300 fine:hover:underline decoration-from-font underline-offset-4">
           {{ page.data.title | safe }}
         </a>

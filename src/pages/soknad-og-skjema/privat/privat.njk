@@ -4,7 +4,6 @@ title: 'Søknad og skjema'
 kicker: 'Fra A til Å'
 description: 'Finn søknad og skjema til pengestøtter og tjenester fra NAV.'
 tags: ['template']
-order: '5'
 activeRole: "Privat"
 permalink: "/soknad-og-skjema/"
 ---
@@ -71,14 +70,14 @@ permalink: "/soknad-og-skjema/"
       });
       updateCount()"
   >
-    <div class="relative col-wide max-w-prose md:max-w-none mx-auto md:mx-0 md:grid md:grid-cols-[6rem_auto] gap-x-8 items-start mb-12 w-full">
+    <div class="relative col-wide max-w-prose md:max-w-none mx-auto md:mx-0 md:grid md:grid-cols-[8rem_auto] gap-x-8 items-start mb-12 w-full">
 
       {# Pictogram #}
-      {{ '/src/_includes/svg/pictograms/support.svg' | svgContents('w-full h-auto max-w-20 ml-6 md:ml-2 text-green-800 float-right md:float-none row-start-1') | safe }}
+      {{ '/src/_includes/svg/pictograms/support.svg' | svgContents('w-full h-auto max-w-20 sm:max-w-24 ml-6 md:ml-2 text-green-800 float-right md:float-none row-start-1') | safe }}
 
       {# Intro #}
       <div class="md:col-start-2 md:row-start-1">
-        <h1 class="text-3xl font-semibold leading-tight md:text-5xl md:leading-tight">{{ title | safe }}</h1>
+        <h1 class="text-3xl font-semibold leading-tight sm:text-5xl md:leading-tight">{{ title | safe }}</h1>
         <p class="mt-2 text-sm tracking-wider text-gray-700 uppercase">{{ kicker | safe }}</p>
         <p class="max-w-2xl mt-6 text-xl md:text-2xl">{{ description | safe }}</p>
       </div>
@@ -146,7 +145,7 @@ permalink: "/soknad-og-skjema/"
               array: areaFilter,
               title: 'Velg område',
               value: 'areaFilter',
-                  showAll: true
+              showAll: true
             }) }}
             {{ filterGroup({
               array: typeFilter,
