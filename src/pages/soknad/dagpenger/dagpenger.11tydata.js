@@ -11,13 +11,13 @@ const preSteps = [
       {
         title: "Send i posten",
         description: "Du fyller ut søknaden før du skriver den ut.",
-        href: "/soknad-og-skjema/dagpenger-2/",
+        href: "/soknad/dagpenger-1/",
       },
       {
         title: "Last ned papirsøknad",
         description:
           "Du skriver ut en papirsøknad som du fyller ut for hånd og sender i posten.",
-        href: "/soknad-og-skjema/dagpenger-3/",
+        href: "/soknad/dagpenger-2/",
       },
     ],
   },

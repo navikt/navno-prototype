@@ -11,7 +11,7 @@
     title: "Søk om dagpenger",
     kicker: "Søknad",
     stepTitle: "{{ step.title }}",
-    permalink: "/soknad-og-skjema/dagpenger-{{ pagination.pageNumber + 1 }}/",
+    permalink: "/soknad/dagpenger{{ '-' + pagination.pageNumber if pagination.pageNumber >= 1 }}/",
   }
 }
 ---
@@ -61,9 +61,9 @@
             {% endfor %}
           </ul>
 
-          {% if pagination.pageNumber > 0 %}
+          {% if pagination.pageNumber >= 1 %}
           <div class="mt-8">
-            <a class="font-semibold text-blue-500 underline hover:no-underline hover:text-deepblue-600" href="/soknad-og-skjema/dagpenger-1/">Tilbake</a>
+            <a class="font-semibold text-blue-500 underline hover:no-underline hover:text-deepblue-600" href="/soknad/dagpenger/">Tilbake</a>
           </div>
           {% endif %}
         </div>
