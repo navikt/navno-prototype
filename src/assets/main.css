@@ -10,7 +10,7 @@
 }
 @layer components {
   .markdown > *:not(hr, div) {
-    max-width: 72ch;
+    max-width: 65ch;
   }
   .markdown > :where(*):not(h2, h3, h4, h5) + * {
     margin-block-start: theme("spacing.7");
@@ -178,8 +178,8 @@
     --_layout-gap: clamp(0.75rem, -2rem + 10vw, 6rem);
     --_layout-full: minmax(var(--_layout-gap), 1fr);
     --_layout-wide: minmax(0, 10rem);
-    --_layout-normal: minmax(0, 10.125rem);
-    --_layout-narrow: min(39.75rem, 100% - (var(--_layout-gap) * 2));
+    --_layout-normal: minmax(0, 6rem);
+    --_layout-narrow: min(48rem, 100% - (var(--_layout-gap) * 2));
 
     grid-template-columns:
       [full-start] var(--_layout-full)
