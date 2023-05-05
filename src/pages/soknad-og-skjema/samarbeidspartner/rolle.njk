@@ -10,7 +10,7 @@
   eleventyComputed: {
     roleSlug: "{{ role | slugify }}",
     permalink: "/soknad-og-skjema-samarbeidspartner/{{ role | slugify }}/",
-    description: 'Finn søknad og skjema til pengestøtter og tjenester {{ role | lowerfirst }} fra NAV'
+    description: 'Finn søknad og skjema til pengestøtter og tjenester for {{ role | lowerfirst }} fra NAV'
   }
 }
 ---
@@ -22,7 +22,7 @@
 {%- from "macros/microcard.njk" import microcard -%}
 {%- from "macros/filterGroup.njk" import filterGroup -%}
 
-{%- set productsLength = products | filterByRole(role) | length -%}
+{%- set productsLength = products | productsByRole(role) | length -%}
 
 {%- block content -%}
   {% include "partials/language.njk" %}
@@ -136,8 +136,10 @@
                 <input id="searchFilter-desktop" type="search" x-model="search" class="w-full max-w-xl pl-10 pr-3 py-2.5 border border-gray-300 rounded shadow-inner bg-white focus:outline-none focus:ring focus:ring-blue-800">
               </div>
             </div>
+            {% set reducedTypeFilter = products | productTypesFromProductRole(role) %}
+
             {{ filterGroup({
-              array: typeFilter,
+              array: reducedTypeFilter,
               title: 'Velg type',
               value: 'typeFilter',
               showAll: true
