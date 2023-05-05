@@ -18,8 +18,13 @@ const markdownInline = (value) => {
   }).renderInline(value);
 };
 
-const filterByRole = (array, role) => {
+const productsByRole = (array, role) => {
   return array.filter((item) => item.role.includes(role));
+};
+
+const productTypesFromProductRole = (array, role) => {
+  const filteredArray = array.filter((item) => item.role.includes(role));
+  return [...new Set(filteredArray.map(item => item.type).flat())]
 };
 
 const console = (value) => {
@@ -33,7 +38,8 @@ const lowerfirst = (value) => {
 module.exports = {
   markdown,
   markdownInline,
-  filterByRole,
+  productsByRole,
+  productTypesFromProductRole,
   console,
   lowerfirst,
 };
