@@ -18,14 +18,25 @@ const markdownInline = (value) => {
   }).renderInline(value);
 };
 
-const productsByRole = (array, role) => {
-  return array.filter((item) => item.role.includes(role));
+const filterByArray = (array, key) => {
+  return array.filter((item) => item.role.includes(key));
 };
 
-const productTypesFromProductRole = (array, role) => {
-  const filteredArray = array.filter((item) => item.role.includes(role));
-  return [...new Set(filteredArray.map(item => item.type).flat())]
+const extractTags = (array, key) => {
+  return [...new Set(array.map(item => item[key]).flat())]
 };
+
+const sortStringLast = (array, string) => {
+  return array.sort((a, b) => {
+    if (a == b) return 0;
+    if (a == string) return 1;
+    if (b == string) return -1;
+
+    if (a < b) return -1;
+    if (a > b) return 1;
+    return 0;
+  });
+}
 
 const console = (value) => {
   return util.inspect(value);
@@ -38,8 +49,9 @@ const lowerfirst = (value) => {
 module.exports = {
   markdown,
   markdownInline,
-  productsByRole,
-  productTypesFromProductRole,
+  filterByArray,
+  extractTags,
+  sortStringLast,
   console,
   lowerfirst,
 };

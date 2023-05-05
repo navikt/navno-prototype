@@ -8,8 +8,9 @@ const {
   markdown,
   markdownInline,
   console,
-  productsByRole,
-  productTypesFromProductRole,
+  filterByArray,
+  extractTags,
+  sortStringLast,
   lowerfirst,
 } = require("./src/_11ty/filters.js");
 const { timestampNow } = require("./src/_11ty/shortcodes.js");
@@ -42,9 +43,10 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter("markdown", markdown);
   eleventyConfig.addFilter("markdownInline", markdownInline);
   eleventyConfig.addFilter("console", console);
-  eleventyConfig.addFilter("productsByRole", productsByRole);
+  eleventyConfig.addFilter("filterByArray", filterByArray);
   eleventyConfig.addFilter("lowerfirst", lowerfirst);
-  eleventyConfig.addFilter("productTypesFromProductRole", productTypesFromProductRole);
+  eleventyConfig.addFilter("extractTags", extractTags);
+  eleventyConfig.addFilter("sortStringLast", sortStringLast);
 
   // Templating collections
   eleventyConfig.addCollection("typeFilter", typeFilter);

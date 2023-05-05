@@ -2586,37 +2586,8 @@ Fullmakten gjelder ikke for tilleggsskjemaer som krever underskrift. Der hvor de
   },
 ];
 
-const getTags = (array, key) => {
-  let tagSet = new Set();
-
-  array.forEach(function (item) {
-    if (key in item) {
-      let tags = item[key];
-
-      tags = tags.filter((item) => {
-        return true;
-      });
-
-      for (const tag of tags) {
-        tagSet.add(tag);
-      }
-    }
-  });
-
-  return [...tagSet].sort((a, b) => {
-    if (a == b) return 0;
-    if (a == "Andre samarbeidspartnere") return 1;
-    if (b == "Andre samarbeidspartnere") return -1;
-
-    if (a < b) return -1;
-    if (a > b) return 1;
-    return 0;
-  });
-};
-
 module.exports = {
   products,
   activeRole: "Samarbeidspartner",
-  typeFilter: getTags(products, "type"),
-  roleFilter: getTags(products, "role"),
+  roleFilter: [...new Set(products.map(item => item["role"]).flat())],
 };

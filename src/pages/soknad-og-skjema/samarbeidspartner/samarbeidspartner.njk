@@ -24,7 +24,7 @@ permalink: '/soknad-og-skjema-samarbeidspartner/'
 
       <div class="mt-8 md:col-start-2">
         <ul class="gap-12 text-xl lg:columns-2">
-          {% for item in roleFilter %}
+          {% for item in roleFilter | sort(true, false) | reverse %}
           <li class="-mb-px border-t border-b border-gray-200 break-inside-avoid">
             <a href="/soknad-og-skjema-samarbeidspartner/{{ item | slugify }}/" class="relative z-10 inline-block py-4 text-left text-blue-500 underline hover:no-underline hover:text-deepblue-600">{{ item | safe }}</a>
           </li>

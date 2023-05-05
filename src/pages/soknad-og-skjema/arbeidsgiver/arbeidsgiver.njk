@@ -11,6 +11,9 @@ permalink: '/soknad-og-skjema-arbeidsgiver/'
 {%- from "macros/microcard.njk" import microcard -%}
 {%- from "macros/filterGroup.njk" import filterGroup -%}
 
+{%- set areasByProducts = products | extractTags('area') -%}
+{%- set typesByProducts = products | extractTags('type') -%}
+
 {%- block content -%}
   {% include "partials/language.njk" %}
 
@@ -111,13 +114,13 @@ permalink: '/soknad-og-skjema-arbeidsgiver/'
               <form class="mt-8 bg-white col-narrow">
                 <div class="relative grid gap-8">
                   {{ filterGroup({
-                    array: areaFilter,
+                    array: (areasByProducts | sortStringLast('Annet')),
                     title: 'Velg område',
                     value: 'areaFilter',
                     showAll: true
                   }) }}
                   {{ filterGroup({
-                    array: typeFilter,
+                    array: (typesByProducts | sort(true, false) | reverse),
                     title: 'Velg type',
                     value: 'typeFilter',
                     showAll: true
@@ -139,13 +142,13 @@ permalink: '/soknad-og-skjema-arbeidsgiver/'
               </div>
             </div>
             {{ filterGroup({
-              array: areaFilter,
+              array: (areasByProducts | sortStringLast('Annet')),
               title: 'Velg område',
               value: 'areaFilter',
               showAll: true
             }) }}
             {{ filterGroup({
-              array: typeFilter,
+              array: (typesByProducts | sort(true, false) | reverse),
               title: 'Velg type',
               value: 'typeFilter',
               showAll: true
