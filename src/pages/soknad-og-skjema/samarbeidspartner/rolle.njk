@@ -23,6 +23,7 @@
 {%- from "macros/filterGroup.njk" import filterGroup -%}
 
 {%- set productsLength = products | productsByRole(role) | length -%}
+{%- set reducedTypeFilter = products | productTypesFromProductRole(role) | sort(true, false) | reverse -%}
 
 {%- block content -%}
   {% include "partials/language.njk" %}
@@ -136,8 +137,6 @@
                 <input id="searchFilter-desktop" type="search" x-model="search" class="w-full max-w-xl pl-10 pr-3 py-2.5 border border-gray-300 rounded shadow-inner bg-white focus:outline-none focus:ring focus:ring-blue-800">
               </div>
             </div>
-            {% set reducedTypeFilter = products | productTypesFromProductRole(role) %}
-
             {{ filterGroup({
               array: reducedTypeFilter,
               title: 'Velg type',
