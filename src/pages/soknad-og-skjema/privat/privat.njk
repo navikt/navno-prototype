@@ -73,22 +73,20 @@ permalink: "/soknad-og-skjema/"
       });
       updateCount()"
   >
-    <div class="relative col-wide max-w-prose md:max-w-none mx-auto md:mx-0 md:grid md:grid-cols-[8rem_auto] gap-x-8 items-start mb-12 w-full">
+    <div class="relative col-wide md:grid md:grid-cols-[8rem_auto] gap-x-8 items-start mb-12 w-full">
 
       {# Pictogram #}
-      {{ '/src/_includes/svg/pictograms/support.svg' | svgContents('w-full h-auto max-w-20 sm:max-w-24 ml-6 md:ml-2 text-green-800 float-right md:float-none row-start-1') | safe }}
+      {{ '/src/_includes/svg/pictograms/support.svg' | svgContents('w-full h-auto max-w-24 text-green-800 float-right md:float-none row-start-1 justify-self-end') | safe }}
 
-      {# Intro #}
-      <div class="md:col-start-2 md:row-start-1">
-        <h1 class="text-3xl font-semibold leading-tight sm:text-5xl md:leading-tight">{{ title | safe }}</h1>
-        <p class="mt-2 text-sm tracking-wider text-gray-700 uppercase">{{ kicker | safe }}</p>
-        <p class="max-w-2xl mt-6 text-xl md:text-2xl">{{ description | safe }}</p>
-      </div>
+      <div class="lg:grid lg:col-start-2 lg:grid-cols-12 lg:gap-x-10 md:pr-20 lg:pr-0">
+        {# Intro #}
+        <div class="lg:col-start-1 lg:col-end-9">
+          <h1 class="text-3xl font-semibold leading-tight sm:text-5xl md:leading-tight">{{ title | safe }}</h1>
+          <p class="mt-2 text-sm tracking-wider text-gray-700 uppercase">{{ kicker | safe }}</p>
+          <p class="max-w-2xl mt-6 text-xl md:text-2xl">{{ description | safe }}</p>
+        </div>
 
-      <div class="md:col-start-2 md:grid md:grid-cols-[2fr_1fr] gap-x-16 items-start gap-4 mt-6">
-
-        <div class="top-4 md:col-start-2 md:row-start-1 md:sticky" x-data="{ filterDrawer: false }">
-
+        <div class="mt-6 lg:col-start-1 lg:col-end-9" x-data="{ filterDrawer: false }">
           <div class="mb-8 md:hidden">
             <label for="searchFilter-desktop" class="font-semibold">Bruk filter eller søk</label>
             <div class="flex flex-row-reverse gap-3 mt-1.5">
@@ -135,15 +133,6 @@ permalink: "/soknad-og-skjema/"
           </div>
 
           <div class="hidden gap-8 md:grid">
-            <div>
-              <label for="searchFilter-desktop" class="font-semibold">Finn tjeneste</label>
-              <div class="relative mt-2">
-                <span class="absolute inset-y-0 left-0 grid px-2.5 place-items-center">
-                  {{ '/src/_includes/svg/icons/search.svg' | svgContents('w-6 h-6') | safe }}
-                </span>
-                <input id="searchFilter-desktop" type="search" x-model="search" class="w-full max-w-xl pl-10 pr-3 py-2.5 border border-gray-300 rounded shadow-inner bg-white focus:outline-none focus:ring focus:ring-blue-800">
-              </div>
-            </div>
             {{ filterGroup({
               array: (areasByProducts | sortStringLast('Annet')),
               title: 'Velg område',
@@ -156,10 +145,19 @@ permalink: "/soknad-og-skjema/"
               value: 'typeFilter',
               showAll: true
             }) }}
+            <div>
+              <label for="searchFilter-desktop" class="font-semibold">Finn tjeneste</label>
+              <div class="relative mt-2">
+                <span class="absolute inset-y-0 left-0 grid px-2.5 place-items-center">
+                  {{ '/src/_includes/svg/icons/search.svg' | svgContents('w-6 h-6') | safe }}
+                </span>
+                <input id="searchFilter-desktop" type="search" x-model="search" class="w-full pl-10 pr-3 py-2.5 border border-gray-300 rounded shadow-inner bg-white focus:outline-none focus:ring focus:ring-blue-800">
+              </div>
+            </div>
           </div>
         </div>
 
-        <div class="md:col-start-1 md:row-start-1">
+        <div class="mt-8 md:mt-9 lg:col-start-1 lg:col-end-9">
           <p class="mb-2">Viser <span x-text="count"></span> av {{ products.length }}</p>
           <div class="border-b border-deepblue-100" x-ref="entries" x-show="count !== 0">
             {%- for product in products | sort(true, false, 'title') | reverse -%}
@@ -205,7 +203,7 @@ permalink: "/soknad-og-skjema/"
 
                   {%- if product.contentBlocks -%}
                     {%- for block in product.contentBlocks -%}
-                    {%- include "partials/contentBlocks.njk" -%}
+                      {%- include "partials/contentBlocks.njk" -%}
                     {%- endfor -%}
                   {%- else -%}
                     <div class="mt-4">
@@ -226,16 +224,16 @@ permalink: "/soknad-og-skjema/"
           <div x-show="count === 0" class="p-6 py-8 text-center grid items-center leading-snug rounded-lg bg-gray-100 min-h-[4.75rem] lg:col-span-6">
             <p class="max-w-prose">Ingen søknader eller skjema er merket med denne kombinasjonen av type og område.</p>
           </div>
-
-          <div class="p-4 mt-8 bg-orange-100 rounded-lg lg:px-6 lg:py-5">
-            <h3 class="text-xl font-semibold">
-              Klage eller anke på vedtak?
-            </h3>
-            <p class="mt-2 max-w-prose">Hvis du har fått et vedtak fra NAV og du er uenig i vedtaket, har du rett til å klage eller anke.</p>
-            <p class="mb-2 mt-7"><a href="#" class="underline text-deepblue-600 fine:hover:no-underline fine:hover:text-deepblue-700">Les mer om dine klagerettigheter</a>.</p>
-          </div>
-
         </div>
+
+        <div class="self-start p-4 mt-8 bg-orange-100 rounded-lg md:px-6 md:py-5 lg:col-start-9 lg:col-end-13 md:row-start-1 md:row-span-2 md:mt-20">
+          <h3 class="text-xl font-semibold">
+            Klage eller anke på vedtak?
+          </h3>
+          <p class="mt-2 max-w-prose">Hvis du har fått et vedtak fra NAV og du er uenig i vedtaket, har du rett til å klage eller anke.</p>
+          <p class="mb-2 mt-7"><a href="#" class="underline text-deepblue-600 fine:hover:no-underline fine:hover:text-deepblue-700">Les mer om dine klagerettigheter</a>.</p>
+        </div>
+
 
 
       </div>

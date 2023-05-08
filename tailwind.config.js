@@ -14,7 +14,7 @@ module.exports = {
       xs: "540px",
       sm: "800px",
       md: "1024px",
-      lg: "1280px",
+      lg: "1200px",
       xl: "1440px",
       fine: { raw: "(pointer: fine)" },
     },
