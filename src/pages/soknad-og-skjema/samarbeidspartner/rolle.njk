@@ -70,23 +70,22 @@
       });
       updateCount()"
   >
-    <div class="relative col-wide max-w-prose md:max-w-none mx-auto md:mx-0 md:grid md:grid-cols-[6rem_auto] gap-x-8 items-start mb-12 w-full">
+    <div class="relative col-wide md:grid md:grid-cols-[8rem_auto] gap-x-8 items-start mb-12 w-full">
 
       {# Pictogram #}
       {{ '/src/_includes/svg/pictograms/support.svg' | svgContents('w-full h-auto max-w-20 ml-6 md:ml-2 text-green-800 float-right md:float-none row-start-1') | safe }}
 
-      {# Intro #}
-      <div class="md:col-start-2 md:row-start-1">
-        <h1 class="text-3xl font-semibold leading-tight md:text-5xl md:leading-tight">{{ title | safe }}</h1>
-        <p class="mt-2 text-sm tracking-wider text-gray-700 uppercase">{{ kicker | safe }}</p>
-        <p class="max-w-2xl mt-8 text-xl md:text-2xl">{{ description | safe }}. <a class="text-blue-500 underline hover:no-underline hover:text-deepblue-600" href="/soknad-og-skjema-samarbeidspartner/">Bytt rolle</a>.</p>
-      </div>
+      <div class="lg:grid lg:col-start-2 lg:grid-cols-12 lg:gap-x-10 md:pr-20 lg:pr-0">
+        {# Intro #}
+        <div class="md:col-start-1 md:col-end-9">
+          <h1 class="text-3xl font-semibold leading-tight md:text-5xl md:leading-tight">{{ title | safe }}</h1>
+          <p class="mt-2 text-sm tracking-wider text-gray-700 uppercase">{{ kicker | safe }}</p>
+          <p class="max-w-2xl mt-8 text-xl md:text-2xl">{{ description | safe }}. <a class="text-blue-500 underline hover:no-underline hover:text-deepblue-600" href="/soknad-og-skjema-samarbeidspartner/">Bytt rolle</a>.</p>
+        </div>
 
-      <div class="md:col-start-2 md:grid md:grid-cols-[2fr_1fr] gap-x-16 items-start gap-4 mt-6">
 
-        {%- if (productsByRole | length) > 7 -%}
-          <div class="md:col-start-2 md:row-start-1" x-data="{ filterDrawer: false }">
-
+          {%- if (productsByRole | length) > 10 -%}
+          <div class="mt-6 lg:col-start-1 lg:col-end-9" x-data="{ filterDrawer: false }">
             <div class="mb-8 md:hidden">
               <label for="searchFilter-desktop" class="font-semibold">Bruk filter eller søk</label>
               <div class="flex flex-row-reverse gap-3 mt-1.5">
@@ -106,105 +105,101 @@
                 </button>
               </div>
 
-
-            <div
-              x-show="filterDrawer"
-              x-transition:enter="transition ease-out duration-500"
-              x-transition:enter-start="-translate-y-2 opacity-0"
-              x-transition:enter-end="translate-y-0 opacity-100"
-            >
-              <form class="mt-8 bg-white col-narrow">
-                <div class="relative grid gap-8">
+              <div
+                x-show="filterDrawer"
+                x-transition:enter="transition ease-out duration-500"
+                x-transition:enter-start="-translate-y-2 opacity-0"
+                x-transition:enter-end="translate-y-0 opacity-100"
+              >
+                <form class="mt-8 bg-white col-narrow">
                   {{ filterGroup({
                     array: typesByProducts,
                     title: 'Velg type',
                     value: 'typeFilter',
                     showAll: true
                   }) }}
-                </div>
-              </form>
-            </div>
-
-          </div>
-
-          <div class="hidden gap-8 md:grid">
-            <div>
-              <label for="searchFilter-desktop" class="font-semibold">Finn tjeneste</label>
-              <div class="relative mt-2">
-                <span class="absolute inset-y-0 left-0 grid px-2.5 place-items-center">
-                  {{ '/src/_includes/svg/icons/search.svg' | svgContents('w-6 h-6') | safe }}
-                </span>
-                <input id="searchFilter-desktop" type="search" x-model="search" class="w-full max-w-xl pl-10 pr-3 py-2.5 border border-gray-300 rounded shadow-inner bg-white focus:outline-none focus:ring focus:ring-blue-800">
+                </form>
               </div>
             </div>
-            {{ filterGroup({
-              array: typesByProducts,
-              title: 'Velg type',
-              value: 'typeFilter',
-              showAll: true
-            }) }}
+
+            <div class="hidden gap-8 md:grid">
+              {{ filterGroup({
+                array: typesByProducts,
+                title: 'Velg type',
+                value: 'typeFilter',
+                showAll: true
+              }) }}
+              <div>
+                <label for="searchFilter-desktop" class="font-semibold">Finn tjeneste</label>
+                <div class="relative mt-2">
+                  <span class="absolute inset-y-0 left-0 grid px-2.5 place-items-center">
+                    {{ '/src/_includes/svg/icons/search.svg' | svgContents('w-6 h-6') | safe }}
+                  </span>
+                  <input id="searchFilter-desktop" type="search" x-model="search" class="w-full max-w-xl pl-10 pr-3 py-2.5 border border-gray-300 rounded shadow-inner bg-white focus:outline-none focus:ring focus:ring-blue-800">
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
-        {%- endif -%}
+          {%- endif -%}
 
-        <div class="md:col-start-1 md:row-start-1">
-          <p class="mb-2">Viser <span x-text="count"></span> av {{ (productsByRole | length) }}  tjenester</p>
+          <div class="mt-8 md:mt-9 lg:col-start-1 lg:col-end-9">
+            <p class="mb-2">Viser <span x-text="count"></span> av {{ (productsByRole | length) }}  tjenester</p>
+            <div class="border-b border-deepblue-100" x-ref="entries" x-show="count !== 0">
+              {%- for product in productsByRole | sort(true, false, 'title') | reverse -%}
+                <div
+                  x-data="{ expanded: false }"
+                  class="border-t focus-within:z-10 c-product-tile border-deepblue-100"
+                  x-show="filterItem($el)"
+                  data-type="alle {% for item in product.type %}{{ item | slugify }} {% endfor %}"
+                >
+                  <div class="relative flex items-center gap-4 p-4 pr-8 text-left rounded-lg md:py-6 focus-within:z-20" x-bind:class="expanded ? 'bg-deepblue-50 ring-1 ring-deepblue-50 fine:hover:bg-deepblue-100' : 'fine:hover:bg-deepblue-100'">
 
-          <div class="border-b border-deepblue-100" x-ref="entries" x-show="count !== 0">
-            {%- for product in productsByRole | sort(true, false, 'title') | reverse -%}
-              <div
-                x-data="{ expanded: false }"
-                class="border-t focus-within:z-10 c-product-tile border-deepblue-100"
-                x-show="filterItem($el)"
-                data-type="alle {% for item in product.type %}{{ item | slugify }} {% endfor %}"
-              >
-                <div class="relative flex items-center gap-4 p-4 pr-8 text-left rounded-lg md:py-6 focus-within:z-20" x-bind:class="expanded ? 'bg-deepblue-50 ring-1 ring-deepblue-50 fine:hover:bg-deepblue-100' : 'fine:hover:bg-deepblue-100'">
+                    {%- if product.icon -%}
+                      {{ product.icon | svgContents('w-12 h-12 shrink-0') | safe }}
+                    {%- endif -%}
 
-                  {%- if product.icon -%}
-                    {{ product.icon | svgContents('w-12 h-12 shrink-0') | safe }}
-                  {%- endif -%}
+                    <div class="grid gap-1">
+                      <h2 class="text-xl font-semibold leading-tight">
+                        {{ product.title | safe }}
+                      </h2>
+                      <p class="text-base opacity-80">
+                      {%- for item in product.type -%}
+                        <span>{{ item }}</span>{{ ', ' if product.type.length > 1 and not loop.last }}
+                      {%- endfor -%}
+                      </p>
+                    </div>
+                      <button
+                        type="button"
+                        x-on:click="expanded = !expanded"
+                        class="absolute inset-0 flex items-center justify-end w-full pr-4 rounded-sm sm:rounded-lg group focus:outline-none focus-visible:ring focus-visible:ring-inset focus-visible:ring-blue-800 focus-visible:ring-offset-2 focus-visible:ring-offset-white"
+                        aria-expanded="false"
+                        x-bind:class="expanded ? 'ring ring-white' : 'fine:hover:ring fine:hover:ring-white'"
+                        x-bind:aria-expanded="expanded"
+                      >
+                        <span class="sr-only">Vis</span>
+                        {{ '/src/_includes/svg/icons/chevron-down.svg' | svgContents('mr-1.5 w-5 h-5 opacity-50 transition duration-100 group-aria-expanded:rotate-180') | safe }}
+                      </button>
 
-                  <div class="grid gap-1">
-                    <h2 class="text-xl font-semibold leading-tight">
-                      {{ product.title | safe }}
-                    </h2>
-                    <p class="text-base opacity-80">
-                    {%- for item in product.type -%}
-                      <span>{{ item }}</span>{{ ', ' if product.type.length > 1 and not loop.last }}
-                    {%- endfor -%}
-                    </p>
                   </div>
-                    <button
-                      type="button"
-                      x-on:click="expanded = !expanded"
-                      class="absolute inset-0 flex items-center justify-end w-full pr-4 rounded-sm sm:rounded-lg group focus:outline-none focus-visible:ring focus-visible:ring-inset focus-visible:ring-blue-800 focus-visible:ring-offset-2 focus-visible:ring-offset-white"
-                      aria-expanded="false"
-                      x-bind:class="expanded ? 'ring ring-white' : 'fine:hover:ring fine:hover:ring-white'"
-                      x-bind:aria-expanded="expanded"
-                    >
-                      <span class="sr-only">Vis</span>
-                      {{ '/src/_includes/svg/icons/chevron-down.svg' | svgContents('mr-1.5 w-5 h-5 opacity-50 transition duration-100 group-aria-expanded:rotate-180') | safe }}
-                    </button>
 
+                  <div class="pt-5 pb-8 px-clamp-gap relative min-h-[20vh] markdown sm:px-20 mb-4" x-bind:hidden="!expanded" hidden>
+                    <p>{{ product.ingress }}</p>
+
+                    {%- if product.contentBlocks -%}
+                      {%- for block in product.contentBlocks -%}
+                      {%- include "partials/contentBlocks.njk" -%}
+                      {%- endfor -%}
+                    {%- endif -%}
+                  </div>
                 </div>
+              {%- endfor -%}
+            </div>
 
-                <div class="pt-5 pb-8 px-clamp-gap relative min-h-[20vh] markdown sm:px-20 mb-4" x-bind:hidden="!expanded" hidden>
-                  <p>{{ product.ingress }}</p>
-
-                  {%- if product.contentBlocks -%}
-                    {%- for block in product.contentBlocks -%}
-                    {%- include "partials/contentBlocks.njk" -%}
-                    {%- endfor -%}
-                  {%- endif -%}
-                </div>
-              </div>
-            {%- endfor -%}
-          </div>
-          <div x-show="count === 0" class="p-6 py-8 text-center overflow-hidden grid items-center leading-snug rounded-lg bg-gray-100 min-h-[4.75rem] lg:col-span-6">
-            <p class="max-w-prose">Ingen søknader eller skjema er merket med denne kombinasjonen av type og rolle.</p>
+            <div x-show="count === 0" class="p-6 py-8 text-center overflow-hidden grid items-center leading-snug rounded-lg bg-gray-100 min-h-[4.75rem] lg:col-span-6">
+              <p class="max-w-prose">Ingen søknader eller skjema er merket med denne kombinasjonen av type og rolle.</p>
+            </div>
           </div>
         </div>
-
       </div>
     </div>
   </main>
