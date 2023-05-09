@@ -877,6 +877,48 @@ const products = [
     ],
   },
   {
+    title: "Briller og synshjelpemidler",
+    ingress: "…",
+    icon: "/src/_includes/svg/pictograms/neutral.svg",
+    type: [
+      "Hjelpemiddel",
+    ],
+    role: ["Hjelpemiddelformidler"],
+    contentBlocks: [
+      {
+        type: "markdown",
+        data: `### Bytte av hjelpemiddel
+          Du kan bytte til et tilsvarende hjelpemiddel, hvis noe for eksempel er utslitt , ødelagt eller har blitt for lite. Trenger du et annet hjelpemiddel må du søke på nytt.`,
+      },
+      {
+        type: "actions",
+        data: [
+          {
+            text: "Send søknad",
+            href: "/soknad/temp-bevegelseshjelpemidler-sam.html",
+            variant: "primary",
+          },
+        ],
+      },
+      {
+        type: "line",
+      },
+      {
+        type: "markdown",
+        data: `### Mer om`,
+      },
+      {
+        type: "microcards",
+        data: [
+          {
+            text: "Briller og synshjelpemidler",
+            dot: "bg-green-300",
+          },
+        ],
+      }
+    ]
+  },
+  {
     title: "Briller til barn",
     ingress: "Tilskudd til barn og unge under 18 år som trenger briller.",
     icon: "/src/_includes/svg/pictograms/neutral.svg",
@@ -1125,7 +1167,7 @@ const products = [
       {
         type: "markdown",
         data: `### Søk om hjelpemidler
-          Hvis du er Hjelpemiddelformidler i kommunen og har fått nødvendige tilganger, kan du nå søke digitalt om et utvalg av enkle hjelpemidler. Når du skal søke på vegne av andre trenger du signert fullmakt.`,
+          Hvis du er hjelpemiddelformidler i kommunen og har fått nødvendige tilganger, kan du nå søke digitalt om et utvalg av enkle hjelpemidler. Når du skal søke på vegne av andre trenger du signert fullmakt.`,
       },
       {
         type: "actions",
@@ -1144,7 +1186,26 @@ const products = [
         type: "markdown",
         data: `### Be om fullmakt
           Søkeren kan gi deg fullmakt til å fylle ut og sende inn søknaden på deres vegne. Da vil søkerens signatur på dette skjemaet erstatte signaturen på selve søknadsskjemaet.
-Fullmakten gjelder ikke for tilleggsskjemaer som krever underskrift. Der hvor det er mulig, bruk standard fremgangsmåte med underskrift direkte på søknadsskjemaet.`,
+
+          Fullmakten gjelder ikke for tilleggsskjemaer som krever underskrift. Der hvor det er mulig, bruk standard fremgangsmåte med underskrift direkte på søknadsskjemaet.`,
+      },
+      {
+        type: "actions",
+        data: [
+          {
+            text: "Send søknad",
+            href: "/soknad/temp-horselshjelpemidler-sam.html",
+            variant: "primary",
+          },
+        ],
+      },
+      {
+        type: "line",
+      },
+      {
+        type: "markdown",
+        data: `### Bytte av hjelpemiddel
+          Du kan bytte til et tilsvarende hjelpemiddel, hvis noe for eksempel er utslitt , ødelagt eller har blitt for lite. Trenger du et annet hjelpemiddel må du søke på nytt.`,
       },
       {
         type: "actions",
@@ -1241,6 +1302,24 @@ Fullmakten gjelder ikke for tilleggsskjemaer som krever underskrift. Der hvor de
       },
       {
         type: "markdown",
+        data: `### Bytte av hjelpemiddel
+          Du kan bytte til et tilsvarende hjelpemiddel, hvis noe for eksempel er utslitt , ødelagt eller har blitt for lite. Trenger du et annet hjelpemiddel må du søke på nytt.`,
+      },
+      {
+        type: "actions",
+        data: [
+          {
+            text: "Send søknad",
+            href: "/soknad/temp-hjelpemidler-til-tale-og-sprak-sam.html",
+            variant: "primary",
+          },
+        ],
+      },
+      {
+        type: "line",
+      },
+      {
+        type: "markdown",
         data: `### Mer om`,
       },
       {
@@ -1305,6 +1384,24 @@ Fullmakten gjelder ikke for tilleggsskjemaer som krever underskrift. Der hvor de
         data: `### Be om fullmakt
           Søkeren kan gi deg fullmakt til å fylle ut og sende inn søknaden på deres vegne. Da vil søkerens signatur på dette skjemaet erstatte signaturen på selve søknadsskjemaet.
 Fullmakten gjelder ikke for tilleggsskjemaer som krever underskrift. Der hvor det er mulig, bruk standard fremgangsmåte med underskrift direkte på søknadsskjemaet.`,
+      },
+      {
+        type: "actions",
+        data: [
+          {
+            text: "Send søknad",
+            href: "/soknad/temp-hjelpemidler-for-a-huske-planlegge-og-organisere-sam.html",
+            variant: "primary",
+          },
+        ],
+      },
+      {
+        type: "line",
+      },
+      {
+        type: "markdown",
+        data: `### Bytte av hjelpemiddel
+          Du kan bytte til et tilsvarende hjelpemiddel, hvis noe for eksempel er utslitt , ødelagt eller har blitt for lite. Trenger du et annet hjelpemiddel må du søke på nytt.`,
       },
       {
         type: "actions",
@@ -1392,6 +1489,24 @@ Fullmakten gjelder ikke for tilleggsskjemaer som krever underskrift. Der hvor de
         data: [
           {
             text: "Skjema for søker",
+            href: "/soknad/temp-bevegelseshjelpemidler-sam.html",
+            variant: "primary",
+          },
+        ],
+      },
+      {
+        type: "line",
+      },
+      {
+        type: "markdown",
+        data: `### Bytte av hjelpemiddel
+          Du kan bytte til et tilsvarende hjelpemiddel, hvis noe for eksempel er utslitt , ødelagt eller har blitt for lite. Trenger du et annet hjelpemiddel må du søke på nytt.`,
+      },
+      {
+        type: "actions",
+        data: [
+          {
+            text: "Send søknad",
             href: "/soknad/temp-bevegelseshjelpemidler-sam.html",
             variant: "primary",
           },
@@ -1552,6 +1667,24 @@ Fullmakten gjelder ikke for tilleggsskjemaer som krever underskrift. Der hvor de
         data: `### Be om fullmakt
           Søkeren kan gi deg fullmakt til å fylle ut og sende inn søknaden på deres vegne. Da vil søkerens signatur på dette skjemaet erstatte signaturen på selve søknadsskjemaet.
 Fullmakten gjelder ikke for tilleggsskjemaer som krever underskrift. Der hvor det er mulig, bruk standard fremgangsmåte med underskrift direkte på søknadsskjemaet.`,
+      },
+      {
+        type: "actions",
+        data: [
+          {
+            text: "Send søknad",
+            href: "/soknad/temp-hjelpemidler-for-a-lese-og-skrive-sam.html",
+            variant: "primary",
+          },
+        ],
+      },
+      {
+        type: "line",
+      },
+      {
+        type: "markdown",
+        data: `### Bytte av hjelpemiddel
+          Du kan bytte til et tilsvarende hjelpemiddel, hvis noe for eksempel er utslitt , ødelagt eller har blitt for lite. Trenger du et annet hjelpemiddel må du søke på nytt.`,
       },
       {
         type: "actions",
