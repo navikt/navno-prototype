@@ -14,6 +14,9 @@ permalink: "/soknad-og-skjema/"
 {%- from "macros/microcard.njk" import microcard -%}
 {%- from "macros/filterGroup.njk" import filterGroup -%}
 
+{%- set areasByProducts = products | extractTags('area') -%}
+{%- set typesByProducts = products | extractTags('type') -%}
+
 {%- block content -%}
   {% include "partials/language.njk" %}
 
@@ -112,13 +115,13 @@ permalink: "/soknad-og-skjema/"
               <form class="mt-8 bg-white col-narrow">
                 <div class="relative grid gap-8">
                   {{ filterGroup({
-                    array: areaFilter,
+                    array: (areasByProducts | sortStringLast('Annet')),
                     title: 'Velg område',
                     value: 'areaFilter',
                     showAll: true
                   }) }}
                   {{ filterGroup({
-                    array: typeFilter,
+                    array: (typesByProducts | sort(true, false) | reverse),
                     title: 'Velg type',
                     value: 'typeFilter',
                     showAll: true
@@ -126,23 +129,22 @@ permalink: "/soknad-og-skjema/"
                 </div>
               </form>
             </div>
-
           </div>
 
           <div class="hidden gap-8 md:grid">
             {{ filterGroup({
-              array: areaFilter,
+              array: (areasByProducts | sortStringLast('Annet')),
               title: 'Velg område',
               value: 'areaFilter',
               showAll: true
             }) }}
             {{ filterGroup({
-              array: typeFilter,
+              array: (typesByProducts | sort(true, false) | reverse),
               title: 'Velg type',
               value: 'typeFilter',
               showAll: true
             }) }}
-            <div>
+            <div class="max-w-sm">
               <label for="searchFilter-desktop" class="font-semibold">Finn tjeneste</label>
               <div class="relative mt-2">
                 <span class="absolute inset-y-0 left-0 grid px-2.5 place-items-center">
@@ -230,8 +232,6 @@ permalink: "/soknad-og-skjema/"
           <p class="mt-2 max-w-prose">Hvis du har fått et vedtak fra NAV og du er uenig i vedtaket, har du rett til å klage eller anke.</p>
           <p class="mb-2 mt-7"><a href="#" class="underline text-deepblue-600 fine:hover:no-underline fine:hover:text-deepblue-700">Les mer om dine klagerettigheter</a>.</p>
         </div>
-
-
 
       </div>
     </div>

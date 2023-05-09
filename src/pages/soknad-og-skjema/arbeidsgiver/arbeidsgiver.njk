@@ -11,6 +11,9 @@ permalink: '/soknad-og-skjema-arbeidsgiver/'
 {%- from "macros/microcard.njk" import microcard -%}
 {%- from "macros/filterGroup.njk" import filterGroup -%}
 
+{%- set areasByProducts = products | extractTags('area') -%}
+{%- set typesByProducts = products | extractTags('type') -%}
+
 {%- block content -%}
   {% include "partials/language.njk" %}
 
@@ -67,21 +70,21 @@ permalink: '/soknad-og-skjema-arbeidsgiver/'
       });
       updateCount()"
   >
-    <div class="relative col-wide max-w-prose md:max-w-none mx-auto md:mx-0 md:grid md:grid-cols-[8rem_auto] gap-x-8 items-start mb-12 w-full">
+    <div class="relative col-wide md:grid md:grid-cols-[8rem_auto] gap-x-8 items-start mb-12 w-full">
 
       {# Pictogram #}
       {{ '/src/_includes/svg/pictograms/support.svg' | svgContents('w-full h-auto max-w-20 sm:max-w-24 ml-6 md:ml-2 text-green-800 float-right md:float-none row-start-1') | safe }}
 
-      {# Intro #}
-      <div class="md:col-start-2 md:row-start-1 md:pr-0">
-        <h1 class="text-3xl font-semibold leading-tight md:text-5xl md:leading-tight">{{ title | safe }}</h1>
-        <p class="mt-2 text-sm tracking-wider text-gray-700 uppercase">{{ kicker | safe }}</p>
-        <p class="max-w-2xl mt-6 text-xl md:text-2xl">{{ description | safe }}</p>
-      </div>
 
-      <div class="md:col-start-2 md:grid md:grid-cols-[2fr_1fr] gap-x-16 items-start gap-4 mt-6">
+      <div class="lg:grid lg:col-start-2 lg:grid-cols-12 lg:gap-x-10 md:pr-20 lg:pr-0">
+        {# Intro #}
+        <div class="lg:col-start-1 lg:col-end-9">
+          <h1 class="text-3xl font-semibold leading-tight md:text-5xl md:leading-tight">{{ title | safe }}</h1>
+          <p class="mt-2 text-sm tracking-wider text-gray-700 uppercase">{{ kicker | safe }}</p>
+          <p class="max-w-2xl mt-6 text-xl md:text-2xl">{{ description | safe }}</p>
+        </div>
 
-        <div class="top-4 md:col-start-2 md:row-start-1 md:sticky" x-data="{ filterDrawer: false }">
+        <div class="mt-6 lg:col-start-1 lg:col-end-9" x-data="{ filterDrawer: false }">
 
           <div class="mb-8 md:hidden">
             <label for="searchFilter-desktop" class="font-semibold">Bruk filter eller søk</label>
@@ -111,13 +114,13 @@ permalink: '/soknad-og-skjema-arbeidsgiver/'
               <form class="mt-8 bg-white col-narrow">
                 <div class="relative grid gap-8">
                   {{ filterGroup({
-                    array: areaFilter,
+                    array: (areasByProducts | sortStringLast('Annet')),
                     title: 'Velg område',
                     value: 'areaFilter',
                     showAll: true
                   }) }}
                   {{ filterGroup({
-                    array: typeFilter,
+                    array: (typesByProducts | sort(true, false) | reverse),
                     title: 'Velg type',
                     value: 'typeFilter',
                     showAll: true
@@ -129,31 +132,31 @@ permalink: '/soknad-og-skjema-arbeidsgiver/'
           </div>
 
           <div class="hidden gap-8 md:grid">
-            <div>
-              <label for="searchFilter-desktop" class="font-semibold">Finn tjeneste</label>
-              <div class="relative mt-2">
-                <span class="absolute inset-y-0 left-0 grid px-2.5 place-items-center">
-                  {{ '/src/_includes/svg/icons/search.svg' | svgContents('w-6 h-6') | safe }}
-                </span>
-                <input id="searchFilter-desktop" type="search" x-model="search" class="w-full max-w-xl pl-10 pr-3 py-2.5 border border-gray-300 rounded shadow-inner bg-white focus:outline-none focus:ring focus:ring-blue-800">
-              </div>
-            </div>
             {{ filterGroup({
-              array: areaFilter,
+              array: (areasByProducts | sortStringLast('Annet')),
               title: 'Velg område',
               value: 'areaFilter',
               showAll: true
             }) }}
             {{ filterGroup({
-              array: typeFilter,
+              array: (typesByProducts | sort(true, false) | reverse),
               title: 'Velg type',
               value: 'typeFilter',
               showAll: true
             }) }}
+            <div class="max-w-sm">
+              <label for="searchFilter-desktop" class="font-semibold">Finn tjeneste</label>
+              <div class="relative mt-2">
+                <span class="absolute inset-y-0 left-0 grid px-2.5 place-items-center">
+                  {{ '/src/_includes/svg/icons/search.svg' | svgContents('w-6 h-6') | safe }}
+                </span>
+                <input id="searchFilter-desktop" type="search" x-model="search" class="w-full pl-10 pr-3 py-2.5 border border-gray-300 rounded shadow-inner bg-white focus:outline-none focus:ring focus:ring-blue-800">
+              </div>
+            </div>
           </div>
         </div>
 
-        <div class="md:col-start-1 md:row-start-1">
+        <div class="mt-8 md:mt-9 lg:col-start-1 lg:col-end-9">
           <p class="mb-2">Viser <span x-text="count"></span> av {{ products.length }}</p>
 
           <div class="border-b border-deepblue-100" x-ref="entries" x-show="count !== 0">
@@ -203,7 +206,7 @@ permalink: '/soknad-og-skjema-arbeidsgiver/'
                     {%- for block in product.contentBlocks -%}
                     {%- include "partials/contentBlocks.njk" -%}
                     {%- endfor -%}
-                 {%- endif -%}
+                  {%- endif -%}
                 </div>
               </div>
             {%- endfor -%}

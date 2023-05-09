@@ -1,3 +1,3 @@
 module.exports = {
-  title: "nav.no-prototype",
+  title: "Prototype av enkelte nav.no-sider",
 };

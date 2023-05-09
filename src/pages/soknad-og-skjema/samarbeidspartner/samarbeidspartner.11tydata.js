@@ -277,20 +277,24 @@ const products = [
     ],
   },
   {
-    title: "Grunnstønad",
-    ingress:
-      "Gir økonomisk støtte til ekstrautgifter når pasienten har en varig skade, sykdom eller funksjonsnedsettelse.",
+    title: "Grunn- og hjelpestønad",
+    ingress: "",
     icon: "/src/_includes/svg/pictograms/grunnstonad.svg",
     type: ["Pengestøtte"],
     role: ["Lege, tannlege eller annen behandler"],
     contentBlocks: [
       {
         type: "markdown",
-        data: `### Send legeerklæring
-          (Bør vi lage en felles tekst som brukes alle steder der det skal leveres legeerklæring, men det ikke er et eget skjema for det?)`,
+        data: `### Grunnstønad
+        Hvis pasienten din søker om grunnstønad, må du som lege gi NAV opplysninger som både beskriver den medisinske tilstanden og sammenhengen mellom de varige, nødvendige ekstrautgiftene og den medisinske tilstanden.`
       },
       {
-        type: "line",
+        type: "markdown",
+        data: `### Hjelpestønad
+        I legeerklæringen som skal følge pasientens søknad om hjelpestønad, må du opplyse om diagnose og gi en medisinsk begrunnet beskrivelse og vurdering av søkerens helsetilstand.`
+      },
+      {
+        type: "line"
       },
       {
         type: "markdown",
@@ -304,70 +308,8 @@ const products = [
             dot: "bg-green-300",
           },
         ],
-      },
-    ],
-  },
-  {
-    title: "Hjelpestønad",
-    ingress:
-      "Økonomisk støtte til barn eller voksne som trenger langvarig, privat pleie og tilsyn.",
-    icon: "/src/_includes/svg/pictograms/hjelpestonad.svg",
-    type: ["Pengestøtte"],
-    role: ["Lege, tannlege eller annen behandler"],
-    contentBlocks: [
-      {
-        type: "markdown",
-        data: `### Send legeerklæring
-          (Bør vi lage en felles tekst som brukes alle steder der det skal leveres legeerklæring, men det ikke er et eget skjema for det?)`,
-      },
-      {
-        type: "line",
-      },
-      {
-        type: "markdown",
-        data: `### Mer om`,
-      },
-      {
-        type: "microcards",
-        data: [
-          {
-            text: "Hjelpestønad",
-            dot: "bg-green-300",
-          },
-        ],
-      },
-    ],
-  },
-  {
-    title: "Forhøyet hjelpestønad",
-    ingress:
-      "Økonomisk støtte til barn under 18 år når behovet for pleie og tilsyn er vesentlig enn det ordinær hjelpestønad kan dekke.",
-    icon: "/src/_includes/svg/pictograms/hjelpestonad.svg",
-    type: ["Pengestøtte"],
-    role: ["Lege, tannlege eller annen behandler"],
-    contentBlocks: [
-      {
-        type: "markdown",
-        data: `### Send legeerklæring
-          (Bør vi lage en felles tekst som brukes alle steder der det skal leveres legeerklæring, men det ikke er et eget skjema for det?)`,
-      },
-      {
-        type: "line",
-      },
-      {
-        type: "markdown",
-        data: `### Mer om`,
-      },
-      {
-        type: "microcards",
-        data: [
-          {
-            text: "Forhøyet hjelpestønad",
-            dot: "bg-green-300",
-          },
-        ],
-      },
-    ],
+      }
+    ]
   },
   {
     title: "Sykepenger",
@@ -707,62 +649,20 @@ const products = [
     ],
   },
   {
-    title: "Seksualtekniske hjelpemidler",
-    ingress: "Kan gi et bedre sexliv når en har nedsatt seksualfunksjon.",
-    icon: "/src/_includes/svg/pictograms/seksualtekniske-hjelpemidler.svg",
-    type: [
-      "Pengestøtte",
-      "Hjelpemiddel",
-    ],
-    role: ["Lege, tannlege eller annen behandler"],
-    contentBlocks: [
-      {
-        type: "markdown",
-        data: `### Søk om seksualteknisk hjelpemiddel
-          Som lege, bestiller du det seksualtekniske hjelpemidlet direkte fra leverandør. Hjelpemiddelet blir sendt til ditt kontor eller hjem til pasienten.`,
-      },
-      {
-        type: "actions",
-        data: [
-          {
-            text: "Send søknad",
-            href: "/soknad/temp-seksualtekniske-hjelpemidler-sam.html",
-            variant: "primary",
-          },
-        ],
-      },
-      {
-        type: "line",
-      },
-      {
-        type: "markdown",
-        data: `### Mer om`,
-      },
-      {
-        type: "microcards",
-        data: [
-          {
-            text: "Hjelpemidler",
-            dot: "bg-green-300",
-          },
-        ],
-      },
-    ],
-  },
-  {
     title: "Førerhund",
     ingress: "Hjelper blinde og svaksynte å ta seg frem innendørs og utendørs.",
     icon: "/src/_includes/svg/pictograms/forerhund.svg",
     type: ["Hjelpemiddel"],
     role: [
       "Optiker eller øyelege",
-      "Lege, tannlege eller annen behandler",
     ],
     contentBlocks: [
       {
         type: "markdown",
         data: `### Send legeerklæring
-          NAV krever legeerklæring fra øyelege om nedsatt syn og legeerklæring som viser at vedkommende er helsemessig skikket til å ha førerhund. Erklæringene legges ved søknaden. Det er ikke egne skjemaer for å gi slike erklæringer. (Bør vi lage en felles tekst som brukes alle steder der det skal leveres legeerklæring, men det ikke er et eget skjema for det?)`,
+        NAV krever legeerklæring fra øyelege om nedsatt syn og legeerklæring som viser at vedkommende er helsemessig skikket til å ha førerhund.
+
+        Erklæringene legges ved søknaden. Det er ikke egne skjemaer for å gi slike erklæringer.`,
       },
       {
         type: "line",
@@ -783,19 +683,31 @@ const products = [
     ],
   },
   {
-    title: "Servicehund",
-    ingress: "Hjelper pasienter med fysiske funksjonsnedsettelser i hverdagen.",
-    icon: "/src/_includes/svg/pictograms/neutral.svg",
-    type: ["Hjelpemiddel"],
-    role: ["Lege, tannlege eller annen behandler"],
+    title: "Bestillingsordningen",
+    ingress: "Forenklet saksbehandling i NAV for å bestille enkle hjelpemidler som ikke krever individuelle tilpasninger.",
+    icon: "/src/_includes/svg/pictograms/slik-gjor-du-det.svg",
+    type: [
+      "Skjema",
+    ],
+    role: ["Hjelpemiddelformidler"],
     contentBlocks: [
       {
         type: "markdown",
-        data: `### Send legeerklæring
-          NAV krever legeerklæring som viser at vedkommende er helsemessig skikket til å ha servicehund. Erklæringen legges ved søknaden. Det er ikke eget skjema for å gi slik erklæring. (Bør vi lage en felles tekst som brukes alle steder der det skal leveres legeerklæring, men det ikke er et eget skjema for det?)`,
+        data: `### Bestilling av tekniske hjelpemidler
+        Du må være godkjent bestiller for å bestille hjelpemidler. For å bli godkjent bestiller, må du ta godkjenningskurs for bestillingsordningen på Kunnskapsbanken.`
       },
       {
-        type: "line",
+        type: "actions",
+        data: [
+          {
+            text: "Send søknad",
+            href: "#",
+            variant: "primary"
+          }
+        ]
+      },
+      {
+        type: "line"
       },
       {
         type: "markdown",
@@ -805,13 +717,17 @@ const products = [
         type: "microcards",
         data: [
           {
-            text: "Hjelpemidler",
+            text: "Bestillingsordningen",
             dot: "bg-green-300",
           },
         ],
       },
-    ],
+    ]
   },
+
+
+
+
   {
     title: "Bilstønad",
     ingress:
@@ -821,152 +737,23 @@ const products = [
       "Pengestøtte",
       "Hjelpemiddel",
     ],
-    role: ["Lege, tannlege eller annen behandler"],
+    role: ["Hjelpemiddelformidler"],
     contentBlocks: [
       {
         type: "markdown",
-        data: `### Skriv legeerklæring for motorkjøretøy
-          NAV krever legeerklæring om behovet for motorkjøretøy og søkerens evne til å kjøre bilen. Du skriver ut, signerer og stempler erklæringen, og gir den til søkeren slik at de kan legge den ved søknaden.`,
+        data: `### Tilleggsskjema fra ergo- eller fysioterapeut i forbindelse med søknad om motorkjøretøy og spesialutstyr eller tilpasning
+        Funksjonsserklæring er påkrevd ved søknad om stønad til anskaffelse av motorkjøretøy.
+        Du fyller ut skjemaet digitalt, skriver det ut og stempler og signerer. Send skjemaet til NAV eller overlever det til søker som kan legge det ved sin søknad.`,
       },
       {
         type: "actions",
         data: [
           {
-            text: "Skriv legeerklæring",
+            text: "Fyll ut skjema",
             href: "/soknad/temp-bilstonad-sam.html",
             variant: "primary",
           },
         ],
-      },
-      {
-        type: "line",
-      },
-      {
-        type: "markdown",
-        data: `### Mer om`,
-      },
-      {
-        type: "microcards",
-        data: [
-          {
-            text: "Hjelpemidler",
-            dot: "bg-green-300",
-          },
-        ],
-      },
-    ],
-  },
-  {
-    title: "Brystprotese",
-    ingress:
-      "Etterligner et bryst i form og størrelse, og finnes i mange ulike utgaver.",
-    icon: "/src/_includes/svg/pictograms/brystprotese.svg",
-    type: [
-      "Pengestøtte",
-      "Hjelpemiddel",
-    ],
-    role: ["Lege, tannlege eller annen behandler"],
-    contentBlocks: [
-      {
-        type: "markdown",
-        data: `### Skriv legeerklæring
-          NAV krever legeerklæring første gang en pasient søker om brystprotese. Søkeren legger erklæringen ved søknaden. Det er ikke et eget skjema for å gi slik erklæring. (Bør vi lage en felles tekst som brukes alle steder der det skal leveres legeerklæring, men det ikke er et eget skjema for det?)`,
-      },
-      {
-        type: "line",
-      },
-      {
-        type: "markdown",
-        data: `### Mer om`,
-      },
-      {
-        type: "microcards",
-        data: [
-          {
-            text: "Hjelpemidler",
-            dot: "bg-green-300",
-          },
-        ],
-      },
-    ],
-  },
-  {
-    title: "Øyeprotese",
-    ingress: "Erstatter øyet når en mangler et øye, eller har skadet øyet.",
-    icon: "/src/_includes/svg/pictograms/oyeprotese.svg",
-    type: ["Hjelpemiddel"],
-    role: ["Lege, tannlege eller annen behandler"],
-    contentBlocks: [
-      {
-        type: "markdown",
-        data: `### Skriv legeerklæring
-          NAV krever legeerklæring første gang en pasient søker om øyeprotese. Søkeren legger erklæringen ved søknaden. Det er ikke et eget skjema for å gi slik erklæring. (Bør vi lage en felles tekst som brukes alle steder der det skal leveres legeerklæring, men det ikke er et eget skjema for det?)`,
-      },
-      {
-        type: "line",
-      },
-      {
-        type: "markdown",
-        data: `### Mer om`,
-      },
-      {
-        type: "microcards",
-        data: [
-          {
-            text: "Hjelpemidler",
-            dot: "bg-green-300",
-          },
-        ],
-      },
-    ],
-  },
-  {
-    title: "Ansiktsprotese",
-    ingress: "Etterligner den delen av ansiktet som mangler eller er skadet.",
-    icon: "/src/_includes/svg/pictograms/ansiktsprotese.svg",
-    type: [
-      "Pengestøtte",
-      "Hjelpemiddel",
-    ],
-    role: ["Lege, tannlege eller annen behandler"],
-    contentBlocks: [
-      {
-        type: "markdown",
-        data: `### Skriv legeerklæring
-          NAV krever legeerklæring første gang en pasient søker om ansiktsprotese. Søkeren legger erklæringen ved søknaden. Det er ikke et eget skjema for å gi slik erklæring. (Bør vi lage en felles tekst som brukes alle steder der det skal leveres legeerklæring, men det ikke er et eget skjema for det?)`,
-      },
-      {
-        type: "line",
-      },
-      {
-        type: "markdown",
-        data: `### Mer om`,
-      },
-      {
-        type: "microcards",
-        data: [
-          {
-            text: "Hjelpemidler",
-            dot: "bg-green-300",
-          },
-        ],
-      },
-    ],
-  },
-  {
-    title: "Parykk",
-    ingress: "Erstatter eget hår på hele hodet, eller deler av hodet.",
-    icon: "/src/_includes/svg/pictograms/parykk.svg",
-    type: [
-      "Pengestøtte",
-      "Hjelpemiddel",
-    ],
-    role: ["Lege, tannlege eller annen behandler"],
-    contentBlocks: [
-      {
-        type: "markdown",
-        data: `### Skriv legeerklæring
-          NAV krever legeerklæring første gang en pasient søker om parykk. Ved alopecia og/eller søknad om utvidet stønadsgrense på grunn av allergi mot syntetisk materiale, er det også nødvendig med erklæring fra spesialist i hudsykdommer. Det er ikke egne skjemaer for å gi slike erklæringer. (Bør vi lage en felles tekst som brukes alle steder der det skal leveres legeerklæring, men det ikke er et eget skjema for det?)`,
       },
       {
         type: "line",
@@ -1002,7 +789,7 @@ const products = [
       {
         type: "markdown",
         data: `### Skriv legeerklæring
-          NAV krever erklæring fra øyelege eller optiker med diagnose og visus første gang en innbygger søker om lese- og sekretærhjelp. Det er ikke et eget skjema for å gi slik erklæring. (Bør vi lage en felles tekst som brukes alle steder der det skal leveres legeerklæring, men det ikke er et eget skjema for det?)`,
+          NAV krever erklæring fra øyelege eller optiker med diagnose og visus første gang en innbygger søker om lese- og sekretærhjelp. Det er ikke et eget skjema for å gi slik erklæring.`,
       },
       {
         type: "line",
@@ -1027,11 +814,9 @@ const products = [
     ingress: "Utfører tolkeoppdrag for døve, døvblinde og hørselshemmede.",
     icon: "/src/_includes/svg/pictograms/tegnspraak.svg",
     type: [
-      "Tjeneste",
       "Hjelpemiddel",
     ],
     role: [
-      "Lege, tannlege eller annen behandler",
       "Andre samarbeidspartnere",
     ],
     contentBlocks: [
@@ -1092,20 +877,28 @@ const products = [
     ],
   },
   {
-    title: "Tolk- og ledsagerhjelp for døvblinde",
-    ingress:
-      "Utfører tolkeoppdrag for døve, døvblinde og hørselshemmede. Siden tolk er et eget produkt, bør dette være spesifikt for ledsagerhjelp? Evt slås sammen med Tolking for døve, døvblinde og hørselshemmede?",
+    title: "Briller og synshjelpemidler",
+    ingress: "…",
     icon: "/src/_includes/svg/pictograms/neutral.svg",
     type: [
-      "Tjeneste",
       "Hjelpemiddel",
     ],
-    role: ["Lege, tannlege eller annen behandler"],
+    role: ["Hjelpemiddelformidler"],
     contentBlocks: [
       {
         type: "markdown",
-        data: `### Skriv legeerklæring
-          NAV krever erklæring fra hørselssentral eller øre-nese-halsspesialist første gang en innbygger søker om tolke- og ledsagerhjelp. Det er ikke et eget skjema for å gi en slik erklæring. (Bør vi lage en felles tekst som brukes alle steder der det skal leveres legeerklæring, men det ikke er et eget skjema for det?)`,
+        data: `### Bytte av hjelpemiddel
+          Du kan bytte til et tilsvarende hjelpemiddel, hvis noe for eksempel er utslitt , ødelagt eller har blitt for lite. Trenger du et annet hjelpemiddel må du søke på nytt.`,
+      },
+      {
+        type: "actions",
+        data: [
+          {
+            text: "Send søknad",
+            href: "/soknad/temp-bevegelseshjelpemidler-sam.html",
+            variant: "primary",
+          },
+        ],
       },
       {
         type: "line",
@@ -1118,7 +911,68 @@ const products = [
         type: "microcards",
         data: [
           {
-            text: "Tolk- og ledsagerhjelp for døvblinde",
+            text: "Briller og synshjelpemidler",
+            dot: "bg-green-300",
+          },
+        ],
+      }
+    ]
+  },
+  {
+    title: "Briller til barn",
+    ingress: "Tilskudd til barn og unge under 18 år som trenger briller.",
+    icon: "/src/_includes/svg/pictograms/neutral.svg",
+    type: [
+      "Pengestøtte",
+      "Hjelpemiddel",
+    ],
+    role: ["Optiker eller øyelege"],
+    contentBlocks: [
+      {
+        type: "markdown",
+        data: `### Inngå avtale
+          For å kunne registrere krav om tilskudd til briller til barn og få riktig utbetaling, må optikerfirmaet ha en avtale om direkte oppgjør med NAV.`,
+      },
+      {
+        type: "actions",
+        data: [
+          {
+            text: "Inngå avtale",
+            href: "/soknad/temp-briller-til-barn-sam.html",
+            variant: "primary",
+          },
+        ],
+      },
+      {
+        type: "line",
+      },
+      {
+        type: "markdown",
+        data: `### Send inn eller slett krav
+          Som optiker kan du logge deg på den digitale løsningen og sende krav. På optikers side kan du se alle kravene du selv har sendt inn. Hvis du trenger å korrigere et krav du har sendt inn, gjør du det ved å slette det aktuelle kravet før det har gått syv dager. `,
+      },
+      {
+        type: "actions",
+        data: [
+          {
+            text: "Til optikerportalen",
+            href: "/soknad/temp-briller-til-barn-sam.html",
+            variant: "primary",
+          },
+        ],
+      },
+      {
+        type: "line",
+      },
+      {
+        type: "markdown",
+        data: `### Mer om`,
+      },
+      {
+        type: "microcards",
+        data: [
+          {
+            text: "Briller til barn",
             dot: "bg-green-300",
           },
         ],
@@ -1126,26 +980,239 @@ const products = [
     ],
   },
   {
-    title: "Høreapparat",
-    ingress: "Forsterker lyden rundt deg når en har nedsatt hørsel.",
+    title: "Briller til behandling eller forebygging av amblyopi",
+    ingress: "Kan behandle eller forebygge synsnedsettelsen amblyopi hos barn.",
+    icon: "/src/_includes/svg/pictograms/neutral.svg",
+    type: [
+      "Hjelpemiddel",
+    ],
+    role: ["Optiker eller øyelege"],
+    contentBlocks: [
+      {
+        type: "markdown",
+        data: `### Søknad om briller til behandling eller forebygging av amblyopi
+        Optiker eller øyelege fyller ut søknaden.`,
+      },
+      {
+        type: "actions",
+        data: [
+          {
+            text: "Send søknad",
+            href: "/soknad/temp-briller-til-barn-sam.html",
+            variant: "primary",
+          },
+        ],
+      },
+      {
+        type: "line",
+      },
+      {
+        type: "markdown",
+        data: `### Mer om`,
+      },
+      {
+        type: "microcards",
+        data: [
+          {
+            text: "Briller til behandling eller forebygging av amblyopi",
+            dot: "bg-green-300",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    title: "Irislinse",
+    ingress: "Tilskudd til barn og unge under 18 år som trenger briller.",
+    icon: "/src/_includes/svg/pictograms/neutral.svg",
+    type: [
+      "Pengestøtte",
+      "Hjelpemiddel",
+    ],
+    role: ["Optiker eller øyelege"],
+    contentBlocks: [
+      {
+        type: "markdown",
+        data: `### Send pristilbud
+          Pristilbud fra optiker er et obligatorisk vedlegg til søknad om irislinser. Det er optiker som skal fylle ut og signere skjemaet. Pristilbudet bør legges ved og sendes samtidig med søknaden. Hvis det ettersendes senere enn to uker etter søknaden, kan NAV Hjelpemiddelsentral avslå søknaden.`,
+      },
+      {
+        type: "actions",
+        data: [
+          {
+            text: "Send skjema",
+            href: "/soknad/temp-irislinse-sam.html",
+            variant: "primary",
+          },
+        ],
+      },
+      {
+        type: "line",
+      },
+      {
+        type: "markdown",
+        data: `### Søknad om dekning av utgifter til irislinse
+        Legg ved pristilbud fra optiker.`,
+      },
+      {
+        type: "actions",
+        data: [
+          {
+            text: "Send søknad",
+            href: "/soknad/temp-irislinse-sam.html",
+            variant: "primary",
+          },
+        ],
+      },
+      {
+        type: "line",
+      },
+      {
+        type: "markdown",
+        data: `### Mer om`,
+      },
+      {
+        type: "microcards",
+        data: [
+          {
+            text: "Irislinse",
+            dot: "bg-green-300",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    title: "Hørselshjelpemidler",
+    ingress: "Hjelpemidler for personer som har nedsatt eller ingen hørsel",
     icon: "/src/_includes/svg/pictograms/horselshjelpemidler.svg",
     type: [
       "Pengestøtte",
       "Hjelpemiddel",
     ],
-    role: ["Lege, tannlege eller annen behandler"],
+    role: ["Hjelpemiddelformidler"],
     contentBlocks: [
       {
         type: "markdown",
-        data: `### Skriv begrunnelse
-          En øre-nese-halslege må begrunne behovet i et eget felt på søknadsskjemaet.`,
+        data: `### Be om hjelp til vurdering og utprøving
+        Skjemaet brukes når det er behov for å prøve ut et hjelpemiddel før man søker om det, eller når det er behov for vurdering og veiledning fra NAV Hjelpemiddelsentral.`,
+      },
+      {
+        type: "actions",
+        data: [
+          {
+            text: "Send skjema",
+            href: "/soknad/temp-horselshjelpemidler-sam.html",
+            variant: "primary",
+          },
+        ],
+      },
+      {
+        type: "line",
+      },
+      {
+        type: "markdown",
+        data: `### Søk om høreapparat, tinnitusmaskerer eller tilleggsutstyr
+        Hørselssentral eller avtalespesialist har ansvar for at skjemaet blir fylt ut og sendt inn. En øre-nese-halslege må begrunne behovet i et eget felt på søknadsskjemaet.`,
       },
       {
         type: "actions",
         data: [
           {
             text: "Send søknad",
-            href: "/soknad/temp-horeapparat-sam.html",
+            href: "/soknad/temp-horselshjelpemidler-sam.html",
+            variant: "primary",
+          },
+        ],
+      },
+      {
+        type: "line",
+      },
+      {
+        type: "markdown",
+        data: `### Bekreftelse på utlån og tildeling av høreapparat / tinnitusmaskerer / tilleggsutstyr
+          Skjemaet fylles ut og sendes inn av avtalespesialist eller høresentral.`,
+      },
+      {
+        type: "actions",
+        data: [
+          {
+            text: "Send skjema",
+            href: "/soknad/temp-horselshjelpemidler-sam.html",
+            variant: "primary",
+          },
+        ],
+      },
+      {
+        type: "line",
+      },
+      {
+        type: "markdown",
+        data: `### Bekreftelse på utlån og tildeling av høreapparat, tinnitusmaskerer eller tilleggsutstyr
+        Skjemaet fylles ut og sendes inn av avtalespesialist eller høresentral.`
+      },
+      {
+        type: "actions",
+        data: [
+          {
+            text: "Send skjema",
+            href: "#",
+            variant: "primary"
+          }
+        ]
+      },
+      {
+        type: "line"
+      },
+      {
+        type: "markdown",
+        data: `### Søk om hjelpemidler
+          Hvis du er hjelpemiddelformidler i kommunen og har fått nødvendige tilganger, kan du nå søke digitalt om et utvalg av enkle hjelpemidler. Når du skal søke på vegne av andre trenger du signert fullmakt.`,
+      },
+      {
+        type: "actions",
+        data: [
+          {
+            text: "Send skjema",
+            href: "/soknad/temp-horselshjelpemidler-sam.html",
+            variant: "primary",
+          },
+        ],
+      },
+      {
+        type: "line",
+      },
+      {
+        type: "markdown",
+        data: `### Be om fullmakt
+          Søkeren kan gi deg fullmakt til å fylle ut og sende inn søknaden på deres vegne. Da vil søkerens signatur på dette skjemaet erstatte signaturen på selve søknadsskjemaet.
+
+          Fullmakten gjelder ikke for tilleggsskjemaer som krever underskrift. Der hvor det er mulig, bruk standard fremgangsmåte med underskrift direkte på søknadsskjemaet.`,
+      },
+      {
+        type: "actions",
+        data: [
+          {
+            text: "Send søknad",
+            href: "/soknad/temp-horselshjelpemidler-sam.html",
+            variant: "primary",
+          },
+        ],
+      },
+      {
+        type: "line",
+      },
+      {
+        type: "markdown",
+        data: `### Bytte av hjelpemiddel
+          Du kan bytte til et tilsvarende hjelpemiddel, hvis noe for eksempel er utslitt , ødelagt eller har blitt for lite. Trenger du et annet hjelpemiddel må du søke på nytt.`,
+      },
+      {
+        type: "actions",
+        data: [
+          {
+            text: "Send søknad",
+            href: "/soknad/temp-horselshjelpemidler-sam.html",
             variant: "primary",
           },
         ],
@@ -1161,7 +1228,7 @@ const products = [
         type: "microcards",
         data: [
           {
-            text: "Hjelpemidler",
+            text: "Hørselshjelpemidler",
             dot: "bg-green-300",
           },
         ],
@@ -1169,27 +1236,362 @@ const products = [
     ],
   },
   {
-    title: "Ortopediske sko",
-    ingress:
-      "Hjelper når en har feilstilling i foten eller ankelen, har problemer med føttene på grunn av diabetes eller revmatisme, eller har en annen funksjonsnedsettelse i føttene.",
+    title: "Hjelpemidler til tale og språk",
+    ingress: "Hjelpemidler for personer som har utfordringer med tale og språk",
+    icon: "/src/_includes/svg/pictograms/neutral.svg",
+    type: [
+      "Pengestøtte",
+      "Hjelpemiddel",
+    ],
+    role: ["Hjelpemiddelformidler"],
+    contentBlocks: [
+      {
+        type: "markdown",
+        data: `### Be om hjelp til vurdering og utprøving
+        Skjemaet brukes når det er behov for å prøve ut et hjelpemiddel før man søker om det, eller når det er behov for vurdering og veiledning fra NAV Hjelpemiddelsentral.`,
+      },
+      {
+        type: "actions",
+        data: [
+          {
+            text: "Send skjema",
+            href: "/soknad/temp-hjelpemidler-til-tale-og-sprak-sam.html",
+            variant: "primary",
+          },
+        ],
+      },
+      {
+        type: "line",
+      },
+      {
+        type: "markdown",
+        data: `### Søk om hjelpemidler
+          Hvis du er Hjelpemiddelformidler i kommunen og har fått nødvendige tilganger, kan du nå søke digitalt om et utvalg av enkle hjelpemidler. Når du skal søke på vegne av andre trenger du signert fullmakt.`,
+      },
+      {
+        type: "actions",
+        data: [
+          {
+            text: "Send skjema",
+            href: "/soknad/temp-hjelpemidler-til-tale-og-sprak-sam.html",
+            variant: "primary",
+          },
+        ],
+      },
+      {
+        type: "line",
+      },
+      {
+        type: "markdown",
+        data: `### Be om fullmakt
+          Søkeren kan gi deg fullmakt til å fylle ut og sende inn søknaden på deres vegne. Da vil søkerens signatur på dette skjemaet erstatte signaturen på selve søknadsskjemaet.
+Fullmakten gjelder ikke for tilleggsskjemaer som krever underskrift. Der hvor det er mulig, bruk standard fremgangsmåte med underskrift direkte på søknadsskjemaet.`,
+      },
+      {
+        type: "actions",
+        data: [
+          {
+            text: "Send søknad",
+            href: "/soknad/temp-hjelpemidler-til-tale-og-sprak-sam.html",
+            variant: "primary",
+          },
+        ],
+      },
+      {
+        type: "line",
+      },
+      {
+        type: "markdown",
+        data: `### Bytte av hjelpemiddel
+          Du kan bytte til et tilsvarende hjelpemiddel, hvis noe for eksempel er utslitt , ødelagt eller har blitt for lite. Trenger du et annet hjelpemiddel må du søke på nytt.`,
+      },
+      {
+        type: "actions",
+        data: [
+          {
+            text: "Send søknad",
+            href: "/soknad/temp-hjelpemidler-til-tale-og-sprak-sam.html",
+            variant: "primary",
+          },
+        ],
+      },
+      {
+        type: "line",
+      },
+      {
+        type: "markdown",
+        data: `### Mer om`,
+      },
+      {
+        type: "microcards",
+        data: [
+          {
+            text: "Hjelpemidler til tale og språk",
+            dot: "bg-green-300",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    title: "Hjelpemidler for å huske, planlegge og organisere",
+    ingress: "Hjelpemidler for personer med utfordringer med å huske, planlegge og organisere",
+    icon: "/src/_includes/svg/pictograms/neutral.svg",
+    type: [
+      "Pengestøtte",
+      "Hjelpemiddel",
+    ],
+    role: ["Hjelpemiddelformidler"],
+    contentBlocks: [
+      {
+        type: "markdown",
+        data: `### Be om hjelp til vurdering og utprøving
+        Skjemaet brukes når det er behov for å prøve ut et hjelpemiddel før man søker om det, eller når det er behov for vurdering og veiledning fra NAV Hjelpemiddelsentral.`,
+      },
+      {
+        type: "actions",
+        data: [
+          {
+            text: "Send skjema",
+            href: "/soknad/temp-hjelpemidler-for-a-huske-planlegge-og-organisere-sam.html",
+            variant: "primary",
+          },
+        ],
+      },
+      {
+        type: "line",
+      },
+      {
+        type: "markdown",
+        data: `### Søk om hjelpemidler
+        Hvis du er Hjelpemiddelformidler i kommunen og har fått nødvendige tilganger, kan du nå søke digitalt om et utvalg av enkle hjelpemidler. Når du skal søke på vegne av andre trenger du signert fullmakt.`,
+      },
+      {
+        type: "actions",
+        data: [
+          {
+            text: "Send skjema",
+            href: "/soknad/temp-hjelpemidler-for-a-huske-planlegge-og-organisere-sam.html",
+            variant: "primary",
+          },
+        ],
+      },
+      {
+        type: "line",
+      },
+      {
+        type: "markdown",
+        data: `### Be om fullmakt
+          Søkeren kan gi deg fullmakt til å fylle ut og sende inn søknaden på deres vegne. Da vil søkerens signatur på dette skjemaet erstatte signaturen på selve søknadsskjemaet.
+Fullmakten gjelder ikke for tilleggsskjemaer som krever underskrift. Der hvor det er mulig, bruk standard fremgangsmåte med underskrift direkte på søknadsskjemaet.`,
+      },
+      {
+        type: "actions",
+        data: [
+          {
+            text: "Send søknad",
+            href: "/soknad/temp-hjelpemidler-for-a-huske-planlegge-og-organisere-sam.html",
+            variant: "primary",
+          },
+        ],
+      },
+      {
+        type: "line",
+      },
+      {
+        type: "markdown",
+        data: `### Bytte av hjelpemiddel
+          Du kan bytte til et tilsvarende hjelpemiddel, hvis noe for eksempel er utslitt , ødelagt eller har blitt for lite. Trenger du et annet hjelpemiddel må du søke på nytt.`,
+      },
+      {
+        type: "actions",
+        data: [
+          {
+            text: "Send søknad",
+            href: "/soknad/temp-hjelpemidler-for-a-huske-planlegge-og-organisere-sam.html",
+            variant: "primary",
+          },
+        ],
+      },
+      {
+        type: "line",
+      },
+      {
+        type: "markdown",
+        data: `### Mer om`,
+      },
+      {
+        type: "microcards",
+        data: [
+          {
+            text: "Hjelpemidler for å huske, planlegge og organisere",
+            dot: "bg-green-300",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    title: "Bevegelseshjelpemidler",
+    ingress: "Hjelpemidler for personer med motoriske utfordringer.",
+    icon: "/src/_includes/svg/pictograms/neutral.svg",
+    type: [
+      "Pengestøtte",
+      "Hjelpemiddel",
+      "Skjema",
+    ],
+    role: ["Hjelpemiddelformidler"],
+    contentBlocks: [
+      {
+        type: "markdown",
+        data: `### Be om hjelp til vurdering og utprøving
+        Skjemaet brukes når det er behov for å prøve ut et hjelpemiddel før man søker om det, eller når det er behov for vurdering og veiledning fra NAV Hjelpemiddelsentral.`,
+      },
+      {
+        type: "actions",
+        data: [
+          {
+            text: "Send skjema",
+            href: "/soknad/temp-bevegelseshjelpemidler-sam.html",
+            variant: "primary",
+          },
+        ],
+      },
+      {
+        type: "line",
+      },
+      {
+        type: "markdown",
+        data: `### Søk om hjelpemidler
+          Hvis du er Hjelpemiddelformidler i kommunen og har fått nødvendige tilganger, kan du nå søke digitalt om et utvalg av enkle hjelpemidler. Når du skal søke på vegne av andre trenger du signert fullmakt.`,
+      },
+      {
+        type: "actions",
+        data: [
+          {
+            text: "Send skjema",
+            href: "/soknad/temp-bevegelseshjelpemidler-sam.html",
+            variant: "primary",
+          },
+        ],
+      },
+      {
+        type: "line",
+      },
+      {
+        type: "markdown",
+        data: `### Be om fullmakt
+        Søkeren kan gi deg fullmakt til å fylle ut og sende inn søknaden på deres vegne. Da vil søkerens signatur på dette skjemaet erstatte signaturen på selve søknadsskjemaet.
+        Fullmakten gjelder ikke for tilleggsskjemaer som krever underskrift. Der hvor det er mulig, bruk standard fremgangsmåte med underskrift direkte på søknadsskjemaet.`,
+      },
+      {
+        type: "actions",
+        data: [
+          {
+            text: "Skjema for søker",
+            href: "/soknad/temp-bevegelseshjelpemidler-sam.html",
+            variant: "primary",
+          },
+        ],
+      },
+      {
+        type: "line",
+      },
+      {
+        type: "markdown",
+        data: `### Bytte av hjelpemiddel
+          Du kan bytte til et tilsvarende hjelpemiddel, hvis noe for eksempel er utslitt , ødelagt eller har blitt for lite. Trenger du et annet hjelpemiddel må du søke på nytt.`,
+      },
+      {
+        type: "actions",
+        data: [
+          {
+            text: "Send søknad",
+            href: "/soknad/temp-bevegelseshjelpemidler-sam.html",
+            variant: "primary",
+          },
+        ],
+      },
+      {
+        type: "line",
+      },
+      {
+        type: "markdown",
+        data: `### Mer om`,
+      },
+      {
+        type: "microcards",
+        data: [
+          {
+            text: "Bevegelseshjelpemidler",
+            dot: "bg-green-300",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    title: "Ortopediske hjelpemidler",
+    ingress: "Hjelpemidler som ortoser, parykk og proteser.",
     icon: "/src/_includes/svg/pictograms/ortopediske-sko.svg",
     type: [
       "Pengestøtte",
       "Hjelpemiddel",
     ],
-    role: ["Lege, tannlege eller annen behandler"],
+    role: [
+      "Hjelpemiddelformidler",
+    ],
     contentBlocks: [
       {
         type: "markdown",
-        data: `### Skriv begrunnelse
-          Sykehusleger og spesialister i ortopedisk kirurgi må begrunne behovet i et eget felt på søknadsskjemaet (skrives kanskje bare ut førsteside? kan fylles ut i legens epj-system). Avhengig av hvilken type ortopedisk hjelpemiddel det søkes om, kan også andre legespesialister begrunne behovet.`,
+        data: `### Be om hjelp til vurdering og utprøving
+        Skjemaet brukes når det er behov for å prøve ut et hjelpemiddel før man søker om det, eller når det er behov for vurdering og veiledning fra NAV Hjelpemiddelsentral.`,
+      },
+      {
+        type: "actions",
+        data: [
+          {
+            text: "Send skjema",
+            href: "/soknad/temp-ortopediske-hjelpemidler-sam.html",
+            variant: "primary",
+          },
+        ],
+      },
+      {
+        type: "line",
+      },
+      {
+        type: "markdown",
+        data: `### Søknad om ortopediske hjelpemidler
+        Denne brukes for å søke om protese, ortose, spesialfottøy, aktivitetshjelpemidler for brukere over 26 år, fotseng eller ortopedisk sydd fottøy.
+        Sykehusleger og spesialister i ortopedisk kirurgi må begrunne behovet i et eget felt på søknadsskjeamet.
+        Avhengig av hvilken type ortopedisk hjelpemiddel det søkes om, kan også andre legespesialister begrunne behovet.`,
+      },
+      {
+        type: "actions",
+        data: [
+          {
+            text: "Send skjema",
+            href: "/soknad/temp-ortopediske-hjelpemidler-sam.html",
+            variant: "primary",
+          },
+        ],
+      },
+      {
+        type: "line",
+      },
+      {
+        type: "markdown",
+        data: `### Be om fullmakt
+          Søkeren kan gi deg fullmakt til å fylle ut og sende inn søknaden på deres vegne. Da vil søkerens signatur på dette skjemaet erstatte signaturen på selve søknadsskjemaet.
+Fullmakten gjelder ikke for tilleggsskjemaer som krever underskrift. Der hvor det er mulig, bruk standard fremgangsmåte med underskrift direkte på søknadsskjemaet.`,
       },
       {
         type: "actions",
         data: [
           {
             text: "Send søknad",
-            href: "/soknad/temp-ortopediske-sko-sam.html",
+            href: "/soknad/temp-ortopediske-hjelpemidler-sam.html",
             variant: "primary",
           },
         ],
@@ -1205,7 +1607,7 @@ const products = [
         type: "microcards",
         data: [
           {
-            text: "Hjelpemidler",
+            text: "Ortopediske hjelpemidler",
             dot: "bg-green-300",
           },
         ],
@@ -1213,27 +1615,83 @@ const products = [
     ],
   },
   {
-    title: "Ortoser",
-    ingress:
-      "Stabiliserer eller gir bedre funksjon når du har en kroppsdel som er lammet eller svekket.",
-    icon: "/src/_includes/svg/pictograms/ortoser.svg",
+    title: "Hjelpemidler for å lese og skrive",
+    ingress: "Hjelpemidler for personer med lese- og skrivevansker",
+    icon: "/src/_includes/svg/pictograms/neutral.svg",
     type: [
       "Pengestøtte",
       "Hjelpemiddel",
     ],
-    role: ["Lege, tannlege eller annen behandler"],
+    role: [
+      "Hjelpemiddelformidler",
+    ],
     contentBlocks: [
       {
         type: "markdown",
-        data: `### Skriv begrunnelse
-          Sykehusleger og spesialister i ortopedisk kirurgi må begrunne behovet i et eget felt på søknadsskjemaet (skrives kanskje bare ut førsteside? kan fylles ut i legens epj-system). Avhengig av hvilken type ortopedisk hjelpemiddel det søkes om, kan også andre legespesialister begrunne behovet.`,
+        data: `### Be om hjelp til vurdering og utprøving
+        Skjemaet brukes når det er behov for å prøve ut et hjelpemiddel før man søker om det, eller når det er behov for vurdering og veiledning fra NAV Hjelpemiddelsentral.`,
+      },
+      {
+        type: "actions",
+        data: [
+          {
+            text: "Send skjema",
+            href: "/soknad/temp-hjelpemidler-for-a-lese-og-skrive-sam.html",
+            variant: "primary",
+          },
+        ],
+      },
+      {
+        type: "line",
+      },
+      {
+        type: "markdown",
+        data: `### Søk om hjelpemidler
+          Hvis du er Hjelpemiddelformidler i kommunen og har fått nødvendige tilganger, kan du nå søke digitalt om et utvalg av enkle hjelpemidler. Når du skal søke på vegne av andre trenger du signert fullmakt.`,
+      },
+      {
+        type: "actions",
+        data: [
+          {
+            text: "Send skjema",
+            href: "/soknad/temp-hjelpemidler-for-a-lese-og-skrive-sam.html",
+            variant: "primary",
+          },
+        ],
+      },
+      {
+        type: "line",
+      },
+      {
+        type: "markdown",
+        data: `### Be om fullmakt
+          Søkeren kan gi deg fullmakt til å fylle ut og sende inn søknaden på deres vegne. Da vil søkerens signatur på dette skjemaet erstatte signaturen på selve søknadsskjemaet.
+Fullmakten gjelder ikke for tilleggsskjemaer som krever underskrift. Der hvor det er mulig, bruk standard fremgangsmåte med underskrift direkte på søknadsskjemaet.`,
       },
       {
         type: "actions",
         data: [
           {
             text: "Send søknad",
-            href: "/soknad/temp-ortroser-sam.html",
+            href: "/soknad/temp-hjelpemidler-for-a-lese-og-skrive-sam.html",
+            variant: "primary",
+          },
+        ],
+      },
+      {
+        type: "line",
+      },
+      {
+        type: "markdown",
+        data: `### Bytte av hjelpemiddel
+          Du kan bytte til et tilsvarende hjelpemiddel, hvis noe for eksempel er utslitt , ødelagt eller har blitt for lite. Trenger du et annet hjelpemiddel må du søke på nytt.`,
+      },
+      {
+        type: "actions",
+        data: [
+          {
+            text: "Send søknad",
+            href: "/soknad/temp-hjelpemidler-for-a-lese-og-skrive-sam.html",
             variant: "primary",
           },
         ],
@@ -1249,7 +1707,7 @@ const products = [
         type: "microcards",
         data: [
           {
-            text: "Hjelpemidler",
+            text: "Hjelpemidler for å lese og skrive",
             dot: "bg-green-300",
           },
         ],
@@ -1257,23 +1715,26 @@ const products = [
     ],
   },
   {
-    title: "Arm- og benproteser",
-    ingress: "Erstatter en manglende kroppsdel.",
-    icon: "/src/_includes/svg/pictograms/arm-og-benprotese.svg",
+    title: "Meld behov for hjelpemidler",
+    ingress: "Kommunalt ansatte kan melde behov om hjelpemidler digitalt.",
+    icon: "/src/_includes/svg/pictograms/slik-gjor-du-det.svg",
     type: ["Hjelpemiddel"],
-    role: ["Lege, tannlege eller annen behandler"],
+    role: [
+      "Hjelpemiddelformidler",
+      "Ansatt i NAV-kontor, kommunen eller fylkeskommunen",
+    ],
     contentBlocks: [
       {
         type: "markdown",
-        data: `### Skriv begrunnelse
-          Sykehusleger og spesialister i ortopedisk kirurgi må begrunne behovet i et eget felt på søknadsskjemaet (skrives kanskje bare ut førsteside? kan fylles ut i legens epj-system). Avhengig av hvilken type ortopedisk hjelpemiddel det søkes om, kan også andre legespesialister begrunne behovet.`,
+        data: `### Meld inn behov for hjelpemidler
+          Saken sendes til NAV Hjelpemiddelsentral. Saker du har sendt inn digitalt vil være tilgjengelig på innlogget side på nav.no. Der kan du følge status på dine innsendte digitale saker. Søknaden blir også tilgjengelig på nav.no-profilen til innbyggeren du har søkt for.`,
       },
       {
         type: "actions",
         data: [
           {
-            text: "Send søknad",
-            href: "/soknad/temp-arm-og-benproteser-sam.html",
+            text: "Send skjema",
+            href: "/soknad/temp-meld-behov-for-hjelpemidler-sam.html",
             variant: "primary",
           },
         ],
@@ -1289,31 +1750,181 @@ const products = [
         type: "microcards",
         data: [
           {
-            text: "Hjelpemidler",
-            dot: "bg-green-300",
+            text: "Meld behov for hjelpemidler",
+            dot: "bg-lightblue-300",
           },
         ],
       },
     ],
   },
+
   {
-    title: "Funksjonsassistanse i arbeidslivet",
-    ingress:
-      "Hjelper deg med praktiske oppgaver når det er nødvendig for at du skal kunne utføre jobben din.",
+    title: "Hjelpemidler",
     icon: "/src/_includes/svg/pictograms/neutral.svg",
+    role: ["Lege, tannlege eller annen behandler"],
     type: [
-      "Tjeneste",
+      "Pengestøtte",
       "Hjelpemiddel",
     ],
-    role: ["Lege, tannlege eller annen behandler"],
     contentBlocks: [
       {
         type: "markdown",
-        data: `### Skriv legeerklæring
-          Det er bare nødvendig med legeerklæring hvis saksbehandler i NAV etterspør dette. (Bør vi lage en felles tekst som brukes alle steder der det skal leveres legeerklæring, men det ikke er et eget skjema for det?)`,
+        data: `### Førerhund
+
+        NAV krever legeerklæring fra øyelege om nedsatt syn og legeerklæring som viser at vedkommende er helsemessig skikket til å ha førerhund.
+
+        Erklæringene legges ved søknaden. Det er ikke egne skjemaer for å gi slike erklæringer.`,
       },
       {
-        type: "line",
+        type: "line"
+      },
+      {
+        type: "markdown",
+        data: `### Servicehund
+
+        NAV krever legeerklæring som viser at søkeren er helsemessig skikket til å ha førerhund.
+
+        Erklæringen legges ved søknaden. Det er ikke egne skjemaer for å gi slike erklæringer.`,
+      },
+      {
+        type: "line"
+      },
+      {
+        type: "markdown",
+        data: `### Motorkjøretøy
+
+        NAV krever legeerklæring om behovet for motorkjøretøy og søkerens evne til å kjøre bilen.
+
+        Du skriver ut, signerer og stempler erklæringen, og gir den til søkeren slik at de kan legge den ved søknaden.`,
+      },
+      {
+        type: "line"
+      },
+      {
+        type: "markdown",
+        data: `### Søknad om ortopediske hjelpemidler
+
+        Denne brukes for å søke om protese, ortose, spesialfottøy, aktivitetshjelpemidler for brukere over 26 år, fotseng eller ortopedisk sydd fottøy.
+
+        Sykehusleger og spesialister i ortopedisk kirurgi må begrunne behovet i et eget felt på søknadsskjeamet.
+
+        Avhengig av hvilken type ortopedisk hjelpemiddel det søkes om, kan også andre legespesialister begrunne behovet.`,
+      },
+      {
+        type: "actions",
+        data: [
+          {
+            text: "Send søknad",
+            href: "/soknad/temp-hjelpemidler-sam.html",
+            variant: "primary",
+          },
+        ]
+      },
+      {
+        type: "line"
+      },
+      {
+        type: "markdown",
+        data: `### Proteser til øye, ansikt eller bryst
+
+        NAV krever legeerklæring første gang en pasient søker om protese. Søkeren legger erklæringen ved søknaden. Det er ikke et eget skjema for å gi slik erklæring.`,
+      },
+      {
+        type: "line"
+      },
+      {
+        type: "markdown",
+        data: `### Parykk
+
+        NAV krever legeerklæring første gang en pasient søker om parykk.
+
+        Ved alopecia og/eller søknad om utvidet stønadsgrense på grunn av allergi mot syntetisk materiale, er det også nødvendig med erklæring fra spesialist i hudsykdommer.
+
+        Det er ikke egne skjemaer for å gi slike erklæringer.`,
+      },
+      {
+        type: "line"
+      },
+      {
+        type: "markdown",
+        data: `### Tolkehjelp for hørselshemmede
+
+        NAV krever erklæring fra hørselssentral eller øre-nese-halsspesialist første gang en innbygger søker om tolkehjelp. Det er ikke et eget skjema for å gi en slik erklæring.`,
+      },
+      {
+        type: "line"
+      },
+      {
+        type: "markdown",
+        data: `### Tolke- og ledsagerhjelp for døvblinde
+
+        NAV krever erklæring fra hørselssentral eller øre-nese-halsspesialist første gang en innbygger søker om tolke- og ledsagerhjelp. Det er ikke et eget skjema for å gi en slik erklæring.`,
+      },
+      {
+        type: "line"
+      },
+      {
+        type: "markdown",
+        data: `### Lese- og sekretærhjelp
+
+        NAV krever erklæring fra øyelege eller optiker med diagnose og visus første gang en innbygger søker om lese- og sekretærhjelp. Det er ikke et eget skjema for å gi slik erklæring.`,
+      },
+      {
+        type: "line"
+      },
+      {
+        type: "markdown",
+        data: `### Varmehjelpemidler
+
+        NAV krever legeerklæring første gang en pasient søker om varmehjelpemidler. Det er ikke et eget skjema for å gi slik erklæring.`,
+      },
+      {
+        type: "line"
+      },
+      {
+        type: "markdown",
+        data: `### Høreapparat, tinnitusmaskerer eller tilleggsutstyr
+
+        Hørselssentral eller avtalespesialist har ansvar for at skjemaet blir fylt ut og sendt inn. En øre-nese-halslege må begrunne behovet i et eget felt på søknadsskjemaet.`,
+      },
+      {
+        type: "actions",
+        data: [
+          {
+            text: "Send søknad",
+            href: "#",
+            variant: "primary"
+          },
+          {
+            text: "Ettersend dokumentasjon",
+            href: "#",
+            variant: "secondary"
+          }
+        ]
+      },
+      {
+        type: "line"
+      },
+      {
+        type: "markdown",
+        data: `### Seksualtekniske hjelpemidler
+
+        Alle leger kan bestille seksualtekniske hjelpemidler til en pasient direkte fra leverandør. Leverandøren sender hjelpemidlet til legen, eller hjem til pasienten.
+
+        Seksualtekniske hjelpemidler har med personlige og intime forhold å gjøre. Derfor benyttes ikke vanlig saksgang med søknad og vedtak.`,
+      },
+      {
+        type: "actions",
+        data: [
+          {
+            text: "Send søknad",
+            href: "#",
+            variant: "primary"
+          },
+        ]
+      },
+      {
+        type: "line"
       },
       {
         type: "markdown",
@@ -1328,37 +1939,7 @@ const products = [
           },
         ],
       },
-    ],
-  },
-  {
-    title: "Grunnmønster og søm av klær",
-    ingress: "Brukes som grunnlag for å skreddersy klær.",
-    icon: "/src/_includes/svg/pictograms/neutral.svg",
-    type: ["Pengestøtte"],
-    role: ["Lege, tannlege eller annen behandler"],
-    contentBlocks: [
-      {
-        type: "markdown",
-        data: `### Skriv legeerklæring
-        Det er bare nødvendig med legeerklæring hvis saksbehandler i NAV etterspør dette. (Bør vi lage en felles tekst som brukes alle steder der det skal leveres legeerklæring, men det ikke er et eget skjema for det?)`,
-      },
-      {
-        type: "line",
-      },
-      {
-        type: "markdown",
-        data: `### Mer om`,
-      },
-      {
-        type: "microcards",
-        data: [
-          {
-            text: "Hjelpemidler",
-            dot: "bg-green-300",
-          },
-        ],
-      },
-    ],
+    ]
   },
   {
     title: "Arbeidsforberedende trening",
@@ -1823,7 +2404,9 @@ const products = [
       {
         type: "markdown",
         data: `### Be om fullmakt
-        Skjemaet benyttes når søker gir fullmakt til at søknad kan hentes fra nav.no og fylles ut av behandler/kartlegger i etterkant av kartlegging.`,
+        Søkeren kan gi deg fullmakt til å fylle ut og sende inn søknaden på deres vegne. Da vil søkerens signatur på dette skjemaet erstatte signaturen på selve søknadsskjemaet.
+
+        Fullmakten gjelder ikke for tilleggsskjemaer som krever underskrift. Der hvor det er mulig, bruk standard fremgangsmåte med underskrift direkte på søknadsskjemaet.`,
       },
       {
         type: "actions",
@@ -1854,671 +2437,8 @@ const products = [
     ],
   },
   {
-    title: "Briller til barn",
-    ingress: "Tilskudd til barn og unge under 18 år som trenger briller.",
-    icon: "/src/_includes/svg/pictograms/neutral.svg",
-    type: [
-      "Pengestøtte",
-      "Hjelpemiddel",
-    ],
-    role: ["Optiker eller øyelege"],
-    contentBlocks: [
-      {
-        type: "markdown",
-        data: `### Inngå avtale
-          For å kunne registrere krav om tilskudd til briller til barn og få riktig utbetaling, må optikerfirmaet ha en avtale om direkte oppgjør med NAV.`,
-      },
-      {
-        type: "actions",
-        data: [
-          {
-            text: "Inngå avtale",
-            href: "/soknad/temp-briller-til-barn-sam.html",
-            variant: "primary",
-          },
-        ],
-      },
-      {
-        type: "line",
-      },
-      {
-        type: "markdown",
-        data: `### Send inn eller slett krav
-          Som optiker kan du logge deg på den digitale løsningen og sende krav. På optikers side kan du se alle kravene du selv har sendt inn. Hvis du trenger å korrigere et krav du har sendt inn, gjør du det ved å slette det aktuelle kravet før det har gått syv dager. `,
-      },
-      {
-        type: "actions",
-        data: [
-          {
-            text: "Til optikerportalen",
-            href: "/soknad/temp-briller-til-barn-sam.html",
-            variant: "primary",
-          },
-        ],
-      },
-      {
-        type: "line",
-      },
-      {
-        type: "markdown",
-        data: `### Mer om`,
-      },
-      {
-        type: "microcards",
-        data: [
-          {
-            text: "Briller til barn",
-            dot: "bg-green-300",
-          },
-        ],
-      },
-    ],
-  },
-  {
-    title: "Irislinse",
-    ingress: "Tilskudd til barn og unge under 18 år som trenger briller.",
-    icon: "/src/_includes/svg/pictograms/neutral.svg",
-    type: [
-      "Pengestøtte",
-      "Hjelpemiddel",
-    ],
-    role: ["Optiker eller øyelege"],
-    contentBlocks: [
-      {
-        type: "markdown",
-        data: `### Send pristilbud
-          Pristilbud fra optiker er et obligatorisk vedlegg til søknad om irislinser. Det er optiker som skal fylle ut og signere skjemaet. Pristilbudet bør legges ved og sendes samtidig med søknaden. Hvis det ettersendes senere enn to uker etter søknaden, kan NAV Hjelpemiddelsentral avslå søknaden.`,
-      },
-      {
-        type: "actions",
-        data: [
-          {
-            text: "Send skjema",
-            href: "/soknad/temp-irislinse-sam.html",
-            variant: "primary",
-          },
-        ],
-      },
-      {
-        type: "line",
-      },
-      {
-        type: "markdown",
-        data: `### Mer om`,
-      },
-      {
-        type: "microcards",
-        data: [
-          {
-            text: "Irislinse",
-            dot: "bg-green-300",
-          },
-        ],
-      },
-    ],
-  },
-  {
-    title: "Hørselshjelpemidler",
-    ingress: "Ingress",
-    icon: "/src/_includes/svg/pictograms/horselshjelpemidler.svg",
-    type: [
-      "Pengestøtte",
-      "Hjelpemiddel",
-    ],
-    role: ["Hjelpemiddelformidler"],
-    contentBlocks: [
-      {
-        type: "markdown",
-        data: `### Be om hjelp til vurdering og utprøving
-          Dette skjemaet bruker du hvis du er fagperson og trenger hjelp til vurdering eller utprøving.`,
-      },
-      {
-        type: "actions",
-        data: [
-          {
-            text: "Send skjema",
-            href: "/soknad/temp-horselshjelpemidler-sam.html",
-            variant: "primary",
-          },
-        ],
-      },
-      {
-        type: "line",
-      },
-      {
-        type: "markdown",
-        data: `### Søk om andre høreapparat, tinnitusmaskerer eller tilleggsutstyr
-        Hørselssentral eller avtalespesialist har ansvar for at skjemaet blir fylt ut og sendt inn. Det er valgfritt å fylle ut søknaden via pasientjournalsystemet eller via NAVs nettsider.`,
-      },
-      {
-        type: "actions",
-        data: [
-          {
-            text: "Send søknad digitalt",
-            href: "/soknad/temp-horselshjelpemidler-sam.html",
-            variant: "primary",
-          },
-        ],
-      },
-      {
-        type: "markdown",
-        data: `Hvis du har fylt ut søknaden i pasientjournalsystemet, må du skrive ut en førsteside som skal legges ved søknaden. (Evt bygge mellomsteg her?)`,
-      },
-      {
-        type: "actions",
-        data: [
-          {
-            text: "Skriv ut førsteside for å sende i posten",
-            href: "/soknad/temp-horselshjelpemidler-sam.html",
-            variant: "secondary",
-          },
-        ],
-      },
-      {
-        type: "line",
-      },
-      {
-        type: "markdown",
-        data: `### Bekreftelse på utlån og tildeling av høreapparat / tinnitusmaskerer / tilleggsutstyr
-          Skjemaet fylles ut og sendes inn av avtalespesialist eller høresentral.`,
-      },
-      {
-        type: "actions",
-        data: [
-          {
-            text: "Send skjema",
-            href: "/soknad/temp-horselshjelpemidler-sam.html",
-            variant: "primary",
-          },
-        ],
-      },
-      {
-        type: "line",
-      },
-      {
-        type: "markdown",
-        data: `### Søk om hjelpemidler (dette er et fellesskjema som brukes for mange hjelpemidler, må ha generisk tekst?)
-          Hvis du er Hjelpemiddelformidler i kommunen og har fått nødvendige tilganger, kan du nå søke digitalt om et utvalg av enkle hjelpemidler. Når du skal søke på vegne av andre trenger du signert fullmakt.`,
-      },
-      {
-        type: "actions",
-        data: [
-          {
-            text: "Send skjema",
-            href: "/soknad/temp-horselshjelpemidler-sam.html",
-            variant: "primary",
-          },
-        ],
-      },
-      {
-        type: "line",
-      },
-      {
-        type: "markdown",
-        data: `### Be om fullmakt
-          Skjemaet benyttes når søker gir fullmakt til at søknad kan hentes fra nav.no og fylles ut av behandler/kartlegger i etterkant av kartlegging.`,
-      },
-      {
-        type: "actions",
-        data: [
-          {
-            text: "Send søknad",
-            href: "/soknad/temp-horselshjelpemidler-sam.html",
-            variant: "primary",
-          },
-        ],
-      },
-      {
-        type: "line",
-      },
-      {
-        type: "markdown",
-        data: `### Mer om`,
-      },
-      {
-        type: "microcards",
-        data: [
-          {
-            text: "Hørselshjelpemidler",
-            dot: "bg-green-300",
-          },
-        ],
-      },
-    ],
-  },
-  {
-    title: "Hjelpemidler til tale og språk",
-    ingress: "Ingress",
-    icon: "/src/_includes/svg/pictograms/neutral.svg",
-    type: [
-      "Pengestøtte",
-      "Hjelpemiddel",
-    ],
-    role: ["Hjelpemiddelformidler"],
-    contentBlocks: [
-      {
-        type: "markdown",
-        data: `### Be om hjelp til vurdering og utprøving
-          Dette skjemaet bruker du hvis du er fagperson og trenger hjelp til vurdering eller utprøving.`,
-      },
-      {
-        type: "actions",
-        data: [
-          {
-            text: "Send skjema",
-            href: "/soknad/temp-hjelpemidler-til-tale-og-sprak-sam.html",
-            variant: "primary",
-          },
-        ],
-      },
-      {
-        type: "line",
-      },
-      {
-        type: "markdown",
-        data: `### Søk om hjelpemidler (dette er et fellesskjema som brukes for mange hjelpemidler, må ha generisk tekst?)
-          Hvis du er Hjelpemiddelformidler i kommunen og har fått nødvendige tilganger, kan du nå søke digitalt om et utvalg av enkle hjelpemidler. Når du skal søke på vegne av andre trenger du signert fullmakt.`,
-      },
-      {
-        type: "actions",
-        data: [
-          {
-            text: "Send skjema",
-            href: "/soknad/temp-hjelpemidler-til-tale-og-sprak-sam.html",
-            variant: "primary",
-          },
-        ],
-      },
-      {
-        type: "line",
-      },
-      {
-        type: "markdown",
-        data: `### Be om fullmakt
-          Skjemaet benyttes når søker gir fullmakt til at søknad kan hentes fra nav.no og fylles ut av behandler/kartlegger i etterkant av kartlegging.`,
-      },
-      {
-        type: "actions",
-        data: [
-          {
-            text: "Send søknad",
-            href: "/soknad/temp-hjelpemidler-til-tale-og-sprak-sam.html",
-            variant: "primary",
-          },
-        ],
-      },
-      {
-        type: "line",
-      },
-      {
-        type: "markdown",
-        data: `### Mer om`,
-      },
-      {
-        type: "microcards",
-        data: [
-          {
-            text: "Hjelpemidler til tale og språk",
-            dot: "bg-green-300",
-          },
-        ],
-      },
-    ],
-  },
-  {
-    title: "Hjelpemidler for å huske, planlegge og organisere",
-    ingress: "Ingress",
-    icon: "/src/_includes/svg/pictograms/neutral.svg",
-    type: [
-      "Pengestøtte",
-      "Hjelpemiddel",
-    ],
-    role: ["Hjelpemiddelformidler"],
-    contentBlocks: [
-      {
-        type: "markdown",
-        data: `### Be om hjelp til vurdering og utprøving
-          Dette skjemaet bruker du hvis du er fagperson og trenger hjelp til vurdering eller utprøving.`,
-      },
-      {
-        type: "actions",
-        data: [
-          {
-            text: "Send skjema",
-            href: "/soknad/temp-hjelpemidler-for-a-huske-planlegge-og-organisere-sam.html",
-            variant: "primary",
-          },
-        ],
-      },
-      {
-        type: "line",
-      },
-      {
-        type: "markdown",
-        data: `### Søk om hjelpemidler (dette er et fellesskjema som brukes for mange hjelpemidler, må ha generisk tekst?)
-        Hvis du er Hjelpemiddelformidler i kommunen og har fått nødvendige tilganger, kan du nå søke digitalt om et utvalg av enkle hjelpemidler. Når du skal søke på vegne av andre trenger du signert fullmakt.`,
-      },
-      {
-        type: "actions",
-        data: [
-          {
-            text: "Send skjema",
-            href: "/soknad/temp-hjelpemidler-for-a-huske-planlegge-og-organisere-sam.html",
-            variant: "primary",
-          },
-        ],
-      },
-      {
-        type: "line",
-      },
-      {
-        type: "markdown",
-        data: `### Be om fullmakt
-          Skjemaet benyttes når søker gir fullmakt til at søknad kan hentes fra nav.no og fylles ut av behandler/kartlegger i etterkant av kartlegging.`,
-      },
-      {
-        type: "actions",
-        data: [
-          {
-            text: "Send søknad",
-            href: "/soknad/temp-hjelpemidler-for-a-huske-planlegge-og-organisere-sam.html",
-            variant: "primary",
-          },
-        ],
-      },
-      {
-        type: "line",
-      },
-      {
-        type: "markdown",
-        data: `### Mer om`,
-      },
-      {
-        type: "microcards",
-        data: [
-          {
-            text: "Hjelpemidler for å huske, planlegge og organisere",
-            dot: "bg-green-300",
-          },
-        ],
-      },
-    ],
-  },
-  {
-    title: "Bevegelseshjelpemidler",
-    ingress: "Ingress",
-    icon: "/src/_includes/svg/pictograms/neutral.svg",
-    type: [
-      "Pengestøtte",
-      "Hjelpemiddel",
-      "Skjema",
-    ],
-    role: ["Hjelpemiddelformidler"],
-    contentBlocks: [
-      {
-        type: "markdown",
-        data: `### Be om hjelp til vurdering og utprøving
-          Dette skjemaet bruker du hvis du er fagperson og trenger hjelp til vurdering eller utprøving.`,
-      },
-      {
-        type: "actions",
-        data: [
-          {
-            text: "Send skjema",
-            href: "/soknad/temp-bevegelseshjelpemidler-sam.html",
-            variant: "primary",
-          },
-        ],
-      },
-      {
-        type: "line",
-      },
-      {
-        type: "markdown",
-        data: `### Søk om hjelpemidler (dette er et fellesskjema som brukes for mange hjelpemidler, må ha generisk tekst?)
-          Hvis du er Hjelpemiddelformidler i kommunen og har fått nødvendige tilganger, kan du nå søke digitalt om et utvalg av enkle hjelpemidler. Når du skal søke på vegne av andre trenger du signert fullmakt.`,
-      },
-      {
-        type: "actions",
-        data: [
-          {
-            text: "Send skjema",
-            href: "/soknad/temp-bevegelseshjelpemidler-sam.html",
-            variant: "primary",
-          },
-        ],
-      },
-      {
-        type: "line",
-      },
-      {
-        type: "markdown",
-        data: `### Be om fullmakt
-          Skjemaet benyttes når søker gir fullmakt til at søknad kan hentes fra nav.no og fylles ut av behandler/kartlegger i etterkant av kartlegging.`,
-      },
-      {
-        type: "actions",
-        data: [
-          {
-            text: "Send søknad",
-            href: "/soknad/temp-bevegelseshjelpemidler-sam.html",
-            variant: "primary",
-          },
-        ],
-      },
-      {
-        type: "markdown",
-        data: `### Last ned skjema for demontering av trappeheis, løfteplattform, sjaktheis eller takheis
-          Skjemaet skal fylles ut og returneres sammen med demontert heis.`,
-      },
-      {
-        type: "actions",
-        data: [
-          {
-            text: "Last ned skjema",
-            href: "/soknad/temp-bevegelseshjelpemidler-sam.html",
-            variant: "primary",
-          },
-        ],
-      },
-      {
-        type: "line",
-      },
-      {
-        type: "markdown",
-        data: `### Mer om`,
-      },
-      {
-        type: "microcards",
-        data: [
-          {
-            text: "Bevegelseshjelpemidler",
-            dot: "bg-green-300",
-          },
-        ],
-      },
-    ],
-  },
-  {
-    title: "Ortopediske hjelpemidler",
-    ingress: "Ingress",
-    icon: "/src/_includes/svg/pictograms/ortopediske-sko.svg",
-    type: [
-      "Pengestøtte",
-      "Hjelpemiddel",
-    ],
-    role: [
-      "Hjelpemiddelformidler",
-      "Lege, tannlege eller annen behandler",
-    ],
-    contentBlocks: [
-      {
-        type: "markdown",
-        data: `### Be om hjelp til vurdering og utprøving
-          Dette skjemaet bruker du hvis du er fagperson og trenger hjelp til vurdering eller utprøving.`,
-      },
-      {
-        type: "actions",
-        data: [
-          {
-            text: "Send skjema",
-            href: "/soknad/temp-ortopediske-hjelpemidler-sam.html",
-            variant: "primary",
-          },
-        ],
-      },
-      {
-        type: "line",
-      },
-      {
-        type: "markdown",
-        data: `### Søk om ortopediske hjelpemidler
-          Gjelder hvis du skal søke om protese (har ikke disse egne søknader?), ortose, spesialfottøy, aktivitetshjelpemidler for brukere over 26 år, fotseng eller ortopedisk sydd fottøy. Skjemaet fylles ut av legespesialist eller sykehuslege (ved førstegangssøknad eller fornyelse) eller ortopediingeniør (ved fornyelse).`,
-      },
-      {
-        type: "actions",
-        data: [
-          {
-            text: "Send skjema",
-            href: "/soknad/temp-ortopediske-hjelpemidler-sam.html",
-            variant: "primary",
-          },
-        ],
-      },
-      {
-        type: "markdown",
-        data: `Er søknaden om ortopedisk hjelpemiddel fylt ut i legens pasientjournalsystem eller (på papir?) av ortopediingeniør? Da må du skrive ut en førsteside som du legger ved søknaden når du sender søknaden i posten.`,
-      },
-      {
-        type: "actions",
-        data: [
-          {
-            text: "Skriv ut førsteside",
-            href: "/soknad/temp-ortopediske-hjelpemidler-sam.html",
-            variant: "secondary",
-          },
-        ],
-      },
-      {
-        type: "line",
-      },
-      {
-        type: "markdown",
-        data: `### Be om fullmakt
-          Skjemaet benyttes når søker gir fullmakt til at søknad kan hentes fra nav.no og fylles ut av behandler/kartlegger i etterkant av kartlegging.`,
-      },
-      {
-        type: "actions",
-        data: [
-          {
-            text: "Send søknad",
-            href: "/soknad/temp-ortopediske-hjelpemidler-sam.html",
-            variant: "primary",
-          },
-        ],
-      },
-      {
-        type: "line",
-      },
-      {
-        type: "markdown",
-        data: `### Mer om`,
-      },
-      {
-        type: "microcards",
-        data: [
-          {
-            text: "Ortopediske hjelpemidler",
-            dot: "bg-green-300",
-          },
-        ],
-      },
-    ],
-  },
-  {
-    title: "Hjelpemidler for å lese og skrive",
-    ingress: "Ingress",
-    icon: "/src/_includes/svg/pictograms/neutral.svg",
-    type: [
-      "Pengestøtte",
-      "Hjelpemiddel",
-    ],
-    role: [
-      "Hjelpemiddelformidler",
-    ],
-    contentBlocks: [
-      {
-        type: "markdown",
-        data: `### Be om hjelp til vurdering og utprøving
-          Dette skjemaet bruker du hvis du er fagperson og trenger hjelp til vurdering eller utprøving.`,
-      },
-      {
-        type: "actions",
-        data: [
-          {
-            text: "Send skjema",
-            href: "/soknad/temp-hjelpemidler-for-a-lese-og-skrive-sam.html",
-            variant: "primary",
-          },
-        ],
-      },
-      {
-        type: "line",
-      },
-      {
-        type: "markdown",
-        data: `### Søk om hjelpemidler (dette er et fellesskjema som brukes for mange hjelpemidler, må ha generisk tekst?)
-          Hvis du er Hjelpemiddelformidler i kommunen og har fått nødvendige tilganger, kan du nå søke digitalt om et utvalg av enkle hjelpemidler. Når du skal søke på vegne av andre trenger du signert fullmakt.`,
-      },
-      {
-        type: "actions",
-        data: [
-          {
-            text: "Send skjema",
-            href: "/soknad/temp-hjelpemidler-for-a-lese-og-skrive-sam.html",
-            variant: "primary",
-          },
-        ],
-      },
-      {
-        type: "line",
-      },
-      {
-        type: "markdown",
-        data: `### Be om fullmakt
-          Skjemaet benyttes når søker gir fullmakt til at søknad kan hentes fra nav.no og fylles ut av behandler/kartlegger i etterkant av kartlegging.`,
-      },
-      {
-        type: "actions",
-        data: [
-          {
-            text: "Send søknad",
-            href: "/soknad/temp-hjelpemidler-for-a-lese-og-skrive-sam.html",
-            variant: "primary",
-          },
-        ],
-      },
-      {
-        type: "line",
-      },
-      {
-        type: "markdown",
-        data: `### Mer om`,
-      },
-      {
-        type: "microcards",
-        data: [
-          {
-            text: "Hjelpemidler for å lese og skrive",
-            dot: "bg-green-300",
-          },
-        ],
-      },
-    ],
-  },
-  {
     title: "Lønnsgaranti",
-    ingress: "Ingress",
+    ingress: "Sikrer blant annet lønn og feriepenger arbeidstaker har til gode når arbeidsgiveren ikke kan betale, for eksempel ved konkurs.",
     icon: "/src/_includes/svg/pictograms/neutral.svg",
     type: ["Pengestøtte"],
     role: ["Bostyrer"],
@@ -2551,49 +2471,6 @@ const products = [
           {
             text: "Lønnsgaranti",
             dot: "bg-green-300",
-          },
-        ],
-      },
-    ],
-  },
-  {
-    title: "Meld behov for hjelpemidler",
-    ingress: "Kommunalt ansatte kan melde behov om hjelpemidler digitalt.",
-    icon: "/src/_includes/svg/pictograms/slik-gjor-du-det.svg",
-    type: ["Hjelpemiddel"],
-    role: [
-      "Hjelpemiddelformidler",
-      "Ansatt i NAV-kontor, kommunen eller fylkeskommunen",
-    ],
-    contentBlocks: [
-      {
-        type: "markdown",
-        data: `### Meld inn behov for hjelpemidler
-          Saken sendes til NAV Hjelpemiddelsentral. Saker du har sendt inn digitalt vil være tilgjengelig på innlogget side på nav.no. Der kan du følge status på dine innsendte digitale saker. Søknaden blir også tilgjengelig på nav.no-profilen til innbyggeren du har søkt for. (Hvilke hjelpemiddelgrupper er denne aktuell for?)`,
-      },
-      {
-        type: "actions",
-        data: [
-          {
-            text: "Send skjema",
-            href: "/soknad/temp-meld-behov-for-hjelpemidler-sam.html",
-            variant: "primary",
-          },
-        ],
-      },
-      {
-        type: "line",
-      },
-      {
-        type: "markdown",
-        data: `### Mer om`,
-      },
-      {
-        type: "microcards",
-        data: [
-          {
-            text: "Meld behov for hjelpemidler",
-            dot: "bg-lightblue-300",
           },
         ],
       },
@@ -2842,37 +2719,8 @@ const products = [
   },
 ];
 
-const getTags = (array, key) => {
-  let tagSet = new Set();
-
-  array.forEach(function (item) {
-    if (key in item) {
-      let tags = item[key];
-
-      tags = tags.filter((item) => {
-        return true;
-      });
-
-      for (const tag of tags) {
-        tagSet.add(tag);
-      }
-    }
-  });
-
-  return [...tagSet].sort((a, b) => {
-    if (a == b) return 0;
-    if (a == "Andre samarbeidspartnere") return 1;
-    if (b == "Andre samarbeidspartnere") return -1;
-
-    if (a < b) return -1;
-    if (a > b) return 1;
-    return 0;
-  });
-};
-
 module.exports = {
   products,
   activeRole: "Samarbeidspartner",
-  typeFilter: getTags(products, "type"),
-  roleFilter: getTags(products, "role"),
+  roleFilter: [...new Set(products.map(item => item["role"]).flat())],
 };

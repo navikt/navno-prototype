@@ -2332,36 +2332,7 @@ const products = [
   },
 ];
 
-const getTags = (array, key) => {
-  let tagSet = new Set();
-
-  array.forEach(function (item) {
-    if (key in item) {
-      let tags = item[key];
-
-      tags = tags.filter((item) => {
-        return true;
-      });
-
-      for (const tag of tags) {
-        tagSet.add(tag);
-      }
-    }
-  });
-
-  return [...tagSet].sort((a, b) => {
-    if (a == b) return 0;
-    if (a == "Annet") return 1;
-    if (b == "Annet") return -1;
-
-    if (a < b) return -1;
-    if (a > b) return 1;
-    return 0;
-  });
-};
 
 module.exports = {
   products,
-  typeFilter: getTags(products, "type"),
-  areaFilter: getTags(products, "area"),
 };
