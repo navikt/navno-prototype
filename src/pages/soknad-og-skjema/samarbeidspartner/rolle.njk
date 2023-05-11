@@ -73,14 +73,14 @@
     <div class="relative col-wide md:grid md:grid-cols-[8rem_auto] gap-x-8 items-start mb-12 w-full">
 
       {# Pictogram #}
-      {{ '/src/_includes/svg/pictograms/support.svg' | svgContents('w-full h-auto max-w-20 ml-6 md:ml-2 text-green-800 float-right md:float-none row-start-1') | safe }}
+      {{ '/src/_includes/svg/pictograms/support.svg' | svgContents('w-full h-auto max-w-24 text-green-800 float-right md:float-none row-start-1 justify-self-end') | safe }}
 
       <div class="lg:grid lg:col-start-2 lg:grid-cols-12 lg:gap-x-10 md:pr-20 lg:pr-0">
         {# Intro #}
         <div class="md:col-start-1 md:col-end-9">
           <h1 class="text-3xl font-semibold leading-tight md:text-5xl md:leading-tight">{{ title | safe }}</h1>
           <p class="mt-2 text-sm tracking-wider text-gray-700 uppercase">{{ kicker | safe }}</p>
-          <p class="max-w-2xl mt-8 text-xl md:text-2xl">{{ description | safe }}. <a class="text-blue-500 underline hover:no-underline hover:text-deepblue-600" href="/soknad-og-skjema-samarbeidspartner/">Bytt rolle</a>.</p>
+          <p class="max-w-2xl mt-6 text-xl md:text-2xl">{{ description | safe }}. <a class="text-blue-500 underline hover:no-underline hover:text-deepblue-600" href="/soknad-og-skjema-samarbeidspartner/">Bytt rolle</a>.</p>
         </div>
 
 
