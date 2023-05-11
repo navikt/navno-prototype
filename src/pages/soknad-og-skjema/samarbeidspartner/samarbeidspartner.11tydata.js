@@ -2228,7 +2228,7 @@ Fullmakten gjelder ikke for tilleggsskjemaer som krever underskrift. Der hvor de
   },
   {
     title: "Avklaring",
-    ingress: "Støtte for å klare å skaffe eller beholde en jobb.",
+    ingress: "Kartlegging av arbeidsmuligheter og støttebehov for å skaffe eller beholde arbeid.",
     icon: "/src/_includes/svg/pictograms/neutral.svg",
     type: ["Tiltak"],
     role: ["Tiltaksarrangør"],
@@ -2290,7 +2290,7 @@ Fullmakten gjelder ikke for tilleggsskjemaer som krever underskrift. Der hvor de
   },
   {
     title: "Arbeidsrettet rehabilitering",
-    ingress: "Støtte for å klare å skaffe eller beholde en jobb.",
+    ingress: "Støtte for sykemeldte og andre som for tiden står utenfor arbeidslivet.",
     icon: "/src/_includes/svg/pictograms/neutral.svg",
     type: ["Tiltak"],
     role: ["Tiltaksarrangør"],
@@ -2670,7 +2670,7 @@ Fullmakten gjelder ikke for tilleggsskjemaer som krever underskrift. Der hvor de
   },
   {
     title: "Jobbklubb",
-    ingress: "",
+    ingress: "Hjelp til aktivt jobbsøk for registrerte arbeidssøkere.",
     icon: "/src/_includes/svg/pictograms/neutral.svg",
     type: ["Tiltak"],
     role: [
@@ -2715,6 +2715,22 @@ Fullmakten gjelder ikke for tilleggsskjemaer som krever underskrift. Der hvor de
           },
         ],
       },
+      {
+        type: "line"
+      },
+      {
+        type: "markdown",
+        data: `### Mer om`
+      },
+      {
+        type: "microcards",
+        data: [
+          {
+            text: "Jobbklubb",
+            dot: "bg-green-300",
+          },
+        ],
+      }
     ],
   },
 ];
