@@ -1,5 +1,5 @@
 {# Navigation (Private) #}
-<div class="absolute inset-x-0 z-40 grid pt-6 pb-12 bg-white shadow-xl top-full grid-cols-layout md:pt-8" x-bind:class="!menuOpen ? 'hidden' : 'opacity-0 animate-dropdown'">
+<div class="absolute inset-x-0 z-40 grid pt-6 pb-12 bg-white shadow-xl top-full grid-cols-layout md:pt-8" x-bind:class="!menuOpen ? 'hidden' : 'opacity-0 animate-dropdown'" x-bind:aria-hidden="!menuOpen">
 
   <div class="grid gap-x-12 gap-y-12 col-wide md:grid-flow-col-dense md:grid-cols-5 md:grid-rows-[1fr_auto]">
 
