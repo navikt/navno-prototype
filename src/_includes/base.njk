@@ -32,7 +32,6 @@
       menuOpen: false,
       notifyOpen: false
     }">
-    <div class="relative z-10 bg-white" >
     {%- if environment === 'production' -%}
     {%- include "partials/banner.njk" -%}
     {%- endif -%}
@@ -41,6 +40,5 @@
     {%- block content -%}{%- endblock -%}
     {%- include "partials/footer.njk" -%}
     {%- include "partials/prototypeNav.njk" -%}
-    </div>
   </body>
 </html>

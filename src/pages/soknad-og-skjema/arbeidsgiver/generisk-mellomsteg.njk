@@ -4,16 +4,11 @@
     data: "products",
     size: 1,
     alias: "product",
-    // before: function(data) {
-    //   const filteredData = data.filter(element => element.data.egenSide === true)
-    //   return filteredData
-    // }
   },
   eleventyComputed: {
     title: "{{ product.title }}",
     kicker: "Søknad",
     permalink: "/soknad/temp-{{ product.title | slugify }}-arb.html"
-    // permalink: false
   }
 }
 ---
