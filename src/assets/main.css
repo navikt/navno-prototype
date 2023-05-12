@@ -191,7 +191,7 @@
       var(--_layout-full) [full-end];
   }
   .grid-cols-layout > * {
-    grid-column: narrow;
+    grid-column: normal;
   }
   .col-narrow {
     grid-column: narrow;
