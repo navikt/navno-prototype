@@ -181,7 +181,7 @@ module.exports = {
         openDrawer: "openDrawer 200ms cubic-bezier(0.3, 0.6, 0.25, 1) forwards",
         dropdown: "dropdown 200ms cubic-bezier(0.3, 0.6, 0.25, 1) forwards",
         enter: "enter 300ms cubic-bezier(0.3, 0.6, 0.25, 1.45) forwards",
-        "fade-in": "fade-in 600ms cubic-bezier(0.3, 0.6, 0.25, 1) forwards",
+        "fade-in": "fade-in 400ms 100ms cubic-bezier(0.3, 0.6, 0.25, 1) forwards",
         blur: "blur 200ms cubic-bezier(0.3, 0.6, 0.25, 1) forwards",
       },
       backgroundImage: {
@@ -194,6 +194,8 @@ module.exports = {
       },
       boxShadow: {
         border: "0 -1px 0 inset rgba(128,128,128,0.2)",
+        menuActive: "0 -4px 0 inset rgb(0 103 197)",
+        menuHover: "0 -4px 0 inset rgb(0 0 0 / 0.19)"
       },
       fontSize: {
         squishy: "clamp(2rem, 10vw + 10%, 8rem)",
@@ -213,8 +215,10 @@ module.exports = {
       },
       keyframes: {
         dropdown: {
-          "0%, 10%": {
-            transform: "translateY(-3rem)",
+          "0%": {
+            transform: "translateY(-1rem)",
+          },
+          "0%, 15%": {
             opacity: "0",
           },
           "100%": {
@@ -246,7 +250,7 @@ module.exports = {
           },
         },
         "fade-in": {
-          "0%, 5%": {
+          "0%": {
             opacity: 0,
           },
           "100%": {
