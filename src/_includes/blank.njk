@@ -21,7 +21,17 @@
     <script src="/assets/alpine.min.js" type="text/javascript" defer></script>
     {%- block script -%}{%- endblock -%}
   </head>
-  <body class="">
+  <body
+    class=""
+    x-data="{
+      indexOpen: false,
+      audienceDropdownOpen: false,
+      loggedIn: true,
+      loginOpen: false,
+      menuOpen: false,
+      notifyOpen: false,
+      newNotifications: true
+    }">
     {%- if environment === 'production' -%}
     {%- include "partials/banner.njk" -%}
     {%- endif -%}
