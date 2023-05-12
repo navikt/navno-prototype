@@ -1334,6 +1334,24 @@ const products = [
     contentBlocks: [
       {
         type: "markdown",
+        data: `### Send inn bekreftelse på arbeidsforhold og permittering
+          Dette sender du inn når en permittert arbeidstaker har behov for dokumentasjon i forbindelse med dagpengesøknad.`,
+      },
+      {
+        type: "actions",
+        data: [
+          {
+            text: "Send skjema",
+            href: "/soknad/temp-dagpenger-arb.html",
+            variant: "primary",
+          },
+        ],
+      },
+      {
+        type: "line",
+      },
+      {
+        type: "markdown",
         data: `### Meld fra om permitteringer, masseoppsigelser og/eller reduksjon i arbeidstid`,
       },
       {
@@ -1372,6 +1390,24 @@ const products = [
     type: ["Skjema"],
     area: ["Permittering og nedbemanning"],
     contentBlocks: [
+      {
+        type: "markdown",
+        data: `### Send inn bekreftelse på arbeidsforhold og permittering
+          Dette sender du inn når en permittert arbeidstaker har behov for dokumentasjon i forbindelse med dagpengesøknad.`,
+      },
+      {
+        type: "actions",
+        data: [
+          {
+            text: "Send skjema",
+            href: "/soknad/temp-dagpenger-arb.html",
+            variant: "primary",
+          },
+        ],
+      },
+      {
+        type: "line",
+      },
       {
         type: "markdown",
         data: `### Meld fra om permitteringer, masseoppsigelser og/eller reduksjon i arbeidstid`,
