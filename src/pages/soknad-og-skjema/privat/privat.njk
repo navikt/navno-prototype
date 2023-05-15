@@ -157,7 +157,17 @@ permalink: "/soknad-og-skjema/"
         </div>
 
         <div class="mt-8 md:mt-9 lg:col-start-1 lg:col-end-9">
-          <p class="mb-2">Viser <span x-text="count"></span> av {{ products.length }}</p>
+          <div class="flex items-center justify-between mb-2">
+            <p>Viser <span x-text="count"></span> av {{ products.length }}</p>
+            <template x-if="count < {{ products.length }}">
+              <button type="button" class="inline-flex items-center gap-1 text-blue-500 hover:underline" x-on:click="areaFilter = 'alle', typeFilter = 'alle', updateCount($refs), clearSearch()">
+                <svg class="w-5 h-5" aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" focusable="false"><path fill-rule="evenodd" clip-rule="evenodd" d="M6.53 5.47a.75.75 0 0 0-1.06 1.06L10.94 12l-5.47 5.47a.75.75 0 1 0 1.06 1.06L12 13.06l5.47 5.47a.75.75 0 1 0 1.06-1.06L13.06 12l5.47-5.47a.75.75 0 0 0-1.06-1.06L12 10.94 6.53 5.47Z" fill="currentColor"></path></svg>
+                <span>Nullstill</span>
+              </button>
+            </template>
+          </div>
+
+
           <div class="border-b border-deepblue-100" x-ref="entries" x-show="count !== 0">
             {%- for product in products | sort(true, false, 'title') | reverse -%}
               <div
