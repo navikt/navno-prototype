@@ -737,7 +737,21 @@ const products = [
     contentBlocks: [
       {
         type: "markdown",
-        data: ``
+        data: `### Søk om motorkjøretøy og/eller spesialutstyr og tilpasning til bil
+        Skjemaet brukes når du søker på vegne av en innbygger.`
+      },
+      {
+        type: "actions",
+        data: [
+          {
+            text: "Send søknad",
+            href: "/soknad/temp-bilstonad-sam.html",
+            variant: "primary",
+          },
+        ],
+      },
+      {
+        type: "line"
       },
       {
         type: "markdown",
@@ -878,13 +892,31 @@ const products = [
   },
   {
     title: "Briller og synshjelpemidler",
-    ingress: "…",
+    ingress: "Hjelpemidler for personer som har nedsatt syn eller trenger briller.",
     icon: "/src/_includes/svg/pictograms/neutral.svg",
     type: [
       "Hjelpemiddel",
     ],
     role: ["Hjelpemiddelformidler"],
     contentBlocks: [
+      {
+        type: "markdown",
+        data: `### Søk om synshjelpemidler
+        Skjemaet brukes når du søker om et synshjelpemiddel som kan gå utenom optiker.`
+      },
+      {
+        type: "actions",
+        data: [
+          {
+            text: "Send søknad",
+            href: "/soknad/temp-bevegelseshjelpemidler-sam.html",
+            variant: "primary",
+          },
+        ],
+      },
+      {
+        type: "line"
+      },
       {
         type: "markdown",
         data: `### Bytte av hjelpemiddel
