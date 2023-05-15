@@ -25,7 +25,7 @@
       <button
         type="button"
         class="{{ buttonClasses }}"
-        x-on:click="{{ params.value }} = '{{ item | slugify }}', updateCount($refs), setRole('{{ item | safe }}')"
+        x-on:click="{{ params.value }} = '{{ item | slugify }}', updateCount($refs)"
         x-bind:class="{{ params.value }} === '{{ item | slugify }}' ? 'text-white bg-deepblue-500' : 'bg-deepblue-50 fine:hover:bg-deepblue-100'"
       >{{ item | safe }}</button>
     </li>
