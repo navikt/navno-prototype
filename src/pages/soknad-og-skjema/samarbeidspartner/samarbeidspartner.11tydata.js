@@ -724,10 +724,6 @@ const products = [
       },
     ]
   },
-
-
-
-
   {
     title: "Bilstønad",
     ingress:
@@ -739,6 +735,10 @@ const products = [
     ],
     role: ["Hjelpemiddelformidler"],
     contentBlocks: [
+      {
+        type: "markdown",
+        data: ``
+      },
       {
         type: "markdown",
         data: `### Tilleggsskjema fra ergo- eller fysioterapeut i forbindelse med søknad om motorkjøretøy og spesialutstyr eller tilpasning
@@ -1112,60 +1112,6 @@ const products = [
       },
       {
         type: "markdown",
-        data: `### Søk om høreapparat, tinnitusmaskerer eller tilleggsutstyr
-        Hørselssentral eller avtalespesialist har ansvar for at skjemaet blir fylt ut og sendt inn. En øre-nese-halslege må begrunne behovet i et eget felt på søknadsskjemaet.`,
-      },
-      {
-        type: "actions",
-        data: [
-          {
-            text: "Send søknad",
-            href: "/soknad/temp-horselshjelpemidler-sam.html",
-            variant: "primary",
-          },
-        ],
-      },
-      {
-        type: "line",
-      },
-      {
-        type: "markdown",
-        data: `### Bekreftelse på utlån og tildeling av høreapparat / tinnitusmaskerer / tilleggsutstyr
-          Skjemaet fylles ut og sendes inn av avtalespesialist eller høresentral.`,
-      },
-      {
-        type: "actions",
-        data: [
-          {
-            text: "Send skjema",
-            href: "/soknad/temp-horselshjelpemidler-sam.html",
-            variant: "primary",
-          },
-        ],
-      },
-      {
-        type: "line",
-      },
-      {
-        type: "markdown",
-        data: `### Bekreftelse på utlån og tildeling av høreapparat, tinnitusmaskerer eller tilleggsutstyr
-        Skjemaet fylles ut og sendes inn av avtalespesialist eller høresentral.`
-      },
-      {
-        type: "actions",
-        data: [
-          {
-            text: "Send skjema",
-            href: "#",
-            variant: "primary"
-          }
-        ]
-      },
-      {
-        type: "line"
-      },
-      {
-        type: "markdown",
         data: `### Søk om hjelpemidler
           Hvis du er hjelpemiddelformidler i kommunen og har fått nødvendige tilganger, kan du nå søke digitalt om et utvalg av enkle hjelpemidler. Når du skal søke på vegne av andre trenger du signert fullmakt.`,
       },
@@ -1463,7 +1409,7 @@ Fullmakten gjelder ikke for tilleggsskjemaer som krever underskrift. Der hvor de
       {
         type: "markdown",
         data: `### Søk om hjelpemidler
-          Hvis du er Hjelpemiddelformidler i kommunen og har fått nødvendige tilganger, kan du nå søke digitalt om et utvalg av enkle hjelpemidler. Når du skal søke på vegne av andre trenger du signert fullmakt.`,
+          Hvis du er hjelpemiddelformidler i kommunen og har fått nødvendige tilganger, kan du nå søke digitalt om et utvalg av enkle hjelpemidler. Når du skal søke på vegne av andre trenger du signert fullmakt.`,
       },
       {
         type: "actions",
@@ -2392,7 +2338,7 @@ Fullmakten gjelder ikke for tilleggsskjemaer som krever underskrift. Der hvor de
   },
   {
     title: "Fullmakt til å søke om hjelpemidler",
-    ingress: "Fullmakt i forbindelse med søknad om tekniske hjelpemidler",
+    ingress: "Fullmakt i forbindelse med søknad om hjelpemidler",
     icon: "/src/_includes/svg/pictograms/slik-gjor-du-det.svg",
     type: ["Skjema"],
     role: [
