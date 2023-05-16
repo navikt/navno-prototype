@@ -1459,8 +1459,7 @@ Fullmakten gjelder ikke for tilleggsskjemaer som krever underskrift. Der hvor de
       {
         type: "markdown",
         data: `### Be om fullmakt
-        Søkeren kan gi deg fullmakt til å fylle ut og sende inn søknaden på deres vegne. Da vil søkerens signatur på dette skjemaet erstatte signaturen på selve søknadsskjemaet.
-        Fullmakten gjelder ikke for tilleggsskjemaer som krever underskrift. Der hvor det er mulig, bruk standard fremgangsmåte med underskrift direkte på søknadsskjemaet.`,
+        Søkeren kan gi deg fullmakt til å fylle ut og sende inn søknaden på deres vegne. Da vil søkerens signatur på dette skjemaet erstatte signaturen på selve søknadsskjemaet`,
       },
       {
         type: "actions",
