@@ -2518,8 +2518,9 @@ Fullmakten gjelder ikke for tilleggsskjemaer som krever underskrift. Der hvor de
         type: "microcards",
         data: [
           {
-            text: "Demontering av heis",
-            dot: "bg-lightblue-300",
+            text: "Oppgjør for ortopediske verksteder",
+            dot: "bg-green-300",
+            href: "https://www.nav.no/samarbeidspartner/oppgjor-ortopediske-verksteder"
           },
         ],
       },
