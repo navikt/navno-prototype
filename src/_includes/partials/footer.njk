@@ -1,7 +1,7 @@
-<footer class="self-end pb-12 text-lg text-white grid bg-deepblue-800 grid-cols-layout" x-bind:inert="menuOpen || notifyOpen">
+<footer class="grid pb-12 text-lg text-white bg-deepblue-800 grid-cols-layout" x-bind:inert="menuOpen || notifyOpen">
   <div class="col-wide">
     <div class="flex flex-col items-center py-3">
-      <a class="flex items-center text-base text-center gap-2 fine:hover:underline fine:hover:text-orange-200" href="#">
+      <a class="flex items-center gap-2 text-base text-center fine:hover:underline fine:hover:text-orange-200" href="#">
         <svg class="w-5 h-5" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
           <path stroke="currentColor" stroke-width="2" d="m7 9 6-6 6 6m-6 10V4" />
         </svg>
@@ -36,13 +36,13 @@
     </div>
 
     <div class="flex flex-col justify-between mt-6 sm:flex-row-reverse">
-      <div class="flex flex-col justify-between mt-6 gap-3 sm:gap-6 sm:flex-row sm:self-end">
+      <div class="flex flex-col justify-between gap-3 mt-6 sm:gap-6 sm:flex-row sm:self-end">
         {%- for link in footer.legal -%}
           <a class="fine:hover:underline fine:hover:text-orange-200" href="#">{{ link.text }}</a>
         {%- endfor -%}
       </div>
 
-      <div class="mt-16 grid gap-2">
+      <div class="grid gap-2 mt-16">
         <a href="#" class="cursor-pointer">
           {{ '/src/_includes/svg/logo.svg' | svgContents('h-6') | safe }}
           <span class="sr-only">NAV</span>
