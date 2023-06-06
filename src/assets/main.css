@@ -172,6 +172,9 @@
   .c-product-tile:hover {
     --pictogram: rgb(255 255 255 / 1);
   }
+  .c-404 {
+    margin-top: clamp(-16rem, 2rem - 20vw, 2rem);
+  }
 }
 @layer utilities {
   .grid-cols-layout {

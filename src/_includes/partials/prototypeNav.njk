@@ -2,7 +2,8 @@
   <div class="grid grid-cols-layout py-clamp-gap">
     <h2 class="text-lg font-semibold tracking-widest uppercase col-wide text-deepblue-300">Sider i prototypen</h2>
     <ul class="mt-4 col-wide">
-    {%- for page in collections.template | sort(false, false, 'data.order') -%}
+    {% set pages = collections.template | sort(false, false, 'data.order') %}
+    {%- for page in pages -%}
       <li class="grid items-center justify-start py-4 border-t border-deepblue-700 min-h-24">
         <a href="{{ page.url }}" class="inline-block fine:hover:text-blue-300 fine:hover:underline decoration-from-font underline-offset-4">
           {{ page.data.title | safe }}
