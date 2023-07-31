@@ -16,8 +16,10 @@
     <link rel="stylesheet" href="/assets/main.min.css" type="text/css" />
     {%- block styles -%}{%- endblock -%}
 
-    {# <script src="/assets/alpineFocus.min.js" type="text/javascript" defer></script> #}
+    {% if not noJS %}
     <script src="/assets/alpine.min.js" type="text/javascript" defer></script>
+    {% endif %}
+
     {%- block script -%}{%- endblock -%}
 
     {%- if environment === 'production' -%}

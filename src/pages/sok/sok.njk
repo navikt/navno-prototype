@@ -3,11 +3,11 @@ title: 'Søk på nav.no'
 description: 'Resultatside'
 order: 12
 ---
-{%- extends 'base.njk' -%}
+{%- extends 'base-new.njk' -%}
 
 {%- block content -%}
-  <main class="min-h-[61vh] py-8 text-lg md:pt-12 md:pb-20 text-gray-900 grid grid-cols-layout">
-    <div class="col-narrow md:col-wide md:grid md:grid-cols-[1.8fr_1.2fr] md:gap-x-12 items-start" x-data="{ filterOpen: false, searchFilter: 'innhold' }">
+  <main class="min-h-[61vh] py-8 text-lg md:pt-12 md:pb-20 text-gray-900 grid grid-cols-layout relative">
+    <div class="col-narrow md:col-wide md:grid md:grid-cols-[2fr_max-content] md:gap-x-12 items-start" x-data="{ filterOpen: false, searchFilter: 'innhold' }">
 
       {# Tittel og søkefelt #}
       <div class="col-start-1 row-start-1">
@@ -27,7 +27,7 @@ order: 12
 
       {# Sortering og filter #}
       <div class="relative z-20 mt-8 md:mt-12 md:row-start-1 isolate md:col-start-2 grid-flow-dense md:row-span-2 ">
-          <div class="fixed inset-y-0 right-0 z-30 flex flex-col w-10/12 h-full max-w-md bg-white shadow-lg md:bg-transparent md:shadow-none md:static" x-bind:class="filterOpen ? ' animate-openDrawer ' : 'hidden md:block'">
+          <div class="fixed inset-y-0 right-0 z-30 flex flex-col w-10/12 h-full max-w-md bg-white shadow-lg md:w-full md:bg-transparent md:shadow-none md:static" x-bind:class="filterOpen ? ' animate-openDrawer ' : 'hidden md:block'">
 
           <div class="flex-1 p-5 overflow-y-auto">
             {# Sortering #}
@@ -106,28 +106,27 @@ order: 12
       </div>
 
       {# Resultat #}
-      <div class="mt-8 md:row-start-2 md:col-start-1">
-        <div class="flex items-baseline justify-between gap-8">
+      <div class="mt-12 md:row-start-2 md:col-start-1">
+        <div class="flex items-baseline justify-between gap-4">
         <h2 class="leading-snug">74 treff på <strong>«penger»</strong> i&nbsp;innhold</h2>
           <button
-            class="flex items-baseline gap-1.5 ml-auto font-semibold leading-snug text-right text-blue-500 rounded md:hidden"
+            class="inline-block ml-auto font-semibold leading-snug text-right text-blue-500 rounded md:hidden"
             type="button"
             x-on:click="filterOpen = !filterOpen"
             x-bind:aria-expanded="filterOpen"
           >
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6 translate-y-1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 13.5V3.75m0 9.75a1.5 1.5 0 010 3m0-3a1.5 1.5 0 000 3m0 3.75V16.5m12-3V3.75m0 9.75a1.5 1.5 0 010 3m0-3a1.5 1.5 0 000 3m0 3.75V16.5m-6-9V3.75m0 3.75a1.5 1.5 0 010 3m0-3a1.5 1.5 0 000 3m0 9.75V10.5" /></svg>
-            <span>Vis søkefilter</span>
+            <span>Sortering og filter</span>&nbsp;<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="inline-block w-6 h-6 -translate-y-0.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 13.5V3.75m0 9.75a1.5 1.5 0 010 3m0-3a1.5 1.5 0 000 3m0 3.75V16.5m12-3V3.75m0 9.75a1.5 1.5 0 010 3m0-3a1.5 1.5 0 000 3m0 3.75V16.5m-6-9V3.75m0 3.75a1.5 1.5 0 010 3m0-3a1.5 1.5 0 000 3m0 9.75V10.5" /></svg>
 
             {# {{ '/src/_includes/svg/icons/chevron-right.svg' | svgContents('w-5 h-5 rotate-180') | safe }} #}
           </button>
         </div>
 
-        <div class="mt-2 grid">
+        <div class="grid mt-2">
           {%- for item in range(1,10) -%}
-            <article class="py-4 border-t border-gray-200">
+            <article class="pt-5 pb-4 border-t border-gray-200">
               <h3><a class="text-2xl font-semibold leading-tight text-blue-500 hover:underline hover:text-blue-600" href="#">Title</a></h3>
               <p class="">Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
-              <p class="mt-2 text-base opacity-75">Publisert 01.12.2019</p>
+              <p class="mt-0.5 text-base opacity-75">Publisert 01.12.2019</p>
             </article>
           {%- endfor -%}
         </div>

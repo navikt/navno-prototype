@@ -5,7 +5,7 @@
   <nav class="col-full md:col-wide grid grid-cols-[auto_auto_1fr] justify-center sm:gap-x-16">
 
     {# Logo #}
-    <div class="flex items-center order-1 p-2 pl-clamp-gap md:pl-0">
+    <div class="flex items-center order-1 p-2 pl-clamp-gap md:pl-0 md:py-4">
       <a href="/" class="block p-2 text-red-500 rounded-sm fine:hover:text-red-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-800 xs:-ml-2">
         {{ '/src/_includes/svg/logo.svg' | svgContents('w-auto h-5') | safe }}
         <span class="sr-only">NAV</span>
@@ -15,7 +15,7 @@
     {# Audience #}
     <ul class="flex justify-center col-span-3 gap-3 bg-gray-100 md:order-2 md:col-span-1 md:bg-transparent xs:gap-6 md:text-lg">
       {%- for item in audience -%}
-        <li class="grid pt-2 pb-2.5 items-center {{ 'shadow-menuActive font-semibold' if activeRole === item.title else ' opacity-70 hover:opacity-100 transition-shadow hover:shadow-menuHover' }}">
+        <li class="grid pt-2 pb-2.5 px-0.5 items-center {{ 'shadow-menuActive font-semibold' if activeRole === item.title else ' opacity-70 hover:opacity-100 transition-shadow hover:shadow-menuHover' }}">
           <a href="{{ item.href or '#' }}" class="focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-800 ">
             {{ item.title }} {{ item.active }}
           </a>
