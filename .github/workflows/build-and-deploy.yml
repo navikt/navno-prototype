@@ -1,11 +1,13 @@
 name: Build and deploy
-on: workflow_dispatch
+on:
+  workflow_dispatch
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
-    env:
-      image: ghcr.io/${{ github.repository }}:${{ github.sha }}
+    permissions:
+      contents: read
+      id-token: write
     steps:
       - name: Checkout repo
         uses: actions/checkout@v3
@@ -18,20 +20,17 @@ jobs:
         run: npm ci
       - name: Build application
         run: npm run build
-      - name: Login to Docker registry
-        uses: docker/login-action@v2
-        with:
-          registry: ghcr.io
-          username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
       - name: Build and push docker image
-        run: |
-          docker build -t ${{ env.image }} .
-          docker push ${{ env.image }}
+        uses: nais/docker-build-push@v0
+        id: docker-build-push
+        with:
+          team: personbruker
+          identity_provider: ${{ secrets.NAIS_WORKLOAD_IDENTITY_PROVIDER }}
+          project_id: ${{ vars.NAIS_MANAGEMENT_PROJECT_ID }}
       - name: Deploy to nais
         uses: nais/deploy/actions/deploy@v1
         env:
           CLUSTER: prod-gcp
           APIKEY: ${{ secrets.NAIS_DEPLOY_APIKEY }}
-          VAR: image=${{ env.image }}
+          VAR: image=${{ steps.docker-build-push.outputs.image }}
           RESOURCE: .nais/config.yml
