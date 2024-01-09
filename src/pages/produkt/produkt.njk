@@ -1,76 +1,75 @@
 ---
-title: 'Produktside'
-description: ''
+title: 'Pleiepenger for sykt barn'
+type: 'Pengestøtte'
+template: 'Produktside'
+audience: 'Arbeidsgiver'
+intro: 'Sikrer deg inntekt under fravær fra jobb når du må pleie og ta vare på et barn som har vært innlagt eller er til behandling på sykehus.'
+published: 'Oppdatert 22. desember 2022'
 order: 4
+bodyClass: ''
 ---
-{%- extends 'base-new.njk' -%}
+{%- extends 'base.njk' -%}
 
 {%- from "macros/button.njk" import button -%}
 {%- from "macros/microcard.njk" import microcard -%}
 {%- from "macros/tile.njk" import tile -%}
 
 {%- block content -%}
-  <main class="grid py-8 text-lg md:py-12 grid-cols-layout">
-    <div class="relative col-default md:col-wide md:mx-0 grid sm:grid-cols-[6rem_auto] gap-x-8 items-start mb-12 sm:pr-20 md:pr-0">
-      {{ '/src/_includes/svg/pictograms/utvidet-barnetrygd.svg' | svgContents('w-full h-auto max-w-20 sm:ml-1 top-2 text-green-800 absolute right-0 sm:relative') | safe }}
+  <main class="px-xs-2xl py-xl">
+    <div class="grid grid-cols-[auto_auto] mx-auto max-w-wide">
+      <h1 class="font-bold text-4xl/tight text-pretty col-span-full">{{ title | safe }}</h1>
 
-      <div class="pr-28 sm:col-start-2 sm:row-start-1 md:pr-0">
-        <div class="text-base tracking-widest uppercase opacity-80">Pengestøtte</div>
-        <h1 class="min-w-0 mt-0.5 text-3xl font-semibold leading-tight sm:text-5xl sm:leading-tight">Utvidet barnetrygd</h1>
-        <p class="mt-6 text-base opacity-80">Oppdatert 22. desember 2022</p>
-      </div>
+      <div class="mt-sm max-w-prose gap-sm-md">
 
-
-      <div class="sm:col-start-2 grid md:grid-cols-[2fr_1fr] gap-x-16 items-start gap-4 mt-8">
+        {# Audience #}
+        <div class="inline-block text-sm bg-gray-100 rounded-full px-xs py-3xs -ml-3xs">{{ 'For ' if audience }}{{ audience | lower | safe }}</div>
 
         {# Intro #}
-        <div class="grid w-full max-w-3xl gap-4 md:mx-0 md:max-w-none">
-          {{ intro | markdown | safe }}
-        </div>
+        <div class="text-lg mt-md text-pretty">{{ intro | markdown | safe }}</div>
 
         {# Innholdsfortegnelse #}
-        <div class="w-full max-w-3xl mt-6 md:sticky md:col-start-2 md:top-0 md:row-span-2 md:mx-0 md:max-w-none md:-mt-1.5 border-l border-gray-200 overflow-hidden overscroll-y-contain py-2 overflow-y-auto max-h-[100dvh]">
-          <div class="">
-          <h2 class="pl-3 text-xl font-semibold md:pl-6">Innhold på siden</h2>
-          <ul class="grid justify-start gap-1.5 pt-1">
-            {%- for item in contentBlocks -%}
-              {% if item.type === "heading" %}
-                <li class="py-1 text-lg  border-l-4 pl-3 md:pl-6 {{ 'border-green-400' if loop.first else 'border-transparent fine:hover:border-gray-200' }}">
-                  <a class="inline-flex p0.5-1 text-blue-500 underline decoration-blue-300 hover:text-blue-800 hover:no-underline" href="#{{ item.title | slugify }}">{{ item.title }}</a>
-                </li>
-              {% endif %}
-            {%- endfor -%}
+        <div class="mt-md">
+          <h2 class="text-base font-semibold">Innhold på siden</h2>
+          <ul class="grid gap-1 rounded-xl overflow-clip mt-2xs">
+            {% for chapter in collections.kapittel %}
+            <li class="relative bg-gray-100 rounded py-xs px-sm text-pretty group">
+              <a class="text-lg font-semibold group-hover:underline after:absolute after:inset-0 mb-3xs" href="#{{ chapter.data.title | slugify }}">{{ chapter.data.title }}</a>
+              <p>{{ chapter.data.description | safe }}</p>
+            </li>
+            {% endfor %}
           </ul>
-
-          <h2 class="pl-3 mt-8 text-xl font-semibold md:pl-6">Nyttig å vite</h2>
-          <ul class="grid justify-start gap-1.5 pt-1">
-            <li class="py-1 pl-3 text-lg border-l-4 border-transparent fine:hover:border-gray-200 md:pl-6"><a class="inline-flex py-0.5 text-blue-500 underline decoration-blue-300 hover:text-blue-800 hover:no-underline" href="#">Klagerettigheter</a></li>
-            <li class="py-1 pl-3 text-lg border-l-4 border-transparent fine:hover:border-gray-200 md:pl-6"><a class="inline-flex py-0.5 text-blue-500 underline decoration-blue-300 hover:text-blue-800 hover:no-underline" href="#">Lov om barnetrygd</a></li>
-            <li class="py-1 pl-3 text-lg border-l-4 border-transparent fine:hover:border-gray-200 md:pl-6"><a class="inline-flex py-0.5 text-blue-500 underline decoration-blue-300 hover:text-blue-800 hover:no-underline" href="#">Pensjonsopptjening for omsorgsarbeid</a></li>
-          </ul>
-          </div>
-        </div>
-
-        {# Filter + Innhold #}
-        <div class="grid w-full max-w-3xl gap-4 md:row-start-2 md:mx-0 md:max-w-none">
-
-          {# Filter #}
-          <div class="px-6 py-4 mt-8 rounded-lg sm:px-8 sm:py-6 bg-blue-50 max-w-prose">
-            <h2 class="text-xl font-semibold">Hva er situasjonen din?</h2>
-            <p>Velg situasjonen som passer for deg, så viser vi bare informasjon om den.</p>
-
-            <select class="flex items-center rounded-none justify-between w-full gap-3 pl-4 pr-12 py-2.5 mt-4 bg-white border-b-2 border-gray-400 md:max-w-max bg-select appearance-none">
-              <option>Tilpass innholdet</option>
-            </select>
-          </div>
-
-          {# Innhold #}
-          <div class="relative mt-12 max-w-prose" style="--pictogram: #fff;">
-            {%- for block in contentBlocks -%}               
-            {%- include "partials/contentBlocks.njk" -%}
-            {%- endfor -%}
         </div>
       </div>
     </div>
+
+
+    {# Innhold #}
+    {% for chapter in collections.kapittel %}
+    <section class="mx-auto max-w-wide" id="{{ chapter.data.title | slugify }}">
+      <div class="max-w-prose mt-xl">
+        <div class="text-sm tracking-widest uppercase">Kapittel {{ loop.index }}</div>
+        <h2 class="text-2xl font-bold">{{ chapter.data.title }}</h2>
+        <p>{{ chapter.data.description | safe }}</p>
+        <div class="rounded-lg aspect-[2/1] bg-blue-700 mt-sm"></div>
+
+        <h3 class="font-semibold mt-md">I dette kapittelet</h3>
+        <div class="mt-3xs overflow-clip max-w-md rounded-xl grid gap-0.5">
+          {% for item in range(0,3) %}
+          <div class=" bg-gray-100 rounded aspect-[6/1]"></div>
+          {% endfor %}
+        </div>
+      </div>
+
+      <div class="grid grid-cols-[2fr_1fr] gap-sm-md items-end mt-md">
+        <div class="min-h-[60svh] grid gap-md max-w-prose">
+          {% for item in range(0,20) %}           
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum hic fugit suscipit temporibus incidunt cupiditate ipsa obcaecati molestiae dolor, illo repellendus nemo nihil ullam repellat, laborum quis praesentium tenetur eum.</p>
+          {% endfor %}
+        </div>
+        {# <div class="sticky bg-red-500 bottom-md h-[20vh] p-4"></div> #}
+      </div>
+    </section>
+    {% endfor %}
+    <div class="mx-auto max-w-wide mt-3xl">{{ published | safe }}</div>
   </main>
 {%- endblock -%}

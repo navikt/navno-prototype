@@ -10,20 +10,16 @@ noJS: true
 {%- extends 'base.njk' -%}
 
 {%- block content -%}
-  <main class="text-gray-900" x-bind:inert="menuOpen || notifyOpen">
-    <div class="grid py-8 bg-white grid-cols-layout md:py-12">
-      <div class="col-wide">
-        <h2 class="-mt-2 text-xl font-semibold md:text-3xl">Hva kan vi hjelpe deg med?</h2>
-        <ul class="grid gap-2 mx-auto mt-4 lg:grid-cols-3 sm:grid-cols-2 sm:gap-4 md:gap-6">
+  <main x-bind:inert="menuOpen || notifyOpen">
+    <div>
+      <div>
+        <h2>Hva kan vi hjelpe deg med?</h2>
+        <ul>
           {%- for area in areaList -%}
             <li>
-              <a class="relative flex items-center justify-between gap-4 z-10 bg-deepblue-50 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600 fine:hover:text-blue-600 fine:hover:shadow-xl fine:hover:bg-gray-100 focus:shadow-xl min-h-[7rem] lg:min-h-[9rem] pl-6 pr-[40%] py-2 overflow-hidden group c-area-card" href="#">
-                <div class="text-xl font-semibold leading-snug md:text-2xl group-fine:hover:underline">
-                  {{ area.title | safe }}
-                </div>
-                {%- if area.icon -%}
-                  {{ area.icon | svgContents("-z-10 right-0 h-full w-auto rounded-lg self-stretch absolute inset-y-0 pointer-events-none") | safe }}
-                {%- endif -%}
+              <a href="#">
+                <span>{{ area.title | safe }}</span>
+                {# {{ area.icon | svgContents("-z-10 right-0 h-full w-auto rounded-lg self-stretch absolute inset-y-0 pointer-events-none") | safe if area.icon }} #}
               </a>
             </li>
           {%- endfor -%}
@@ -31,17 +27,15 @@ noJS: true
       </div>
     </div>
 
-    <div class="grid py-8 grid-cols-layout md:pb-12 bg-red-50">
-      <div class="col-wide">
-        <h2 class="-mt-2 text-xl font-semibold md:text-3xl">Snarveier</h2>
-        <ul class="grid gap-2 mt-4 md:grid-cols-2 sm:gap-3 md:gap-6 lg:grid-cols-3">
+    <div>
+      <div>
+        <h2>Snarveier</h2>
+        <ul>
           {%- for shortcut in shortcutsList -%}
             <li>
-              <a class="flex items-center gap-4 py-4 pl-5 pr-8 transition duration-300 ease-out bg-white rounded-lg shadow-sm sm:py-6 group fine:hover:text-blue-600 fine:hover:shadow-lg fine:hover:underline focus:outline-none focus:ring-2 focus:ring-blue-600" href="#">
-                {%- if shortcut.icon -%}
-                  {{ shortcut.icon | svgContents("w-12 h-12 md:w-16 md:h-16") | safe }}
-                {%- endif -%}
-                <span class="max-w-[30ch] text-xl leading-snug font-semibold md:text-2xl">{{ shortcut.title | safe }}</span>
+              <a href="#">
+                {# {{ shortcut.icon | svgContents("w-12 h-12 md:w-16 md:h-16") | safe if shortcut.icon }} #}
+                <span>{{ shortcut.title | safe }}</span>
               </a>
             </li>
           {%- endfor -%}
@@ -51,17 +45,15 @@ noJS: true
     </div>
 
 
-    <div class="grid py-8 mt-1 grid-cols-layout md:pb-12 bg-deepblue-50">
-      <div class="col-wide">
-        <h2 class="-mt-2 text-xl font-semibold md:text-3xl">Søke og ettersende</h2>
-        <ul class="grid gap-2 mt-4 sm:gap-3 md:gap-6 md:grid-cols-2">
+    <div>
+      <div>
+        <h2>Søke og ettersende</h2>
+        <ul>
           {%- for form in formsList -%}
             <li>
-              <a class="flex items-center gap-4 py-4 pl-5 pr-8 transition duration-300 ease-out bg-white rounded-lg shadow-sm sm:py-6 group fine:hover:text-blue-600 fine:hover:shadow-lg fine:hover:underline focus:outline-none focus:ring-2 focus:ring-blue-600" href="{{ form.href or '#'}}">
-                {%- if form.icon -%}
-                  {{ form.icon | svgContents("w-12 h-12 md:w-16 md:h-16") | safe }}
-                {%- endif -%}
-                <span class="max-w-[30ch] text-xl leading-snug font-semibold md:text-2xl">{{ form.title | safe }}</span>
+              <a href="{{ form.href or '#'}}">
+                {# {{ form.icon | svgContents("w-12 h-12 md:w-16 md:h-16") | safe if form.icon }} #}
+                <span>{{ form.title | safe }}</span>
               </a>
             </li>
           {%- endfor -%}
@@ -69,38 +61,38 @@ noJS: true
       </div>
     </div>
 
-    <div class="grid py-8 mt-1 grid-cols-layout bg-gray-50 md:pb-12">
-      <div class="col-wide">
-        <h2 class="-mt-2 text-xl font-semibold md:text-3xl">Aktuelt</h2>
-        <div class="grid gap-2 mt-4 sm:gap-4 md:gap-6 sm:grid-cols-2">
+    <div>
+      <div>
+        <h2>Aktuelt</h2>
+        <div>
           {%- for news in newsList -%}
-            <a class="grid gap-2 px-6 py-6 duration-300 ease-out bg-white rounded-lg shadow-sm group transition-custom fine:hover:text-blue-600 fine:hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-600" href="#">
-              <span class="max-w-[30ch] text-xl font-semibold md:text-2xl group-fine:hover:text-blue-600 group-fine:hover:underline">{{ news.title | safe }}</span>
-              <span class="text-lg opacity-70">{{ news.date }}</span>
+            <a href="#">
+              <span>{{ news.title | safe }}</span>
+              <span>{{ news.date }}</span>
             </a>
           {%- endfor -%}
         </div>
       </div>
     </div>
 
-    <div class="grid pt-10 pb-12 bg-white grid-cols-layout md:pb-20">
-      <div class="col-wide">
-        <h2 class="-mt-2 text-xl font-semibold md:text-3xl">Kontakt oss</h2>
-        <div class="grid gap-8 mt-4 sm:gap-4 md:gap-6 sm:grid-cols-2">
-          <div class="relative grid gap-2 px-6 py-6 bg-blue-50 rounded-t-3xl rounded-r-3xl group">
-            <h3 class="text-xl font-semibold md:text-2xl">
-              <a href="#" class="text-blue-600 underline fine:hover:text-deepblue-600 fine:hover:no-underline">Du kan chatte med oss</a>
+    <div>
+      <div>
+        <h2>Kontakt oss</h2>
+        <div>
+          <div>
+            <h3>
+              <a href="#">Du kan chatte med oss</a>
             </h3>
-            <p class="text-lg">Du møter først chatbot Frida. Du kan be Frida om å få chatte med en veileder (hverdager 09:00–15:00)</p>
-            <svg class="absolute left-0 top-full" viewBox="0 0 24 24" width="24" height="24"  aria-hidden="true" focusable="false" >
-              <polygon class="fill-blue-50" points="0 0, 24 0, 0 24" />
-            </svg>
+            <p>Du møter først chatbot Frida. Du kan be Frida om å få chatte med en veileder (hverdager 09:00–15:00)</p>
+            {# <svg viewBox="0 0 24 24" width="24" height="24"  aria-hidden="true" focusable="false" >
+              <polygon points="0 0, 24 0, 0 24" />
+            </svg> #}
           </div>
-          <div class="relative grid content-start gap-2 px-6 py-6">
-            <h3 class="text-xl font-semibold md:text-2xl">
-              <a href="#" class="text-blue-600 underline fine:hover:text-deepblue-600 fine:hover:no-underline">Du kan også ringe eller skrive til oss</a>
+          <div>
+            <h3>
+              <a href="#">Du kan også ringe eller skrive til oss</a>
             </h3>
-            <p class="text-lg">Se hvordan du kan kontakte oss på ulike måter.</p>
+            <p>Se hvordan du kan kontakte oss på ulike måter.</p>
           </div>
         </div>
       </div>
@@ -109,82 +101,4 @@ noJS: true
   </main>
 {%- endblock -%}
 
-{%- block styles -%}
-  <style>
-    @media (prefers-reduced-motion: no-preference) and (pointer:fine) {
-      .c-area-card,
-      .c-area-card :where(svg) * {
-        transition-property: transform, background-color, color, border-color, fill;
-        transition-duration: 130ms;
-        transition-timing-function: cubic-bezier(.4,0,1,1);
-      }
-    }
-
-    @media (pointer:fine) {
-      .c-area-card__letter-diagonal {
-        transform: translate3d(-89%, 0, 0) rotate(-10deg) scale(3);
-        transform-origin: left;
-        fill: #CCE2F0;
-      }
-
-      .c-area-card__letter-upright {
-        transform: translate3d(-129%, 0, 0) rotate(10deg) scale(4);
-        transform-origin: left;
-        fill: #CCE2F0;
-      }
-
-      .c-area-card__letter-cover {
-        transform: translate3d(-254%, 0, 0) rotate(10deg) scale(3);
-        transform-origin: left;
-        fill: #CCE2F0;
-      }
-
-      :where(.c-area-card__letter-group) {
-        transform: translate3d(10%, 0, 0);
-      }
-      :where(.c-area-card__briefcase) {
-        transform: translate3d(22%, -25%, 0);
-      }
-      :where(.c-area-card__stroller) {
-        transform: translate3d(21%, -21%, 0);
-      }
-      :where(.c-area-card__stethoscope) {
-        transform: translate3d(12%, -18%, 0);
-      }
-      :where(.c-area-card__piggybank) {
-        transform: translate3d(18%, -26%, 0);
-      }
-      :where(.c-area-card__guide-dog) {
-        transform: translate3d(12%, -24%, 0);
-      }
-      :where(.c-area-card__hand) {
-        transform: translate3d(10%, -18%, 0);
-      }
-      :where(.c-area-card__heart) {
-        transform: translate3d(22%, -22%, 0) scale(0.8);
-      }
-
-      :where(.c-area-card__shapes, .c-area-card__pill, .c-area-card__house, .c-area-card__compass, .c-area-card__chart, .c-area-card__arrow) {
-        transform: translate3d(58%, 0, 0);
-      }
-
-      :where(.c-area-card__coin) {
-        transform: translate3d(15px, -95px, 0);
-      }
-
-      .c-area-card:where(:hover, :focus) :where(.c-area-card__letter-diagonal, .c-area-card__letter-upright) {
-        fill: #ffb8b8;
-      }
-      .c-area-card:where(:hover, :focus) :where(svg) * {
-        transform: translate3d(0, 0, 0) rotate(0deg) scale(1);
-      }
-    }
-
-    @media (prefers-reduced-motion: no-preference) and (pointer:fine) {
-      .c-area-card:where(:hover, :focus) :where(svg) * {
-        transition-duration: 260ms;
-        transition-timing-function: cubic-bezier(0,0,.2,1);
-      }
-    }
-  </style>
-{%- endblock -%}
+{%- block styles -%}{%- endblock -%}

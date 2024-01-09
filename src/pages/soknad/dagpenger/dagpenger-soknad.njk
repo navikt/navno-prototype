@@ -10,7 +10,8 @@
   eleventyComputed: {
     title: 'Søknad om dagpenger',
     stepTitle: "{{ step.title }}",
-    permalink: "/soknad/dagpenger/{{ step.title | slugify }}/",
+    // permalink: "/soknad/dagpenger/{{ step.title | slugify }}/",
+    permalink: false,
     blocks: "{{ step.formBlocks }}"
   }
 }

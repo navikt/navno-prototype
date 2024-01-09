@@ -9,7 +9,8 @@
   },
   eleventyComputed: {
     roleSlug: "{{ role | slugify }}",
-    permalink: "/soknad-og-skjema-samarbeidspartner/{{ role | slugify }}/",
+    // permalink: "/soknad-og-skjema-samarbeidspartner/{{ role | slugify }}/",
+    permalink: false,
     description: 'Finn søknad og skjema til pengestøtter og tjenester for {{ role | lowerfirst }} fra NAV'
   }
 }

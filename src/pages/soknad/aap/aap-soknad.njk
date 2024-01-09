@@ -10,7 +10,8 @@
   eleventyComputed: {
     title: 'Søknad om arbeids&shy;avklarings&shy;penger (AAP)',
     stepTitle: "{{ step.title }}",
-    permalink: "/soknad/aap/{{ step.title | slugify }}/",
+    // permalink: "/soknad/aap/{{ step.title | slugify }}/",
+    permalink: false,
     blocks: "{{ step.formBlocks }}"
   }
 }

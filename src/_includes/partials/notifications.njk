@@ -1,5 +1,5 @@
 {# Notifications #}
-<div class="absolute inset-x-0 z-40 grid w-full h-0 top-full grid-cols-layout" x-bind:class="notifyOpen ? 'opacity-0 animate-dropdown' : 'hidden'">
+<div class="absolute inset-x-0 z-40 w-full h-0 top-full" x-bind:class="notifyOpen ? 'opacity-0 animate-dropdown' : 'hidden'">
   <div class="sm:max-w-lg sm:w-full bg-white rounded-b-lg shadow-xl md:max-h-[92vh] col-full sm:col-wide sm:justify-self-end">
     <div class="px-clamp-gap sm:px-6">
       <p class="grid pt-5 pb-4" x-on:click="newNotifications = !newNotifications">
