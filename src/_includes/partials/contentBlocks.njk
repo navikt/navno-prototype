@@ -1,9 +1,29 @@
+{# Separator #}
+{% if block.type === "separator" %}
+<div class="flex items-center justify-center gap-2">
+  <span class="w-24 h-0.5 bg-green-100 rounded-full"></span>
+  <span class="inline-grid p-3 my-8 text-green-900 translate-y-px bg-green-100 rounded-full">
+  {{ block.icon | svgContents('w-5 h-5 sm:w-6 sm:h-6') | safe }}
+  </span>
+  <span class="w-24 h-0.5 bg-green-100 rounded-full"></span>
+</div>
+{% endif %}
 
+{# Heading #}
+{% if block.type === "heading" %}
+  <h2 class="flex items-baseline gap-2 mb-2 text-2xl font-semibold sm:gap-4 sm:leading-snug" id="{{ block.title | slugify }}">
+    {{ block.title | safe }}
+  </h2>
+  <!--<a href="#" class="inline-flex items-center gap-1.5 mt-2 mb-4 text-base text-blue-500 hover:underline hover:text-blue-600">
+    <span># Kopier lenke</span>
+    {# {{ '/src/_includes/svg/icons/link.svg' | svgContents('w-3.5 h-3.5') | safe }} #}
+  </a>-->
+{% endif %}
 
 {# Markdown #}
 {%- if block.type === 'markdown' -%}
   <div class="markdown {{ block.class }}">
-    {{ block.data  | markdown | safe }}
+    {{ block.data | markdown | safe }}
   </div>
 {%- endif -%}
 
@@ -43,7 +63,7 @@
 
 {# Expander #}
 {%- if block.type === 'expander' -%}
-  <div class="border-b-2 border-blue-400" x-data="{ isExpanded: false }">
+  <div class="my-8 border-b-2 border-blue-400" x-data="{ isExpanded: false }">
     <button class="w-full py-2.5 pl-4 pr-24 text-left rounded bg-select bg-blue-50" x-on:click="isExpanded = !isExpanded" x-bind:aria-expanded="isExpanded" type="button" >{{ block.title | safe }}</button>
     <div class="p-4 rounded-b md:p-6 bg-gray-50 markdown" x-show="isExpanded" x-bind:hidden="!isExpanded">
       {{ block.data | markdown | safe }}
@@ -56,7 +76,7 @@
   {% if block.title %}
   <h4 class="text-xl font-semibold">{{ block.title | safe }}</h4>
   {% endif %}
-  <div class="grid gap-1.5 mt-1">
+  <div class="grid gap-1.5 {{ 'mt-1' if block.title else 'mt-8' }}">
     {%- for item in block.data -%}
       {{ tile(item) }}
     {%- endfor -%}

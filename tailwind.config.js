@@ -194,8 +194,8 @@ module.exports = {
       },
       boxShadow: {
         border: "0 -1px 0 inset rgb(128 128 128 / 0.19)",
-        menuActive: "0 -4px 0 inset rgb(0 103 197)",
-        menuHover: "0 -4px 0 inset rgb(0 0 0 / 0.19)"
+        menuActive: "0 -3px 0 inset rgb(0 103 197)",
+        menuHover: "0 -3px 0 inset rgb(0 0 0 / 0.19)"
       },
       fontSize: {
         squishy: "clamp(2rem, 10vw + 10%, 8rem)",

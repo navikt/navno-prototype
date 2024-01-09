@@ -3,7 +3,7 @@ title: 'Produktside'
 description: ''
 order: 4
 ---
-{%- extends 'base.njk' -%}
+{%- extends 'base-new.njk' -%}
 
 {%- from "macros/button.njk" import button -%}
 {%- from "macros/microcard.njk" import microcard -%}
@@ -15,12 +15,9 @@ order: 4
       {{ '/src/_includes/svg/pictograms/utvidet-barnetrygd.svg' | svgContents('w-full h-auto max-w-20 sm:ml-1 top-2 text-green-800 absolute right-0 sm:relative') | safe }}
 
       <div class="pr-28 sm:col-start-2 sm:row-start-1 md:pr-0">
+        <div class="text-base tracking-widest uppercase opacity-80">Pengestøtte</div>
         <h1 class="min-w-0 mt-0.5 text-3xl font-semibold leading-tight sm:text-5xl sm:leading-tight">Utvidet barnetrygd</h1>
-        <p class="grid flex-wrap mt-6 text-base sm:flex gap-x-4 opacity-80">
-          <span class="tracking-wider uppercase">Pengestøtte</span>
-          <span class="hidden sm:block" aria-hidden="true">|</span>
-          <span class="inline-block">Oppdatert 22. desember 2022</span>
-        </p>
+        <p class="mt-6 text-base opacity-80">Oppdatert 22. desember 2022</p>
       </div>
 
 
@@ -28,23 +25,20 @@ order: 4
 
         {# Intro #}
         <div class="grid w-full max-w-3xl gap-4 md:mx-0 md:max-w-none">
-          {%- for section in sections.slice(0, 1) -%}
-            {%- for block in section.contentBlocks -%}
-              {%- include "partials/contentBlocks.njk" -%}
-            {%- endfor -%}
-          {%- endfor -%}
+          {{ intro | markdown | safe }}
         </div>
 
         {# Innholdsfortegnelse #}
-        <div class="w-full max-w-3xl mt-6 md:sticky md:col-start-2 md:top-0 md:row-span-2 md:mx-0 md:max-w-none md:-mt-1.5 border-l border-gray-200 overflow-hidden py-2 overflow-y-auto max-h-[100dvh]">
+        <div class="w-full max-w-3xl mt-6 md:sticky md:col-start-2 md:top-0 md:row-span-2 md:mx-0 md:max-w-none md:-mt-1.5 border-l border-gray-200 overflow-hidden overscroll-y-contain py-2 overflow-y-auto max-h-[100dvh]">
           <div class="">
-          <h2 class="pl-3 text-xl font-semibold md:pl-6">Innhold</h2>
-          {%- set index = sections.slice(1) -%}
+          <h2 class="pl-3 text-xl font-semibold md:pl-6">Innhold på siden</h2>
           <ul class="grid justify-start gap-1.5 pt-1">
-            {%- for item in index -%}
-              <li class="py-1 text-lg  border-l-4 pl-3 md:pl-6 {{ 'border-green-400' if loop.first else 'border-transparent fine:hover:border-gray-200' }}">
-                <a class="inline-flex p0.5-1 text-blue-500 underline decoration-blue-300 hover:text-blue-800 hover:no-underline" href="#{{ item.title | slugify }}">{{ item.title }}</a>
-              </li>
+            {%- for item in contentBlocks -%}
+              {% if item.type === "heading" %}
+                <li class="py-1 text-lg  border-l-4 pl-3 md:pl-6 {{ 'border-green-400' if loop.first else 'border-transparent fine:hover:border-gray-200' }}">
+                  <a class="inline-flex p0.5-1 text-blue-500 underline decoration-blue-300 hover:text-blue-800 hover:no-underline" href="#{{ item.title | slugify }}">{{ item.title }}</a>
+                </li>
+              {% endif %}
             {%- endfor -%}
           </ul>
 
@@ -71,33 +65,10 @@ order: 4
           </div>
 
           {# Innhold #}
-          {%- for section in sections.slice(1) -%}
-            <div class="relative grid mt-12 max-w-prose" id="{{ section.title | slugify }}">
-              {% if section.title %}
-              <h2 class="flex items-baseline gap-2 sm:gap-4 text-2xl font-semibold sm:text-3xl sm:leading-snug {{ 'md:-mt-2' if section.icon }}">
-                {%- if section.icon -%}
-                <span class="inline-grid p-3 text-green-900 translate-y-px bg-green-100 rounded-full sm:-ml-16">
-                {{ section.icon | svgContents('w-5 h-5 sm:w-6 sm:h-6') | safe }}
-                </span>
-                {%- endif -%}
-                {{ section.title | safe }}
-              </h2>
-
-              <a href="#" class="inline-flex items-center gap-1.5 mt-2 mb-4 text-base text-blue-500 hover:underline hover:text-blue-600">
-                <span># Kopier lenke</span>
-                {# {{ '/src/_includes/svg/icons/link.svg' | svgContents('w-3.5 h-3.5') | safe }} #}
-              </a>
-              {% endif %}
-
-              <div class="grid gap-8">
-              {%- for block in section.contentBlocks -%}
-              <div class="markdown">
-                {%- include "partials/contentBlocks.njk" -%}
-              </div>
-              {%- endfor -%}
-              </div>
-            </div>
-          {%- endfor -%}
+          <div class="relative mt-12 max-w-prose" style="--pictogram: #fff;">
+            {%- for block in contentBlocks -%}               
+            {%- include "partials/contentBlocks.njk" -%}
+            {%- endfor -%}
         </div>
       </div>
     </div>
