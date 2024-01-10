@@ -12,7 +12,7 @@
         </button>
         <ul class="absolute z-50 bg-white rounded py-2xs -left-3xs min-w-40 sm:bg-transparent sm:rounded-none sm:py-0 sm:flex sm:gap-4 top-full sm:static" x-bind:class=" audienceDropdownOpen ? 'grid shadow-md sm:shadow-none' : 'hidden'">
           {%- for item in audience -%}
-            <li class="grid py-2 items-center {{ 'sm:shadow-menuActive font-semibold' if activeRole === item.title else ' opacity-70 hover:opacity-100 transition-shadow sm:hover:shadow-menuHover' }}">
+            <li class="grid py-2 items-center {{ 'sm:shadow-menuActive font-semibold' if activeRole === item.title else ' transition-shadow sm:hover:shadow-menuHover' }}">
               <a href="{{ item.href or '#' }}" class="px-3 sm:px-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-800 ">
                 {{ item.title }}
               </a>
@@ -53,15 +53,17 @@
     <div class="grid grid-cols-[auto_1fr] max-w-wide mx-auto">
 
       {# Logo #}
-      <div class="flex items-center sm:py-4">
+      <div class="flex items-center py-5 sm:py-6">
         <a href="/" class="block p-2 -ml-2.5 text-red-500 rounded-sm fine:hover:text-red-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-800">
-          {{ '/src/_includes/svg/logo.svg' | svgContents('w-16 h-auto') | safe }}
+          {{ '/src/_includes/svg/logo.svg' | svgContents('w-[64px] md:w-[72px] h-auto') | safe }}
           <span class="sr-only">NAV</span>
         </a>
       </div>
 
       {# Menu Buttons #}
-      {%- set menuButtonClasses = "flex flex-col sm:flex-row items-center justify-center p-1 sm:pl-2.5 sm:pr-3 leading-none font-semibold gap-0.5 text-blue-500 rounded min-w-16 sm:py-2 fine:hover:bg-deepblue-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-800 group" -%}
+      {# {%- set menuButtonClasses = "flex items-center justify-center p-1 sm:pl-2.5 sm:pr-3 leading-none font-semibold gap-0.5 text-blue-500 rounded min-w-16 sm:py-2 fine:hover:bg-deepblue-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-800 group" -%} #}
+
+      {%- set menuButtonClasses = "flex items-center justify-center p-1 sm:pl-2.5 sm:pr-3 leading-none font-semibold gap-0.5 text-blue-500 rounded min-w-16 sm:py-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-800 group" -%}
 
       <div class="flex self-center gap-2 py-2 justify-self-end sm:-mr-2.5">
         <button class="{{ menuButtonClasses }}" x-show="!loggedIn" x-on:click="loginOpen = !loginOpen, menuOpen = false" x-bind:aria-expanded="loginOpen">
@@ -71,14 +73,14 @@
 
         {# {%- include "partials/login.njk" -%} #}
 
-        <button class="{{ menuButtonClasses }}" x-on:click="notifyOpen = !notifyOpen, menuOpen = false" x-bind:class="notifyOpen && 'bg-deepblue-50'" x-show="loggedIn" x-bind:aria-expanded="notifyOpen">
+        {# <button class="{{ menuButtonClasses }}" x-on:click="notifyOpen = !notifyOpen, menuOpen = false" x-bind:class="notifyOpen && 'bg-deepblue-50'" x-show="loggedIn" x-bind:aria-expanded="notifyOpen">
           <span class="relative">
             {{ '/src/_includes/svg/icons/person-circle.svg' | svgContents('w-6 h-6 sm:w-7 sm:h-7 shrink-0 pointer-events-none') | safe }}
             <span x-show="newNotifications" class="absolute right-0 block w-1.5 h-1.5 sm:w-2 sm:h-2 bg-red-400 rounded-full top-0.5" x-bind:class="notifyOpen ? 'ring-2 ring-deepblue-50' : 'ring-2 ring-white fine:group-hover:ring-deepblue-50'"></span>
           </span>
           <span class="mt-px sm:hidden">Min side</span>
           <span class="hidden mt-px sm:inline-block">Isac Norland</span>
-        </button>
+        </button> #}
 
         {# {%- include "partials/notifications.njk" -%} #}
 

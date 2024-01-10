@@ -128,7 +128,7 @@ module.exports = {
       fine: { raw: "(pointer: fine)" },
     },
     fontFamily: {
-      sans: ['"Source Sans Pro"', "Arial", "sans-serif"],
+      sans: ['"Source Sans 3"', "Arial", "sans-serif"],
       system: [
         "ui-sans-serif",
         "system-ui",
@@ -157,15 +157,14 @@ module.exports = {
       ],
     },
     fontSize: {
-      xs: "clamp(0.8rem, 0.8rem + 0vw, 0.8rem)",
-      sm: "clamp(1rem, 1rem + 0vw, 1rem)",
-      base: "clamp(1.125rem, 1.0938rem + 0.1563vw, 1.25rem)",
-      lg: "clamp(1.2656rem, 1.1914rem + 0.3711vw, 1.5625rem)",
-      xl: "clamp(1.4238rem, 1.2914rem + 0.6617vw, 1.9531rem)",
-      "2xl": "clamp(1.6019rem, 1.392rem + 1.0492vw, 2.4413rem)",
-      "3xl": "clamp(1.8019rem, 1.4894rem + 1.5625vw, 3.0519rem)",
-      "4xl": "clamp(2.0275rem, 1.5806rem + 2.2344vw, 3.815rem)",
-      // https://utopia.fyi/type/calculator?c=320,18,1.125,1600,20,1.333,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,xs-2xl|xs-m&g=xs,m,xl,12
+      xs: "clamp(0.8rem, 0.9109rem + -0.1109vw, 0.8888rem)",
+      sm: "clamp(0.9375rem, 1.0179rem + -0.0893vw, 1rem);",
+      base: "clamp(1.125rem, 1.0893rem + 0.1786vw, 1.25rem)",
+      lg: "clamp(1.2656rem, 1.1512rem + 0.5723vw, 1.6663rem)",
+      xl: "clamp(1.4238rem, 1.1959rem + 1.1393vw, 2.2213rem)",
+      "2xl": "clamp(1.6019rem, 1.2137rem + 1.9411vw, 2.9606rem)",
+      "3xl": "clamp(1.8019rem, 1.189rem + 3.0643vw, 3.9469rem)",
+      // https://utopia.fyi/type/calculator?c=320,18,1.125,1440,20,1.333,4,1,960&s=0.75|0.5|0.25,1.5|2|3|4|6,xs-2xl|xs-m&g=xs,m,xl,12
     },
     colors: {
       ...akselColors,
@@ -186,9 +185,6 @@ module.exports = {
         menuActive: "0 -3px 0 inset rgb(0 103 197)",
         menuHover: "0 -3px 0 inset rgb(0 0 0 / 0.19)",
       },
-      fontSize: {
-        squishy: "clamp(2rem, 10vw + 10%, 8rem)",
-      },
       flexBasis: {
         side: "min(100%, 36rem)",
         main: "min(100%, 48rem)",
@@ -196,6 +192,12 @@ module.exports = {
       flexShrink: {
         1: "1",
         5: "5",
+      },
+      fontWeight: {
+        bold: "675",
+      },
+      fontSize: {
+        squishy: "clamp(2rem, 10vw + 10%, 8rem)",
       },
       keyframes: {
         dropdown: {

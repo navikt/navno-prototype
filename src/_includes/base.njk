@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="no" class="h-full antialiased text-gray-900 bg-white font-source-sans motion-safe:scroll-smooth scroll-pt-6">
+<html lang="no" class="h-full antialiased text-gray-900 bg-white font-[375] font-source-sans motion-safe:scroll-smooth scroll-pt-6">
   <head>
     <meta charset="UTF-8" />
     <meta name="robots" content="noindex" />
@@ -19,16 +19,19 @@
     <link rel="preload" href="/assets/fonts/SourceSans3-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="/assets/main.min.css" type="text/css" />
     {%- block styles -%}{%- endblock -%}
+    {% if alpine %}      
     <script src="/assets/alpine.min.js" type="text/javascript" defer></script>
+    {% endif %}
     {%- block script -%}{%- endblock -%}
   </head>
   <body
+    id="toppen"
     class="min-h-full text-base leading-relaxed overflow-x-hidden overflow-y-scroll {{ bodyClass }}"
     x-data="{
       indexOpen: false,
       audienceDropdownOpen: false,
       languageDropdownOpen: false,
-      loggedIn: true,
+      loggedIn: false,
       loginOpen: false,
       menuOpen: false,
       notifyOpen: false,
@@ -40,7 +43,8 @@
 
     {%- include "partials/header-new.njk" -%}
     {%- block content -%}{%- endblock -%}
+    {%- block bodyscript -%}{%- endblock -%}
     {%- include "partials/footer.njk" -%}
-    {%- include "partials/prototypeNav.njk" -%}
+    {# {%- include "partials/prototypeNav.njk" -%} #}
   </body>
 </html>

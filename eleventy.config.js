@@ -3,6 +3,7 @@
  */
 
 const { EleventyHtmlBasePlugin } = require("@11ty/eleventy");
+const tocPlugin = require("eleventy-plugin-toc");
 const svgContents = require("eleventy-plugin-svg-contents");
 const {
   markdown,
@@ -16,12 +17,20 @@ const {
 const { timestampNow } = require("./src/_11ty/shortcodes.js");
 const { minifyHtml } = require("./src/_11ty/transforms.js");
 const { typeFilter, areaFilter } = require("./src/_11ty/collections.js");
-const compression = require("compression");
+const markdownItAnchor = require("markdown-it-anchor");
 
 module.exports = function (eleventyConfig) {
   // Eleventy Plugins
   eleventyConfig.addPlugin(EleventyHtmlBasePlugin);
   eleventyConfig.addPlugin(svgContents);
+  eleventyConfig.addPlugin(tocPlugin, { tags: ["h3"] });
+
+  // Markdown-it plugins
+  eleventyConfig.amendLibrary("md", (mdLib) =>
+    mdLib.use(markdownItAnchor, {
+      level: 3,
+    }),
+  );
 
   // Copy static assets to build folder
   eleventyConfig.addPassthroughCopy({ "./static/images/*": "/assets/images" });
@@ -35,7 +44,7 @@ module.exports = function (eleventyConfig) {
   });
 
   // Watch extra files for changes
-  eleventyConfig.setWatchThrottleWaitTime(200);
+  eleventyConfig.setWatchThrottleWaitTime(100);
   eleventyConfig.addWatchTarget("./src/assets/main.css");
   eleventyConfig.addWatchTarget("./src/**/*.svg");
 
@@ -63,7 +72,6 @@ module.exports = function (eleventyConfig) {
     enabled: true,
     showVersion: true,
     port: 8888,
-    // middleware: [compression()],
   });
 
   eleventyConfig.setDataDeepMerge(true);

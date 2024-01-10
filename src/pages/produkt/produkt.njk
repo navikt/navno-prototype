@@ -1,12 +1,13 @@
 ---
 title: 'Pleiepenger for sykt barn'
+// title: 'Tilskudd til kjøp av PC eller nettbrett ved lese- og skrivevansker'
 type: 'Pengestøtte'
 template: 'Produktside'
 audience: 'Arbeidsgiver'
 intro: 'Sikrer deg inntekt under fravær fra jobb når du må pleie og ta vare på et barn som har vært innlagt eller er til behandling på sykehus.'
-published: 'Oppdatert 22. desember 2022'
+published: 'Oppdatert 18. desember 2023'
 order: 4
-bodyClass: ''
+alpine: true
 ---
 {%- extends 'base.njk' -%}
 
@@ -15,61 +16,144 @@ bodyClass: ''
 {%- from "macros/tile.njk" import tile -%}
 
 {%- block content -%}
-  <main class="px-xs-2xl py-xl">
-    <div class="grid grid-cols-[auto_auto] mx-auto max-w-wide">
-      <h1 class="font-bold text-4xl/tight text-pretty col-span-full">{{ title | safe }}</h1>
 
-      <div class="mt-sm max-w-prose gap-sm-md">
+  <main class="grid grid-cols-mini lg:grid-cols-maxi py-lg">
 
-        {# Audience #}
-        <div class="inline-block text-sm bg-gray-100 rounded-full px-xs py-3xs -ml-3xs">{{ 'For ' if audience }}{{ audience | lower | safe }}</div>
+    <div class="col-wide">
+    <div class="text-sm tracking-widest uppercase">{{ type | safe }}</div>
+    <h1 class="font-bold text-3xl/tight text-balance mt-2xs">{{ title | safe }}</h1>
 
-        {# Intro #}
-        <div class="text-lg mt-md text-pretty">{{ intro | markdown | safe }}</div>
+    {# Audience #}
+    <div class="-ml-3xs mt-sm">
+      <span class="inline-block text-sm bg-gray-100 rounded-full px-xs py-3xs ">
+        {{ 'For ' if audience }}{{ audience | lower | safe }}
+      </span>
+    </div>
 
-        {# Innholdsfortegnelse #}
-        <div class="mt-md">
-          <h2 class="text-base font-semibold">Innhold på siden</h2>
-          <ul class="grid gap-1 rounded-xl overflow-clip mt-2xs">
-            {% for chapter in collections.kapittel %}
-            <li class="relative bg-gray-100 rounded py-xs px-sm text-pretty group">
-              <a class="text-lg font-semibold group-hover:underline after:absolute after:inset-0 mb-3xs" href="#{{ chapter.data.title | slugify }}">{{ chapter.data.title }}</a>
-              <p>{{ chapter.data.description | safe }}</p>
-            </li>
-            {% endfor %}
-          </ul>
-        </div>
-      </div>
+    {# Intro #}
+    <div class="text-lg mt-md text-pretty max-w-prose">{{ intro | markdown | safe }}</div>
+    </div>
+
+    {# Innholdsfortegnelse #}
+    <div class="mt-lg">
+      <h2 class="text-base font-semibold">Innhold på siden</h2>
+      <ul class="grid gap-1 mt-2xs">
+        {% for chapter in collections.kapittel %}
+        <li class="relative grid items-center bg-gray-100 rounded {{ 'rounded-t-xl' if loop.first }} {{ 'rounded-b-xl' if loop.last }} py-xs px-xs group hover:bg-gray-200 gap-x-md">
+          <a class="font-semibold underline text-base/snug group-hover:no-underline after:absolute after:inset-0" href="#{{ chapter.data.title | slugify }}">
+            {{ chapter.data.title }}
+          </a>
+          <p class="text-pretty">{{ chapter.data.description | safe }}</p>
+        </li>
+        {% endfor %}
+        <li class="relative grid items-center grid-flow-col bg-gray-100 rounded-xl mt-xs py-xs px-xs group hover:bg-gray-200 gap-x-md">
+          <a class="font-semibold underline text-base/snug group-hover:no-underline after:absolute after:inset-0" href="#annet">Annet som kan være aktuelt for deg</a>
+          {{ '/src/_includes/svg/icons/arrow-down.svg' | svgContents('col-start-2 row-span-2 ml-auto') | safe }}
+        </li>
+      </ul>
     </div>
 
 
     {# Innhold #}
-    {% for chapter in collections.kapittel %}
-    <section class="mx-auto max-w-wide" id="{{ chapter.data.title | slugify }}">
-      <div class="max-w-prose mt-xl">
-        <div class="text-sm tracking-widest uppercase">Kapittel {{ loop.index }}</div>
-        <h2 class="text-2xl font-bold">{{ chapter.data.title }}</h2>
-        <p>{{ chapter.data.description | safe }}</p>
-        <div class="rounded-lg aspect-[2/1] bg-blue-700 mt-sm"></div>
+    {% set chapters = collections.kapittel %}
 
-        <h3 class="font-semibold mt-md">I dette kapittelet</h3>
-        <div class="mt-3xs overflow-clip max-w-md rounded-xl grid gap-0.5">
-          {% for item in range(0,3) %}
-          <div class=" bg-gray-100 rounded aspect-[6/1]"></div>
-          {% endfor %}
+    {% for chapter in chapters %} 
+    <section class="grid items-end col-full grid-cols-mini lg:grid-cols-maxi" id="{{ chapter.data.title | slugify }}">
+      <div class="grid grid-cols-mini lg:grid-cols-maxi col-full">
+        {# <div class="rounded-lg aspect-[2/1] mt-xl border border-gray-300 mb-sm"></div> #}
+        <div class="text-[360px]/[0.8] font-black text-gray-200 pt-2xl">{{ loop.index }}</div>
+
+        {# <div class="text-sm tracking-widest uppercase">Kapittel {{ loop.index }}</div> #}
+        <h2 class="font-bold text-2xl/snug text-balance">{{ chapter.data.title }}</h2>
+        <p class="mt-sm">{{ chapter.data.description | safe }}</p>
+
+        {# Static Chapter TOC #}
+        {% if chapter.templateContent %}
+        <div class="bg-gray-100 rounded-lg my-md col-main bottom-xl py-xs px-sm max-w-max">
+          <h3 class="font-semibold">I dette kapittelet</h3>
+          {{ chapter.templateContent | toc | safe }}
         </div>
+        {% endif %}
       </div>
 
-      <div class="grid grid-cols-[2fr_1fr] gap-sm-md items-end mt-md">
-        <div class="min-h-[60svh] grid gap-md max-w-prose">
-          {% for item in range(0,20) %}           
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum hic fugit suscipit temporibus incidunt cupiditate ipsa obcaecati molestiae dolor, illo repellendus nemo nihil ullam repellat, laborum quis praesentium tenetur eum.</p>
-          {% endfor %}
+      <div class="grid items-end grid-cols-mini lg:grid-cols-maxi col-full">
+
+        {# Sticky Chapter TOC #}
+        {% if chapter.templateContent %}
+        <div class="sticky hidden row-span-3 my-md col-side bottom-lg toc2 md:block">
+          <div class="text-sm tracking-widest uppercase mb-3xs">Kapittel {{ loop.index }}</div>
+          <div class="font-bold mb-xs text-lg/tight">{{ chapter.data.title | safe }}</div>
+
+          {{ chapter.templateContent | toc | safe }}
+
+          <div class="flex flex-wrap pt-3 mt-4 text-blue-600 border-t border-gray-200 gap-x-sm gap-y-3xs">
+            {% if loop.index < loop.length %}              
+            <a href="#{{ chapters[loop.index0 + 1].data.title | slugify | safe }}">Neste kapittel</a>
+            {% endif %}
+            {% if not loop.first %}       
+            <a href="#{{ chapters[loop.index0 - 1].data.title | slugify | safe }}">Forrige kapittel</a>
+            {% endif %}
+            <a href="#toppen">Til toppen</a>
+          </div>
         </div>
-        {# <div class="sticky bg-red-500 bottom-md h-[20vh] p-4"></div> #}
+        {% endif %}
+
+        {# Main Content #}
+        <div class="prose mt-md">
+          {{ chapter.templateContent | markdown | safe }}
+        </div>
       </div>
     </section>
     {% endfor %}
-    <div class="mx-auto max-w-wide mt-3xl">{{ published | safe }}</div>
+
+    <section class="grid items-end col-full grid-cols-mini lg:grid-cols-maxi" id="{{ chapter.data.title | slugify }}">
+      <div class="rounded-lg aspect-[2/1] mt-xl border border-gray-300 mb-sm"></div>
+      <h2 class="font-bold text-2xl/snug text-balance">Annet som kan være aktuelt for deg</h2>
+      <p class="mt-sm">…</p>
+    </section>
+
+    <div class="text-sm italic border-t border-gray-200 col-wide mt-xl pt-2xs">{{ published | safe }}</div>
   </main>
 {%- endblock -%}
+
+
+{% block bodyscript %}
+  <script>
+    const headings = document.querySelectorAll('.prose h3');
+    const headingsArr = Array.from(headings);
+
+    const navItems = document.querySelectorAll('.toc2 li');
+
+    function activateNavByIndex(index) {
+      if (headings[index].classList.contains('active'))
+        return;
+
+      const currentActive = document.querySelectorAll('.toc .active');
+      for (let i = currentActive.length - 1; i >= 0; i--) {
+        currentActive[i].classList.remove('active');
+      }
+      navItems[index].classList.add('active');
+    }
+
+    const intersectionCallback = (entries, observer) => {
+      if (entries[0].intesectionRatio <= 0)
+          return;
+      
+      if (entries[0].intersectionRatio > 0.90) {    
+        activateNavByIndex(headingsArr.indexOf(entries[0].target))
+      }
+    };
+
+    const intersectionOptions = {
+      threshold: 1,
+      rootMargin: '0px 0px 0px 0px'
+    };
+
+    const intersectionObserver = new IntersectionObserver(intersectionCallback, intersectionOptions);
+
+    for (let i = 0; i < headings.length; i++) {
+      intersectionObserver.observe(headings[i]);  
+    }
+
+  </script>
+{% endblock %}

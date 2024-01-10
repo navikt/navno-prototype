@@ -2,23 +2,150 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {}
-@layer components {
-  .scrollToc {
-    opacity: 0;
-    animation: scrollToc linear both;
-    animation-timeline: scroll(nearest block);
-    animation-range: exit-crossing 50% exit-crossing -1%;
+@layer base {
+  body {
+    @apply text-gray-800;
   }
-
-  @keyframes scrollToc {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
+  :where(h1, h2, h3, h4, h5) {
+    @apply text-gray-900 text-pretty;
+  }
+  a {
+    text-decoration-thickness: 0.0625rem;
+    text-underline-offset: 0.125rem;
   }
 }
+@layer components {
+  :where(.prose) *:not(summary) + * {
+    margin-block-start: 1.5em;
+  }
+  :where(.prose) h3 {
+    @apply text-lg/snug text-balance font-bold;
+  }
+  :where(.prose) h4 {
+    @apply text-base/snug text-balance font-bold;
+  }
+  :where(.prose) :where(h3, h4) + *:not(h3, h4, ul, ol, details) {
+    @apply mt-1;
+  }
+  :where(.prose) ul {
+    @apply list-disc pl-6;
+  }
+  :where(.prose) li + li {
+    @apply mt-2;
+  }
+  :where(.prose) a {
+    @apply text-blue-600 underline;
+  }
 
-@layer utilities {}
+  :where(.toc, .toc2) ol {
+    @apply mt-1 max-w-md grid gap-1;
+  }
+  :where(.toc2) li {
+    @apply border-l-4 border-transparent py-1 px-3 -ml-3 relative;
+  }
+  .toc2 .active {
+    @apply border-blue-600;
+  }
+  :where(.toc, .toc2) a {
+    @apply underline hover:no-underline;
+  }
+  .toc2 .active a {
+    @apply no-underline;
+  }
+  .toc2 li a:before {
+    content: "";
+    position: absolute;
+    inset: 0;
+  }
+
+  .expander {
+    display: grid;
+    padding-inline: 2.375rem 10px;
+    border-top: 1px solid theme(colors.gray.200);
+  }
+  .expander:last-of-type {
+    border-bottom: 1px solid theme(colors.gray.200);
+  }
+  .expander + .expander {
+    margin-block-start: 0;
+  }
+  .expander[open] {
+    padding-block-end: 12px;
+  }
+  :where(.expander) summary {
+    display: block;
+    list-style: none;
+    padding: 10px 40px;
+    margin-block: -1px;
+    margin-inline: -40px -14px;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: left;
+    text-indent: -30px;
+    text-wrap: pretty;
+    line-height: 1.375;
+  }
+  :where(.expander[open]) summary {
+    background-color: theme(colors.deepblue.50);
+    margin-block-end: 12px;
+  }
+  :where(.expander) summary:hover {
+    background-color: theme(colors.blue.500);
+    color: theme(colors.white);
+  }
+  :where(.expander) summary:before {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none'%3E%3Cpath stroke='#0056b4' stroke-linecap='round' stroke-width='2' d='m6.5 10 5.493 5.493a.01.01 0 0 0 .014 0L17.5 10'/%3E%3C/svg%3E");
+    background-position: center;
+    background-repeat: no-repeat;
+    content: "";
+    display: inline-block;
+    flex-shrink: 0;
+    place-items: center;
+    translate: 0 4px;
+    margin-inline-end: 10px;
+    border-radius: 8px;
+    background-color: theme(colors.deepblue.100);
+    transition: rotate 150ms;
+    width: 20px;
+    height: 20px;
+  }
+  :where(.expander[open]) summary:before {
+    rotate: -180deg;
+  }
+  :where(.expander) summary > * {
+    text-wrap: pretty;
+  }
+  :where(.expander) summary:after {
+    content: " …" / "";
+    display: inline;
+  }
+  
+}
+
+@layer utilities {
+  .grid-cols-mini {
+    --_gutter: clamp(0.75rem, -1.1591rem + 9.5455vw, 6rem);
+    grid-template-columns: 
+      [full-start] minmax(0, 1fr) var(--_gutter) [wide-start main-start side-start] minmax(0, 40rem) [wide-end main-end side-end] var(--_gutter) minmax(0, 1fr) [full-end];
+  }
+
+  /* 83.25 */
+  .grid-cols-maxi {
+    --_gutter: clamp(0.75rem, -1.1591rem + 9.5455vw, 6rem);
+    grid-template-columns: 
+      [full-start] minmax(0, 1fr) var(--_gutter) 
+      [wide-start main-start] min(40rem, 100%) [main-end] min(13.25rem, 100%) 
+      [side-start] minmax(0, 30rem) [side-end wide-end] var(--_gutter) minmax(0, 1fr) [full-end];
+  }
+
+  :where(.grid-cols-mini, .grid-cols-maxi) > * { grid-column: main }
+
+  .col-full { grid-column: full }
+  .col-wide { grid-column: wide }
+  .col-main { grid-column: main }
+  .col-side { grid-column: side }
+
+  .border-warning {
+    border-image: repeating-linear-gradient(-64deg,#ffc166,#ffc166 10px,#00243a 0,#00243a 20px) 20;
+  }
+}
