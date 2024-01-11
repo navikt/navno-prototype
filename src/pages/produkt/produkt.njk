@@ -1,7 +1,13 @@
 ---
-title: 'Produktside'
-description: ''
+title: 'Pleiepenger for sykt barn'
+// title: 'Tilskudd til kjøp av PC eller nettbrett ved lese- og skrivevansker'
+type: 'Pengestøtte'
+template: 'Produktside'
+audience: 'Arbeidsgiver'
+intro: 'Sikrer deg inntekt under fravær fra jobb når du må pleie og ta vare på et barn som har vært innlagt eller er til behandling på sykehus.'
+published: 'Oppdatert 18. desember 2023'
 order: 4
+alpine: true
 ---
 {%- extends 'base.njk' -%}
 
@@ -10,96 +16,144 @@ order: 4
 {%- from "macros/tile.njk" import tile -%}
 
 {%- block content -%}
-  <main class="grid py-8 text-lg md:py-12 grid-cols-layout">
-    <div class="relative col-default md:col-wide md:mx-0 grid sm:grid-cols-[6rem_auto] gap-x-8 items-start mb-12 sm:pr-20 md:pr-0">
-      {{ '/src/_includes/svg/pictograms/utvidet-barnetrygd.svg' | svgContents('w-full h-auto max-w-20 sm:ml-1 top-2 text-green-800 absolute right-0 sm:relative') | safe }}
 
-      <div class="pr-28 sm:col-start-2 sm:row-start-1 md:pr-0">
-        <h1 class="min-w-0 mt-0.5 text-3xl font-semibold leading-tight sm:text-5xl sm:leading-tight">Utvidet barnetrygd</h1>
-        <p class="grid flex-wrap mt-6 text-base sm:flex gap-x-4 opacity-80">
-          <span class="tracking-wider uppercase">Pengestøtte</span>
-          <span class="hidden sm:block" aria-hidden="true">|</span>
-          <span class="inline-block">Oppdatert 22. desember 2022</span>
-        </p>
-      </div>
+  <main class="grid grid-cols-mini lg:grid-cols-maxi py-lg">
 
+    <div class="col-wide">
+    <div class="text-sm tracking-widest uppercase">{{ type | safe }}</div>
+    <h1 class="font-bold text-3xl/tight text-balance mt-2xs">{{ title | safe }}</h1>
 
-      <div class="sm:col-start-2 grid md:grid-cols-[2fr_1fr] gap-x-16 items-start gap-4 mt-8">
-
-        {# Intro #}
-        <div class="grid w-full max-w-3xl gap-4 md:mx-0 md:max-w-none">
-          {%- for section in sections.slice(0, 1) -%}
-            {%- for block in section.contentBlocks -%}
-              {%- include "partials/contentBlocks.njk" -%}
-            {%- endfor -%}
-          {%- endfor -%}
-        </div>
-
-        {# Innholdsfortegnelse #}
-        <div class="w-full max-w-3xl mt-6 md:sticky md:col-start-2 md:top-0 md:row-span-2 md:mx-0 md:max-w-none md:-mt-1.5 border-l border-gray-200 overflow-hidden py-2 overflow-y-auto max-h-[100dvh]">
-          <div class="">
-          <h2 class="pl-3 text-xl font-semibold md:pl-6">Innhold</h2>
-          {%- set index = sections.slice(1) -%}
-          <ul class="grid justify-start gap-1.5 pt-1">
-            {%- for item in index -%}
-              <li class="py-1 text-lg  border-l-4 pl-3 md:pl-6 {{ 'border-green-400' if loop.first else 'border-transparent fine:hover:border-gray-200' }}">
-                <a class="inline-flex p0.5-1 text-blue-500 underline decoration-blue-300 hover:text-blue-800 hover:no-underline" href="#{{ item.title | slugify }}">{{ item.title }}</a>
-              </li>
-            {%- endfor -%}
-          </ul>
-
-          <h2 class="pl-3 mt-8 text-xl font-semibold md:pl-6">Nyttig å vite</h2>
-          <ul class="grid justify-start gap-1.5 pt-1">
-            <li class="py-1 pl-3 text-lg border-l-4 border-transparent fine:hover:border-gray-200 md:pl-6"><a class="inline-flex py-0.5 text-blue-500 underline decoration-blue-300 hover:text-blue-800 hover:no-underline" href="#">Klagerettigheter</a></li>
-            <li class="py-1 pl-3 text-lg border-l-4 border-transparent fine:hover:border-gray-200 md:pl-6"><a class="inline-flex py-0.5 text-blue-500 underline decoration-blue-300 hover:text-blue-800 hover:no-underline" href="#">Lov om barnetrygd</a></li>
-            <li class="py-1 pl-3 text-lg border-l-4 border-transparent fine:hover:border-gray-200 md:pl-6"><a class="inline-flex py-0.5 text-blue-500 underline decoration-blue-300 hover:text-blue-800 hover:no-underline" href="#">Pensjonsopptjening for omsorgsarbeid</a></li>
-          </ul>
-          </div>
-        </div>
-
-        {# Filter + Innhold #}
-        <div class="grid w-full max-w-3xl gap-4 md:row-start-2 md:mx-0 md:max-w-none">
-
-          {# Filter #}
-          <div class="px-6 py-4 mt-8 rounded-lg sm:px-8 sm:py-6 bg-blue-50 max-w-prose">
-            <h2 class="text-xl font-semibold">Hva er situasjonen din?</h2>
-            <p>Velg situasjonen som passer for deg, så viser vi bare informasjon om den.</p>
-
-            <select class="flex items-center rounded-none justify-between w-full gap-3 pl-4 pr-12 py-2.5 mt-4 bg-white border-b-2 border-gray-400 md:max-w-max bg-select appearance-none">
-              <option>Tilpass innholdet</option>
-            </select>
-          </div>
-
-          {# Innhold #}
-          {%- for section in sections.slice(1) -%}
-            <div class="relative grid mt-12 max-w-prose" id="{{ section.title | slugify }}">
-              {% if section.title %}
-              <h2 class="flex items-baseline gap-2 sm:gap-4 text-2xl font-semibold sm:text-3xl sm:leading-snug {{ 'md:-mt-2' if section.icon }}">
-                {%- if section.icon -%}
-                <span class="inline-grid p-3 text-green-900 translate-y-px bg-green-100 rounded-full sm:-ml-16">
-                {{ section.icon | svgContents('w-5 h-5 sm:w-6 sm:h-6') | safe }}
-                </span>
-                {%- endif -%}
-                {{ section.title | safe }}
-              </h2>
-
-              <a href="#" class="inline-flex items-center gap-1.5 mt-2 mb-4 text-base text-blue-500 hover:underline hover:text-blue-600">
-                <span># Kopier lenke</span>
-                {# {{ '/src/_includes/svg/icons/link.svg' | svgContents('w-3.5 h-3.5') | safe }} #}
-              </a>
-              {% endif %}
-
-              <div class="grid gap-8">
-              {%- for block in section.contentBlocks -%}
-              <div class="markdown">
-                {%- include "partials/contentBlocks.njk" -%}
-              </div>
-              {%- endfor -%}
-              </div>
-            </div>
-          {%- endfor -%}
-        </div>
-      </div>
+    {# Audience #}
+    <div class="-ml-3xs mt-sm">
+      <span class="inline-block text-sm bg-gray-100 rounded-full px-xs py-3xs ">
+        {{ 'For ' if audience }}{{ audience | lower | safe }}
+      </span>
     </div>
+
+    {# Intro #}
+    <div class="text-lg mt-md text-pretty max-w-prose">{{ intro | markdown | safe }}</div>
+    </div>
+
+    {# Innholdsfortegnelse #}
+    <div class="mt-lg">
+      <h2 class="text-base font-semibold">Innhold på siden</h2>
+      <ul class="grid gap-1 mt-2xs">
+        {% for chapter in collections.kapittel %}
+        <li class="relative grid items-center bg-gray-100 rounded {{ 'rounded-t-xl' if loop.first }} {{ 'rounded-b-xl' if loop.last }} py-xs px-xs group hover:bg-gray-200 gap-x-md">
+          <a class="font-semibold underline text-base/snug group-hover:no-underline after:absolute after:inset-0" href="#{{ chapter.data.title | slugify }}">
+            {{ chapter.data.title }}
+          </a>
+          <p class="text-pretty">{{ chapter.data.description | safe }}</p>
+        </li>
+        {% endfor %}
+        <li class="relative grid items-center grid-flow-col bg-gray-100 rounded-xl mt-xs py-xs px-xs group hover:bg-gray-200 gap-x-md">
+          <a class="font-semibold underline text-base/snug group-hover:no-underline after:absolute after:inset-0" href="#annet">Annet som kan være aktuelt for deg</a>
+          {{ '/src/_includes/svg/icons/arrow-down.svg' | svgContents('col-start-2 row-span-2 ml-auto') | safe }}
+        </li>
+      </ul>
+    </div>
+
+
+    {# Innhold #}
+    {% set chapters = collections.kapittel %}
+
+    {% for chapter in chapters %} 
+    <section class="grid items-end col-full grid-cols-mini lg:grid-cols-maxi" id="{{ chapter.data.title | slugify }}">
+      <div class="grid grid-cols-mini lg:grid-cols-maxi col-full">
+        {# <div class="rounded-lg aspect-[2/1] mt-xl border border-gray-300 mb-sm"></div> #}
+        <div class="text-[360px]/[0.8] font-black text-gray-200 pt-2xl">{{ loop.index }}</div>
+
+        {# <div class="text-sm tracking-widest uppercase">Kapittel {{ loop.index }}</div> #}
+        <h2 class="font-bold text-2xl/snug text-balance">{{ chapter.data.title }}</h2>
+        <p class="mt-sm">{{ chapter.data.description | safe }}</p>
+
+        {# Static Chapter TOC #}
+        {% if chapter.templateContent %}
+        <div class="bg-gray-100 rounded-lg my-md col-main bottom-xl py-xs px-sm max-w-max">
+          <h3 class="font-semibold">I dette kapittelet</h3>
+          {{ chapter.templateContent | toc | safe }}
+        </div>
+        {% endif %}
+      </div>
+
+      <div class="grid items-end grid-cols-mini lg:grid-cols-maxi col-full">
+
+        {# Sticky Chapter TOC #}
+        {% if chapter.templateContent %}
+        <div class="sticky hidden row-span-3 my-md col-side bottom-lg toc2 md:block">
+          <div class="text-sm tracking-widest uppercase mb-3xs">Kapittel {{ loop.index }}</div>
+          <div class="font-bold mb-xs text-lg/tight">{{ chapter.data.title | safe }}</div>
+
+          {{ chapter.templateContent | toc | safe }}
+
+          <div class="flex flex-wrap pt-3 mt-4 text-blue-600 border-t border-gray-200 gap-x-sm gap-y-3xs">
+            {% if loop.index < loop.length %}              
+            <a href="#{{ chapters[loop.index0 + 1].data.title | slugify | safe }}">Neste kapittel</a>
+            {% endif %}
+            {% if not loop.first %}       
+            <a href="#{{ chapters[loop.index0 - 1].data.title | slugify | safe }}">Forrige kapittel</a>
+            {% endif %}
+            <a href="#toppen">Til toppen</a>
+          </div>
+        </div>
+        {% endif %}
+
+        {# Main Content #}
+        <div class="prose mt-md">
+          {{ chapter.templateContent | markdown | safe }}
+        </div>
+      </div>
+    </section>
+    {% endfor %}
+
+    <section class="grid items-end col-full grid-cols-mini lg:grid-cols-maxi" id="{{ chapter.data.title | slugify }}">
+      <div class="rounded-lg aspect-[2/1] mt-xl border border-gray-300 mb-sm"></div>
+      <h2 class="font-bold text-2xl/snug text-balance">Annet som kan være aktuelt for deg</h2>
+      <p class="mt-sm">…</p>
+    </section>
+
+    <div class="text-sm italic border-t border-gray-200 col-wide mt-xl pt-2xs">{{ published | safe }}</div>
   </main>
 {%- endblock -%}
+
+
+{% block bodyscript %}
+  <script>
+    const headings = document.querySelectorAll('.prose h3');
+    const headingsArr = Array.from(headings);
+
+    const navItems = document.querySelectorAll('.toc2 li');
+
+    function activateNavByIndex(index) {
+      if (headings[index].classList.contains('active'))
+        return;
+
+      const currentActive = document.querySelectorAll('.toc .active');
+      for (let i = currentActive.length - 1; i >= 0; i--) {
+        currentActive[i].classList.remove('active');
+      }
+      navItems[index].classList.add('active');
+    }
+
+    const intersectionCallback = (entries, observer) => {
+      if (entries[0].intesectionRatio <= 0)
+          return;
+      
+      if (entries[0].intersectionRatio > 0.90) {    
+        activateNavByIndex(headingsArr.indexOf(entries[0].target))
+      }
+    };
+
+    const intersectionOptions = {
+      threshold: 1,
+      rootMargin: '0px 0px 0px 0px'
+    };
+
+    const intersectionObserver = new IntersectionObserver(intersectionCallback, intersectionOptions);
+
+    for (let i = 0; i < headings.length; i++) {
+      intersectionObserver.observe(headings[i]);  
+    }
+
+  </script>
+{% endblock %}

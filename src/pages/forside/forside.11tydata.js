@@ -50,10 +50,6 @@ module.exports = {
       href: "/ettersende-dokumentasjon/",
       icon: "/src/_includes/svg/pictograms/utbetalingsdatoer.svg",
     },
-    // {
-    //   title: "Klage og anke",
-    //   icon: "/src/_includes/svg/pictograms/soknad-og-skjema.svg",
-    // },
   ],
   newsList: [
     {

@@ -1,0 +1,85 @@
+---
+title: 'Slik søker du'
+description: 'Finn søknadsskjema, se saks-behandlingstider, og muligheter til å ettersende eller klage på vedtak. '
+---
+
+### Søknadsfrist
+
+Normalt sender du søknaden med en gang. Du må søke innen tre måneder etter at pleiepengeperioden starter. Skal du for eksempel ha pleiepenger fra 15. juni, må NAV ha søknaden senest i løpet av september.
+
+#### Hva gjør du når situasjonen er uavklart?
+
+Vi har forståelse for at situasjonen med et sykt barn kan være uavklart. I utgangspunktet beskriver du hva som er situasjonen nå, og så melder du fra om endringer etter hvert som de kommer.
+
+### Søknad og dokumentasjon
+
+Du bruker samme søknad uansett om du skal søke for første gang, om du skal søke forlengelse, eller på nytt etter et opphold på 4 uker eller mer.
+
+Når du kommer til søknaden, får du veiledning underveis om hva du skal gjøre.
+
+Du bruker samme søknad både for pleiepenger for sykt barn og pleiepenger for en utviklingshemmet person over 18.
+
+[Søk om pleiepenger](#) | [Ettersend dokumentasjon](#)
+
+[Dette må du dokumentere](#)
+
+### Etter at du har søkt
+
+Du får skriftlig vedtak når søknaden er behandlet.
+
+Du får en melding på Min side som bekrefter at vi har mottatt søknad fra deg. Noen minutter etter at vi har mottatt søknaden din, finner du den på Min side under «Dine pleiepenger».
+
+[Logg inn på dine pleiepenger](#)
+
+[Saksbehandlingstider](#)
+
+#### Hva må arbeidsgiver gjøre nå?
+
+Arbeidsgiver må sende inntektsmelding til NAV. Den trenger vi for å kunne behandle søknaden om pleiepenger. Derfor er det viktig at du ber arbeidsgiver sende inn denne så snart du har søkt om pleiepenger.
+
+Hvis du skal søke pleiepenger på nytt etter et opphold, trenger vi kun inntektsmelding hvis det er 4 uker eller mer siden du hadde pleiepenger sist.
+
+### Dine rettigheter overfor arbeidsgiver
+
+#### Kan arbeidsgiver be om en bekreftelse på at jeg får pleiepenger fra NAV?
+
+Arbeidsgiver kan få en bekreftelse på at du har søkt pleiepenger. Du får en bekreftelse du kan gi til arbeidsgiver etter at du har sendt inn søknaden. Denne bekrefter at søknaden er mottatt, hvilken periode det er søkt for, samt informasjon om at arbeidsgiver må sende inntektsmelding.
+
+Du får et vedtak fra NAV når søknaden din er ferdig behandlet. Arbeidsgiver kan ikke kreve å få se vedtaket fordi det inneholder sensitive personopplysninger om barnet. Hvis arbeidsgiver har behov for opplysninger om saken og hva du har fått innvilget, må du og arbeidsgiver ha en dialog om dette.
+
+#### Får jeg lønn fra arbeidsgiver eller fra NAV i perioden med pleiepenger?
+
+Om du får utbetalt lønn fra arbeidsgiver eller NAV avhenger av hva slags avtale som foreligger mellom deg som ansatt og arbeidsgiveren din. Dette kan for eksempel være en tariffavtale, eller annen avtale som er inngått mellom dere.
+
+Dersom dette ikke er regulert av en avtale, kan arbeidsgiver velge om de vil forskuttere lønn eller ikke. Hvis arbeidsgiver velger å ikke forskuttere lønn til deg, får du utbetalt fra NAV. Kontakt arbeidsgiveren din for å forhøre deg om hva de velger å gjøre.
+
+#### Får jeg permisjon?
+
+Pleiepenger gir rett til lovlig fravær fra arbeidet, og du skal derfor ha permisjon etter Arbeidsmiljølovens §12-9.
+
+- Du kan lese mer om retten til permisjon på Arbeidstilsynet sine sider.
+- Her finner du mer om regelverket rundt permisjon.
+- Her kan du lese statsrådens svar på spørsmål om sammenhengen mellom pleiepenger og ulønnet permisjon. Her går det frem at retten til lovlig fravær på grunn av pleiepenger ikke kan begrenses av arbeidsgiver.
+
+### Klagerettigheter
+
+Har du fått et vedtak fra oss som du mener er feil? Da kan du klage til NAV-enheten som skrev vedtaket. De vil vurdere saken din på nytt. Hvis de ikke er enig i klagen din, sender de den videre til NAV Klageinstans.
+
+#### Klage på vedtak
+
+I vedtaket står det hvordan du går fram hvis du skal klage, hvem du skal klage til og klagefrist. Hvis du har spørsmål om vedtaket, kan du kontakte oss.
+
+[Send klage](#) | [Ettersend dokumentasjon](#)
+
+#### Anke vedtak
+
+Hvis du er uenig i svaret på klagen din fra NAV klageinstans, kan du med noen unntak anke vedtaket. Fristen for å anke står i vedtaket.
+
+[Send anke](#) | [Ettersend dokumentasjon](#)
+
+Du kan også bruke advokat eller gi fullmakt til en person som klager på dine vegne.
+
+[Klagerettigheter](#)
+
+[Saksbehandlingstider](#)
+

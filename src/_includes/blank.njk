@@ -22,10 +22,11 @@
     {%- block script -%}{%- endblock -%}
   </head>
   <body
-    class="{{ bodyClass }}"
+    class="text-base {{ bodyClass }}"
     x-data="{
       indexOpen: false,
       audienceDropdownOpen: false,
+      languageDropdownOpen: false,
       loggedIn: true,
       loginOpen: false,
       menuOpen: false,
@@ -35,6 +36,7 @@
     {%- if environment === 'production' -%}
     {%- include "partials/banner.njk" -%}
     {%- endif -%}
+
     {%- block content -%}{%- endblock -%}
   </body>
 </html>

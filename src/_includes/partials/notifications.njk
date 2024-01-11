@@ -1,5 +1,5 @@
 {# Notifications #}
-<div class="absolute inset-x-0 z-40 grid w-full h-0 top-full grid-cols-layout" x-bind:class="notifyOpen ? 'opacity-0 animate-dropdown' : 'hidden'">
+<div class="absolute inset-x-0 z-40 w-full h-0 top-full" x-bind:class="notifyOpen ? 'opacity-0 animate-dropdown' : 'hidden'">
   <div class="sm:max-w-lg sm:w-full bg-white rounded-b-lg shadow-xl md:max-h-[92vh] col-full sm:col-wide sm:justify-self-end">
     <div class="px-clamp-gap sm:px-6">
       <p class="grid pt-5 pb-4" x-on:click="newNotifications = !newNotifications">
@@ -7,7 +7,7 @@
         <span class="text-2xl font-semibold">Isac Norland</span>
       </p>
       <p class="border-t border-gray-200">
-        <a href="#" class="flex items-center gap-2 py-3 -mt-px text-lg text-blue-500 -mx-clamp-gap px-clamp-gap sm:hover:-mx-6 sm:hover:px-6 fine:hover:bg-blue-500 fine:hover:text-white">
+        <a href="#" class="flex items-center gap-2 py-3 -mt-px text-lg text-blue-500 -mx-clamp-gap px-clamp-gap sm:-mx-6 sm:px-6 fine:hover:bg-blue-500 fine:hover:text-white">
           {{ '/src/_includes/svg/icons/user.svg' | svgContents() | safe }}
           <span>Min side</span>
         </a>
@@ -67,7 +67,7 @@
       <div class="sticky inset-x-0 bottom-0 h-3 bg-gradient-to-t from-gray-100 to-transparent"></div>
     </div>
     <div class="grid">
-      <div x-show="!newNotifications" class="border-t border-gray-200 mx-clamp-gap sm:mx-clamp-gap"></div>
+      <div x-show="!newNotifications" class="border-t border-gray-200 mx-clamp-gap sm:mx-6"></div>
       <button class="flex items-center gap-2 py-3 text-lg text-blue-500 rounded-b-lg px-clamp-gap fine:hover:bg-blue-500 fine:hover:text-white sm:px-6" x-on:click="loggedIn = false, notifyOpen = false">
         {{ '/src/_includes/svg/icons/logout.svg' | svgContents() | safe }}
         <span>Logg ut</span>

@@ -1,16 +1,13 @@
-<aside x-ref="prototypeMenu" aria-label="Sider i prototypen" class="grid items-center min-h-screen font-mono text-xl text-white bg-gradient-to-b from-deepblue-800 via-deepblue-900 to-deepblue-900 md:text-2xl">
-  <div class="grid grid-cols-layout py-clamp-gap">
-    <h2 class="text-lg font-semibold tracking-widest uppercase col-wide text-deepblue-300">Sider i prototypen</h2>
-    <ul class="mt-4 col-wide">
+<aside x-ref="prototypeMenu" aria-label="Sider i prototypen" class="flex flex-row min-h-screen font-mono text-white bg-black px-xs-2xl">
+  <div class="w-full mx-auto mt-auto max-w-wide pb-2xl">
+    <h2 class="text-sm font-semibold tracking-widest text-gray-300 uppercase col-wide">Sider i prototypen</h2>
+    <ul class="mt-4 col-wide md:text-lg">
     {% set pages = collections.template | sort(false, false, 'data.order') %}
     {%- for page in pages -%}
-      <li class="grid items-center justify-start py-4 border-t border-deepblue-700 min-h-24">
-        <a href="{{ page.url }}" class="inline-block fine:hover:text-blue-300 fine:hover:underline decoration-from-font underline-offset-4">
+      <li class="grid items-center justify-start py-4 border-t border-gray-800 min-h-24">
+        <a href="{{ page.url }}" class="inline-block text-deepblue-200 fine:hover:underline decoration-from-font underline-offset-4">
           {{ page.data.title | safe }}
         </a>
-        {% if page.data.type %}
-        <span class="block text-sm uppercase text-deepblue-200">{{ page.data.type | safe }}</span>
-        {% endif %}
       </li>
     {%- endfor -%}
     </ul>
