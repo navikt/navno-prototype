@@ -39,17 +39,13 @@ alpine: true
       <h2 class="text-base font-semibold">Innhold på siden</h2>
       <ul class="grid gap-1 mt-2xs">
         {% for chapter in collections.kapittel %}
-        <li class="relative grid items-center bg-gray-100 rounded {{ 'rounded-t-xl' if loop.first }} {{ 'rounded-b-xl' if loop.last }} py-xs px-xs group hover:bg-gray-200 gap-x-md">
+        <li class="relative grid items-center bg-gray-100 rounded {{ 'rounded-t-xl' if loop.first }} {{ 'rounded-b-xl' if loop.index === 4 }} {{ 'rounded-xl mt-md' if loop.last }} py-xs px-xs group hover:bg-gray-200 gap-x-md">
           <a class="font-semibold underline text-base/snug group-hover:no-underline after:absolute after:inset-0" href="#{{ chapter.data.title | slugify }}">
             {{ chapter.data.title }}
           </a>
           <p class="text-pretty">{{ chapter.data.description | safe }}</p>
         </li>
         {% endfor %}
-        <li class="relative grid items-center grid-flow-col bg-gray-100 rounded-xl mt-xs py-xs px-xs group hover:bg-gray-200 gap-x-md">
-          <a class="font-semibold underline text-base/snug group-hover:no-underline after:absolute after:inset-0" href="#annet">Annet som kan være aktuelt for deg</a>
-          {{ '/src/_includes/svg/icons/arrow-down.svg' | svgContents('col-start-2 row-span-2 ml-auto') | safe }}
-        </li>
       </ul>
     </div>
 
@@ -105,12 +101,6 @@ alpine: true
       </div>
     </section>
     {% endfor %}
-
-    <section class="grid items-end col-full grid-cols-mini lg:grid-cols-maxi" id="{{ chapter.data.title | slugify }}">
-      <div class="rounded-lg aspect-[2/1] mt-xl border border-gray-300 mb-sm"></div>
-      <h2 class="font-bold text-2xl/snug text-balance">Annet som kan være aktuelt for deg</h2>
-      <p class="mt-sm">…</p>
-    </section>
 
     <div class="text-sm italic border-t border-gray-200 col-wide mt-xl pt-2xs">{{ published | safe }}</div>
   </main>
