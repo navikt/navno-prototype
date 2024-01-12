@@ -79,7 +79,7 @@ alpine: true
 
         {# Sticky Chapter TOC #}
         {% if chapter.templateContent %}
-        <div class="sticky my-md col-side toc-sticky top-6 min-h-[80vh] row-span-2" x-intersect:enter.full="tocShown = true" x-intersect:leave.half="tocShown = false">
+        <div class="hidden lg:block sticky my-md col-side toc-sticky top-6 min-h-[80vh] row-span-2" x-intersect:enter.full="tocShown = true" x-intersect:leave.half="tocShown = false">
           <nav class="sticky top-6" 
             x-show="tocShown" 
             x-transition:enter="transition ease-out duration-300"

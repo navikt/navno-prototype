@@ -38,10 +38,7 @@
       notifyOpen: false,
       newNotifications: true
     }">
-    {%- if environment === 'production' -%}
     {%- include "partials/banner.njk" -%}
-    {%- endif -%}
-
     {%- include "partials/header-new.njk" -%}
     {%- block content -%}{%- endblock -%}
     {%- block bodyscript -%}{%- endblock -%}

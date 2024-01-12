@@ -130,7 +130,7 @@
   .grid-cols-mini {
     --_gutter: clamp(0.75rem, -1.1591rem + 9.5455vw, 6rem);
     grid-template-columns: 
-      [full-start] var(--_gutter) [wide-start] minmax(0, 1fr) [main-start side-start] minmax(0, 40rem) [main-end side-end] minmax(0, 1fr) [wide-end] var(--_gutter) [full-end];
+      [full-start] var(--_gutter) minmax(0, 1fr) [wide-start main-start side-start] minmax(0, 40rem) [main-end side-end wide-end] minmax(0, 1fr) var(--_gutter) [full-end];
   }
 
   /* 83.25 */
