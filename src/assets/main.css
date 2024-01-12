@@ -86,6 +86,9 @@
     text-wrap: pretty;
     line-height: 1.375;
   }
+  :where(.expander) summary::-webkit-details-marker {
+    display: none;
+  }
   :where(.expander[open]) summary {
     background-color: theme(colors.deepblue.50);
     margin-block-end: 12px;
