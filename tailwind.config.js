@@ -157,14 +157,15 @@ module.exports = {
       ],
     },
     fontSize: {
-      xs: "clamp(0.8rem, 0.9109rem + -0.1109vw, 0.8888rem)",
-      sm: "clamp(0.9375rem, 1.0179rem + -0.0893vw, 1rem);",
-      base: "clamp(1.125rem, 1.0893rem + 0.1786vw, 1.25rem)",
-      lg: "clamp(1.2656rem, 1.1512rem + 0.5723vw, 1.6663rem)",
-      xl: "clamp(1.4238rem, 1.1959rem + 1.1393vw, 2.2213rem)",
-      "2xl": "clamp(1.6019rem, 1.2137rem + 1.9411vw, 2.9606rem)",
-      "3xl": "clamp(1.8019rem, 1.189rem + 3.0643vw, 3.9469rem)",
-      // https://utopia.fyi/type/calculator?c=320,18,1.125,1440,20,1.333,4,1,960&s=0.75|0.5|0.25,1.5|2|3|4|6,xs-2xl|xs-m&g=xs,m,xl,12
+      xs: "clamp(0.72rem, 0.7rem + 0.1vw, 0.8rem)",
+      sm: "clamp(0.9rem, 0.875rem + 0.125vw, 1rem)",
+      base: "clamp(1.125rem, 1.0938rem + 0.1563vw, 1.25rem)",
+      lg: "clamp(1.4063rem, 1.3672rem + 0.1953vw, 1.5625rem)",
+      xl: "clamp(1.7581rem, 1.7094rem + 0.2438vw, 1.9531rem)",
+      "2xl": "clamp(2.1975rem, 2.1366rem + 0.3047vw, 2.4413rem)",
+      "3xl": "clamp(2.7469rem, 2.6706rem + 0.3812vw, 3.0519rem)",
+      "4xl": "clamp(3.4331rem, 3.3377rem + 0.4773vw, 3.815rem)",
+      // https://utopia.fyi/type/calculator?c=320,18,1.25,1600,20,1.25,5,2,960&s=0.75|0.5|0.25,1.5|2|3|4|6,xs-2xl|xs-m&g=xs,m,xl,12
     },
     colors: {
       ...akselColors,
