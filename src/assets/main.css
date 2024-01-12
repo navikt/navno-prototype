@@ -130,16 +130,18 @@
   .grid-cols-mini {
     --_gutter: clamp(0.75rem, -1.1591rem + 9.5455vw, 6rem);
     grid-template-columns: 
-      [full-start] minmax(0, 1fr) var(--_gutter) [wide-start main-start side-start] minmax(0, 40rem) [wide-end main-end side-end] var(--_gutter) minmax(0, 1fr) [full-end];
+      [full-start] var(--_gutter) [wide-start] minmax(0, 1fr) [main-start side-start] minmax(0, 40rem) [main-end side-end] minmax(0, 1fr) [wide-end] var(--_gutter) [full-end];
   }
 
   /* 83.25 */
   .grid-cols-maxi {
     --_gutter: clamp(0.75rem, -1.1591rem + 9.5455vw, 6rem);
     grid-template-columns: 
-      [full-start] minmax(0, 1fr) var(--_gutter) 
-      [wide-start main-start] min(40rem, 100%) [main-end] min(13.25rem, 100%) 
-      [side-start] minmax(0, 30rem) [side-end wide-end] var(--_gutter) minmax(0, 1fr) [full-end];
+      [full-start] var(--_gutter) minmax(0, 1fr)  
+      [wide-start main-start] min(40rem, 100%) 
+      [main-end] min(13.25rem, 100%) 
+      [side-start] minmax(0, 30rem) 
+      [side-end wide-end] minmax(0, 1fr) var(--_gutter) [full-end];
   }
   :where(.grid-cols-mini > *, .grid-cols-maxi > *) { grid-column: main }
 

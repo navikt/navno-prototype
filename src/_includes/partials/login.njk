@@ -1,8 +1,8 @@
 {# Notifications #}
-<aside class="absolute w-full top-full sm:right-clamp-gap z-40 mb-10 bg-white rounded-b-lg shadow-xl sm:ml-auto sm:max-w-xl inset-x-0 md:max-h-[92vh]" x-bind:class="loginOpen ? 'opacity-0 animate-dropdown' : 'hidden'">
-  <div class="p-8 text-lg min-h-64">
-    <p>Noe her</p>
-
-    <button class="inline-block px-6 py-2.5 mt-8 text-center text-white bg-blue-500 rounded hover:bg-blue-600" x-on:click="loggedIn = true, loginOpen = false">Logg inn</button>
+<aside class="absolute inset-x-0 z-40 grid w-full h-0 grid-cols-mini lg:grid-cols-maxi top-full" x-bind:class="loginOpen ? 'opacity-0 animate-dropdown' : 'hidden'">
+  <div class="sm:max-w-lg sm:w-full bg-white rounded-b-lg shadow-xl md:max-h-[92vh] col-full sm:col-wide sm:justify-self-end">
+    <div class="p-8 text-lg">
+      <button class="block px-6 py-2.5 w-full mt-8 text-center text-white bg-blue-500 rounded hover:bg-blue-600" x-on:click="loggedIn = true, loginOpen = false">Logg inn</button>
+    </div>
   </div>
 </aside>

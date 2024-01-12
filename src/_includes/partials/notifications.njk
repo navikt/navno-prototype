@@ -1,13 +1,13 @@
 {# Notifications #}
-<div class="absolute inset-x-0 z-40 w-full h-0 top-full" x-bind:class="notifyOpen ? 'opacity-0 animate-dropdown' : 'hidden'">
-  <div class="sm:max-w-lg sm:w-full bg-white rounded-b-lg shadow-xl md:max-h-[92vh] col-full sm:col-wide sm:justify-self-end">
-    <div class="px-clamp-gap sm:px-6">
+<div class="absolute inset-x-0 z-40 grid w-full h-0 grid-cols-mini lg:grid-cols-maxi top-full" x-bind:class="notifyOpen ? 'opacity-0 animate-dropdown' : 'hidden'">
+  <div class="lg:max-w-xl bg-white rounded-b-lg shadow-xl md:max-h-[92vh] col-full sm:col-wide lg:justify-self-end sm:-mx-6">
+    <div class="px-6 px-clamp-gap">
       <p class="grid pt-5 pb-4" x-on:click="newNotifications = !newNotifications">
         <span class="text-sm tracking-wider uppercase opacity-80">Logget inn</span>
-        <span class="text-2xl font-semibold">Isac Norland</span>
+        <span class="text-xl font-semibold">Isac Norland</span>
       </p>
       <p class="border-t border-gray-200">
-        <a href="#" class="flex items-center gap-2 py-3 -mt-px text-lg text-blue-500 -mx-clamp-gap px-clamp-gap sm:-mx-6 sm:px-6 fine:hover:bg-blue-500 fine:hover:text-white">
+        <a href="#" class="flex items-center gap-2 py-3 -mt-px text-blue-500 -mx-clamp-gap px-clamp-gap sm:-mx-6 sm:px-6 fine:hover:bg-blue-500 fine:hover:text-white">
           {{ '/src/_includes/svg/icons/user.svg' | svgContents() | safe }}
           <span>Min side</span>
         </a>
@@ -15,14 +15,14 @@
     </div>
     <div class="bg-gray-100 border-b relative border-gray-200 border-t max-h-[55dvh] overflow-y-auto overscroll-contain fancy-scroll" x-show="newNotifications">
       <div class="sticky inset-x-0 top-0 h-3 -mb-3 bg-gradient-to-b from-gray-100 to-transparent"></div>
-      <div class="py-4 px-clamp-gap sm:p-6">
-        <h2 class="text-xl font-semibold">Varsler</h2>
+      <div class="p-6 py-4 px-clamp-gap">
+        <h2 class="text-lg font-semibold">Varsler</h2>
         <h3 class="mt-3 text-sm tracking-wider uppercase opacity-80">Oppgaver</h3>
         <div class="grid gap-1 mt-2">
           {%- for task in notifications.myTasks -%}
             <a class="grid gap-1 px-3.5 py-3 bg-white rounded-lg fine:hover:ring-2 fine:hover:ring-blue-600" href="#">
-              <h3 class="text-lg font-semibold leading-snug">{{ task.title | safe }}</h3>
-              <p class="text-base opacity-80">{{ task.timestamp }}</p>
+              <h3 class="font-semibold leading-snug">{{ task.title | safe }}</h3>
+              <p class="text-sm opacity-80">{{ task.timestamp }}</p>
               <div class="flex items-center justify-between mt-2">
                 <div class="flex flex-wrap gap-1">
                   <span class="grid w-6 h-6 text-white bg-orange-600 rounded place-items-center">
@@ -43,8 +43,8 @@
           {%- for message in notifications.myMessages -%}
             <a class="px-3.5 py-3 bg-white rounded-md fine:hover:ring-2 fine:hover:ring-blue-600" href="#">
               <div>
-                <h3 class="text-lg font-semibold leading-snug">{{ message.title | safe }}</h3>
-                <p class="text-base opacity-80">{{ message.timestamp }}</p>
+                <h3 class="font-semibold leading-snug">{{ message.title | safe }}</h3>
+                <p class="text-sm opacity-80">{{ message.timestamp }}</p>
 
                 {%- if message.tags -%}
                   <div class="flex items-center justify-between pb-1 mt-2">
@@ -68,7 +68,7 @@
     </div>
     <div class="grid">
       <div x-show="!newNotifications" class="border-t border-gray-200 mx-clamp-gap sm:mx-6"></div>
-      <button class="flex items-center gap-2 py-3 text-lg text-blue-500 rounded-b-lg px-clamp-gap fine:hover:bg-blue-500 fine:hover:text-white sm:px-6" x-on:click="loggedIn = false, notifyOpen = false">
+      <button class="flex items-center gap-2 px-6 py-3 text-blue-500 rounded-b-lg px-clamp-gap fine:hover:bg-blue-500 fine:hover:text-white" x-on:click="loggedIn = false, notifyOpen = false">
         {{ '/src/_includes/svg/icons/logout.svg' | svgContents() | safe }}
         <span>Logg ut</span>
       </button>

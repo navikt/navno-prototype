@@ -1,7 +1,7 @@
 module.exports = {
   audience: [
     {
-      title: "Privat",
+      title: "Privatperson",
       description: "Lorem ipsum dolor sit amet",
       href: "#",
     },
