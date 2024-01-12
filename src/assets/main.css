@@ -37,22 +37,22 @@
     @apply text-blue-600 underline;
   }
 
-  :where(.toc, .toc2) ol {
+  :where(.toc-inline, .toc-sticky) ol {
     @apply mt-1 max-w-md grid gap-1;
   }
-  :where(.toc2) li {
-    @apply border-l-4 border-transparent py-1 px-3 -ml-3 relative;
+  :where(.toc-sticky) li {
+    @apply border-l-4 border-transparent py-1 px-3 relative;
   }
-  .toc2 .active {
+  .toc-sticky .active {
     @apply border-blue-600;
   }
-  :where(.toc, .toc2) a {
+  :where(.toc-inline, .toc-sticky li) a {
     @apply underline hover:no-underline;
   }
-  .toc2 .active a {
+  .toc-sticky .active a {
     @apply no-underline;
   }
-  .toc2 li a:before {
+  .toc-sticky li a:before {
     content: "";
     position: absolute;
     inset: 0;
@@ -73,6 +73,7 @@
     padding-block-end: 12px;
   }
   :where(.expander) summary {
+    appearance: none;
     display: block;
     list-style: none;
     padding: 10px 40px;
@@ -137,8 +138,7 @@
       [wide-start main-start] min(40rem, 100%) [main-end] min(13.25rem, 100%) 
       [side-start] minmax(0, 30rem) [side-end wide-end] var(--_gutter) minmax(0, 1fr) [full-end];
   }
-
-  :where(.grid-cols-mini, .grid-cols-maxi) > * { grid-column: main }
+  :where(.grid-cols-mini > *, .grid-cols-maxi > *) { grid-column: main }
 
   .col-full { grid-column: full }
   .col-wide { grid-column: wide }

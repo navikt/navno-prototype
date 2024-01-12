@@ -23,7 +23,10 @@ module.exports = function (eleventyConfig) {
   // Eleventy Plugins
   eleventyConfig.addPlugin(EleventyHtmlBasePlugin);
   eleventyConfig.addPlugin(svgContents);
-  eleventyConfig.addPlugin(tocPlugin, { tags: ["h3"] });
+  eleventyConfig.addPlugin(tocPlugin, {
+    tags: ["h3"],
+    wrapper: "",
+  });
 
   // Markdown-it plugins
   eleventyConfig.amendLibrary("md", (mdLib) =>
@@ -39,8 +42,8 @@ module.exports = function (eleventyConfig) {
     "./node_modules/alpinejs/dist/cdn.min.js": "./assets/alpine.min.js",
   });
   eleventyConfig.addPassthroughCopy({
-    "./node_modules/@alpinejs/focus/dist/cdn.min.js":
-      "./assets/alpineFocus.min.js",
+    "./node_modules/@alpinejs/intersect/dist/cdn.min.js":
+      "./assets/alpine-intersect-plugin.min.js",
   });
 
   // Watch extra files for changes

@@ -29,12 +29,9 @@
           x-bind:class="languageDropdownOpen ? 'bg-gray-200' : 'hover:bg-gray-200'"
           x-on:click="languageDropdownOpen = !languageDropdownOpen" 
           aria-expanded="false">
-          <svg class="flex-none w-5 h-5" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M2 5a1 1 0 0 1 1-1h3.75c.28 0 .5.22.5.5V9c0 .14-.11.25-.25.25H2.5a.5.5 0 0 1-.5-.5V5Zm10.75-.5c0-.28.22-.5.5-.5H21a1 1 0 0 1 1 1v3.75a.5.5 0 0 1-.5.5H13a.25.25 0 0 1-.25-.25V4.5ZM13 14.75a.25.25 0 0 0-.25.25v4.5c0 .28.22.5.5.5H21a1 1 0 0 0 1-1v-3.75a.5.5 0 0 0-.5-.5H13Zm-11 .5c0-.28.22-.5.5-.5H7c.14 0 .25.11.25.25v4.5a.5.5 0 0 1-.5.5H3a1 1 0 0 1-1-1v-3.75Z"/>
-            <path d="M11 4c.14 0 .25.11.25.25v6.25c0 .14.11.25.25.25h10.25c.14 0 .25.11.25.25v2c0 .14-.11.25-.25.25H11.5a.25.25 0 0 0-.25.25v6.25c0 .14-.11.25-.25.25H9a.25.25 0 0 1-.25-.25V13.5a.25.25 0 0 0-.25-.25H2.25A.25.25 0 0 1 2 13v-2c0-.14.11-.25.25-.25H8.5c.14 0 .25-.11.25-.25V4.25c0-.14.11-.25.25-.25h2Z"/>
-          </svg>
+          {{ '/src/_includes/svg/icons/globe.svg' | svgContents('flex-none w-5 h-5') | safe }}
           <span>Språk / Language</span>
-          {{ '/src/_includes/svg/icons/chevron-down.svg' | svgContents('w-5 h-5') | safe }}
+          {{ '/src/_includes/svg/icons/chevron-down.svg' | svgContents('w-5 h-5 ml-3') | safe }}
         </button>
         {# <ul class="absolute z-50 py-1 bg-white rounded -right-2 min-w-40 top-full" x-bind:class=" languageDropdownOpen ? 'grid shadow-md' : 'hidden'">
           {%- for item in language -%}
