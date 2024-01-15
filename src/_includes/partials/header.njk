@@ -58,7 +58,7 @@
       {# Logo #}
       <div class="flex items-center py-5 sm:py-6">
         <a href="/" class="block p-2 -ml-2.5 text-red-500 rounded-sm fine:hover:text-red-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-800">
-          {{ '/src/_includes/svg/logo.svg' | svgContents('w-[64px] md:w-[72px] h-auto') | safe }}
+          {{ '/src/_includes/svg/logo.svg' | svgContents('w-logo h-auto') | safe }}
           <span class="sr-only">NAV</span>
         </a>
       </div>
@@ -104,4 +104,4 @@
 </header>
 
 {# Overlay #}
-<button class="fixed inset-0 z-40 w-full h-full opacity-0 cursor-default bg-slate-950/10 backdrop-blur-xs" x-bind:class="(menuOpen || notifyOpen || loginOpen) ? 'animate-fade-in' : 'hidden'" x-on:click="menuOpen = false, notifyOpen = false, loginOpen = false" x-on:keyup.escape.window="menuOpen = false, notifyOpen = false,  loginOpen = false"></button>
+<button class="fixed inset-0 z-40 w-full h-full opacity-0 cursor-default bg-slate-400/25 backdrop-blur-xs" x-bind:class="(menuOpen || notifyOpen || loginOpen) ? 'animate-fade-in' : 'hidden'" x-on:click="menuOpen = false, notifyOpen = false, loginOpen = false" x-on:keyup.escape.window="menuOpen = false, notifyOpen = false,  loginOpen = false"></button>

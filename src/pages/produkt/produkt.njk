@@ -20,7 +20,7 @@ alpine: true
   <main class="grid py-16 grid-cols-mini lg:grid-cols-maxi">
     <div class="col-wide">
       <div class="text-sm tracking-widest uppercase">{{ type | safe }}</div>
-      <h1 class="mt-4 font-bold text-4xl/tight text-balance">{{ title | safe }}</h1>
+      <h1 class="mt-2 font-bold text-4xl/tight text-balance">{{ title | safe }}</h1>
 
       {# Audience #}
       <div class="mt-6 -ml-1">
@@ -36,10 +36,10 @@ alpine: true
     {# Innholdsfortegnelse #}
     <div class="mt-8">
       <h2 class="text-base font-semibold">Innhold på siden</h2>
-      <ul class="grid mt-4">
+      <ul class="grid mt-2">
         {% for chapter in collections.kapittel.slice(0,4) %}
-        <li class="relative grid items-center bg-slate-100 px-5 group hover:bg-blue-50 {{ 'rounded-t-xl pt-4' if loop.first else 'py-3' }} {{ 'rounded-b-xl pb-4' if loop.last else 'py-3' }}">
-          <a class="font-semibold underline text-base/snug group-hover:no-underline after:absolute after:inset-0 " href="#{{ chapter.data.title | slugify }}">
+        <li class="relative grid items-center bg-slate-100 px-5 group hover:bg-blue-50 {{ 'rounded-t-xl pt-4 pb-2.5' if loop.first }} {{ 'rounded-b-xl pb-4 pt-2.5' if loop.last }} {{ 'py-2.5' if not (loop.first or loop.last) }}">
+          <a class="font-semibold underline text-base/snug group-hover:no-underline after:absolute after:inset-0" href="#{{ chapter.data.title | slugify }}">
             {{ chapter.data.title }}
           </a>
           <p class="text-pretty">{{ chapter.data.description | safe }}</p>
@@ -47,7 +47,7 @@ alpine: true
         {% endfor %}
 
         {% for chapter in collections.kapittel.slice(-1) %}
-        <li class="relative grid items-center px-5 py-4 mt-4 bg-slate-100 rounded-xl group hover:bg-blue-50">
+        <li class="relative grid items-center px-5 py-3.5 mt-2.5 bg-slate-100 rounded-xl group hover:bg-blue-50">
           <a class="font-semibold underline text-base/snug group-hover:no-underline after:absolute after:inset-0 " href="#{{ chapter.data.title | slugify }}">
             {{ chapter.data.title }}
           </a>
@@ -69,15 +69,16 @@ alpine: true
 
           {# <div class="text-sm tracking-widest uppercase">Kapittel {{ loop.index }}</div> #}
           <h2 class="font-bold text-3xl/snug text-balance">{{ chapter.data.title }}</h2>
-          <p class="mt-6">{{ chapter.data.description | safe }}</p>
 
           {# Static Chapter TOC #}
           {% if chapter.templateContent %}
-          <nav class="px-5 py-3 mt-8 rounded-lg bg-slate-200 col-main toc-inline bottom-xl max-w-max">
+          <nav class="px-5 py-3 mt-4 rounded-lg bg-slate-200 col-main toc-inline bottom-xl max-w-max">
             <h3 class="font-semibold">I dette kapittelet</h3>
             {{ chapter.templateContent | toc | safe }}
           </nav>
           {% endif %}
+
+          <p class="mt-8">{{ chapter.data.description | safe }}</p>
         </div>
 
         <div class="flex items-start justify-between gap-x-24 col-wide" x-data="{ tocShown: false, tocOpen: false }">

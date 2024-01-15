@@ -200,4 +200,8 @@
   .border-warning {
     border-image: repeating-linear-gradient(-64deg, #FFAC33, #FFAC33 10px, #00243a 0, #00243a 20px) 20;
   }
+
+  .w-logo {
+    width: clamp(4rem, 3.875rem + 0.625vw, 4.5rem);
+  }
 }
