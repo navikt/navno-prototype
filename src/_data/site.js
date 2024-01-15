@@ -3,11 +3,11 @@ module.exports = {
   language: [
     {
       full: "Bokmål",
-      short: "NO/NB",
+      short: "NO-NB",
     },
     {
       full: "Nynorsk",
-      short: "NO/NB",
+      short: "NO-NN",
     },
     {
       full: "English",

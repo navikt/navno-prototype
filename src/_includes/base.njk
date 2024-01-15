@@ -38,8 +38,11 @@
       notifyOpen: false,
       newNotifications: true
     }">
+    {%- if environment === 'production' -%}
     {%- include "partials/banner.njk" -%}
-    {%- include "partials/header-new.njk" -%}
+    {%- endif -%}
+
+    {%- include "partials/header.njk" -%}
     {%- block content -%}{%- endblock -%}
     {%- block bodyscript -%}{%- endblock -%}
     {%- include "partials/footer.njk" -%}

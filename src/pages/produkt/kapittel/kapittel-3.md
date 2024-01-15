@@ -19,7 +19,7 @@ Når du kommer til søknaden, får du veiledning underveis om hva du skal gjøre
 
 Du bruker samme søknad både for pleiepenger for sykt barn og pleiepenger for en utviklingshemmet person over 18.
 
-[Søk om pleiepenger](#) | [Ettersend dokumentasjon](#)
+<a class="button button--primary" href="#">Søk om pleiepenger</a> &nbsp; <a class="button button--outline" href="#">Ettersend dokumentasjon</a>
 
 [Dette må du dokumentere](#)
 
@@ -29,7 +29,7 @@ Du får skriftlig vedtak når søknaden er behandlet.
 
 Du får en melding på Min side som bekrefter at vi har mottatt søknad fra deg. Noen minutter etter at vi har mottatt søknaden din, finner du den på Min side under «Dine pleiepenger».
 
-[Logg inn på dine pleiepenger](#)
+<a class="button button--primary" href="#">Logg inn på dine pleiepenger</a>
 
 [Saksbehandlingstider](#)
 
@@ -69,13 +69,13 @@ Har du fått et vedtak fra oss som du mener er feil? Da kan du klage til NAV-enh
 
 I vedtaket står det hvordan du går fram hvis du skal klage, hvem du skal klage til og klagefrist. Hvis du har spørsmål om vedtaket, kan du kontakte oss.
 
-[Send klage](#) | [Ettersend dokumentasjon](#)
+<a class="button button--primary" href="#">Send klage</a> &nbsp; <a class="button button--secondary" href="#">Ettersend dokumentasjon</a>
 
 #### Anke vedtak
 
 Hvis du er uenig i svaret på klagen din fra NAV klageinstans, kan du med noen unntak anke vedtaket. Fristen for å anke står i vedtaket.
 
-[Send anke](#) | [Ettersend dokumentasjon](#)
+<a class="button button--primary" href="#">Send anke</a> &nbsp; <a class="button button--secondary" href="#">Ettersend dokumentasjon</a>
 
 Du kan også bruke advokat eller gi fullmakt til en person som klager på dine vegne.
 

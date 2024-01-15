@@ -3,6 +3,19 @@
 @tailwind utilities;
 
 @layer base {
+  /* @link https://utopia.fyi/type/calculator?c=320,18,1.125,1600,20,1.2,5,1,1280&s=0.75|0.5|0.25,1.5|2|3|4|6,xs-2xl|xs-m&g=xs,m,xl,12 */
+
+  :root {
+    --step--2: clamp(0.875rem, 0.875rem + 0vw, 0.875rem);
+    --step--1: clamp(1rem, 0.9895rem + 0.0523vw, 1.0419rem);
+    --step-0: clamp(1.125rem, 1.0938rem + 0.1563vw, 1.25rem);
+    --step-1: clamp(1.2656rem, 1.207rem + 0.293vw, 1.5rem);
+    --step-2: clamp(1.4238rem, 1.3297rem + 0.4703vw, 1.8rem);
+    --step-3: clamp(1.6019rem, 1.4623rem + 0.6977vw, 2.16rem);
+    --step-4: clamp(1.8019rem, 1.6044rem + 0.9875vw, 2.5919rem);
+    --step-5: clamp(2.0275rem, 1.7567rem + 1.3539vw, 3.1106rem);
+  }
+
   body {
     @apply text-gray-800;
   }
@@ -19,13 +32,13 @@
     margin-block-start: 1.5em;
   }
   :where(.prose) h3 {
-    @apply text-lg/snug text-balance font-bold;
+    @apply text-xl/snug text-balance font-bold;
   }
   :where(.prose) h4 {
-    @apply text-base/snug text-balance font-bold;
+    @apply text-lg/snug text-balance font-bold;
   }
   :where(.prose) :where(h3, h4) + *:not(h3, h4, ul, ol, details) {
-    @apply mt-1;
+    @apply mt-2;
   }
   :where(.prose) ul {
     @apply list-disc pl-6;
@@ -60,7 +73,7 @@
 
   .expander {
     display: grid;
-    padding-inline: 2.375rem 10px;
+    padding-inline: 36px 10px;
     border-top: 1px solid theme(colors.gray.200);
   }
   .expander:last-of-type {
@@ -70,15 +83,15 @@
     margin-block-start: 0;
   }
   .expander[open] {
-    padding-block-end: 12px;
+    padding-block-end: 36px;
   }
   :where(.expander) summary {
     appearance: none;
     display: block;
     list-style: none;
-    padding: 10px 40px;
+    padding: 12px 40px;
     margin-block: -1px;
-    margin-inline: -40px -14px;
+    margin-inline: -40px -12px;
     border-radius: 4px;
     cursor: pointer;
     text-align: left;
@@ -90,15 +103,14 @@
     display: none;
   }
   :where(.expander[open]) summary {
-    background-color: theme(colors.deepblue.50);
+    background-color: theme(colors.slate.100);
     margin-block-end: 12px;
   }
   :where(.expander) summary:hover {
-    background-color: theme(colors.blue.500);
-    color: theme(colors.white);
+    background-color: theme(colors.slate.200);
   }
   :where(.expander) summary:before {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none'%3E%3Cpath stroke='#0056b4' stroke-linecap='round' stroke-width='2' d='m6.5 10 5.493 5.493a.01.01 0 0 0 .014 0L17.5 10'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none'%3E%3Cpath stroke='#fff' stroke-linecap='round' stroke-width='2' d='m6.5 10 5.493 5.493a.01.01 0 0 0 .014 0L17.5 10'/%3E%3C/svg%3E");
     background-position: center;
     background-repeat: no-repeat;
     content: "";
@@ -106,12 +118,15 @@
     flex-shrink: 0;
     place-items: center;
     translate: 0 4px;
-    margin-inline-end: 10px;
+    margin-inline-end: 8px;
     border-radius: 8px;
-    background-color: theme(colors.deepblue.100);
+    background-color: theme(colors.blue.500);
     transition: rotate 150ms;
-    width: 20px;
-    height: 20px;
+    width: 22px;
+    height: 22px;
+  }
+  :where(.expander) summary:hover:before {
+    background-color: theme(colors.blue.600);
   }
   :where(.expander[open]) summary:before {
     rotate: -180deg;
@@ -119,23 +134,55 @@
   :where(.expander) summary > * {
     text-wrap: pretty;
   }
-  :where(.expander) summary:after {
+  /* :where(.expander) summary:after {
     content: " …" / "";
     display: inline;
+  } */ 
+
+
+  .button {
+    line-height: 1.15;
+    overflow: visible;
+    padding: theme(spacing.3) theme(spacing.4);
+    align-items: center;
+    border: 2px solid theme(colors.blue.500);
+    border-radius: theme(borderRadius.DEFAULT);
+    cursor: pointer;
+    display: inline-flex;
+    gap: theme(spacing.2);
+    justify-content: center;
+    font-weight: 600;
+    text-decoration: none;
+    margin-top: 0;
   }
-  
+  .button--primary {
+    background-color: theme(colors.blue.500);
+    color: theme(colors.white);
+  }
+  .button--primary:hover {
+    border: 2px solid theme(colors.blue.600);
+    background-color: theme(colors.blue.600);
+  }
+  .button--secondary {
+    border: 2px solid theme(colors.blue.500);
+  }
+  .button--secondary:hover {
+    border: 2px solid theme(colors.blue.600);
+    background-color: theme(colors.slate.100);
+  }
+
 }
 
 @layer utilities {
   .grid-cols-mini {
-    --_gutter: clamp(0.75rem, -1.1591rem + 9.5455vw, 6rem);
+    --_gutter: clamp(0.75rem, 0rem + 3.75vw, 6rem);
     grid-template-columns: 
       [full-start] var(--_gutter) minmax(0, 1fr) [wide-start main-start side-start] minmax(0, 42rem) [main-end side-end wide-end] minmax(0, 1fr) var(--_gutter) [full-end];
   }
 
   /* 83.25 */
   .grid-cols-maxi {
-    --_gutter: clamp(0.75rem, -1.1591rem + 9.5455vw, 6rem);
+    --_gutter: clamp(0.75rem, 0rem + 3.75vw, 6rem);
     grid-template-columns: 
       [full-start] var(--_gutter) minmax(0, 1fr)  
       [wide-start main-start] min(40rem, 100%) 

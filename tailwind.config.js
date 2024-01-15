@@ -157,22 +157,14 @@ module.exports = {
       ],
     },
     fontSize: {
-      xs: "clamp(0.72rem, 0.7rem + 0.1vw, 0.8rem)",
-      sm: "clamp(0.9rem, 0.875rem + 0.125vw, 1rem)",
-      base: "clamp(1.125rem, 1.0938rem + 0.1563vw, 1.25rem)",
-      lg: "clamp(1.4063rem, 1.3672rem + 0.1953vw, 1.5625rem)",
-      xl: "clamp(1.7581rem, 1.7094rem + 0.2438vw, 1.9531rem)",
-      "2xl": "clamp(2.1975rem, 2.1366rem + 0.3047vw, 2.4413rem)",
-      "3xl": "clamp(2.7469rem, 2.6706rem + 0.3812vw, 3.0519rem)",
-      "4xl": "clamp(3.4331rem, 3.3377rem + 0.4773vw, 3.815rem)",
-      // https://utopia.fyi/type/calculator?c=320,18,1.25,1600,20,1.25,5,2,960&s=0.75|0.5|0.25,1.5|2|3|4|6,xs-2xl|xs-m&g=xs,m,xl,12
-    },
-    colors: {
-      ...akselColors,
-      current: "currentColor",
-      transparent: "rgb(255 255 255 / 0%)",
-      white: "rgb(255 255 255)",
-      black: "rgb(0 0 0)",
+      xs: "var(--step--2)",
+      sm: "var(--step--1)",
+      base: "var(--step-0)",
+      lg: "var(--step-1)",
+      xl: "var(--step-2)",
+      "2xl": "var(--step-3)",
+      "3xl": "var(--step-4)",
+      "4xl": "var(--step-5)",
     },
     extend: {
       animation: {
@@ -181,10 +173,20 @@ module.exports = {
         enter: "enter 300ms cubic-bezier(0.3, 0.6, 0.25, 1.45) forwards",
         "fade-in": "fade-in 400ms cubic-bezier(0.3, 0.6, 0.25, 1) forwards",
       },
+      backdropBlur: {
+        xs: "2px",
+      },
       boxShadow: {
         border: "0 -1px 0 inset rgb(128 128 128 / 0.19)",
         menuActive: "0 -3px 0 inset rgb(0 103 197)",
         menuHover: "0 -3px 0 inset rgb(0 0 0 / 0.19)",
+      },
+      colors: {
+        ...akselColors,
+        current: "currentColor",
+        transparent: "rgb(255 255 255 / 0%)",
+        white: "rgb(255 255 255)",
+        black: "rgb(0 0 0)",
       },
       flexBasis: {
         side: "min(100%, 36rem)",
@@ -227,7 +229,7 @@ module.exports = {
           to: { transform: "translate3d(0, 0, 0)" },
         },
         "fade-in": {
-          "0%": {
+          "0%, 20%": {
             opacity: 0,
           },
           "100%": {
@@ -244,30 +246,7 @@ module.exports = {
         12: "12px",
       },
       spacing: {
-        /* https://utopia.fyi/space/calculator?c=320,18,1.125,1200,20,1.25,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-3xl&g=s,l,xl,12 */
-        "3xs": "clamp(0.3125rem, 0.3125rem + 0vw, 0.3125rem)",
-        "2xs": "clamp(0.5625rem, 0.5398rem + 0.1136vw, 0.625rem)",
-        xs: "clamp(0.875rem, 0.8523rem + 0.1136vw, 0.9375rem)",
-        sm: "clamp(1.125rem, 1.0795rem + 0.2273vw, 1.25rem)",
-        md: "clamp(1.6875rem, 1.6193rem + 0.3409vw, 1.875rem)",
-        lg: "clamp(2.25rem, 2.1591rem + 0.4545vw, 2.5rem)",
-        xl: "clamp(3.375rem, 3.2386rem + 0.6818vw, 3.75rem)",
-        "2xl": "clamp(4.5rem, 4.3182rem + 0.9091vw, 5rem)",
-        "3xl": "clamp(6.75rem, 6.4773rem + 1.3636vw, 7.5rem)",
-
-        /* One-up pairs */
-        "3xs-2xs": "clamp(0.3125rem, 0.1989rem + 0.5682vw, 0.625rem)",
-        "2xs-xs": "clamp(0.5625rem, 0.4261rem + 0.6818vw, 0.9375rem)",
-        "xs-sm": "clamp(0.875rem, 0.7386rem + 0.6818vw, 1.25rem)",
-        "sm-md": "clamp(1.125rem, 0.8523rem + 1.3636vw, 1.875rem)",
-        "md-lg": "clamp(1.6875rem, 1.392rem + 1.4773vw, 2.5rem)",
-        "lg-xl": "clamp(2.25rem, 1.7045rem + 2.7273vw, 3.75rem)",
-        "xl-2xl": "clamp(3.375rem, 2.7841rem + 2.9545vw, 5rem)",
-        "2xl-3xl": "clamp(4.5rem, 3.4091rem + 5.4545vw, 7.5rem)",
-
-        /* Custom pairs */
-        "xs-2xl": "clamp(0.75rem, -1.1591rem + 9.5455vw, 6rem)",
-        "sm-3xl": "clamp(1.125rem, -1.1932rem + 11.5909vw, 7.5rem)",
+        edge: "clamp(0.75rem, 0rem + 3.75vw, 6rem)",
       },
     },
   },
