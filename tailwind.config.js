@@ -240,13 +240,13 @@ module.exports = {
       maxWidth: {
         base: "65.25rem",
         prose: "68ch",
-        wide: "83.25rem",
+        wide: "70rem",
       },
       ringWidth: {
         12: "12px",
       },
       spacing: {
-        edge: "clamp(0.75rem, 0rem + 3.75vw, 6rem)",
+        edge: "clamp(0.75rem, -1.4286rem + 10.8929vw, 16rem)",
       },
     },
   },

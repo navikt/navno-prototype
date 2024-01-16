@@ -1,0 +1,140 @@
+---
+tags: ['produkt']
+title: 'Pleiepenger for sykt barn'
+// title: 'Tilskudd til kjøp av PC eller nettbrett ved lese- og skrivevansker'
+type: 'Pengestøtte'
+template: 'Produktside'
+variant: 'C'
+audience: 'Arbeidsgiver'
+intro: 'Sikrer deg inntekt under fravær fra jobb når du må pleie og ta vare på et barn som har vært innlagt eller er til behandling på sykehus.'
+published: 'Oppdatert 18. desember 2023'
+order: 4
+alpine: true
+---
+{%- extends 'base.njk' -%}
+
+{%- from "macros/button.njk" import button -%}
+{%- from "macros/microcard.njk" import microcard -%}
+{%- from "macros/tile.njk" import tile -%}
+
+{%- block content -%}
+
+  <main class="grid py-16 grid-cols-mini lg:grid-cols-maxi">
+    <div class="col-wide">
+      <div class="text-sm tracking-widest uppercase">{{ type | safe }}</div>
+      <h1 class="mt-2 font-bold text-4xl/tight text-balance">{{ title | safe }}</h1>
+
+      {# Audience #}
+      <div class="mt-6 -ml-1">
+        <span class="inline-block px-3 pt-1.5 pb-1 text-sm leading-none rounded-full bg-slate-200 ">
+          {{ 'For ' if audience }}{{ audience | lower | safe }}
+        </span>
+      </div>
+
+      {# Intro #}
+      <div class="mt-8 text-lg text-pretty max-w-prose">{{ intro | markdown | safe }}</div>
+    </div>
+
+    {# Innholdsfortegnelse #}
+    <div class="mt-8 col-wide">
+      <h2 class="text-base font-semibold">Innhold på siden</h2>
+      <ul class="grid gap-2 mt-2 sm:grid-cols-2 lg:grid-cols-4">
+        {% for chapter in collections.kapittel.slice(0,4) %}
+        <li class="relative grid items-start content-start px-5 py-4 rounded-lg bg-slate-100 group hover:bg-blue-50">
+          <a class="font-semibold underline text-base/snug group-hover:no-underline after:absolute after:inset-0" href="#{{ chapter.data.title | slugify }}">
+            {{ chapter.data.title }}
+          </a>
+          <p class="text-base text-pretty">{{ chapter.data.description | safe }}</p>
+        </li>
+        {% endfor %}
+
+        {% for chapter in collections.kapittel.slice(-1) %}
+        <li class="relative grid sm:col-span-2 lg:col-span-4 items-center px-5 py-3.5 bg-slate-100 rounded-xl group hover:bg-blue-50">
+          <a class="font-semibold underline text-base/snug group-hover:no-underline after:absolute after:inset-0 " href="#{{ chapter.data.title | slugify }}">
+            {{ chapter.data.title }}
+          </a>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+
+
+    {# Innhold #}
+    {% set chapters = collections.kapittel %}
+
+    {% for chapter in chapters %}
+      {% set chapterIndex = loop.index %}
+      <section class="grid items-start pt-12 col-full grid-cols-mini lg:grid-cols-maxi" id="{{ chapter.data.title | slugify }}"  x-data="{ tocOpen: false }">
+        <div class="col-wide">
+          {# <div class="rounded-lg aspect-[2/1] border border-slate-300 mb-sm"></div> #}
+          <div class="text-[360px]/[0.8] -translate-x-2 font-black text-slate-200 pt-2xl">{{ loop.index }}</div>
+
+          {# <div class="text-sm tracking-widest uppercase">Kapittel {{ loop.index }}</div> #}
+            <h2 class="font-bold text-3xl/snug text-balance">{{ chapter.data.title }}</h2>
+        </div>
+
+        {# Chapter TOC #}
+        {% if chapter.templateContent %}
+        <nav class="py-4 mt-4 rounded-lg col-side lg:mt-8 lg:sticky lg:-translate-y-4 lg:order-1 bg-slate-100 toc toc--sticky lg:top-8">
+          <h3 class="px-4 font-semibold">
+            I dette kapittelet
+            <span class="hidden lg:inline">({{ chapterIndex }})</span>
+          </h3>
+          {{ chapter.templateContent | toc | safe }}
+        </nav>
+        {% endif %}
+
+        {# Main Content #}
+        <div class="mt-8 prose col-main">
+          <p>{{ chapter.data.description | safe }}</p>
+
+          {{ chapter.templateContent | markdown | safe }}
+        </div>
+      </section>
+    {% endfor %}
+
+    <div class="pt-2 mt-12 text-sm italic border-t border-slate-200 col-wide">{{ published | safe }}</div>
+  </main>
+{%- endblock -%}
+
+
+{% block bodyscript %}
+  <script>
+    const headings = document.querySelectorAll('.prose h3');
+    const headingsArr = Array.from(headings);
+
+    const navItems = document.querySelectorAll('.toc--sticky li');
+
+    function activateNavByIndex(index) {
+      if (headings[index].classList.contains('active'))
+        return;
+
+      const currentActive = document.querySelectorAll('.toc--sticky .active');
+      for (let i = currentActive.length - 1; i >= 0; i--) {
+        currentActive[i].classList.remove('active');
+      }
+      navItems[index].classList.add('active');
+    }
+
+    const intersectionCallback = (entries, observer) => {
+      if (entries[0].intesectionRatio <= 0)
+          return;
+      
+      if (entries[0].intersectionRatio > 0.90) {    
+        activateNavByIndex(headingsArr.indexOf(entries[0].target))
+      }
+    };
+
+    const intersectionOptions = {
+      threshold: 1,
+      rootMargin: '0px 0px 0px 0px'
+    };
+
+    const intersectionObserver = new IntersectionObserver(intersectionCallback, intersectionOptions);
+
+    for (let i = 0; i < headings.length; i++) {
+      intersectionObserver.observe(headings[i]);  
+    }
+
+  </script>
+{% endblock %}

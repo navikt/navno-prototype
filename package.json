@@ -12,7 +12,6 @@
     "dev:eleventy": "eleventy --config=eleventy.config.js --serve",
     "dev:css": "postcss ./src/assets/main.css -o ./build/assets/main.min.css --watch",
     "dev": "ELEVENTY_ENV=development concurrently npm:dev:*",
-    "dev-perf": "ELEVENTY_ENV=perf concurrently npm:dev:*",
     "build:eleventy": "ELEVENTY_ENV=production eleventy --config=eleventy.config.js",
     "build:css": "NODE_ENV=production postcss ./src/assets/main.css -o ./build/assets/main.min.css",
     "build": "concurrently npm:build:*",

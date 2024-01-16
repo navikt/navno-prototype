@@ -140,7 +140,7 @@ Utbetalinger for desember som blir utbetalt i desember, har halvt skattetrekk. E
 
 Hvis du betaler Svalbardskatt er det ordinært skattetrekk i desember.
 
-Mer om skattetrekk på utbetalinger fra NAV
+Mer om [skattetrekk på utbetalinger fra NAV](#).
 
 ### Hvor lenge kan du få pleiepenger?
 
