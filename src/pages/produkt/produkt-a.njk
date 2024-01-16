@@ -101,7 +101,10 @@ alpine: true
               x-transition:leave="transition ease-out duration-900 opacity-0"
             >
               <div class="relative">
-                <h3 class="px-4 font-semibold">I dette kapittelet</h3>
+                <h3 class="px-4 font-semibold">
+                  I dette kapittelet
+                  <span class="hidden lg:inline">({{ chapterIndex }})</span>
+                </h3>
                 {{ chapter.templateContent | toc | safe }}
               </div>
             </nav>
