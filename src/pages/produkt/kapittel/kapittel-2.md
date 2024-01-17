@@ -9,47 +9,47 @@ Pleiepengene skal dekke inntekten du vanligvis har opptil 711 720 kroner i året
 
 #### Pleiepengene blir beregnet ut ifra arbeidssituasjonen din
 
-<details class="expander">
+<details class="accordion">
   <summary>Arbeidstaker</summary>
   <p>Innhold mangler</p>
 </details>
 
-<details class="expander">
+<details class="accordion">
   <summary>Selvstendig næringsdrivende</summary>
   <p>Innhold mangler</p>
 </details>
 
-<details class="expander">
+<details class="accordion">
   <summary>Arbeidstaker og selvstendig næringsdrivende</summary>
   <p>Innhold mangler</p>
 </details>
 
-<details class="expander">
+<details class="accordion">
   <summary>Frilanser</summary>
   <p>Innhold mangler</p>
 </details>
 
-<details class="expander">
+<details class="accordion">
   <summary>Frilanser og arbeidstaker</summary>
   <p>Innhold mangler</p>
 </details>
 
-<details class="expander">
+<details class="accordion">
   <summary>Frilanser og selvstendig næringsdrivende</summary>
   <p>Innhold mangler</p>
 </details>
 
-<details class="expander">
+<details class="accordion">
   <summary>Får pengestøtte fra NAV</summary>
   <p>Innhold mangler</p>
 </details>
 
-<details class="expander">
+<details class="accordion">
   <summary>Fisker</summary>
   <p>Innhold mangler</p>
 </details>
 
-<details class="expander">
+<details class="accordion">
   <summary>Har ikke jobbet de siste 4 ukene</summary>
   <p>Innhold mangler</p>
 </details>
@@ -58,47 +58,47 @@ Pleiepengene skal dekke inntekten du vanligvis har opptil 711 720 kroner i året
 
 Hvis barnet har et fast og regelmessig omsorgstilbud, påvirker det hvor mye du får utbetalt. Du kan kombinere jobb og pleiepenger. Du kan også dele pleiepengene med en annen omsorgsperson.
 
-<details class="expander">
+<details class="accordion">
   <summary>Barnet er i et omsorgstilbud</summary>
   <p>Innhold mangler</p>
 </details>
 
-<details class="expander">
+<details class="accordion">
   <summary>Barnet er i et omsorgstilbud og du skal jobbe</summary>
   <p>Innhold mangler</p>
 </details>
 
-<details class="expander">
+<details class="accordion">
   <summary>Barnet er i et omsorgstilbud og du skal dele pleiepenger med en annen</summary>
   <p>Innhold mangler</p>
 </details>
 
-<details class="expander">
+<details class="accordion">
   <summary>Barnet er i et omsorgstilbud, du skal dele pleiepenger med en annen og du skal jobbe</summary>
   <p>Innhold mangler</p>
 </details>
 
-<details class="expander">
+<details class="accordion">
   <summary>Du skal jobbe i perioden med pleiepenger</summary>
   <p>Innhold mangler</p>
 </details>
 
-<details class="expander">
+<details class="accordion">
   <summary>To omsorgspersoner skal dele på å pleie barnet</summary>
   <p>Innhold mangler</p>
 </details>
 
-<details class="expander">
+<details class="accordion">
   <summary>To omsorgspersoner skal dele på å pleie barnet og du skal jobbe</summary>
   <p>Innhold mangler</p>
 </details>
 
-<details class="expander">
+<details class="accordion">
   <summary>Nattevåk</summary>
   <p>Innhold mangler</p>
 </details>
 
-<details class="expander">
+<details class="accordion">
   <summary>Beredskap</summary>
   <p>Innhold mangler</p>
 </details>

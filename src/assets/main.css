@@ -26,16 +26,19 @@
     text-decoration-thickness: 0.0625rem;
     text-underline-offset: 0.125rem;
   }
+  strong {
+    font-weight: 650;
+  }
 }
 @layer components {
-  :where(.prose) *:not(summary) + * {
+  :where(.prose) > *:not(summary) + * {
     margin-block-start: 1.5em;
   }
   :where(.prose) h3 {
-    @apply text-xl/snug text-balance font-bold;
+    @apply text-xl/snug text-pretty font-bold;
   }
   :where(.prose) h4 {
-    @apply text-lg/snug text-balance font-bold;
+    @apply text-lg/snug text-pretty font-bold;
   }
   :where(.prose) :where(h3, h4) + *:not(h3, h4, ul, ol, details) {
     @apply mt-1.5;
@@ -45,6 +48,9 @@
   }
   :where(.prose) li + li {
     @apply mt-2;
+  }
+  :where(.prose) :is(p, li) {
+    @apply text-pretty;
   }
   :where(.prose) a {
     @apply text-blue-600 underline;
@@ -59,36 +65,38 @@
   :where(.toc--sticky) li {
     @apply border-l-4 border-transparent px-3;
   }
+  :where(.toc--d) li {
+    @apply -ml-3;
+  }
   :where(.toc) .active {
     @apply lg:border-blue-600;
   }
   :where(.toc) a {
-    @apply underline hover:no-underline;
+    @apply hover:underline;
   }
   :where(.toc) .active a {
     @apply lg:no-underline;
   }
-  :where(.toc) a:before {
+  :where(.toc) li a:before {
     content: "";
     position: absolute;
     inset: 0;
   }
 
-  .expander {
+  .accordion {
     display: grid;
     padding-inline: 36px 10px;
+  }
+  .accordion:not(:first-of-type) {
     border-top: 1px solid theme(colors.gray.200);
   }
-  .expander:last-of-type {
-    border-bottom: 1px solid theme(colors.gray.200);
-  }
-  .expander + .expander {
+  .accordion + .accordion {
     margin-block-start: 0;
   }
-  .expander[open] {
+  .accordion[open] {
     padding-block-end: 36px;
   }
-  :where(.expander) summary {
+  :where(.accordion) summary {
     appearance: none;
     display: block;
     list-style: none;
@@ -102,17 +110,17 @@
     text-wrap: pretty;
     line-height: 1.375;
   }
-  :where(.expander) summary::-webkit-details-marker {
+  :where(.accordion) summary::-webkit-details-marker {
     display: none;
   }
-  :where(.expander[open]) summary {
+  :where(.accordion[open]) summary {
     background-color: theme(colors.slate.100);
     margin-block-end: 12px;
   }
-  :where(.expander) summary:hover {
-    background-color: theme(colors.slate.200);
+  :where(.accordion) summary:hover {
+    background-color: theme(colors.blue.50);
   }
-  :where(.expander) summary:before {
+  :where(.accordion) summary:before {
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none'%3E%3Cpath stroke='#fff' stroke-linecap='round' stroke-width='2' d='m6.5 10 5.493 5.493a.01.01 0 0 0 .014 0L17.5 10'/%3E%3C/svg%3E");
     background-position: center;
     background-repeat: no-repeat;
@@ -128,16 +136,16 @@
     width: 20px;
     height: 20px;
   }
-  :where(.expander) summary:hover:before {
+  :where(.accordion) summary:hover:before {
     background-color: theme(colors.blue.600);
   }
-  :where(.expander[open]) summary:before {
+  :where(.accordion[open]) summary:before {
     rotate: -180deg;
   }
-  :where(.expander) summary > * {
+  :where(.accordion) summary > * {
     text-wrap: pretty;
   }
-  /* :where(.expander) summary:after {
+  /* :where(.accordion) summary:after {
     content: " …" / "";
     display: inline;
   } */ 
@@ -146,32 +154,31 @@
   .button {
     line-height: 1.15;
     overflow: visible;
-    padding: theme(spacing.3) theme(spacing.4);
+    padding: theme(spacing.3) theme(spacing.5);
     align-items: center;
     border: 2px solid theme(colors.blue.500);
-    border-radius: theme(borderRadius.DEFAULT);
+    border-radius: theme(borderRadius.md);
     cursor: pointer;
     display: inline-flex;
     gap: theme(spacing.2);
     justify-content: center;
     font-weight: 600;
     text-decoration: none;
-    margin-top: 0;
+    margin: 0;
   }
   .button--primary {
-    background-color: theme(colors.blue.500);
-    color: theme(colors.white);
+    background-color: theme(colors.white);
   }
   .button--primary:hover {
-    border: 2px solid theme(colors.blue.600);
-    background-color: theme(colors.blue.600);
+    border-color: theme(colors.blue.600);
+    background-color: theme(colors.slate.200);
   }
   .button--secondary {
-    border: 2px solid theme(colors.blue.500);
+    border-color: theme(colors.white);
+    background-color: theme(colors.slate.100);
   }
   .button--secondary:hover {
-    border: 2px solid theme(colors.blue.600);
-    background-color: theme(colors.slate.100);
+    background-color: theme(colors.slate.200);
   }
 
 }

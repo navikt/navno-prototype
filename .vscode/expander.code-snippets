@@ -6,15 +6,15 @@
 	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. 
 	// Placeholders with the same ids are connected.
 
-  "Expander": {
+  "accordion": {
     "scope": "nunjucks, njk, html",
-    "prefix": "expander",
+    "prefix": "accordion",
     "body": [
-    "<details class="expander">",
+    "<details class="accordion">",
     "<summary>$1</summary>",
     "$2"
       </details>
     ],
-    "description": "Add expander to markup"
+    "description": "Add accordion to markup"
 	}
 }

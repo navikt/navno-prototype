@@ -19,9 +19,32 @@ Når du kommer til søknaden, får du veiledning underveis om hva du skal gjøre
 
 Du bruker samme søknad både for pleiepenger for sykt barn og pleiepenger for en utviklingshemmet person over 18.
 
-<a class="button button--primary" href="#">Søk om pleiepenger</a> &nbsp; <a class="button button--outline" href="#">Ettersend dokumentasjon</a>
+<div class="flex flex-wrap gap-3">
+  <a class="button button--primary" href="#">Søk om pleiepenger</a>
+  <a class="button button--secondary" href="#">Ettersend dokumentasjon</a>
+</div>
 
-[Dette må du dokumentere](#)
+<details class="border-t-2 border-b-2 group border-slate-300 open:bg-slate-100">
+  <summary class="flex items-center gap-2 px-5 pt-3 pb-3.5 font-bold list-none cursor-pointer text-pretty hover:bg-blue-50 leading-snug">
+    {{ '/src/_includes/svg/icons/chevron-right.svg' | svgContents('w-5 h-5 -ml-2 inline-block group-open:rotate-90 transition shrink-0 self-baseline translate-y-1.5') | safe }}
+    <span class="mr-auto translate-y-px">Dette må du dokumentere</span>
+    {{ '/src/_includes/svg/icons/folder-file.svg' | svgContents('w-8 h-8 -mr-2 shrink-0') | safe }}
+  </summary>
+  <div class="pt-4 pb-8 mx-10 prose">
+    <p><strong>Legeerklæring</strong><br>
+    Legeerklæringen skal være skrevet av sykehuslege eller lege i spesialisthelsetjenesten.Hvis du ikke har legeerklæring når du søker, kan den ettersendes til oss.</p>
+    <p><strong>Inntektsopplysninger</strong><br>
+    Er du arbeidstaker må arbeidsgiver sende inntektsmelding når du 
+    <ul>
+      <li>søker for første gang</li>
+      <li>søker på nytt etter et opphold i pleiepengene på 4 uker eller mer</li>
+      <li>søker på nytt etter et opphold på mindre enn 4 uker, og det er endring i inntekten</li>
+    </ul>
+    <p>Er du selvstendig næringsdrivende eller frilanser, trenger du ikke legge ved dokumentasjon på inntekt.</p>
+    <p>Får du utbetalt penger fra NAV, trenger du ikke legge ved dokumentasjon på dette.</p>
+    <p>Er du midlertidig ute av arbeid, legger du ved skjemaet Krav om sykepenger - midlertidig ute av inntektsgivende arbeid. Dette skjemaet brukes til pleiepenger, i tillegg til sykepenger.</p>
+  </div>
+</details>
 
 ### Etter at du har søkt
 
@@ -69,13 +92,19 @@ Har du fått et vedtak fra oss som du mener er feil? Da kan du klage til NAV-enh
 
 I vedtaket står det hvordan du går fram hvis du skal klage, hvem du skal klage til og klagefrist. Hvis du har spørsmål om vedtaket, kan du kontakte oss.
 
-<a class="button button--primary" href="#">Send klage</a> &nbsp; <a class="button button--secondary" href="#">Ettersend dokumentasjon</a>
+<div class="flex flex-wrap gap-3">
+  <a class="button button--primary" href="#">Send klage</a>
+  <a class="button button--secondary" href="#">Ettersend dokumentasjon</a>
+</div>
 
 #### Anke vedtak
 
 Hvis du er uenig i svaret på klagen din fra NAV klageinstans, kan du med noen unntak anke vedtaket. Fristen for å anke står i vedtaket.
 
-<a class="button button--primary" href="#">Send anke</a> &nbsp; <a class="button button--secondary" href="#">Ettersend dokumentasjon</a>
+<div class="flex flex-wrap gap-3">
+  <a class="button button--primary" href="#">Send anke</a>
+  <a class="button button--secondary" href="#">Ettersend dokumentasjon</a>
+</div>
 
 Du kan også bruke advokat eller gi fullmakt til en person som klager på dine vegne.
 

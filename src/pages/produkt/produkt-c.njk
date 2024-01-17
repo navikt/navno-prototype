@@ -3,7 +3,6 @@ tags: ['produkt']
 title: 'Pleiepenger for sykt barn'
 // title: 'Tilskudd til kjøp av PC eller nettbrett ved lese- og skrivevansker'
 type: 'Pengestøtte'
-template: 'Produktside'
 variant: 'C'
 audience: 'Arbeidsgiver'
 intro: 'Sikrer deg inntekt under fravær fra jobb når du må pleie og ta vare på et barn som har vært innlagt eller er til behandling på sykehus.'
@@ -20,7 +19,7 @@ alpine: true
 {%- block content -%}
 
   <main class="grid py-16 grid-cols-mini lg:grid-cols-maxi">
-    <div class="col-wide">
+    <div class="col-main lg:col-wide">
       <div class="text-sm tracking-widest uppercase">{{ type | safe }}</div>
       <h1 class="mt-2 font-bold text-4xl/tight text-balance">{{ title | safe }}</h1>
 
@@ -36,11 +35,11 @@ alpine: true
     </div>
 
     {# Innholdsfortegnelse #}
-    <div class="mt-8 col-wide">
+    <div class="mt-8 leading-normal col-wide">
       <h2 class="text-base font-semibold">Innhold på siden</h2>
-      <ul class="grid gap-2 mt-2 sm:grid-cols-2 lg:grid-cols-4">
+      <ul class="grid gap-2 mt-2 sm:grid-cols-2 lg:grid-cols-4 sm:-mx-6 lg:mx-0">
         {% for chapter in collections.kapittel.slice(0,4) %}
-        <li class="relative grid items-start content-start px-5 py-4 rounded-lg bg-slate-100 group hover:bg-blue-50">
+        <li class="relative grid items-start content-start gap-1 px-6 py-5 rounded-lg lg:aspect-[4/5] bg-slate-100 group hover:bg-blue-50">
           <a class="font-semibold underline text-base/snug group-hover:no-underline after:absolute after:inset-0" href="#{{ chapter.data.title | slugify }}">
             {{ chapter.data.title }}
           </a>
@@ -49,7 +48,7 @@ alpine: true
         {% endfor %}
 
         {% for chapter in collections.kapittel.slice(-1) %}
-        <li class="relative grid sm:col-span-2 lg:col-span-4 items-center px-5 py-3.5 bg-slate-100 rounded-xl group hover:bg-blue-50">
+        <li class="relative grid sm:col-span-2 lg:col-span-4 items-center px-5 mt-2 py-3.5 bg-slate-100 rounded-xl group hover:bg-blue-50">
           <a class="font-semibold underline text-base/snug group-hover:no-underline after:absolute after:inset-0 " href="#{{ chapter.data.title | slugify }}">
             {{ chapter.data.title }}
           </a>
@@ -64,18 +63,20 @@ alpine: true
 
     {% for chapter in chapters %}
       {% set chapterIndex = loop.index %}
-      <section class="grid items-start pt-12 col-full grid-cols-mini lg:grid-cols-maxi" id="{{ chapter.data.title | slugify }}"  x-data="{ tocOpen: false }">
-        <div class="col-wide">
-          {# <div class="rounded-lg aspect-[2/1] border border-slate-300 mb-sm"></div> #}
-          <div class="text-[360px]/[0.8] -translate-x-2 font-black text-slate-200 pt-2xl">{{ loop.index }}</div>
+      <section class="grid items-start pt-24 col-full grid-cols-mini lg:grid-cols-maxi" id="{{ chapter.data.title | slugify }}"  x-data="{ tocOpen: false }">
 
-          {# <div class="text-sm tracking-widest uppercase">Kapittel {{ loop.index }}</div> #}
-            <h2 class="font-bold text-3xl/snug text-balance">{{ chapter.data.title }}</h2>
+        <div class="col-wide">
+          <div class="grid items-end px-3 bg-slate-100 aspect-[3/1] rounded-xl sm:-mx-6 lg:mx-0">
+            <span class="text-[360px]/[0.8] inline-block translate-y-8 font-black text-white">
+              {{ loop.index }}
+            </span>
+          </div>
+          <h2 class="mt-4 font-bold text-3xl/snug text-balance">{{ chapter.data.title }}</h2>
         </div>
 
         {# Chapter TOC #}
         {% if chapter.templateContent %}
-        <nav class="py-4 mt-4 rounded-lg col-side lg:mt-8 lg:sticky lg:-translate-y-4 lg:order-1 bg-slate-100 toc toc--sticky lg:top-8">
+        <nav class="py-4 mt-4 rounded-lg col-side lg:mt-8 lg:sticky lg:-translate-y-4 lg:order-1 bg-slate-100 toc toc--c toc--sticky lg:top-8">
           <h3 class="px-4 font-semibold">
             I dette kapittelet
             <span class="hidden lg:inline">({{ chapterIndex }})</span>

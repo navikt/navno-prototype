@@ -7,23 +7,23 @@ description: 'Kriterier du må oppfylle for å ha rett til pleiepenger.'
 
 For å få pleiepenger, gjelder alle disse punktene:
 
-<details class="expander">
+<details class="accordion">
   <summary>Du har omsorgen for barnet i perioden du søker for</summary>
   <p>Som regel er det foreldrene som er omsorgspersonene for barnet, også når de ikke bor sammen. Omsorgspersoner kan også være fosterforeldre eller steforeldre.</p>
   <p>Andre kan ha rett til pleiepenger hvis de helt eller delvis har omsorgen for barnet i perioden de søker pleiepenger. Dette kan for eksempel være venner, voksne søsken, besteforeldre, tante eller onkel.</p>
 </details>
 
-<details class="expander">
+<details class="accordion">
   <summary>Barnet har vært til behandling eller utredning</summary>
   <p>Behandlingen eller utredningen må ha vært på sykehus eller annen spesialisthelsetjeneste.</p>
 </details>
 
-<details class="expander">
+<details class="accordion">
   <summary>Du er sammen med barnet på sykehus eller hjemme</summary>
   <p>Du er sammen med barnet mens det er innlagt, eller du er hjemme fordi barnet trenger pleie hele tiden.</p>
 </details>
 
-<details class="expander">
+<details class="accordion">
   <summary>Du har vært i jobb de siste 4 ukene eller får visse pengestøtter fra NAV</summary>
   <p>Du har vært i jobb i minst 4 uker umiddelbart før pleiepengeperioden starter eller ha en pengestøtte fra NAV som likestilles med jobb.</p>
   <p>Disse pengestøttene kan likestilles med jobb:</p>
@@ -37,17 +37,17 @@ For å få pleiepenger, gjelder alle disse punktene:
   </ul>
 </details>
 
-<details class="expander">
+<details class="accordion">
   <summary>Du har minst 20 prosent fravær fra jobben din</summary>
   <p>Du må ha 20 prosent fravær eller mer fra jobben din de ukene du skal ha pleiepenger.</p>
 </details>
 
-<details class="expander">
+<details class="accordion">
   <summary>Du har en årsinntekt på minst 59 310 kroner</summary>
   <p>Det tilsvarer halvparten av folketrygdens grunnbeløp.</p>
 </details>
 
-<details class="expander">
+<details class="accordion">
   <summary>Du er medlem av folketrygden</summary>
   <p>Bor du i Norge, er du vanligvis <a href="#">medlem av folketrygden</a>.</p>
 </details>

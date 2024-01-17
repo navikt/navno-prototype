@@ -61,8 +61,8 @@
   <div class="border-t border-deepblue-100"></div>
 {%- endif -%}
 
-{# Expander #}
-{%- if block.type === 'expander' -%}
+{# accordion #}
+{%- if block.type === 'accordion' -%}
   <div class="my-8 border-b-2 border-blue-400" x-data="{ isExpanded: false }">
     <button class="w-full py-2.5 pl-4 pr-24 text-left rounded bg-select bg-blue-50" x-on:click="isExpanded = !isExpanded" x-bind:aria-expanded="isExpanded" type="button" >{{ block.title | safe }}</button>
     <div class="p-4 rounded-b md:p-6 bg-gray-50 markdown" x-show="isExpanded" x-bind:hidden="!isExpanded">

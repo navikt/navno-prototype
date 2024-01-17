@@ -19,37 +19,37 @@ Hvis du har arbeidsinntekt i perioden du har pleiepenger, graderes pleiepengene 
 
 Disse endringene må du melde fra om når du har pleiepenger.
 
-<details class="expander">
+<details class="accordion">
   <summary>Skal jobbe eller ha ferie</summary>
   <p>Innhold mangler</p>
 </details>
 
-<details class="expander">
+<details class="accordion">
   <summary>Avsluttet eller endret arbeidsforhold</summary>
   <p>Innhold mangler</p>
 </details>
 
-<details class="expander">
+<details class="accordion">
   <summary>Ny inntekt eller ny arbeidssituasjon</summary>
   <p>Innhold mangler</p>
 </details>
 
-<details class="expander">
+<details class="accordion">
   <summary>Endring i omsorgstilbudet til barnet</summary>
   <p>Innhold mangler</p>
 </details>
 
-<details class="expander">
+<details class="accordion">
   <summary>Endring i pleiepengeperioden eller barnets behov</summary>
   <p>Innhold mangler</p>
 </details>
 
-<details class="expander">
+<details class="accordion">
   <summary>Reise til et land utenfor EØS</summary>
   <p>Innhold mangler</p>
 </details>
 
-<details class="expander">
+<details class="accordion">
   <summary>Omsorgen for barnet er overført til andre</summary>
   <p>Innhold mangler</p>
 </details>
@@ -75,22 +75,22 @@ Når barnet er innlagt på sykehus kan du få pleiepenger frem til barnet er skr
 
 Hva du må foreta deg kommer an på hvilken situasjon du er i:
 
-<details class="expander">
+<details class="accordion">
   <summary>Har søkt eller får pleiepenger fordi barnet er innlagt, og skal nå søke foreldrepenger</summary>
   <p>Innhold mangler</p>
 </details>
 
-<details class="expander">
+<details class="accordion">
   <summary>Har søkt eller får foreldrepenger og skal nå søke pleiepenger fordi barnet er innlagt</summary>
   <p>Innhold mangler</p>
 </details>
 
-<details class="expander">
+<details class="accordion">
   <summary>Barnet er skrevet ut av sykehuset, men er fortsatt sykt</summary>
   <p>Innhold mangler</p>
 </details>
 
-<details class="expander">
+<details class="accordion">
   <summary>Barnet er født før 33. svangerskapsuke</summary>
   <p>Innhold mangler</p>
 </details>
