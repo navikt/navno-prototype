@@ -9,6 +9,7 @@ intro: 'Sikrer deg inntekt under fravær fra jobb når du må pleie og ta vare p
 published: 'Oppdatert 18. desember 2023'
 order: 4
 alpine: true
+permalink: 'produkt/d/index.html'
 ---
 {%- extends 'base.njk' -%}
 
@@ -19,24 +20,25 @@ alpine: true
 {%- block content -%}
 
   <main class="grid py-16 grid-cols-mini lg:grid-cols-maxi">
-    <div class="col-main lg:col-wide">
+    <div class="col-wide">
       <div class="text-sm tracking-widest uppercase">{{ type | safe }}</div>
       <h1 class="mt-2 font-bold text-4xl/tight text-balance">{{ title | safe }}</h1>
 
       {# Audience #}
       <div class="mt-6 -ml-1">
-        <span class="inline-block px-3 pt-1.5 pb-1 text-sm leading-none rounded-full bg-slate-200 ">
+        <span class="inline-block px-3 pt-1.5 pb-1.5 text-sm leading-none rounded-full bg-slate-200 ">
           {{ 'For ' if audience }}{{ audience | lower | safe }}
         </span>
       </div>
 
       {# Intro #}
       <div class="mt-8 text-lg text-pretty max-w-prose">{{ intro | markdown | safe }}</div>
+
     </div>
 
     {# Innholdsfortegnelse #}
-    <div class="mt-8 leading-normal col-wide">
-      <h2 class="text-base font-semibold">Innhold på siden</h2>
+    <div class="leading-normal col-wide">
+      <h2 class="mt-8 text-base font-semibold">Innhold på siden</h2>
       <ul class="grid gap-2 mt-2 sm:grid-cols-2 lg:grid-cols-4 sm:-mx-6 lg:mx-0">
         {% for chapter in collections.kapittel.slice(0,4) %}
         <li class="relative grid items-start content-start gap-1 px-6 py-5 rounded-lg lg:aspect-[4/5] bg-slate-100 group hover:bg-blue-50">
@@ -68,10 +70,10 @@ alpine: true
         <section 
           id="{{ chapter.data.title | slugify }}"
           class="mt-24" 
-          x-intersect:enter.margin.-600px.0px.-900px.0px="showChapter{{ chapterIndex }} = true"
-          x-intersect:leave.margin.-400px.0px.-600px.0px="showChapter{{ chapterIndex }} = false" 
+          x-intersect:enter.margin.-10%.0px.-50%.0px="showChapter{{ chapterIndex }} = true"
+          x-intersect:leave.margin.-20%.0px.0%.0px="showChapter{{ chapterIndex }} = false" 
         >
-          <div class="grid items-end px-3 bg-slate-100 aspect-[3/1] rounded-xl sm:-mx-6 lg:mx-0">
+          <div class="grid items-end px-3 bg-slate-100 aspect-[3/1] rounded-xl">
             <span class="text-[360px]/[0.8] inline-block translate-y-8 font-black text-white">
               {{ chapterIndex }}
             </span>
@@ -82,10 +84,7 @@ alpine: true
           {# Chapter TOC #}
           {% if chapter.templateContent %}
           <nav class="px-4 py-4 mt-4 rounded-lg lg:hidden toc bg-slate-100">
-            <h3 class="font-semibold">
-              I dette kapittelet
-              <span class="hidden lg:inline">({{ chapterIndex }})</span>
-            </h3>
+            <h3 class="font-semibold">I dette kapittelet</h3>
             {{ chapter.templateContent | toc | safe }}
           </nav>
           {% endif %}
@@ -104,8 +103,7 @@ alpine: true
         <div class="toc toc--d toc--sticky lg:mt-[500px] lg:sticky lg:-translate-y-4 lg:top-8">
         {% for chapter in chapters %}
         <h3 class="py-1 font-semibold">
-          <a href="#{{ chapter.data.title | slugify }}">{{ chapter.data.title }}</a>
-          <span class="hidden lg:inline">({{ loop.index }})</span>
+          <a href="#{{ chapter.data.title | slugify }}">{{ loop.index }}. {{ chapter.data.title }}</a>
         </h3>
           
         {% if chapter.templateContent %}
@@ -153,7 +151,7 @@ alpine: true
 
     const intersectionOptions = {
       threshold: 1,
-      rootMargin: '5% 0px -60% 0px'
+      rootMargin: '1% 0px -80% 0px'
     };
 
     const intersectionObserver = new IntersectionObserver(intersectionCallback, intersectionOptions);
