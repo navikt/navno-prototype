@@ -25,7 +25,10 @@ Du bruker samme søknad både for pleiepenger for sykt barn og pleiepenger for e
 </div>
 
 <details class="expander">
-  <summary>Dette må du dokumentere</summary>
+  <summary>
+    Dette må du dokumentere
+    <span class="p-1.5 -my-1 ml-auto text-white bg-blue-600 rounded-2xl" aria-hidden="true">{{ '/src/_includes/svg/icons/folder-file.svg' | svgContents('w-7 h-7') | safe }}</span>
+  </summary>
   <div class="prose">
     <p><strong>Legeerklæring</strong><br>
     Legeerklæringen skal være skrevet av sykehuslege eller lege i spesialisthelsetjenesten.Hvis du ikke har legeerklæring når du søker, kan den ettersendes til oss.</p>
@@ -51,9 +54,30 @@ Du får en melding på Min side som bekrefter at vi har mottatt søknad fra deg.
 <a class="button button--secondary" href="#">Logg inn på dine pleiepenger</a>
 
 <details class="expander">
-  <summary>Saksbehandlingstider</summary>
+  <summary>
+    Saksbehandlingstider
+    <span class="p-1.5 -my-1 ml-auto text-white bg-blue-600 rounded-2xl" aria-hidden="true">{{ '/src/_includes/svg/icons/briefcase-clock.svg' | svgContents('w-7 h-7') | safe }}</span>
+  </summary>
   <div class="prose">
-    <p>Innhold mangler</p>
+    <p>Saksbehandlingstiden er tiden fra vi får søknaden din og til vi har gjort et vedtak. Husk at vi trenger all nødvendig dokumentasjon for å behandle søknaden din.</p>
+    <table>
+      <thead>
+        <tr>
+          <th scope="col">Saken gjelder</th>
+          <th scope="col">Forventet saksbehandlingstid</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="col">Søknad</th>
+          <td>8 uker</td>
+        </tr>
+        <tr>
+          <th scope="col">Internasjonal søknad</th>
+          <td>6 måneder</td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </details>
 
@@ -111,31 +135,13 @@ Du kan også bruke advokat eller gi fullmakt til en person som klager på dine v
 
 [Les mer om dine klagerettigheter](#)
 
-<details class="expander" open>
+<details class="expander">
   <summary>
     <span>Saksbehandlingstider</span>
-    <span class="p-1.5 -my-1 ml-auto text-white bg-blue-600 rounded-2xl" aria-hidden="true">{{ '/src/_includes/svg/icons/folder-file.svg' | svgContents('w-7 h-7') | safe }}</span>
+    <span class="p-1.5 -my-1 ml-auto text-white bg-blue-600 rounded-2xl" aria-hidden="true">{{ '/src/_includes/svg/icons/briefcase-clock.svg' | svgContents('w-7 h-7') | safe }}</span>
   </summary>
   <div class="prose">
-    <p>Saksbehandlingstiden er tiden fra vi får søknaden din og til vi har gjort et vedtak. Husk at vi trenger all nødvendig dokumentasjon for å behandle søknaden din.</p>
-    <table>
-      <thead>
-        <tr>
-          <th scope="col">Saken gjelder</th>
-          <th scope="col">Forventet saksbehandlingstid</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <th scope="col">Søknad</th>
-          <td>8 uker</td>
-        </tr>
-        <tr>
-          <th scope="col">Internasjonal søknad</th>
-          <td>6 måneder</td>
-        </tr>
-      </tbody>
-    </table>
+    <p>Innhold mangler</p>
   </div>
 </details>
 

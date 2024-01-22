@@ -59,7 +59,7 @@ permalink: 'produkt/b/index.html'
     {% for chapter in chapters %}
       {% set chapterIndex = loop.index %}
       <section class="grid items-start pt-12 col-full grid-cols-mini lg:grid-cols-maxi" id="{{ chapter.data.title | slugify }}"  x-data="{ tocOpen: false }">
-        <div class="col-wide">
+        <div class="col-main">
           <div class="text-[20em]/[0.8] -translate-x-2 font-black text-slate-200 pt-2xl">{{ loop.index }}</div>
           <h2 class="font-bold text-3xl/snug text-balance">{{ chapter.data.title }}</h2>
         </div>
