@@ -60,9 +60,27 @@
   :where(.prose) > * a:hover {
     @apply hover:no-underline;
   }
+  :where(.prose) > table {
+    @apply text-left w-full;
+  }
+  :where(.prose) > table :where(th, td) {
+    @apply pr-4 py-1;
+  }
+  :where(.prose) > table :where(tbody tr) :where(th, td) {
+    @apply border-t border-slate-300;
+  }
+  :where(.prose) > table :where(thead th) {
+    @apply font-bold;
+  }
+  :where(.prose) > table :where(tbody th) {
+    @apply font-[375];
+  }
 
+
+
+  /* Table of contents (toc) */
   .toc ol {
-    @apply mb-6 max-w-md grid gap-1;
+    @apply max-w-md grid gap-1;
   }
   .toc li {
     @apply py-1.5 relative leading-snug;
@@ -87,7 +105,15 @@
     position: absolute;
     inset: 0;
   }
+  .toc--b ol {
+    @apply border-l border-slate-300;
+  }
 
+
+
+
+
+  /* Accordion */
   .accordion {
     display: grid;
     padding-inline: 36px 10px;
@@ -155,27 +181,28 @@
 
 
 
-
+  /* Expander */
   .expander {
     display: grid;
     padding-inline: 40px;
-    background-color: theme(colors.slate.100);
+    background-color: theme(colors.white);
     border-radius: theme(borderRadius.md);
+    border: 1px solid theme(colors.slate.300);
   }
   .expander[open] {
     padding-block-end: 32px;
   }
   :where(.expander) summary {
     appearance: none;
-    display: block;
+    display: flex;
+    align-items: center;
     list-style: none;
-    padding: 0.75em 40px;
+    padding: 0.75em 16px 0.75em 40px;
     margin-block: -1px;
     margin-inline: -40px;
-    border-radius: theme(borderRadius.md);
+    border-radius: theme(borderRadius.lg);
     cursor: pointer;
     text-align: left;
-    text-indent: -26px;
     text-wrap: pretty;
     line-height: 1.375;
     color: theme(colors.blue.700);
@@ -185,8 +212,9 @@
     display: none;
   }
   :where(.expander[open]) summary {
-    background-color: theme(colors.slate.100);
-    margin-block-end: 12px;
+    border-radius: theme(borderRadius.lg) theme(borderRadius.lg) 0 0;
+    border-bottom: 1px solid theme(colors.slate.300);
+    margin-block-end: 20px;
   }
   :where(.expander) summary:hover {
     background-color: theme(colors.slate.200/20);
@@ -199,14 +227,16 @@
     display: inline-block;
     flex-shrink: 0;
     place-items: center;
+    align-self: baseline;
+    transform: translateY(1px);
     translate: 0 4px;
-    margin-inline-end: 8px;
+    margin-inline: -28px 8px;
     transition: rotate 150ms;
     width: 20px;
     height: 20px;
   }
   :where(.expander[open]) summary:before {
-    rotate: -180deg;
+    transform: translateY(2px) rotate(-180deg);
   }
   :where(.expander) summary > * {
     text-wrap: pretty;
@@ -287,5 +317,8 @@
 
   .w-logo {
     width: clamp(4rem, 3.875rem + 0.625vw, 4.5rem);
+  }
+  .bg-dotted-x {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='5' height='1' fill='none' viewBox='0 0 5 1'%3E%3Ccircle cx='.5' cy='.5' r='.5' fill='%23777'/%3E%3C/svg%3E");
   }
 }

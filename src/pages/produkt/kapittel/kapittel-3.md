@@ -111,10 +111,31 @@ Du kan også bruke advokat eller gi fullmakt til en person som klager på dine v
 
 [Les mer om dine klagerettigheter](#)
 
-<details class="expander">
-  <summary>Saksbehandlingstider</summary>
+<details class="expander" open>
+  <summary>
+    <span>Saksbehandlingstider</span>
+    <span class="p-1.5 -my-1 ml-auto text-white bg-blue-600 rounded-2xl" aria-hidden="true">{{ '/src/_includes/svg/icons/folder-file.svg' | svgContents('w-7 h-7') | safe }}</span>
+  </summary>
   <div class="prose">
-    <p>Innhold mangler</p>
+    <p>Saksbehandlingstiden er tiden fra vi får søknaden din og til vi har gjort et vedtak. Husk at vi trenger all nødvendig dokumentasjon for å behandle søknaden din.</p>
+    <table>
+      <thead>
+        <tr>
+          <th scope="col">Saken gjelder</th>
+          <th scope="col">Forventet saksbehandlingstid</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="col">Søknad</th>
+          <td>8 uker</td>
+        </tr>
+        <tr>
+          <th scope="col">Internasjonal søknad</th>
+          <td>6 måneder</td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </details>
 
