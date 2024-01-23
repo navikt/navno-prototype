@@ -2,7 +2,7 @@ module.exports = {
   title: "Prototype av enkelte nav.no-sider",
   language: [
     {
-      full: "Bokmål",
+      full: "Norsk bokmål",
       short: "NO-NB",
     },
     {
