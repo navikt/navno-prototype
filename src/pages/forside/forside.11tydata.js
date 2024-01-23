@@ -28,27 +28,27 @@ module.exports = {
   shortcutsList: [
     {
       title: "Saksbehandlingstider",
-      icon: "/src/_includes/svg/pictograms/saksbehandlingstider.svg",
+      icon: "/src/_includes/svg/piktogrammer/produkter/saksbehandlingstider.svg",
     },
     {
       title: "Utbetalingsdatoer",
-      icon: "/src/_includes/svg/pictograms/utbetalingsdatoer.svg",
+      icon: "/src/_includes/svg/piktogrammer/produkter/utbetalingsdatoer.svg",
     },
     {
       title: "Satser",
-      icon: "/src/_includes/svg/pictograms/satser.svg",
+      icon: "/src/_includes/svg/piktogrammer/produkter/satser.svg",
     },
   ],
   formsList: [
     {
       title: "Søknad og skjema",
       href: "/soknad-og-skjema/",
-      icon: "/src/_includes/svg/pictograms/soknad-og-skjema.svg",
+      icon: "/src/_includes/svg/piktogrammer/produkter/soknad-og-skjema.svg",
     },
     {
       title: "Ettersende dokumentasjon",
       href: "/ettersende-dokumentasjon/",
-      icon: "/src/_includes/svg/pictograms/utbetalingsdatoer.svg",
+      icon: "/src/_includes/svg/piktogrammer/produkter/utbetalingsdatoer.svg",
     },
   ],
   newsList: [

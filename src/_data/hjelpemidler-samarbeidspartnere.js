@@ -2,11 +2,8 @@
   {
     title: "Seksualtekniske hjelpemidler",
     ingress: "Kan gi et bedre sexliv når en har nedsatt seksualfunksjon.",
-    icon: "/src/_includes/svg/pictograms/seksualtekniske-hjelpemidler.svg",
-    type: [
-      "Pengestøtte",
-      "Hjelpemiddel",
-    ],
+    icon: "/src/_includes/svg/piktogrammer/produkter/seksualtekniske-hjelpemidler.svg",
+    type: ["Pengestøtte", "Hjelpemiddel"],
     role: ["Lege, tannlege eller annen behandler"],
     contentBlocks: [
       {
@@ -45,12 +42,9 @@
   {
     title: "Førerhund",
     ingress: "Hjelper blinde og svaksynte å ta seg frem innendørs og utendørs.",
-    icon: "/src/_includes/svg/pictograms/forerhund.svg",
+    icon: "/src/_includes/svg/piktogrammer/produkter/forerhund.svg",
     type: ["Hjelpemiddel"],
-    role: [
-      "Optiker eller øyelege",
-      "Lege, tannlege eller annen behandler",
-    ],
+    role: ["Optiker eller øyelege", "Lege, tannlege eller annen behandler"],
     contentBlocks: [
       {
         type: "markdown",
@@ -78,7 +72,7 @@
   {
     title: "Servicehund",
     ingress: "Hjelper pasienter med fysiske funksjonsnedsettelser i hverdagen.",
-    icon: "/src/_includes/svg/pictograms/neutral.svg",
+    icon: "/src/_includes/svg/piktogrammer/produkter/neutral.svg",
     type: ["Hjelpemiddel"],
     role: ["Lege, tannlege eller annen behandler"],
     contentBlocks: [
@@ -109,11 +103,8 @@
     title: "Bilstønad",
     ingress:
       "Støtte til bil, tilpasning av bil og spesialutstyr til bruk i bil.",
-    icon: "/src/_includes/svg/pictograms/grunnstonad.svg",
-    type: [
-      "Pengestøtte",
-      "Hjelpemiddel",
-    ],
+    icon: "/src/_includes/svg/piktogrammer/produkter/grunnstonad.svg",
+    type: ["Pengestøtte", "Hjelpemiddel"],
     role: ["Lege, tannlege eller annen behandler"],
     contentBlocks: [
       {
@@ -153,11 +144,8 @@
     title: "Brystprotese",
     ingress:
       "Etterligner et bryst i form og størrelse, og finnes i mange ulike utgaver.",
-    icon: "/src/_includes/svg/pictograms/brystprotese.svg",
-    type: [
-      "Pengestøtte",
-      "Hjelpemiddel",
-    ],
+    icon: "/src/_includes/svg/piktogrammer/produkter/brystprotese.svg",
+    type: ["Pengestøtte", "Hjelpemiddel"],
     role: ["Lege, tannlege eller annen behandler"],
     contentBlocks: [
       {
@@ -186,7 +174,7 @@
   {
     title: "Øyeprotese",
     ingress: "Erstatter øyet når en mangler et øye, eller har skadet øyet.",
-    icon: "/src/_includes/svg/pictograms/oyeprotese.svg",
+    icon: "/src/_includes/svg/piktogrammer/produkter/oyeprotese.svg",
     type: ["Hjelpemiddel"],
     role: ["Lege, tannlege eller annen behandler"],
     contentBlocks: [
@@ -216,11 +204,8 @@
   {
     title: "Ansiktsprotese",
     ingress: "Etterligner den delen av ansiktet som mangler eller er skadet.",
-    icon: "/src/_includes/svg/pictograms/ansiktsprotese.svg",
-    type: [
-      "Pengestøtte",
-      "Hjelpemiddel",
-    ],
+    icon: "/src/_includes/svg/piktogrammer/produkter/ansiktsprotese.svg",
+    type: ["Pengestøtte", "Hjelpemiddel"],
     role: ["Lege, tannlege eller annen behandler"],
     contentBlocks: [
       {
@@ -249,11 +234,8 @@
   {
     title: "Parykk",
     ingress: "Erstatter eget hår på hele hodet, eller deler av hodet.",
-    icon: "/src/_includes/svg/pictograms/parykk.svg",
-    type: [
-      "Pengestøtte",
-      "Hjelpemiddel",
-    ],
+    icon: "/src/_includes/svg/piktogrammer/produkter/parykk.svg",
+    type: ["Pengestøtte", "Hjelpemiddel"],
     role: ["Lege, tannlege eller annen behandler"],
     contentBlocks: [
       {
@@ -282,15 +264,9 @@
   {
     title: "Lese- og sekretærhjelp",
     ingress: "Hjelper deg med å lese og skrive når du er blind eller svaksynt.",
-    icon: "/src/_includes/svg/pictograms/neutral.svg",
-    type: [
-      "Pengestøtte",
-      "Hjelpemiddel",
-    ],
-    role: [
-      "Optiker eller øyelege",
-      "Andre samarbeidspartnere",
-    ],
+    icon: "/src/_includes/svg/piktogrammer/produkter/neutral.svg",
+    type: ["Pengestøtte", "Hjelpemiddel"],
+    role: ["Optiker eller øyelege", "Andre samarbeidspartnere"],
     contentBlocks: [
       {
         type: "markdown",
@@ -318,14 +294,9 @@
   {
     title: "Tolking for døve, døvblinde og hørselshemmede",
     ingress: "Utfører tolkeoppdrag for døve, døvblinde og hørselshemmede.",
-    icon: "/src/_includes/svg/pictograms/tegnspraak.svg",
-    type: [
-      "Hjelpemiddel",
-    ],
-    role: [
-      "Lege, tannlege eller annen behandler",
-      "Andre samarbeidspartnere",
-    ],
+    icon: "/src/_includes/svg/piktogrammer/produkter/tegnspraak.svg",
+    type: ["Hjelpemiddel"],
+    role: ["Lege, tannlege eller annen behandler", "Andre samarbeidspartnere"],
     contentBlocks: [
       {
         type: "markdown",
@@ -353,11 +324,8 @@
   {
     title: "Språktolking",
     ingress: "Ingress.",
-    icon: "/src/_includes/svg/pictograms/neutral.svg",
-    type: [
-      "Tjeneste",
-      "Hjelpemiddel",
-    ],
+    icon: "/src/_includes/svg/piktogrammer/produkter/neutral.svg",
+    type: ["Tjeneste", "Hjelpemiddel"],
     role: ["Andre samarbeidspartnere"],
     contentBlocks: [
       {
@@ -387,10 +355,8 @@
     title: "Tolk- og ledsagerhjelp for døvblinde",
     ingress:
       "Utfører tolkeoppdrag for døve, døvblinde og hørselshemmede. Siden tolk er et eget produkt, bør dette være spesifikt for ledsagerhjelp? Evt slås sammen med Tolking for døve, døvblinde og hørselshemmede?",
-    icon: "/src/_includes/svg/pictograms/neutral.svg",
-    type: [
-      "Hjelpemiddel",
-    ],
+    icon: "/src/_includes/svg/piktogrammer/produkter/neutral.svg",
+    type: ["Hjelpemiddel"],
     role: ["Lege, tannlege eller annen behandler"],
     contentBlocks: [
       {
@@ -419,11 +385,8 @@
   {
     title: "Høreapparat",
     ingress: "Forsterker lyden rundt deg når en har nedsatt hørsel.",
-    icon: "/src/_includes/svg/pictograms/horselshjelpemidler.svg",
-    type: [
-      "Pengestøtte",
-      "Hjelpemiddel",
-    ],
+    icon: "/src/_includes/svg/piktogrammer/produkter/horselshjelpemidler.svg",
+    type: ["Pengestøtte", "Hjelpemiddel"],
     role: ["Lege, tannlege eller annen behandler"],
     contentBlocks: [
       {
@@ -463,11 +426,8 @@
     title: "Ortopediske sko",
     ingress:
       "Hjelper når en har feilstilling i foten eller ankelen, har problemer med føttene på grunn av diabetes eller revmatisme, eller har en annen funksjonsnedsettelse i føttene.",
-    icon: "/src/_includes/svg/pictograms/ortopediske-sko.svg",
-    type: [
-      "Pengestøtte",
-      "Hjelpemiddel",
-    ],
+    icon: "/src/_includes/svg/piktogrammer/produkter/ortopediske-sko.svg",
+    type: ["Pengestøtte", "Hjelpemiddel"],
     role: ["Lege, tannlege eller annen behandler"],
     contentBlocks: [
       {
@@ -507,11 +467,8 @@
     title: "Ortoser",
     ingress:
       "Stabiliserer eller gir bedre funksjon når du har en kroppsdel som er lammet eller svekket.",
-    icon: "/src/_includes/svg/pictograms/ortoser.svg",
-    type: [
-      "Pengestøtte",
-      "Hjelpemiddel",
-    ],
+    icon: "/src/_includes/svg/piktogrammer/produkter/ortoser.svg",
+    type: ["Pengestøtte", "Hjelpemiddel"],
     role: ["Lege, tannlege eller annen behandler"],
     contentBlocks: [
       {
@@ -550,7 +507,7 @@
   {
     title: "Arm- og benproteser",
     ingress: "Erstatter en manglende kroppsdel.",
-    icon: "/src/_includes/svg/pictograms/arm-og-benprotese.svg",
+    icon: "/src/_includes/svg/piktogrammer/produkter/arm-og-benprotese.svg",
     type: ["Hjelpemiddel"],
     role: ["Lege, tannlege eller annen behandler"],
     contentBlocks: [
@@ -591,10 +548,8 @@
     title: "Funksjonsassistanse i arbeidslivet",
     ingress:
       "Hjelper deg med praktiske oppgaver når det er nødvendig for at du skal kunne utføre jobben din.",
-    icon: "/src/_includes/svg/pictograms/neutral.svg",
-    type: [
-      "Hjelpemiddel",
-    ],
+    icon: "/src/_includes/svg/piktogrammer/produkter/neutral.svg",
+    type: ["Hjelpemiddel"],
     role: ["Lege, tannlege eller annen behandler"],
     contentBlocks: [
       {
@@ -623,11 +578,8 @@
   {
     title: "Briller til barn",
     ingress: "Tilskudd til barn og unge under 18 år som trenger briller.",
-    icon: "/src/_includes/svg/pictograms/neutral.svg",
-    type: [
-      "Pengestøtte",
-      "Hjelpemiddel",
-    ],
+    icon: "/src/_includes/svg/piktogrammer/produkter/neutral.svg",
+    type: ["Pengestøtte", "Hjelpemiddel"],
     role: ["Optiker eller øyelege"],
     contentBlocks: [
       {
@@ -684,11 +636,8 @@
   {
     title: "Irislinse",
     ingress: "Tilskudd til barn og unge under 18 år som trenger briller.",
-    icon: "/src/_includes/svg/pictograms/neutral.svg",
-    type: [
-      "Pengestøtte",
-      "Hjelpemiddel",
-    ],
+    icon: "/src/_includes/svg/piktogrammer/produkter/neutral.svg",
+    type: ["Pengestøtte", "Hjelpemiddel"],
     role: ["Optiker eller øyelege"],
     contentBlocks: [
       {
@@ -727,11 +676,8 @@
   {
     title: "Hørselshjelpemidler",
     ingress: "Ingress",
-    icon: "/src/_includes/svg/pictograms/horselshjelpemidler.svg",
-    type: [
-      "Pengestøtte",
-      "Hjelpemiddel",
-    ],
+    icon: "/src/_includes/svg/piktogrammer/produkter/horselshjelpemidler.svg",
+    type: ["Pengestøtte", "Hjelpemiddel"],
     role: ["Hjelpemiddelformidler"],
     contentBlocks: [
       {
@@ -856,11 +802,8 @@
   {
     title: "Hjelpemidler til tale og språk",
     ingress: "Ingress",
-    icon: "/src/_includes/svg/pictograms/neutral.svg",
-    type: [
-      "Pengestøtte",
-      "Hjelpemiddel",
-    ],
+    icon: "/src/_includes/svg/piktogrammer/produkter/neutral.svg",
+    type: ["Pengestøtte", "Hjelpemiddel"],
     role: ["Hjelpemiddelformidler"],
     contentBlocks: [
       {
@@ -935,11 +878,8 @@
   {
     title: "Hjelpemidler for å huske, planlegge og organisere",
     ingress: "Ingress",
-    icon: "/src/_includes/svg/pictograms/neutral.svg",
-    type: [
-      "Pengestøtte",
-      "Hjelpemiddel",
-    ],
+    icon: "/src/_includes/svg/piktogrammer/produkter/neutral.svg",
+    type: ["Pengestøtte", "Hjelpemiddel"],
     role: ["Hjelpemiddelformidler"],
     contentBlocks: [
       {
@@ -1014,12 +954,8 @@
   {
     title: "Bevegelseshjelpemidler",
     ingress: "Ingress",
-    icon: "/src/_includes/svg/pictograms/neutral.svg",
-    type: [
-      "Pengestøtte",
-      "Hjelpemiddel",
-      "Skjema",
-    ],
+    icon: "/src/_includes/svg/piktogrammer/produkter/neutral.svg",
+    type: ["Pengestøtte", "Hjelpemiddel", "Skjema"],
     role: ["Hjelpemiddelformidler"],
     contentBlocks: [
       {
@@ -1109,15 +1045,9 @@
   {
     title: "Ortopediske hjelpemidler",
     ingress: "Ingress",
-    icon: "/src/_includes/svg/pictograms/ortopediske-sko.svg",
-    type: [
-      "Pengestøtte",
-      "Hjelpemiddel",
-    ],
-    role: [
-      "Hjelpemiddelformidler",
-      "Lege, tannlege eller annen behandler",
-    ],
+    icon: "/src/_includes/svg/piktogrammer/produkter/ortopediske-sko.svg",
+    type: ["Pengestøtte", "Hjelpemiddel"],
+    role: ["Hjelpemiddelformidler", "Lege, tannlege eller annen behandler"],
     contentBlocks: [
       {
         type: "markdown",
@@ -1205,14 +1135,9 @@
   {
     title: "Hjelpemidler for å lese og skrive",
     ingress: "Ingress",
-    icon: "/src/_includes/svg/pictograms/neutral.svg",
-    type: [
-      "Pengestøtte",
-      "Hjelpemiddel",
-    ],
-    role: [
-      "Hjelpemiddelformidler",
-    ],
+    icon: "/src/_includes/svg/piktogrammer/produkter/neutral.svg",
+    type: ["Pengestøtte", "Hjelpemiddel"],
+    role: ["Hjelpemiddelformidler"],
     contentBlocks: [
       {
         type: "markdown",
@@ -1286,7 +1211,7 @@
   {
     title: "Meld behov for hjelpemidler",
     ingress: "Kommunalt ansatte kan melde behov om hjelpemidler digitalt.",
-    icon: "/src/_includes/svg/pictograms/slik-gjor-du-det.svg",
+    icon: "/src/_includes/svg/piktogrammer/produkter/slik-gjor-du-det.svg",
     type: ["Hjelpemiddel"],
     role: [
       "Hjelpemiddelformidler",
@@ -1326,4 +1251,4 @@
       },
     ],
   },
-]
+];

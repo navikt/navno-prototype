@@ -3,7 +3,7 @@ const products = [
     title: "Tannlegeerklæring ved yrkesskade",
     ingress:
       "I sakene hvor det er aktuelt, kan du som tannlege bli bedt om å fylle ut en tannlegeerklæring.",
-    icon: "/src/_includes/svg/pictograms/slik-gjor-du-det.svg",
+    icon: "/src/_includes/svg/piktogrammer/produkter/slik-gjor-du-det.svg",
     type: ["Skjema"],
     role: ["Lege, tannlege eller annen behandler"],
     contentBlocks: [
@@ -44,7 +44,7 @@ const products = [
     title: "Yrkesskade eller yrkessykdom",
     ingress:
       "Hvis skaden eller sykdommen blir godkjent som yrkesskade, vil pasienten kunne få dekket utgifter til ulik helsehjelp.",
-    icon: "/src/_includes/svg/pictograms/slik-gjor-du-det.svg",
+    icon: "/src/_includes/svg/piktogrammer/produkter/slik-gjor-du-det.svg",
     type: ["Skjema"],
     role: ["Lege, tannlege eller annen behandler"],
     contentBlocks: [
@@ -94,7 +94,7 @@ const products = [
     title: "Pleiepenger for sykt barn",
     ingress:
       "Når en må være borte fra jobb for å pleie og ta vare på et barn som er, eller har vært, innlagt eller til behandling på sykehus.",
-    icon: "/src/_includes/svg/pictograms/pleiepenger-sykt-barn.svg",
+    icon: "/src/_includes/svg/piktogrammer/produkter/pleiepenger-sykt-barn.svg",
     type: ["Pengestøtte"],
     role: ["Lege, tannlege eller annen behandler"],
     contentBlocks: [
@@ -126,7 +126,7 @@ const products = [
     title: "Pleiepenger for en utviklingshemmet person over 18 år",
     ingress:
       "Når en må være borte fra jobb for å ta vare på en person over 18 år, som er utviklingshemmet og svært alvorlig syk.",
-    icon: "/src/_includes/svg/pictograms/pleiepenger-utviklingshemmet.svg",
+    icon: "/src/_includes/svg/piktogrammer/produkter/pleiepenger-utviklingshemmet.svg",
     type: ["Pengestøtte"],
     role: ["Lege, tannlege eller annen behandler"],
     contentBlocks: [
@@ -157,7 +157,7 @@ const products = [
     title: "Pleiepenger i livets sluttfase",
     ingress:
       "Når en må være borte fra jobb for å ta vare på en person som er i livets sluttfase.",
-    icon: "/src/_includes/svg/pictograms/pleiepenger-livets-sluttfase.svg",
+    icon: "/src/_includes/svg/piktogrammer/produkter/pleiepenger-livets-sluttfase.svg",
     type: ["Pengestøtte"],
     role: ["Lege, tannlege eller annen behandler"],
     contentBlocks: [
@@ -198,7 +198,7 @@ const products = [
     title: "Opplæringspenger",
     ingress:
       "Når en må være borte fra jobb for å få opplæring for et barn eller en voksen, som har en funksjonshemning eller langvarig sykdom.",
-    icon: "/src/_includes/svg/pictograms/opplaeringspenger.svg",
+    icon: "/src/_includes/svg/piktogrammer/produkter/opplaeringspenger.svg",
     type: ["Pengestøtte"],
     role: ["Lege, tannlege eller annen behandler"],
     contentBlocks: [
@@ -239,7 +239,7 @@ const products = [
     title: "Omsorgspenger",
     ingress:
       "Når en må være hjemme med barn som for eksempel har fått omgangssyke.",
-    icon: "/src/_includes/svg/pictograms/omsorgspenger.svg",
+    icon: "/src/_includes/svg/piktogrammer/produkter/omsorgspenger.svg",
     type: ["Pengestøtte"],
     role: ["Lege, tannlege eller annen behandler"],
     contentBlocks: [
@@ -279,22 +279,22 @@ const products = [
   {
     title: "Grunn- og hjelpestønad",
     ingress: "",
-    icon: "/src/_includes/svg/pictograms/grunnstonad.svg",
+    icon: "/src/_includes/svg/piktogrammer/produkter/grunnstonad.svg",
     type: ["Pengestøtte"],
     role: ["Lege, tannlege eller annen behandler"],
     contentBlocks: [
       {
         type: "markdown",
         data: `### Grunnstønad
-        Hvis pasienten din søker om grunnstønad, må du som lege gi NAV opplysninger som både beskriver den medisinske tilstanden og sammenhengen mellom de varige, nødvendige ekstrautgiftene og den medisinske tilstanden.`
+        Hvis pasienten din søker om grunnstønad, må du som lege gi NAV opplysninger som både beskriver den medisinske tilstanden og sammenhengen mellom de varige, nødvendige ekstrautgiftene og den medisinske tilstanden.`,
       },
       {
         type: "markdown",
         data: `### Hjelpestønad
-        I legeerklæringen som skal følge pasientens søknad om hjelpestønad, må du opplyse om diagnose og gi en medisinsk begrunnet beskrivelse og vurdering av søkerens helsetilstand.`
+        I legeerklæringen som skal følge pasientens søknad om hjelpestønad, må du opplyse om diagnose og gi en medisinsk begrunnet beskrivelse og vurdering av søkerens helsetilstand.`,
       },
       {
-        type: "line"
+        type: "line",
       },
       {
         type: "markdown",
@@ -308,14 +308,14 @@ const products = [
             dot: "bg-green-300",
           },
         ],
-      }
-    ]
+      },
+    ],
   },
   {
     title: "Sykepenger",
     ingress:
       "Erstatter inntekten din når pasienten ikke kan jobbe på grunn av sykdom eller skade.",
-    icon: "/src/_includes/svg/pictograms/sykepenger.svg",
+    icon: "/src/_includes/svg/piktogrammer/produkter/sykepenger.svg",
     type: ["Pengestøtte"],
     role: ["Lege, tannlege eller annen behandler"],
     contentBlocks: [
@@ -423,7 +423,7 @@ const products = [
     title: "Arbeidsavklaringspenger (AAP)",
     ingress:
       "Sikrer pasienten inntekt i perioder de har behov for hjelp fra NAV på grunn av sykdom eller skade.",
-    icon: "/src/_includes/svg/pictograms/aap.svg",
+    icon: "/src/_includes/svg/piktogrammer/produkter/aap.svg",
     type: ["Pengestøtte"],
     role: ["Lege, tannlege eller annen behandler"],
     contentBlocks: [
@@ -463,7 +463,7 @@ const products = [
     title: "Uføretrygd",
     ingress:
       "Sikrer pasienten inntekt hvis inntektsevnen er varig redusert på grunn av sykdom eller skade.",
-    icon: "/src/_includes/svg/pictograms/uforetrygd.svg",
+    icon: "/src/_includes/svg/piktogrammer/produkter/uforetrygd.svg",
     type: ["Pengestøtte"],
     role: ["Lege, tannlege eller annen behandler"],
     contentBlocks: [
@@ -520,7 +520,7 @@ const products = [
     title: "Supplerende stønad til uføre flyktninger",
     ingress:
       "Sikrer pasienten inntekt hvis inntektsevnen er varig redusert på grunn av sykdom eller skade.",
-    icon: "/src/_includes/svg/pictograms/neutral.svg",
+    icon: "/src/_includes/svg/piktogrammer/produkter/neutral.svg",
     type: ["Pengestøtte"],
     role: ["Lege, tannlege eller annen behandler"],
     contentBlocks: [
@@ -560,11 +560,9 @@ const products = [
     title: "Legeerklæring ved arbeidsuførhet",
     ingress:
       "Denne brukes i forbindelse med søknad om sykepenger(?), arbeidsavklaringspenger (AAP), uføretrygd og supplerende stønad for uføre flyktninger. Erklæringen kan skrives av lege, psykolog, fysioterapeut, manuellterapeut eller kiropraktor dersom NAV etterspør dette.",
-    icon: "/src/_includes/svg/pictograms/slik-gjor-du-det.svg",
+    icon: "/src/_includes/svg/piktogrammer/produkter/slik-gjor-du-det.svg",
     type: ["Skjema"],
-    role: [
-      "Lege, tannlege eller annen behandler",
-    ],
+    role: ["Lege, tannlege eller annen behandler"],
     contentBlocks: [
       {
         type: "markdown",
@@ -602,12 +600,9 @@ const products = [
     title: "Fullmakt og innsyn",
     ingress:
       "Hvis du ringer til NAV om en pasient og ønsker innsyn i saken, må du ha fullmakt. Du ringer da ikke som behandler, men på vegne av en privatperson. Det er pasienten som gir fullmakten.",
-    icon: "/src/_includes/svg/pictograms/slik-gjor-du-det.svg",
+    icon: "/src/_includes/svg/piktogrammer/produkter/slik-gjor-du-det.svg",
     type: ["Skjema"],
-    role: [
-      "Lege, tannlege eller annen behandler",
-      "Bostyrer",
-    ],
+    role: ["Lege, tannlege eller annen behandler", "Bostyrer"],
     contentBlocks: [
       {
         type: "markdown",
@@ -651,11 +646,9 @@ const products = [
   {
     title: "Førerhund",
     ingress: "Hjelper blinde og svaksynte å ta seg frem innendørs og utendørs.",
-    icon: "/src/_includes/svg/pictograms/forerhund.svg",
+    icon: "/src/_includes/svg/piktogrammer/produkter/forerhund.svg",
     type: ["Hjelpemiddel"],
-    role: [
-      "Optiker eller øyelege",
-    ],
+    role: ["Optiker eller øyelege"],
     contentBlocks: [
       {
         type: "markdown",
@@ -684,17 +677,16 @@ const products = [
   },
   {
     title: "Bestillingsordningen",
-    ingress: "Forenklet saksbehandling i NAV for å bestille enkle hjelpemidler som ikke krever individuelle tilpasninger.",
-    icon: "/src/_includes/svg/pictograms/slik-gjor-du-det.svg",
-    type: [
-      "Skjema",
-    ],
+    ingress:
+      "Forenklet saksbehandling i NAV for å bestille enkle hjelpemidler som ikke krever individuelle tilpasninger.",
+    icon: "/src/_includes/svg/piktogrammer/produkter/slik-gjor-du-det.svg",
+    type: ["Skjema"],
     role: ["Hjelpemiddelformidler"],
     contentBlocks: [
       {
         type: "markdown",
         data: `### Bestilling av tekniske hjelpemidler
-        Du må være godkjent bestiller for å bestille hjelpemidler. For å bli godkjent bestiller, må du ta godkjenningskurs for bestillingsordningen på Kunnskapsbanken.`
+        Du må være godkjent bestiller for å bestille hjelpemidler. For å bli godkjent bestiller, må du ta godkjenningskurs for bestillingsordningen på Kunnskapsbanken.`,
       },
       {
         type: "actions",
@@ -702,12 +694,12 @@ const products = [
           {
             text: "Send søknad",
             href: "#",
-            variant: "primary"
-          }
-        ]
+            variant: "primary",
+          },
+        ],
       },
       {
-        type: "line"
+        type: "line",
       },
       {
         type: "markdown",
@@ -722,23 +714,20 @@ const products = [
           },
         ],
       },
-    ]
+    ],
   },
   {
     title: "Bilstønad",
     ingress:
       "Støtte til bil, tilpasning av bil og spesialutstyr til bruk i bil.",
-    icon: "/src/_includes/svg/pictograms/grunnstonad.svg",
-    type: [
-      "Pengestøtte",
-      "Hjelpemiddel",
-    ],
+    icon: "/src/_includes/svg/piktogrammer/produkter/grunnstonad.svg",
+    type: ["Pengestøtte", "Hjelpemiddel"],
     role: ["Hjelpemiddelformidler"],
     contentBlocks: [
       {
         type: "markdown",
         data: `### Søk om motorkjøretøy og/eller spesialutstyr og tilpasning til bil
-        Skjemaet brukes når du søker på vegne av en innbygger.`
+        Skjemaet brukes når du søker på vegne av en innbygger.`,
       },
       {
         type: "actions",
@@ -751,7 +740,7 @@ const products = [
         ],
       },
       {
-        type: "line"
+        type: "line",
       },
       {
         type: "markdown",
@@ -790,15 +779,9 @@ const products = [
   {
     title: "Lese- og sekretærhjelp",
     ingress: "Hjelper deg med å lese og skrive når du er blind eller svaksynt.",
-    icon: "/src/_includes/svg/pictograms/neutral.svg",
-    type: [
-      "Pengestøtte",
-      "Hjelpemiddel",
-    ],
-    role: [
-      "Optiker eller øyelege",
-      "Andre samarbeidspartnere",
-    ],
+    icon: "/src/_includes/svg/piktogrammer/produkter/neutral.svg",
+    type: ["Pengestøtte", "Hjelpemiddel"],
+    role: ["Optiker eller øyelege", "Andre samarbeidspartnere"],
     contentBlocks: [
       {
         type: "markdown",
@@ -826,13 +809,9 @@ const products = [
   {
     title: "Tolking for døve, døvblinde og hørselshemmede",
     ingress: "Utfører tolkeoppdrag for døve, døvblinde og hørselshemmede.",
-    icon: "/src/_includes/svg/pictograms/tegnspraak.svg",
-    type: [
-      "Hjelpemiddel",
-    ],
-    role: [
-      "Andre samarbeidspartnere",
-    ],
+    icon: "/src/_includes/svg/piktogrammer/produkter/tegnspraak.svg",
+    type: ["Hjelpemiddel"],
+    role: ["Andre samarbeidspartnere"],
     contentBlocks: [
       {
         type: "markdown",
@@ -860,11 +839,8 @@ const products = [
   {
     title: "Språktolking",
     ingress: "Ingress.",
-    icon: "/src/_includes/svg/pictograms/neutral.svg",
-    type: [
-      "Tjeneste",
-      "Hjelpemiddel",
-    ],
+    icon: "/src/_includes/svg/piktogrammer/produkter/neutral.svg",
+    type: ["Tjeneste", "Hjelpemiddel"],
     role: ["Andre samarbeidspartnere"],
     contentBlocks: [
       {
@@ -892,17 +868,16 @@ const products = [
   },
   {
     title: "Briller og synshjelpemidler",
-    ingress: "Hjelpemidler for personer som har nedsatt syn eller trenger briller.",
-    icon: "/src/_includes/svg/pictograms/neutral.svg",
-    type: [
-      "Hjelpemiddel",
-    ],
+    ingress:
+      "Hjelpemidler for personer som har nedsatt syn eller trenger briller.",
+    icon: "/src/_includes/svg/piktogrammer/produkter/neutral.svg",
+    type: ["Hjelpemiddel"],
     role: ["Hjelpemiddelformidler"],
     contentBlocks: [
       {
         type: "markdown",
         data: `### Søk om synshjelpemidler
-        Skjemaet brukes når du søker om et synshjelpemiddel som kan gå utenom optiker.`
+        Skjemaet brukes når du søker om et synshjelpemiddel som kan gå utenom optiker.`,
       },
       {
         type: "actions",
@@ -915,7 +890,7 @@ const products = [
         ],
       },
       {
-        type: "line"
+        type: "line",
       },
       {
         type: "markdown",
@@ -947,17 +922,14 @@ const products = [
             dot: "bg-green-300",
           },
         ],
-      }
-    ]
+      },
+    ],
   },
   {
     title: "Briller til barn",
     ingress: "Tilskudd til barn og unge under 18 år som trenger briller.",
-    icon: "/src/_includes/svg/pictograms/neutral.svg",
-    type: [
-      "Pengestøtte",
-      "Hjelpemiddel",
-    ],
+    icon: "/src/_includes/svg/piktogrammer/produkter/neutral.svg",
+    type: ["Pengestøtte", "Hjelpemiddel"],
     role: ["Optiker eller øyelege"],
     contentBlocks: [
       {
@@ -1014,10 +986,8 @@ const products = [
   {
     title: "Briller til behandling eller forebygging av amblyopi",
     ingress: "Kan behandle eller forebygge synsnedsettelsen amblyopi hos barn.",
-    icon: "/src/_includes/svg/pictograms/neutral.svg",
-    type: [
-      "Hjelpemiddel",
-    ],
+    icon: "/src/_includes/svg/piktogrammer/produkter/neutral.svg",
+    type: ["Hjelpemiddel"],
     role: ["Optiker eller øyelege"],
     contentBlocks: [
       {
@@ -1056,11 +1026,8 @@ const products = [
   {
     title: "Irislinse",
     ingress: "Tilskudd til barn og unge under 18 år som trenger briller.",
-    icon: "/src/_includes/svg/pictograms/neutral.svg",
-    type: [
-      "Pengestøtte",
-      "Hjelpemiddel",
-    ],
+    icon: "/src/_includes/svg/piktogrammer/produkter/neutral.svg",
+    type: ["Pengestøtte", "Hjelpemiddel"],
     role: ["Optiker eller øyelege"],
     contentBlocks: [
       {
@@ -1117,11 +1084,8 @@ const products = [
   {
     title: "Hørselshjelpemidler",
     ingress: "Hjelpemidler for personer som har nedsatt eller ingen hørsel",
-    icon: "/src/_includes/svg/pictograms/horselshjelpemidler.svg",
-    type: [
-      "Pengestøtte",
-      "Hjelpemiddel",
-    ],
+    icon: "/src/_includes/svg/piktogrammer/produkter/horselshjelpemidler.svg",
+    type: ["Pengestøtte", "Hjelpemiddel"],
     role: ["Hjelpemiddelformidler"],
     contentBlocks: [
       {
@@ -1216,11 +1180,8 @@ const products = [
   {
     title: "Hjelpemidler til tale og språk",
     ingress: "Hjelpemidler for personer som har utfordringer med tale og språk",
-    icon: "/src/_includes/svg/pictograms/neutral.svg",
-    type: [
-      "Pengestøtte",
-      "Hjelpemiddel",
-    ],
+    icon: "/src/_includes/svg/piktogrammer/produkter/neutral.svg",
+    type: ["Pengestøtte", "Hjelpemiddel"],
     role: ["Hjelpemiddelformidler"],
     contentBlocks: [
       {
@@ -1313,12 +1274,10 @@ Fullmakten gjelder ikke for tilleggsskjemaer som krever underskrift. Der hvor de
   },
   {
     title: "Hjelpemidler for å huske, planlegge og organisere",
-    ingress: "Hjelpemidler for personer med utfordringer med å huske, planlegge og organisere",
-    icon: "/src/_includes/svg/pictograms/neutral.svg",
-    type: [
-      "Pengestøtte",
-      "Hjelpemiddel",
-    ],
+    ingress:
+      "Hjelpemidler for personer med utfordringer med å huske, planlegge og organisere",
+    icon: "/src/_includes/svg/piktogrammer/produkter/neutral.svg",
+    type: ["Pengestøtte", "Hjelpemiddel"],
     role: ["Hjelpemiddelformidler"],
     contentBlocks: [
       {
@@ -1412,12 +1371,8 @@ Fullmakten gjelder ikke for tilleggsskjemaer som krever underskrift. Der hvor de
   {
     title: "Bevegelseshjelpemidler",
     ingress: "Hjelpemidler for personer med motoriske utfordringer.",
-    icon: "/src/_includes/svg/pictograms/neutral.svg",
-    type: [
-      "Pengestøtte",
-      "Hjelpemiddel",
-      "Skjema",
-    ],
+    icon: "/src/_includes/svg/piktogrammer/produkter/neutral.svg",
+    type: ["Pengestøtte", "Hjelpemiddel", "Skjema"],
     role: ["Hjelpemiddelformidler"],
     contentBlocks: [
       {
@@ -1510,14 +1465,9 @@ Fullmakten gjelder ikke for tilleggsskjemaer som krever underskrift. Der hvor de
   {
     title: "Ortopediske hjelpemidler",
     ingress: "Hjelpemidler som ortoser, parykk og proteser.",
-    icon: "/src/_includes/svg/pictograms/ortopediske-sko.svg",
-    type: [
-      "Pengestøtte",
-      "Hjelpemiddel",
-    ],
-    role: [
-      "Hjelpemiddelformidler",
-    ],
+    icon: "/src/_includes/svg/piktogrammer/produkter/ortopediske-sko.svg",
+    type: ["Pengestøtte", "Hjelpemiddel"],
+    role: ["Hjelpemiddelformidler"],
     contentBlocks: [
       {
         type: "markdown",
@@ -1594,14 +1544,9 @@ Fullmakten gjelder ikke for tilleggsskjemaer som krever underskrift. Der hvor de
   {
     title: "Hjelpemidler for å lese og skrive",
     ingress: "Hjelpemidler for personer med lese- og skrivevansker",
-    icon: "/src/_includes/svg/pictograms/neutral.svg",
-    type: [
-      "Pengestøtte",
-      "Hjelpemiddel",
-    ],
-    role: [
-      "Hjelpemiddelformidler",
-    ],
+    icon: "/src/_includes/svg/piktogrammer/produkter/neutral.svg",
+    type: ["Pengestøtte", "Hjelpemiddel"],
+    role: ["Hjelpemiddelformidler"],
     contentBlocks: [
       {
         type: "markdown",
@@ -1694,7 +1639,7 @@ Fullmakten gjelder ikke for tilleggsskjemaer som krever underskrift. Der hvor de
   {
     title: "Meld behov for hjelpemidler",
     ingress: "Kommunalt ansatte kan melde behov om hjelpemidler digitalt.",
-    icon: "/src/_includes/svg/pictograms/slik-gjor-du-det.svg",
+    icon: "/src/_includes/svg/piktogrammer/produkter/slik-gjor-du-det.svg",
     type: ["Hjelpemiddel"],
     role: [
       "Hjelpemiddelformidler",
@@ -1737,12 +1682,9 @@ Fullmakten gjelder ikke for tilleggsskjemaer som krever underskrift. Der hvor de
 
   {
     title: "Hjelpemidler",
-    icon: "/src/_includes/svg/pictograms/neutral.svg",
+    icon: "/src/_includes/svg/piktogrammer/produkter/neutral.svg",
     role: ["Lege, tannlege eller annen behandler"],
-    type: [
-      "Pengestøtte",
-      "Hjelpemiddel",
-    ],
+    type: ["Pengestøtte", "Hjelpemiddel"],
     contentBlocks: [
       {
         type: "markdown",
@@ -1753,7 +1695,7 @@ Fullmakten gjelder ikke for tilleggsskjemaer som krever underskrift. Der hvor de
         Erklæringene legges ved søknaden. Det er ikke egne skjemaer for å gi slike erklæringer.`,
       },
       {
-        type: "line"
+        type: "line",
       },
       {
         type: "markdown",
@@ -1764,7 +1706,7 @@ Fullmakten gjelder ikke for tilleggsskjemaer som krever underskrift. Der hvor de
         Erklæringen legges ved søknaden. Det er ikke egne skjemaer for å gi slike erklæringer.`,
       },
       {
-        type: "line"
+        type: "line",
       },
       {
         type: "markdown",
@@ -1775,7 +1717,7 @@ Fullmakten gjelder ikke for tilleggsskjemaer som krever underskrift. Der hvor de
         Du skriver ut, signerer og stempler erklæringen, og gir den til søkeren slik at de kan legge den ved søknaden.`,
       },
       {
-        type: "line"
+        type: "line",
       },
       {
         type: "markdown",
@@ -1795,10 +1737,10 @@ Fullmakten gjelder ikke for tilleggsskjemaer som krever underskrift. Der hvor de
             href: "/soknad/temp-hjelpemidler-sam.html",
             variant: "primary",
           },
-        ]
+        ],
       },
       {
-        type: "line"
+        type: "line",
       },
       {
         type: "markdown",
@@ -1807,7 +1749,7 @@ Fullmakten gjelder ikke for tilleggsskjemaer som krever underskrift. Der hvor de
         NAV krever legeerklæring første gang en pasient søker om protese. Søkeren legger erklæringen ved søknaden. Det er ikke et eget skjema for å gi slik erklæring.`,
       },
       {
-        type: "line"
+        type: "line",
       },
       {
         type: "markdown",
@@ -1820,7 +1762,7 @@ Fullmakten gjelder ikke for tilleggsskjemaer som krever underskrift. Der hvor de
         Det er ikke egne skjemaer for å gi slike erklæringer.`,
       },
       {
-        type: "line"
+        type: "line",
       },
       {
         type: "markdown",
@@ -1829,7 +1771,7 @@ Fullmakten gjelder ikke for tilleggsskjemaer som krever underskrift. Der hvor de
         NAV krever erklæring fra hørselssentral eller øre-nese-halsspesialist første gang en innbygger søker om tolkehjelp. Det er ikke et eget skjema for å gi en slik erklæring.`,
       },
       {
-        type: "line"
+        type: "line",
       },
       {
         type: "markdown",
@@ -1838,7 +1780,7 @@ Fullmakten gjelder ikke for tilleggsskjemaer som krever underskrift. Der hvor de
         NAV krever erklæring fra hørselssentral eller øre-nese-halsspesialist første gang en innbygger søker om tolke- og ledsagerhjelp. Det er ikke et eget skjema for å gi en slik erklæring.`,
       },
       {
-        type: "line"
+        type: "line",
       },
       {
         type: "markdown",
@@ -1847,7 +1789,7 @@ Fullmakten gjelder ikke for tilleggsskjemaer som krever underskrift. Der hvor de
         NAV krever erklæring fra øyelege eller optiker med diagnose og visus første gang en innbygger søker om lese- og sekretærhjelp. Det er ikke et eget skjema for å gi slik erklæring.`,
       },
       {
-        type: "line"
+        type: "line",
       },
       {
         type: "markdown",
@@ -1856,7 +1798,7 @@ Fullmakten gjelder ikke for tilleggsskjemaer som krever underskrift. Der hvor de
         NAV krever legeerklæring første gang en pasient søker om varmehjelpemidler. Det er ikke et eget skjema for å gi slik erklæring.`,
       },
       {
-        type: "line"
+        type: "line",
       },
       {
         type: "markdown",
@@ -1870,17 +1812,17 @@ Fullmakten gjelder ikke for tilleggsskjemaer som krever underskrift. Der hvor de
           {
             text: "Send søknad",
             href: "#",
-            variant: "primary"
+            variant: "primary",
           },
           {
             text: "Ettersend dokumentasjon",
             href: "#",
-            variant: "secondary"
-          }
-        ]
+            variant: "secondary",
+          },
+        ],
       },
       {
-        type: "line"
+        type: "line",
       },
       {
         type: "markdown",
@@ -1896,12 +1838,12 @@ Fullmakten gjelder ikke for tilleggsskjemaer som krever underskrift. Der hvor de
           {
             text: "Send søknad",
             href: "#",
-            variant: "primary"
+            variant: "primary",
           },
-        ]
+        ],
       },
       {
-        type: "line"
+        type: "line",
       },
       {
         type: "markdown",
@@ -1916,13 +1858,13 @@ Fullmakten gjelder ikke for tilleggsskjemaer som krever underskrift. Der hvor de
           },
         ],
       },
-    ]
+    ],
   },
   {
     title: "Arbeidsforberedende trening",
     ingress:
       "Skjermet og tilrettelagt jobb i en oppstartsfase, før en går over i arbeidstrening hos bedrifter i ordinært arbeidsliv.",
-    icon: "/src/_includes/svg/pictograms/neutral.svg",
+    icon: "/src/_includes/svg/piktogrammer/produkter/neutral.svg",
     type: ["Tiltak"],
     role: ["Tiltaksarrangør"],
     contentBlocks: [
@@ -2002,7 +1944,7 @@ Fullmakten gjelder ikke for tilleggsskjemaer som krever underskrift. Der hvor de
   {
     title: "Varig tilrettelagt arbeid i skjermet virksomhet",
     ingress: "Tilrettelagt jobb i en skjermet bedrift.",
-    icon: "/src/_includes/svg/pictograms/neutral.svg",
+    icon: "/src/_includes/svg/piktogrammer/produkter/neutral.svg",
     type: ["Tiltak"],
     role: ["Tiltaksarrangør"],
     contentBlocks: [
@@ -2082,7 +2024,7 @@ Fullmakten gjelder ikke for tilleggsskjemaer som krever underskrift. Der hvor de
     title: "Arbeidsmarkedsopplæring (AMO)",
     ingress:
       "AMO-kurs eller ordinær utdanning for å bli kvalifisert til ledige jobber.",
-    icon: "/src/_includes/svg/pictograms/neutral.svg",
+    icon: "/src/_includes/svg/piktogrammer/produkter/neutral.svg",
     type: ["Tiltak"],
     role: ["Tiltaksarrangør"],
     contentBlocks: [
@@ -2144,7 +2086,7 @@ Fullmakten gjelder ikke for tilleggsskjemaer som krever underskrift. Der hvor de
   {
     title: "Oppfølging",
     ingress: "Støtte for å klare å skaffe eller beholde en jobb.",
-    icon: "/src/_includes/svg/pictograms/neutral.svg",
+    icon: "/src/_includes/svg/piktogrammer/produkter/neutral.svg",
     type: ["Tiltak"],
     role: ["Tiltaksarrangør"],
     contentBlocks: [
@@ -2205,8 +2147,9 @@ Fullmakten gjelder ikke for tilleggsskjemaer som krever underskrift. Der hvor de
   },
   {
     title: "Avklaring",
-    ingress: "Kartlegging av arbeidsmuligheter og støttebehov for å skaffe eller beholde arbeid.",
-    icon: "/src/_includes/svg/pictograms/neutral.svg",
+    ingress:
+      "Kartlegging av arbeidsmuligheter og støttebehov for å skaffe eller beholde arbeid.",
+    icon: "/src/_includes/svg/piktogrammer/produkter/neutral.svg",
     type: ["Tiltak"],
     role: ["Tiltaksarrangør"],
     contentBlocks: [
@@ -2267,8 +2210,9 @@ Fullmakten gjelder ikke for tilleggsskjemaer som krever underskrift. Der hvor de
   },
   {
     title: "Arbeidsrettet rehabilitering",
-    ingress: "Støtte for sykemeldte og andre som for tiden står utenfor arbeidslivet.",
-    icon: "/src/_includes/svg/pictograms/neutral.svg",
+    ingress:
+      "Støtte for sykemeldte og andre som for tiden står utenfor arbeidslivet.",
+    icon: "/src/_includes/svg/piktogrammer/produkter/neutral.svg",
     type: ["Tiltak"],
     role: ["Tiltaksarrangør"],
     contentBlocks: [
@@ -2330,7 +2274,7 @@ Fullmakten gjelder ikke for tilleggsskjemaer som krever underskrift. Der hvor de
   {
     title: "Deltakeroversikt for tiltaksarrangører",
     ingress: "Hold oversikt over deltakere i tiltakene og dialogen med NAV.",
-    icon: "/src/_includes/svg/pictograms/slik-gjor-du-det.svg",
+    icon: "/src/_includes/svg/piktogrammer/produkter/slik-gjor-du-det.svg",
     type: ["Skjema"],
     role: ["Tiltaksarrangør"],
     contentBlocks: [
@@ -2370,7 +2314,7 @@ Fullmakten gjelder ikke for tilleggsskjemaer som krever underskrift. Der hvor de
   {
     title: "Fullmakt til å søke om hjelpemidler",
     ingress: "Fullmakt i forbindelse med søknad om hjelpemidler",
-    icon: "/src/_includes/svg/pictograms/slik-gjor-du-det.svg",
+    icon: "/src/_includes/svg/piktogrammer/produkter/slik-gjor-du-det.svg",
     type: ["Skjema"],
     role: [
       "Optiker eller øyelege",
@@ -2415,8 +2359,9 @@ Fullmakten gjelder ikke for tilleggsskjemaer som krever underskrift. Der hvor de
   },
   {
     title: "Lønnsgaranti",
-    ingress: "Sikrer blant annet lønn og feriepenger arbeidstaker har til gode når arbeidsgiveren ikke kan betale, for eksempel ved konkurs.",
-    icon: "/src/_includes/svg/pictograms/neutral.svg",
+    ingress:
+      "Sikrer blant annet lønn og feriepenger arbeidstaker har til gode når arbeidsgiveren ikke kan betale, for eksempel ved konkurs.",
+    icon: "/src/_includes/svg/piktogrammer/produkter/neutral.svg",
     type: ["Pengestøtte"],
     role: ["Bostyrer"],
     contentBlocks: [
@@ -2457,7 +2402,7 @@ Fullmakten gjelder ikke for tilleggsskjemaer som krever underskrift. Der hvor de
     title: "Oppfostringsbidrag",
     ingress:
       "Hvis kommunen overtar omsorgen for et barn, kan kommunen kreve et oppfostringsbidrag fra foreldrene hvis de har betalingsevne og det er rimelig ut fra situasjonen.",
-    icon: "/src/_includes/svg/pictograms/slik-gjor-du-det.svg",
+    icon: "/src/_includes/svg/piktogrammer/produkter/slik-gjor-du-det.svg",
     type: ["Pengestøtte"],
     role: ["Ansatt i NAV-kontor, kommunen eller fylkeskommunen"],
     contentBlocks: [
@@ -2498,7 +2443,7 @@ Fullmakten gjelder ikke for tilleggsskjemaer som krever underskrift. Der hvor de
     title: "Oppgjør for ortopediske verksteder",
     ingress:
       "De ortopediske verkstedene som har avtale med NAV, forplikter seg til å levere elektronisk oppgjør.",
-    icon: "/src/_includes/svg/pictograms/slik-gjor-du-det.svg",
+    icon: "/src/_includes/svg/piktogrammer/produkter/slik-gjor-du-det.svg",
     type: ["Skjema"],
     role: ["Hjelpemiddelformidler"],
     contentBlocks: [
@@ -2520,7 +2465,7 @@ Fullmakten gjelder ikke for tilleggsskjemaer som krever underskrift. Der hvor de
           {
             text: "Oppgjør for ortopediske verksteder",
             dot: "bg-green-300",
-            href: "https://www.nav.no/samarbeidspartner/oppgjor-ortopediske-verksteder"
+            href: "https://www.nav.no/samarbeidspartner/oppgjor-ortopediske-verksteder",
           },
         ],
       },
@@ -2530,7 +2475,7 @@ Fullmakten gjelder ikke for tilleggsskjemaer som krever underskrift. Der hvor de
     title: "Opphold i kriminalomsorgen - meld fra",
     ingress:
       "Det er egne regler for å beregne økonomiske ytelser under institusjonsopphold og i fengsel. NAV har derfor behov for rask informasjon fra Kriminalomsorgen når en person kommer i varetekt eller soner en fengselsdom.",
-    icon: "/src/_includes/svg/pictograms/slik-gjor-du-det.svg",
+    icon: "/src/_includes/svg/piktogrammer/produkter/slik-gjor-du-det.svg",
     type: ["Skjema"],
     role: [
       "Ansatt i NAV-kontor, kommunen eller fylkeskommunen",
@@ -2573,7 +2518,7 @@ Fullmakten gjelder ikke for tilleggsskjemaer som krever underskrift. Der hvor de
     title: "Opphold på alders- eller sykehjem - meld fra",
     ingress:
       "Det er viktig at NAV får melding om innleggelse/utskriving ved opphold på alders- og sykehjem da dette kan ha betydning for rettigheter til ytelser eller det kan ha konsekvenser for beregningen av ytelsen eller at ytelsen skal stanses eller reduseres.",
-    icon: "/src/_includes/svg/pictograms/slik-gjor-du-det.svg",
+    icon: "/src/_includes/svg/piktogrammer/produkter/slik-gjor-du-det.svg",
     type: ["Skjema"],
     role: [
       "Andre samarbeidspartnere",
@@ -2616,7 +2561,7 @@ Fullmakten gjelder ikke for tilleggsskjemaer som krever underskrift. Der hvor de
     title: "Innleggelse på helseinstitusjon - meld fra",
     ingress:
       "Det er viktig at helseinstitusjoner melder raskt om personens opphold på helseinstitusjon. Dette har påvirkning på personens ytelser fra NAV, i form av at ytelser kan stanses eller reduseres.",
-    icon: "/src/_includes/svg/pictograms/slik-gjor-du-det.svg",
+    icon: "/src/_includes/svg/piktogrammer/produkter/slik-gjor-du-det.svg",
     type: ["Skjema"],
     role: [
       "Andre samarbeidspartnere",
@@ -2649,11 +2594,9 @@ Fullmakten gjelder ikke for tilleggsskjemaer som krever underskrift. Der hvor de
   {
     title: "Jobbklubb",
     ingress: "Hjelp til aktivt jobbsøk for registrerte arbeidssøkere.",
-    icon: "/src/_includes/svg/pictograms/neutral.svg",
+    icon: "/src/_includes/svg/piktogrammer/produkter/neutral.svg",
     type: ["Tiltak"],
-    role: [
-      "Tiltaksarrangør",
-    ],
+    role: ["Tiltaksarrangør"],
     contentBlocks: [
       {
         type: "markdown",
@@ -2694,11 +2637,11 @@ Fullmakten gjelder ikke for tilleggsskjemaer som krever underskrift. Der hvor de
         ],
       },
       {
-        type: "line"
+        type: "line",
       },
       {
         type: "markdown",
-        data: `### Mer om`
+        data: `### Mer om`,
       },
       {
         type: "microcards",
@@ -2708,7 +2651,7 @@ Fullmakten gjelder ikke for tilleggsskjemaer som krever underskrift. Der hvor de
             dot: "bg-green-300",
           },
         ],
-      }
+      },
     ],
   },
 ];

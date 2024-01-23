@@ -2,7 +2,7 @@ const products = [
   {
     title: "Sykepengeforsikring for selvstendig næringsdrivende",
     ingress: "Forsikring for å få bedre dekning når du blir sykmeldt.",
-    icon: "/src/_includes/svg/pictograms/sykepenger.svg",
+    icon: "/src/_includes/svg/piktogrammer/produkter/sykepenger.svg",
     type: ["Forsikring"],
     area: ["Helse og sykdom"],
     contentBlocks: [
@@ -41,7 +41,7 @@ const products = [
   {
     title: "Sykepengeforsikring for jordbrukere og reindriftsutøvere",
     ingress: "Forsikring for å få bedre dekning når du blir sykmeldt.",
-    icon: "/src/_includes/svg/pictograms/sykepenger.svg",
+    icon: "/src/_includes/svg/piktogrammer/produkter/sykepenger.svg",
     type: ["Forsikring"],
     area: ["Helse og sykdom"],
     contentBlocks: [
@@ -80,7 +80,7 @@ const products = [
   {
     title: "Sykepengeforsikring for frilansere",
     ingress: "Forsikring for å få bedre dekning når du blir sykmeldt.",
-    icon: "/src/_includes/svg/pictograms/neutral.svg",
+    icon: "/src/_includes/svg/piktogrammer/produkter/neutral.svg",
     type: ["Forsikring"],
     area: ["Helse og sykdom"],
     contentBlocks: [
@@ -120,7 +120,7 @@ const products = [
     title: "Frivillig yrkesskadetrygd",
     ingress:
       "En frivillig forsikring for selvstendig næringsdrivende og frilansere.",
-    icon: "/src/_includes/svg/pictograms/neutral.svg",
+    icon: "/src/_includes/svg/piktogrammer/produkter/neutral.svg",
     type: ["Forsikring"],
     area: ["Helse og sykdom"],
     contentBlocks: [
@@ -159,11 +159,8 @@ const products = [
   {
     title: "Forsikring for små bedrifter",
     ingress: "Forsikring mot ansvar for sykepenger i arbeidsgiverperioden.",
-    icon: "/src/_includes/svg/pictograms/neutral.svg",
-    type: [
-      "Forsikring",
-      "Refusjon",
-    ],
+    icon: "/src/_includes/svg/piktogrammer/produkter/neutral.svg",
+    type: ["Forsikring", "Refusjon"],
     area: ["Helse og sykdom"],
     contentBlocks: [
       {
@@ -219,11 +216,8 @@ const products = [
     title: "Tolk på arbeidsplassen",
     ingress:
       "Den som er døv, hørselshemmet eller døvblind kan få tolkehjelp for å kunne utføre arbeidet.",
-    icon: "/src/_includes/svg/pictograms/tegnspraak.svg",
-    type: [
-      "Tjeneste",
-      "Refusjon",
-    ],
+    icon: "/src/_includes/svg/piktogrammer/produkter/tegnspraak.svg",
+    type: ["Tjeneste", "Refusjon"],
     area: ["Inkludering og tilrettelegging"],
     contentBlocks: [
       {
@@ -263,11 +257,8 @@ const products = [
     title: "Funksjonsassistanse i arbeidslivet",
     ingress:
       "Ansatte kan få assistanse til å gjøre praktiske oppgaver når det er nødvendig for å kunne utføre jobben.   ",
-    icon: "/src/_includes/svg/pictograms/neutral.svg",
-    type: [
-      "Tjeneste",
-      "Refusjon",
-    ],
+    icon: "/src/_includes/svg/piktogrammer/produkter/neutral.svg",
+    type: ["Tjeneste", "Refusjon"],
     area: ["Inkludering og tilrettelegging"],
     contentBlocks: [
       {
@@ -323,11 +314,8 @@ const products = [
     title: "Lese- og sekretærhjelp",
     ingress:
       "Den som er blind eller svaksynt kan få lese- og sekretærhjelp når hjelpen er nødvendig for å kunne utføre arbeidet.",
-    icon: "/src/_includes/svg/pictograms/neutral.svg",
-    type: [
-      "Tjeneste",
-      "Refusjon",
-    ],
+    icon: "/src/_includes/svg/piktogrammer/produkter/neutral.svg",
+    type: ["Tjeneste", "Refusjon"],
     area: ["Inkludering og tilrettelegging"],
     contentBlocks: [
       {
@@ -367,7 +355,7 @@ const products = [
     title: "Arbeidstrening",
     ingress:
       "Gir personer som trenger ekstra hjelp muligheten til å få relevant erfaring og etter hvert en fast jobb.",
-    icon: "/src/_includes/svg/pictograms/neutral.svg",
+    icon: "/src/_includes/svg/piktogrammer/produkter/neutral.svg",
     type: ["Tiltak"],
     area: ["Inkludering og tilrettelegging"],
     contentBlocks: [
@@ -408,11 +396,8 @@ const products = [
     title: "Inkluderingstilskudd",
     ingress:
       "Et tilskudd til arbeidsgivere for å tilrettelegge en arbeids- eller tiltaksplass.",
-    icon: "/src/_includes/svg/pictograms/neutral.svg",
-    type: [
-      "Tiltak",
-      "Refusjon",
-    ],
+    icon: "/src/_includes/svg/piktogrammer/produkter/neutral.svg",
+    type: ["Tiltak", "Refusjon"],
     area: ["Inkludering og tilrettelegging"],
     contentBlocks: [
       {
@@ -469,15 +454,9 @@ const products = [
     title: "Dekking av sykepenger i arbeidsgiverperioden",
     ingress:
       "Dekking av sykepenger i arbeidsgiverperioden når en arbeidstaker har en langvarig eller kronisk sykdom som kan føre til hyppige sykefravær, eller sykmelding som henger sammen med graviditet.",
-    icon: "/src/_includes/svg/pictograms/sykepenger.svg",
-    type: [
-      "Tiltak",
-      "Refusjon",
-    ],
-    area: [
-      "Inkludering og tilrettelegging",
-      "Helse og sykdom",
-    ],
+    icon: "/src/_includes/svg/piktogrammer/produkter/sykepenger.svg",
+    type: ["Tiltak", "Refusjon"],
+    area: ["Inkludering og tilrettelegging", "Helse og sykdom"],
     contentBlocks: [
       {
         type: "markdown",
@@ -550,11 +529,8 @@ const products = [
     title: "Mentor",
     ingress:
       "En støtteordning der en medarbeider blir frikjøpt for å gi praktisk hjelp, veiledning og opplæring.",
-    icon: "/src/_includes/svg/pictograms/neutral.svg",
-    type: [
-      "Tiltak",
-      "Refusjon",
-    ],
+    icon: "/src/_includes/svg/piktogrammer/produkter/neutral.svg",
+    type: ["Tiltak", "Refusjon"],
     area: ["Inkludering og tilrettelegging"],
     contentBlocks: [
       {
@@ -611,11 +587,8 @@ const products = [
     title: "Midlertidig lønnstilskudd",
     ingress:
       "Et tilskudd til arbeidsgiveren der NAV dekker en del av lønnen til en arbeidstaker i en periode.",
-    icon: "/src/_includes/svg/pictograms/neutral.svg",
-    type: [
-      "Tiltak",
-      "Refusjon",
-    ],
+    icon: "/src/_includes/svg/piktogrammer/produkter/neutral.svg",
+    type: ["Tiltak", "Refusjon"],
     area: ["Inkludering og tilrettelegging"],
     contentBlocks: [
       {
@@ -672,11 +645,8 @@ const products = [
     title: "Varig lønnstilskudd",
     ingress:
       "En støtteordning der NAV dekker en del av lønnen til en arbeidstaker.",
-    icon: "/src/_includes/svg/pictograms/neutral.svg",
-    type: [
-      "Tiltak",
-      "Refusjon",
-    ],
+    icon: "/src/_includes/svg/piktogrammer/produkter/neutral.svg",
+    type: ["Tiltak", "Refusjon"],
     area: ["Inkludering og tilrettelegging"],
     contentBlocks: [
       {
@@ -733,11 +703,8 @@ const products = [
     title: "Tilskudd til ekspertbistand",
     ingress:
       "Hjelp til arbeidsgiveren og arbeidstakeren fra en nøytral ekspert som har kompetanse på sykefravær og arbeidsmiljø.",
-    icon: "/src/_includes/svg/pictograms/neutral.svg",
-    type: [
-      "Tiltak",
-      "Refusjon",
-    ],
+    icon: "/src/_includes/svg/piktogrammer/produkter/neutral.svg",
+    type: ["Tiltak", "Refusjon"],
     area: ["Inkludering og tilrettelegging"],
     contentBlocks: [
       {
@@ -794,7 +761,7 @@ const products = [
     title: "Tilskudd til sommerjobb",
     ingress:
       "Arbeidsgivere kan søke om tilskudd til sommerjobb for unge arbeidsledige med lite jobberfaring.",
-    icon: "/src/_includes/svg/pictograms/neutral.svg",
+    icon: "/src/_includes/svg/piktogrammer/produkter/neutral.svg",
     type: ["Tiltak"],
     area: ["Inkludering og tilrettelegging"],
     contentBlocks: [
@@ -835,11 +802,8 @@ const products = [
     title: "Varig tilrettelagt arbeid i ordinær bedrift",
     ingress:
       "Personer som har uføretrygd, men har mulighet til å gjøre tilpassede oppgaver, kan få tilrettelagt arbeid gjennom arbeidsgiver.",
-    icon: "/src/_includes/svg/pictograms/neutral.svg",
-    type: [
-      "Tiltak",
-      "Refusjon",
-    ],
+    icon: "/src/_includes/svg/piktogrammer/produkter/neutral.svg",
+    type: ["Tiltak", "Refusjon"],
     area: ["Inkludering og tilrettelegging"],
     contentBlocks: [
       {
@@ -878,7 +842,7 @@ const products = [
     title: "Jobbmestrende oppfølging",
     ingress:
       "Arbeidstrening og oppfølging av ansatte med alvorlige psykiske helseproblemer.",
-    icon: "/src/_includes/svg/pictograms/neutral.svg",
+    icon: "/src/_includes/svg/piktogrammer/produkter/neutral.svg",
     type: ["Tiltak"],
     area: ["Inkludering og tilrettelegging"],
     contentBlocks: [
@@ -919,18 +883,15 @@ const products = [
     title: "NAV Arbeidslivssenter",
     ingress:
       "Virksomheter med høyt sykefravær kan be om støtte og oppfølging fra NAV Arbeidslivssenter.",
-    icon: "/src/_includes/svg/pictograms/neutral.svg",
+    icon: "/src/_includes/svg/piktogrammer/produkter/neutral.svg",
     type: ["Veiledning"],
-    area: [
-      "Rekruttering",
-      "Inkludering og tilrettelegging",
-    ],
+    area: ["Rekruttering", "Inkludering og tilrettelegging"],
   },
   {
     title: "Arbeidsgiverlos",
     ingress:
       "Støtte fra en arbeidsgiverlos skal hindre at ansatte med psykiske helseproblemer faller ut av arbeidslivet.",
-    icon: "/src/_includes/svg/pictograms/neutral.svg",
+    icon: "/src/_includes/svg/piktogrammer/produkter/neutral.svg",
     type: ["Veiledning"],
     area: ["Helse og sykdom"],
     contentBlocks: [
@@ -971,7 +932,7 @@ const products = [
     title: "Kurspakken Sees i morgen!",
     ingress:
       "Skal gi arbeidsgivere, tillitsvalgte og verneombud mer kunnskap om hvordan møte ansatte med psykiske helseproblemer.",
-    icon: "/src/_includes/svg/pictograms/neutral.svg",
+    icon: "/src/_includes/svg/piktogrammer/produkter/neutral.svg",
     type: ["Veiledning"],
     area: ["Helse og sykdom"],
     contentBlocks: [
@@ -1012,7 +973,7 @@ const products = [
     title: "Arbeidsrådgiving ARK (arbeid og helse)",
     ingress:
       "NAV Arbeidsrådgivning veileder om arbeidsmuligheter og tiltak for å komme i arbeid.",
-    icon: "/src/_includes/svg/pictograms/neutral.svg",
+    icon: "/src/_includes/svg/piktogrammer/produkter/neutral.svg",
     type: ["Veiledning"],
     area: ["Helse og sykdom"],
     contentBlocks: [
@@ -1022,16 +983,16 @@ const products = [
           {
             text: "Knappetekst",
             href: "/soknad/temp-arbeidsradgiving-ark-arbeid-og-helse-arb.html",
-            variant: "primary"
-          }
-        ]
-      }
-    ]
+            variant: "primary",
+          },
+        ],
+      },
+    ],
   },
   {
     title: "Yrkesskade eller yrkessykdom - meld fra til NAV",
     ingress: "Send skademelding om arbeidsulykker eller yrkessykdommer.",
-    icon: "/src/_includes/svg/pictograms/slik-gjor-du-det.svg",
+    icon: "/src/_includes/svg/piktogrammer/produkter/slik-gjor-du-det.svg",
     type: ["Skjema"],
     area: ["Helse og sykdom"],
     contentBlocks: [
@@ -1140,7 +1101,7 @@ const products = [
     title: "AA-registeret",
     ingress:
       "AA-registeret forteller hvilke arbeidstakere som er ansatt hos hvilke arbeidsgivere.",
-    icon: "/src/_includes/svg/pictograms/slik-gjor-du-det.svg",
+    icon: "/src/_includes/svg/piktogrammer/produkter/slik-gjor-du-det.svg",
     type: ["Skjema"],
     area: ["Annet"],
     contentBlocks: [
@@ -1265,7 +1226,7 @@ const products = [
     title: "Medlemskap i folketrygden for utsendte arbeidstakere",
     ingress:
       "Når ansatte skal på oppdrag i utlandet, kan de i visse tilfeller beholde medlemskap i folketrygden.",
-    icon: "/src/_includes/svg/pictograms/slik-gjor-du-det.svg",
+    icon: "/src/_includes/svg/piktogrammer/produkter/slik-gjor-du-det.svg",
     type: ["Skjema"],
     area: ["Annet"],
     contentBlocks: [
@@ -1328,7 +1289,7 @@ const products = [
     title: "Permittere",
     ingress:
       "Skal du permittere ansatte, melder du fra til NAV så tidlig som mulig.",
-    icon: "/src/_includes/svg/pictograms/slik-gjor-du-det.svg",
+    icon: "/src/_includes/svg/piktogrammer/produkter/slik-gjor-du-det.svg",
     type: ["Skjema"],
     area: ["Permittering og nedbemanning"],
     contentBlocks: [
@@ -1386,7 +1347,7 @@ const products = [
     title: "Meld fra om nedbemanning",
     ingress:
       "Hvis du vurderer eller skal si opp ansatte, skal du så tidlig som mulig sende melding til NAV.",
-    icon: "/src/_includes/svg/pictograms/slik-gjor-du-det.svg",
+    icon: "/src/_includes/svg/piktogrammer/produkter/slik-gjor-du-det.svg",
     type: ["Skjema"],
     area: ["Permittering og nedbemanning"],
     contentBlocks: [
@@ -1444,7 +1405,7 @@ const products = [
     title: "Kontonummer for bedriften - slik endrer du",
     ingress:
       "NAV bruker bankkontonummeret ved refusjon av sykepenger, foreldrepenger, stønader ved barns sykdom, pleie-, opplærings- og omsorgspenger og tilskudd til sommerjobb.",
-    icon: "/src/_includes/svg/pictograms/slik-gjor-du-det.svg",
+    icon: "/src/_includes/svg/piktogrammer/produkter/slik-gjor-du-det.svg",
     type: ["Skjema"],
     area: ["Annet"],
     contentBlocks: [
@@ -1485,7 +1446,7 @@ const products = [
     title: "Inntektsmelding - send inn",
     ingress:
       "Arbeidsgivere må sende digitale inntektsmeldinger til NAV i tide.",
-    icon: "/src/_includes/svg/pictograms/slik-gjor-du-det.svg",
+    icon: "/src/_includes/svg/piktogrammer/produkter/slik-gjor-du-det.svg",
     type: ["Skjema"],
     area: ["Annet"],
     contentBlocks: [
@@ -1526,7 +1487,7 @@ const products = [
     title: "Utleggstrekk fra NAV Innkreving",
     ingress:
       "Som arbeidsgiver er du pliktig til å gjennomføre trekk i lønn i henhold til tilsendt trekkpålegg fra NAV Innkreving.",
-    icon: "/src/_includes/svg/pictograms/slik-gjor-du-det.svg",
+    icon: "/src/_includes/svg/piktogrammer/produkter/slik-gjor-du-det.svg",
     type: ["Skjema"],
     area: ["Annet"],
     contentBlocks: [
@@ -1567,11 +1528,8 @@ const products = [
     title: "Foreldrepenger",
     ingress:
       "Foreldrepengene skal erstatte inntekten til arbeidstaker i forbindelse med fødsel eller adopsjon.",
-    icon: "/src/_includes/svg/pictograms/foreldrepenger.svg",
-    type: [
-      "Pengestøtte til ansatt",
-      "Refusjon",
-    ],
+    icon: "/src/_includes/svg/piktogrammer/produkter/foreldrepenger.svg",
+    type: ["Pengestøtte til ansatt", "Refusjon"],
     area: ["Helse og sykdom"],
     contentBlocks: [
       {
@@ -1628,11 +1586,8 @@ const products = [
     title: "Svangerskapspenger",
     ingress:
       "Ansatte som ikke kan fortsette å jobbe under svangerskapet fordi det kan medføre risiko for barnet, kan få svangerskapspenger.",
-    icon: "/src/_includes/svg/pictograms/svangerskapspenger.svg",
-    type: [
-      "Pengestøtte til ansatt",
-      "Refusjon",
-    ],
+    icon: "/src/_includes/svg/piktogrammer/produkter/svangerskapspenger.svg",
+    type: ["Pengestøtte til ansatt", "Refusjon"],
     area: ["Helse og sykdom"],
     contentBlocks: [
       {
@@ -1689,11 +1644,8 @@ const products = [
     title: "Pleiepenger for sykt barn",
     ingress:
       "Refusjon for utbetalt lønn når en ansatt må være borte fra jobb for å pleie et barn som har vært innlagt eller til behandling på sykehus.",
-    icon: "/src/_includes/svg/pictograms/pleiepenger-sykt-barn.svg",
-    type: [
-      "Pengestøtte til ansatt",
-      "Refusjon",
-    ],
+    icon: "/src/_includes/svg/piktogrammer/produkter/pleiepenger-sykt-barn.svg",
+    type: ["Pengestøtte til ansatt", "Refusjon"],
     area: ["Helse og sykdom"],
     contentBlocks: [
       {
@@ -1751,11 +1703,8 @@ const products = [
     title: "Pleiepenger for utviklingshemmet person over 18 år",
     ingress:
       "Refusjon for lønn når en arbeidstaker må være borte fra jobb for å være sammen med en utviklingshemmet og svært alvorlig syk person over 18 år.",
-    icon: "/src/_includes/svg/pictograms/pleiepenger-utviklingshemmet.svg",
-    type: [
-      "Pengestøtte til ansatt",
-      "Refusjon",
-    ],
+    icon: "/src/_includes/svg/piktogrammer/produkter/pleiepenger-utviklingshemmet.svg",
+    type: ["Pengestøtte til ansatt", "Refusjon"],
     area: ["Helse og sykdom"],
     contentBlocks: [
       {
@@ -1813,11 +1762,8 @@ const products = [
     title: "Pleiepenger i livets sluttfase",
     ingress:
       "Refusjon for utbetalt lønn når en ansatt må være borte fra jobb for å ta vare på en person som er i livets sluttfase.",
-    icon: "/src/_includes/svg/pictograms/pleiepenger-livets-sluttfase.svg",
-    type: [
-      "Pengestøtte til ansatt",
-      "Refusjon",
-    ],
+    icon: "/src/_includes/svg/piktogrammer/produkter/pleiepenger-livets-sluttfase.svg",
+    type: ["Pengestøtte til ansatt", "Refusjon"],
     area: ["Helse og sykdom"],
     contentBlocks: [
       {
@@ -1875,11 +1821,8 @@ const products = [
     title: "Opplæringspenger",
     ingress:
       "Refusjon for utbetalt lønn når en ansatt må være borte fra jobb for å få opplæring for et barn eller en voksen som har en funksjonshemning eller langvarig sykdom.",
-    icon: "/src/_includes/svg/pictograms/opplaeringspenger.svg",
-    type: [
-      "Pengestøtte til ansatt",
-      "Refusjon",
-    ],
+    icon: "/src/_includes/svg/piktogrammer/produkter/opplaeringspenger.svg",
+    type: ["Pengestøtte til ansatt", "Refusjon"],
     area: ["Helse og sykdom"],
     contentBlocks: [
       {
@@ -1937,11 +1880,8 @@ const products = [
     title: "Omsorgspenger",
     ingress:
       "Refusjon for utbetalt lønn ved omsorgsdager («hjemme med sykt barn-dager»).",
-    icon: "/src/_includes/svg/pictograms/omsorgspenger.svg",
-    type: [
-      "Pengestøtte til ansatt",
-      "Refusjon",
-    ],
+    icon: "/src/_includes/svg/piktogrammer/produkter/omsorgspenger.svg",
+    type: ["Pengestøtte til ansatt", "Refusjon"],
     area: ["Helse og sykdom"],
     contentBlocks: [
       {
@@ -1999,11 +1939,8 @@ const products = [
     title: "Sykepenger",
     ingress:
       "Erstatter inntekten til arbeidstakeren når de ikke kan jobbe på grunn av sykdom eller skade.",
-    icon: "/src/_includes/svg/pictograms/sykepenger.svg",
-    type: [
-      "Pengestøtte til ansatt",
-      "Refusjon",
-    ],
+    icon: "/src/_includes/svg/piktogrammer/produkter/sykepenger.svg",
+    type: ["Pengestøtte til ansatt", "Refusjon"],
     area: ["Helse og sykdom"],
     contentBlocks: [
       {
@@ -2078,11 +2015,8 @@ const products = [
     title: "Reisetilskudd",
     ingress:
       "Ansatte kan få reisetilskudd i stedet for sykepenger hvis det gjør at den ansatte kan være helt eller delvis i arbeid.",
-    icon: "/src/_includes/svg/pictograms/neutral.svg",
-    type: [
-      "Pengestøtte til ansatt",
-      "Refusjon",
-    ],
+    icon: "/src/_includes/svg/piktogrammer/produkter/neutral.svg",
+    type: ["Pengestøtte til ansatt", "Refusjon"],
     area: ["Helse og sykdom"],
     contentBlocks: [
       {
@@ -2121,7 +2055,7 @@ const products = [
     title: "Dagpenger",
     ingress:
       "Personer som har blitt permittert eller arbeidsledig kan ha rett til dagpenger.",
-    icon: "/src/_includes/svg/pictograms/dagpenger.svg",
+    icon: "/src/_includes/svg/piktogrammer/produkter/dagpenger.svg",
     type: ["Pengestøtte til ansatt"],
     area: ["Permittering og nedbemanning"],
     contentBlocks: [
@@ -2198,7 +2132,7 @@ const products = [
     title: "Lønnsgaranti",
     ingress:
       "Lønnsgarantien skal sikre at den ansatte får utbetalt lønn, feriepenger og annen betaling for arbeid den har til gode når arbeidsgiveren ikke kan betale ved for eksempel konkurs.",
-    icon: "/src/_includes/svg/pictograms/neutral.svg",
+    icon: "/src/_includes/svg/piktogrammer/produkter/neutral.svg",
     type: ["Pengestøtte til ansatt"],
     area: ["Permittering og nedbemanning"],
     contentBlocks: [
@@ -2238,7 +2172,7 @@ const products = [
   {
     title: "Fakturaspesifikasjon for pensjonsytelser",
     ingress: "Spesifikasjon til faktura for pensjonsytelser fra NAV",
-    icon: "/src/_includes/svg/pictograms/slik-gjor-du-det.svg",
+    icon: "/src/_includes/svg/piktogrammer/produkter/slik-gjor-du-det.svg",
     type: ["Skjema"],
     area: ["Annet"],
     contentBlocks: [
@@ -2279,7 +2213,7 @@ const products = [
     title: "Skatteoppgjørsrapport til kemnere",
     ingress:
       "T09 Skatteoppgjørsrapport går til alle landets kemnere. Det er ca 435, én i hver kommune. Rapporten produseres annen hver måned. Rapporten brukes som dokumentasjon av uttrekk fra NAV.",
-    icon: "/src/_includes/svg/pictograms/slik-gjor-du-det.svg",
+    icon: "/src/_includes/svg/piktogrammer/produkter/slik-gjor-du-det.svg",
     type: ["Skjema"],
     area: ["Annet"],
     contentBlocks: [
@@ -2320,7 +2254,7 @@ const products = [
     title: "Trekkoppgjørsrapport",
     ingress:
       "T14 Trekkoppgjørsrapport går til alle landets kreditorer som har trekk i NAVsine brukeres ytelser (inkassobyråer, NAVI og andre). Rapporten brukes som dokumentasjon av uttrekk fra NAV.",
-    icon: "/src/_includes/svg/pictograms/slik-gjor-du-det.svg",
+    icon: "/src/_includes/svg/piktogrammer/produkter/slik-gjor-du-det.svg",
     type: ["Skjema"],
     area: ["Annet"],
     contentBlocks: [
@@ -2361,7 +2295,7 @@ const products = [
     title: "Oppgjørsrapport",
     ingress:
       "Oppgjørsrapport (K27) fra NAV for refusjon av sykepenger, feriepenger, adopsjons- eller fødselspenger.",
-    icon: "/src/_includes/svg/pictograms/slik-gjor-du-det.svg",
+    icon: "/src/_includes/svg/piktogrammer/produkter/slik-gjor-du-det.svg",
     type: ["Skjema"],
     area: ["Annet"],
     contentBlocks: [
@@ -2402,7 +2336,7 @@ const products = [
     title: "Arbeidsgivertjenester - få tilgang",
     ingress:
       "For å få tilgang til NAVs tjenester til arbeidsgiver må du ha blitt tildelt nødvendige Altinn-rettigheter av din arbeidsgiver. Administrator for Altinn i virksomheten er ofte daglig leder, men det kan også være andre.",
-    icon: "/src/_includes/svg/pictograms/slik-gjor-du-det.svg",
+    icon: "/src/_includes/svg/piktogrammer/produkter/slik-gjor-du-det.svg",
     type: ["Skjema"],
     area: ["Annet"],
     contentBlocks: [
@@ -2443,7 +2377,7 @@ const products = [
     title: "Trekkhendelser til kemner og namsmann",
     ingress:
       "Rapporten viser en oversikt over innsendte trekk der det ikke er noen ytelse å trekke i, samt der det ikke har vært foretatt trekk i et gitt antall dager.",
-    icon: "/src/_includes/svg/pictograms/slik-gjor-du-det.svg",
+    icon: "/src/_includes/svg/piktogrammer/produkter/slik-gjor-du-det.svg",
     type: ["Skjema"],
     area: ["Annet"],
     contentBlocks: [
@@ -2484,7 +2418,7 @@ const products = [
     title: "Refusjoner fra NAV ved virksomhetsoverdragelser",
     ingress:
       "Når en arbeidstaker bytter virksomhet, må virksomhetene sørge for at refusjoner fra NAV fortsatt kan komme fram til riktig mottaker.",
-    icon: "/src/_includes/svg/pictograms/slik-gjor-du-det.svg",
+    icon: "/src/_includes/svg/piktogrammer/produkter/slik-gjor-du-det.svg",
     type: ["Skjema"],
     area: ["Annet"],
     contentBlocks: [
