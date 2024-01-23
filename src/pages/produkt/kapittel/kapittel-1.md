@@ -58,13 +58,16 @@ Pleiepengene kan fordeles mellom to omsorgspersoner, når begge har rett til ple
 
 I noen tilfeller kan to omsorgspersoner få opptil 100 prosent pleiepenger hver. Legen vurderer om dette er medisinsk nødvendig, og NAV vurderer om det kan gis 100% pleiepenger for to omsorgspersoner.
 
-Når et barn er innlagt på sykehus har begge foreldre som hovedregel rett til 100% pleiepenger, hvis de er til stede for barnet på sykehuset.
+Når et barn er innlagt på sykehus har begge foreldre som hovedregel rett til 100% pleiepenger, hvis de er til stedefor barnet på sykehuset.
 
 ### Situasjoner som ikke gir rett til pleiepenger
 
-Sykdom som luftveisinfeksjoner, omgangssyke og liknende, vil normalt ikke gi rett til pleiepenger. Da kan omsorgspenger for bruk av omsorgsdager ("hjemme med sykt barn dager") være aktuelt.
+Sykdom som luftveisinfeksjoner, omgangssyke og liknende, vil normalt ikke gi rett til pleiepenger. Da kan omsorgspenger for bruk av [omsorgsdager (hjemme med sykt barn dager)](#) være aktuelt.
 
-[Omsorgspenger](#)
+<!-- <article class="relative px-6 py-4 rounded-lg bg-slate-100 has-[a:hover]:bg-slate-200">
+  <a class="text-lg font-semibold before:absolute before:inset-0" href="#">Omsorgspenger (hjemme med sykt barn-dager)</a>
+  <p>Sikrer deg inntekt når du må være borte fra jobb fordi barnet ditt for eksempel har omgangssyke.</p>
+</article> -->
 
 Hvis sykdommen likevel blir så alvorlige at barnet behandles på sykehus, kan du ha rett på pleiepenger.
 

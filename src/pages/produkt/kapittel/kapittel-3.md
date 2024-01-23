@@ -131,9 +131,7 @@ Hvis du er uenig i svaret på klagen din fra NAV klageinstans, kan du med noen u
   <a class="button button--secondary" href="#">Ettersend dokumentasjon</a>
 </div>
 
-Du kan også bruke advokat eller gi fullmakt til en person som klager på dine vegne.
-
-[Les mer om dine klagerettigheter](#)
+Du kan også bruke advokat eller gi fullmakt til en person som klager på dine vegne. [Les mer om dine klagerettigheter](#).
 
 <details class="expander">
   <summary>

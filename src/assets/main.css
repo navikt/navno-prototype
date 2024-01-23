@@ -20,10 +20,7 @@
   body {
     @apply text-gray-800;
   }
-  :where(h1, h2, h3, h4, h5) {
-    @apply text-gray-900 text-pretty;
-  }
-  a {
+  * {
     text-decoration-thickness: 0.0625rem;
     text-underline-offset: 0.125rem;
   }
@@ -36,6 +33,9 @@
   :where(.prose) > *:not(summary) + * {
     margin-block-start: 1.5em;
   }
+  :where(.prose) :where(h1, h2, h3, h4, h5) {
+    @apply text-gray-900 text-pretty;
+  }
   :where(.prose) h3 {
     @apply text-xl/snug text-pretty font-bold;
   }
@@ -43,7 +43,7 @@
     @apply text-lg/snug text-pretty font-bold;
   }
   :where(.prose) :where(h3, h4) + *:not(h3, h4, ul, ol, details) {
-    @apply mt-1.5;
+    margin-block-start: 0.125em;
   }
   :where(.prose) ul {
     @apply list-disc pl-6;
@@ -70,7 +70,7 @@
     @apply border-t border-slate-300;
   }
   :where(.prose) > table :where(thead th) {
-    @apply font-bold;
+    @apply font-semibold text-sm;
   }
   :where(.prose) > table :where(tbody th) {
     @apply font-[375];
@@ -80,10 +80,10 @@
 
   /* Table of contents (toc) */
   .toc ol {
-    @apply max-w-md grid gap-1;
+    @apply max-w-md grid gap-1.5;
   }
   .toc li {
-    @apply py-1.5 relative leading-snug;
+    @apply pt-1.5 pb-1 relative leading-snug;
   }
   .toc--sticky li {
     @apply border-l-4 border-transparent px-3;
@@ -197,7 +197,7 @@
     display: flex;
     align-items: center;
     list-style: none;
-    padding: 0.75em 12px 0.75em 40px;
+    padding: 0.75em 12px 0.625em 40px;
     margin-inline: -40px;
     border-radius: theme(borderRadius.lg);
     cursor: pointer;
@@ -227,18 +227,21 @@
     flex-shrink: 0;
     place-items: center;
     align-self: baseline;
-    transform: translateY(1px);
     translate: 0 4px;
-    margin-inline: -28px 8px;
+    margin-inline: -27px 6px;
     transition: rotate 150ms;
+    transform: translateY(1px);
     width: 20px;
     height: 20px;
   }
   :where(.expander[open]) summary:before {
-    transform: translateY(2px) rotate(-180deg);
+    transform: translateY(1px) rotate(-180deg);
   }
   :where(.expander) summary > * {
     text-wrap: pretty;
+  }
+  :where(.expander) summary span {
+    transform: translateY(-1px);
   }
 
 
@@ -318,6 +321,6 @@
     width: clamp(4rem, 3.875rem + 0.625vw, 4.5rem);
   }
   .bg-dotted-x {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='5' height='1' fill='none' viewBox='0 0 5 1'%3E%3Ccircle cx='.5' cy='.5' r='.5' fill='%23777'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='5' height='1' fill='none' viewBox='0 0 5 1'%3E%3Ccircle cx='.5' cy='.5' r='.5' fill='%23555'/%3E%3C/svg%3E");
   }
 }

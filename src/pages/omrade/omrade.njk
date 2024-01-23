@@ -14,15 +14,18 @@ alpine: true
       </div>
     </div>
     <div class="mt-12 col-wide">
-      <ul class="grid gap-2 -mx-8 md:gap-4 md:grid-cols-2 text-pretty">
+      <ul class="grid gap-2 md:gap-4 md:grid-cols-2 text-pretty">
         {%- for item in situationList -%}
           <li class="relative flex flex-col">
-            <div class="flex flex-col justify-start flex-1 px-8 py-6 rounded-lg bg-slate-100 aspect-[5/2] gap-1">
-              <h3 class="text-lg font-bold leading-snug">
-                <a class="text-blue-600 underline hover:text-blue-500 hover:no-underline after:absolute after:inset-0" href="#">{{ item.title | safe }}</a>
-              </h3>
-              <p>{{ item.description | safe }}</p>
-              {# <p class="pt-8 mt-auto text-sm tracking-widest uppercase">{{ item.category }}</p> #}
+            <div class="flex  flex-1 px-6 py-5 rounded-lg bg-slate-100 aspect-[5/2] gap-6">
+              <div class="flex-col justify-start">
+                <h3 class="text-lg font-bold leading-snug">
+                  <a class="text-blue-600 underline text-balance hover:text-blue-500 hover:no-underline after:absolute after:inset-0" href="#">{{ item.title | safe }}</a>
+                </h3>
+                <p>{{ item.description | safe }}</p>
+                <p class="pt-8 mt-auto text-sm tracking-widest uppercase text-balance">{{ item.category }}</p>
+              </div>
+              {{ item.icon | svgContents('shrink-0 w-16 aspect-square') | safe if item.icon }}
             </div>
           </li>
         {%- endfor -%}

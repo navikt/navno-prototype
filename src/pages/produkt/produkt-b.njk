@@ -20,7 +20,7 @@ permalink: 'produkt/b/index.html'
 {%- block content -%}
 
   <main class="grid py-16 grid-cols-mini lg:grid-cols-maxi">
-    <div class="col-wide">
+    <div class="col-main lg:col-wide">
       <div class="text-sm tracking-widest uppercase">{{ type | safe }}</div>
       <h1 class="mt-2 font-bold text-4xl/tight text-balance">{{ title | safe }}</h1>
 
@@ -40,13 +40,13 @@ permalink: 'produkt/b/index.html'
       <h2 class="text-base font-semibold">Innhold på siden</h2>
       <ul class="grid gap-6 mt-5">
         {% for chapter in collections.kapittel %}
-        <li class="relative grid grid-cols-[auto_1fr_auto] items-baseline  gap-x-2 gap-y-1">
-          <a class="inline-block col-start-1 row-start-1 p-2 -m-2 font-semibold text-blue-600 underline text-base/snug hover:no-underline peer" href="#{{ chapter.data.title | slugify }}">
-            {{ chapter.data.title }}
+        <li class="relative">
+          <a class="flex items-end gap-3 p-1 -m-1 font-semibold text-base/snug group" href="#{{ chapter.data.title | slugify }}">
+            <span class="text-blue-500 underline group-hover:no-underline group-hover:text-blue-700">{{ chapter.data.title }}</span>
+            <span class="flex-1 h-px min-w-4 -translate-y-[0.25em] bg-dotted-x" aria-hidden="true"></span>
+            <span class="grid w-[1.625em] col-start-3 leading-none text-center transition-colors duration-300 rounded-full place-items-center group-hover:bg-blue-500 group-hover:text-white aspect-square bg-slate-100" aria-hidden="true">{{ loop.index }}</span>
           </a>
-          <span class="self-end h-px col-start-2 row-start-1 -translate-y-[0.375em] bg-dotted-x gap-y-1" aria-hidden="true"></span>
-          <span class="grid w-8 col-start-3 leading-none text-center transition-colors duration-300 rounded-full place-items-center peer-hover:bg-blue-500 peer-hover:text-white aspect-square bg-slate-100" aria-hidden="true">{{ loop.index }}</span>
-          <p class="col-start-1 col-end-3 pr-4 text-pretty opacity-85">{{ chapter.data.description | safe }}</p>
+          <p class="pr-4 mt-1.5 text-pretty opacity-85">{{ chapter.data.description | safe }}</p>
         </li>
         {% endfor %}
       </ul>
@@ -59,21 +59,23 @@ permalink: 'produkt/b/index.html'
     {% for chapter in chapters %}
       {% set chapterIndex = loop.index %}
       <section class="grid items-start pt-12 col-full grid-cols-mini lg:grid-cols-maxi" id="{{ chapter.data.title | slugify }}"  x-data="{ tocOpen: false }">
-        <div class="col-main">
-          <div class="text-[20em]/[0.8] -translate-x-2 font-black text-slate-200 pt-2xl">{{ loop.index }}</div>
-          <h2 class="font-bold text-3xl/snug text-balance">{{ chapter.data.title }}</h2>
+        <div class=" col-main lg:col-wide">
+          <div class="grid items-end pl-8 rounded-lg bg-slate-100 pt-2xl aspect-[2/1]">
+            <span class="font-black -mb-9 text-white text-[20em]/[0.8]">{{ loop.index }}</span>
+          </div>
+          <h2 class="mt-8 font-bold text-3xl/snug text-balance">{{ chapter.data.title }}</h2>
         </div>
 
         {# Chapter TOC #}
         {% if chapter.templateContent %}
-        <nav class="py-4 mt-2 lg:sticky lg:order-1 toc toc--b toc--sticky lg:col-side lg:top-6">
+        <nav class="lg:sticky lg:order-1 toc toc--b toc--sticky lg:col-side lg:top-6">
           <h3 class="py-2 font-semibold">I dette kapittelet</h3>
           {{ chapter.templateContent | toc | safe }}
         </nav>
         {% endif %}
 
         {# Main Content #}
-        <div class="mt-8 prose col-main">
+        <div class="mt-2 prose col-main">
           <p>{{ chapter.data.description | safe }}</p>
 
           {{ chapter.templateContent | markdown | safe }}
@@ -81,7 +83,7 @@ permalink: 'produkt/b/index.html'
       </section>
     {% endfor %}
 
-    <div class="pt-2 mt-12 text-sm italic border-t border-slate-200 col-wide">{{ published | safe }}</div>
+    <div class="pt-2 mt-12 text-sm italic border-t border-slate-200 col-main">{{ published | safe }}</div>
   </main>
 {%- endblock -%}
 
@@ -102,7 +104,7 @@ permalink: 'produkt/b/index.html'
         currentActive[i].classList.remove('active');
       }
       navItems[index].classList.add('active');
-    }
+    };
 
     const intersectionCallback = (entries, observer) => {
       if (entries[0].intesectionRatio <= 0)
@@ -115,14 +117,14 @@ permalink: 'produkt/b/index.html'
 
     const intersectionOptions = {
       threshold: 1,
-      rootMargin: '-10% 0px -50% 0px'
+      rootMargin: '5% 0px -65% 0px'
     };
 
     const intersectionObserver = new IntersectionObserver(intersectionCallback, intersectionOptions);
 
     for (let i = 0; i < headings.length; i++) {
       intersectionObserver.observe(headings[i]);  
-    }
+    };
 
   </script>
 {% endblock %}

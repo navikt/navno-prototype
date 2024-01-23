@@ -207,7 +207,7 @@ module.exports = {
           "0%": {
             transform: "translateY(-1rem)",
           },
-          "0%, 20%": {
+          "0%, 10%": {
             opacity: "0",
           },
           "100%": {
@@ -229,7 +229,7 @@ module.exports = {
           to: { transform: "translate3d(0, 0, 0)" },
         },
         "fade-in": {
-          "0%, 15%": {
+          "0%, 20%": {
             opacity: 0,
           },
           "100%": {
