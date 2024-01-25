@@ -35,7 +35,7 @@
           aria-expanded="false">
           {{ '/src/_includes/svg/icons/globe.svg' | svgContents('flex-none w-5 h-5') | safe }}
           <span>Språk/Language</span>
-          <span class="hidden xs:inline" aria-hidden="true">: {{ site.language[0].short }}</span>
+          <span class="hidden xs:inline sm:hidden" aria-hidden="true">: {{ site.language[0].short }}</span>
           <span class="hidden sm:inline">: {{ site.language[0].full }}</span>
           {{ '/src/_includes/svg/icons/chevron-down.svg' | svgContents('w-5 h-5 ml-1.5 -translate-y-px') | safe }}
         </button>
