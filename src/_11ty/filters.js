@@ -38,12 +38,15 @@ const sortStringLast = (array, string) => {
   });
 }
 
-const console = (value) => {
-  return util.inspect(value);
-};
-
 const lowerfirst = (value) => {
   return value.charAt(0).toLowerCase() + value.slice(1);
+};
+
+const onlyTags = (collection = [], ...tags) => {
+  return collection.filter((post) => {
+    const commonTags = tags.filter((tag) => post.data.tags?.includes(tag));
+    return tags.length === commonTags.length;
+  });
 };
 
 module.exports = {
@@ -52,6 +55,6 @@ module.exports = {
   filterByArray,
   extractTags,
   sortStringLast,
-  console,
   lowerfirst,
+  onlyTags,
 };
