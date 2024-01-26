@@ -1,6 +1,6 @@
 ---
 tags: ['produkt']
-permalink: 'produkt/sykepenger/index.html'
+permalink: 'produkt/alderspensjon/index.html'
 ---
 {%- extends 'base.njk' -%}
 
@@ -10,7 +10,7 @@ permalink: 'produkt/sykepenger/index.html'
 
 {%- block content -%}
 
-  {% set chapters = collections.all| onlyTags('sykepenger', 'innhold') %}
+  {% set chapters = collections.all| onlyTags('alderspensjon', 'innhold') %}
 
   <main class="grid py-16 grid-cols-mini lg:grid-cols-maxi">
     <div class="col-main lg:col-wide">
