@@ -27,6 +27,9 @@
   strong {
     font-weight: 650;
   }
+  b {
+    font-weight: 500;
+  }
 }
 
 @layer components {

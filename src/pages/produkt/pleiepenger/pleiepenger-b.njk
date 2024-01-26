@@ -1,15 +1,7 @@
 ---
 tags: ['produkt']
-title: 'Pleiepenger for sykt barn'
-// title: 'Tilskudd til kjøp av PC eller nettbrett ved lese- og skrivevansker'
-type: 'Pengestøtte'
 variant: 'B'
-audience: 'Arbeidsgiver'
-intro: 'Sikrer deg inntekt under fravær fra jobb når du må pleie og ta vare på et barn som har vært innlagt eller er til behandling på sykehus.'
-published: 'Oppdatert 18. desember 2023'
-order: 4
-alpine: true
-permalink: 'produkt/b/index.html'
+permalink: 'produkt/pleiepenger/b/index.html'
 ---
 {%- extends 'base.njk' -%}
 
@@ -18,6 +10,8 @@ permalink: 'produkt/b/index.html'
 {%- from "macros/tile.njk" import tile -%}
 
 {%- block content -%}
+
+{% set chapters = collections.all| onlyTags('pleiepenger', 'innhold') %}
 
   <main class="grid py-16 grid-cols-mini lg:grid-cols-maxi">
     <div class="col-main lg:col-wide">
@@ -37,7 +31,7 @@ permalink: 'produkt/b/index.html'
     <div class="z-10 mt-12 isolate">
       <h2 class="text-base font-semibold">Innhold på siden</h2>
       <ul class="grid gap-6 mt-5">
-        {% for chapter in collections.kapittel.slice(0, -1) %}
+        {% for chapter in chapters.slice(0, -1) %}
         <li class="relative">
           <a class="flex items-end gap-3 p-1 -m-1 font-semibold text-base/snug group" href="#{{ chapter.data.title | slugify }}">
             <span class="text-blue-500 underline group-hover:no-underline group-hover:text-blue-700">{{ chapter.data.title }}</span>
@@ -52,8 +46,6 @@ permalink: 'produkt/b/index.html'
 
 
     {# Innhold #}
-    {% set chapters = collections.kapittel %}
-
     {% for chapter in chapters %}
       {% set chapterIndex = loop.index %}
       <section class="grid pt-12 col-full grid-cols-mini lg:grid-cols-maxi" id="{{ chapter.data.title | slugify }}"  x-data="{ tocOpen: false }">
