@@ -73,8 +73,6 @@
           <span class="mt-px">Logg inn</span>
         </button>
 
-        {%- include "partials/login.njk" -%}
-
         <button class="{{ menuButtonClasses }}" x-on:click="notifyOpen = !notifyOpen, menuOpen = false" x-bind:class="notifyOpen && 'bg-deepblue-50'" x-show="loggedIn" x-bind:aria-expanded="notifyOpen">
           <span class="relative">
             {{ '/src/_includes/svg/icons/person-circle.svg' | svgContents('w-6 h-6 sm:w-7 sm:h-7 shrink-0 pointer-events-none') | safe }}
@@ -83,8 +81,6 @@
           <span class="mt-px sm:hidden">Min side</span>
           <span class="hidden mt-px sm:inline-block">Isac Norland</span>
         </button>
-
-        {%- include "partials/minSide.njk" -%}
 
         <span class="self-stretch hidden w-px my-2 bg-gray-300 sm:block" aria-hidden="true"></span>
 
@@ -101,7 +97,9 @@
     </div>
   </nav>
   {%- include "partials/navigation.njk" -%}
+  {%- include "partials/login.njk" -%}
+  {%- include "partials/minSide.njk" -%}
 </header>
 
 {# Overlay #}
-<button class="fixed inset-0 z-40 w-full h-full opacity-0 cursor-default bg-slate-800/80 backdrop-blur-xs" x-bind:class="(menuOpen || notifyOpen || loginOpen) ? 'animate-fade-in' : 'hidden'" x-on:click="menuOpen = false, notifyOpen = false, loginOpen = false" x-on:keyup.escape.window="menuOpen = false, notifyOpen = false,  loginOpen = false"></button>
+<button class="fixed inset-0 z-40 w-full h-full opacity-0 cursor-default bg-slate-800/80 backdrop-blur-xs" x-bind:class="(menuOpen || notifyOpen || loginOpen) ? 'opacity-100 transition-opacity duration-300' : 'hidden'" x-on:click="menuOpen = false, notifyOpen = false, loginOpen = false" x-on:keyup.escape.window="menuOpen = false, notifyOpen = false,  loginOpen = false"></button>
