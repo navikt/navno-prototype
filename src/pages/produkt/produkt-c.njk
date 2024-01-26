@@ -22,17 +22,15 @@ permalink: 'produkt/c/index.html'
   <main class="grid py-16 grid-cols-mini lg:grid-cols-maxi">
     <div class="col-main lg:col-wide">
       <div class="text-sm tracking-widest uppercase">{{ type | safe }}</div>
-      <h1 class="mt-2 font-bold text-4xl/tight text-balance">{{ title | safe }}</h1>
+      <h1 class="mt-1 font-bold text-4xl/tight text-balance">{{ title | safe }}</h1>
+      <div class="mt-8 text-lg text-pretty max-w-prose">{{ intro | markdown | safe }}</div>
 
       {# Audience #}
       <div class="mt-6 -ml-1">
-        <span class="inline-block px-3 pt-1.5 pb-1 text-sm leading-none rounded-full bg-slate-200 ">
+        <span class="inline-block px-3 py-2 text-sm leading-none rounded-full bg-slate-200 ">
           {{ 'For ' if audience }}{{ audience | lower | safe }}
         </span>
       </div>
-
-      {# Intro #}
-      <div class="mt-8 text-lg text-pretty max-w-prose">{{ intro | markdown | safe }}</div>
     </div>
 
     {# Innholdsfortegnelse #}
@@ -82,7 +80,9 @@ permalink: 'produkt/c/index.html'
             I dette kapittelet
             <span class="hidden lg:inline">({{ chapterIndex }})</span>
           </h3>
-          {{ chapter.templateContent | toc | safe }}
+          <div class="px-3">
+            {{ chapter.templateContent | toc | safe }}
+          </div>
         </nav>
         {% endif %}
 
@@ -129,7 +129,7 @@ permalink: 'produkt/c/index.html'
 
     const intersectionOptions = {
       threshold: 1,
-      rootMargin: '0px 0px 0px 0px'
+      rootMargin: '15% 0px -70% 0px'
     };
 
     const intersectionObserver = new IntersectionObserver(intersectionCallback, intersectionOptions);
