@@ -8,11 +8,11 @@ const svgContents = require("eleventy-plugin-svg-contents");
 const {
   markdown,
   markdownInline,
-  console,
   filterByArray,
   extractTags,
   sortStringLast,
   lowerfirst,
+  onlyTags,
 } = require("./src/_11ty/filters.js");
 const { timestampNow } = require("./src/_11ty/shortcodes.js");
 const { minifyHtml } = require("./src/_11ty/transforms.js");
@@ -54,11 +54,11 @@ module.exports = function (eleventyConfig) {
   // Templating filters
   eleventyConfig.addFilter("markdown", markdown);
   eleventyConfig.addFilter("markdownInline", markdownInline);
-  eleventyConfig.addFilter("console", console);
   eleventyConfig.addFilter("filterByArray", filterByArray);
   eleventyConfig.addFilter("lowerfirst", lowerfirst);
   eleventyConfig.addFilter("extractTags", extractTags);
   eleventyConfig.addFilter("sortStringLast", sortStringLast);
+  eleventyConfig.addFilter("onlyTags", onlyTags);
 
   // Templating collections
   eleventyConfig.addCollection("typeFilter", typeFilter);
