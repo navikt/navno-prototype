@@ -2,4 +2,4 @@ node_modules
 dist
 _site
 build
-.vscode/settings.json
+.vscode
