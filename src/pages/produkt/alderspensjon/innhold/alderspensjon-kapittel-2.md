@@ -13,7 +13,7 @@ Pensjonskalkulatoren viser hvor mye du ligger an til å få i pensjon.
 
 I kalkulatoren ser du hvordan pensjonen blir hvis du venter et år eller flere med å ta ut pensjon. Du kan også se hvordan det påvirker pensjonen din om du velger gradert uttak mellom 20 og 80 prosent pensjon fremfor 100 prosent.
 
-_[Beregn pensjonen din]_
+_[Kalkulator: Beregn pensjonen din]_
 
 Hvis du er født i 1963 eller senere, kan du velge mellom en detaljert oversikt i pensjonskalkulatoren eller en rask oversikt i [enkel pensjonskalkulator](#).
 
@@ -31,7 +31,7 @@ _[ReadMore: Eksempler på hva du tjener på å vente med å ta ut pensjon](#)_
 
 Fra januar hvert år registreres pensjonsopptjeningen din. For eksempel vil inntekt du hadde i 2022 legges til i opptjeningen fra 1. januar 2024. Det er fordi inntekten først må godkjennes av Skatteetaten.
 
-_[Se pensjonsopptjeningen din]_
+_[Card: Se pensjonsopptjeningen din]_
 
 Har du offentlig tjenestepensjon i tillegg til pensjon fra folketrygden? Da skal pensjonen samordnes. Det betyr at tjenestepensjonen reduseres, mens hele pensjonen fra folketrygden utbetales.
 
@@ -209,7 +209,7 @@ Pensjonen utbetales som vanlig når du bor i utlandet.
 
 <details class="expander">
   <summary>
-    <span class="mr-1 -my-1 -ml-9" aria-hidden="true">{{ '/src/_includes/svg/icons/sack-pension.svg' | svgContents('w-8 h-8') | safe }}</span>
+    <span class="mr-2 -my-1.5 -ml-10" aria-hidden="true">{{ '/src/_includes/svg/icons/sack-pension.svg' | svgContents('w-8 h-8') | safe }}</span>
     Utbetalingsdatoer
   </summary>
   <div class="prose">

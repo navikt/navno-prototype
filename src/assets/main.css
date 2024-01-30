@@ -4,17 +4,17 @@
 
 @layer base {
   
-  /* @link https://utopia.fyi/type/calculator?c=320,18,1.125,1200,20,1.2,5,1,1280&s=0.75|0.5|0.25,1.5|2|3|4|6,xs-2xl|xs-m&g=xs,m,xl,12 */
+  /* @link https://utopia.fyi/type/calculator/?c=320,18,1.125,1200,20,1.25,5,2,1280&s=0.75|0.5|0.25,1.5|2|3|4|6,xs-2xl|xs-m&g=xs,m,xl,12 */
   
   :root {
     --step--2: clamp(0.875rem, 0.875rem + 0vw, 0.875rem);
-    --step--1: clamp(1rem, 0.9848rem + 0.0761vw, 1.0419rem);
-    --step-0: clamp(1.125rem, 1.0795rem + 0.2273vw, 1.25rem);
-    --step-1: clamp(1.2656rem, 1.1804rem + 0.4261vw, 1.5rem);
-    --step-2: clamp(1.4238rem, 1.2869rem + 0.6841vw, 1.8rem);
-    --step-3: clamp(1.6019rem, 1.3989rem + 1.0148vw, 2.16rem);
-    --step-4: clamp(1.8019rem, 1.5146rem + 1.4364vw, 2.5919rem);
-    --step-5: clamp(2.0275rem, 1.6336rem + 1.9693vw, 3.1106rem);
+    --step--1: clamp(1rem, 1rem + 0vi, 1rem);
+    --step-0: clamp(1.125rem, 1.0795rem + 0.2273vi, 1.25rem);
+    --step-1: clamp(1.2656rem, 1.1577rem + 0.5398vi, 1.5625rem);
+    --step-2: clamp(1.4238rem, 1.2314rem + 0.9624vi, 1.9531rem);
+    --step-3: clamp(1.6018rem, 1.2965rem + 1.5265vi, 2.4414rem);
+    --step-4: clamp(1.802rem, 1.3476rem + 2.2722vi, 3.0518rem);
+    --step-5: clamp(2.0273rem, 1.3773rem + 3.2498vi, 3.8147rem);
   }
 
   body {
@@ -45,8 +45,11 @@
   :where(.prose) h4 {
     @apply text-lg/snug text-pretty font-bold;
   }
-  :where(.prose) :where(h3, h4) + *:not(h3, h4, ul, ol, details) {
-    margin-block-start: 0.125em;
+  :where(.prose) h5 {
+    @apply text-base/snug text-pretty font-bold;
+  }
+  :where(.prose) :where(h3, h4, h5) + *:not(h3, h4, h5, ul, ol, details) {
+    margin-block-start: 0.25em;
   }
   :where(.prose) ul {
     @apply list-disc pl-6;
@@ -95,7 +98,7 @@
     @apply underline hover:no-underline text-blue-500 hover:text-blue-700;
   }
   .toc .active a {
-    @apply lg:no-underline text-slate-800;
+    @apply lg:no-underline lg:text-slate-800;
   }
   .toc li a:before {
     content: "";
@@ -176,7 +179,7 @@
   /* Expander */
   .expander {
     display: grid;
-    padding-inline: 48px;
+    padding-inline: 50px;
     background-color: theme(colors.white);
     border-radius: theme(borderRadius.lg);
     border: 1px solid theme(colors.slate.300);
@@ -189,8 +192,8 @@
     display: flex;
     align-items: center;
     list-style: none;
-    padding: 0.75em 12px 0.75em 48px;
-    margin-inline: -48px;
+    padding: 0.75em 12px 0.625em 50px;
+    margin-inline: -50px;
     border-radius: theme(borderRadius.lg);
     cursor: pointer;
     text-align: left;
@@ -221,12 +224,12 @@
     align-self: baseline;
     margin-inline: auto 4px;
     transition: rotate 150ms;
-    transform: translateY(3px);
+    transform: translateY(2px);
     width: 20px;
     height: 20px;
   }
   :where(.expander[open]) summary:after {
-    transform: translateY(3px) rotate(-180deg);
+    transform: translateY(2px) rotate(-180deg);
   }
   :where(.expander) summary > * {
     text-wrap: pretty;
@@ -285,7 +288,7 @@
   .grid-cols-mini {
     --_edge: clamp(0.75rem, -1.4286rem + 10.8929vw, 16rem);
     grid-template-columns: 
-      [full-start] var(--_edge) minmax(0, 1fr) [wide-start] minmax(0, 1fr) [main-start side-start] minmax(0, 40rem) [main-end side-end] minmax(0, 1fr) [wide-end] minmax(0, 1fr) var(--_edge) [full-end];
+      [full-start] var(--_edge) [wide-start main-start side-start] minmax(0, 40rem) [main-end side-end] minmax(0, 1fr) [wide-end] var(--_edge) [full-end];
   }
 
   .grid-cols-maxi {
