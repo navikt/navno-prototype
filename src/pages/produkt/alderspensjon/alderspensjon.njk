@@ -8,6 +8,10 @@ permalink: 'produkt/alderspensjon/index.html'
 {%- from "macros/microcard.njk" import microcard -%}
 {%- from "macros/tile.njk" import tile -%}
 
+{% block fonts %}
+{% endblock %}
+
+
 {%- block content -%}
 
   {% set chapters = collections.all| onlyTags('alderspensjon', 'innhold') %}
@@ -15,7 +19,7 @@ permalink: 'produkt/alderspensjon/index.html'
   <main class="grid py-16 grid-cols-mini lg:grid-cols-maxi">
     <div class="col-main lg:col-wide">
       <div class="text-sm tracking-widest uppercase">{{ type | safe }}</div>
-      <h1 class="mt-1 font-bold text-4xl/tight text-balance">{{ title | safe }}</h1>
+      <h1 class="mt-1 font-bold text-4xl/tight text-balance ">{{ title | safe }}</h1>
       <div class="mt-8 text-lg text-pretty max-w-prose">{{ intro | markdown | safe }}</div>
 
       {# Audience #}
@@ -53,7 +57,7 @@ permalink: 'produkt/alderspensjon/index.html'
           <div class="grid items-end pl-8 rounded-lg bg-slate-100 pt-2xl aspect-[2/1]">
             <span class="font-black -mb-9 text-white text-[20em]/[0.8]">{{ loop.index }}</span>
           </div>
-          <h2 class="mt-8 font-bold text-3xl/snug text-balance">{{ chapter.data.title }}</h2>
+          <h2 class="mt-8 font-bold text-3xl/snug text-balance ">{{ chapter.data.title }}</h2>
           <p>{{ chapter.data.description | safe }}</p>
         </div>
 
