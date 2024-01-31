@@ -247,7 +247,7 @@ module.exports = {
         12: "12px",
       },
       spacing: {
-        edge: "clamp(0.75rem, -17.75rem + 37vi, 10rem)",
+        edge: "clamp(0.75rem, -1.25rem + 10vi, 10rem)",
         page: "clamp(1.5rem, 0.5909rem + 4.5455vi, 4rem)",
       },
     },
