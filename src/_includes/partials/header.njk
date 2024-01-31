@@ -1,7 +1,11 @@
 {%- set audience = audienceOverride or menu.audience -%}
 
 <header class="relative z-50">
-  <div class="py-1 text-sm tracking-widest text-center uppercase bg-white border-b sm:hidden px-edge border-slate-200">{{ activeRole }}</div>
+  <div class="text-sm tracking-widest text-center uppercase bg-white border-b border-slate-200 sm:hidden px-edge">
+    <div class="py-1">
+      {{ activeRole }}
+    </div>
+  </div>
 
   <nav class="z-10 bg-white px-edge">
     <div class="grid grid-cols-[auto_1fr] sm:grid-cols-[auto_auto_1fr] max-w-wide mx-auto">
