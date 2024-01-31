@@ -2,7 +2,10 @@
  * @param { import('@11ty/eleventy/src/UserConfig') } eleventyConfig
  */
 
-const { EleventyHtmlBasePlugin } = require("@11ty/eleventy");
+const {
+  EleventyHtmlBasePlugin,
+  EleventyRenderPlugin,
+} = require("@11ty/eleventy");
 const tocPlugin = require("eleventy-plugin-toc");
 const svgContents = require("eleventy-plugin-svg-contents");
 const {
@@ -16,12 +19,14 @@ const {
 } = require("./src/_11ty/filters.js");
 const { timestampNow } = require("./src/_11ty/shortcodes.js");
 const { minifyHtml } = require("./src/_11ty/transforms.js");
-const { typeFilter, areaFilter } = require("./src/_11ty/collections.js");
+// const {} = require("./src/_11ty/collections.js");
+const markdownIt = require("markdown-it");
 const markdownItAnchor = require("markdown-it-anchor");
 
 module.exports = function (eleventyConfig) {
   // Eleventy Plugins
   eleventyConfig.addPlugin(EleventyHtmlBasePlugin);
+  eleventyConfig.addPlugin(EleventyRenderPlugin);
   eleventyConfig.addPlugin(svgContents);
   eleventyConfig.addPlugin(tocPlugin, {
     tags: ["h3"],
@@ -61,11 +66,22 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter("onlyTags", onlyTags);
 
   // Templating collections
-  eleventyConfig.addCollection("typeFilter", typeFilter);
-  eleventyConfig.addCollection("areaFilter", areaFilter);
+  // eleventyConfig.addCollection("typeFilter", typeFilter);
+  // eleventyConfig.addCollection("areaFilter", areaFilter);
 
   // Templating shortcodes
   eleventyConfig.addShortcode("now", timestampNow);
+  eleventyConfig.addPairedShortcode("prose", function (content) {
+    const markdown = new markdownIt({
+      html: true,
+      linkify: false,
+      typographer: true,
+      quotes: "«»",
+    })
+      .disable("code")
+      .render(content);
+    return `<div class="prose">${markdown}</div>`;
+  });
 
   // Transforms
   eleventyConfig.addTransform("minifyHtml", minifyHtml);
