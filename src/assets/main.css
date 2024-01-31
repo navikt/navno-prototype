@@ -4,17 +4,18 @@
 
 @layer base {
   
-  /* @link https://utopia.fyi/type/calculator/?c=320,18,1.125,1200,20,1.25,5,2,1280&s=0.75|0.5|0.25,1.5|2|3|4|6,xs-2xl|xs-m&g=xs,m,xl,12 */
-  
+  /* @link https://utopia.fyi/type/calculator?c=320,18,1.125,1200,20,1.2,6,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
+
   :root {
-    --step--2: clamp(0.875rem, 0.875rem + 0vw, 0.875rem);
-    --step--1: clamp(1rem, 1rem + 0vi, 1rem);
+    --step--2: clamp(0.8681rem, 0.8965rem + -0.0379vi, 0.8889rem);
+    --step--1: clamp(1rem, 0.9848rem + 0.0758vi, 1.0417rem);
     --step-0: clamp(1.125rem, 1.0795rem + 0.2273vi, 1.25rem);
-    --step-1: clamp(1.2656rem, 1.1577rem + 0.5398vi, 1.5625rem);
-    --step-2: clamp(1.4238rem, 1.2314rem + 0.9624vi, 1.9531rem);
-    --step-3: clamp(1.6018rem, 1.2965rem + 1.5265vi, 2.4414rem);
-    --step-4: clamp(1.802rem, 1.3476rem + 2.2722vi, 3.0518rem);
-    --step-5: clamp(2.0273rem, 1.3773rem + 3.2498vi, 3.8147rem);
+    --step-1: clamp(1.2656rem, 1.1804rem + 0.4261vi, 1.5rem);
+    --step-2: clamp(1.4238rem, 1.287rem + 0.6839vi, 1.8rem);
+    --step-3: clamp(1.6018rem, 1.3988rem + 1.0149vi, 2.16rem);
+    --step-4: clamp(1.802rem, 1.5148rem + 1.4363vi, 2.592rem);
+    --step-5: clamp(2.0273rem, 1.6334rem + 1.9693vi, 3.1104rem);
+    --step-6: clamp(2.2807rem, 1.7528rem + 2.6396vi, 3.7325rem);
   }
 
   body {
@@ -134,8 +135,9 @@
     text-align: left;
     text-indent: -30px;
     text-wrap: pretty;
+    font-weight: 500;
     line-height: 1.375;
-    color: theme(colors.blue.800);
+    color: theme(colors.blue.600);
   }
   :where(.accordion) summary::-webkit-details-marker {
     display: none;
@@ -148,7 +150,7 @@
     background-color: theme(colors.blue.50);
   }
   :where(.accordion) summary:before {
-    background-color: theme(colors.blue.700);
+    background-color: theme(colors.blue.500);
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none'%3E%3Cpath stroke='#fff' stroke-linecap='round' stroke-width='2' d='m6.5 10 5.493 5.493a.01.01 0 0 0 .014 0L17.5 10'/%3E%3C/svg%3E");
     background-position: center;
     background-repeat: no-repeat;
@@ -286,13 +288,13 @@
 
 @layer utilities {
   .grid-cols-mini {
-    --_edge: clamp(0.75rem, -1.4286rem + 10.8929vw, 16rem);
+    --_edge: theme(spacing.edge);
     grid-template-columns: 
       [full-start] var(--_edge) [wide-start main-start side-start] minmax(0, 40rem) [main-end side-end] minmax(0, 1fr) [wide-end] var(--_edge) [full-end];
   }
 
   .grid-cols-maxi {
-    --_edge: clamp(0.75rem, -1.4286rem + 10.8929vw, 16rem);
+    --_edge: theme(spacing.edge);
     grid-template-columns: 
       [full-start] var(--_edge) minmax(0, 1fr)  
       [wide-start main-start] min(40rem, 100%) 

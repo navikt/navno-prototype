@@ -165,6 +165,7 @@ module.exports = {
       "2xl": "var(--step-3)",
       "3xl": "var(--step-4)",
       "4xl": "var(--step-5)",
+      "5xl": "var(--step-6)",
     },
     extend: {
       animation: {
@@ -246,7 +247,8 @@ module.exports = {
         12: "12px",
       },
       spacing: {
-        edge: "clamp(0.75rem, -1.4286rem + 10.8929vw, 16rem)",
+        edge: "clamp(0.75rem, -2.8382rem + 17.9412vi, 16rem)",
+        page: "clamp(1.5rem, 0.5909rem + 4.5455vi, 4rem)",
       },
     },
   },
