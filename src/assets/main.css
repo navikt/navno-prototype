@@ -290,16 +290,16 @@
   .grid-cols-mini {
     --_edge: theme(spacing.edge);
     grid-template-columns: 
-      [full-start] var(--_edge) [wide-start main-start side-start] minmax(0, 40rem) [main-end side-end] minmax(0, 1fr) [wide-end] var(--_edge) [full-end];
+      [full-start] var(--_edge) [wide-start main-start side-start] minmax(0, 42rem) [main-end side-end] minmax(0, 1fr) [wide-end] var(--_edge) [full-end];
   }
 
   .grid-cols-maxi {
     --_edge: theme(spacing.edge);
     grid-template-columns: 
       [full-start] var(--_edge) minmax(0, 1fr)  
-      [wide-start main-start] min(40rem, 100%) 
-      [main-end] clamp(0.75rem, -1.3125rem + 10.3125vw, 9rem) 
-      [side-start] minmax(0, 21rem) 
+      [wide-start main-start] min(clamp(30rem, 18rem + 24vi, 42rem), 100%) 
+      [main-end] clamp(1rem, -6rem + 14vi, 8rem) 
+      [side-start] minmax(0, 25rem) 
       [side-end wide-end] minmax(0, 1fr) var(--_edge) [full-end];
   }
   :where(.grid-cols-mini > *, .grid-cols-maxi > *) { grid-column: main }
