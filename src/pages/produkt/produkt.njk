@@ -6,10 +6,10 @@ noJS: true
 {%- extends 'blank.njk' -%}
 
 {% macro link(item) %}
-  <a class="py-4 pl-6 pr-12 rounded bg-slate-100 hover:bg-blue-500 hover:text-white" href="{{ item.url }}">
-    <b class="text-lg">{{ item.data.title }}</b>
+  <a class="flex justify-between py-6 pl-6 pr-12 text-lg rounded bg-slate-100 hover:bg-blue-500 hover:text-white" href="{{ item.url }}">
+    {{ item.data.title }}
     {% if item.data.variant %}
-      ({{ item.data.variant }})
+      <b>{{ item.data.variant }}</b>
     {% endif %} 
   </a> 
 {% endmacro %}
@@ -18,9 +18,9 @@ noJS: true
 {% set pages = ['pleiepenger', 'sykepenger', 'alderspensjon'] %}
 
 {%- block content -%}
-  <div class="grid items-start w-full gap-8 p-12">
+  <div class="grid items-start w-full gap-8 py-page px-edge">
     {% for item in pages %}
-      <div class="grid flex-1 gap-1">
+      <div class="grid flex-1 gap-1 rounded-xl overflow-clip">
         {% for item in collections.all | onlyTags('produkt', item) %}
           {{ link(item) }}        
         {% endfor %}
