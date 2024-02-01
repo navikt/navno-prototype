@@ -129,6 +129,7 @@ module.exports = {
     },
     fontFamily: {
       sans: ['"Source Sans 3"', "Arial", "sans-serif"],
+      serif: ['"Source Serif 4"', "serif"],
       system: [
         "ui-sans-serif",
         "system-ui",
@@ -165,6 +166,7 @@ module.exports = {
       "2xl": "var(--step-3)",
       "3xl": "var(--step-4)",
       "4xl": "var(--step-5)",
+      "5xl": "var(--step-6)",
     },
     extend: {
       animation: {
@@ -240,13 +242,14 @@ module.exports = {
       maxWidth: {
         base: "65.25rem",
         prose: "68ch",
-        wide: "70rem",
+        wide: "75rem",
       },
       ringWidth: {
         12: "12px",
       },
       spacing: {
-        edge: "clamp(0.75rem, -1.4286rem + 10.8929vw, 16rem)",
+        edge: "clamp(0.75rem, -1.25rem + 10vi, 10rem)",
+        page: "clamp(1.5rem, 0.5909rem + 4.5455vi, 4rem)",
       },
     },
   },

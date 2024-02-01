@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="no" class="h-full antialiased text-gray-900 bg-white font-[375] font-source-sans motion-safe:scroll-smooth scroll-pt-20">
+<html lang="no" class="h-full antialiased text-gray-900 bg-white font-[375] font-sans motion-safe:scroll-smooth scroll-pt-20">
   <head>
     <meta charset="UTF-8" />
     <meta name="robots" content="noindex" />
@@ -23,6 +23,7 @@
     <script src="/assets/alpine-intersect-plugin.min.js" type="text/javascript" defer></script>
     <script src="/assets/alpine.min.js" type="text/javascript" defer></script>
     {% endif %}
+    {%- block fonts -%}{%- endblock -%}
     {%- block script -%}{%- endblock -%}
   </head>
   <body
@@ -36,5 +37,6 @@
     {%- block bodyscript -%}{%- endblock -%}
     {%- include "partials/footer.njk" -%}
     {# {%- include "partials/prototypeNav.njk" -%} #}
+    
   </body>
 </html>

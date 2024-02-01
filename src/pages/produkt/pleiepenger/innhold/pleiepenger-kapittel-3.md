@@ -29,20 +29,26 @@ Du bruker samme søknad både for pleiepenger for sykt barn og pleiepenger for e
     <span class="mr-1 -my-1 -ml-9" aria-hidden="true">{{ '/src/_includes/svg/icons/folder-file.svg' | svgContents('w-8 h-8') | safe }}</span>
     Dette må du dokumentere
   </summary>
-  <div class="prose">
-    <p><strong>Legeerklæring</strong><br>
-    Legeerklæringen skal være skrevet av sykehuslege eller lege i spesialisthelsetjenesten.Hvis du ikke har legeerklæring når du søker, kan den ettersendes til oss.</p>
-    <p><strong>Inntektsopplysninger</strong><br>
-    Er du arbeidstaker må arbeidsgiver sende inntektsmelding når du 
-    <ul>
-      <li>søker for første gang</li>
-      <li>søker på nytt etter et opphold i pleiepengene på 4 uker eller mer</li>
-      <li>søker på nytt etter et opphold på mindre enn 4 uker, og det er endring i inntekten</li>
-    </ul>
-    <p>Er du selvstendig næringsdrivende eller frilanser, trenger du ikke legge ved dokumentasjon på inntekt.</p>
-    <p>Får du utbetalt penger fra NAV, trenger du ikke legge ved dokumentasjon på dette.</p>
-    <p>Er du midlertidig ute av arbeid, legger du ved skjemaet Krav om sykepenger - midlertidig ute av inntektsgivende arbeid. Dette skjemaet brukes til pleiepenger, i tillegg til sykepenger.</p>
-  </div>
+
+  {% prose %}
+  #### Legeerklæring
+
+  Legeerklæringen skal være skrevet av sykehuslege eller lege i spesialisthelsetjenesten.Hvis du ikke har legeerklæring når du søker, kan den ettersendes til oss.
+
+  #### Inntektsopplysninger
+
+  Er du arbeidstaker må arbeidsgiver sende inntektsmelding når du 
+
+  * søker for første gang
+  * søker på nytt etter et opphold i pleiepengene på 4 uker eller mer
+  * søker på nytt etter et opphold på mindre enn 4 uker, og det er endring i inntekten
+
+  Er du selvstendig næringsdrivende eller frilanser, trenger du ikke legge ved dokumentasjon på inntekt.
+
+  Får du utbetalt penger fra NAV, trenger du ikke legge ved dokumentasjon på dette.
+
+  Er du midlertidig ute av arbeid, legger du ved skjemaet Krav om sykepenger - midlertidig ute av inntektsgivende arbeid. Dette skjemaet brukes til pleiepenger, i tillegg til sykepenger.
+  {% endprose %}
 </details>
 
 ### Etter at du har søkt

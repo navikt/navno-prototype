@@ -1,5 +1,6 @@
 ---
 tags: ['produkt']
+description: 'Basert på variant E av pleiepenger.'
 permalink: 'produkt/alderspensjon/index.html'
 ---
 {%- extends 'base.njk' -%}
@@ -8,6 +9,10 @@ permalink: 'produkt/alderspensjon/index.html'
 {%- from "macros/microcard.njk" import microcard -%}
 {%- from "macros/tile.njk" import tile -%}
 
+{% block fonts %}
+{% endblock %}
+
+
 {%- block content -%}
 
   {% set chapters = collections.all| onlyTags('alderspensjon', 'innhold') %}
@@ -15,7 +20,7 @@ permalink: 'produkt/alderspensjon/index.html'
   <main class="grid py-16 grid-cols-mini lg:grid-cols-maxi">
     <div class="col-main lg:col-wide">
       <div class="text-sm tracking-widest uppercase">{{ type | safe }}</div>
-      <h1 class="mt-1 font-bold text-4xl/tight text-balance">{{ title | safe }}</h1>
+      <h1 class="mt-1 font-bold text-4xl/tight text-balance ">{{ title | safe }}</h1>
       <div class="mt-8 text-lg text-pretty max-w-prose">{{ intro | markdown | safe }}</div>
 
       {# Audience #}
@@ -30,18 +35,18 @@ permalink: 'produkt/alderspensjon/index.html'
     </div>
 
     {# Innholdsfortegnelse #}
-    <div class="z-10 mt-12 isolate">
+    <div class="z-10 mt-8 isolate">
       <h2 class="text-base font-semibold">Innhold på siden</h2>
-      <ul class="grid gap-3 mt-2">
+      <ol class="grid gap-3 mt-2">
         {% for chapter in chapters.slice(0, -1) %}
         <li class="relative">
-          <span class="sm:absolute mr-1 sm:mr-2.5 leading-none sm:translate-y-1.5 right-full" aria-hidden="true">{{ loop.index }}</span>
+          <span class="mr-1 leading-none" aria-hidden="true">{{ loop.index }}.</span>
           <a class="inline-flex items-end gap-3 p-1 -m-1 text-blue-500 underline hover:text-blue-700 text-base/snug hover:no-underline" href="#{{ chapter.data.title | slugify }}">
             {{ chapter.data.title }}
           </a>
         </li>
         {% endfor %}
-      </ul>
+      </ol>
     </div>
 
 
@@ -53,19 +58,20 @@ permalink: 'produkt/alderspensjon/index.html'
           <div class="grid items-end pl-8 rounded-lg bg-slate-100 pt-2xl aspect-[2/1]">
             <span class="font-black -mb-9 text-white text-[20em]/[0.8]">{{ loop.index }}</span>
           </div>
-          <h2 class="mt-8 font-bold text-3xl/snug text-balance">{{ chapter.data.title }}</h2>
+          <h2 class="mt-8 font-bold text-3xl/snug text-balance ">{{ chapter.data.title }}</h2>
+          <p>{{ chapter.data.ingress | safe }}</p>
         </div>
 
         {# Chapter TOC #}
         {% if chapter.templateContent and chapter.templateContent | toc | length > 0%}
-        <nav class="relative mb-8 lg:order-1 lg:col-side">
+        <nav class="relative mt-8 mb-8 lg:order-1 lg:col-side">
           <h3 class="absolute inset-x-0 top-0 z-20 py-2 font-semibold bg-white">I dette kapittelet</h3>
           <div class="z-10 lg:sticky lg:top-2">
-            <h3 class="py-2 font-semibold">{{ chapter.data.title }}</h3>
-            <div class="pb-2 toc toc--b toc--sticky">
+            <h3 class="py-1 font-semibold">{{ chapter.data.title }}</h3>
+            <div class="pb-3 toc toc--b toc--sticky">
             {{ chapter.templateContent | toc | safe }}
             </div>
-            <div class="relative" x-data="{ dropdownOpen: false }">
+            <div class="relative border-t border-slate-200" x-data="{ dropdownOpen: false }">
               <button class="flex items-center gap-1 px-4 py-3 -mx-4 font-semibold text-blue-500 hover:text-blue-600 group" x-on:click="dropdownOpen = !dropdownOpen" type="button" x-bind:aria-expanded="dropdownOpen">
                 <span>Bytt kapittel</span>
                 {{ '/src/_includes/svg/icons/chevron-down.svg' | svgContents('w-5 h-5 -translate-x-1 group-aria-expanded:rotate-180') | safe }}
@@ -89,15 +95,10 @@ permalink: 'produkt/alderspensjon/index.html'
             </div>
           </div>
         </nav>
-        {% else %}
-        <div class="lg:col-side lg:order-1">
-          <p class="px-3 py-2 font-semibold text-red-500 rounded-sm lg:sticky lg:top-2">[ Ingen H3 i kapittelet ]</p>
-        </div>
-        {% endif %}
+      {% endif %}
 
         {# Main Content #}
-        <div class="mt-2 prose col-main">
-          <p>{{ chapter.data.description | safe }}</p>
+        <div class="mt-2 prose lg:mt-8 col-main">
 
           {{ chapter.templateContent | markdown | safe }}
         </div>

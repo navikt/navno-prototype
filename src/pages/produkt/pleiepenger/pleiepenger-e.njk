@@ -1,6 +1,7 @@
 ---
 tags: ['produkt']
 variant: 'E'
+description: 'Enkel innholdsmeny uten ingresser. Kapittelmeny i hovedspalte på mobil og sidespalte (sticky) på desktop. Mulighet for å bytte kapittel er lagt i bunnen av hver kapittelmeny.'
 permalink: 'produkt/pleiepenger/e/index.html'
 ---
 {%- extends 'base.njk' -%}
@@ -16,7 +17,7 @@ permalink: 'produkt/pleiepenger/e/index.html'
   <main class="grid py-16 grid-cols-mini lg:grid-cols-maxi">
     <div class="col-main lg:col-wide">
       <div class="text-sm tracking-widest uppercase">{{ type | safe }}</div>
-      <h1 class="mt-1 font-bold text-4xl/tight text-balance">{{ title | safe }}</h1>
+      <h1 class="mt-1 -translate-x-[0.0625em] font-bold text-4xl/tight text-balance">{{ title | safe }}</h1>
       <div class="mt-8 text-lg text-pretty max-w-prose">{{ intro | markdown | safe }}</div>
 
       {# Audience #}
@@ -92,7 +93,7 @@ permalink: 'produkt/pleiepenger/e/index.html'
 
         {# Main Content #}
         <div class="mt-2 prose col-main">
-          <p>{{ chapter.data.description | safe }}</p>
+          <p>{{ chapter.data.ingress | safe }}</p>
 
           {{ chapter.templateContent | markdown | safe }}
         </div>

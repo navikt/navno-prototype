@@ -1,90 +1,48 @@
 {%- set audience = audienceOverride or menu.audience -%}
 
-<header class="relative z-50 isolate">
-  <nav class="text-sm bg-slate-200 px-edge">
-    <div class="flex flex-wrap-reverse justify-between mx-auto max-w-wide">
-      {# Audience #}
-      <div class="relative" x-on:click.outside="audienceDropdownOpen = false">
-        <button 
-        class="flex items-center gap-2 px-3 py-2 -ml-3 sm:hidden hover:bg-slate-300" 
-        x-bind:class="audienceDropdownOpen && 'bg-slate-300'"
-        x-on:click="audienceDropdownOpen = !audienceDropdownOpen" type="button" 
-        aria-expanded="false">
-          <span>{{ activeRole }}</span>
-          {{ '/src/_includes/svg/icons/chevron-down.svg' | svgContents('w-5 h-5') | safe }}
-        </button>
-        <ul class="absolute z-50 bg-white rounded -left-3 min-w-40 sm:bg-transparent sm:rounded-none sm:py-0 sm:flex sm:gap-4 top-full sm:static" x-bind:class=" audienceDropdownOpen ? 'grid shadow-lg sm:shadow-none' : 'hidden'">
-          {%- for item in audience -%}
-            <li class="grid items-center {{ 'sm:shadow-menuActive font-semibold' if item.title === activeRole else ' transition-shadow sm:hover:shadow-menuHover' }}">
-              <a href="{{ item.href or '#' }}" class="flex items-center justify-between gap-4 px-3 py-2 sm:px-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-800 {{ 'bg-blue-500 text-white sm:text-current sm:bg-transparent' if item.title === activeRole else 'hover:bg-blue-50 sm:hover:bg-transparent' }}">
-                {{ item.title }}
-                <span class="w-2 h-2 rounded-full ml-4 shrink-0 sm:hidden {{ 'bg-white' if item.title === activeRole }}" aria-hidden="true"></span>
-              </a>
-            </li>
-          {%- endfor -%}
-        </ul>
-      </div>
-
-      {# Language #}
-      <div class="relative" x-on:click.outside="languageDropdownOpen = false">
-        <button 
-          type="button" 
-          class="flex items-center px-3 py-2 -mr-3 hover:bg-slate-300" 
-          x-bind:class="languageDropdownOpen && 'bg-slate-300'"
-          x-on:click="languageDropdownOpen = !languageDropdownOpen" 
-          aria-expanded="false">
-          {{ '/src/_includes/svg/icons/globe.svg' | svgContents('flex-none w-5 h-5') | safe }}
-          <span>Språk/Language</span>
-          <span class="hidden xs:inline sm:hidden" aria-hidden="true">: {{ site.language[0].short }}</span>
-          <span class="hidden sm:inline">: {{ site.language[0].full }}</span>
-          {{ '/src/_includes/svg/icons/chevron-down.svg' | svgContents('w-5 h-5 ml-1.5 -translate-y-px') | safe }}
-        </button>
-        <ul class="absolute z-50 bg-white rounded -right-3 min-w-40 top-full" x-bind:class=" languageDropdownOpen ? 'grid shadow-lg' : 'hidden'">
-          {%- for item in site.language -%}
-            <li class="">
-              <button type="button" class="py-2.5 flex w-full justify-between items-baseline gap-4 px-3 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-800 {{ 'bg-blue-500 text-white' if loop.first else 'hover:bg-blue-50' }}">
-                <span>{{ item.full }} {{ '(' + item.short + ')' if item.short }}</span>
-                <span class="w-2 h-2 rounded-full ml-4 shrink-0 {{ 'bg-white' if loop.first }}" aria-hidden="true"></span>
-              </button>
-            </li>
-          {%- endfor -%}
-        </ul>
-      </div>
+<header class="relative z-50 ">
+  <div class="text-sm tracking-widest text-center uppercase bg-white border-b border-slate-200 sm:hidden px-edge">
+    <div class="py-1">
+      {{ activeRole }}
     </div>
-  </nav>
+  </div>
 
-  <nav class="z-10 bg-white px-edge">
-    <div class="grid grid-cols-[auto_1fr] max-w-wide mx-auto">
+  <nav class="z-10 grid bg-white grid-cols-mini lg:grid-cols-maxi">
+    <div class="grid grid-cols-[auto_1fr] sm:grid-cols-[auto_auto_1fr] col-wide">
 
       {# Logo #}
       <div class="flex items-center py-5 sm:py-6">
-        <a href="/" class="block p-2 -ml-2.5 text-red-500 rounded-sm fine:hover:text-red-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-800">
+        <a href="/" class="block px-3 py-2.5 -ml-3.5 text-red-500 rounded-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-800">
           {{ '/src/_includes/svg/logo.svg' | svgContents('w-logo h-auto') | safe }}
           <span class="sr-only">NAV</span>
         </a>
       </div>
 
-      {# Menu Buttons #}
-      {%- set menuButtonClasses = "flex items-center justify-center pl-2.5 pr-3 leading-none font-semibold gap-0.5 text-blue-500 rounded min-w-16 py-2 fine:hover:bg-deepblue-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-800 group" -%}
+      {# Audience #}
+      <div class="self-center hidden pl-5 ml-2 text-lg leading-tight border-l sm:block border-slate-300">
+        {{ activeRole }}
+      </div>
 
-      <div class="flex self-center gap-2 py-2 justify-self-end sm:-mr-2.5">
+
+      {# Menu Buttons #}
+      {%- set menuButtonClasses = "flex items-center justify-center pl-2 pr-3 leading-none font-semibold gap-1 text-blue-500 rounded min-w-16 py-2 fine:hover:bg-slate-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-800 group peer" -%}
+
+      <div class="flex self-center sm:gap-1 py-2 justify-self-end xs:-mr-2.5">
         <button class="{{ menuButtonClasses }}" x-show="!loggedIn" x-on:click="loginOpen = !loginOpen, menuOpen = false" x-bind:aria-expanded="loginOpen">
             {{ '/src/_includes/svg/icons/login.svg' | svgContents('w-6 h-6 sm:w-7 sm:h-7 shrink-0 pointer-events-none') | safe }}
           <span class="mt-px">Logg inn</span>
         </button>
 
-        <button class="{{ menuButtonClasses }}" x-on:click="notifyOpen = !notifyOpen, menuOpen = false" x-bind:class="notifyOpen && 'bg-deepblue-50'" x-show="loggedIn" x-bind:aria-expanded="notifyOpen">
+        <button class="{{ menuButtonClasses }}" x-on:click="notifyOpen = !notifyOpen, menuOpen = false" x-bind:class="notifyOpen && 'bg-slate-200'" x-show="loggedIn" x-bind:aria-expanded="notifyOpen">
           <span class="relative">
-            {{ '/src/_includes/svg/icons/person-circle.svg' | svgContents('w-6 h-6 sm:w-7 sm:h-7 shrink-0 pointer-events-none') | safe }}
-            <span x-show="newNotifications" class="absolute right-0 block w-1.5 h-1.5 sm:w-2 sm:h-2 bg-red-400 rounded-full top-0.5" x-bind:class="notifyOpen ? 'ring-2 ring-deepblue-50' : 'ring-2 ring-white fine:group-hover:ring-deepblue-50'"></span>
+            {{ '/src/_includes/svg/icons/person-circle.svg' | svgContents('w-6 h-6 sm:w-7 sm:h-7 -ml-0.5 shrink-0 pointer-events-none') | safe }}
+            <span x-show="newNotifications" class="absolute right-0 block w-1.5 h-1.5 sm:w-2 sm:h-2 bg-red-400 rounded-full top-0.5" x-bind:class="notifyOpen ? 'ring-2 ring-slate-200' : 'ring-2 ring-white fine:group-hover:ring-slate-200'"></span>
           </span>
           <span class="mt-px sm:hidden">Min side</span>
           <span class="hidden mt-px sm:inline-block">Isac Norland</span>
         </button>
 
-        <span class="self-stretch hidden w-px my-2 bg-gray-300 sm:block" aria-hidden="true"></span>
-
-        <button class="{{ menuButtonClasses }}" type="button" x-on:click="menuOpen = !menuOpen, notifyOpen = false, loginOpen = false" x-bind:class="menuOpen && 'bg-deepblue-50'" x-bind:aria-expanded="menuOpen">
+        <button class="{{ menuButtonClasses }} ml-1 order-2" type="button" x-on:click="menuOpen = !menuOpen, notifyOpen = false, loginOpen = false" x-bind:class="menuOpen && 'bg-slate-200'" x-bind:aria-expanded="menuOpen">
           <template x-if="!menuOpen">
             {{ '/src/_includes/svg/icons/menusearch.svg' | svgContents('w-6 h-6 sm:w-7 sm:h-7 shrink-0 pointer-events-none') | safe }}
           </template>
@@ -94,6 +52,7 @@
           <span class="mt-px">Meny</span>
         </button>
 
+        <span class="self-stretch order-1 hidden w-px my-2 transition-colors duration-100 bg-gray-300 sm:block peer-hover:bg-transparent" aria-hidden="true"></span>
     </div>
   </nav>
   {%- include "partials/navigation.njk" -%}

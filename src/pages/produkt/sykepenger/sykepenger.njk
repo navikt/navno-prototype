@@ -1,5 +1,7 @@
 ---
 tags: ['produkt']
+// title: 'Søknad om refusjon av reiseutgifter knyttet til ortopediske hjelpemidler, parykk, tilpasningskurs, folkehøyskole, grunnmønster eller brystprotese'
+description: 'Basert på variant E av pleiepenger. Serif-font på avsnitt og lister i hovedspalte.'
 permalink: 'produkt/sykepenger/index.html'
 ---
 {%- extends 'base.njk' -%}
@@ -8,15 +10,48 @@ permalink: 'produkt/sykepenger/index.html'
 {%- from "macros/microcard.njk" import microcard -%}
 {%- from "macros/tile.njk" import tile -%}
 
+{% block styles %}
+<style>
+  .prose > :where(p, ul) {
+    font-family: "Source Serif 4", serif;
+    line-height: 1.75;
+  }
+  .prose h4 {
+    font-weight: 600;
+  }
+  .prose > div {
+    display: flex;
+    gap: 0.125rem;
+    grid-auto-flow: column;
+    border-radius: 0.375rem;
+    overflow: clip;
+  }
+  .prose > div .button {
+    background-color: #E6F0FF;
+    color: #0056B4;
+    border-width: 0;
+    flex-grow: 1;
+    inline-size: 48%;
+    border-radius: 0.125rem;
+  }
+  .prose > div .button:hover {
+    background: #CCE1FF;
+  }
+  .prose > div .button:nth-child(2) {
+    font-weight: 400;
+  }
+</style>
+{% endblock %}
+
 {%- block content -%}
 
   {% set chapters = collections.all| onlyTags('sykepenger', 'innhold') %}
 
-  <main class="grid py-16 grid-cols-mini lg:grid-cols-maxi">
+  <main class="grid py-page grid-cols-mini lg:grid-cols-maxi">
     <div class="col-main lg:col-wide">
       <div class="text-sm tracking-widest uppercase">{{ type | safe }}</div>
-      <h1 class="mt-1 font-bold text-4xl/tight text-balance">{{ title | safe }}</h1>
-      <div class="mt-8 text-lg text-pretty max-w-prose">{{ intro | markdown | safe }}</div>
+      <h1 class="mt-1 font-bold text-5xl/tight text-balance">{{ title | safe }}</h1>
+      <p class="mt-6 font-serif text-lg text-pretty max-w-prose">{{ intro | safe }}</p>
 
       {# Audience #}
       {% if audience %}       
@@ -30,7 +65,7 @@ permalink: 'produkt/sykepenger/index.html'
     </div>
 
     {# Innholdsfortegnelse #}
-    <div class="z-10 mt-12 isolate">
+    <div class="z-10 mt-8 isolate">
       <h2 class="text-base font-semibold">Innhold på siden</h2>
       <ul class="grid gap-3 mt-2">
         {% for chapter in chapters.slice(0, -1) %}
@@ -49,23 +84,23 @@ permalink: 'produkt/sykepenger/index.html'
     {% for chapter in chapters %}
       {% set chapterIndex = loop.index %}
       <section class="grid grid-flow-row-dense pt-12 col-full grid-cols-mini lg:grid-cols-maxi" id="{{ chapter.data.title | slugify }}"  x-data="{ tocOpen: false }">
-        <div class=" col-main lg:col-wide">
+        <div class="col-wide">
           <div class="grid items-end pl-8 rounded-lg bg-slate-100 pt-2xl aspect-[2/1]">
             <span class="font-black -mb-9 text-white text-[20em]/[0.8]">{{ loop.index }}</span>
           </div>
-          <h2 class="mt-8 font-bold text-3xl/snug text-balance">{{ chapter.data.title }}</h2>
+          <h2 class="mt-8 font-bold text-4xl/snug text-balance">{{ chapter.data.title }}</h2>
         </div>
 
         {# Chapter TOC #}
         {% if chapter.templateContent and chapter.templateContent | toc | length > 0%}
-        <nav class="relative mb-8 lg:order-1 lg:col-side">
+        <nav class="relative mt-8 mb-8 lg:order-1 lg:col-side">
           <h3 class="absolute inset-x-0 top-0 z-20 py-2 font-semibold bg-white">I dette kapittelet</h3>
           <div class="z-10 lg:sticky lg:top-2">
-            <h3 class="py-2 font-semibold">{{ chapter.data.title }}</h3>
-            <div class="pb-2 toc toc--b toc--sticky">
+            <h3 class="py-1 font-semibold">{{ chapter.data.title }}</h3>
+            <div class="pb-3 toc toc--b toc--sticky">
             {{ chapter.templateContent | toc | safe }}
             </div>
-            <div class="relative" x-data="{ dropdownOpen: false }">
+            <div class="relative border-t border-slate-200" x-data="{ dropdownOpen: false }">
               <button class="flex items-center gap-1 px-4 py-3 -mx-4 font-semibold text-blue-500 hover:text-blue-600 group" x-on:click="dropdownOpen = !dropdownOpen" type="button" x-bind:aria-expanded="dropdownOpen">
                 <span>Bytt kapittel</span>
                 {{ '/src/_includes/svg/icons/chevron-down.svg' | svgContents('w-5 h-5 -translate-x-1 group-aria-expanded:rotate-180') | safe }}
@@ -89,16 +124,11 @@ permalink: 'produkt/sykepenger/index.html'
             </div>
           </div>
         </nav>
-        {% else %}
-        <div class="lg:col-side lg:order-1">
-          <p class="px-3 py-2 font-semibold text-red-500 rounded-sm lg:sticky lg:top-2">[ Ingen H3 i kapittelet ]</p>
-        </div>
         {% endif %}
 
         {# Main Content #}
-        <div class="mt-2 prose col-main">
-          <p>{{ chapter.data.description | safe }}</p>
-
+        <div class="mt-4 prose col-main">
+          <p>{{ chapter.data.ingress | safe }}</p>
           {{ chapter.templateContent | markdown | safe }}
         </div>
       </section>

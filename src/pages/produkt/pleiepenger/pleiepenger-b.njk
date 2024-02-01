@@ -1,6 +1,7 @@
 ---
 tags: ['produkt']
 variant: 'B'
+description: 'Bokinspirert innholdsfortegnelse på toppen. Kapittel-meny i hovedspalte på mobil og sidespalte (sticky) på desktop.'
 permalink: 'produkt/pleiepenger/b/index.html'
 ---
 {%- extends 'base.njk' -%}
@@ -38,7 +39,7 @@ permalink: 'produkt/pleiepenger/b/index.html'
             <span class="flex-1 h-px min-w-4 -translate-y-[0.25em] bg-dotted-x" aria-hidden="true"></span>
             <span class="grid w-[1.625em] col-start-3 leading-none text-center transition-colors duration-300 rounded-full place-items-center group-hover:bg-blue-500 group-hover:text-white aspect-square bg-slate-100" aria-hidden="true">{{ loop.index }}</span>
           </a>
-          <p class="pr-4 mt-1.5 text-pretty opacity-85">{{ chapter.data.description | safe }}</p>
+          <p class="pr-4 mt-1.5 text-pretty opacity-85">{{ chapter.data.ingress | safe }}</p>
         </li>
         {% endfor %}
       </ul>
@@ -93,7 +94,7 @@ permalink: 'produkt/pleiepenger/b/index.html'
 
         {# Main Content #}
         <div class="mt-2 prose col-main">
-          <p>{{ chapter.data.description | safe }}</p>
+          <p>{{ chapter.data.ingress | safe }}</p>
 
           {{ chapter.templateContent | markdown | safe }}
         </div>
