@@ -1,6 +1,6 @@
 ---
 title: 'Slik søker du'
-description: 'Finn søknadsskjema, se saks&shy;behandlings&shy;tider, og muligheter til å ettersende eller klage på vedtak. '
+ingress: 'Finn søknadsskjema, se saks&shy;behandlings&shy;tider, og muligheter til å ettersende eller klage på vedtak. '
 ---
 
 ### Søknadsfrist

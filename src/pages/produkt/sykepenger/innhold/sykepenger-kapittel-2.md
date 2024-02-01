@@ -1,6 +1,6 @@
 ---
 title: 'Hva kan du få?'
-description: '…'
+ingress: '…'
 ---
 
 ### Hvor mye kan du få?

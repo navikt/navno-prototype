@@ -1,6 +1,6 @@
 ---
 title: 'Når du har alderspensjon'
-description: '…'
+ingress: '…'
 ---
 
 ### Dette må du gjøre når du har alderspensjon

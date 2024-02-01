@@ -1,6 +1,6 @@
 ---
 title: 'Når du har sykepenger'
-description: '…'
+ingress: '…'
 ---
 
 ### Dette må du gjøre når du har sykepenger
