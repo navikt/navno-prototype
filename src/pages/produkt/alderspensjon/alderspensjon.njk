@@ -1,5 +1,6 @@
 ---
 tags: ['produkt']
+description: 'Basert på variant E av pleiepenger.'
 permalink: 'produkt/alderspensjon/index.html'
 ---
 {%- extends 'base.njk' -%}
@@ -58,7 +59,7 @@ permalink: 'produkt/alderspensjon/index.html'
             <span class="font-black -mb-9 text-white text-[20em]/[0.8]">{{ loop.index }}</span>
           </div>
           <h2 class="mt-8 font-bold text-3xl/snug text-balance ">{{ chapter.data.title }}</h2>
-          <p>{{ chapter.data.description | safe }}</p>
+          <p>{{ chapter.data.ingress | safe }}</p>
         </div>
 
         {# Chapter TOC #}

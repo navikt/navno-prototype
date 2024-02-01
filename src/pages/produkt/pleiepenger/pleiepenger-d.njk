@@ -1,6 +1,7 @@
 ---
 tags: ['produkt']
 variant: 'D'
+description: 'Stor og visuell innholdsmeny i grå bokser. Kapittelmeny er i hovedspalte på mobil. På desktop er alle kapitler med i menyen (sticky) og aktivt kapittel ekspandert desktop.'
 permalink: 'produkt/pleiepenger/d/index.html'
 ---
 {%- extends 'base.njk' -%}
@@ -39,7 +40,7 @@ permalink: 'produkt/pleiepenger/d/index.html'
           <a class="font-semibold underline text-base/snug group-hover:no-underline after:absolute after:inset-0" href="#{{ chapter.data.title | slugify }}">
             {{ chapter.data.title }}
           </a>
-          <p class="text-base text-pretty">{{ chapter.data.description | safe }}</p>
+          <p class="text-base text-pretty">{{ chapter.data.ingress | safe }}</p>
         </li>
         {% endfor %}
 
@@ -84,7 +85,7 @@ permalink: 'produkt/pleiepenger/d/index.html'
 
           {# Main Content #}
           <div class="mt-8 prose col-main">
-            <p>{{ chapter.data.description | safe }}</p>
+            <p>{{ chapter.data.ingress | safe }}</p>
             {{ chapter.templateContent | markdown | safe }}
           </div>
         </section>

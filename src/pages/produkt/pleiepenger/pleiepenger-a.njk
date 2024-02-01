@@ -1,6 +1,7 @@
 ---
 tags: ['produkt']
 variant: 'A'
+description: 'Innholdsmeny i grå boks. Kapittelmeny er alltid i hovedspalte, men dukker også opp i sidespalte (sticky) på desktop når bruker scroller forbi den i hovedspalten'
 permalink: 'produkt/pleiepenger/a/index.html'
 ---
 {%- extends 'base.njk' -%}
@@ -36,7 +37,7 @@ permalink: 'produkt/pleiepenger/a/index.html'
           <a class="font-semibold underline text-base/snug group-hover:no-underline after:absolute after:inset-0" href="#{{ chapter.data.title | slugify }}">
             {{ chapter.data.title }}
           </a>
-          <p class="text-pretty">{{ chapter.data.description | safe }}</p>
+          <p class="text-pretty">{{ chapter.data.ingress | safe }}</p>
         </li>
         {% endfor %}
 
@@ -54,7 +55,11 @@ permalink: 'produkt/pleiepenger/a/index.html'
     {# Innhold #}
     {% for chapter in chapters %}
       {% set chapterIndex = loop.index %}
-      <section class="grid items-end pt-12 col-full grid-cols-mini lg:grid-cols-maxi" id="{{ chapter.data.title | slugify }}">
+      <section 
+        class="grid items-end pt-12 col-full grid-cols-mini lg:grid-cols-maxi" 
+        id="{{ chapter.data.title | slugify }}" 
+        x-data="{ tocShown: false, tocOpen: false }"
+      >
         <div class="grid grid-cols-mini lg:grid-cols-maxi col-full">
           {# <div class="rounded-lg aspect-[2/1] border border-slate-300 mb-sm"></div> #}
           <div class="text-[360px]/[0.8] -translate-x-2 font-black text-slate-200 pt-2xl">{{ loop.index }}</div>
@@ -64,26 +69,26 @@ permalink: 'produkt/pleiepenger/a/index.html'
 
           {# Static Chapter TOC #}
           {% if chapter.templateContent %}
-          <nav class="px-5 py-3 mt-4 rounded-lg bg-slate-200 col-main toc bottom-xl max-w-max">
+          <nav class="px-5 py-3 mt-4 rounded-lg bg-slate-100 col-main toc bottom-xl max-w-max">
             <h3 class="font-semibold">I dette kapittelet</h3>
             {{ chapter.templateContent | toc | safe }}
           </nav>
           {% endif %}
 
-          <p class="mt-8">{{ chapter.data.description | safe }}</p>
+          <p class="mt-8">{{ chapter.data.ingress | safe }}</p>
         </div>
 
-        <div class="flex items-start justify-between gap-x-24 col-wide" x-data="{ tocShown: false, tocOpen: false }">
+        <div class="flex items-start justify-between gap-x-24 col-wide">
 
           {# Main Content #}
-          <div class="mt-8 prose lg:basis-3/5 max-w-prose shrink-1">
+          <div class="mt-8 prose lg:basis-3/5 max-w-prose shrink-1" x-intersect:enter.margin.3%.0px.-97%.0px="tocShown = true" x-intersect:leave.margin.3%.0px.-97%.0px="tocShown = false">
             {{ chapter.templateContent | markdown | safe }}
           </div>
 
           {# Sticky Chapter TOC #}
           {% if chapter.templateContent %}
-          <div class="hidden lg:block sticky lg:max-w-md my-8 toc toc--sticky top-6 min-h-[92vh] lg:basis-2/5 shrink-5" x-intersect:enter.full="tocShown = true" x-intersect:leave.half="tocShown = false">
-            <nav class="sticky py-3 rounded-lg top-6 bg-slate-200" 
+          <div class="hidden lg:block sticky lg:max-w-md my-8 toc toc--sticky top-6 min-h-[92vh] lg:basis-2/5 shrink-5">
+            <nav class="sticky py-3 rounded-lg top-6 bg-slate-100" 
               x-show="tocShown" 
               x-transition:enter="transition ease-out duration-300"
               x-transition:enter-start="opacity-0"

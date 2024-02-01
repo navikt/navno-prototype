@@ -1,6 +1,7 @@
 ---
 tags: ['produkt']
 // title: 'Søknad om refusjon av reiseutgifter knyttet til ortopediske hjelpemidler, parykk, tilpasningskurs, folkehøyskole, grunnmønster eller brystprotese'
+description: 'Basert på variant E av pleiepenger. Serif-font på avsnitt og lister i hovedspalte.'
 permalink: 'produkt/sykepenger/index.html'
 ---
 {%- extends 'base.njk' -%}
@@ -9,7 +10,37 @@ permalink: 'produkt/sykepenger/index.html'
 {%- from "macros/microcard.njk" import microcard -%}
 {%- from "macros/tile.njk" import tile -%}
 
-{% block fonts %}
+{% block styles %}
+<style>
+  .prose > :where(p, ul) {
+    font-family: "Source Serif 4", serif;
+    line-height: 1.75;
+  }
+  .prose h4 {
+    font-weight: 600;
+  }
+  .prose > div {
+    display: flex;
+    gap: 0.125rem;
+    grid-auto-flow: column;
+    border-radius: 0.375rem;
+    overflow: clip;
+  }
+  .prose > div .button {
+    background-color: #E6F0FF;
+    color: #0056B4;
+    border-width: 0;
+    flex-grow: 1;
+    inline-size: 48%;
+    border-radius: 0.125rem;
+  }
+  .prose > div .button:hover {
+    background: #CCE1FF;
+  }
+  .prose > div .button:nth-child(2) {
+    font-weight: 400;
+  }
+</style>
 {% endblock %}
 
 {%- block content -%}
@@ -20,7 +51,7 @@ permalink: 'produkt/sykepenger/index.html'
     <div class="col-main lg:col-wide">
       <div class="text-sm tracking-widest uppercase">{{ type | safe }}</div>
       <h1 class="mt-1 font-bold text-5xl/tight text-balance">{{ title | safe }}</h1>
-      <div class="mt-6 text-lg text-pretty max-w-prose">{{ intro | markdown | safe }}</div>
+      <p class="mt-6 font-serif text-lg text-pretty max-w-prose">{{ intro | safe }}</p>
 
       {# Audience #}
       {% if audience %}       
@@ -57,8 +88,7 @@ permalink: 'produkt/sykepenger/index.html'
           <div class="grid items-end pl-8 rounded-lg bg-slate-100 pt-2xl aspect-[2/1]">
             <span class="font-black -mb-9 text-white text-[20em]/[0.8]">{{ loop.index }}</span>
           </div>
-          <h2 class="mt-8 font-bold text-3xl/snug text-balance">{{ chapter.data.title }}</h2>
-          <p>{{ chapter.data.description | safe }}</p>
+          <h2 class="mt-8 font-bold text-4xl/snug text-balance">{{ chapter.data.title }}</h2>
         </div>
 
         {# Chapter TOC #}
@@ -97,7 +127,8 @@ permalink: 'produkt/sykepenger/index.html'
         {% endif %}
 
         {# Main Content #}
-        <div class="mt-8 prose col-main">
+        <div class="mt-4 prose col-main">
+          <p>{{ chapter.data.ingress | safe }}</p>
           {{ chapter.templateContent | markdown | safe }}
         </div>
       </section>
