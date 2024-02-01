@@ -129,6 +129,7 @@ module.exports = {
     },
     fontFamily: {
       sans: ['"Source Sans 3"', "Arial", "sans-serif"],
+      serif: ['"Source Serif 4"', "serif"],
       system: [
         "ui-sans-serif",
         "system-ui",
