@@ -65,7 +65,7 @@
     @apply pl-1;
   }
   :where(.prose) > :where(ol, ul) li + li {
-    @apply mt-4;
+    @apply mt-2.5;
   }
   :where(.prose) > :is(p, ul, ol) {
     @apply text-pretty;

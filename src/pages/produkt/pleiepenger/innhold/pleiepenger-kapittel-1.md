@@ -10,47 +10,62 @@ For å få pleiepenger, gjelder alle disse punktene:
 
 <details class="accordion">
   <summary>Du har omsorgen for barnet i perioden du søker for</summary>
-  <p>Som regel er det foreldrene som er omsorgspersonene for barnet, også når de ikke bor sammen. Omsorgspersoner kan også være fosterforeldre eller steforeldre.</p>
-  <p>Andre kan ha rett til pleiepenger hvis de helt eller delvis har omsorgen for barnet i perioden de søker pleiepenger. Dette kan for eksempel være venner, voksne søsken, besteforeldre, tante eller onkel.</p>
+  {% prose %}
+  Som regel er det foreldrene som er omsorgspersonene for barnet, også når de ikke bor sammen. Omsorgspersoner kan også være fosterforeldre eller steforeldre.
+  
+  Andre kan ha rett til pleiepenger hvis de helt eller delvis har omsorgen for barnet i perioden de søker pleiepenger. Dette kan for eksempel være venner, voksne søsken, besteforeldre, tante eller onkel.
+  {% endprose %}
 </details>
 
 <details class="accordion">
   <summary>Barnet har vært til behandling eller utredning</summary>
-  <p>Behandlingen eller utredningen må ha vært på sykehus eller annen spesialisthelsetjeneste.</p>
+  {% prose %}
+  Behandlingen eller utredningen må ha vært på sykehus eller annen spesialisthelsetjeneste.
+  {% endprose %}
 </details>
 
 <details class="accordion">
   <summary>Du er sammen med barnet på sykehus eller hjemme</summary>
-  <p>Du er sammen med barnet mens det er innlagt, eller du er hjemme fordi barnet trenger pleie hele tiden.</p>
+  {% prose %}
+  Du er sammen med barnet mens det er innlagt, eller du er hjemme fordi barnet trenger pleie hele tiden.
+  {% endprose %}
 </details>
 
 <details class="accordion">
   <summary>Du har vært i jobb de siste 4 ukene eller får visse pengestøtter fra NAV</summary>
-  <p>Du har vært i jobb i minst 4 uker umiddelbart før pleiepengeperioden starter eller ha en pengestøtte fra NAV som likestilles med jobb.</p>
-  <p>Disse pengestøttene kan likestilles med jobb:</p>
-  <ul>
-    <li>sykepenger</li>
-    <li>dagpenger</li>
-    <li>foreldrepenger</li>
-    <li>svangerskapspenger</li>
-    <li>omsorgspenger</li>
-    <li>opplæringspenger</li>
-  </ul>
+  {% prose %}
+  Du har vært i jobb i minst 4 uker umiddelbart før pleiepengeperioden starter eller ha en pengestøtte fra NAV som likestilles med jobb.
+  
+  Disse pengestøttene kan likestilles med jobb:
+  
+  * sykepenger
+  * dagpenger
+  * foreldrepenger
+  * svangerskapspenger
+  * omsorgspenger
+  * opplæringspenger
+  {% endprose %}
 </details>
 
 <details class="accordion">
   <summary>Du har minst 20 prosent fravær fra jobben din</summary>
-  <p>Du må ha 20 prosent fravær eller mer fra jobben din de ukene du skal ha pleiepenger.</p>
+  {% prose %}
+  Du må ha 20 prosent fravær eller mer fra jobben din de ukene du skal ha pleiepenger.
+  {% endprose %}
 </details>
 
 <details class="accordion">
   <summary>Du har en årsinntekt på minst 59 310 kroner</summary>
-  <p>Det tilsvarer halvparten av folketrygdens grunnbeløp.</p>
+  {% prose %}
+  Det tilsvarer halvparten av folketrygdens grunnbeløp.
+  {% endprose %}
 </details>
 
 <details class="accordion">
   <summary>Du er medlem av folketrygden</summary>
-  <p>Bor du i Norge, er du vanligvis <a href="#">medlem av folketrygden</a>.</p>
+  {% prose %}
+  Bor du i Norge, er du vanligvis <a href="#">medlem av folketrygden</a>.
+  {% endprose %}
 </details>
 
 ### Omsorgspersonene kan dele pleiepengene
@@ -65,10 +80,10 @@ Når et barn er innlagt på sykehus har begge foreldre som hovedregel rett til 1
 
 Sykdom som luftveisinfeksjoner, omgangssyke og liknende, vil normalt ikke gi rett til pleiepenger. Da kan omsorgspenger for bruk av [omsorgsdager (hjemme med sykt barn dager)](#) være aktuelt.
 
-<!-- <article class="relative px-6 py-4 rounded-lg bg-slate-100 has-[a:hover]:bg-slate-200">
-  <a class="text-lg font-semibold before:absolute before:inset-0" href="#">Omsorgspenger (hjemme med sykt barn-dager)</a>
+<article class="relative px-6 py-4 grid gap-2 rounded-lg bg-slate-100 has-[a:hover]:bg-slate-200">
+  <a class="font-semibold text-lg/snug text-balance before:absolute before:inset-0" href="#">Omsorgspenger (hjemme med sykt barn-dager)</a>
   <p>Sikrer deg inntekt når du må være borte fra jobb fordi barnet ditt for eksempel har omgangssyke.</p>
-</article> -->
+</article>
 
 Hvis sykdommen likevel blir så alvorlige at barnet behandles på sykehus, kan du ha rett på pleiepenger.
 

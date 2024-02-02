@@ -23,13 +23,21 @@ noJS: true
 {% set pages = ['pleiepenger', 'sykepenger', 'alderspensjon'] %}
 
 {%- block content -%}
-  <div class="grid items-start w-full max-w-screen-md gap-8 mx-auto py-page px-edge">
-    {% for item in pages %}
-      <div class="grid flex-1 gap-1 rounded-xl overflow-clip">
-        {% for item in collections.all | onlyTags('produkt', item) %}
-          {{ link(item) }}        
-        {% endfor %}
-      </div>
-    {% endfor %}
+  <div class="py-page px-edge">
+    <a class="inline-flex items-center gap-1 px-3 py-2 mb-4 -mx-3 font-semibold text-blue-600 hover:underline" href="../">
+      {{ '/src/_includes/svg/icons/chevron-left.svg' | svgContents('') | safe }}
+      <span>Tilbake</span>
+    </a>
+
+    <div class="grid items-start w-full max-w-screen-md gap-8 mx-auto">
+
+      {% for item in pages %}
+        <div class="grid flex-1 gap-1 rounded-xl overflow-clip">
+          {% for item in collections.all | onlyTags('produkt', item) %}
+            {{ link(item) }}        
+          {% endfor %}
+        </div>
+      {% endfor %}
+    </div>
   </div>
 {% endblock %}
