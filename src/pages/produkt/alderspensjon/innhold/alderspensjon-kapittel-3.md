@@ -1,6 +1,7 @@
 ---
 title: 'Søke, ettersende og klage'
 ingress: 'Finn søknadsskjema, se saks&shy;behandlings&shy;tider, og muligheter til å ettersende eller klage på vedtak.'
+order: 3
 ---
 
 ### Når skal du søke?

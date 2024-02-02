@@ -12,7 +12,7 @@ permalink: 'produkt/sykepenger/index.html'
 
 {% block styles %}
 <style>
-  .prose > :where(p, ul) {
+  .prose > :where(p, ul, ol) {
     font-family: "Source Serif 4", serif;
     line-height: 1.75;
   }
@@ -45,7 +45,7 @@ permalink: 'produkt/sykepenger/index.html'
 
 {%- block content -%}
 
-  {% set chapters = collections.all| onlyTags('sykepenger', 'innhold') %}
+  {% set chapters = collections.all| onlyTags('sykepenger', 'innhold') | sort(false, false, 'data.order') %}
 
   <main class="grid py-page grid-cols-mini lg:grid-cols-maxi">
     <div class="col-main lg:col-wide">
@@ -67,13 +67,14 @@ permalink: 'produkt/sykepenger/index.html'
     {# Innholdsfortegnelse #}
     <div class="z-10 mt-8 isolate">
       <h2 class="text-base font-semibold">Innhold på siden</h2>
-      <ul class="grid gap-3 mt-2">
+      <ul class="grid gap-4 px-5 py-5 mt-2 rounded-lg bg-slate-100">
         {% for chapter in chapters.slice(0, -1) %}
-        <li class="relative">
-          <span class="sm:absolute mr-1 sm:mr-2.5 leading-none sm:translate-y-1.5 right-full" aria-hidden="true">{{ loop.index }}</span>
-          <a class="inline-flex items-end gap-3 p-1 -m-1 text-blue-500 underline hover:text-blue-700 text-base/snug hover:no-underline" href="#{{ chapter.data.title | slugify }}">
+        <li class="relative grid grid-cols-[auto_1fr] items-baseline">
+          <span class="inline-flex items-center justify-center row-span-2 mr-2 font-semibold leading-none" aria-hidden="true">{{ loop.index }}.</span>
+          <a class="p-1 -m-1 text-blue-500 underline hover:text-blue-700 text-base/snug hover:no-underline" href="#{{ chapter.data.title | slugify }}">
             {{ chapter.data.title }}
           </a>
+          <p class="col-start-2">{{ chapter.data.ingress | safe }}</p>
         </li>
         {% endfor %}
       </ul>
@@ -89,23 +90,23 @@ permalink: 'produkt/sykepenger/index.html'
             <span class="font-black -mb-9 text-white text-[20em]/[0.8]">{{ loop.index }}</span>
           </div>
           <h2 class="mt-8 font-bold text-4xl/snug text-balance">{{ chapter.data.title }}</h2>
+          <p>{{ chapter.data.ingress | safe }}</p>
         </div>
 
         {# Chapter TOC #}
         {% if chapter.templateContent and chapter.templateContent | toc | length > 0%}
         <nav class="relative mt-8 mb-8 lg:order-1 lg:col-side">
-          <h3 class="absolute inset-x-0 top-0 z-20 py-2 font-semibold bg-white">I dette kapittelet</h3>
-          <div class="z-10 lg:sticky lg:top-2">
-            <h3 class="py-1 font-semibold">{{ chapter.data.title }}</h3>
-            <div class="pb-3 toc toc--b toc--sticky">
-            {{ chapter.templateContent | toc | safe }}
+          <h3 class="py-2 font-semibold ">I dette kapittelet</h3>
+          <div class="z-10 rounded-lg lg:sticky lg:top-2 bg-slate-100">
+            <div class="px-5 py-3 border-b toc toc--b toc--sticky border-slate-200">
+              {{ chapter.templateContent | toc | safe }}
             </div>
-            <div class="relative border-t border-slate-200" x-data="{ dropdownOpen: false }">
-              <button class="flex items-center gap-1 px-4 py-3 -mx-4 font-semibold text-blue-500 hover:text-blue-600 group" x-on:click="dropdownOpen = !dropdownOpen" type="button" x-bind:aria-expanded="dropdownOpen">
+            <div class="relative" x-data="{ dropdownOpen: false }">
+              <button class="flex items-center gap-3 px-5 py-3 font-semibold text-blue-500 hover:text-blue-600 group" x-on:click="dropdownOpen = !dropdownOpen" type="button" x-bind:aria-expanded="dropdownOpen">
                 <span>Bytt kapittel</span>
                 {{ '/src/_includes/svg/icons/chevron-down.svg' | svgContents('w-5 h-5 -translate-x-1 group-aria-expanded:rotate-180') | safe }}
               </button>
-              <ol class="absolute w-full max-w-md gap-1 px-2 py-1.5 divide-y rounded-lg shadow-lg divide-slate-300 -left-4 top-full bg-slate-100" x-show="dropdownOpen" x-on:click.outside="dropdownOpen = false">
+              <ol class="absolute w-full max-w-md gap-1 px-2 py-1.5 divide-y rounded-lg shadow-lg divide-slate-300 top-full mt-1 bg-slate-100" x-show="dropdownOpen" x-on:click.outside="dropdownOpen = false">
                 {% for chapter in chapters %}
                 <li class="py-1">
                   {% if loop.index === chapterIndex %}
@@ -128,7 +129,6 @@ permalink: 'produkt/sykepenger/index.html'
 
         {# Main Content #}
         <div class="mt-4 prose col-main">
-          <p>{{ chapter.data.ingress | safe }}</p>
           {{ chapter.templateContent | markdown | safe }}
         </div>
       </section>

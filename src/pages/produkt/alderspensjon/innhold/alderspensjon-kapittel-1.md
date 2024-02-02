@@ -1,6 +1,7 @@
 ---
 title: 'Hvem kan få?'
 ingress: 'Kriterier du må oppfylle for å ha rett til sykepenger.'
+order: 1
 ---
 
 ### Hvem har rett til alderspensjon?

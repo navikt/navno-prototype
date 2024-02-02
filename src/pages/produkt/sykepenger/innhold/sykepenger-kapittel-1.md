@@ -1,6 +1,7 @@
 ---
 title: 'Hvem kan få?'
 ingress: 'Kriterier du må oppfylle for å ha rett til sykepenger.'
+order: 1
 ---
 
 Hvis du har blitt syk eller skadet og ikke kan jobbe, kan du ha rett til sykepenger. I tillegg må du oppfylle disse generelle vilkårene:

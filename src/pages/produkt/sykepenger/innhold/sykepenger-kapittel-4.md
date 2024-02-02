@@ -1,6 +1,7 @@
 ---
 title: 'Når du har sykepenger'
 ingress: '…'
+order: 4
 ---
 
 ### Dette må du gjøre når du har sykepenger

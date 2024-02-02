@@ -12,7 +12,7 @@ permalink: 'produkt/pleiepenger/a/index.html'
 
 {%- block content -%}
 
-  {% set chapters = collections.all| onlyTags('pleiepenger', 'innhold') %}
+  {% set chapters = collections.all| onlyTags('pleiepenger', 'innhold') | sort(false, false, 'data.order') %}
 
   <main class="grid py-16 grid-cols-mini lg:grid-cols-maxi">
     <div class="col-main lg:col-wide">
@@ -53,7 +53,7 @@ permalink: 'produkt/pleiepenger/a/index.html'
 
 
     {# Innhold #}
-    {% for chapter in chapters %}
+    {% for chapter in chapters | sort(false, false, 'data.order') %}
       {% set chapterIndex = loop.index %}
       <section 
         class="grid items-end pt-12 col-full grid-cols-mini lg:grid-cols-maxi" 

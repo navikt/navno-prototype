@@ -12,7 +12,7 @@ permalink: 'produkt/pleiepenger/e/index.html'
 
 {%- block content -%}
 
-  {% set chapters = collections.all| onlyTags('pleiepenger', 'innhold') %}
+  {% set chapters = collections.all| onlyTags('pleiepenger', 'innhold') | sort(false, false, 'data.order') %}
 
   <main class="grid py-16 grid-cols-mini lg:grid-cols-maxi">
     <div class="col-main lg:col-wide">

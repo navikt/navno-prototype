@@ -1,6 +1,7 @@
 ---
 title: 'Hva kan du få?'
 ingress: 'Situasjon og yrke påvirker hvor mye du kan få utbetalt av NAV.'
+order: 2
 ---
 
 ### Hvor mye kan du få?

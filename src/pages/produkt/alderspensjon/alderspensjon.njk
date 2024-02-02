@@ -15,7 +15,7 @@ permalink: 'produkt/alderspensjon/index.html'
 
 {%- block content -%}
 
-  {% set chapters = collections.all | onlyTags('alderspensjon', 'innhold') %}
+  {% set chapters = collections.all | onlyTags('alderspensjon', 'innhold') | sort(false, false, 'data.order') %}
 
   <main class="grid py-16 grid-cols-mini lg:grid-cols-maxi">
     <div class="col-main lg:col-wide">
@@ -37,13 +37,14 @@ permalink: 'produkt/alderspensjon/index.html'
     {# Innholdsfortegnelse #}
     <div class="z-10 mt-8 isolate">
       <h2 class="text-base font-semibold">Innhold på siden</h2>
-      <ol class="grid gap-3 mt-2">
+      <ol class="grid gap-8 mt-2">
         {% for chapter in chapters.slice(0, -1) %}
-        <li class="relative">
-          <span class="mr-1 leading-none" aria-hidden="true">{{ loop.index }}.</span>
-          <a class="inline-flex items-end gap-3 p-1 -m-1 text-blue-500 underline hover:text-blue-700 text-base/snug hover:no-underline" href="#{{ chapter.data.title | slugify }}">
+        <li class="relative grid grid-cols-[auto_1fr] items-baseline lg:-ml-12">
+          <span class="flex items-center justify-center row-span-2 mr-3 leading-none rounded-full w-9 aspect-square bg-slate-100" aria-hidden="true">{{ loop.index }}</span>
+          <a class="p-1 -m-1 text-blue-500 underline hover:text-blue-700 text-base/snug hover:no-underline" href="#{{ chapter.data.title | slugify }}">
             {{ chapter.data.title }}
           </a>
+          <p class="col-start-2">{{ chapter.data.ingress | safe }}</p>
         </li>
         {% endfor %}
       </ol>
@@ -53,7 +54,7 @@ permalink: 'produkt/alderspensjon/index.html'
     {# Innhold #}
     {% for chapter in chapters %}
       {% set chapterIndex = loop.index %}
-      <section class="grid grid-flow-row-dense pt-12 col-full grid-cols-mini lg:grid-cols-maxi" id="{{ chapter.data.title | slugify }}"  x-data="{ tocOpen: false }">
+      <section class="grid grid-flow-row-dense pt-32 col-full grid-cols-mini lg:grid-cols-maxi" id="{{ chapter.data.title | slugify }}"  x-data="{ tocOpen: false }">
         <div class=" col-main lg:col-wide">
           <div class="grid items-end pl-8 rounded-lg bg-slate-100 pt-2xl aspect-[2/1]">
             <span class="font-black -mb-9 text-white text-[20em]/[0.8]">{{ loop.index }}</span>

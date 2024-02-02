@@ -1,6 +1,7 @@
 ---
 title: 'Hvem kan få?'
 ingress: 'Kriterier du må oppfylle for å ha rett til pleiepenger.'
+order: 1
 ---
 
 ### Situasjoner som gir rett til pleiepenger

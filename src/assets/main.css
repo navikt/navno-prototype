@@ -37,28 +37,37 @@
   :where(.prose) > *:not(summary) + * {
     margin-block-start: 1.5em;
   }
-  :where(.prose) :where(h1, h2, h3, h4, h5) {
+  :where(.prose) > :where(h1, h2, h3, h4, h5) {
     @apply text-gray-900 text-pretty;
   }
   :where(.prose) h3 {
     @apply text-xl/snug text-pretty font-bold;
   }
-  :where(.prose) h4 {
+  :where(.prose) > h4 {
     @apply text-lg/snug text-pretty font-bold;
   }
-  :where(.prose) h5 {
+  :where(.prose) > h5 {
     @apply text-base/snug text-pretty font-bold;
   }
-  :where(.prose) :where(h3, h4, h5) + *:not(h3, h4, h5, ul, ol, details) {
+  :where(.prose) > :where(h3, h4, h5) + *:not(h3, h4, h5, ul, ol, details) {
     margin-block-start: 0.25em;
   }
-  :where(.prose) ul {
+  :where(.prose) > ul {
     @apply list-disc pl-6;
   }
-  :where(.prose) li + li {
-    @apply mt-2;
+  :where(.prose) > ol {
+    @apply list-decimal pl-6;
   }
-  :where(.prose) :is(p, li) {
+  :where(.prose) > ol ::marker {
+    @apply font-bold font-sans;
+  }
+  :where(.prose) > :where(ol, ul) li {
+    @apply pl-1;
+  }
+  :where(.prose) > :where(ol, ul) li + li {
+    @apply mt-4;
+  }
+  :where(.prose) > :is(p, ul, ol) {
     @apply text-pretty;
   }
   :where(.prose) > * a {
@@ -128,7 +137,7 @@
     appearance: none;
     display: block;
     list-style: none;
-    padding: 0.75em 44px;
+    padding: 0.625em 44px;
     margin-block: -1px;
     margin-inline: -48px -20px;
     border-radius: 4px;
@@ -146,10 +155,12 @@
   }
   :where(.accordion[open]) summary {
     background-color: theme(colors.slate.100);
+    color: theme(colors.blue.700);
     margin-block-end: 12px;
   }
   :where(.accordion) summary:hover {
     background-color: theme(colors.blue.50);
+    color: theme(colors.blue.700);
   }
   :where(.accordion) summary:before {
     background-color: theme(colors.blue.50);

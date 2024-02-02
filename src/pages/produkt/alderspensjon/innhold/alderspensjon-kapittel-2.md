@@ -1,6 +1,7 @@
 ---
 title: 'Hva kan du få?'
 ingress: '…'
+order: 2
 ---
 
 ### Hvor mye kan du få?
