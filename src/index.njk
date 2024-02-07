@@ -30,9 +30,11 @@ noJS: true
 
 
 {%- block content -%}
-  <div class="grid items-start w-full max-w-screen-md gap-2 mx-auto py-page px-edge">
+<div class="py-page px-edge">
+  <div class="grid items-start w-full max-w-screen-md gap-2 mx-auto">
     {% for item in pages %}      
     {{ link(item) }}
     {% endfor %}
   </div>
+</div>
 {% endblock %}

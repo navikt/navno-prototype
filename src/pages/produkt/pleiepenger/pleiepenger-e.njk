@@ -33,10 +33,11 @@ permalink: 'produkt/pleiepenger/e/index.html'
       <h2 class="text-base font-semibold">Innhold på siden</h2>
       <ul class="grid gap-3 mt-2">
         {% for chapter in chapters.slice(0, -1) %}
-        <li class="relative">
-          <span class="sm:absolute mr-1 sm:mr-2.5 leading-none sm:translate-y-1.5 right-full" aria-hidden="true">{{ loop.index }}.</span>
-          <a class="inline-flex items-end gap-3 p-1 -m-1 text-blue-500 underline hover:text-blue-700 text-base/snug hover:no-underline" href="#{{ chapter.data.title | slugify }}">
+        <li class="relative py-1">
+          <a class="flex items-end gap-2 p-1 -m-1 text-blue-500 group hover:text-blue-700 text-base/snug hover:underline" href="#{{ chapter.data.title | slugify }}">
             {{ chapter.data.title }}
+            <span class="flex-1 h-px min-w-4 -translate-y-[0.25em] bg-dotted-x" aria-hidden="true"></span>
+            {{ '/src/_includes/svg/icons/arrow-down.svg' | svgContents('w-8 h-8 bg-slate-100 p-1.5 rounded-full group-hover:bg-blue-500 group-hover:text-white') | safe }}
           </a>
         </li>
         {% endfor %}
