@@ -37,17 +37,17 @@
   :where(.prose) > *:not(summary) + * {
     margin-block-start: 1.5em;
   }
-  :where(.prose) > :where(h1, h2, h3, h4, h5) {
-    @apply text-gray-900 text-pretty;
+  .prose > :where(h1, h2, h3, h4, h5) {
+    @apply text-gray-900 text-pretty font-semibold;
   }
   :where(.prose) h3 {
-    @apply text-xl/snug text-pretty font-bold;
+    @apply text-xl/snug;
   }
   :where(.prose) > h4 {
-    @apply text-lg/snug text-pretty font-bold;
+    @apply text-lg/snug;
   }
   :where(.prose) > h5 {
-    @apply text-base/snug text-pretty font-bold;
+    @apply text-base/snug;
   }
   :where(.prose) > :where(h3, h4, h5) + *:not(h3, h4, h5, ul, ol, details) {
     margin-block-start: 0.25em;
@@ -96,10 +96,10 @@
 
   /* Table of contents (toc) */
   .toc ol {
-    @apply max-w-md grid gap-1.5;
+    @apply max-w-md grid gap-1.5 mb-3;
   }
   .toc li {
-    @apply border-l-4 -ml-4 border-transparent px-3 pt-1.5 pb-1 relative leading-snug;
+    @apply lg:border-l-4 lg:-ml-3 lg:border-transparent lg:px-3 pt-1.5 pb-1 relative leading-snug;
   }
   .toc .active {
     @apply lg:border-blue-600;
@@ -110,7 +110,7 @@
   .toc .active a {
     @apply lg:no-underline lg:text-slate-800;
   }
-  .toc li a:before {
+  .toc--dotted li a:before {
     content: "";
     position: absolute;
     inset: 0;
@@ -301,22 +301,28 @@
 }
 
 @layer utilities {
-  .grid-cols-mini {
+  .grid-cols-center {
     --_edge: theme(spacing.edge);
     grid-template-columns: 
-      [full-start] var(--_edge) [wide-start main-start side-start] minmax(0, 42rem) [main-end side-end] minmax(0, 1fr) [wide-end] var(--_edge) [full-end];
+      [full-start] var(--_edge) minmax(0, 1fr) [wide-start] minmax(0, 1fr) [main-start side-start] minmax(0, 40rem) [main-end side-end] minmax(0, 1fr) [wide-end] minmax(0, 1fr) var(--_edge) [full-end];
   }
 
-  .grid-cols-maxi {
+  .grid-left-1 {
+    --_edge: theme(spacing.edge);
+    grid-template-columns: 
+      [full-start] var(--_edge) [wide-start main-start side-start] minmax(0, 40rem) [main-end side-end] minmax(0, 1fr) [wide-end] var(--_edge) [full-end];
+  }
+
+  .grid-cols-left-2 {
     --_edge: theme(spacing.edge);
     grid-template-columns: 
       [full-start] var(--_edge) minmax(0, 1fr)  
-      [wide-start main-start] min(clamp(30rem, 18rem + 24vi, 42rem), 100%) 
+      [wide-start main-start] min(clamp(30rem, 18rem + 24vi, 40rem), 100%) 
       [main-end] clamp(1rem, -1.2353rem + 11.1765vi, 10.5rem) 
-      [side-start] minmax(0, 22.5rem) 
+      [side-start] minmax(0, 24.5rem) 
       [side-end wide-end] minmax(0, 1fr) var(--_edge) [full-end];
   }
-  :where(.grid-cols-mini > *, .grid-cols-maxi > *) { grid-column: main }
+  :where(.grid-left-1 > *, .grid-cols-left-2 > *, .grid-cols-center > *) { grid-column: main }
 
   .col-full { grid-column: full }
   .col-wide { grid-column: wide }

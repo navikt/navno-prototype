@@ -1,6 +1,6 @@
 ---
 title: 'Hva kan du få?'
-ingress: '…'
+ingress: 'Hvor mye penger kan du få, og hvor lenge kan du få støtte.'
 order: 2
 ---
 

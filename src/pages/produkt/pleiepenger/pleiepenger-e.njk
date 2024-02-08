@@ -14,7 +14,7 @@ permalink: 'produkt/pleiepenger/e/index.html'
 
   {% set chapters = collections.all| onlyTags('pleiepenger', 'innhold') | sort(false, false, 'data.order') %}
 
-  <main class="grid py-16 grid-cols-mini lg:grid-cols-maxi">
+  <main class="grid py-16 grid-left-1 lg:grid-cols-left-2">
     <div class="col-main lg:col-wide">
       <div class="text-sm tracking-widest uppercase">{{ type | safe }}</div>
       <h1 class="mt-1 -translate-x-[0.0625em] font-bold text-4xl/tight text-balance">{{ title | safe }}</h1>
@@ -39,6 +39,7 @@ permalink: 'produkt/pleiepenger/e/index.html'
             <span class="flex-1 h-px min-w-4 -translate-y-[0.25em] bg-dotted-x" aria-hidden="true"></span>
             {{ '/src/_includes/svg/icons/arrow-down.svg' | svgContents('w-8 h-8 bg-slate-100 p-1.5 rounded-full group-hover:bg-blue-500 group-hover:text-white') | safe }}
           </a>
+          {# <p class="pr-4 mt-1.5 text-pretty opacity-85">{{ chapter.data.ingress | safe }}</p> #}
         </li>
         {% endfor %}
       </ul>
@@ -49,7 +50,7 @@ permalink: 'produkt/pleiepenger/e/index.html'
 
     {% for chapter in chapters %}
       {% set chapterIndex = loop.index %}
-      <section class="grid pt-12 col-full grid-cols-mini lg:grid-cols-maxi" id="{{ chapter.data.title | slugify }}"  x-data="{ tocOpen: false }">
+      <section class="grid pt-12 col-full grid-left-1 lg:grid-cols-left-2" id="{{ chapter.data.title | slugify }}"  x-data="{ tocOpen: false }">
         <div class=" col-main lg:col-wide">
           <div class="grid items-end pl-8 rounded-lg bg-slate-100 pt-2xl aspect-[2/1]">
             <span class="font-black -mb-9 text-white text-[20em]/[0.8]">{{ loop.index }}</span>

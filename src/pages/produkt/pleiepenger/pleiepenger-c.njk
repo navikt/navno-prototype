@@ -15,7 +15,7 @@ permalink: 'produkt/pleiepenger/c/index.html'
 
   {% set chapters = collections.all| onlyTags('pleiepenger', 'innhold') | sort(false, false, 'data.order') %}
 
-  <main class="grid py-16 grid-cols-mini lg:grid-cols-maxi">
+  <main class="grid py-16 grid-left-1 lg:grid-cols-left-2">
     <div class="col-main lg:col-wide">
       <div class="text-sm tracking-widest uppercase">{{ type | safe }}</div>
       <h1 class="mt-1 font-bold text-4xl/tight text-balance">{{ title | safe }}</h1>
@@ -56,7 +56,7 @@ permalink: 'produkt/pleiepenger/c/index.html'
     {# Innhold #}
     {% for chapter in chapters %}
       {% set chapterIndex = loop.index %}
-      <section class="grid items-start pt-24 col-full grid-cols-mini lg:grid-cols-maxi" id="{{ chapter.data.title | slugify }}"  x-data="{ tocOpen: false }">
+      <section class="grid items-start pt-24 col-full grid-left-1 lg:grid-cols-left-2" id="{{ chapter.data.title | slugify }}"  x-data="{ tocOpen: false }">
 
         <div class="lg:col-wide">
           <div class="grid items-end px-4 bg-slate-100 aspect-[5/2] rounded-xl">

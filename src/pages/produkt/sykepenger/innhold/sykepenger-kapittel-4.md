@@ -1,6 +1,6 @@
 ---
 title: 'Når du har sykepenger'
-ingress: '…'
+ingress: 'Utbetalingsdatoer og hva du må gjøre når du får sykepenger.'
 order: 4
 ---
 
