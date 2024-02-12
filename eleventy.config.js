@@ -16,6 +16,7 @@ const {
   sortStringLast,
   lowerfirst,
   onlyTags,
+  tocData,
 } = require("./src/_11ty/filters.js");
 const { timestampNow } = require("./src/_11ty/shortcodes.js");
 const { minifyHtml } = require("./src/_11ty/transforms.js");
@@ -64,6 +65,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter("extractTags", extractTags);
   eleventyConfig.addFilter("sortStringLast", sortStringLast);
   eleventyConfig.addFilter("onlyTags", onlyTags);
+  eleventyConfig.addFilter("tocData", tocData);
 
   // Templating collections
   // eleventyConfig.addCollection("typeFilter", typeFilter);

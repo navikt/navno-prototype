@@ -12,34 +12,35 @@ order: 4
 
 [Har du opplevd endring i livssituasjonen din?](#) Du som mottar penger fra NAV må melde fra om endringer som kan ha betydning for rettighetene dine. Det gjør du ved å [sende oss en beskjed](#).
 
-<details class="accordion">
-  <summary>Hvis du vil endre uttaksgrad</summary>
-  <p>Innhold mangler</p>
-</details>
-
-<details class="accordion">
-  <summary>Hvis du flytter til utlandet</summary>
-  <p>Innhold mangler</p>
-</details>
-
-<details class="accordion">
-  <summary>Hvis ektefellen, samboeren eller partneren din dør</summary>
-  <p>Innhold mangler</p>
-</details>
+<div class="accordion">
+  <details>
+    <summary>Hvis du vil endre uttaksgrad</summary>
+    <p>Innhold mangler</p>
+  </details>
+  <details>
+    <summary>Hvis du flytter til utlandet</summary>
+    <p>Innhold mangler</p>
+  </details>
+  <details>
+    <summary>Hvis ektefellen, samboeren eller partneren din dør</summary>
+    <p>Innhold mangler</p>
+  </details>
+</div>
 
 ### Jobb og alderspensjon
 
 _[Kort intro om jobb og rettigheter]_
 
-<details class="accordion">
-  <summary>Hvis du blir permittert</summary>
-  <p>Innhold mangler</p>
-</details>
-
-<details class="accordion">
-  <summary>Hvis du blir syk</summary>
-  <p>Innhold mangler</p>
-</details>
+<div class="accordion">
+  <details>
+    <summary>Hvis du blir permittert</summary>
+    <p>Innhold mangler</p>
+  </details>
+  <details>
+    <summary>Hvis du blir syk</summary>
+    <p>Innhold mangler</p>
+  </details>
+</div>
 
 ### Reise eller flytte til utlandet
 
@@ -61,15 +62,16 @@ Du er ikke lenger medlem i folketrygden når du anses som bosatt i utlandet.
 
 _[Info om at man må melde fra til NAV]_
 
-<details class="accordion">
-  <summary>Flytte til et EØS-land eller andre land Norge har avtale med</summary>
-  <p>Innhold mangler</p>
-</details>
-
-<details class="accordion">
-  <summary>Flytte til et land Norge ikke har avtale med</summary>
-  <p>Innhold mangler</p>
-</details>
+<div class="accordion">
+  <details>
+    <summary>Flytte til et EØS-land eller andre land Norge har avtale med</summary>
+    <p>Innhold mangler</p>
+  </details>
+  <details>
+    <summary>Flytte til et land Norge ikke har avtale med</summary>
+    <p>Innhold mangler</p>
+  </details>
+</div>
 
 ##### Dekning av helsetjenester
 

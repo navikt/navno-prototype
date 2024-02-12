@@ -19,72 +19,61 @@ Får du fosterhjemsgodtgjørelse? Da regnes du som frilanser. Det samme gjelder 
 
 Se hvilke regler som gjelder for deg her:
 
-<details class="accordion">
-  <summary>Arbeidstaker</summary>
-  {% prose %}
-  Som regel er det foreldrene som er omsorgspersonene for barnet, også når de ikke bor sammen. Omsorgspersoner kan også være fosterforeldre eller steforeldre.
-  
-  Andre kan ha rett til pleiepenger hvis de helt eller delvis har omsorgen for barnet i perioden de søker pleiepenger. Dette kan for eksempel være venner, voksne søsken, besteforeldre, tante eller onkel.
-  {% endprose %}
-</details>
-
-<details class="accordion">
-  <summary>Selvstendig næringsdrivende</summary>
-  <p>Innhold mangler</p>
-</details>
-
-<details class="accordion">
-  <summary>Frilanser</summary>
-  <p>Innhold mangler</p>
-</details>
-
-<details class="accordion">
-  <summary>Fisker</summary>
-  <p>Innhold mangler</p>
-</details>
-
-<details class="accordion">
-  <summary>Tilkallingsvikar</summary>
-  <p>Innhold mangler</p>
-</details>
-
-<details class="accordion">
-  <summary>Flere jobber</summary>
-  <p>Innhold mangler</p>
-</details>
-
-<details class="accordion">
-  <summary>Jobber i flere land</summary>
-  <p>Innhold mangler</p>
-</details>
-
-<details class="accordion">
-  <summary>Midlertidig ute av arbeid</summary>
-  <p>Innhold mangler</p>
-</details>
-
-<details class="accordion">
-  <summary>Arbeidsledig</summary>
-  <p>Innhold mangler</p>
-</details>
-
-<details class="accordion">
-  <summary>Avtjent militær- eller siviltjeneste</summary>
-  <p>Innhold mangler</p>
-</details>
-
-<details class="accordion">
-  <summary>I utdanning</summary>
-  <p>Innhold mangler</p>
-</details>
-
-<details class="accordion">
-  <summary>Innlagt på helseinstitusjon</summary>
-  <p>Innhold mangler</p>
-</details>
-
-<details class="accordion">
-  <summary>I fengsel</summary>
-  <p>Innhold mangler</p>
-</details>
-
+<div class="accordion">
+  <details>
+    <summary>Arbeidstaker</summary>
+    {% prose %}
+    Som regel er det foreldrene som er omsorgspersonene for barnet, også når de ikke bor sammen. Omsorgspersoner kan også være fosterforeldre eller steforeldre.
+    
+    Andre kan ha rett til pleiepenger hvis de helt eller delvis har omsorgen for barnet i perioden de søker pleiepenger. Dette kan for eksempel være venner, voksne søsken, besteforeldre, tante eller onkel.
+    {% endprose %}
+  </details>
+  <details>
+    <summary>Selvstendig næringsdrivende</summary>
+    <p>Innhold mangler</p>
+  </details>
+  <details>
+    <summary>Frilanser</summary>
+    <p>Innhold mangler</p>
+  </details>
+  <details>
+    <summary>Fisker</summary>
+    <p>Innhold mangler</p>
+  </details>
+  <details>
+    <summary>Tilkallingsvikar</summary>
+    <p>Innhold mangler</p>
+  </details>
+  <details>
+    <summary>Flere jobber</summary>
+    <p>Innhold mangler</p>
+  </details>
+  <details>
+    <summary>Jobber i flere land</summary>
+    <p>Innhold mangler</p>
+  </details>
+  <details>
+    <summary>Midlertidig ute av arbeid</summary>
+    <p>Innhold mangler</p>
+  </details>
+  <details>
+    <summary>Arbeidsledig</summary>
+    <p>Innhold mangler</p>
+  </details>
+  <details>
+    <summary>Avtjent militær- eller siviltjeneste</summary>
+    <p>Innhold mangler</p>
+  </details>
+  <details>
+    <summary>I utdanning</summary>
+    <p>Innhold mangler</p>
+  </details>
+  <details>
+    <summary>Innlagt på helseinstitusjon</summary>
+    <p>Innhold mangler</p>
+  </details>
+  <details>
+    <summary>I fengsel</summary>
+    <p>Innhold mangler</p>
+  </details>
+</div>

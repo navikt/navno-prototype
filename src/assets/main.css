@@ -34,86 +34,82 @@
 }
 
 @layer components {
-  :where(.prose) > *:not(summary) + * {
+  :where(.prose, .accordion, .expander) > *:not(summary) + * {
     margin-block-start: 1.5em;
   }
   .prose > :where(h1, h2, h3, h4, h5) {
     @apply text-gray-900 text-pretty font-semibold;
   }
-  :where(.prose) h3 {
-    @apply text-xl/snug;
+  :where(.prose, .accordion, .expander) h3 {
+    font-size: var(--step-2);
+    line-height: 1.2;
+    letter-spacing: -0.0125em;
+    margin-block: 1.25em 0.25em;
   }
-  :where(.prose) > h4 {
-    @apply text-lg/snug;
+  :where(.prose, .accordion, .expander) > h4 {
+    font-size: var(--step-1);
+    line-height: 1.2;
+    letter-spacing: -0.0125em;
+    margin-block: 1.375em 0.25em;
   }
-  :where(.prose) > h5 {
-    @apply text-base/snug;
+  :where(.prose, .accordion, .expander) > h5 {
+      font-size: var(--step-0);
+      line-height: 1.3;
+      letter-spacing: 0.025em;
+      text-transform: uppercase;
+      margin-block: 1.25em 0.25em;
   }
-  :where(.prose) > :where(h3, h4, h5) + *:not(h3, h4, h5, ul, ol, details) {
+  :where(.prose, .accordion, .expander) > :where(h3, h4, h5) + *:not(h3, h4, h5, ul, ol, details) {
     margin-block-start: 0.25em;
   }
-  :where(.prose) > ul {
+  :where(.prose, .accordion, .expander) > ul {
     @apply list-disc pl-6;
   }
-  :where(.prose) > ol {
+  :where(.prose, .accordion, .expander) > ol {
     @apply list-decimal pl-6;
   }
-  :where(.prose) > ol ::marker {
+  :where(.prose, .accordion, .expander) > ol ::marker {
     @apply font-bold font-sans;
   }
-  :where(.prose) > :where(ol, ul) li {
+  :where(.prose, .accordion, .expander) > :where(ol, ul) li {
     @apply pl-1;
   }
-  :where(.prose) > :where(ol, ul) li + li {
+  :where(.prose, .accordion, .expander) > :where(ol, ul) li + li {
     @apply mt-2.5;
   }
-  :where(.prose) > :is(p, ul, ol) {
+  :where(.prose, .accordion, .expander) > :is(p, ul, ol) {
     @apply text-pretty;
   }
-  :where(.prose) > * a {
+  :where(.prose, .accordion, .expander) > * a {
     @apply text-blue-600 underline;
   }
-  :where(.prose) > * a:hover {
+  :where(.prose, .accordion, .expander) > * a:hover {
     @apply hover:no-underline;
   }
-  :where(.prose) > table {
+  :where(.prose, .accordion, .expander) > table {
     @apply text-left w-full;
   }
-  :where(.prose) > table :where(th, td) {
+  :where(.prose, .accordion, .expander) > table :where(th, td) {
     @apply pr-4 py-1;
   }
-  :where(.prose) > table :where(tbody tr) :where(th, td) {
+  :where(.prose, .accordion, .expander) > table :where(tbody tr) :where(th, td) {
     @apply border-t border-slate-300;
   }
-  :where(.prose) > table :where(thead th) {
+  :where(.prose, .accordion, .expander) > table :where(thead th) {
     @apply font-semibold text-sm;
   }
-  :where(.prose) > table :where(tbody th) {
+  :where(.prose, .accordion, .expander) > table :where(tbody th) {
     @apply font-[375];
   }
 
 
 
   /* Table of contents (toc) */
-  .toc ol {
-    @apply max-w-md grid gap-1.5 mb-3;
+  .toc-highlight {
+    @apply border-l-4 border-transparent;
   }
-  .toc li {
-    @apply lg:border-l-4 lg:-ml-3 lg:border-transparent lg:px-3 pt-1.5 pb-1 relative leading-snug;
-  }
-  .toc .active {
+  .toc-highlight--active {
     @apply lg:border-blue-600;
-  }
-  .toc a {
-    @apply underline hover:no-underline text-blue-500 hover:text-blue-700;
-  }
-  .toc .active a {
-    @apply lg:no-underline lg:text-slate-800;
-  }
-  .toc--dotted li a:before {
-    content: "";
-    position: absolute;
-    inset: 0;
   }
 
 
@@ -121,23 +117,23 @@
 
 
   /* Accordion */
-  .accordion {
+  .accordion details {
     display: grid;
     padding-inline: 36px 10px;
     font-family: theme(fontFamily.sans);
   }
-  .accordion + .accordion {
+  .accordion details + details {
     margin-block-start: 0;
     border-top: 1px solid theme(colors.gray.200);
   }
-  .accordion[open] {
+  .accordion details[open] {
     padding-block-end: 36px;
   }
   :where(.accordion) summary {
     appearance: none;
     display: block;
     list-style: none;
-    padding: 0.625em 44px;
+    padding: 0.625em 40px;
     margin-block: -1px;
     margin-inline: -48px -20px;
     border-radius: 4px;
@@ -153,7 +149,7 @@
   :where(.accordion) summary::-webkit-details-marker {
     display: none;
   }
-  :where(.accordion[open]) summary {
+  :where(.accordion) details[open] summary {
     background-color: theme(colors.slate.100);
     color: theme(colors.blue.700);
     margin-block-end: 12px;
@@ -181,14 +177,25 @@
   :where(.accordion) summary:hover:before {
     background-color: theme(colors.white);
   }
-  :where(.accordion[open]) summary:before {
+  :where(.accordion) details[open] summary:before {
     background-color: theme(colors.white);
     rotate: -180deg;
   }
   :where(.accordion) summary > * {
     text-wrap: pretty;
   }
-
+  [data-theme="sykepenger"] .accordion {
+    border-radius: theme(borderRadius.lg);
+    border: 1px solid theme(colors.slate.200);
+  }
+  [data-theme="sykepenger"] details {
+    padding-inline: 42px;
+  }
+  [data-theme="sykepenger"] :where(.accordion) summary {
+    margin-inline: -42px;
+    padding-inline: 42px;
+    text-indent: -31px;
+  }
 
 
 

@@ -1,6 +1,6 @@
 {# Notifications #}
-<div class="absolute inset-x-0 z-40 grid w-full h-0 border-t grid-left-1 lg:grid-cols-left-2 top-full border-slate-200" x-bind:class="notifyOpen ? 'opacity-0 animate-dropdown' : 'hidden'">
-  <div class="lg:max-w-xl w-full bg-white rounded-b-lg shadow-16 md:max-h-[92vh] col-full sm:col-wide lg:justify-self-end lg:-mx-4">
+<div class="absolute inset-x-0 z-40 grid w-full h-0 grid-left-1 lg:grid-cols-left-2 top-full " x-bind:class="notifyOpen ? 'opacity-0 animate-dropdown' : 'hidden'">
+  <div class="lg:max-w-xl w-full bg-white rounded-b-lg shadow-lg border border-slate-200 md:max-h-[92vh] col-full sm:col-wide lg:justify-self-end lg:-mx-4">
     <div class="px-6 px-clamp-gap">
       <p class="grid pt-5 pb-4" x-on:click="newNotifications = !newNotifications">
         <span class="text-sm tracking-wider uppercase opacity-80">Logget inn</span>

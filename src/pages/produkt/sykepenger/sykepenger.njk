@@ -14,7 +14,7 @@ permalink: 'produkt/sykepenger/index.html'
 
   {% set chapters = collections.all| onlyTags('sykepenger', 'innhold') | sort(false, false, 'data.order') %}
 
-  <main class="grid py-page grid-left-1 lg:grid-cols-left-2">
+  <main class="grid py-page grid-left-1 lg:grid-cols-left-2" data-theme="sykepenger">
     <div class="col-main lg:col-wide">
       <div class="text-sm tracking-widest uppercase">{{ type | safe }}</div>
       <h1 class="mt-1 font-bold text-5xl/tight text-balance">{{ title | safe }}</h1>
@@ -32,17 +32,16 @@ permalink: 'produkt/sykepenger/index.html'
     </div>
 
     {# Innholdsfortegnelse #}
-    <div class="z-10 mt-12 isolate">
-      <h2 class="text-base font-semibold">Innhold på siden</h2>
-      <ul class="grid gap-3 mt-2">
+    <div class="z-10 mt-12 rounded-lg isolate bg-slate-100">
+      <h2 class="px-4 pt-3 text-base font-semibold">Innhold på siden</h2>
+      <ul class="grid gap-3 py-2">
         {% for chapter in chapters.slice(0, -1) %}
-        <li class="relative pt-1 pb-2">
-          <a class="flex items-end gap-2 p-1 -m-1 text-blue-500 group hover:text-blue-700 text-base/snug hover:underline" href="#{{ chapter.data.title | slugify }}">
+        <li class="flex relative flex-col items-start gap-0.5 pt-1 pb-2">
+          <a class="inline-flex items-center content-start gap-2 px-3 font-medium text-blue-500 group hover:text-blue-700 text-base/snug hover:underline after:absolute after:inset-0 after:z-10" href="#{{ chapter.data.title | slugify }}">
+            {{ '/src/_includes/svg/icons/arrow-right-angle.svg' | svgContents('-translate-y-0.5 opacity-85') | safe }}
             {{ chapter.data.title }}
-            <span class="flex-1 h-px min-w-4 -translate-y-[0.25em] bg-dotted-x" aria-hidden="true"></span>
-            {{ '/src/_includes/svg/icons/arrow-down.svg' | svgContents('w-8 h-8 bg-slate-100 p-1.5 rounded-full group-hover:bg-blue-500 group-hover:text-white') | safe }}
           </a>
-          <p class="pr-4 mt-1.5 text-pretty opacity-80">{{ chapter.data.ingress | safe }}</p>
+          <p class="pl-11 text-pretty opacity-80">{{ chapter.data.ingress | safe }}</p>
         </li>
         {% endfor %}
       </ul>
@@ -62,42 +61,46 @@ permalink: 'produkt/sykepenger/index.html'
         </div>
 
         {# Chapter TOC #}
-        {% if chapter.templateContent and chapter.templateContent | toc | length > 0%}
-        <nav class="relative mt-8 mb-8 lg:order-1 lg:col-side">
-          <h3 class="absolute inset-x-0 top-0 z-20 py-2 font-semibold bg-white">I dette kapittelet</h3>
-          <div class="z-10 lg:sticky lg:top-3">
-            <h3 class="py-2 font-semibold">{{ chapter.data.title }}</h3>
-            <div class="border-l lg:px-3 toc toc--b toc--sticky border-slate-200">
-              {{ chapter.templateContent | toc | safe }}
+        {% if chapter.templateContent and chapter.templateContent | tocData | length > 0%}
+        <nav class="relative mt-8 lg:col-side ">
+          <h3 class="absolute inset-x-0 top-0 z-20 pt-3 pl-4 font-semibold rounded-t-lg bg-slate-100">I dette kapittelet</h3>
+          <div class="lg:sticky lg:top-1">
+            <div class="rounded-t-lg bg-slate-100 toc--sticky">
+              <h3 class="px-4 pt-3 font-semibold">{{ chapter.data.title }}</h3>
+              <ul class="grid gap-1 py-3">
+              {% for item in chapter.templateContent | tocData %}
+                <li class="toc-highlight">
+                  <a class="flex items-center gap-1 px-2 py-2 text-blue-500 group hover:text-blue-700 text-base/snug hover:underline" href="#{{ item.id }}">
+                    {{ '/src/_includes/svg/icons/arrow-right-angle.svg' | svgContents('-translate-y-px opacity-85') | safe }}
+                    {{ item.text }}
+                  </a>
+                </li>
+              {% endfor %}
+              </ul>
             </div>
-            <div class="relative" x-data="{ dropdownOpen: false }">
-              <button class="flex items-center gap-3 px-4 py-3 font-semibold text-blue-500 hover:text-blue-600 group" x-on:click="dropdownOpen = !dropdownOpen" type="button" x-bind:aria-expanded="dropdownOpen">
-                <span>Bytt kapittel</span>
-                {{ '/src/_includes/svg/icons/chevron-down.svg' | svgContents('w-5 h-5 -translate-x-1 group-aria-expanded:rotate-180') | safe }}
+            <div class="relative grid mt-0.5" x-data="{ dropdownOpen: false }">
+              <button class="flex items-center gap-1.5 px-3 py-2.5 bg-slate-100 hover:bg-slate-200 rounded-b-lg text-blue-500 hover:text-blue-600 group" x-on:click="dropdownOpen = !dropdownOpen" type="button" x-bind:aria-expanded="dropdownOpen">
+                {{ '/src/_includes/svg/icons/chevron-down.svg' | svgContents('group-aria-expanded:rotate-180') | safe }}
+                <span>Velg kapittel</span>
               </button>
-              <ol class="absolute w-full max-w-md gap-1 px-2 py-1.5 divide-y rounded-lg shadow-lg divide-slate-300 top-full mt-1 bg-slate-100" x-show="dropdownOpen" x-on:click.outside="dropdownOpen = false">
+              <ol class="absolute left-0 w-full border border-slate-300/5 max-w-md py-2 mt-0.5 rounded-lg shadow-xl top-full bg-slate-100" x-show="dropdownOpen" x-on:click.outside="dropdownOpen = false">
                 {% for chapter in chapters %}
-                <li class="flex py-1">
-                  {% if loop.index === chapterIndex %}
-                  <span class="flex justify-between w-full items-center gap-3 px-3 pt-1.5 pb-1 font-semibold">
-                    {{ chapter.data.title }}
-                    <span class="w-2 h-2 rounded-full bg-slate-500" aria-hidden="true"></span>
-                  </span>
-                  {% else %}
-                  <a class="flex items-center gap-3 w-full justify-between px-3 pt-1.5 pb-1 font-semibold text-blue-500 hover:rounded hover:underline hover:bg-blue-100" href="#{{ chapter.data.title | slugify }}" x-on:click="dropdownOpen = false">
+                <li class="border-t border-slate-200 first:border-t-0">
+                  <a class="flex items-center gap-2 px-3 py-2 font-semibold hover:bg-white hover:text-blue-600 {{ 'text-slate-700' if loop.index === chapterIndex else 'text-blue-500' }}" href="#{{ chapter.data.title | slugify }}" x-on:click="dropdownOpen = false">
+                    {{ '/src/_includes/svg/icons/dot.svg' | svgContents('text-blue-600' if loop.index === chapterIndex else 'text-transparent') | safe }}
                     {{ chapter.data.title }}
                   </a>
-                  {% endif %}
                 </li>
                 {% endfor %}
               </ol>
             </div>
           </div>
         </nav>
+
         {% endif %}
 
         {# Main Content #}
-        <div class="mt-4 prose col-main">
+        <div class="mt-4 prose lg:mt-0 col-main">
           {{ chapter.templateContent | markdown | safe }}
         </div>
       </section>
@@ -113,17 +116,17 @@ permalink: 'produkt/sykepenger/index.html'
     const headings = document.querySelectorAll('.prose h3');
     const headingsArr = Array.from(headings);
 
-    const navItems = document.querySelectorAll('.toc--sticky li');
+    const navItems = document.querySelectorAll('.toc--sticky .toc-highlight');
 
     function activateNavByIndex(index) {
-      if (headings[index].classList.contains('active'))
+      if (headings[index].classList.contains('toc-highlight--active'))
         return;
 
-      const currentActive = document.querySelectorAll('.toc--sticky .active');
+      const currentActive = document.querySelectorAll('.toc--sticky .toc-highlight--active');
       for (let i = currentActive.length - 1; i >= 0; i--) {
-        currentActive[i].classList.remove('active');
+        currentActive[i].classList.remove('toc-highlight--active');
       }
-      navItems[index].classList.add('active');
+      navItems[index].classList.add('toc-highlight--active');
     };
 
     const intersectionCallback = (entries, observer) => {

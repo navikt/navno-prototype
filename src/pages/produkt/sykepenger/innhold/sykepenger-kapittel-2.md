@@ -18,72 +18,60 @@ Hvis du starter i ny jobb eller får ny inntekt mens du er sykmeldt, vil sykepen
 
 Se hva som gjelder for deg:
 
-
-<details class="accordion">
-  <summary>Arbeidstaker</summary>
-  <p>Som regel er det foreldrene som er omsorgspersonene for barnet, også når de ikke bor sammen. Omsorgspersoner kan også være fosterforeldre eller steforeldre.</p>
-  <p>Andre kan ha rett til pleiepenger hvis de helt eller delvis har omsorgen for barnet i perioden de søker pleiepenger. Dette kan for eksempel være venner, voksne søsken, besteforeldre, tante eller onkel.</p>
-</details>
-
-<details class="accordion">
-  <summary>Selvstendig næringsdrivende</summary>
-  <p>Innhold mangler</p>
-</details>
-
-<details class="accordion">
-  <summary>Frilanser</summary>
-  <p>Innhold mangler</p>
-</details>
-
-<details class="accordion">
-  <summary>Fisker</summary>
-  <p>Innhold mangler</p>
-</details>
-
-<details class="accordion">
-  <summary>Tilkallingsvikar</summary>
-  <p>Innhold mangler</p>
-</details>
-
-<details class="accordion">
-  <summary>Flere jobber</summary>
-  <p>Innhold mangler</p>
-</details>
-
-<details class="accordion">
-  <summary>Jobber i flere land</summary>
-  <p>Innhold mangler</p>
-</details>
-
-<details class="accordion">
-  <summary>Midlertidig ute av arbeid</summary>
-  <p>Innhold mangler</p>
-</details>
-
-<details class="accordion">
-  <summary>Arbeidsledig</summary>
-  <p>Innhold mangler</p>
-</details>
-
-<details class="accordion">
-  <summary>Avtjent militær- eller siviltjeneste</summary>
-  <p>Innhold mangler</p>
-</details>
-
-<details class="accordion">
-  <summary>I utdanning</summary>
-  <p>Innhold mangler</p>
-</details>
-
-<details class="accordion">
-  <summary>Innlagt på helseinstitusjon</summary>
-  <p>Innhold mangler</p>
-</details>
-
-<details class="accordion">
-  <summary>I fengsel</summary>
-  <p>Innhold mangler</p>
-</details>
+<div class="accordion">
+  <details>
+    <summary>Arbeidstaker</summary>
+      <p>Innhold mangler</p>
+  </details>
+  <details>
+    <summary>Selvstendig næringsdrivende</summary>
+    <p>Innhold mangler</p>
+  </details>
+  <details>
+    <summary>Frilanser</summary>
+    <p>Innhold mangler</p>
+  </details>
+  <details>
+    <summary>Fisker</summary>
+    <p>Innhold mangler</p>
+  </details>
+  <details>
+    <summary>Tilkallingsvikar</summary>
+    <p>Innhold mangler</p>
+  </details>
+  <details>
+    <summary>Flere jobber</summary>
+    <p>Innhold mangler</p>
+  </details>
+  <details>
+    <summary>Jobber i flere land</summary>
+    <p>Innhold mangler</p>
+  </details>
+  <details>
+    <summary>Midlertidig ute av arbeid</summary>
+    <p>Innhold mangler</p>
+  </details>
+  <details>
+    <summary>Arbeidsledig</summary>
+    <p>Innhold mangler</p>
+  </details>
+  <details>
+    <summary>Avtjent militær- eller siviltjeneste</summary>
+    <p>Innhold mangler</p>
+  </details>
+  <details>
+    <summary>I utdanning</summary>
+    <p>Innhold mangler</p>
+  </details>
+  <details>
+    <summary>Innlagt på helseinstitusjon</summary>
+    <p>Innhold mangler</p>
+  </details>
+  <details>
+    <summary>I fengsel</summary>
+    <p>Innhold mangler</p>
+  </details>
+</div>
 
 #### Skatt
 
@@ -129,13 +117,13 @@ _[ReadMore: Eksempler på utbetalingsdatoer i ulike situasjoner]_
 
 Hvor lenge du kan få avhenger av alderen din.
 
-<details class="accordion">
-  <summary>Hvis du er under 67 år</summary>
-  <p>Innhold mangler</p>
-</details>
-
-<details class="accordion">
-  <summary>Hvis du er mellom 67 og 70 år</summary>
-  <p>Innhold mangler</p>
-</details>
-
+<div class="accordion">
+  <details>
+    <summary>Hvis du er under 67 år</summary>
+    <p>Innhold mangler</p>
+  </details>
+  <details>
+    <summary>Hvis du er mellom 67 og 70 år</summary>
+    <p>Innhold mangler</p>
+  </details>
+</div>

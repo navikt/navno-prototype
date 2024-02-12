@@ -8,65 +8,61 @@ order: 1
 
 For å få pleiepenger, gjelder alle disse punktene:
 
-<details class="accordion">
-  <summary>Du har omsorgen for barnet i perioden du søker for</summary>
-  {% prose %}
-  Som regel er det foreldrene som er omsorgspersonene for barnet, også når de ikke bor sammen. Omsorgspersoner kan også være fosterforeldre eller steforeldre.
-  
-  Andre kan ha rett til pleiepenger hvis de helt eller delvis har omsorgen for barnet i perioden de søker pleiepenger. Dette kan for eksempel være venner, voksne søsken, besteforeldre, tante eller onkel.
-  {% endprose %}
-</details>
-
-<details class="accordion">
-  <summary>Barnet har vært til behandling eller utredning</summary>
-  {% prose %}
-  Behandlingen eller utredningen må ha vært på sykehus eller annen spesialisthelsetjeneste.
-  {% endprose %}
-</details>
-
-<details class="accordion">
-  <summary>Du er sammen med barnet på sykehus eller hjemme</summary>
-  {% prose %}
-  Du er sammen med barnet mens det er innlagt, eller du er hjemme fordi barnet trenger pleie hele tiden.
-  {% endprose %}
-</details>
-
-<details class="accordion">
-  <summary>Du har vært i jobb de siste 4 ukene eller får visse pengestøtter fra NAV</summary>
-  {% prose %}
-  Du har vært i jobb i minst 4 uker umiddelbart før pleiepengeperioden starter eller ha en pengestøtte fra NAV som likestilles med jobb.
-  
-  Disse pengestøttene kan likestilles med jobb:
-  
-  * sykepenger
-  * dagpenger
-  * foreldrepenger
-  * svangerskapspenger
-  * omsorgspenger
-  * opplæringspenger
-  {% endprose %}
-</details>
-
-<details class="accordion">
-  <summary>Du har minst 20 prosent fravær fra jobben din</summary>
-  {% prose %}
-  Du må ha 20 prosent fravær eller mer fra jobben din de ukene du skal ha pleiepenger.
-  {% endprose %}
-</details>
-
-<details class="accordion">
-  <summary>Du har en årsinntekt på minst 59 310 kroner</summary>
-  {% prose %}
-  Det tilsvarer halvparten av folketrygdens grunnbeløp.
-  {% endprose %}
-</details>
-
-<details class="accordion">
-  <summary>Du er medlem av folketrygden</summary>
-  {% prose %}
-  Bor du i Norge, er du vanligvis <a href="#">medlem av folketrygden</a>.
-  {% endprose %}
-</details>
+<div class="accordion">
+  <details>
+    <summary>Du har omsorgen for barnet i perioden du søker for</summary>
+    {% prose %}
+    Som regel er det foreldrene som er omsorgspersonene for barnet, også når de ikke bor sammen. Omsorgspersoner kan også være fosterforeldre eller steforeldre.
+    
+    Andre kan ha rett til pleiepenger hvis de helt eller delvis har omsorgen for barnet i perioden de søker pleiepenger. Dette kan for eksempel være venner, voksne søsken, besteforeldre, tante eller onkel.
+    {% endprose %}
+  </details>
+  <details>
+    <summary>Barnet har vært til behandling eller utredning</summary>
+    {% prose %}
+    Behandlingen eller utredningen må ha vært på sykehus eller annen spesialisthelsetjeneste.
+    {% endprose %}
+  </details>
+  <details>
+    <summary>Du er sammen med barnet på sykehus eller hjemme</summary>
+    {% prose %}
+    Du er sammen med barnet mens det er innlagt, eller du er hjemme fordi barnet trenger pleie hele tiden.
+    {% endprose %}
+  </details>
+  <details>
+    <summary>Du har vært i jobb de siste 4 ukene eller får visse pengestøtter fra NAV</summary>
+    {% prose %}
+    Du har vært i jobb i minst 4 uker umiddelbart før pleiepengeperioden starter eller ha en pengestøtte fra NAV som likestilles med jobb.
+    
+    Disse pengestøttene kan likestilles med jobb:
+    
+    * sykepenger
+    * dagpenger
+    * foreldrepenger
+    * svangerskapspenger
+    * omsorgspenger
+    * opplæringspenger
+    {% endprose %}
+  </details>
+  <details>
+    <summary>Du har minst 20 prosent fravær fra jobben din</summary>
+    {% prose %}
+    Du må ha 20 prosent fravær eller mer fra jobben din de ukene du skal ha pleiepenger.
+    {% endprose %}
+  </details>
+  <details>
+    <summary>Du har en årsinntekt på minst 59 310 kroner</summary>
+    {% prose %}
+    Det tilsvarer halvparten av folketrygdens grunnbeløp.
+    {% endprose %}
+  </details>
+  <details>
+    <summary>Du er medlem av folketrygden</summary>
+    {% prose %}
+    Bor du i Norge, er du vanligvis <a href="#">medlem av folketrygden</a>.
+    {% endprose %}
+  </details>
+</div>
 
 ### Omsorgspersonene kan dele pleiepengene
 

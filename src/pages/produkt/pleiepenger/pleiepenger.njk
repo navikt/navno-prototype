@@ -54,11 +54,11 @@ permalink: 'produkt/pleiepenger/index.html'
         <section 
           id="{{ chapter.data.title | slugify }}"
           class="mt-24" 
-          x-intersect:enter.margin.-10%.0px.-50%.0px="showChapter{{ chapterIndex }} = true"
-          x-intersect:leave.margin.-20%.0px.0%.0px="showChapter{{ chapterIndex }} = false" 
+          x-intersect:enter.margin.-20%.0px.-60%.0px="showChapter{{ chapterIndex }} = true"
+          x-intersect:leave.margin.-20%.0px.-60%.0px="showChapter{{ chapterIndex }} = false" 
         >
           <div class="grid items-end px-3 bg-slate-100 aspect-[2/1] rounded-xl">
-            <span class="text-[360px]/[0.8] inline-block translate-y-8 font-black text-white">
+            <span class="text-[360px]/[0.8] pointer-events-none inline-block translate-y-8 font-black text-white">
               {{ chapterIndex }}
             </span>
           </div>
@@ -67,9 +67,18 @@ permalink: 'produkt/pleiepenger/index.html'
 
           {# Chapter TOC #}
           {% if chapter.templateContent %}
-          <nav class="px-4 py-4 mt-4 rounded-lg lg:hidden toc bg-slate-100">
-            <h3 class="font-semibold">I dette kapittelet</h3>
-            {{ chapter.templateContent | toc | safe }}
+          <nav class="rounded-lg lg:hidden toc bg-slate-100">
+            <h3 class="px-4 pt-3 font-semibold">I dette kapittelet</h3>
+            <ul class="grid gap-2 py-2">
+              {% for item in chapter.templateContent | tocData %}
+              <li>
+                <a class="flex items-center gap-1 px-3 py-1 text-blue-500 group hover:text-blue-700 text-base/snug hover:underline" href="#{{ item.id }}">
+                  {{ '/src/_includes/svg/icons/arrow-right-angle.svg' | svgContents('-translate-y-px opacity-85') | safe }}
+                  {{ item.text }}
+                </a>
+              </li>
+              {% endfor %}
+            </ul>
           </nav>
           {% endif %}
 
@@ -84,19 +93,29 @@ permalink: 'produkt/pleiepenger/index.html'
 
       {# Chapter TOC #}
       <nav class="hidden col-side lg:block">
-        <div class="toc toc--multilevel toc--sticky lg:mt-[26.5em] lg:sticky lg:-translate-y-4 lg:top-8">
-        {% for chapter in chapters %}
-        <h3 class="py-1.5 font-semibold">
-          <a href="#{{ chapter.data.title | slugify }}">{{ loop.index }}. {{ chapter.data.title }}</a>
-        </h3>
-          
-        {% if chapter.templateContent %}
-        <div class="pl-3 mb-3 border-l lg:mb-6 border-slate-300" x-show="showChapter{{ loop.index }}">
-          {{ chapter.templateContent | toc | safe }}
-        </div>
-        {% endif %}
-        {% endfor %}
-        </div>
+        <ol class="toc toc--multilevel toc--sticky lg:mt-[26.5em] lg:sticky lg:-translate-y-4 lg:top-8">
+          {% for chapter in chapters %}
+          <li class="py-1.5">
+            <a class="font-semibold" href="#{{ chapter.data.title | slugify }}">
+              {{ loop.index }}. {{ chapter.data.title }}
+            </a>
+            
+            {# {{ chapter.templateContent | toc | safe }} #}
+            {% if chapter.templateContent %}
+            <ul class="grid gap-1 mb-3 lg:mb-6" x-show="showChapter{{ loop.index }}">
+              {% for item in chapter.templateContent | tocData %}
+              <li class="toc-highlight">
+                <a class="flex items-start gap-1 px-2 py-2 text-blue-500 group hover:text-blue-700 text-base/snug hover:underline" href="#{{ item.id }}">
+                  {{ '/src/_includes/svg/icons/arrow-right-angle.svg' | svgContents('-translate-y-px opacity-85 shrink-0') | safe }}
+                  {{ item.text }}
+                </a>
+              </li>
+              {% endfor %}
+            </ul>
+            {% endif %}
+          </li>
+          {% endfor %}
+        </ol>
       </nav>
 
     </div>
@@ -111,17 +130,17 @@ permalink: 'produkt/pleiepenger/index.html'
     const headings = document.querySelectorAll('.prose h3');
     const headingsArr = Array.from(headings);
 
-    const navItems = document.querySelectorAll('.toc--sticky li');
+    const navItems = document.querySelectorAll('.toc--sticky .toc-highlight');
 
     function activateNavByIndex(index) {
-      if (headings[index].classList.contains('active'))
+      if (headings[index].classList.contains('toc-highlight--active'))
         return;
 
-      const currentActive = document.querySelectorAll('.toc--sticky .active');
+      const currentActive = document.querySelectorAll('.toc-highlight--active');
       for (let i = currentActive.length - 1; i >= 0; i--) {
-        currentActive[i].classList.remove('active');
+        currentActive[i].classList.remove('toc-highlight--active');
       }
-      navItems[index].classList.add('active');
+      navItems[index].classList.add('toc-highlight--active');
     }
 
     const intersectionCallback = (entries, observer) => {

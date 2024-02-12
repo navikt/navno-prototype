@@ -14,20 +14,20 @@ Eksempel: Hvis du vil ha sykepenger for dager i mai, må du søke senest i løpe
 
 Se hva du må vite i ulike situasjoner:
 
-<details class="accordion">
-  <summary>Arbeidstaker</summary>
-  <p>Innhold mangler</p>
-</details>
-
-<details class="accordion">
-  <summary>Selvstendig næringsdrivende</summary>
-  <p>Innhold mangler</p>
-</details>
-
-<details class="accordion">
-  <summary>Flere jobber</summary>
-  <p>Innhold mangler</p>
-</details>
+<div class="accordion">
+  <details>
+    <summary>Arbeidstaker</summary>
+    <p>Innhold mangler</p>
+  </details>
+  <details>
+    <summary>Selvstendig næringsdrivende</summary>
+    <p>Innhold mangler</p>
+  </details>
+  <details>
+    <summary>Flere jobber</summary>
+    <p>Innhold mangler</p>
+  </details>
+</div>
 
 _[Se video: Hva skjer etter jeg har sendt sykemeldingen?]_
 
@@ -37,7 +37,7 @@ _[Se video: Hva skjer etter jeg har sendt sykemeldingen?]_
 
 _[Legge til informasjon her om at man bruker denne søknaden både for å søke og korrigere]_
 
-<div class="flex flex-wrap gap-2">
+<div class="grid gap-2">
   <a class="button button--primary" href="#">Søk om sykepenger</a>
   <a class="button button--secondary" href="#">Ettersend dokumentasjon</a>
 </div>
@@ -46,14 +46,14 @@ _[Legge til informasjon her om at man bruker denne søknaden både for å søke 
 
 Arbeidsgiver bruker dette skjemaet for å opplyse NAV om trekk hos arbeidstaker i forbindelse med utbetaling av sykepenger, foreldrepenger, svangerskapspenger eller pleie-/ opplærings- og omsorgspenger.
 
-<div class="flex flex-wrap gap-2">
+<div class="grid gap-2">
   <a class="button button--primary" href="#">Send inn</a>
   <a class="button button--secondary" href="#">Ettersend dokumentasjon</a>
 </div>
 
 #### Inntektsopplysninger for selvstendig næringsdrivende eller frilansere som skal ha sykepenger
 
-<div class="flex flex-wrap gap-2">
+<div class="grid gap-2">
   <a class="button button--primary" href="#">Send inn</a>
   <a class="button button--secondary" href="#">Ettersend dokumentasjon</a>
 </div>
@@ -62,14 +62,14 @@ Arbeidsgiver bruker dette skjemaet for å opplyse NAV om trekk hos arbeidstaker 
 
 Dette skjemaet bruker du hvis det er under en måned siden forrige arbeidsforhold opphørte, du mottar etterlønn/sluttvederlag, er i utdanningspermisjon, eller du har startet i nytt arbeidsforhold uten å ha ny opptjening til sykepenger.
 
-<div class="flex flex-wrap gap-2">
+<div class="grid gap-2">
   <a class="button button--primary" href="#">Søk om sykepenger</a>
   <a class="button button--secondary" href="#">Ettersend dokumentasjon</a>
 </div>
 
 #### Søknad om å beholde sykepenger under opphold i utlandet
 
-<div class="flex flex-wrap gap-2">
+<div class="grid gap-2">
   <a class="button button--primary" href="#">Send søknad</a>
   <a class="button button--secondary" href="#">Ettersend dokumentasjon</a>
 </div>
@@ -78,7 +78,7 @@ Dette skjemaet bruker du hvis det er under en måned siden forrige arbeidsforhol
 
 Hvis du er fast bosatt i utlandet og skal sende inn dokumentasjon som gjelder sykepenger, sender du dette sammen med en førsteside.
 
-<div class="flex flex-wrap gap-2">
+<div class="grid gap-2">
   <a class="button button--primary" href="#">Hent førsteside</a>
 </div>
 
@@ -109,7 +109,7 @@ Har du fått et vedtak fra oss som du mener er feil? Da kan du klage til NAV-enh
 
 I vedtaket står det hvordan du går fram hvis du skal klage, hvem du skal klage til og klagefrist. Hvis du har spørsmål om vedtaket, kan du kontakte oss.
 
-<div class="flex flex-wrap gap-2">
+<div class="grid gap-2">
   <a class="button button--primary" href="#">Send klage</a>
   <a class="button button--secondary" href="#">Ettersend dokumentasjon</a>
 </div>
@@ -118,7 +118,7 @@ I vedtaket står det hvordan du går fram hvis du skal klage, hvem du skal klage
 
 Hvis du er uenig i svaret på klagen din fra NAV klageinstans, kan du med noen unntak anke vedtaket. Fristen for å anke står i vedtaket.
 
-<div class="flex flex-wrap gap-2">
+<div class="grid gap-2">
   <a class="button button--primary" href="#">Send anke</a>
   <a class="button button--secondary" href="#">Ettersend dokumentasjon</a>
 </div>

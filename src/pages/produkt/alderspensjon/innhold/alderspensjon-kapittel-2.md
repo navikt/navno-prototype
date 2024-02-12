@@ -62,60 +62,52 @@ Du må være oppmerksom på at uføretrygden din kan bli redusert hvis du har in
 
 Reglene for opptjening, beregning og levealdersjustering av alderspensjon varierer etter når du er født. Med pensjonsreformen i 2011 kom det nye regler for deg som er født i 1963 eller senere. I årene før er det overgangsregler, mens du som er født før 1954 får pensjon etter de gamle pensjonsreglene.
 
-<details class="accordion">
-  <summary>1963 eller senere</summary>
-  <p>Innhold mangler</p>
-</details>
-
-<details class="accordion">
-  <summary>1962</summary>
-  <p>Innhold mangler</p>
-</details>
-
-<details class="accordion">
-  <summary>1961</summary>
-  <p>Innhold mangler</p>
-</details>
-
-<details class="accordion">
-  <summary>1960</summary>
-  <p>Innhold mangler</p>
-</details>
-
-<details class="accordion">
-  <summary>1959</summary>
-  <p>Innhold mangler</p>
-</details>
-
-<details class="accordion">
-  <summary>1958</summary>
-  <p>Innhold mangler</p>
-</details>
-
-<details class="accordion">
-  <summary>1957</summary>
-  <p>Innhold mangler</p>
-</details>
-
-<details class="accordion">
-  <summary>1956</summary>
-  <p>Innhold mangler</p>
-</details>
-
-<details class="accordion">
-  <summary>1955</summary>
-  <p>Innhold mangler</p>
-</details>
-
-<details class="accordion">
-  <summary>1954</summary>
-  <p>Innhold mangler</p>
-</details>
-
-<details class="accordion">
-  <summary>Før 1954</summary>
-  <p>Innhold mangler</p>
-</details>
+<div class="accordion">
+  <details>
+    <summary>1963 eller senere</summary>
+    <p>Innhold mangler</p>
+  </details>
+  <details>
+    <summary>1962</summary>
+    <p>Innhold mangler</p>
+  </details>
+  <details>
+    <summary>1961</summary>
+    <p>Innhold mangler</p>
+  </details>
+  <details>
+    <summary>1960</summary>
+    <p>Innhold mangler</p>
+  </details>
+  <details>
+    <summary>1959</summary>
+    <p>Innhold mangler</p>
+  </details>
+  <details>
+    <summary>1958</summary>
+    <p>Innhold mangler</p>
+  </details>
+  <details>
+    <summary>1957</summary>
+    <p>Innhold mangler</p>
+  </details>
+  <details>
+    <summary>1956</summary>
+    <p>Innhold mangler</p>
+  </details>
+  <details>
+    <summary>1955</summary>
+    <p>Innhold mangler</p>
+  </details>
+  <details>
+    <summary>1954</summary>
+    <p>Innhold mangler</p>
+  </details>
+  <details>
+    <summary>Før 1954</summary>
+    <p>Innhold mangler</p>
+  </details>
+</div>
 
 ### Tillegg du kan få
 
@@ -145,15 +137,16 @@ Du trenger vanligvis ikke søke om gjenlevenderett i alderspensjonen. NAV sender
 
 Har du ikke fått informasjon fra NAV, men mener du kan ha rettigheter? Da kan du søke for å få saken vurdert. Dette gjelder spesielt hvis du bor utenfor Norge, eller hvis du tidligere vært samboer med eller er skilt fra den avdøde.
 
-<details class="accordion">
-  <summary>Du bor i utlandet</summary>
-  <p>Innhold mangler</p>
-</details>
-
-<details class="accordion">
-  <summary>Du er skilt fra avdøde eller dere var tidligere samboere</summary>
-  <p>Innhold mangler</p>
-</details>
+<div class="accordion">
+  <details>
+    <summary>Du bor i utlandet</summary>
+    <p>Innhold mangler</p>
+  </details>
+  <details>
+    <summary>Du er skilt fra avdøde eller dere var tidligere samboere</summary>
+    <p>Innhold mangler</p>
+  </details>
+</div>
 
 ##### Hvor mye kan du få som gjenlevende?
 
@@ -165,29 +158,31 @@ Fødselsåret ditt avgjør hvordan vi beregner gjenlevenderett.
 
 Hvis du er født i 1944 eller senere og har gjenlevenderett, vil det vises som et eget tillegg på utbetalingen din fra 2024.
 
-<details class="accordion">
-  <summary>Født før 1954</summary>
-  <p>Innhold mangler</p>
-</details>
-
-<details class="accordion">
-  <summary>Født 1954 - 1962</summary>
-  <p>Innhold mangler</p>
-</details>
+<div class="accordion">
+  <details>
+    <summary>Født før 1954</summary>
+    <p>Innhold mangler</p>
+  </details>
+  <details>
+    <summary>Født 1954 - 1962</summary>
+    <p>Innhold mangler</p>
+  </details>
+</div>
 
 #### Forsørgingstillegg
 
 Forsørgingstillegg er et behovsprøvd tillegg til pensjonen. Fra 1. januar 2022 ble det ikke lenger innvilget forsørgingstillegg til alderspensjon og AFP i offentlig sektor. Forsørgingstillegget fases ut gradvis. Du som får dette, får lavere forsørgingstillegg fra 1. januar 2023 og fram til 1. januar 2025. Fra januar 2025 vil ingen lenger få dette tillegget.
 
-<details class="accordion">
-  <summary>Ektefelletillegg</summary>
-  <p>Innhold mangler</p>
-</details>
-
-<details class="accordion">
-  <summary>Barnetillegg</summary>
-  <p>Innhold mangler</p>
-</details>
+<div class="accordion">
+  <details>
+    <summary>Ektefelletillegg</summary>
+    <p>Innhold mangler</p>
+  </details>
+  <details>
+    <summary>Barnetillegg</summary>
+    <p>Innhold mangler</p>
+  </details>
+</div>
 
 ### Når utbetales pengene?
 

@@ -17,34 +17,35 @@ Hvis du har lite opptjening til pensjon, har vi ordninger som gir deg økonomisk
 
 #### Får du AAP eller uføretrygd?
 
-<details class="accordion">
-  <summary>Uføretrygd</summary>
-  <p>Innhold mangler</p>
-</details>
-
-<details class="accordion">
-  <summary>Arbeidsavklaringspenger (AAP)</summary>
-  <p>Innhold mangler</p>
-</details>
+<div class="accordion">
+  <details>
+    <summary>Uføretrygd</summary>
+    <p>Innhold mangler</p>
+  </details>
+  <details>
+    <summary>Arbeidsavklaringspenger (AAP)</summary>
+    <p>Innhold mangler</p>
+  </details>
+</div>
 
 #### Bor du eller har du bodd i utlandet?
 
 Hvis du har bodd eller jobbet i et annet land enn Norge, bør du sjekke hva som gjelder for deg.
 
-<details class="accordion">
-  <summary>Bor i Norge, har bodd/arbeidet i andre land, planlegger å søke i Norge</summary>
-  <p>Innhold mangler</p>
-</details>
-
-<details class="accordion">
-  <summary>Bor i utlandet, planlegger å søke pensjon fra Norge</summary>
-  <p>Innhold mangler</p>
-</details>
-
-<details class="accordion">
-  <summary>Bor i Norge, planlegger å søke pensjon fra andre land</summary>
-  <p>Innhold mangler</p>
-</details>
+<div class="accordion">
+  <details>
+    <summary>Bor i Norge, har bodd/arbeidet i andre land, planlegger å søke i Norge</summary>
+    <p>Innhold mangler</p>
+  </details>
+  <details>
+    <summary>Bor i utlandet, planlegger å søke pensjon fra Norge</summary>
+    <p>Innhold mangler</p>
+  </details>
+  <details>
+    <summary>Bor i Norge, planlegger å søke pensjon fra andre land</summary>
+    <p>Innhold mangler</p>
+  </details>
+</div>
 
 For å få alderspensjon, må du som hovedregel ha bodd eller jobbet i Norge i minst 5 år etter fylte 16 år og være medlem i folketrygden. Har du mindre enn 5 år i Norge og har bodd eller jobbet i [land Norge har trygdeavtale med](#), kan du likevel ha rett til pensjon fra Norge.
 
@@ -60,15 +61,16 @@ _[Supplerende stønad for personer over 67 år med kort botid i Norge](#)_
 
 #### AFP og alderspensjon
 
-<details class="accordion">
-  <summary>Avtalefestet pensjon (AFP) i privat sektor</summary>
-  <p>Innhold mangler</p>
-</details>
-
-<details class="accordion">
-  <summary>Avtalefestet pensjon (AFP) i offentlig sektor</summary>
-  <p>Innhold mangler</p>
-</details>
+<div class="accordion">
+  <details>
+    <summary>Avtalefestet pensjon (AFP) i privat sektor</summary>
+    <p>Innhold mangler</p>
+  </details>
+  <details>
+    <summary>Avtalefestet pensjon (AFP) i offentlig sektor</summary>
+    <p>Innhold mangler</p>
+  </details>
+</div>
 
 ### Når kan du få alderspensjon?
 
@@ -99,6 +101,3 @@ Du kan tjene opp pensjon frem til og med det året du fyller 75 år.
 #### Pensjon fra arbeidsgiver - tjenestepensjon og avtalefestet pensjon (AFP)
 
 Selv om du kan kombinere jobb og alderspensjon fra folketrygden, kan det være andre regler for pensjon fra arbeidsgiver. Dette må du spørre arbeidsgiveren eller tjenestepensjonsordningen din om.
-
-
-

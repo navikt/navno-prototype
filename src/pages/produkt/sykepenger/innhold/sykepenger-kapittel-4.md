@@ -89,21 +89,20 @@ Hvis du vurderer å reise mens du er sykmeldt, er det noen ting du må sjekke p�
 
 Hvilke regler som gjelder,  kommer an på hvor du skal reise:
 
-<details class="accordion">
-  <summary>Reise i Norden</summary>
-  <p>Innhold mangler</p>
-</details>
-
-<details class="accordion">
-  <summary>Reise innenfor EØS</summary>
-  <p>Innhold mangler</p>
-</details>
-
-<details class="accordion">
-  <summary>Reise utenfor EØS</summary>
-  <p>Innhold mangler</p>
-</details>
-
+<div class="accordion">
+  <details>
+    <summary>Reise i Norden</summary>
+    <p>Innhold mangler</p>
+  </details>
+  <details>
+    <summary>Reise innenfor EØS</summary>
+    <p>Innhold mangler</p>
+  </details>
+  <details>
+    <summary>Reise utenfor EØS</summary>
+    <p>Innhold mangler</p>
+  </details>
+</div>
 
 ### Ferie og sykepenger
 
@@ -115,64 +114,59 @@ Sykepengene stoppes når du har ferie, og samtidig forskyves tidspunktet for hvo
 
 Selvstendig næringsdrivende og frilansere har ikke rett til lovbestemt ferie slik som arbeidstakere.
 
-<details class="accordion">
-  <summary>Du har blitt syk før ferien</summary>
-  <p>Innhold mangler</p>
-</details>
-
-<details class="accordion">
-  <summary>Du avspaserer, skal du krysse av for ferie?</summary>
-  <p>Innhold mangler</p>
-</details>
-
-<details class="accordion">
-  <summary>Du er lærer og er syk i ferien</summary>
-  <p>Innhold mangler</p>
-</details>
-
-<details class="accordion">
-  <summary>Du tar ut seniordager</summary>
-  <p>Innhold mangler</p>
-</details>
-
-<details class="accordion">
-  <summary>Du er syk på en offentlig helligdag, er det ferie?</summary>
-  <p>Innhold mangler</p>
-</details>
-
-<details class="accordion">
-  <summary>Du skal bare ha ferie i en jobb du ikke er sykmeldt fra</summary>
-  <p>Innhold mangler</p>
-</details>
-
-<details class="accordion">
-  <summary>Du er delvis sykmeldt</summary>
-  <p>Innhold mangler</p>
-</details>
+<div class="accordion">
+  <details>
+    <summary>Du har blitt syk før ferien</summary>
+    <p>Innhold mangler</p>
+  </details>
+  <details>
+    <summary>Du avspaserer, skal du krysse av for ferie?</summary>
+    <p>Innhold mangler</p>
+  </details>
+  <details>
+    <summary>Du er lærer og er syk i ferien</summary>
+    <p>Innhold mangler</p>
+  </details>
+  <details>
+    <summary>Du tar ut seniordager</summary>
+    <p>Innhold mangler</p>
+  </details>
+  <details>
+    <summary>Du er syk på en offentlig helligdag, er det ferie?</summary>
+    <p>Innhold mangler</p>
+  </details>
+  <details>
+    <summary>Du skal bare ha ferie i en jobb du ikke er sykmeldt fra</summary>
+    <p>Innhold mangler</p>
+  </details>
+  <details>
+    <summary>Du er delvis sykmeldt</summary>
+    <p>Innhold mangler</p>
+  </details>
+</div>
 
 ### Jobb og sykepenger
 
 _Innledende setning/ingress_
 
-<details class="accordion">
-  <summary>Hvis du kan være delvis i arbeid</summary>
-  <p>Innhold mangler</p>
-</details>
-
-<details class="accordion">
-  <summary>Hvis du må bytte jobb</summary>
-  <p>Innhold mangler</p>
-</details>
-
-<details class="accordion">
-  <summary>Hvis du blir permittert</summary>
-  <p>Innhold mangler</p>
-</details>
-
-<details class="accordion">
-  <summary>Hvis arbeidsgiveren din går konkrus</summary>
-  <p>Innhold mangler</p>
-</details>
+<div class="accordion">
+  <details>
+    <summary>Hvis du kan være delvis i arbeid</summary>
+    <p>Innhold mangler</p>
+  </details>
+  <details>
+    <summary>Hvis du må bytte jobb</summary>
+    <p>Innhold mangler</p>
+  </details>
+  <details>
+    <summary>Hvis du blir permittert</summary>
+    <p>Innhold mangler</p>
+  </details>
+  <details>
+    <summary>Hvis arbeidsgiveren din går konkrus</summary>
+    <p>Innhold mangler</p>
+  </details>
+</div>
 
 ### Komme tilbake i jobb tidligere
 
@@ -196,20 +190,20 @@ Når det nærmer seg datoen du ikke lenger kan få sykepenger, er det viktig å 
 
 Tror du at du snart er tilbake i jobb, eller trenger du mer veiledning? Kanskje du må bytte jobb? Her kan du lese om mulighetene.
 
-<details class="accordion">
-  <summary>Hvis du skal tilbake i jobben din</summary>
-  <p>Innhold mangler</p>
-</details>
-
-<details class="accordion">
-  <summary>Hvis du fortsatt er syk</summary>
-  <p>Innhold mangler</p>
-</details>
-
-<details class="accordion">
-  <summary>Hvis du blir syk på nytt</summary>
-  <p>Innhold mangler</p>
-</details>
+<div class="accordion">
+  <details>
+    <summary>Hvis du skal tilbake i jobben din</summary>
+    <p>Innhold mangler</p>
+  </details>
+  <details>
+    <summary>Hvis du fortsatt er syk</summary>
+    <p>Innhold mangler</p>
+  </details>
+  <details>
+    <summary>Hvis du blir syk på nytt</summary>
+    <p>Innhold mangler</p>
+  </details>
+</div>
 
 #### Hva skjer med økonomien din?
 

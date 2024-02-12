@@ -24,6 +24,7 @@
     "@alpinejs/intersect": "^3.13.5",
     "alpinejs": "^3.13.5",
     "autoprefixer": "^10.4.17",
+    "cheerio": "^1.0.0-rc.12",
     "concurrently": "^8.2.2",
     "cssnano": "^6.0.3",
     "dotenv": "^16.4.1",

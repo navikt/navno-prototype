@@ -20,7 +20,7 @@ Når du kommer til søknaden, får du veiledning underveis om hva du skal gjøre
 
 Du bruker samme søknad både for pleiepenger for sykt barn og pleiepenger for en utviklingshemmet person over 18.
 
-<div class="flex flex-wrap gap-2">
+<div class="grid gap-2">
   <a class="button button--primary" href="#">Søk om pleiepenger</a>
   <a class="button button--secondary" href="#">Ettersend dokumentasjon</a>
 </div>
@@ -124,7 +124,7 @@ Har du fått et vedtak fra oss som du mener er feil? Da kan du klage til NAV-enh
 
 I vedtaket står det hvordan du går fram hvis du skal klage, hvem du skal klage til og klagefrist. Hvis du har spørsmål om vedtaket, kan du kontakte oss.
 
-<div class="flex flex-wrap gap-2">
+<div class="grid gap-2">
   <a class="button button--primary" href="#">Send klage</a>
   <a class="button button--secondary" href="#">Ettersend dokumentasjon</a>
 </div>
@@ -133,7 +133,7 @@ I vedtaket står det hvordan du går fram hvis du skal klage, hvem du skal klage
 
 Hvis du er uenig i svaret på klagen din fra NAV klageinstans, kan du med noen unntak anke vedtaket. Fristen for å anke står i vedtaket.
 
-<div class="flex flex-wrap gap-2">
+<div class="grid gap-2">
   <a class="button button--primary" href="#">Send anke</a>
   <a class="button button--secondary" href="#">Ettersend dokumentasjon</a>
 </div>
