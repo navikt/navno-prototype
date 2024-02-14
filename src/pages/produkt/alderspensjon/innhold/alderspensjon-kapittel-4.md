@@ -1,6 +1,6 @@
 ---
-title: 'Når du har alderspensjon'
-ingress: '…'
+title: 'Mens du får alderspensjon'
+ingress: 'Utbetalingsdatoer og hva du må gjøre når du får sykepenger.'
 order: 4
 ---
 

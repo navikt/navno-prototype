@@ -2,10 +2,10 @@
 <div class="absolute z-40 w-full h-0 transition inset-x" x-bind:class="!menuOpen ? 'hidden' : 'opacity-0 animate-dropdown shadow-xl'" x-bind:aria-hidden="!menuOpen">
 
   {# Rollebytte #}
-  <div class="bg-white px-edge">
-    <div class="grid content-center -mx-1 xs:gap-2 sm:gap-8 xs:text-center xs:-mx-5 sm:mx-0 xs:justify-center xs:grid-flow-col max-w-wide lg:mx-auto">
+  <div class="py-3 bg-white px-edge">
+    <div class="grid content-center -mx-1 xs:gap-2 sm:gap-6 xs:text-center xs:-mx-5 sm:mx-0 xs:justify-center xs:grid-flow-col max-w-wide lg:mx-auto">
     {% for role in audience %}
-      <a href="#" class="block border-b-4 pt-5 pb-3 px-3 {{ 'border-blue-500 font-semibold' if activeRole === role.title else 'border-transparent hover:border-slate-200 transition opacity-90' }}">{{ role.title }}</a>
+      <a href="#" class="block rounded-full py-1 px-5 {{ 'bg-blue-500 text-white font-semibold' if activeRole === role.title else 'hover:underline transition' }}">{{ role.title }}</a>
     {% endfor %}
     </div>
   </div>
@@ -35,7 +35,7 @@
 
       {# Søk #}
       <form class="w-full col-start-1 gap-2 lg:max-w-2xl lg:col-span-4 lg:row-start-1 lg:pr-20">
-        <label class="text-sm tracking-widest uppercase opacity-80" for="search">Søk</label>
+        <label class="block text-sm tracking-widest uppercase opacity-80" for="search">Søk</label>
         <div class="flex mt-2">
           <input class="flex-1 p-2 border border-gray-300 rounded-l focus:outline-none focus:rounded focus:z-10 focus:ring focus:ring-blue-800" id="search" type="text">
           <button class="flex items-center col-start-2 row-start-1 gap-2 px-6 py-2 text-xl text-white bg-blue-500 rounded-r fine:hover:bg-blue-600 focus:outline-none focus:rounded focus:z-10 focus:ring focus:ring-blue-800 focus:ring-offset-1 focus:ring-offset-white focus:bg-blue-600" type="submit">

@@ -38,24 +38,44 @@ _[Se video: Hva skjer etter jeg har sendt sykemeldingen?]_
 _[Legge til informasjon her om at man bruker denne søknaden både for å søke og korrigere]_
 
 <div class="grid gap-2">
-  <a class="button button--primary" href="#">Søk om sykepenger</a>
-  <a class="button button--secondary" href="#">Ettersend dokumentasjon</a>
+  <a class="flex items-start gap-2 font-medium" href="#">
+    {{ '/src/_includes/svg/icons/document.svg' | svgContents('mt-1') | safe }}
+    Søk om sykepenger
+  </a>
+  <a class="flex items-start gap-2 font-medium" href="#">
+    {{ '/src/_includes/svg/icons/document.svg' | svgContents('mt-1') | safe }}
+    Ettersend dokumentasjon
+  </a>
 </div>
 
 #### Trekkopplysninger for arbeidstakere
 
 Arbeidsgiver bruker dette skjemaet for å opplyse NAV om trekk hos arbeidstaker i forbindelse med utbetaling av sykepenger, foreldrepenger, svangerskapspenger eller pleie-/ opplærings- og omsorgspenger.
 
-<div class="grid gap-2">
-  <a class="button button--primary" href="#">Send inn</a>
-  <a class="button button--secondary" href="#">Ettersend dokumentasjon</a>
+<div class="grid gap-1">
+  <a class="flex items-center gap-2 px-3 pt-2 hover:bg-blue-100 pb-1.5 font-medium no-underline rounded-md bg-blue-50" href="#">
+    {{ '/src/_includes/svg/icons/document.svg' | svgContents('-mt-0.5 w-7 h-7') | safe }}
+    Send inn
+  </a>
+  <a class="flex items-center gap-2 px-3 pt-2 hover:bg-blue-100 pb-1.5 font-medium no-underline rounded-md bg-blue-50" href="#">
+    {{ '/src/_includes/svg/icons/document.svg' | svgContents('-mt-0.5 w-7 h-7') | safe }}
+    Ettersend dokumentasjon
+  </a>
 </div>
 
 #### Inntektsopplysninger for selvstendig næringsdrivende eller frilansere som skal ha sykepenger
 
+_Det ser rart ut når det ikke er noen ingress her._
+
 <div class="grid gap-2">
-  <a class="button button--primary" href="#">Send inn</a>
-  <a class="button button--secondary" href="#">Ettersend dokumentasjon</a>
+  <a class="flex items-start gap-2 font-medium" href="#">
+    {{ '/src/_includes/svg/icons/document.svg' | svgContents('mt-1') | safe }}
+    Send inn
+  </a>
+  <a class="flex items-start gap-2 font-medium" href="#">
+    {{ '/src/_includes/svg/icons/document.svg' | svgContents('mt-1') | safe }}
+    Ettersend dokumentasjon
+  </a>
 </div>
 
 #### Søknad om sykepenger når du midlertidig er ute av arbeid
@@ -63,15 +83,27 @@ Arbeidsgiver bruker dette skjemaet for å opplyse NAV om trekk hos arbeidstaker 
 Dette skjemaet bruker du hvis det er under en måned siden forrige arbeidsforhold opphørte, du mottar etterlønn/sluttvederlag, er i utdanningspermisjon, eller du har startet i nytt arbeidsforhold uten å ha ny opptjening til sykepenger.
 
 <div class="grid gap-2">
-  <a class="button button--primary" href="#">Søk om sykepenger</a>
-  <a class="button button--secondary" href="#">Ettersend dokumentasjon</a>
+  <a class="flex items-start gap-2 font-medium" href="#">
+    {{ '/src/_includes/svg/icons/document.svg' | svgContents('mt-1') | safe }}
+    Søk om sykepenger
+  </a>
+  <a class="flex items-start gap-2 font-medium" href="#">
+    {{ '/src/_includes/svg/icons/document.svg' | svgContents('mt-1') | safe }}
+    Ettersend dokumentasjon
+  </a>
 </div>
 
 #### Søknad om å beholde sykepenger under opphold i utlandet
 
 <div class="grid gap-2">
-  <a class="button button--primary" href="#">Send søknad</a>
-  <a class="button button--secondary" href="#">Ettersend dokumentasjon</a>
+  <a class="flex items-start gap-2 font-medium" href="#">
+    {{ '/src/_includes/svg/icons/document.svg' | svgContents('mt-1') | safe }}
+    Send søknad
+  </a>
+  <a class="flex items-start gap-2 font-medium" href="#">
+    {{ '/src/_includes/svg/icons/document.svg' | svgContents('mt-1') | safe }}
+    Ettersend dokumentasjon
+  </a>
 </div>
 
 #### Dokumentasjon for sykepenger når du bor i utlandet
@@ -79,7 +111,10 @@ Dette skjemaet bruker du hvis det er under en måned siden forrige arbeidsforhol
 Hvis du er fast bosatt i utlandet og skal sende inn dokumentasjon som gjelder sykepenger, sender du dette sammen med en førsteside.
 
 <div class="grid gap-2">
-  <a class="button button--primary" href="#">Hent førsteside</a>
+  <a class="flex items-start gap-2 font-medium" href="#">
+    {{ '/src/_includes/svg/icons/document.svg' | svgContents('mt-1') | safe }}
+    Hent førsteside
+  </a>
 </div>
 
 #### Egenerklæring for utenlandske sykmeldinger
@@ -110,8 +145,14 @@ Har du fått et vedtak fra oss som du mener er feil? Da kan du klage til NAV-enh
 I vedtaket står det hvordan du går fram hvis du skal klage, hvem du skal klage til og klagefrist. Hvis du har spørsmål om vedtaket, kan du kontakte oss.
 
 <div class="grid gap-2">
-  <a class="button button--primary" href="#">Send klage</a>
-  <a class="button button--secondary" href="#">Ettersend dokumentasjon</a>
+  <a class="flex items-start gap-2 font-medium" href="#">
+    {{ '/src/_includes/svg/icons/document.svg' | svgContents('mt-1') | safe }}
+    Send klage
+  </a>
+  <a class="flex items-start gap-2 font-medium" href="#">
+    {{ '/src/_includes/svg/icons/document.svg' | svgContents('mt-1') | safe }}
+    Ettersend dokumentasjon
+  </a>
 </div>
 
 #### Anke vedtak
@@ -119,8 +160,14 @@ I vedtaket står det hvordan du går fram hvis du skal klage, hvem du skal klage
 Hvis du er uenig i svaret på klagen din fra NAV klageinstans, kan du med noen unntak anke vedtaket. Fristen for å anke står i vedtaket.
 
 <div class="grid gap-2">
-  <a class="button button--primary" href="#">Send anke</a>
-  <a class="button button--secondary" href="#">Ettersend dokumentasjon</a>
+  <a class="flex items-start gap-2 font-medium" href="#">
+    {{ '/src/_includes/svg/icons/document.svg' | svgContents('mt-1') | safe }}
+    Send anke
+  </a>
+  <a class="flex items-start gap-2 font-medium" href="#">
+    {{ '/src/_includes/svg/icons/document.svg' | svgContents('mt-1') | safe }}
+    Ettersend dokumentasjon
+  </a>
 </div>
 
 Du kan også bruke advokat eller gi fullmakt til en person som klager på dine vegne.

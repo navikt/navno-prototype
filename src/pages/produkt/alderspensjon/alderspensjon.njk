@@ -34,11 +34,11 @@ permalink: 'produkt/alderspensjon/index.html'
     </div>
 
     {# Innholdsfortegnelse #}
-    <div class="z-10 px-3 pt-3 pb-3 mt-12 rounded-lg isolate bg-slate-100">
+    <div class="my-8">
       <h2 class="pl-1 text-base font-semibold">Innhold på siden</h2>
-      <ul class="grid gap-3 mt-2 ">
+      <ul class="grid gap-4 py-2.5">
         {% for chapter in chapters %}
-        <li class="flex items-end gap-2 py-1">
+        <li class="flex items-start gap-2">
           <a class="flex gap-1 p-1 -m-1 text-blue-500 group hover:text-blue-700 text-base/snug hover:underline" href="#{{ chapter.data.title | slugify }}">
             {{ '/src/_includes/svg/icons/arrow-right-angle.svg' | svgContents('-translate-y-px') | safe }}
             {{ chapter.data.title }}
@@ -54,40 +54,276 @@ permalink: 'produkt/alderspensjon/index.html'
     {# Innhold #}
     {% for chapter in chapters %}
       {% set chapterIndex = loop.index %}
-      <section class="grid grid-flow-row-dense pt-32 col-full grid-cols-center " id="{{ chapter.data.title | slugify }}" x-data="{ tocOpen: false }">
-        <div class="col-main lg:col-wide">
-          <div class="grid items-end pl-8 rounded-lg bg-slate-100 pt-2xl aspect-[2/1]">
-            <span class="font-black -mb-9 text-white text-[20em]/[0.8]">{{ loop.index }}</span>
-          </div>
+      <section class="grid grid-flow-row-dense col-full grid-cols-center " id="{{ chapter.data.title | slugify }}" x-data="{ tocOpen: false }">
+        <div class="col-wide">
+          <svg class="w-full h-auto" xmlns="http://www.w3.org/2000/svg" width="768" height="420" fill="none" viewBox="0 0 768 420">
+            <path stroke="#CCC" stroke-linecap="round" stroke-width="3" d="m64 381 118.88-118.88a3 3 0 0 1 4.24 0l65.76 65.76a3 3 0 0 0 4.24 0l194.76-194.76a3 3 0 0 1 4.24 0L704 381"/>
+            <circle cx="253" cy="63" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="253" cy="71" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="253" cy="79" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="253" cy="87" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="253" cy="95" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="253" cy="103" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="253" cy="111" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="253" cy="119" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="253" cy="127" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="253" cy="135" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="253" cy="143" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="253" cy="151" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="253" cy="159" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="253" cy="167" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="253" cy="175" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="253" cy="183" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="253" cy="191" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="253" cy="199" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="261" cy="63" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="261" cy="71" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="261" cy="79" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="261" cy="87" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="261" cy="95" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="261" cy="103" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="261" cy="111" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="261" cy="119" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="261" cy="127" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="261" cy="135" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="261" cy="143" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="261" cy="151" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="261" cy="159" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="261" cy="167" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="261" cy="175" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="261" cy="183" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="261" cy="191" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="261" cy="199" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="269" cy="71" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="269" cy="63" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="269" cy="79" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="269" cy="87" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="269" cy="95" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="269" cy="103" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="269" cy="111" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="269" cy="119" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="269" cy="127" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="269" cy="135" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="269" cy="143" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="269" cy="151" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="269" cy="159" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="269" cy="167" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="269" cy="175" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="269" cy="183" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="269" cy="191" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="269" cy="199" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="277" cy="71" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="277" cy="79" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="277" cy="87" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="277" cy="95" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="277" cy="103" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="277" cy="111" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="277" cy="119" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="277" cy="127" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="277" cy="135" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="277" cy="143" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="277" cy="151" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="277" cy="159" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="277" cy="167" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="277" cy="175" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="277" cy="183" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="277" cy="191" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="285" cy="71" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="285" cy="79" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="285" cy="87" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="285" cy="95" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="285" cy="103" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="285" cy="111" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="285" cy="119" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="285" cy="127" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="285" cy="135" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="285" cy="143" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="285" cy="151" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="285" cy="159" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="285" cy="167" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="285" cy="175" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="285" cy="183" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="285" cy="191" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="293" cy="79" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="293" cy="87" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="293" cy="95" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="293" cy="103" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="293" cy="111" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="293" cy="119" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="293" cy="127" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="293" cy="135" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="293" cy="143" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="293" cy="151" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="293" cy="159" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="293" cy="167" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="293" cy="175" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="293" cy="183" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="301" cy="87" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="301" cy="95" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="301" cy="103" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="301" cy="111" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="301" cy="119" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="301" cy="127" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="301" cy="135" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="301" cy="143" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="301" cy="151" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="301" cy="159" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="301" cy="167" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="301" cy="175" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="309" cy="95" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="309" cy="103" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="309" cy="111" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="309" cy="119" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="309" cy="127" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="309" cy="135" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="309" cy="143" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="309" cy="151" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="309" cy="159" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="309" cy="167" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="317" cy="111" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="317" cy="119" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="317" cy="127" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="317" cy="135" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="317" cy="143" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="317" cy="151" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="245" cy="63" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="245" cy="71" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="245" cy="79" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="245" cy="87" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="245" cy="95" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="245" cy="103" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="245" cy="111" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="245" cy="119" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="245" cy="127" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="245" cy="135" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="245" cy="143" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="245" cy="151" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="245" cy="159" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="245" cy="167" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="245" cy="175" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="245" cy="183" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="245" cy="191" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="245" cy="199" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="237" cy="71" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="237" cy="63" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="237" cy="79" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="237" cy="87" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="237" cy="95" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="237" cy="103" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="237" cy="111" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="237" cy="119" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="237" cy="127" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="237" cy="135" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="237" cy="143" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="237" cy="151" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="237" cy="159" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="237" cy="167" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="237" cy="175" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="237" cy="183" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="237" cy="191" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="237" cy="199" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="229" cy="71" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="229" cy="79" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="229" cy="87" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="229" cy="95" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="229" cy="103" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="229" cy="111" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="229" cy="119" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="229" cy="127" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="229" cy="135" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="229" cy="143" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="229" cy="151" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="229" cy="159" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="229" cy="167" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="229" cy="175" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="229" cy="183" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="229" cy="191" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="221" cy="71" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="221" cy="79" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="221" cy="87" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="221" cy="95" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="221" cy="103" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="221" cy="111" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="221" cy="119" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="221" cy="127" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="221" cy="135" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="221" cy="143" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="221" cy="151" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="221" cy="159" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="221" cy="167" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="221" cy="175" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="221" cy="183" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="221" cy="191" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="213" cy="79" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="213" cy="87" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="213" cy="95" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="213" cy="103" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="213" cy="111" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="213" cy="119" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="213" cy="127" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="213" cy="135" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="213" cy="143" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="213" cy="151" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="213" cy="159" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="213" cy="167" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="213" cy="175" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="213" cy="183" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="205" cy="87" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="205" cy="95" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="205" cy="103" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="205" cy="111" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="205" cy="119" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="205" cy="127" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="205" cy="135" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="205" cy="143" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="205" cy="151" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="205" cy="159" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="205" cy="167" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="205" cy="175" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="197" cy="95" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="197" cy="103" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="197" cy="111" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="197" cy="119" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="197" cy="127" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="197" cy="135" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="197" cy="143" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="197" cy="151" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="197" cy="159" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="197" cy="167" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="189" cy="111" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="189" cy="119" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="189" cy="127" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="189" cy="135" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="189" cy="143" r="1" fill="#AAA" stroke="#AAA"/>
+            <circle cx="189" cy="151" r="1" fill="#AAA" stroke="#AAA"/>
+          </svg>
         </div>
         <div class="col-main">
-          <h2 class="mt-8 font-bold text-3xl/snug text-balance ">{{ chapter.data.title }}</h2>
+          <h2 class="mt-8 mb-3 font-bold text-3xl/tight text-balance ">{{ chapter.data.title }}</h2>
           <p>{{ chapter.data.ingress | safe }}</p>
         </div>
 
         {# Chapter TOC #}
-        {% if chapter.templateContent and chapter.templateContent | toc | length > 0%}
+        {% if chapter.templateContent and chapter.templateContent | tocData | length > 0 %}
 
-        <nav class="mt-8 mb-8">
-          <div class="rounded-t-lg bg-slate-100">
-            <h3 class="px-4 pt-3 font-semibold">I dette kapittelet</h3>
-            <ul class="grid gap-4 px-3 py-3">
-            {% for item in chapter.templateContent | tocData %}
-              <li>
-                <a class="flex items-center gap-1 p-1 -m-1 text-blue-500 group hover:text-blue-700 text-base/snug hover:underline" href="#{{ item.id }}">
-                  {{ '/src/_includes/svg/icons/arrow-right-angle.svg' | svgContents('-translate-y-px opacity-85') | safe }}
-                  {{ item.text }}
-                </a>
-              </li>
-            {% endfor %}
-            </ul>
-          </div>
-          <div class="relative grid border-t border-slate-600/20" x-data="{ dropdownOpen: false }">
-            <button class="flex items-center gap-1.5 px-3 py-2.5 bg-slate-100 hover:bg-slate-200/50 rounded-b-lg text-blue-500 hover:text-blue-600 group" x-on:click="dropdownOpen = !dropdownOpen" type="button" x-bind:aria-expanded="dropdownOpen">
-              {{ '/src/_includes/svg/icons/chevron-down.svg' | svgContents('group-aria-expanded:rotate-180') | safe }}
+        <nav class="relative mt-8 mb-8">
+          <h3 class="py-2 font-semibold">I dette kapittelet</h3>
+          <ul class="grid gap-4 py-4 border-t border-slate-600/20">
+          {% for item in chapter.templateContent | tocData %}
+            <li>
+              <a class="flex items-start gap-1 p-1 -m-1 text-blue-500 group hover:text-blue-700 text-base/snug hover:underline" href="#{{ item.id }}">
+                {{ '/src/_includes/svg/icons/arrow-right-angle.svg' | svgContents('-translate-y-px opacity-85') | safe }}
+                {{ item.text }}
+              </a>
+            </li>
+          {% endfor %}
+          </ul>
+          <div class="absolute right-0 grid top-1.5" x-data="{ dropdownOpen: false }">
+            <button class="flex items-center gap-1 py-1 pl-3 pr-2 text-sm text-blue-500 rounded-md bg-slate-100 hover:bg-slate-200/50 hover:text-blue-600 group" x-on:click="dropdownOpen = !dropdownOpen" type="button" x-bind:aria-expanded="dropdownOpen">
               <span>Velg kapittel</span>
+              {{ '/src/_includes/svg/icons/chevron-down.svg' | svgContents('w-5 h-5 group-aria-expanded:rotate-180') | safe }}
             </button>
-            <ol class="absolute left-0 w-full border border-slate-300/5 max-w-md py-2 mt-0.5 rounded-lg shadow-xl top-full bg-slate-100" x-show="dropdownOpen" x-on:click.outside="dropdownOpen = false">
+            <ol class="absolute right-0 w-screen border border-slate-300/5 max-w-md py-2 mt-0.5 rounded-lg shadow-xl top-full bg-slate-100" x-show="dropdownOpen" x-on:click.outside="dropdownOpen = false">
               {% for chapter in chapters %}
               <li class="border-t border-slate-200 first:border-t-0">
                 <a class="flex items-center gap-2 px-3 py-2 font-semibold hover:bg-white hover:text-blue-600 {{ 'text-slate-700' if loop.index === chapterIndex else 'text-blue-500' }}" href="#{{ chapter.data.title | slugify }}" x-on:click="dropdownOpen = false">
@@ -102,7 +338,7 @@ permalink: 'produkt/alderspensjon/index.html'
       {% endif %}
 
         {# Main Content #}
-        <div class="mt-2 prose lg:mt-8 col-main">
+        <div class="mt-2 prose col-main">
           {{ chapter.templateContent | markdown | safe }}
         </div>
       </section>

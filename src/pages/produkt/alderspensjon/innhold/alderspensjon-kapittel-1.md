@@ -1,6 +1,6 @@
 ---
 title: 'Hvem kan få?'
-ingress: 'Kriterier du må oppfylle for å ha rett til sykepenger.'
+ingress: 'Kriterier du må oppfylle for å kunne få alderspensjon.'
 order: 1
 ---
 
