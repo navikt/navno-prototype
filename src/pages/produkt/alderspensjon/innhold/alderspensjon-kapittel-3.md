@@ -15,7 +15,7 @@ order: 3
 
 Søker du digitalt, kan du samtidig søke om AFP i privat sektor.
 
-<div class="grid gap-2">
+<div class="grid gap-1.5 sm:grid-cols-2">
   <a class="button button--primary" href="#">Søk om alderspensjon</a>
   <a class="button button--secondary" href="#">Ettersend dokumentasjon</a>
 </div>
@@ -24,8 +24,8 @@ Du skal ikke sende inn dokumentasjon sammen med søknaden.
 
 <details class="expander">
   <summary>
-    <span class="mr-1 -my-1 -ml-9" aria-hidden="true">{{ '/src/_includes/svg/icons/folder-file.svg' | svgContents('w-8 h-8') | safe }}</span>
-    Dette bør du ha klart når du søker
+    <span>Dette bør du ha klart når du søker</span>
+    <span class="ml-auto mr-1 -my-1 opacity-80" aria-hidden="true">{{ '/src/_includes/svg/icons/folder-file.svg' | svgContents('w-8 h-8') | safe }}</span>
   </summary>
   <div class="prose">
     <p>Innhold mangler</p>
@@ -42,8 +42,8 @@ Hvis du bor i utlandet og skal søke alderspensjon fra Norge, kan saksbehandling
 
 <details class="expander">
   <summary>
-    <span class="mr-1 -my-1 -ml-9" aria-hidden="true">{{ '/src/_includes/svg/icons/briefcase-clock.svg' | svgContents('w-8 h-8') | safe }}</span>
-    Saksbehandlingstider
+    <span>Saksbehandlingstider</span>
+    <span class="ml-auto mr-1 -my-1 opacity-80" aria-hidden="true">{{ '/src/_includes/svg/icons/briefcase-clock.svg' | svgContents('w-8 h-8') | safe }}</span>
   </summary>
   <div class="prose">
     <p>Innhold mangler</p>
@@ -60,7 +60,7 @@ Hvis du har spørsmål om vedtaket, kan du kontakte oss.
 
 I vedtaket står det hvordan du går fram hvis du skal klage, hvem du skal klage til og klagefrist. Hvis du har spørsmål om vedtaket, kan du kontakte oss.
 
-<div class="grid gap-2">
+<div class="grid gap-1.5 sm:grid-cols-2">
   <a class="button button--primary" href="#">Send klage</a>
   <a class="button button--secondary" href="#">Ettersend dokumentasjon</a>
 </div>
@@ -69,7 +69,7 @@ I vedtaket står det hvordan du går fram hvis du skal klage, hvem du skal klage
 
 Hvis du er uenig i svaret på klagen din fra NAV klageinstans, kan du med noen unntak anke vedtaket. Fristen for å anke står i vedtaket.
 
-<div class="grid gap-2">
+<div class="grid gap-1.5 sm:grid-cols-2">
   <a class="button button--primary" href="#">Send anke</a>
   <a class="button button--secondary" href="#">Ettersend dokumentasjon</a>
 </div>
@@ -78,8 +78,8 @@ Du kan også bruke advokat eller gi fullmakt til en person som klager på dine v
 
 <details class="expander">
   <summary>
-    <span class="mr-1 -my-1 -ml-9" aria-hidden="true">{{ '/src/_includes/svg/icons/briefcase-clock.svg' | svgContents('w-8 h-8') | safe }}</span>
     <span>Saksbehandlingstider</span>
+    <span class="ml-auto mr-1 -my-1 opacity-80" aria-hidden="true">{{ '/src/_includes/svg/icons/briefcase-clock.svg' | svgContents('w-8 h-8') | safe }}</span>
   </summary>
   <div class="prose">
     <p>Innhold mangler</p>

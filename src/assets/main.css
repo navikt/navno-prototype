@@ -212,7 +212,7 @@
   /* Expander */
   .expander {
     display: grid;
-    padding-inline: 50px;
+    padding-inline: 40px;
     background-color: theme(colors.white);
     border-radius: theme(borderRadius.lg);
     border: 1px solid theme(colors.slate.300);
@@ -223,10 +223,9 @@
   :where(.expander) summary {
     appearance: none;
     display: flex;
-    align-items: center;
     list-style: none;
-    padding: 0.75em 12px 0.625em 50px;
-    margin-inline: -50px;
+    padding: 0.75em 12px 0.625em 40px;
+    margin-inline: -40px;
     border-radius: theme(borderRadius.lg);
     cursor: pointer;
     text-align: left;
@@ -246,7 +245,7 @@
   :where(.expander) summary:hover {
     background-color: theme(colors.slate.100);
   }
-  :where(.expander) summary:after {
+  :where(.expander) summary:before {
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath stroke='rgba(0, 69, 156, 1)' stroke-linecap='round' stroke-width='1.875' d='m6.5 10 5.493 5.493a.01.01 0 0 0 .014 0L17.5 10'/%3E%3C/svg%3E");
     background-position: center;
     background-repeat: no-repeat;
@@ -255,19 +254,19 @@
     flex-shrink: 0;
     place-items: center;
     align-self: baseline;
-    margin-inline: auto 4px;
+    margin-inline: -28px 6px;
     transition: rotate 150ms;
-    transform: translateY(2px);
-    width: 20px;
-    height: 20px;
+    transform: translateY(1px);
+    width: 22px;
+    height: 22px;
   }
-  :where(.expander[open]) summary:after {
-    transform: translateY(2px) rotate(-180deg);
+  :where(.expander[open]) summary:before {
+    transform: translateY(1px) rotate(-180deg);
   }
   :where(.expander) summary > * {
     text-wrap: pretty;
   }
-  :where(.expander) summary span {
+  :where(.expander) summary > span {
     transform: translateY(-1px);
   }
 
@@ -291,16 +290,18 @@
     margin: 0;
   }
   .button--primary {
-    background-color: theme(colors.blue.500);
-    color: theme(colors.white);
+    background-color: theme(colors.white);
+    border-color: theme(colors.blue.500);
+    color: theme(colors.blue.500);
   }
   .button--primary:hover {
-    border-color: theme(colors.blue.600);
-    background-color: theme(colors.blue.600);
+    border-color: theme(colors.blue.700);
+    background-color: theme(colors.blue.50);
+    color: theme(colors.blue.700);
   }
   .button--secondary {
-    border-color: theme(colors.blue.500);
-    background-color: theme(colors.white);
+    border-color: theme(colors.transparent);
+    background-color: theme(colors.blue.50/75%);
   }
   .button--secondary:hover {
     border-color: theme(colors.blue.600);

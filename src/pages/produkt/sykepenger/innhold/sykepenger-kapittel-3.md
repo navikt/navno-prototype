@@ -128,8 +128,8 @@ Du får skriftlig vedtak når søknaden er behandlet. [+du kan endre søknaden]
 
 <details class="expander">
   <summary>
+    <span>Saksbehandlingstider</span>
     <span class="mr-1 -my-1 -ml-9" aria-hidden="true">{{ '/src/_includes/svg/icons/briefcase-clock.svg' | svgContents('w-8 h-8') | safe }}</span>
-    Saksbehandlingstider
   </summary>
   <div class="prose">
     <p>Innhold mangler</p>
@@ -176,8 +176,8 @@ Du kan også bruke advokat eller gi fullmakt til en person som klager på dine v
 
 <details class="expander">
   <summary>
+    <span>Saksbehandlingstider</span>
     <span class="mr-1 -my-1 -ml-9" aria-hidden="true">{{ '/src/_includes/svg/icons/briefcase-clock.svg' | svgContents('w-8 h-8') | safe }}</span>
-    Saksbehandlingstider
   </summary>
   <div class="prose">
     <p>Innhold mangler</p>

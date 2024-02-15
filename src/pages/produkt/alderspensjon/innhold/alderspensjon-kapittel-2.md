@@ -205,8 +205,8 @@ Pensjonen utbetales som vanlig når du bor i utlandet.
 
 <details class="expander">
   <summary>
-    <span class="mr-2 -my-1.5 -ml-10" aria-hidden="true">{{ '/src/_includes/svg/icons/sack-pension.svg' | svgContents('w-8 h-8') | safe }}</span>
-    Utbetalingsdatoer
+    <span>Utbetalingsdatoer</span>
+    <span class="ml-auto mr-1 -my-1 opacity-80" aria-hidden="true">{{ '/src/_includes/svg/icons/sack-pension.svg' | svgContents('w-8 h-8') | safe }}</span>
   </summary>
   <div class="prose">
     <p>Innhold mangler</p>
@@ -221,9 +221,7 @@ Du kan få informasjon om utbetalingen din ved å ringe NAV kontaktsenter pensjo
 
 Det blir trukket skatt av pengene. Du må kontakte Skatteetaten for spørsmål om skattetrekket.
 
-Det er ordinært skattetrekk i juni. I desember blir det ikke trukket skatt, med unntak for dem som betaler kildeskatt eller Svalbardskatt.
-
-[Mer om skattetrekk på utbetalinger fra NAV](#)
+Det er ordinært skattetrekk i juni. I desember blir det ikke trukket skatt, med unntak for dem som betaler kildeskatt eller Svalbardskatt. [Les mer om skattetrekk på utbetalinger fra NAV](#).
 
 Hvis du ønsker å jobbe og ta ut pensjon samtidig, bør du søke om nytt skattekort. Det er fordi skattereglene for pensjon ikke er de samme som for arbeidsinntekt.
 

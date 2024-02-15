@@ -35,8 +35,8 @@ permalink: 'produkt/alderspensjon/index.html'
 
     {# Innholdsfortegnelse #}
     <div class="my-8">
-      <h2 class="pl-1 text-base font-semibold">Innhold på siden</h2>
-      <ul class="grid gap-4 py-2.5">
+      <h2 class="pb-2 text-base font-semibold border-b border-slate-200">Innhold på siden</h2>
+      <ul class="grid gap-4 py-3">
         {% for chapter in chapters %}
         <li class="flex items-start gap-2">
           <a class="flex gap-1 p-1 -m-1 text-blue-500 group hover:text-blue-700 text-base/snug hover:underline" href="#{{ chapter.data.title | slugify }}">
@@ -319,15 +319,15 @@ permalink: 'produkt/alderspensjon/index.html'
           {% endfor %}
           </ul>
           <div class="absolute right-0 grid top-1.5" x-data="{ dropdownOpen: false }">
-            <button class="flex items-center gap-1 py-1 pl-3 pr-2 text-sm text-blue-500 rounded-md bg-slate-100 hover:bg-slate-200/50 hover:text-blue-600 group" x-on:click="dropdownOpen = !dropdownOpen" type="button" x-bind:aria-expanded="dropdownOpen">
+            <button class="flex items-center gap-1 py-1 pl-3 pr-2 text-sm text-blue-500 rounded-md bg-slate-100 hover:bg-slate-200/50 hover:text-blue-700 group" x-on:click="dropdownOpen = !dropdownOpen" type="button" x-bind:aria-expanded="dropdownOpen">
               <span>Velg kapittel</span>
               {{ '/src/_includes/svg/icons/chevron-down.svg' | svgContents('w-5 h-5 group-aria-expanded:rotate-180') | safe }}
             </button>
-            <ol class="absolute right-0 w-screen border border-slate-300/5 max-w-md py-2 mt-0.5 rounded-lg shadow-xl top-full bg-slate-100" x-show="dropdownOpen" x-on:click.outside="dropdownOpen = false">
+            <ol class="absolute right-0 w-screen border border-slate-300/5 max-w-sm py-1.5 mt-0.5 rounded-md shadow-xl top-full bg-slate-100" x-show="dropdownOpen" x-on:click.outside="dropdownOpen = false">
               {% for chapter in chapters %}
               <li class="border-t border-slate-200 first:border-t-0">
-                <a class="flex items-center gap-2 px-3 py-2 font-semibold hover:bg-white hover:text-blue-600 {{ 'text-slate-700' if loop.index === chapterIndex else 'text-blue-500' }}" href="#{{ chapter.data.title | slugify }}" x-on:click="dropdownOpen = false">
-                  {{ '/src/_includes/svg/icons/dot.svg' | svgContents('text-blue-600' if loop.index === chapterIndex else 'text-transparent') | safe }}
+                <a class="flex items-center px-1 py-2 font-semibold hover:bg-blue-50 hover:text-blue-700 {{ 'text-slate-700' if loop.index === chapterIndex else 'text-blue-500' }}" href="#{{ chapter.data.title | slugify }}" x-on:click="dropdownOpen = false">
+                  {{ '/src/_includes/svg/icons/dot.svg' | svgContents('' if loop.index === chapterIndex else 'text-transparent') | safe }}
                   {{ chapter.data.title }}
                 </a>
               </li>

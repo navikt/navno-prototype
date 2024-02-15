@@ -27,8 +27,8 @@ Du bruker samme søknad både for pleiepenger for sykt barn og pleiepenger for e
 
 <details class="expander">
   <summary>
+    <span>Dette må du dokumentere</span>
     <span class="mr-1 -my-1 -ml-9" aria-hidden="true">{{ '/src/_includes/svg/icons/folder-file.svg' | svgContents('w-8 h-8') | safe }}</span>
-    Dette må du dokumentere
   </summary>
 
   {% prose %}
@@ -62,8 +62,8 @@ Du får en melding på Min side som bekrefter at vi har mottatt søknad fra deg.
 
 <details class="expander">
   <summary>
+    <span>Saksbehandlingstider</span>
     <span class="mr-1 -my-1 -ml-9" aria-hidden="true">{{ '/src/_includes/svg/icons/briefcase-clock.svg' | svgContents('w-8 h-8') | safe }}</span>
-    Saksbehandlingstider
   </summary>
   <div class="prose">
     <p>Saksbehandlingstiden er tiden fra vi får søknaden din og til vi har gjort et vedtak. Husk at vi trenger all nødvendig dokumentasjon for å behandle søknaden din.</p>
@@ -142,8 +142,8 @@ Du kan også bruke advokat eller gi fullmakt til en person som klager på dine v
 
 <details class="expander">
   <summary>
-    <span class="mr-1 -my-1 -ml-9" aria-hidden="true">{{ '/src/_includes/svg/icons/briefcase-clock.svg' | svgContents('w-8 h-8') | safe }}</span>
     <span>Saksbehandlingstider</span>
+    <span class="mr-1 -my-1 -ml-9" aria-hidden="true">{{ '/src/_includes/svg/icons/briefcase-clock.svg' | svgContents('w-8 h-8') | safe }}</span>
   </summary>
   <div class="prose">
     <p>Innhold mangler</p>

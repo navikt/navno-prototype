@@ -79,14 +79,14 @@ permalink: 'produkt/sykepenger/index.html'
               </ul>
             </div>
             <div class="relative grid mt-0.5" x-data="{ dropdownOpen: false }">
-              <button class="flex items-center gap-1.5 px-3 py-2.5 bg-slate-100 hover:bg-slate-200 rounded-b-lg text-blue-500 hover:text-blue-600 group" x-on:click="dropdownOpen = !dropdownOpen" type="button" x-bind:aria-expanded="dropdownOpen">
+              <button class="flex items-center gap-1.5 px-3 py-2.5 bg-slate-100 hover:bg-slate-200 rounded-b-lg text-blue-500 hover:text-blue-700 group" x-on:click="dropdownOpen = !dropdownOpen" type="button" x-bind:aria-expanded="dropdownOpen">
                 {{ '/src/_includes/svg/icons/chevron-down.svg' | svgContents('group-aria-expanded:rotate-180') | safe }}
                 <span>Velg kapittel</span>
               </button>
               <ol class="absolute left-0 w-full border border-slate-300/5 max-w-md py-2 mt-0.5 rounded-lg shadow-xl top-full bg-slate-100" x-show="dropdownOpen" x-on:click.outside="dropdownOpen = false">
                 {% for chapter in chapters %}
                 <li class="border-t border-slate-200 first:border-t-0">
-                  <a class="flex items-center gap-2 px-3 py-2 font-semibold hover:bg-white hover:text-blue-600 {{ 'text-slate-700' if loop.index === chapterIndex else 'text-blue-500' }}" href="#{{ chapter.data.title | slugify }}" x-on:click="dropdownOpen = false">
+                  <a class="flex items-center gap-2 px-3 py-2 font-semibold hover:bg-white hover:text-blue-700 {{ 'text-slate-700' if loop.index === chapterIndex else 'text-blue-500' }}" href="#{{ chapter.data.title | slugify }}" x-on:click="dropdownOpen = false">
                     {{ '/src/_includes/svg/icons/dot.svg' | svgContents('text-blue-600' if loop.index === chapterIndex else 'text-transparent') | safe }}
                     {{ chapter.data.title }}
                   </a>

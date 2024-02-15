@@ -29,7 +29,7 @@ order: 4
 
 ### Jobb og alderspensjon
 
-_[Kort intro om jobb og rettigheter]_
+_Kort intro om jobb og rettigheter …_
 
 <div class="accordion">
   <details>

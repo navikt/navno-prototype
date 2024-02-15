@@ -67,7 +67,7 @@ permalink: 'produkt/pleiepenger/b/index.html'
             {{ chapter.templateContent | toc | safe }}
             </div>
             <div class="relative" x-data="{ dropdownOpen: false }">
-              <button class="flex items-center gap-1 px-4 py-3 -mx-4 font-semibold text-blue-500 hover:text-blue-600 group" x-on:click="dropdownOpen = !dropdownOpen" type="button" x-bind:aria-expanded="dropdownOpen">
+              <button class="flex items-center gap-1 px-4 py-3 -mx-4 font-semibold text-blue-500 hover:text-blue-700 group" x-on:click="dropdownOpen = !dropdownOpen" type="button" x-bind:aria-expanded="dropdownOpen">
                 <span>Bytt kapittel</span>
                 {{ '/src/_includes/svg/icons/chevron-down.svg' | svgContents('w-5 h-5 -translate-x-1 group-aria-expanded:rotate-180') | safe }}
               </button>
