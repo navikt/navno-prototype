@@ -206,7 +206,7 @@ Pensjonen utbetales som vanlig når du bor i utlandet.
 <details class="expander">
   <summary>
     <span>Utbetalingsdatoer</span>
-    <span class="ml-auto mr-1 -my-1 opacity-80" aria-hidden="true">{{ '/src/_includes/svg/icons/sack-pension.svg' | svgContents('w-8 h-8') | safe }}</span>
+    {{ '/src/_includes/svg/icons/sack-pension.svg' | svgContents('ml-auto mr-1 -my-1 opacity-80 w-8 h-8') | safe }}
   </summary>
   <div class="prose">
     <p>Innhold mangler</p>

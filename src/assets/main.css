@@ -325,7 +325,7 @@
       [full-start] var(--_edge) minmax(0, 1fr) [wide-start] minmax(0, 1fr) [main-start side-start] minmax(0, 40rem) [main-end side-end] minmax(0, 1fr) [wide-end] minmax(0, 1fr) var(--_edge) [full-end];
   }
 
-  .grid-left-1 {
+  .grid-cols-left-1 {
     --_edge: theme(spacing.edge);
     grid-template-columns: 
       [full-start] var(--_edge) [wide-start main-start side-start] minmax(0, 40rem) [main-end side-end] minmax(0, 1fr) [wide-end] var(--_edge) [full-end];
@@ -340,7 +340,7 @@
       [side-start] minmax(0, 24.5rem) 
       [side-end wide-end] minmax(0, 1fr) var(--_edge) [full-end];
   }
-  :where(.grid-left-1 > *, .grid-cols-left-2 > *, .grid-cols-center > *) { grid-column: main }
+  :where(.grid-cols-left-1 > *, .grid-cols-left-2 > *, .grid-cols-center > *) { grid-column: main }
 
   .col-full { grid-column: full }
   .col-wide { grid-column: wide }

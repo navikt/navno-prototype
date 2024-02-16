@@ -123,13 +123,14 @@ Du må fylle ut dette skjemaet hvis du har sykmelding fra lege utenfor Norge. Le
 
 ### Etter at du har søkt
 
-Vi starter å saksbehandle søknaden din om sykepenger når vi har fått søknaden fra deg og inntektsmeldingen fra arbeidsgiveren din. Hvis du er selvstendig næringsdrivende må du sende inn skjema for inntektsopplysninger. <- flyttet fra Utbetalingsdatoer
-Du får skriftlig vedtak når søknaden er behandlet. [+du kan endre søknaden]
+Vi starter å saksbehandle søknaden din om sykepenger når vi har fått søknaden fra deg og inntektsmeldingen fra arbeidsgiveren din. Hvis du er selvstendig næringsdrivende må du sende inn skjema for inntektsopplysninger.
+
+Du får skriftlig vedtak når søknaden er behandlet.
 
 <details class="expander">
   <summary>
     <span>Saksbehandlingstider</span>
-    <span class="mr-1 -my-1 -ml-9" aria-hidden="true">{{ '/src/_includes/svg/icons/briefcase-clock.svg' | svgContents('w-8 h-8') | safe }}</span>
+    {{ '/src/_includes/svg/icons/briefcase-clock.svg' | svgContents('ml-auto mr-1 -my-1 opacity-80 w-8 h-8') | safe }}
   </summary>
   <div class="prose">
     <p>Innhold mangler</p>
@@ -177,7 +178,7 @@ Du kan også bruke advokat eller gi fullmakt til en person som klager på dine v
 <details class="expander">
   <summary>
     <span>Saksbehandlingstider</span>
-    <span class="mr-1 -my-1 -ml-9" aria-hidden="true">{{ '/src/_includes/svg/icons/briefcase-clock.svg' | svgContents('w-8 h-8') | safe }}</span>
+    {{ '/src/_includes/svg/icons/briefcase-clock.svg' | svgContents('ml-auto mr-1 -my-1 opacity-80 w-8 h-8') | safe }}
   </summary>
   <div class="prose">
     <p>Innhold mangler</p>

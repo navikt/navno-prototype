@@ -25,7 +25,7 @@ Du skal ikke sende inn dokumentasjon sammen med søknaden.
 <details class="expander">
   <summary>
     <span>Dette bør du ha klart når du søker</span>
-    <span class="ml-auto mr-1 -my-1 opacity-80" aria-hidden="true">{{ '/src/_includes/svg/icons/folder-file.svg' | svgContents('w-8 h-8') | safe }}</span>
+    {{ '/src/_includes/svg/icons/folder-file.svg' | svgContents('w-8 h-8 ml-auto mr-1 -my-1 opacity-80') | safe }}
   </summary>
   <div class="prose">
     <p>Innhold mangler</p>
@@ -43,7 +43,7 @@ Hvis du bor i utlandet og skal søke alderspensjon fra Norge, kan saksbehandling
 <details class="expander">
   <summary>
     <span>Saksbehandlingstider</span>
-    <span class="ml-auto mr-1 -my-1 opacity-80" aria-hidden="true">{{ '/src/_includes/svg/icons/briefcase-clock.svg' | svgContents('w-8 h-8') | safe }}</span>
+    {{ '/src/_includes/svg/icons/briefcase-clock.svg' | svgContents('ml-auto mr-1 -my-1 opacity-80 w-8 h-8') | safe }}
   </summary>
   <div class="prose">
     <p>Innhold mangler</p>
@@ -79,7 +79,7 @@ Du kan også bruke advokat eller gi fullmakt til en person som klager på dine v
 <details class="expander">
   <summary>
     <span>Saksbehandlingstider</span>
-    <span class="ml-auto mr-1 -my-1 opacity-80" aria-hidden="true">{{ '/src/_includes/svg/icons/briefcase-clock.svg' | svgContents('w-8 h-8') | safe }}</span>
+    {{ '/src/_includes/svg/icons/briefcase-clock.svg' | svgContents('ml-auto mr-1 -my-1 opacity-80 w-8 h-8') | safe }}
   </summary>
   <div class="prose">
     <p>Innhold mangler</p>
