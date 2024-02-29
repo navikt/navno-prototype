@@ -19,7 +19,7 @@
   }
 
   body {
-    @apply text-gray-800;
+    @apply text-slate-700;
   }
   * {
     text-decoration-thickness: 0.0625rem;
@@ -125,8 +125,7 @@
   /* Accordion */
   .accordion details {
     display: grid;
-    padding-inline: 40px 10px;
-    font-family: theme(fontFamily.sans);
+    padding-inline: 44px 10px;
   }
   .accordion details + details {
     margin-block-start: 0.25rem;
@@ -142,9 +141,9 @@
     appearance: none;
     display: block;
     list-style: none;
-    padding: 0.625em 40px;
+    padding: 0.625em 44px;
     margin-block: -1px;
-    margin-inline: -40px -10px;
+    margin-inline: -44px -10px;
     border-radius: 4px;
     cursor: pointer;
     text-align: left;
@@ -181,7 +180,7 @@
     flex-shrink: 0;
     place-items: center;
     translate: 0 4px;
-    margin-inline-end: 9px;
+    margin-inline-end: 10px;
     border-radius: 9px;
     transition: rotate 150ms;
     width: 22px;
@@ -212,7 +211,7 @@
   /* Expander */
   .expander {
     display: grid;
-    padding-inline: 40px;
+    padding-inline: 44px;
     background-color: theme(colors.white);
     border-radius: theme(borderRadius.lg);
     border: 1px solid theme(colors.slate.300);
@@ -224,8 +223,8 @@
     appearance: none;
     display: flex;
     list-style: none;
-    padding: 0.75em 12px 0.625em 40px;
-    margin-inline: -40px;
+    padding: 0.75em 12px 0.625em 44px;
+    margin-inline: -44px;
     border-radius: theme(borderRadius.lg);
     cursor: pointer;
     text-align: left;
@@ -254,14 +253,14 @@
     flex-shrink: 0;
     place-items: center;
     align-self: baseline;
-    margin-inline: -28px 6px;
+    margin-inline: -30px 10px;
     transition: rotate 150ms;
-    transform: translateY(1px);
+    transform: translateY(0);
     width: 22px;
     height: 22px;
   }
   :where(.expander[open]) summary:before {
-    transform: translateY(1px) rotate(-180deg);
+    transform: rotate(-180deg);
   }
   :where(.expander) summary > * {
     text-wrap: pretty;
