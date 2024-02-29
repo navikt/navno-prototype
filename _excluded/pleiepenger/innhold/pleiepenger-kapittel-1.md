@@ -31,24 +31,24 @@ For å få pleiepenger, gjelder alle disse punktene:
   </details>
   <details>
     <summary>Du har vært i jobb de siste 4 ukene eller får visse pengestøtter fra NAV</summary>
-    {% prose %}
-    Du har vært i jobb i minst 4 uker umiddelbart før pleiepengeperioden starter eller ha en pengestøtte fra NAV som likestilles med jobb.
-    
-    Disse pengestøttene kan likestilles med jobb:
-    
-    * sykepenger
-    * dagpenger
-    * foreldrepenger
-    * svangerskapspenger
-    * omsorgspenger
-    * opplæringspenger
-    {% endprose %}
+{% prose %}
+  Du har vært i jobb i minst 4 uker umiddelbart før pleiepengeperioden starter eller ha en pengestøtte fra NAV som likestilles med jobb.
+
+  Disse pengestøttene kan likestilles med jobb:
+
+  * sykepenger
+  * dagpenger
+  * foreldrepenger
+  * svangerskapspenger
+  * omsorgspenger
+  * opplæringspenger
+{% endprose %}
   </details>
   <details>
     <summary>Du har minst 20 prosent fravær fra jobben din</summary>
-    {% prose %}
-    Du må ha 20 prosent fravær eller mer fra jobben din de ukene du skal ha pleiepenger.
-    {% endprose %}
+  {% prose %}
+  Du må ha 20 prosent fravær eller mer fra jobben din de ukene du skal ha pleiepenger.
+  {% endprose %}
   </details>
   <details>
     <summary>Du har en årsinntekt på minst 59 310 kroner</summary>

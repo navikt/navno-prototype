@@ -123,26 +123,25 @@
 
 
   /* Accordion */
+  .accordion {
+    border-bottom: 1px solid theme(colors.slate.200);
+  }
   .accordion details {
     display: grid;
     padding-inline: 44px 10px;
+    border-top: 1px solid theme(colors.slate.200);
   }
   .accordion details + details {
-    margin-block-start: 0.25rem;
-    /* border-top: 1px solid theme(colors.gray.200); */
+    margin-block-start: 0;
   }
   .accordion details[open] {
     padding-block-end: 36px;
   }
-  :where(.accordion) summary::-webkit-details-marker {
-    display: none;
-  }
-  :where(.accordion) summary {
+  .accordion summary {
     appearance: none;
     display: block;
     list-style: none;
     padding: 0.625em 44px;
-    margin-block: -1px;
     margin-inline: -44px -10px;
     border-radius: 4px;
     cursor: pointer;
@@ -152,8 +151,11 @@
     font-weight: 400;
     line-height: 1.375;
     text-size: theme(fontSize.lg);
-    background-color: theme(colors.slate.100);
+    background-color: theme(colors.transparent);
     color: theme(colors.blue.700);
+  }
+  .accordion summary::-webkit-details-marker {
+    display: none;
   }
   .accordion details:first-child summary {
     border-radius: 8px 8px 4px 4px;
@@ -161,18 +163,18 @@
   .accordion details:last-child summary {
     border-radius: 4px 4px 8px 8px;
   }
-  :where(.accordion) details[open] summary {
+  .accordion details[open] summary {
     background-color: theme(colors.slate.100);
     color: theme(colors.blue.700);
     margin-block-end: 12px;
   }
-  :where(.accordion) summary:hover {
+  .accordion summary:hover {
     background-color: theme(colors.blue.50);
     color: theme(colors.blue.700);
   }
-  :where(.accordion) summary:before {
-    background-color: theme(colors.blue.500);
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none'%3E%3Cpath stroke='rgb(255 255 255 / 1)' stroke-linecap='round' stroke-width='2' d='m6.5 10 5.493 5.493a.01.01 0 0 0 .014 0L17.5 10'/%3E%3C/svg%3E");
+  .accordion summary:before {
+    background-color: theme(colors.blue.50);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none'%3E%3Cpath stroke='rgb(0 103 197 / 1)' stroke-linecap='round' stroke-width='2' d='m6.5 10 5.493 5.493a.01.01 0 0 0 .014 0L17.5 10'/%3E%3C/svg%3E");
     background-position: center;
     background-repeat: no-repeat;
     content: "";
@@ -186,15 +188,19 @@
     width: 22px;
     height: 22px;
   }
-  :where(.accordion) summary:hover:before {
-    background-color: theme(colors.blue.700);
+  .accordion :where(details[open], details:has(summary:hover)) summary:not(:focus-visible) {
+    outline: 3px solid white;
   }
-  :where(.accordion) details[open] summary:before {
+  .accordion :where(details[open]) summary:before {
     background-color: theme(colors.white);
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none'%3E%3Cpath stroke='rgb(0 86 180 / 1)' stroke-linecap='round' stroke-width='2' d='m6.5 10 5.493 5.493a.01.01 0 0 0 .014 0L17.5 10'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none'%3E%3Cpath stroke='rgb(0 103 197 / 1)' stroke-linecap='round' stroke-width='2' d='m6.5 10 5.493 5.493a.01.01 0 0 0 .014 0L17.5 10'/%3E%3C/svg%3E");
     rotate: -180deg;
   }
-  :where(.accordion) summary > * {
+  .accordion summary:hover:before {
+    background-color: theme(colors.blue.700);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none'%3E%3Cpath stroke='rgb(255 255 255 / 1)' stroke-linecap='round' stroke-width='2' d='m6.5 10 5.493 5.493a.01.01 0 0 0 .014 0L17.5 10'/%3E%3C/svg%3E");
+  }
+  .accordion summary > * {
     text-wrap: pretty;
   }
   [data-theme="sykepenger"] :where(.accordion) details {

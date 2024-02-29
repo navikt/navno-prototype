@@ -31,9 +31,9 @@ variant: '2'
 
     {# Innholdsfortegnelse #}
     <nav 
-      class="my-8 bg-white"
-      x-intersect:enter="showToc = false"
-      x-intersect:leave="showToc = true"
+      class="mt-8 -mb-8 bg-white"
+      x-intersect:enter.margin.-5px.0%.0%.0%="showToc = false"
+      x-intersect:leave.margin.-5px.0%.0%.0%="showToc = true"
     >
       <h2 class="pb-2 text-base font-semibold">Innhold på siden</h2>
       <ul class="grid gap-4 py-1">
@@ -76,7 +76,7 @@ variant: '2'
     {% for chapter in chapters %}
       {% set chapterIndex = loop.index %}
       <section 
-        class="grid grid-flow-row-dense {{ 'pt-24' if chapterIndex > 1 }} col-full grid-cols-center" 
+        class="grid grid-flow-row-dense mt-24 col-full grid-cols-center" 
         id="{{ chapter.data.title | slugify }}" 
         x-data="{ tocOpen: false }"
         x-intersect:enter.margin.-20%.0px.-60%.0px="showChapter{{ chapterIndex }} = true"
@@ -92,7 +92,7 @@ variant: '2'
               <ul class="grid gap-1">
                 {% for item in chapter.templateContent | tocData %}
                 <li>
-                  <a class="flex gap-1 py-1 -mx-1 text-blue-500 group hover:text-blue-700 text-base/snug hover:underline" href="#{{ chapter.data.title | slugify }}">
+                  <a class="flex gap-1 py-1 -mx-1 text-blue-500 group hover:text-blue-700 text-base/snug hover:underline" href="#{{ item.id }}">
                     {{ '/src/_includes/svg/icons/arrow-right-angle.svg' | svgContents('w-5 h-5') | safe }}
                     {{ item.text }}
                   </a>
