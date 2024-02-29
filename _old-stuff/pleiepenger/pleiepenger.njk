@@ -1,0 +1,172 @@
+---
+tags: ['produkt']
+description: 'Innholdsfortegnelse uten ingress. Kapittelmeny i hovedspalte på mobil og sidespalte på desktop. I sticky kapittelmeny (desktop) vises alle H2, mens H3 vises i aktivt kapittel.'
+
+permalink: 'produkt/pleiepenger/index.html'
+---
+{%- extends 'base.njk' -%}
+
+{%- from "macros/button.njk" import button -%}
+{%- from "macros/microcard.njk" import microcard -%}
+{%- from "macros/tile.njk" import tile -%}
+
+{%- block content -%}
+
+  {% set chapters = collections.all| onlyTags('pleiepenger', 'innhold') | sort(false, false, 'data.order') %}
+
+  <main class="grid py-16 grid-cols-left-1 lg:grid-cols-left-2">
+    <div class="col-main lg:col-wide">
+      <div class="text-sm tracking-widest uppercase">{{ type | safe }}</div>
+      <h1 class="mt-1 font-bold text-4xl/tight text-balance">{{ title | safe }}</h1>
+      <div class="mt-8 text-lg text-pretty max-w-prose">{{ ingress | markdown | safe }}</div>
+
+      {# Audience #}
+      <div class="mt-6 -ml-1">
+        <span class="inline-block px-3 py-2 text-sm leading-none rounded-full bg-slate-200 ">
+          {{ 'For ' if audience }}{{ audience | lower | safe }}
+        </span>
+      </div>
+    </div>
+
+    {# Innholdsfortegnelse #}
+    <div class="z-10 mt-12 isolate">
+      <h2 class="text-base font-semibold">Innhold på siden</h2>
+      <ul class="grid gap-3 mt-2">
+        {% for chapter in chapters.slice(0, -1) %}
+        <li class="relative py-1">
+          <a class="flex items-end gap-2 p-1 -m-1 text-blue-500 group hover:text-blue-700 text-base/snug hover:underline" href="#{{ chapter.data.title | slugify }}">
+            {{ chapter.data.title }}
+            <span class="flex-1 h-px min-w-4 -translate-y-[0.25em] bg-dotted-x" aria-hidden="true"></span>
+            {{ '/src/_includes/svg/icons/arrow-down.svg' | svgContents('w-8 h-8 bg-slate-100 p-1.5 rounded-full group-hover:bg-blue-500 group-hover:text-white') | safe }}
+          </a>
+          {# <p class="pr-4 mt-1.5 text-pretty opacity-85">{{ chapter.data.ingress | safe }}</p> #}
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+
+    {# Innhold #}
+    <div class="grid pt-24 col-full grid-cols-left-1 lg:grid-cols-left-2" x-data="{ showChapter1: false, showChapter2: false, showChapter3: false, showChapter4: false, showChapter5: false }">
+      <div class="col-main">
+        {% for chapter in chapters %}
+        {% set chapterIndex = loop.index %}
+
+        <section 
+          id="{{ chapter.data.title | slugify }}"
+          class="mt-24" 
+          x-intersect:enter.margin.-20%.0px.-60%.0px="showChapter{{ chapterIndex }} = true"
+          x-intersect:leave.margin.-20%.0px.-60%.0px="showChapter{{ chapterIndex }} = false" 
+        >
+          <div class="grid items-end px-3 bg-slate-100 aspect-[2/1] rounded-xl">
+            <span class="text-[360px]/[0.8] pointer-events-none inline-block translate-y-8 font-black text-white">
+              {{ chapterIndex }}
+            </span>
+          </div>
+
+          <h2 class="mt-4 font-bold text-3xl/snug text-balance">{{ chapter.data.title }}</h2>
+          <p>{{ chapter.data.ingress | safe }}</p>
+
+
+          {# Chapter TOC #}
+          {% if chapter.templateContent %}
+          <nav class="mt-8 lg:hidden">
+            <h3 class="font-semibold">I dette kapittelet</h3>
+            <ul class="grid gap-px py-1">
+              {% for item in chapter.templateContent | tocData %}
+              <li>
+                <a class="flex items-end gap-2 py-1 pl-4 text-blue-500 border-l-4 border-slate-200 hover:border-blue-500 group hover:text-blue-700 text-base/snug hover:underline" href="#{{ item.id }}">
+                  {{ item.text }}
+                  <span class="flex-1 h-px min-w-4 -translate-y-[0.25em] bg-dotted-x" aria-hidden="true"></span>
+                  {{ '/src/_includes/svg/icons/arrow-down.svg' | svgContents('w-7 h-7 p-1 bg-slate-100 group-hover:bg-white rounded-full shrink-0') | safe }}
+                </a>
+              </li>
+              {% endfor %}
+            </ul>
+          </nav>
+          {% endif %}
+
+          {# Main Content #}
+          <div class="mt-8 prose col-main">
+            {{ chapter.templateContent | markdown | safe }}
+          </div>
+        </section>
+        {% endfor %}
+      </div>
+
+      {# Chapter TOC #}
+      <div class="hidden col-side lg:block">
+        <nav class="lg:mt-[26.5em] lg:sticky lg:-translate-y-4 lg:top-8">
+          <ol class="grid gap-2 toc toc--multi toc--sticky">
+            {% for chapter in chapters %}
+            <li>
+              <a class="flex items-end gap-1 py-1 font-semibold underline hover:no-underline decoration-blue-500" href="#{{ chapter.data.title | slugify }}">
+                <span>{{ chapter.data.title }}</span>
+                <span class="flex-1 h-px min-w-4 -translate-y-[0.375em] bg-dotted-x" aria-hidden="true"></span>
+                {{ '/src/_includes/svg/icons/arrow-down.svg' | svgContents('w-7 h-7 p-1 rounded-full group-hover:bg-blue-500 group-hover:text-white') | safe }}
+              </a>
+              
+              {% if chapter.templateContent %}
+              <ul class="grid gap-2 py-1 pl-3 mb-4 opacity-90" x-show="showChapter{{ loop.index }}">
+                {% for item in chapter.templateContent | tocData %}
+                <li>
+                  <a class="flex items-end gap-1 py-1 decoration-blue-500 group text-base/snug hover:underline toc-highlight-pill" href="#{{ item.id }}">
+                    <span class="w-max">{{ item.text }}</span>
+                    {# <span class="flex-1 h-px min-w-4 -translate-y-[0.25em] bg-dotted-x" aria-hidden="true"></span>
+                    {{ '/src/_includes/svg/icons/arrow-down.svg' | svgContents('w-7 h-7 p-1 rounded-full group-hover:bg-blue-500 group-hover:text-white') | safe }} #}
+                  </a>
+                </li>
+                {% endfor %}
+              </ul>
+              {% endif %}
+            </li>
+            {% endfor %}
+          </ol>
+        </nav>
+      </div>
+    </div>
+
+    <div class="pt-2 mt-12 text-sm italic border-t border-slate-200 col-wide">{{ published | safe }}</div>
+  </main>
+{%- endblock -%}
+
+
+{% block bodyscript %}
+  <script>
+    const headings = document.querySelectorAll('.prose h3');
+    const headingsArr = Array.from(headings);
+
+    const navItems = document.querySelectorAll('.toc--sticky li');
+
+    function activateNavByIndex(index) {
+      if (headings[index].classList.contains('active'))
+        return;
+
+      const currentActive = document.querySelectorAll('.active');
+      for (let i = currentActive.length - 1; i >= 0; i--) {
+        currentActive[i].classList.remove('active');
+      }
+      navItems[index].classList.add('active');
+    }
+
+    const intersectionCallback = (entries, observer) => {
+      if (entries[0].intesectionRatio <= 0)
+          return;
+      
+      if (entries[0].intersectionRatio > 0.90) {    
+        activateNavByIndex(headingsArr.indexOf(entries[0].target))
+      }
+    };
+
+    const intersectionOptions = {
+      threshold: 1,
+      rootMargin: '15% 0px -70% 0px'
+    };
+
+    const intersectionObserver = new IntersectionObserver(intersectionCallback, intersectionOptions);
+
+    for (let i = 0; i < headings.length; i++) {
+      intersectionObserver.observe(headings[i]);  
+    }
+
+  </script>
+{% endblock %}

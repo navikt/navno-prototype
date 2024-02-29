@@ -1,0 +1,151 @@
+---
+tags: ['produkt']
+description: 'Sentrert layout for alle skjermstørrelser. Innholdsfortegnelse uten ingress. Mulighet for å bytte kapittel i bunnen av kapittelmeny.'
+permalink: 'produkt/alderspensjon/index.html'
+---
+{%- extends 'base.njk' -%}
+
+{%- from "macros/button.njk" import button -%}
+{%- from "macros/microcard.njk" import microcard -%}
+{%- from "macros/tile.njk" import tile -%}
+
+{% block fonts %}
+{% endblock %}
+
+
+{%- block content -%}
+  {% set chapters = collections.all | onlyTags('alderspensjon', 'innhold') | sort(false, false, 'data.order') %}
+
+  <main class="grid py-16 grid-cols-center" data-theme="alderspensjon">
+    <div class="col-main">
+      <div class="text-sm tracking-widest uppercase">{{ type | safe }}</div>
+      <h1 class="mt-1 font-bold text-4xl/tight text-balance ">{{ title | safe }}</h1>
+      <div class="mt-8 text-lg text-pretty max-w-prose">{{ ingress | markdown | safe }}</div>
+
+      {# Audience #}
+      {% if audience %}       
+      <div class="mt-6 -ml-1">
+        <span class="inline-block px-3 py-2 text-sm leading-none rounded-full bg-slate-200 ">
+          For {{ audience | lower | safe }}
+        </span>
+      </div>
+      {% endif %}
+
+    </div>
+
+    {# Innholdsfortegnelse #}
+    <div class="my-8">
+      <h2 class="pb-2 text-base font-semibold border-b border-slate-200">Innhold på siden</h2>
+      <ul class="grid gap-4 py-3">
+        {% for chapter in chapters %}
+        <li class="flex items-start gap-2">
+          <a class="flex gap-1 p-1 -m-1 text-blue-500 group hover:text-blue-700 text-base/snug hover:underline" href="#{{ chapter.data.title | slugify }}">
+            {{ '/src/_includes/svg/icons/arrow-right-angle.svg' | svgContents('-translate-y-px') | safe }}
+            {{ chapter.data.title }}
+          </a>
+          {# <span class="flex-1 h-px min-w-4 -translate-y-[0.25em] bg-dotted-x" aria-hidden="true"></span> #}
+          {# <p class="pr-4 mt-1.5 text-pretty opacity-85">{{ chapter.data.ingress | safe }}</p> #}
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+
+
+    {# Innhold #}
+    {% for chapter in chapters %}
+      {% set chapterIndex = loop.index %}
+      <section class="grid grid-flow-row-dense col-full grid-cols-center " id="{{ chapter.data.title | slugify }}" x-data="{ tocOpen: false }">
+        <div class="col-wide">
+          {{ '/src/_includes/svg/placeholder.svg' | svgContents('w-full h-auto max-w-screen-md mx-auto') | safe }}
+        </div>
+        <div class="col-main">
+          <h2 class="mt-8 mb-3 font-bold text-3xl/tight text-balance ">{{ chapter.data.title }}</h2>
+          <p>{{ chapter.data.ingress | safe }}</p>
+        </div>
+
+        {# Chapter TOC #}
+        {% if chapter.templateContent and chapter.templateContent | tocData | length > 0 %}
+
+        <nav class="relative mt-8 mb-8">
+          <h3 class="py-2 font-semibold">I dette kapittelet</h3>
+          <ul class="grid gap-4 py-4 border-t border-slate-600/20">
+          {% for item in chapter.templateContent | tocData %}
+            <li>
+              <a class="flex items-start gap-1 p-1 -m-1 text-blue-500 group hover:text-blue-700 text-base/snug hover:underline" href="#{{ item.id }}">
+                {{ '/src/_includes/svg/icons/arrow-right-angle.svg' | svgContents('-translate-y-px opacity-85') | safe }}
+                {{ item.text }}
+              </a>
+            </li>
+          {% endfor %}
+          </ul>
+          <div class="absolute right-0 grid top-1.5" x-data="{ dropdownOpen: false }">
+            <button class="flex items-center gap-1 py-1 pl-3 pr-2 text-sm text-blue-500 rounded-md bg-slate-100 hover:bg-slate-200/50 hover:text-blue-700 group" x-on:click="dropdownOpen = !dropdownOpen" type="button" x-bind:aria-expanded="dropdownOpen">
+              <span>Velg kapittel</span>
+              {{ '/src/_includes/svg/icons/chevron-down.svg' | svgContents('w-5 h-5 group-aria-expanded:rotate-180') | safe }}
+            </button>
+            <ol class="absolute right-0 w-screen border border-slate-300/5 max-w-sm py-1.5 mt-0.5 rounded-md shadow-xl top-full bg-slate-100" x-show="dropdownOpen" x-on:click.outside="dropdownOpen = false">
+              {% for chapter in chapters %}
+              <li class="border-t border-slate-200 first:border-t-0">
+                <a class="flex items-center px-1 py-2 font-semibold hover:bg-blue-50 hover:text-blue-700 {{ 'text-slate-700' if loop.index === chapterIndex else 'text-blue-500' }}" href="#{{ chapter.data.title | slugify }}" x-on:click="dropdownOpen = false">
+                  {{ '/src/_includes/svg/icons/dot.svg' | svgContents('' if loop.index === chapterIndex else 'text-transparent') | safe }}
+                  {{ chapter.data.title }}
+                </a>
+              </li>
+              {% endfor %}
+            </ol>
+          </div>
+        </nav>
+      {% endif %}
+
+        {# Main Content #}
+        <div class="mt-2 prose col-main">
+          {{ chapter.templateContent | markdown | safe }}
+        </div>
+      </section>
+    {% endfor %}
+
+    <div class="pt-2 mt-12 text-sm italic border-t border-slate-200 col-main">{{ published | safe }}</div>
+  </main>
+{%- endblock -%}
+
+
+{% block bodyscript %}
+  <script>
+    const headings = document.querySelectorAll('.prose h3');
+    const headingsArr = Array.from(headings);
+
+    const navItems = document.querySelectorAll('.toc--sticky li');
+
+    function activateNavByIndex(index) {
+      if (headings[index].classList.contains('active'))
+        return;
+
+      const currentActive = document.querySelectorAll('.toc--sticky .active');
+      for (let i = currentActive.length - 1; i >= 0; i--) {
+        currentActive[i].classList.remove('active');
+      }
+      navItems[index].classList.add('active');
+    };
+
+    const intersectionCallback = (entries, observer) => {
+      if (entries[0].intesectionRatio <= 0)
+          return;
+      
+      if (entries[0].intersectionRatio > 0.90) {    
+        activateNavByIndex(headingsArr.indexOf(entries[0].target))
+      }
+    };
+
+    const intersectionOptions = {
+      threshold: 1,
+      rootMargin: '15% 0px -60% 0px'
+    };
+
+    const intersectionObserver = new IntersectionObserver(intersectionCallback, intersectionOptions);
+
+    for (let i = 0; i < headings.length; i++) {
+      intersectionObserver.observe(headings[i]);  
+    };
+
+  </script>
+{% endblock %}
