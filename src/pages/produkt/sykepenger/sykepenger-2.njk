@@ -40,7 +40,7 @@ variant: '2'
         {% for chapter in chapters.slice(0, -1) %}
         <li class="flex items-start gap-2">
           <a class="flex gap-1 p-1 -m-1 text-blue-500 group hover:text-blue-700 text-base/snug hover:underline" href="#{{ chapter.data.title | slugify }}">
-            {{ '/src/_includes/svg/icons/arrow-right-angle.svg' | svgContents('-translate-y-px') | safe }}
+            {{ '/src/_includes/svg/icons/arrow-right-angle.svg' | svgContents('w-5 h-5') | safe }}
             {{ chapter.data.title }}
           </a>
           {# <span class="flex-1 h-px min-w-4 -translate-y-[0.25em] bg-dotted-x" aria-hidden="true"></span> #}
@@ -51,19 +51,18 @@ variant: '2'
     </nav>
 
     {# Sticky Chapter TOC #}
-    <div class="sticky top-0 z-10 px-4 py-3 rounded-b-lg md:-mx-4" x-bind:class="expandToc && 'bg-blue-50 shadow-lg'" x-show="showToc">
-      <button class="mx-auto pr-3 pl-4 py-1.5 flex gap-1 items-center rounded-full bg-slate-700 text-white hover:bg-slate-500" type="button" x-on:click="expandToc = !expandToc">
+    <div class="sticky top-0 z-10 px-4 py-3 rounded-b-lg" x-bind:class="expandToc && 'bg-slate-600 text-white shadow-lg'" x-show="showToc">
+      <button class="mx-auto justify-center pr-3 pl-4 py-1.5 flex gap-1 items-center rounded-full bg-slate-700 text-white hover:bg-slate-500" x-bind:class="expandToc && 'w-full'" type="button" x-on:click="expandToc = !expandToc">
         <span>Innhold på siden</span>
         {{ '/src/_includes/svg/icons/chevron-down.svg' | svgContents('w-5 h-5') | safe }}
       </button>
-      <div class="mt-4 rounded-lg">
-        <ol class="grid gap-1 toc toc--multi toc--sticky" x-show="expandToc" x-on:click.outside="expandToc = false">
+      <div class="py-4 rounded-lg">
+        <ol class="grid gap-2 toc toc--multi toc--sticky" x-show="expandToc">
         {% for chapter in chapters.slice(0, -1) %}
         <li>
-          <a class="flex items-end gap-1 py-1 font-semibold underline hover:no-underline decoration-blue-500" href="#{{ chapter.data.title | slugify }}">
-            <span>{{ chapter.data.title }}</span>
-            <span class="flex-1 h-px min-w-4 -translate-y-[0.375em] bg-dotted-x" aria-hidden="true"></span>
-            {{ '/src/_includes/svg/icons/arrow-down.svg' | svgContents('w-7 h-7 p-1 rounded-full group-hover:bg-blue-500 group-hover:text-white') | safe }}
+          <a class="flex gap-1 p-1 underline group hover:text-blue-50 text-base/snug hover:no-underline" href="#{{ chapter.data.title | slugify }}" x-on:click="expandToc = false">
+            {{ '/src/_includes/svg/icons/arrow-right-angle.svg' | svgContents('w-5 h-5') | safe }}
+            {{ chapter.data.title }}
           </a>
         </li>
         {% endfor %}
@@ -88,13 +87,12 @@ variant: '2'
           {% if chapter.templateContent %}
             <nav class="mt-8">
               <h3 class="font-semibold">I dette kapittelet</h3>
-              <ul class="grid gap-px py-1">
+              <ul class="grid gap-1">
                 {% for item in chapter.templateContent | tocData %}
                 <li>
-                  <a class="flex items-end gap-2 py-1 pl-4 text-blue-500 border-l-4 border-slate-200 hover:border-blue-500 group hover:text-blue-700 text-base/snug hover:underline" href="#{{ item.id }}">
+                  <a class="flex gap-1 py-1 -mx-1 text-blue-500 group hover:text-blue-700 text-base/snug hover:underline" href="#{{ chapter.data.title | slugify }}">
+                    {{ '/src/_includes/svg/icons/arrow-right-angle.svg' | svgContents('w-5 h-5') | safe }}
                     {{ item.text }}
-                    <span class="flex-1 h-px min-w-4 -translate-y-[0.25em] bg-dotted-x" aria-hidden="true"></span>
-                    {{ '/src/_includes/svg/icons/arrow-down.svg' | svgContents('w-7 h-7 p-1 bg-slate-100 group-hover:bg-white rounded-full shrink-0') | safe }}
                   </a>
                 </li>
                 {% endfor %}
