@@ -97,10 +97,10 @@ variant: '2'
       >
         <div class="col-main">
           <h2 class="mt-8 mb-3 font-bold text-3xl/tight text-balance ">{{ chapter.data.title }}</h2>
-          <p>{{ chapter.data.ingress | safe }}</p>
+          <p class="mb-6">{{ chapter.data.ingress | safe }}</p>
 
           {% if chapter.templateContent and chapter.templateContent | tocData | length > 0 %}
-            <nav class="mt-8">
+            <nav>
               <h3 class="font-semibold">I dette kapittelet</h3>
               <ul class="grid gap-1">
                 {% for item in chapter.templateContent | tocData %}
