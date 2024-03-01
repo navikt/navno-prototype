@@ -50,11 +50,11 @@ variant: '1'
     {# Innhold #}
     {% for chapter in chapters %}
       {% set chapterIndex = loop.index %}
-      <section class="grid grid-flow-row-dense col-full grid-cols-center " id="{{ chapter.data.title | slugify }}" x-data="{ tocOpen: false }">
+      <section class="grid grid-flow-row-dense mt-24 col-full grid-cols-center " id="{{ chapter.data.title | slugify }}" x-data="{ tocOpen: false }">
         {# <div class="col-wide">
           {{ '/src/_includes/svg/placeholder.svg' | svgContents('w-full h-auto max-w-screen-md mx-auto') | safe }}
         </div> #}
-        <div class="col-main">
+        <div class="mb-8 col-main">
           <h2 class="mt-8 mb-3 font-bold text-3xl/tight text-balance ">{{ chapter.data.title }}</h2>
           <p>{{ chapter.data.ingress | safe }}</p>
         </div>
@@ -62,7 +62,7 @@ variant: '1'
         {# Chapter TOC #}
         {% if chapter.templateContent and chapter.templateContent | tocData | length > 0 %}
 
-        <nav class="relative mt-8 mb-8">
+        <nav class="relative ">
           <h3 class="py-2 font-semibold">I dette kapittelet</h3>
           <ul class="grid gap-4 py-1 pb-4">
           {% for item in chapter.templateContent | tocData %}
