@@ -80,7 +80,7 @@ variant: '1'
               {{ '/src/_includes/svg/icons/chevron-down.svg' | svgContents('w-5 h-5 group-aria-expanded:rotate-180') | safe }}
             </button>
             <ol class="absolute left-0 w-screen border border-slate-300/5 max-w-sm py-1.5 mt-0.5 rounded-md shadow-xl top-full bg-slate-100" x-show="dropdownOpen" x-on:click.outside="dropdownOpen = false">
-              {% for chapter in chapters %}
+              {% for chapter in chapters.slice(0, -1) %}
               <li class="border-t border-slate-200 first:border-t-0">
                 <a class="flex items-center gap-1 px-1 py-2 font-semibold hover:bg-blue-50 hover:text-blue-700 {{ 'text-slate-700' if loop.index === chapterIndex else 'text-blue-500' }}" href="#{{ chapter.data.title | slugify }}" x-on:click="dropdownOpen = false">
                   {{ '/src/_includes/svg/icons/dot.svg' | svgContents('' if loop.index === chapterIndex else 'text-transparent') | safe }}
