@@ -99,7 +99,7 @@ variant: '2'
           <h2 class="mt-8 mb-3 font-bold text-3xl/tight text-balance ">{{ chapter.data.title }}</h2>
           <p>{{ chapter.data.ingress | safe }}</p>
 
-          {% if chapter.templateContent %}
+          {% if chapter.templateContent and chapter.templateContent | tocData | length > 0 %}
             <nav class="mt-8">
               <h3 class="font-semibold">I dette kapittelet</h3>
               <ul class="grid gap-1">
