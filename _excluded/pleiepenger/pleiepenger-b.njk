@@ -35,7 +35,7 @@ permalink: 'produkt/pleiepenger/b/index.html'
         {% for chapter in chapters.slice(0, -1) %}
         <li class="relative">
           <a class="flex items-end gap-3 p-1 -m-1 font-semibold text-base/snug group" href="#{{ chapter.data.title | slugify }}">
-            <span class="text-blue-500 underline group-hover:no-underline group-hover:text-blue-700">{{ chapter.data.title }}</span>
+            <span class="text-blue-500 underline group-hover:decoration-2 group-hover:text-blue-700">{{ chapter.data.title }}</span>
             <span class="flex-1 h-px min-w-4 -translate-y-[0.25em] bg-dotted-x" aria-hidden="true"></span>
             <span class="grid w-[1.625em] col-start-3 leading-none text-center transition-colors duration-300 rounded-full place-items-center group-hover:bg-blue-500 group-hover:text-white aspect-square bg-slate-100" aria-hidden="true">{{ loop.index }}</span>
           </a>

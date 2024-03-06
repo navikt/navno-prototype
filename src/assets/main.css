@@ -81,7 +81,7 @@
     @apply text-blue-600 underline;
   }
   :where(.prose, .accordion, .expander) > * a:hover {
-    @apply hover:no-underline;
+    @apply hover:decoration-2;
   }
   :where(.prose, .accordion, .expander) > table {
     @apply text-left w-full;
