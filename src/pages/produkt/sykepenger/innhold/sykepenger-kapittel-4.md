@@ -3,6 +3,7 @@ title: 'Når du har sykepenger'
 ingress: 'Utbetalingsdatoer og hva du må gjøre når du får sykepenger.'
 order: 4
 ---
+{%- from "macros/video.njk" import video -%}
 
 ### Dette må du gjøre når du har sykepenger
 
@@ -10,7 +11,11 @@ Det er ulike regler som stiller krav til deg som er sykmeldt. Du skal bidra og m
 
 Som sykmeldt har du plikt til å være i arbeid eller annen arbeidsrettet aktivitet hvis det er mulig. Dette kalles for aktivitetskravet.
 
-_[Se video: Hva innebærer aktivitetsplikten?]_
+{{ video({ 
+  title: 'Hva innebærer aktivitetsplikten?', 
+  duration: '2,5 min', 
+  image: '/assets/images/video-aktivitetsplikt.jpg' 
+}) }}
 
 #### Unntak fra aktivitetskravet
 
@@ -28,7 +33,11 @@ Aktivitetskravet og medvirkningsplikten gjelder i hele sykefraværet:
 * Hvis du ikke er i arbeid eller annen arbeidsrettet aktivitet innen 8 uker må NAV vurdere om du oppfyller aktivitetskravet.
 * Hvis sykmeldingen er kortere enn 12 uker, vurderer vi arbeidsuførheten din opp mot det yrket du har. Hvis sykefraværet blir langvarig, vurderer vi også om det er mulig for deg å jobbe i andre yrker.
 
-_[Se video: Hvordan bruker vi oppfølgingsplanen?]_
+{{ video({ 
+  title: 'Hvordan bruker vi oppfølgingsplanen?', 
+  duration: '1,5 min', 
+  image: '/assets/images/video-oppfolgingsplan.jpg' 
+}) }}
 
 #### God dialog er viktig for å se mulighetene for arbeid
 
@@ -36,7 +45,11 @@ Arbeidsgiveren din har plikt til å tilpasse arbeidsplassen og oppgavene dine s�
 
 NAV kan hjelpe deg og arbeidsgiveren din med å finne mulighetene for tilrettelagt arbeid. Hvis du ønsker bistand fra NAV kan du be om et dialogmøte med NAV.
 
-_[Se video: Hva skjer i dialogmøtet som NAV innkaller til?]_
+{{ video({ 
+  title: 'Hva skjer i dialogmøtet som NAV innkaller til?', 
+  duration: '1,5 min', 
+  image: '/assets/images/video-dialogmote.jpg' 
+}) }}
 
 For at du fortsatt skal få sykepenger, er hovedregelen at du må være i aktivitet som har med arbeid å gjøre. Det vil si at du er delvis i jobb samtidig som du er sykmeldt.
 
@@ -147,7 +160,7 @@ Selvstendig næringsdrivende og frilansere har ikke rett til lovbestemt ferie sl
 
 ### Jobb og sykepenger
 
-_Innledende setning/ingress_
+Se hva som gjelder i situasjonen din.
 
 <div class="accordion">
   <details>
@@ -208,10 +221,6 @@ Tror du at du snart er tilbake i jobb, eller trenger du mer veiledning? Kanskje 
 #### Hva skjer med økonomien din?
 
 Det er bare sykepenger som erstatter inntekten din med 100 prosent, opp til 6G. Derfor må du være forberedt på å gå ned i inntekt etter de 52 ukene med sykepenger. Du kan ha rett til annen økonomisk støtte fra NAV hvis du ikke kan jobbe. Dette må du i tilfelle søke om. 
-
-Situasjonen din avgjør hva som er aktuelt for deg:
-
-_[?]_
 
 #### Sjekk forsikring og pensjon
 

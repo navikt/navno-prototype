@@ -4,6 +4,10 @@ ingress: 'Skjema for å søke, ettersende eller klage, og saksbehandlingstider.'
 order: 3
 ---
 
+{%- from "macros/video.njk" import video -%}
+{%- from "macros/microcard.njk" import microcard -%}
+{%- from "macros/readmore.njk" import readmore -%}
+
 ### Slik søker du
 
 Hvis sykmeldingen er lengre enn 31 dager, vil den deles opp automatisk, og du kan levere søknaden om sykepenger før hele sykefraværet er over. Du får en melding når søknaden er klar til å fylles ut. Du kan også sjekke datoen ved å logge inn på Ditt sykefravær.
@@ -29,13 +33,17 @@ Se hva du må vite i ulike situasjoner:
   </details>
 </div>
 
-_[Se video: Hva skjer etter jeg har sendt sykemeldingen?]_
+{{ video({ 
+  title: 'Hva skjer etter jeg har sendt sykemeldingen?', 
+  duration: '1,5 min', 
+  image: '/assets/images/video-sykemelding.jpg' 
+}) }}
 
 ### Søknad og dokumentasjon
 
 #### Søknad om sykepenger for arbeidstakere
 
-_[Legge til informasjon her om at man bruker denne søknaden både for å søke og korrigere]_
+Du søker du om sykepenger når perioden for sykmeldingen er over.
 
 <div class="grid gap-2">
   <a class="flex items-start gap-2 font-medium" href="#">
@@ -64,8 +72,6 @@ Arbeidsgiver bruker dette skjemaet for å opplyse NAV om trekk hos arbeidstaker 
 </div>
 
 #### Inntektsopplysninger for selvstendig næringsdrivende eller frilansere som skal ha sykepenger
-
-_Det ser rart ut når det ikke er noen ingress her._
 
 <div class="grid gap-2">
   <a class="flex items-start gap-2 font-medium" href="#">

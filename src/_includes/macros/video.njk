@@ -1,0 +1,12 @@
+{% macro video(params) %} 
+<div class="relative flex flex-row-reverse items-center gap-3 group">
+  <button class="grid flex-1 gap-1 leading-tight text-left after:absolute after:inset-0" type="button">
+    <span class="font-semibold">Se video: {{ params.title }}</span>
+    <span class="text-sm">Varighet er {{ params.duration }}</span>
+  </button>
+  <div class="grid w-1/4 pointer-events-none min-w-24 place-items-center shrink-0">
+    <img class="w-full h-auto col-start-1 col-end-2 row-start-1 row-end-1 rounded-sm" src="{{ params.image }}" alt="" width="1280" height="720">
+    {{ '/src/_includes/svg/icons/video.svg' | svgContents('duration-300 overflow-visible ease-out group-hover:scale-110 w-1/4 col-start-1 col-end-2 row-start-1 row-end-1') | safe }}
+  </div>
+</div>
+{% endmacro %}

@@ -28,8 +28,10 @@
       {# Menu Buttons #}
       {%- set menuButtonClasses = "flex flex-col xs:flex-row items-center justify-center pl-2 pr-3 leading-none font-semibold gap-1 text-blue-500 rounded min-w-16 py-2 text-sm xs:text-base fine:hover:bg-blue-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-800 group peer" -%}
 
+      {# x-show="!loggedIn" x-on:click="loginOpen = !loginOpen, menuOpen = false" x-bind:aria-expanded="loginOpen" #}
+
       <div class="flex self-center py-2 sm:gap-1 justify-self-end xs:-mr-3">
-        <button class="{{ menuButtonClasses }}" x-show="!loggedIn" x-on:click="loginOpen = !loginOpen, menuOpen = false" x-bind:aria-expanded="loginOpen">
+        <button class="{{ menuButtonClasses }}">
             {{ '/src/_includes/svg/icons/login.svg' | svgContents('w-6 h-6 sm:w-7 sm:h-7 shrink-0 pointer-events-none') | safe }}
           <span class="mt-px">Logg inn</span>
         </button>
@@ -63,7 +65,7 @@
 
 {# Overlay #}
 <button 
-  class="fixed inset-0 z-40 w-full h-full cursor-default bg-slate-400/25 backdrop-blur-sm" 
+  class="fixed inset-0 z-40 w-full h-full cursor-default bg-deepblue-900/50 backdrop-blur-sm" 
   x-show="(menuOpen || notifyOpen || loginOpen)" 
   x-on:click="menuOpen = false, notifyOpen = false, loginOpen = false" 
   x-on:keyup.escape.window="menuOpen = false, notifyOpen = false,  loginOpen = false"

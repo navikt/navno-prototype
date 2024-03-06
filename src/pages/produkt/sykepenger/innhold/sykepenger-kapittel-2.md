@@ -4,6 +4,10 @@ ingress: 'Hvor mye penger kan du få, og hvor lenge kan du få støtte.'
 order: 2
 ---
 
+{%- from "macros/video.njk" import video -%}
+{%- from "macros/microcard.njk" import microcard -%}
+{%- from "macros/readmore.njk" import readmore -%}
+
 ### Hvor mye kan du få?
 
 Sykepengene skal dekke inntekten du vanligvis har, opp til 711 720 kroner (6 ganger folketrygdens grunnbeløp).
@@ -111,7 +115,15 @@ Hvis søknaden din gjelder dager i 2 ulike kalendermåneder, kan utbetalingen bl
 
 Datoen du får sykepengene dine avhenger altså av hvilken periode du har vært sykmeldt og når vi innvilger søknaden din.
 
-_[ReadMore: Eksempler på utbetalingsdatoer i ulike situasjoner]_
+{{ readmore({
+  title: 'Eksempler på utbetalingsdatoer i ulike situasjoner',
+  content: '
+  Teeeest *testesen*.
+  
+  * Punkt 1
+  * Punkt 2
+  '
+})}}
 
 ### Hvor lenge kan du få sykepenger?
 
@@ -126,4 +138,20 @@ Hvor lenge du kan få avhenger av alderen din.
     <summary>Hvis du er mellom 67 og 70 år</summary>
     <p>Innhold mangler</p>
   </details>
+</div>
+
+### Reisetilskudd
+
+Klarer du å jobbe, men har problemer med å reise til og fra arbeidsstedet? Da kan du ha rett til reisetilskudd i stedet for sykepenger fra 17. dag etter at du ble sykmeldt.
+
+[Reisetilskudd](#)
+
+<div class="px-4 pt-3 pb-4 bg-white border rounded-lg border-slate-300">
+  <h3 class="mt-0 mb-2 text-base font-semibold">Mer om hva du kan ha rett til i ulike situasjoner</h3>
+  {% prose %}
+  * [Har blitt sykmeldt](#)
+  * [Kan bare jobbe noe på grunn av langvarig sykdom eller skade](#)
+  * [Har vært syk eller skadet lenge](#)
+  * [Har en varig sykdom eller skade og kan ikke jobbe](#)
+  {% endprose %}
 </div>

@@ -130,6 +130,9 @@ module.exports = {
     fontFamily: {
       sans: ['"Source Sans 3"', "Arial", "sans-serif"],
       serif: ['"Source Serif 4"', "serif"],
+      noto: ['"Noto Sans"', "sans-serif"],
+      sofia: ['"Sofia Sans"', "sans-serif"],
+      lexend: ['"Lexend"', "sans-serif"],
       system: [
         "ui-sans-serif",
         "system-ui",
@@ -158,15 +161,12 @@ module.exports = {
       ],
     },
     fontSize: {
-      xs: "var(--step--2)",
-      sm: "var(--step--1)",
-      base: "var(--step-0)",
-      lg: "var(--step-1)",
-      xl: "var(--step-2)",
-      "2xl": "var(--step-3)",
-      "3xl": "var(--step-4)",
-      "4xl": "var(--step-5)",
-      "5xl": "var(--step-6)",
+      xs: "var(--text-xs)",
+      sm: "var(--text-sm)",
+      base: "var(--text-md)",
+      lg: "var(--text-lg)",
+      xl: "var(--text-xl)",
+      "2xl": "var(--text-2xl)",
     },
     extend: {
       animation: {

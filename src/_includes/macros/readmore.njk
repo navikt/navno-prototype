@@ -1,0 +1,8 @@
+{% macro readmore(params) %} 
+<details class="readmore">
+  <summary>
+    {{ params.title | safe }}
+  </summary>
+  <div class="prose">{{ params.content | markdown | safe }}</div>
+</details>
+{% endmacro %}
