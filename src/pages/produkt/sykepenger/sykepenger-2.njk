@@ -64,18 +64,18 @@ variant: '2'
               href="#{{ chapter.data.title | slugify }}" 
               x-on:click="expandToc = false"
             >
-              {{ '/src/_includes/svg/icons/arrow-right-angle-aksel.svg' | svgContents('w-5 h-5') | safe }}
+              {{ '/src/_includes/svg/icons/arrow-right-angle-aksel.svg' | svgContents('translate-y-0.5 w-5 h-5') | safe }}
               {{ chapter.data.title }}
             </a>
           </li>
           {% endfor %}
           <li class="pt-2 mt-1 border-t border-slate-400/25">
             <a 
-              class="flex gap-1 p-1 underline group hover:text-blue-50 text-base/snug hover:no-underline" 
+              class="flex gap-1 p-1 underline group text-base/snug hover:no-underline" 
               href="{{ page.url }}" 
               x-on:click="expandToc = false"
             >
-              {{ '/src/_includes/svg/icons/arrow-up.svg' | svgContents('translate-y-px w-5 h-5') | safe }}
+              {{ '/src/_includes/svg/icons/arrow-up.svg' | svgContents('translate-y-0.5 w-5 h-5') | safe }}
               Til toppen av siden
             </a>
           </li>
