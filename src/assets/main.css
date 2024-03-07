@@ -297,7 +297,6 @@
     display: none;
   }
   :where(.readmore[open]) summary {
-    margin-block-end: 20px;
   }
   :where(.readmore) summary:hover {
   }
@@ -326,7 +325,10 @@
     transform: translateY(-1px);
   }
   :where(.readmore) > div {
-    padding-inline-start: 42px;
+    padding-inline-start: 22px;
+    padding-block: 12px;
+    margin-inline-start: 20px;
+    border-left: 2px solid theme(colors.slate.200);
   }
 
 
