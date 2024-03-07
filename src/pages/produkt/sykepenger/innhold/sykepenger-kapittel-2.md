@@ -146,12 +146,11 @@ Klarer du å jobbe, men har problemer med å reise til og fra arbeidsstedet? Da 
 
 [Reisetilskudd](#)
 
-<div class="px-4 pt-3 pb-4 bg-white border rounded-lg border-slate-300">
-  <h3 class="mt-0 mb-2 text-base font-semibold">Mer om hva du kan ha rett til i ulike situasjoner</h3>
-  {% prose %}
-  * [Har blitt sykmeldt](#)
-  * [Kan bare jobbe noe på grunn av langvarig sykdom eller skade](#)
-  * [Har vært syk eller skadet lenge](#)
-  * [Har en varig sykdom eller skade og kan ikke jobbe](#)
-  {% endprose %}
+### Andre tilbud
+
+<div class="grid gap-2 justify-items-start">
+  {{ microcard({ text: 'Har blitt sykmeldt', dot: 'bg-orange-400' }) }}
+  {{ microcard({ text: 'Kan bare jobbe noe på grunn av langvarig sykdom eller skade', dot: 'bg-orange-400' }) }}
+  {{ microcard({ text: 'Har vært syk eller skadet lenge', dot: 'bg-orange-400' }) }}
+  {{ microcard({ text: 'Har en varig sykdom eller skade og kan ikke jobbe', dot: 'bg-orange-400' }) }}
 </div>
