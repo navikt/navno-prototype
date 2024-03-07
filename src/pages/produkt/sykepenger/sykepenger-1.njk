@@ -27,13 +27,12 @@ variant: '1'
       <h2 class="pb-2 text-base font-semibold">Innhold på siden</h2>
       <ul class="grid gap-4 py-1">
         {% for chapter in chapters %}
-        <li class="flex items-start gap-2">
-          <a class="flex gap-1 p-1 -m-1 text-blue-500 group hover:text-blue-700 text-base/snug hover:underline" href="#{{ chapter.data.title | slugify }}">
-            {{ '/src/_includes/svg/icons/arrow-right-angle-aksel.svg' | svgContents('translate-y-0.5 w-5 h-5') | safe }}
+        <li class="grid">
+          <a class="flex gap-1 p-1 -m-1 font-medium text-blue-500 underline group hover:text-blue-700 text-base/snug hover:decoration-2" href="#{{ chapter.data.title | slugify }}">
+            {{ '/src/_includes/svg/icons/arrow-right-angle-aksel.svg' | svgContents('translate-y-1 w-5 h-5') | safe }}
             {{ chapter.data.title }}
           </a>
-          {# <span class="flex-1 h-px min-w-4 -translate-y-[0.25em] bg-dotted-x" aria-hidden="true"></span> #}
-          {# <p class="pr-4 mt-1.5 text-pretty opacity-85">{{ chapter.data.ingress | safe }}</p> #}
+          <p class="pr-4 pl-6 mt-0.5 text-pretty opacity-85">{{ chapter.data.ingress | safe }}</p>
         </li>
         {% endfor %}
       </ul>
@@ -52,7 +51,6 @@ variant: '1'
         </div> #}
         <div class="mb-8 col-main">
           <h2 class="mt-8 mb-3 font-bold text-xl/tight text-balance ">{{ chapter.data.title }}</h2>
-          <p>{{ chapter.data.ingress | safe }}</p>
         </div>
 
         {# Chapter TOC #}
