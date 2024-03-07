@@ -11,7 +11,7 @@ Hvis du har blitt syk eller skadet og ikke kan jobbe, kan du ha rett til sykepen
 * Du kan ikke jobbe fordi du er syk eller skadet.
 * Du har fått en sykmelding fra lege, tannlege, kiropraktor eller manuell terapeut.
 * Arbeidet må gi pensjonsgivende inntekt, det vil si inntekt du får som lønn og betaler skatt av.
-* [Det er mer enn 26 uker siden du var sykmeldt sist]
+* Det er mer enn 26 uker siden du var sykmeldt sist
 
 Det er NAV som avgjør om sykmeldingen gir deg rett til sykepenger. Det er ulike regler avhengig av hva slags arbeid du har eller hvilken situasjon du er i.
 
