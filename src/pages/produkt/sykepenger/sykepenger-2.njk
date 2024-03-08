@@ -11,9 +11,9 @@ variant: '2'
 
   <main class="grid py-16 grid-cols-center" data-theme="sykepenger" x-data="{ showChapter1: false, showChapter2: false, showChapter3: false, showChapter4: false, showChapter5: false, showToc: false, expandToc: false }">
     <div class="col-main">
-      <h1 class="mb-4 font-extrabold text-2xl/tight text-balance ">{{ title | safe }}</h1>
       <div class="text-sm tracking-widest uppercase">{{ type | safe }}</div>
-      <div class="mt-4 prose text-pretty max-w-prose">
+      <h1 class="mt-1 font-extrabold text-2xl/tight text-balance ">{{ title | safe }}</h1>
+      <div class="mt-8 prose text-pretty max-w-prose">
         <p class="text-lg">{{ ingress | safe }}</p>
 
         <div class="px-5 py-3 border rounded-lg border-slate-300 text-balance">
@@ -56,7 +56,7 @@ variant: '2'
         class="absolute inset-x-0 top-0 z-10 grid pt-20 pb-8 rounded-b-lg grid-cols-center" 
         x-bind:class="expandToc ? 'bg-slate-100 shadow-lg' : 'hidden'"
       >
-        <ol class="grid gap-4 py-1 toc toc--multi toc--sticky">
+        <ol class="grid gap-2 toc toc--multi toc--sticky">
           {% for chapter in chapters %}
           <li class="grid">
             <a 
