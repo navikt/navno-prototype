@@ -16,14 +16,14 @@ variant: '2'
       <div class="mt-8 prose text-pretty max-w-prose">
         <p class="text-lg">{{ ingress | safe }}</p>
 
-        <div class="p-4 border rounded-lg border-slate-300 text-balance">
+        <div class="px-5 py-3 border rounded-lg border-slate-300 text-balance">
           {{ audience | markdown | safe if audience }}
         </div>
       </div>
     </div>
 
     {# Innholdsfortegnelse #}
-    <nav class="px-4 py-3 mt-8 rounded-lg bg-slate-100" x-intersect:enter.margin.-5px.0%.0%.0%="showToc = false" x-intersect:leave.margin.-5px.0%.0%.0%="showToc = true">
+    <nav class="px-5 py-3 mt-8 rounded-lg bg-slate-100" x-intersect:enter.margin.-5px.0%.0%.0%="showToc = false" x-intersect:leave.margin.-5px.0%.0%.0%="showToc = true">
       <h2 class="pb-2 text-base font-semibold">Innhold på siden</h2>
       <ul class="grid gap-4 py-1">
         {% for chapter in chapters %}
@@ -48,12 +48,12 @@ variant: '2'
       x-transition:enter-end="opacity-100 translate-y-0"
       x-on:click.outside="expandToc = false"
     >
-      <button class="relative col-full w-full z-20 px-3 whitespace-nowrap py-1.5 justify-center flex gap-1 items-center bg-slate-100 hover:bg-slate-200" type="button" x-on:click="expandToc = !expandToc">
+      <button class="relative z-20 flex items-center justify-center w-full gap-1 px-3 py-2.5 col-full whitespace-nowrap bg-slate-100 hover:bg-white" type="button" x-on:click="expandToc = !expandToc">
         <span>Innhold på siden</span>
         {{ '/src/_includes/svg/icons/chevron-down.svg' | svgContents('w-5 h-5') | safe }}
       </button>
       <div 
-        class="absolute inset-x-0 top-0 z-10 grid px-3 pt-20 pb-8 rounded-b-lg grid-cols-center" 
+        class="absolute inset-x-0 top-0 z-10 grid pt-20 pb-8 rounded-b-lg grid-cols-center" 
         x-bind:class="expandToc ? 'bg-slate-100 shadow-lg' : 'hidden'"
       >
         <ol class="grid gap-2 toc toc--multi toc--sticky">

@@ -5,7 +5,7 @@
   <div class="py-3 bg-white px-edge">
     <div class="grid content-center -mx-1 xs:gap-2 sm:gap-6 xs:text-center xs:-mx-5 sm:mx-0 xs:justify-center xs:grid-flow-col max-w-wide lg:mx-auto">
     {% for role in audience %}
-      <a href="#" class="block rounded-full py-1 px-5 {{ 'bg-blue-500 text-white font-semibold' if activeRole === role.title else 'hover:underline transition' }}">{{ role.title }}</a>
+      <a href="javascript:void(0);" class="block rounded-full py-1 px-5 {{ 'bg-blue-500 text-white font-semibold' if activeRole === role.title else 'hover:underline transition' }}">{{ role.title }}</a>
     {% endfor %}
     </div>
   </div>
@@ -19,7 +19,7 @@
         <ul class="grid gap-3 mt-2 sm:grid-cols-2 lg:grid-cols-1">
           {%- for link in menu.areas.linkList -%}
             <li class="">
-              <a class="inline-flex items-center gap-2 pr-4 leading-normal text-blue-500 rounded group fine:hover:text-blue-700 fine:hover:underline" href="#">
+              <a class="inline-flex items-center gap-2 pr-4 leading-normal text-blue-500 rounded group fine:hover:text-blue-700 fine:hover:underline" href="javascript:void(0);">
                 {%- if link.icon -%}
                   <span class="grid p-2 rounded-full bg-blue-50 place-items-center group-hover:bg-deepblue-600 group-hover:text-white">
                     {{ link.icon | svgContents('w-6 h-6') | safe }}
@@ -52,7 +52,7 @@
         <ul class="mt-1 sm:columns-2">
           {%- for link in menu.shortcuts.linkList -%}
             <li class="py-0.5">
-              <a class="inline-flex items-center gap-3 px-2 py-1 -mx-2 leading-normal text-blue-500 rounded fine:hover:text-blue-700 fine:hover:underline" href="#">
+              <a class="inline-flex items-center gap-3 px-2 py-1 -mx-2 leading-normal text-blue-500 rounded fine:hover:text-blue-700 fine:hover:underline" href="javascript:void(0);">
                 {%- if link.icon -%}
                   {{ link.icon | svgContents('w-6 h-6 opacity-80') | safe }}
                 {%- endif -%}

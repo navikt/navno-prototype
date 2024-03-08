@@ -11,7 +11,7 @@ const preSteps = [
       {
         title: "Send i posten",
         description: "Du fyller ut søknaden før du skriver den ut.",
-        href: "#",
+        href: "javascript:void(0);",
       },
     ],
   },

@@ -4,6 +4,6 @@ ingress: 'Du kan også ha rett til andre penge&shy;støtter og tjenester fra NAV
 order: 5
 ---
 
-_[Vil planlegge pensjon](#)_
+_[Vil planlegge pensjon](javascript:void(0);)_
 
-_[Får pensjon](#)_
+_[Får pensjon](javascript:void(0);)_

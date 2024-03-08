@@ -16,8 +16,8 @@ order: 3
 Søker du digitalt, kan du samtidig søke om AFP i privat sektor.
 
 <div class="grid gap-1.5 sm:grid-cols-2">
-  <a class="button button--primary" href="#">Søk om alderspensjon</a>
-  <a class="button button--secondary" href="#">Ettersend dokumentasjon</a>
+  <a class="button button--primary" href="javascript:void(0);">Søk om alderspensjon</a>
+  <a class="button button--secondary" href="javascript:void(0);">Ettersend dokumentasjon</a>
 </div>
 
 Du skal ikke sende inn dokumentasjon sammen med søknaden.
@@ -61,8 +61,8 @@ Hvis du har spørsmål om vedtaket, kan du kontakte oss.
 I vedtaket står det hvordan du går fram hvis du skal klage, hvem du skal klage til og klagefrist. Hvis du har spørsmål om vedtaket, kan du kontakte oss.
 
 <div class="grid gap-1.5 sm:grid-cols-2">
-  <a class="button button--primary" href="#">Send klage</a>
-  <a class="button button--secondary" href="#">Ettersend dokumentasjon</a>
+  <a class="button button--primary" href="javascript:void(0);">Send klage</a>
+  <a class="button button--secondary" href="javascript:void(0);">Ettersend dokumentasjon</a>
 </div>
 
 #### Anke vedtak
@@ -70,11 +70,11 @@ I vedtaket står det hvordan du går fram hvis du skal klage, hvem du skal klage
 Hvis du er uenig i svaret på klagen din fra NAV klageinstans, kan du med noen unntak anke vedtaket. Fristen for å anke står i vedtaket.
 
 <div class="grid gap-1.5 sm:grid-cols-2">
-  <a class="button button--primary" href="#">Send anke</a>
-  <a class="button button--secondary" href="#">Ettersend dokumentasjon</a>
+  <a class="button button--primary" href="javascript:void(0);">Send anke</a>
+  <a class="button button--secondary" href="javascript:void(0);">Ettersend dokumentasjon</a>
 </div>
 
-Du kan også bruke advokat eller gi fullmakt til en person som klager på dine vegne. [Les mer om dine klagerettigheter](#).
+Du kan også bruke advokat eller gi fullmakt til en person som klager på dine vegne. [Les mer om dine klagerettigheter](javascript:void(0);).
 
 <details class="expander">
   <summary>

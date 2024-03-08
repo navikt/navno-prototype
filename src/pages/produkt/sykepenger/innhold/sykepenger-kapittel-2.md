@@ -6,6 +6,7 @@ order: 2
 
 {%- from "macros/video.njk" import video -%}
 {%- from "macros/microcard.njk" import microcard -%}
+{%- from "macros/tile.njk" import tile -%}
 {%- from "macros/readmore.njk" import readmore -%}
 
 ### Hvor mye kan du få?
@@ -99,13 +100,13 @@ Perioden som benyttes på utbetaling av feriepenger og som vises på utbetalings
 
 Pengene utbetales innen den 25. i måneden.
 
-I [din utbetalingsoversikt](#) kan du se utbetalingen på kvelden den dagen pengene er utbetalt.
+I [din utbetalingsoversikt](javascript:void(0);) kan du se utbetalingen på kvelden den dagen pengene er utbetalt.
 
 #### Nye søknader
 
 Pengene utbetales innen den 25. i måneden.
 
-I [din utbetalingsoversikt](#) kan du se utbetalingen på kvelden den dagen pengene er utbetalt.
+I [din utbetalingsoversikt](javascript:void(0);) kan du se utbetalingen på kvelden den dagen pengene er utbetalt.
 
 Hvis vi innvilger søknaden din før den 20. i den samme måneden som sykmeldingen din gjelder for, får du pengene innen den 25. denne måneden. Ellers får du vanligvis utbetalt sykepengene innen 5 dager etter at NAV har innvilget søknaden din.
 
@@ -144,11 +145,16 @@ Hvor lenge du kan få avhenger av alderen din.
 
 Klarer du å jobbe, men har problemer med å reise til og fra arbeidsstedet? Da kan du ha rett til reisetilskudd i stedet for sykepenger fra 17. dag etter at du ble sykmeldt.
 
-[Reisetilskudd](#)
+{{ tile({ 
+  title: 'Reisetilskudd',
+  content: 'Tilskudd i stedet for sykepenger eller sammen med graderte sykepenger når det gjør at du kan jobbe helt eller delvis.'
+}) }}
 
 ### Andre tilbud
 
-<div class="grid gap-2 justify-items-start">
+Mer informasjon til deg som
+
+<div class="grid gap-2 mt-2 justify-items-start">
   {{ microcard({ text: 'Har blitt sykmeldt', dot: 'bg-orange-400' }) }}
   {{ microcard({ text: 'Kan bare jobbe noe på grunn av langvarig sykdom eller skade', dot: 'bg-orange-400' }) }}
   {{ microcard({ text: 'Har vært syk eller skadet lenge', dot: 'bg-orange-400' }) }}

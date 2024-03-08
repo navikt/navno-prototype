@@ -12,7 +12,7 @@
     {%- endif -%}
   {%- endif -%}
 
-  <a href="{{ params.href or '#' }}" class="inline-flex items-center gap-2 px-6 py-2.5 no-underline rounded font-semibold leading-tight text-center justify-center shadow-sm border-2 ring-1 ring-black/5 {{ variant or buttonClasses }} {{ params.class }}">
+  <a href="{{ params.href or 'javascript:void(0);' }}" class="inline-flex items-center gap-2 px-6 py-2.5 no-underline rounded font-semibold leading-tight text-center justify-center shadow-sm border-2 ring-1 ring-black/5 {{ variant or buttonClasses }} {{ params.class }}">
     <span>{{ params.text | safe }}</span>
   </a>
 {%- endmacro -%}

@@ -52,7 +52,7 @@
           <ul class="grid gap-2 mt-2">
             {% for answer in step.answers %}
             <li>
-              <a href="{{ answer.href or '#' }}" class="flex items-center justify-between gap-4 px-4 py-3 border border-gray-400 rounded group sm:px-6 sm:py-4 hover:border-gray-600 hover:bg-blue-50 min-h-20">
+              <a href="{{ answer.href or 'javascript:void(0);' }}" class="flex items-center justify-between gap-4 px-4 py-3 border border-gray-400 rounded group sm:px-6 sm:py-4 hover:border-gray-600 hover:bg-blue-50 min-h-20">
                 <span class="grid">
                 <span class="text-xl font-semibold">{{ answer.title }}</span>
                 <span>{{ answer.description }}</span>

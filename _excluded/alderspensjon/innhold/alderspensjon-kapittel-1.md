@@ -47,7 +47,7 @@ Hvis du har bodd eller jobbet i et annet land enn Norge, bør du sjekke hva som 
   </details>
 </div>
 
-For å få alderspensjon, må du som hovedregel ha bodd eller jobbet i Norge i minst 5 år etter fylte 16 år og være medlem i folketrygden. Har du mindre enn 5 år i Norge og har bodd eller jobbet i [land Norge har trygdeavtale med](#), kan du likevel ha rett til pensjon fra Norge.
+For å få alderspensjon, må du som hovedregel ha bodd eller jobbet i Norge i minst 5 år etter fylte 16 år og være medlem i folketrygden. Har du mindre enn 5 år i Norge og har bodd eller jobbet i [land Norge har trygdeavtale med](javascript:void(0);), kan du likevel ha rett til pensjon fra Norge.
 
 Størrelsen på pensjoner fra folketrygden avhenger blant annet av trygdetid. Full trygdetid er 40 år.
 
@@ -57,7 +57,7 @@ Har du fylt 67 år, og får du ingen eller redusert pensjon fordi du har for bod
 
 Da kan du ha rett til en pengestøtte som svarer til folketrygdens garantipensjon for alderspensjonister:
 
-_[Supplerende stønad for personer over 67 år med kort botid i Norge](#)_
+_[Supplerende stønad for personer over 67 år med kort botid i Norge](javascript:void(0);)_
 
 #### AFP og alderspensjon
 

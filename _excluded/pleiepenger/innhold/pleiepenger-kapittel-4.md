@@ -99,5 +99,5 @@ Når du reiser utenfor EØS og retten din til pleiepenger er oppfylt i perioden,
 
 Du melder fra ved å skrive en beskjed til oss, eller ved å ringe 55 55 33 33.
 
-[Skriv til oss](#)
+[Skriv til oss](javascript:void(0);)
 

@@ -693,7 +693,7 @@ const products = [
         data: [
           {
             text: "Send søknad",
-            href: "#",
+            href: "javascript:void(0);",
             variant: "primary",
           },
         ],
@@ -1811,12 +1811,12 @@ Fullmakten gjelder ikke for tilleggsskjemaer som krever underskrift. Der hvor de
         data: [
           {
             text: "Send søknad",
-            href: "#",
+            href: "javascript:void(0);",
             variant: "primary",
           },
           {
             text: "Ettersend dokumentasjon",
-            href: "#",
+            href: "javascript:void(0);",
             variant: "secondary",
           },
         ],
@@ -1837,7 +1837,7 @@ Fullmakten gjelder ikke for tilleggsskjemaer som krever underskrift. Der hvor de
         data: [
           {
             text: "Send søknad",
-            href: "#",
+            href: "javascript:void(0);",
             variant: "primary",
           },
         ],

@@ -3,17 +3,17 @@ module.exports = {
     {
       title: "Privatperson",
       description: "Lorem ipsum dolor sit amet",
-      href: "#",
+      href: "javascript:void(0);",
     },
     {
       title: "Arbeidsgiver",
       description: "Lorem ipsum dolor sit amet",
-      href: "#",
+      href: "javascript:void(0);",
     },
     {
       title: "Samarbeidspartner",
       description: "Lorem ipsum dolor sit amet",
-      href: "#",
+      href: "javascript:void(0);",
     },
   ],
   areas: {

@@ -8,7 +8,7 @@ order: 2
 
 Størrelsen på pensjonen avhenger av hvor stor opptjeningen din er, når du velger å ta ut pensjonen og hvilket år du er født.
 
-_[ReadMore: Hva regnes som pensjonsgivende inntekt?](#)_
+_[ReadMore: Hva regnes som pensjonsgivende inntekt?](javascript:void(0);)_
 
 Pensjonskalkulatoren viser hvor mye du ligger an til å få i pensjon.
 
@@ -16,7 +16,7 @@ I kalkulatoren ser du hvordan pensjonen blir hvis du venter et år eller flere m
 
 _[Kalkulator: Beregn pensjonen din]_
 
-Hvis du er født i 1963 eller senere, kan du velge mellom en detaljert oversikt i pensjonskalkulatoren eller en rask oversikt i [enkel pensjonskalkulator](#).
+Hvis du er født i 1963 eller senere, kan du velge mellom en detaljert oversikt i pensjonskalkulatoren eller en rask oversikt i [enkel pensjonskalkulator](javascript:void(0);).
 
 #### Når lønner det seg for deg?
 
@@ -26,7 +26,7 @@ Pensjonen påvirkes blant annet av levealder, skatteregler og generell lønnsvek
 * Hvis du fortsetter å jobbe samtidig som du tar ut pensjon, fortsetter du å tjene opp pensjon.
 * Du kan tjene opp pensjon til du er 75 år.
 
-_[ReadMore: Eksempler på hva du tjener på å vente med å ta ut pensjon](#)_
+_[ReadMore: Eksempler på hva du tjener på å vente med å ta ut pensjon](javascript:void(0);)_
 
 #### Oppdatert pensjonsopptjening
 
@@ -36,13 +36,13 @@ _[Card: Se pensjonsopptjeningen din]_
 
 Har du offentlig tjenestepensjon i tillegg til pensjon fra folketrygden? Da skal pensjonen samordnes. Det betyr at tjenestepensjonen reduseres, mens hele pensjonen fra folketrygden utbetales.
 
-_[ReadMore: Hvordan samordnes offentlige pensjonsordninger?](#)_
+_[ReadMore: Hvordan samordnes offentlige pensjonsordninger?](javascript:void(0);)_
 
 #### Regulering av alderspensjon under utbetaling
 
 Fra 2021 blir alderspensjonen regulert slik at den skal tilsvare gjennomsnittet av pris- og lønnsveksten. Når satsen for regulering av pensjon er klar, blir pensjonene omregnet slik at ny sats utbetales fra og med juni måned. Sammen med utbetalingen i juni blir det også etterbetalt økning av pensjon for mai måned for dem som hadde pensjon i mai.
 
-_[ReadMore: Mer om årlig regulering av alderspensjonen](#)_
+_[ReadMore: Mer om årlig regulering av alderspensjonen](javascript:void(0);)_
 
 #### Jobber du mens du tar ut alderspensjon?
 
@@ -52,7 +52,7 @@ Hvert nye år med opptjening kan gi ett ekstra år med pensjonspoeng, høyere in
 
 Du som startet med alderspensjon i for eksempel 2023, har pensjon som er beregnet ut fra opptjening til og med 2021. Startet du med pensjon i 2022, var pensjonen din beregnet med opptjening til og med 2020, og i ettertid har du fått brev med ny sats fra 1.1.2023 etter at inntekt for 2021 ble lagt til.
 
-_[ReadMore: Så mye mer får du ved å jobbe ved siden av pensjon](#)_
+_[ReadMore: Så mye mer får du ved å jobbe ved siden av pensjon](javascript:void(0);)_
 
 ##### Får du uføretrygd samtidig som du får alderspensjon?
 
@@ -221,11 +221,11 @@ Du kan få informasjon om utbetalingen din ved å ringe NAV kontaktsenter pensjo
 
 Det blir trukket skatt av pengene. Du må kontakte Skatteetaten for spørsmål om skattetrekket.
 
-Det er ordinært skattetrekk i juni. I desember blir det ikke trukket skatt, med unntak for dem som betaler kildeskatt eller Svalbardskatt. [Les mer om skattetrekk på utbetalinger fra NAV](#).
+Det er ordinært skattetrekk i juni. I desember blir det ikke trukket skatt, med unntak for dem som betaler kildeskatt eller Svalbardskatt. [Les mer om skattetrekk på utbetalinger fra NAV](javascript:void(0);).
 
 Hvis du ønsker å jobbe og ta ut pensjon samtidig, bør du søke om nytt skattekort. Det er fordi skattereglene for pensjon ikke er de samme som for arbeidsinntekt.
 
-Kontakt Skatteetaten hvis du har spørsmål om skatt og pensjon, og se Skatteetatens side om [skatteregler for pensjonister](#).
+Kontakt Skatteetaten hvis du har spørsmål om skatt og pensjon, og se Skatteetatens side om [skatteregler for pensjonister](javascript:void(0);).
 
 #### Feriepenger
 
