@@ -96,12 +96,6 @@ Feriepenger for inneværende kalenderår utbetales ved neste års feriepengeutbe
 
 Perioden som benyttes på utbetaling av feriepenger og som vises på utbetalingsmeldingen er 1. til 31. mai i det året de utbetales.
 
-### Når utbetales pengene?
-
-Pengene utbetales innen den 25. i måneden.
-
-I [din utbetalingsoversikt](#) kan du se utbetalingen på kvelden den dagen pengene er utbetalt.
-
 #### Nye søknader
 
 Pengene utbetales innen den 25. i måneden.

@@ -88,6 +88,12 @@ Hvis arbeidsforholdet avsluttes mens du er sykmeldt, er det viktig at du gir bes
 
 Hvis du ikke har en arbeidsgiver, er det NAV-kontoret du holder kontakt med. Du får derfor en aktivitetsplan med NAV hvis sykefraværet blir langvarig. I den [digitale aktivitetsplanen](#) som du kan opprette på nav.no, kan du kommunisere direkte med NAV-veilederen din.
 
+### Når utbetales pengene?
+
+Pengene utbetales innen den 25. i måneden.
+
+I [din utbetalingsoversikt](#) kan du se utbetalingen på kvelden den dagen pengene er utbetalt.
+
 ### Meld fra om endringer
 
 Er det endringer i inntekten eller jobbsituasjonen din? Eller planlegger du å bo i utlandet? Det kan ha betydning for beløpet du får utbetalt fra NAV. I slike tilfeller må du derfor straks melde fra til NAV.
