@@ -51,7 +51,7 @@ const formSteps = [
 
         **Med yrkesskade** mener vi en skade du har fått som følge av en arbeidsulykke.
 
-        **Med yrkessykdom** mener vi en sykdom du har fått på grunn av skadelig påvirkning fra arbeidsmiljøet. I tillegg må sykdommen være nevnt i [forskrift om yrkessykdommer](javascript:void(0);) (lovdata.no, åpnes i ny fane).`,
+        **Med yrkessykdom** mener vi en sykdom du har fått på grunn av skadelig påvirkning fra arbeidsmiljøet. I tillegg må sykdommen være nevnt i [forskrift om yrkessykdommer](#) (lovdata.no, åpnes i ny fane).`,
       },
     ],
   },

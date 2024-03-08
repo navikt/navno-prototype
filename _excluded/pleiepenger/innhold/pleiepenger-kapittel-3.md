@@ -21,8 +21,8 @@ Når du kommer til søknaden, får du veiledning underveis om hva du skal gjøre
 Du bruker samme søknad både for pleiepenger for sykt barn og pleiepenger for en utviklingshemmet person over 18.
 
 <div class="grid gap-2">
-  <a class="button button--primary" href="javascript:void(0);">Søk om pleiepenger</a>
-  <a class="button button--secondary" href="javascript:void(0);">Ettersend dokumentasjon</a>
+  <a class="button button--primary" href="#">Søk om pleiepenger</a>
+  <a class="button button--secondary" href="#">Ettersend dokumentasjon</a>
 </div>
 
 <details class="expander">
@@ -58,7 +58,7 @@ Du får skriftlig vedtak når søknaden er behandlet.
 
 Du får en melding på Min side som bekrefter at vi har mottatt søknad fra deg. Noen minutter etter at vi har mottatt søknaden din, finner du den på Min side under «Dine pleiepenger».
 
-<a class="button button--secondary" href="javascript:void(0);">Logg inn på dine pleiepenger</a>
+<a class="button button--secondary" href="#">Logg inn på dine pleiepenger</a>
 
 <details class="expander">
   <summary>
@@ -125,8 +125,8 @@ Har du fått et vedtak fra oss som du mener er feil? Da kan du klage til NAV-enh
 I vedtaket står det hvordan du går fram hvis du skal klage, hvem du skal klage til og klagefrist. Hvis du har spørsmål om vedtaket, kan du kontakte oss.
 
 <div class="grid gap-2">
-  <a class="button button--primary" href="javascript:void(0);">Send klage</a>
-  <a class="button button--secondary" href="javascript:void(0);">Ettersend dokumentasjon</a>
+  <a class="button button--primary" href="#">Send klage</a>
+  <a class="button button--secondary" href="#">Ettersend dokumentasjon</a>
 </div>
 
 #### Anke vedtak
@@ -134,11 +134,11 @@ I vedtaket står det hvordan du går fram hvis du skal klage, hvem du skal klage
 Hvis du er uenig i svaret på klagen din fra NAV klageinstans, kan du med noen unntak anke vedtaket. Fristen for å anke står i vedtaket.
 
 <div class="grid gap-2">
-  <a class="button button--primary" href="javascript:void(0);">Send anke</a>
-  <a class="button button--secondary" href="javascript:void(0);">Ettersend dokumentasjon</a>
+  <a class="button button--primary" href="#">Send anke</a>
+  <a class="button button--secondary" href="#">Ettersend dokumentasjon</a>
 </div>
 
-Du kan også bruke advokat eller gi fullmakt til en person som klager på dine vegne. [Les mer om dine klagerettigheter](javascript:void(0);).
+Du kan også bruke advokat eller gi fullmakt til en person som klager på dine vegne. [Les mer om dine klagerettigheter](#).
 
 <details class="expander">
   <summary>

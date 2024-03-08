@@ -19,7 +19,7 @@ const {
   tocData,
 } = require("./src/_11ty/filters.js");
 const { timestampNow } = require("./src/_11ty/shortcodes.js");
-const { minifyHtml } = require("./src/_11ty/transforms.js");
+const { minifyHtml, dummifyLinks } = require("./src/_11ty/transforms.js");
 // const {} = require("./src/_11ty/collections.js");
 const markdownIt = require("markdown-it");
 const markdownItAnchor = require("markdown-it-anchor");
@@ -86,6 +86,7 @@ module.exports = function (eleventyConfig) {
   });
 
   // Transforms
+  eleventyConfig.addTransform("dummifyLinks", dummifyLinks);
   eleventyConfig.addTransform("minifyHtml", minifyHtml);
 
   // Dev server options

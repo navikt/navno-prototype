@@ -16,7 +16,7 @@ alpine: true
         <ul>
           {%- for area in areaList -%}
             <li>
-              <a href="javascript:void(0);">
+              <a href="#">
                 <span>{{ area.title | safe }}</span>
                 {# {{ area.icon | svgContents("-z-10 right-0 h-full w-auto rounded-lg self-stretch absolute inset-y-0 pointer-events-none") | safe if area.icon }} #}
               </a>
@@ -32,7 +32,7 @@ alpine: true
         <ul>
           {%- for shortcut in shortcutsList -%}
             <li>
-              <a href="javascript:void(0);">
+              <a href="#">
                 {# {{ shortcut.icon | svgContents("w-12 h-12 md:w-16 md:h-16") | safe if shortcut.icon }} #}
                 <span>{{ shortcut.title | safe }}</span>
               </a>
@@ -50,7 +50,7 @@ alpine: true
         <ul>
           {%- for form in formsList -%}
             <li>
-              <a href="{{ form.href or 'javascript:void(0);'}}">
+              <a href="{{ form.href or '#'}}">
                 {# {{ form.icon | svgContents("w-12 h-12 md:w-16 md:h-16") | safe if form.icon }} #}
                 <span>{{ form.title | safe }}</span>
               </a>
@@ -65,7 +65,7 @@ alpine: true
         <h2>Aktuelt</h2>
         <div>
           {%- for news in newsList -%}
-            <a href="javascript:void(0);">
+            <a href="#">
               <span>{{ news.title | safe }}</span>
               <span>{{ news.date }}</span>
             </a>
@@ -80,7 +80,7 @@ alpine: true
         <div>
           <div>
             <h3>
-              <a href="javascript:void(0);">Du kan chatte med oss</a>
+              <a href="#">Du kan chatte med oss</a>
             </h3>
             <p>Du møter først chatbot Frida. Du kan be Frida om å få chatte med en veileder (hverdager 09:00–15:00)</p>
             {# <svg viewBox="0 0 24 24" width="24" height="24"  aria-hidden="true" focusable="false" >
@@ -89,7 +89,7 @@ alpine: true
           </div>
           <div>
             <h3>
-              <a href="javascript:void(0);">Du kan også ringe eller skrive til oss</a>
+              <a href="#">Du kan også ringe eller skrive til oss</a>
             </h3>
             <p>Se hvordan du kan kontakte oss på ulike måter.</p>
           </div>

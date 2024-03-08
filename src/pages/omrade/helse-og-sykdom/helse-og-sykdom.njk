@@ -25,7 +25,7 @@ permalink: '/omrade/helse-og-sykdom/index.html'
             <li class="{{ 'border-t border-slate-300' if not loop.first }}">
               <div class="relative flex items-center justify-between flex-1 mb-8 gap-x-16 {{ 'mt-8' if not loop.first }}">
                 <div class="flex-col justify-start">
-                  <a class="text-lg font-semibold leading-tight text-blue-600 text-balance hover:text-blue-500 hover:underline after:absolute after:inset-0" href="javascript:void(0);">{{ item.title | safe }}</a>
+                  <a class="text-lg font-semibold leading-tight text-blue-600 text-balance hover:text-blue-500 hover:underline after:absolute after:inset-0" href="#">{{ item.title | safe }}</a>
                   <p>{{ item.ingress | safe }}</p>
                 </div>
                 {{ item.icon | svgContents('shrink-0 w-16 aspect-square h-auto') | safe if item.icon }}

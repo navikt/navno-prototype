@@ -96,7 +96,7 @@ Hvis barnet har et fast og regelmessig omsorgstilbud, påvirker det hvor mye du 
 
 Pengene utbetales innen den 25. i måneden.
 
-I [din utbetalingsoversikt](javascript:void(0);) kan du se utbetalingen på kvelden den dagen pengene er utbetalt.
+I [din utbetalingsoversikt](#) kan du se utbetalingen på kvelden den dagen pengene er utbetalt.
 
 Arbeidsgiveren din kan utbetale pleiepengene til deg, og kreve refusjon fra NAV etterpå. Hvis arbeidsgiver ikke ønsker å gjøre dette, får du utbetalingen direkte fra NAV.
 
@@ -129,7 +129,7 @@ Utbetalinger for desember som blir utbetalt i desember, har halvt skattetrekk. E
 
 Hvis du betaler Svalbardskatt er det ordinært skattetrekk i desember.
 
-Mer om [skattetrekk på utbetalinger fra NAV](javascript:void(0);).
+Mer om [skattetrekk på utbetalinger fra NAV](#).
 
 ### Hvor lenge kan du få pleiepenger?
 
@@ -137,7 +137,7 @@ Det er i utgangspunktet ingen tidsbegrensing for hvor lenge man kan få pleiepen
 
 I noen tilfeller kan man få pleiepenger for barn over 18 år.
 
-[Pleiepenger for en utviklingshemmet person over 18 år](javascript:void(0);)
+[Pleiepenger for en utviklingshemmet person over 18 år](#)
 
 Det er egne regler hvis man oppholder seg utenfor EØS.
 

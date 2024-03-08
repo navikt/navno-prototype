@@ -13,12 +13,12 @@ module.exports = {
       content: `Du kan avtale møte med veilederen din hvis du er registrert hos NAV.
 
 ### Hvis du er arbeidssøker
-Avtal møte i [Aktivitetsplanen](javascript:void(0);) din.
-Du kan få hjelp til å avtale møte ved å ringe NAV på telefon 33 33 55 55 eller bruke [Skriv til oss](javascript:void(0);) for å avtale møte.
+Avtal møte i [Aktivitetsplanen](#) din.
+Du kan få hjelp til å avtale møte ved å ringe NAV på telefon 33 33 55 55 eller bruke [Skriv til oss](#) for å avtale møte.
 
 ### Hvis du er syk
-Avtal møte i [Ditt sykefravær](javascript:void(0);).
-Du kan få hjelp til å avtale møte ved å ringe NAV på telefon 33 33 55 55 eller bruke [Skriv til oss](javascript:void(0);) for å avtale møte.
+Avtal møte i [Ditt sykefravær](#).
+Du kan få hjelp til å avtale møte ved å ringe NAV på telefon 33 33 55 55 eller bruke [Skriv til oss](#) for å avtale møte.
 
 ### Hvis du får økonomisk sosialhjelp eller andre sosiale tjenester
 Avtal møte ved å ringe NAV på 33 33 55 55`,

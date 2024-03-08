@@ -29,7 +29,7 @@ Du må ta imot tilbud om utredning, behandling og tilrettelegging. Dette kalles 
 Aktivitetskravet og medvirkningsplikten gjelder i hele sykefraværet:
 
 
-* Innen 4 uker skal du og arbeidsgiveren din lage en [oppfølgingsplan](javascript:void(0);) som beskriver hvordan du kan komme raskest mulig tilbake til jobb.
+* Innen 4 uker skal du og arbeidsgiveren din lage en [oppfølgingsplan](#) som beskriver hvordan du kan komme raskest mulig tilbake til jobb.
 * Hvis du ikke er i arbeid eller annen arbeidsrettet aktivitet innen 8 uker må NAV vurdere om du oppfyller aktivitetskravet.
 * Hvis sykmeldingen er kortere enn 12 uker, vurderer vi arbeidsuførheten din opp mot det yrket du har. Hvis sykefraværet blir langvarig, vurderer vi også om det er mulig for deg å jobbe i andre yrker.
 
@@ -63,7 +63,7 @@ Det samme gjelder hvis du starter i ny jobb mens du er sykmeldt.
 
 #### Arbeidsgiverens plikt
 
-Aktivitetsplikten din henger nært sammen med arbeidsgiverens plikt og muligheter for tilrettelegging. Hvis det ikke er mulig for arbeidsgiveren din å tilpasse arbeidsplassen eller oppgavene slik at du kan jobbe, må arbeidsgiveren dokumentere dette i [oppfølgingsplanen](javascript:void(0);) som sendes til NAV
+Aktivitetsplikten din henger nært sammen med arbeidsgiverens plikt og muligheter for tilrettelegging. Hvis det ikke er mulig for arbeidsgiveren din å tilpasse arbeidsplassen eller oppgavene slik at du kan jobbe, må arbeidsgiveren dokumentere dette i [oppfølgingsplanen](#) som sendes til NAV
 
 #### Sykefraværsoppfølging fra arbeidsgiveren
 
@@ -80,13 +80,13 @@ Dette er de viktigste aktivitetene:
 
 Du kan ta initiativ til dialogmøte hvis du mener du har behov for det.
 
-Les mer om [reglene for oppfølging av sykmeldte](javascript:void(0);).
+Les mer om [reglene for oppfølging av sykmeldte](#).
 
 Hvis arbeidsforholdet avsluttes mens du er sykmeldt, er det viktig at du gir beskjed til NAV. Da vil NAV-kontoret gi deg den veiledningen og oppfølgingen du trenger.
 
 #### Hvis du ikke har en arbeidsgiver
 
-Hvis du ikke har en arbeidsgiver, er det NAV-kontoret du holder kontakt med. Du får derfor en aktivitetsplan med NAV hvis sykefraværet blir langvarig. I den [digitale aktivitetsplanen](javascript:void(0);) som du kan opprette på nav.no, kan du kommunisere direkte med NAV-veilederen din.
+Hvis du ikke har en arbeidsgiver, er det NAV-kontoret du holder kontakt med. Du får derfor en aktivitetsplan med NAV hvis sykefraværet blir langvarig. I den [digitale aktivitetsplanen](#) som du kan opprette på nav.no, kan du kommunisere direkte med NAV-veilederen din.
 
 ### Meld fra om endringer
 
@@ -228,6 +228,6 @@ Du kan også undersøke om du har rettigheter hos forsikringsselskapet ditt elle
 
 #### Når tiden med sykepenger er over
 
-Du kan ikke bli sagt opp det første året du er sykmeldt. Hvis du har vært syk i mer enn ett år, gjelder vanlige regler om saklig grunn til oppsigelse. [Les mer om reglene for oppsigelse på arbeidstilsynet.no](javascript:void(0);).
+Du kan ikke bli sagt opp det første året du er sykmeldt. Hvis du har vært syk i mer enn ett år, gjelder vanlige regler om saklig grunn til oppsigelse. [Les mer om reglene for oppsigelse på arbeidstilsynet.no](#).
 
 Alle som får arbeidsavklaringspenger, har rett til oppfølging fra NAV. Hva slags oppfølging som er aktuell for deg, vil avhenge av om du har en arbeidsgiver du skal tilbake til, hvor lenge du har vært sykmeldt, hvordan helsen din er og flere andre forhold.

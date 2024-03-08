@@ -100,13 +100,13 @@ Perioden som benyttes på utbetaling av feriepenger og som vises på utbetalings
 
 Pengene utbetales innen den 25. i måneden.
 
-I [din utbetalingsoversikt](javascript:void(0);) kan du se utbetalingen på kvelden den dagen pengene er utbetalt.
+I [din utbetalingsoversikt](#) kan du se utbetalingen på kvelden den dagen pengene er utbetalt.
 
 #### Nye søknader
 
 Pengene utbetales innen den 25. i måneden.
 
-I [din utbetalingsoversikt](javascript:void(0);) kan du se utbetalingen på kvelden den dagen pengene er utbetalt.
+I [din utbetalingsoversikt](#) kan du se utbetalingen på kvelden den dagen pengene er utbetalt.
 
 Hvis vi innvilger søknaden din før den 20. i den samme måneden som sykmeldingen din gjelder for, får du pengene innen den 25. denne måneden. Ellers får du vanligvis utbetalt sykepengene innen 5 dager etter at NAV har innvilget søknaden din.
 

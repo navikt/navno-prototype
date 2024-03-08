@@ -19,14 +19,14 @@ permalink: '/omrade/arbeid/index.html'
     </div>
     <div class="grid grid-flow-row-dense pt-8 pb-16 grid-cols-center">
       <div class="mb-12 col-wide lg:col-side">
-        <a class="block px-5 py-4 font-semibold leading-snug text-blue-600 underline bg-red-100 rounded-lg hover:text-blue-500 hover:decoration-2" href="javascript:void(0);">Finn ledige stillinger på arbeidsplassen.no</a>        
+        <a class="block px-5 py-4 font-semibold leading-snug text-blue-600 underline bg-red-100 rounded-lg hover:text-blue-500 hover:decoration-2" href="#">Finn ledige stillinger på arbeidsplassen.no</a>        
       </div>
 
       <div class="col-wide lg:col-main">
         <ul>
           {%- for item in situationList -%}
             <li class="relative py-4 flex flex-col {{ 'border-t border-slate-300' if not loop.first }}">
-              <a class="text-lg font-semibold leading-snug text-blue-600 text-balance hover:text-blue-500 hover:underline" href="javascript:void(0);">{{ item.title | safe }}</a>
+              <a class="text-lg font-semibold leading-snug text-blue-600 text-balance hover:text-blue-500 hover:underline" href="#">{{ item.title | safe }}</a>
             </li>
           {%- endfor -%}
         </ul>

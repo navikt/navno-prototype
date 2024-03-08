@@ -1,7 +1,7 @@
 {% macro tile(args) %}
  <div class="relative px-5 py-3 border rounded-xl border-slate-300 {{ args.theme }}">
   {{ args.icon | svgContents('max-w-16 h-auto w-[calc(8vw+1rem)]') | safe if args.icon }}
-  <a class="flex-1 text-base font-medium leading-snug after:absolute after:inset-0" href="javascript:void(0);">{{ args.title }}</a>
+  <a class="flex-1 text-base font-medium leading-snug after:absolute after:inset-0" href="#">{{ args.title }}</a>
   {% if args.content %}
     <p class="opacity-85">{{ args.content | safe }}</p>
   {% endif %}

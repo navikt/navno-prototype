@@ -17,4 +17,10 @@ const minifyHtml = (content, outputPath) => {
   return content;
 };
 
-module.exports = { minifyHtml };
+
+const dummifyLinks = (content) => {
+  const regexPattern = new RegExp('"#"', "g");
+  return content.replace(regexPattern, "javascript:void(0);");
+};
+
+module.exports = { minifyHtml, dummifyLinks };
