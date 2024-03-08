@@ -118,12 +118,7 @@ Datoen du får sykepengene dine avhenger altså av hvilken periode du har vært 
 
 {{ readmore({
   title: 'Eksempler på utbetalingsdatoer i ulike situasjoner',
-  content: '
-  Teeeest *testesen*.
-  
-  * Punkt 1
-  * Punkt 2
-  '
+  content: 'Innhold mangler.'
 })}}
 
 ### Hvor lenge kan du få sykepenger?
