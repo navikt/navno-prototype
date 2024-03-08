@@ -161,12 +161,12 @@ module.exports = {
       ],
     },
     fontSize: {
-      xs: "var(--text-xs)",
-      sm: "var(--text-sm)",
-      base: "var(--text-md)",
-      lg: "var(--text-lg)",
-      xl: "var(--text-xl)",
-      "2xl": "var(--text-2xl)",
+      xs: "var(--fluid-12-14)",
+      sm: "var(--fluid-14-16)",
+      base: "var(--fluid-18-20)",
+      lg: "var(--fluid-20-24)",
+      xl: "var(--fluid-32-40)",
+      "2xl": "var(--fluid-36-56)",
     },
     extend: {
       animation: {
