@@ -50,56 +50,55 @@ variant: '1'
           {{ '/src/_includes/svg/placeholder.svg' | svgContents('w-full h-auto max-w-screen-md mx-auto') | safe }}
         </div> #}
         <div class="mb-8 col-main">
-          <h2 class="mt-8 mb-3 font-bold text-xl/tight text-balance ">{{ chapter.data.title }}</h2>
-        </div>
+          <h2 class="mt-8 mb-6 font-bold text-xl/tight text-balance ">{{ chapter.data.title }}</h2>
 
-        {# Chapter TOC #}
-        {% if chapter.templateContent and chapter.templateContent | tocData | length > 0 %}
-
-        <nav class="relative px-4 py-3 rounded-lg bg-slate-100">
-          <h3 class="pb-2 font-semibold">I dette kapittelet</h3>
-          <ul class="grid gap-4 py-1 pb-4">
-          {% for item in chapter.templateContent | tocData %}
-            <li>
-              <a class="flex items-start gap-1 p-1 -m-1 text-blue-500 group hover:text-blue-700 text-base/snug hover:underline" href="#{{ item.id }}">
-                {{ '/src/_includes/svg/icons/arrow-right-angle-aksel.svg' | svgContents('-translate-y-0.5 opacity-85') | safe }}
-                {{ item.text }}
-              </a>
-            </li>
-          {% endfor %}
-          </ul>
-          <div class="" x-data="{ dropdownOpen: false }">
-            <button class="flex items-center gap-1 py-1 pl-3 pr-2 text-base font-semibold text-blue-500 rounded-md bg-slate-100 hover:bg-blue-50 hover:text-blue-700 group" x-on:click="dropdownOpen = !dropdownOpen" type="button" x-bind:aria-expanded="dropdownOpen">
-              <span>Bytt kapittel</span>
-              {{ '/src/_includes/svg/icons/chevron-down.svg' | svgContents('w-5 h-5 group-aria-expanded:rotate-180') | safe }}
-            </button>
-            <ol class="absolute left-0 w-screen border border-slate-300/5 max-w-sm py-1.5 mt-0.5 rounded-md shadow-xl top-full bg-slate-100" x-show="dropdownOpen" x-on:click.outside="dropdownOpen = false">
-              {% for chapter in chapters %}
-              <li class="border-t border-slate-200 first:border-t-0">
-                <a class="flex items-center gap-1 px-1 py-2 font-semibold hover:bg-blue-50 hover:text-blue-700 {{ 'text-slate-700' if loop.index === chapterIndex else 'text-blue-500' }}" href="#{{ chapter.data.title | slugify }}" x-on:click="dropdownOpen = false">
-                  {{ '/src/_includes/svg/icons/dot.svg' | svgContents('' if loop.index === chapterIndex else 'text-transparent') | safe }}
-                  <span>{{ chapter.data.title }}</span>
+          {# Chapter TOC #}
+          {% if chapter.templateContent and chapter.templateContent | tocData | length > 0 %}
+          <nav class="relative px-4 py-3 rounded-lg bg-slate-100">
+            <h3 class="pb-2 font-semibold">I dette kapittelet</h3>
+            <ul class="grid gap-4 py-1 pb-4">
+            {% for item in chapter.templateContent | tocData %}
+              <li>
+                <a class="flex items-start gap-1 p-1 -m-1 text-blue-500 group hover:text-blue-700 text-base/snug hover:underline" href="#{{ item.id }}">
+                  {{ '/src/_includes/svg/icons/arrow-right-angle-aksel.svg' | svgContents('-translate-y-0.5 opacity-85') | safe }}
+                  {{ item.text }}
                 </a>
               </li>
-              {% endfor %}
-              <li class="pt-3 border-t border-slate-400/25">
-                <a 
-                  class="flex items-center gap-1 px-1 py-2 text-blue-500 group hover:bg-blue-50 hover:text-blue-700 hover:underline" 
-                  href="{{ page.url }}" 
-                  x-on:click="dropdownOpen = false"
-                >
-                  {{ '/src/_includes/svg/icons/arrow-up.svg' | svgContents('-translate-y-px') | safe }}
-                  <span>Til toppen av siden</span>
-                </a>
-              </li>
-            </ol>
+            {% endfor %}
+            </ul>
+            <div class="" x-data="{ dropdownOpen: false }">
+              <button class="flex items-center gap-1 py-1 pl-3 pr-2 text-base font-semibold text-blue-500 rounded-md bg-slate-100 hover:bg-blue-50 hover:text-blue-700 group" x-on:click="dropdownOpen = !dropdownOpen" type="button" x-bind:aria-expanded="dropdownOpen">
+                <span>Bytt kapittel</span>
+                {{ '/src/_includes/svg/icons/chevron-down.svg' | svgContents('w-5 h-5 group-aria-expanded:rotate-180') | safe }}
+              </button>
+              <ol class="absolute left-0 w-screen border border-slate-300/5 max-w-sm py-1.5 mt-0.5 rounded-md shadow-xl top-full bg-slate-100" x-show="dropdownOpen" x-on:click.outside="dropdownOpen = false">
+                {% for chapter in chapters %}
+                <li class="border-t border-slate-200 first:border-t-0">
+                  <a class="flex items-center gap-1 px-1 py-2 font-semibold hover:bg-blue-50 hover:text-blue-700 {{ 'text-slate-700' if loop.index === chapterIndex else 'text-blue-500' }}" href="#{{ chapter.data.title | slugify }}" x-on:click="dropdownOpen = false">
+                    {{ '/src/_includes/svg/icons/dot.svg' | svgContents('' if loop.index === chapterIndex else 'text-transparent') | safe }}
+                    <span>{{ chapter.data.title }}</span>
+                  </a>
+                </li>
+                {% endfor %}
+                <li class="pt-3 border-t border-slate-400/25">
+                  <a 
+                    class="flex items-center gap-1 px-1 py-2 text-blue-500 group hover:bg-blue-50 hover:text-blue-700 hover:underline" 
+                    href="{{ page.url }}" 
+                    x-on:click="dropdownOpen = false"
+                  >
+                    {{ '/src/_includes/svg/icons/arrow-up.svg' | svgContents('-translate-y-px') | safe }}
+                    <span>Til toppen av siden</span>
+                  </a>
+                </li>
+              </ol>
+            </div>
+          </nav>
+          {% endif %}
+
+          {# Main Content #}
+          <div class="prose col-main">
+            {{ chapter.templateContent | markdown | safe }}
           </div>
-        </nav>
-      {% endif %}
-
-        {# Main Content #}
-        <div class="prose col-main">
-          {{ chapter.templateContent | markdown | safe }}
         </div>
       </section>
     {% endfor %}

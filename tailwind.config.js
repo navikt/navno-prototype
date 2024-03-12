@@ -166,7 +166,7 @@ module.exports = {
       base: "var(--fluid-18-20)",
       lg: "var(--fluid-20-24)",
       xl: "var(--fluid-32-40)",
-      "2xl": "var(--fluid-36-56)",
+      "2xl": "var(--fluid-40-56)",
     },
     extend: {
       animation: {

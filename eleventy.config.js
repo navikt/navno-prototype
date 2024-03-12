@@ -2,6 +2,7 @@
  * @param { import('@11ty/eleventy/src/UserConfig') } eleventyConfig
  */
 
+const slugify = require("slugify");
 const {
   EleventyHtmlBasePlugin,
   EleventyRenderPlugin,
@@ -38,6 +39,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.amendLibrary("md", (mdLib) =>
     mdLib.use(markdownItAnchor, {
       level: 3,
+      slugify: (s) => slugify(s.toLowerCase()),
     }),
   );
 

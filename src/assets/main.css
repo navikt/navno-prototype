@@ -12,8 +12,8 @@
     --fluid-18-20: clamp(1.125rem, 1.0795rem + 0.2273vi, 1.25rem);
     --fluid-20-24: clamp(1.25rem, 1.1591rem + 0.4545vi, 1.5rem);
     --fluid-32-40: clamp(2rem, 1.8182rem + 0.9091vi, 2.5rem);
-    --fluid-36-56: clamp(2.25rem, 1.7955rem + 2.2727vi, 3.5rem);
-  }
+    --fluid-40-56: clamp(2.5rem, 2.1364rem + 1.8182vi, 3.5rem);
+}
 
   body {
     color: theme(colors.slate.700);
@@ -41,17 +41,17 @@
     margin-block: 1.875em 0.375em;
   }
   :is(.prose, .accordion, .expander) > h3 {
-    font-size: var(--text-lg);
+    font-size: var(--fluid-20-24);
     line-height: 1.33;
     letter-spacing: -0.0125em;
   }
   :is(.prose, .accordion, .expander) > h4 {
-    font-size: var(--text-md);
+    font-size: var(--fluid-18-20);
     line-height: 1.33;
     letter-spacing: -0.0125em;
   }
   :is(.prose, .accordion, .expander) > h5 {
-      font-size: var(--text-sm);
+      font-size: var(--fluid-14-16);
       font-weight: 650;
       line-height: 1.33;
       margin-block-end: 0.25em;
