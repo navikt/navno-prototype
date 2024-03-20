@@ -97,9 +97,11 @@ Hvor lenge du kan få avhenger av alderen din.
 
 Klarer du å jobbe, men har problemer med å reise til og fra arbeidsstedet? Da kan du ha rett til reisetilskudd i stedet for sykepenger fra 17. dag etter at du ble sykmeldt.
 
-{{ tile({ 
+{{ tile({
+  theme: 'bg-slate-50', 
   title: 'Reisetilskudd',
-  content: 'Tilskudd i stedet for sykepenger eller sammen med graderte sykepenger når det gjør at du kan jobbe helt eller delvis.'
+  content: 'Tilskudd i stedet for sykepenger eller sammen med graderte sykepenger når det gjør at du kan jobbe helt eller delvis.',
+  kicker: 'Pengestøtte'
 }) }}
 
 ### Andre tilbud

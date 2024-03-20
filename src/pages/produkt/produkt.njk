@@ -23,13 +23,15 @@ noJS: true
 {% set pages = ['pleiepenger', 'sykepenger', 'alderspensjon'] %}
 
 {%- block content -%}
-  <div class="py-page px-edge font-[375]">
-    <a class="inline-flex items-center gap-1 px-3 py-2 mb-4 -mx-3 font-semibold text-blue-600 hover:underline" href="../">
-      {{ '/src/_includes/svg/icons/chevron-left.svg' | svgContents('') | safe }}
-      <span>Tilbake</span>
-    </a>
+  <div class="py-8 grid grid-cols-center font-[375]">
+    <div class="px-8 col-full">
+      <a class="inline-flex items-center gap-1 px-3 py-2 mb-4 -mx-3 font-semibold text-blue-600 hover:underline" href="../">
+        {{ '/src/_includes/svg/icons/chevron-left.svg' | svgContents('') | safe }}
+        <span>Tilbake</span>
+      </a>
+    </div>
 
-    <div class="grid items-start w-full max-w-screen-md gap-2 mx-auto rounded-xl overflow-clip">
+    <div class="grid items-start gap-2 col-container rounded-xl overflow-clip">
       {% for item in pages %}
         {% for item in collections.all | onlyTags('produkt', item) %}
           {{ link(item) }}

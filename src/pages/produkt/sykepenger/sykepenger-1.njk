@@ -9,27 +9,30 @@ variant: '1'
 {%- block content -%}
   {% set chapters = collections.all | onlyTags('sykepenger', 'innhold') | sort(false, false, 'data.order') %}
 
+
+
   <main class="grid py-16 grid-cols-center" data-theme="sykepenger">
     <div class="col-main">
-      <div class="text-sm tracking-widest uppercase">{{ type | safe }}</div>
-      <h1 class="mt-1 font-extrabold text-2xl/tight text-balance ">{{ title | safe }}</h1>
-      <div class="mt-8 prose text-pretty max-w-prose">
+      <h1 class="mb-6 font-extrabold text-2xl/tight text-balance ">{{ title | safe }}</h1>
+      <div class="mt-6 prose text-pretty max-w-prose">
         <p class="text-lg">{{ ingress | safe }}</p>
-
-        <div class="px-4 py-3 border rounded-lg border-slate-300 text-balance">
+        <div class="px-5 py-4 border rounded-lg border-slate-300 text-balance">
           {{ audience | markdown | safe if audience }}
         </div>
+      </div>
+      <div class="flex gap-3 mt-8 text-sm">
+        <span>{{ type | safe }}</span> | <span>Oppdatert 20.03.2024</span>  
       </div>
     </div>
 
     {# Innholdsfortegnelse #}
-    <div class="px-4 py-3 mt-8 rounded-lg bg-slate-100">
+    <div class="px-5 py-4 mt-8 rounded-lg bg-slate-100">
       <h2 class="pb-2 text-base font-semibold">Innhold på siden</h2>
       <ul class="grid gap-4 py-1">
         {% for chapter in chapters %}
         <li class="grid">
           <a class="flex gap-1 p-1 -m-1 font-medium text-blue-500 underline group hover:text-blue-700 text-base/snug hover:decoration-2" href="#{{ chapter.data.title | slugify }}">
-            {{ '/src/_includes/svg/icons/arrow-right-angle-aksel.svg' | svgContents('translate-y-1 w-5 h-5') | safe }}
+            {{ '/src/_includes/svg/icons/arrow-right-angle-aksel.svg' | svgContents('translate-y-0.5 w-5 h-5') | safe }}
             {{ chapter.data.title }}
           </a>
           <p class="pr-4 pl-6 mt-0.5 text-pretty opacity-85">{{ chapter.data.ingress | safe }}</p>
@@ -54,18 +57,18 @@ variant: '1'
 
           {# Chapter TOC #}
           {% if chapter.templateContent and chapter.templateContent | tocData | length > 0 %}
-          <nav class="relative px-4 py-3 rounded-lg bg-slate-100">
+          <nav class="relative px-5 py-3 rounded-lg bg-slate-100">
             <h3 class="pb-2 font-semibold">I dette kapittelet</h3>
             <ul class="grid gap-4 mt-1 justify-items-start">
               {% for item in chapter.templateContent | tocData %}
               <li>
                 <a class="flex items-start gap-1 p-1 -m-1 text-blue-500 group hover:text-blue-700 text-base/snug hover:underline" href="#{{ item.id }}">
-                  {{ '/src/_includes/svg/icons/arrow-right-angle-aksel.svg' | svgContents('translate-y-0.5') | safe }}
+                  {{ '/src/_includes/svg/icons/arrow-right-angle-aksel.svg' | svgContents('translate-y-0.5 w-5 h-5') | safe }}
                   <span>{{ item.text }}</span>
                 </a>
               </li>
               {% endfor %}
-              <li class="pt-4 border-t justify-self-stretch border-slate-400/25">
+              <li class="pt-5 border-t justify-self-stretch border-slate-400/25">
                 <a 
                   class="inline-flex items-center gap-0.5 -m-1 text-blue-500 group hover:text-blue-700 text-base/snug hover:underline" 
                   href="{{ page.url }}" 

@@ -1,14 +1,15 @@
 ---
-title: 'Områdesidemal'
+title: 'Temaartikkel'
+description: ''
 ---
 {%- extends 'blank.njk' -%}
 
 {% macro link(item) %}
-  <div class="relative grid gap-1 py-6 pl-6 pr-8 text-lg rounded bg-slate-100 overflow-clip has-[a:hover]:bg-blue-500 has-[a:hover]:text-white">
+  <div class="relative grid gap-1 py-6 pl-6 pr-8 text-lg rounded bg-slate-100 overflow-clip has-[a:hover]:bg-blue-500 transition-colors duration-150 has-[a:hover]:text-white">
     <a class="font-semibold text-blue-600 after:absolute hover:text-white after:z-10 after:inset-0" href="{{ item.url }}">
       {{ item.data.title }}
       {% if item.data.variant %}       
-      <span class="italic font-normal">({{ item.data.variant }})</span>
+      <span class="italic font-normal">(variant {{ item.data.variant }})</span>
       {% endif %}
     </a>     
     {% if item.data.description %}      
@@ -16,6 +17,9 @@ title: 'Områdesidemal'
     {% endif %}
   </div> 
 {% endmacro %}
+
+
+{% set pages = ['soketips'] %}
 
 {%- block content -%}
   <div class="py-8 grid grid-cols-center font-[375]">
@@ -26,12 +30,12 @@ title: 'Områdesidemal'
       </a>
     </div>
 
-    <div class="grid items-start gap-8 col-container">
-      <div class="grid flex-1 gap-1 rounded-xl overflow-clip">
-      {% for item in collections.all | onlyTags('omrade', 'listeside') %}
-        {{ link(item) }}        
+    <div class="grid items-start gap-2 col-container rounded-xl overflow-clip">
+      {% for item in pages %}
+        {% for item in collections.all | onlyTags('tema', item) %}
+          {{ link(item) }}
+        {% endfor %}
       {% endfor %}
-      </div>
     </div>
   </div>
 {% endblock %}
