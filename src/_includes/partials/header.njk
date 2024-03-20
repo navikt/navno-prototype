@@ -30,7 +30,7 @@
 
       {# x-show="!loggedIn" x-on:click="loginOpen = !loginOpen, menuOpen = false" x-bind:aria-expanded="loginOpen" #}
 
-      <div class="flex self-center py-2 sm:gap-1 justify-self-end xs:-mr-3">
+      <div class="flex self-center py-2 -mr-1 sm:gap-1 justify-self-end">
         <button class="{{ menuButtonClasses }}">
             {{ '/src/_includes/svg/icons/login.svg' | svgContents('w-6 h-6 sm:w-7 sm:h-7 shrink-0 pointer-events-none') | safe }}
           <span class="mt-px">Logg inn</span>
