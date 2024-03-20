@@ -164,7 +164,7 @@ module.exports = {
       xs: "var(--fluid-12-14)",
       sm: "var(--fluid-14-16)",
       base: "var(--fluid-18-20)",
-      lg: "var(--fluid-20-24)",
+      lg: "var(--fluid-20-26)",
       xl: "var(--fluid-32-40)",
       "2xl": "var(--fluid-40-56)",
     },
@@ -249,7 +249,7 @@ module.exports = {
       },
       spacing: {
         edge: "clamp(0.75rem, -1.25rem + 10vi, 10rem)",
-        page: "clamp(1.5rem, 0.5909rem + 4.5455vi, 4rem)",
+        page: "clamp(1rem, -5rem + 15vi, 10rem)",
       },
     },
   },
