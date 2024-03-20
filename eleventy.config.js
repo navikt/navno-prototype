@@ -82,6 +82,10 @@ module.exports = function (eleventyConfig) {
       typographer: true,
       quotes: "«»",
     })
+      .use(markdownItAnchor, {
+        level: 3,
+        slugify: (s) => slugify(s.toLowerCase()),
+      })
       .disable("code")
       .render(content);
     return `<div class="prose">${markdown}</div>`;
