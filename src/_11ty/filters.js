@@ -1,5 +1,7 @@
 const markdownIt = require("markdown-it");
 const cheerio = require("cheerio");
+const markdownItAnchor = require("markdown-it-anchor");
+const slugify = require("slugify");
 
 const markdown = (value) => {
   return new markdownIt({
@@ -9,6 +11,10 @@ const markdown = (value) => {
     quotes: "«»",
   })
     .disable("code")
+    .use(markdownItAnchor, {
+      level: [2, 3],
+      slugify: (s) => slugify(s.toLowerCase()),
+    })
     .render(value);
 };
 

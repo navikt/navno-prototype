@@ -161,12 +161,14 @@ module.exports = {
       ],
     },
     fontSize: {
-      xs: "var(--fluid-12-14)",
-      sm: "var(--fluid-14-16)",
-      base: "var(--fluid-18-20)",
-      lg: "var(--fluid-20-26)",
-      xl: "var(--fluid-32-40)",
-      "2xl": "var(--fluid-40-56)",
+      xs: "var(--fluid--2)",
+      sm: "var(--text-fluid--1)",
+      base: "var(--text-fluid-0)",
+      lg: "var(--text-fluid-1)",
+      xl: "var(--text-fluid-2)",
+      "2xl": "var(--text-fluid-3)",
+      "3xl": "var(--text-fluid-4)",
+      "4xl": "var(--text-fluid-5)",
     },
     extend: {
       animation: {

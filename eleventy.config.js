@@ -38,7 +38,7 @@ module.exports = function (eleventyConfig) {
   // Markdown-it plugins
   eleventyConfig.amendLibrary("md", (mdLib) =>
     mdLib.use(markdownItAnchor, {
-      level: 3,
+      level: [2, 3],
       slugify: (s) => slugify(s.toLowerCase()),
     }),
   );
