@@ -161,7 +161,7 @@ module.exports = {
       ],
     },
     fontSize: {
-      xs: "var(--fluid--2)",
+      xs: "var(--text-fluid--2)",
       sm: "var(--text-fluid--1)",
       base: "var(--text-fluid-0)",
       lg: "var(--text-fluid-1)",
