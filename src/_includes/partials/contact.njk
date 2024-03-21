@@ -1,0 +1,37 @@
+<aside class="grid pt-12 pb-16 grid-cols-center">
+  <h2 class="text-2xl font-semibold col-container">Kontakt oss</h2>
+  <div class="grid gap-8 mt-4 {{ 'md:grid-cols-3' if contact.length === 3 }} md:gap-x-6 col-container"> 
+    {% for item in contact %}
+    <div class="pr-16">
+      <h3 class="text-lg font-semibold">
+        <a class="text-blue-500 underline hover:decoration-2" href="javascript:void(0);">
+          {{ item.title | markdown | safe }}
+        </a>
+      </h3>
+      {{ item.description | markdown | safe }}
+
+      {% if item.options %}
+      <div class="grid gap-4 mt-6 leading-tight">
+        {% for option in item.options %}         
+          <p class="flex flex-wrap items-center gap-2">
+            {% if option.name %}
+            <strong class="font-semibold">{{ option.name | safe }}:</strong>
+            {% endif %}
+            <span class="flex items-center gap-x-0.5">
+              <svg class="inline-block -my-2 {{ 'text-green-400' if (option.isOpen === true) else 'text-slate-400' }}" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+                <circle fill="currentColor" cx="12" cy="11" r="5.5" />
+                <circle fill="currentColor" cx="12" cy="11" r="7.5" opacity="0.25" />
+              </svg>
+              {{ option.status | safe }}
+            </span>
+          </p>
+        {% endfor %}
+      </div>        
+      {% endif %}
+
+
+    </div>     
+    {% endfor %}
+
+  </div>
+</aside>
