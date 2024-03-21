@@ -19,7 +19,7 @@ bodyClass: 'flex flex-col min-h-full'
       </a>
     </div>
     <div class="flex self-center gap-2 py-2 justify-self-end md:col-span-1">
-      <button class="flex flex-col xs:flex-row items-center justify-center p-1 xs:pl-2.5 xs:pr-3 leading-none font-semibold gap-0.5 text-blue-500 rounded min-w-16 xs:py-2 xs:text-lg fine:hover:bg-deepblue-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-800 group" type="button" x-on:click="menuOpen = !menuOpen, notifyOpen = false, loginOpen = false" x-bind:class="menuOpen && 'bg-deepblue-50'" x-bind:aria-expanded="menuOpen">
+      <button class="flex flex-col xs:flex-row items-center justify-center p-1 xs:pl-2.5 xs:pr-3 leading-none font-semibold gap-0.5 text-blue-500 rounded min-w-16 xs:py-2 xs:text-lg fine:hover:bg-deepblue-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-800 group" type="button" x-on:click="menuOpen = !menuOpen, myPage = false, loginOpen = false" x-bind:class="menuOpen && 'bg-deepblue-50'" x-bind:aria-expanded="menuOpen">
         <template x-if="!menuOpen">
           {{ '/src/_includes/svg/icons/menusearch.svg' | svgContents('w-6 h-6 sm:w-7 sm:h-7 shrink-0 pointer-events-none') | safe }}
         </template>
@@ -58,6 +58,6 @@ bodyClass: 'flex flex-col min-h-full'
 
 
 {# Overlay #}
-<button class="fixed inset-0 z-40 w-full h-full opacity-0 cursor-default bg-black/20" x-bind:class="(menuOpen || notifyOpen || audienceDropdownOpen || loginOpen) ? 'animate-fade-in' : 'hidden'" x-on:click="menuOpen = false, notifyOpen = false, audienceDropdownOpen = false, loginOpen = false" x-on:keyup.escape.window="menuOpen = false, notifyOpen = false, audienceDropdownOpen = false, loginOpen = false"></button>
+<button class="fixed inset-0 z-40 w-full h-full opacity-0 cursor-default bg-black/20" x-bind:class="(menuOpen || myPage || audienceDropdownOpen || loginOpen) ? 'animate-fade-in' : 'hidden'" x-on:click="menuOpen = false, myPage = false, audienceDropdownOpen = false, loginOpen = false" x-on:keyup.escape.window="menuOpen = false, myPage = false, audienceDropdownOpen = false, loginOpen = false"></button>
 
 {% endblock %}
