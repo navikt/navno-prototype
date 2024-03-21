@@ -413,19 +413,24 @@
   }
 
   .grid-cols-left-1 {
-    --_edge: theme('spacing.edge');
+    --_edge: theme('spacing.page');
+    --_main: 40rem;
+    --_side: var(--_main);
     grid-template-columns: 
-      [full-start] var(--_edge) [wide-start main-start side-start] minmax(0, 40rem) [main-end side-end] minmax(0, 1fr) [wide-end] var(--_edge) [full-end];
+      [full-start] var(--_edge) [wide-start] minmax(0, 1fr) [container-start main-start side-start] var(--_main) [main-end side-end] minmax(0, 1fr) [container-end] minmax(0, 1fr) [wide-end] var(--_edge) [full-end];
   }
 
   .grid-cols-left-2 {
-    --_edge: theme('spacing.edge');
+    --_edge: theme('spacing.page');
+    --_main: 40rem;
+    --_side: clamp(10rem, 0rem + 25vi, 20rem);
     grid-template-columns: 
-      [full-start] var(--_edge) minmax(0, 1fr)  
-      [wide-start main-start] min(clamp(30rem, 18rem + 24vi, 40rem), 100%) 
-      [main-end] clamp(1rem, -1.2353rem + 11.1765vi, 10.5rem) 
-      [side-start] minmax(0, 24.5rem) 
-      [side-end wide-end] minmax(0, 1fr) var(--_edge) [full-end];
+      [full-start] var(--_edge)  
+      [wide-start] minmax(0, 1fr) 
+      [container-start main-start] minmax(0, var(--_main))
+      [main-end] minmax(0, clamp(4.5rem, -3rem + 18.75vi, 12rem)) 
+      [side-start] var(--_side) 
+      [side-end container-end] minmax(0, 1fr) [wide-end] var(--_edge) [full-end];
   }
   :where(.grid-cols-left-1 > *, .grid-cols-left-2 > *, .grid-cols-center > *) { grid-column: main }
 
