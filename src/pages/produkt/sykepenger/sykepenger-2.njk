@@ -11,7 +11,7 @@ variant: '2'
 
   <main class="grid py-16 grid-cols-center" data-theme="sykepenger" x-data="{ showChapter1: false, showChapter2: false, showChapter3: false, showChapter4: false, showChapter5: false, showToc: false, expandToc: false }">
     <div class="text-sm tracking-widest uppercase">{{ type | safe }}</div>
-    <h1 class="mt-1 font-extrabold text-2xl/tight text-balance ">{{ title | safe }}</h1>
+    <h1 class="mt-1 font-extrabold text-4xl/tight text-balance ">{{ title | safe }}</h1>
     <div class="mt-8 prose text-pretty max-w-prose">
       <p class="text-lg">{{ ingress | safe }}</p>
 
@@ -97,7 +97,7 @@ variant: '2'
         x-intersect:leave.margin.-20%.0px.-60%.0px="showChapter{{ chapterIndex }} = false"
       >
         <div class="col-main">
-          <h2 class="mt-8 mb-6 font-bold text-xl/tight text-balance ">{{ chapter.data.title }}</h2>
+          <h2 class="mt-8 mb-6 font-bold text-3xl/tight text-balance ">{{ chapter.data.title }}</h2>
 
           {% if chapter.templateContent and chapter.templateContent | tocData | length > 0 %}
             <nav class="px-5 pt-4 pb-4 rounded-lg bg-slate-100">

@@ -9,19 +9,15 @@ variant: '1'
 {%- block content -%}
   {% set chapters = collections.all | onlyTags('sykepenger', 'innhold') | sort(false, false, 'data.order') %}
 
-
-
   <main class="grid py-16 grid-cols-center" data-theme="sykepenger">
     <div class="col-main">
-      <h1 class="mb-6 font-extrabold text-2xl/tight text-balance ">{{ title | safe }}</h1>
+      <div class="text-sm tracking-widest uppercase">{{ type | safe }}</div>
+      <h1 class="mt-1 font-extrabold text-4xl/tight text-balance ">{{ title | safe }}</h1>
       <div class="mt-6 prose text-pretty max-w-prose">
         <p class="text-lg">{{ ingress | safe }}</p>
         <div class="px-5 py-4 border rounded-lg border-slate-300 text-balance">
           {{ audience | markdown | safe if audience }}
         </div>
-      </div>
-      <div class="flex gap-3 mt-8 text-sm">
-        <span>{{ type | safe }}</span> | <span>Oppdatert 20.03.2024</span>  
       </div>
     </div>
 
@@ -53,7 +49,9 @@ variant: '1'
           {{ '/src/_includes/svg/placeholder.svg' | svgContents('w-full h-auto max-w-screen-md mx-auto') | safe }}
         </div> #}
         <div class="mb-8 col-main">
-          <h2 class="mt-8 mb-6 font-bold text-xl/tight text-balance ">{{ chapter.data.title }}</h2>
+          <h2 class="mt-8 mb-6 font-bold text-3xl/tight text-balance ">
+            {{ chapter.data.title }}
+          </h2>
 
           {# Chapter TOC #}
           {% if chapter.templateContent and chapter.templateContent | tocData | length > 0 %}
@@ -82,7 +80,7 @@ variant: '1'
           {% endif %}
 
           {# Main Content #}
-          <div class="prose col-main">
+          <div class="prose prose--separator col-main">
             {{ chapter.templateContent | markdown | safe }}
           </div>
         </div>
