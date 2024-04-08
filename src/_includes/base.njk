@@ -28,6 +28,7 @@
   </head>
   <body
     id="toppen" class="min-h-full text-base leading-relaxed overflow-x-hidden overflow-y-scroll {{ bodyClass }}" x-data="{ indexOpen: false, audienceDropdownOpen: false, languageDropdownOpen: false, loggedIn: false, loginOpen: false, menuOpen: false, myPageOpen: false, newNotifications: true }">
+
     {%- if environment === 'production' -%}
     {# {%- include "partials/banner.njk" -%} #}
     {%- endif -%}
@@ -36,7 +37,8 @@
     {%- block content -%}{%- endblock -%}
     {%- block bodyscript -%}{%- endblock -%}
     {%- include "partials/footer.njk" -%}
-    {# {%- include "partials/prototypeNav.njk" -%} #}
+
+    {%- include "partials/prototypeNav.njk" -%}
     
   </body>
 </html>

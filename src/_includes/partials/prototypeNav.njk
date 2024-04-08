@@ -1,13 +1,21 @@
-<aside x-ref="prototypeMenu" aria-label="Sider i prototypen" class="flex flex-row min-h-screen font-mono text-white bg-black px-edge">
-  <div class="w-full mx-auto mt-auto max-w-wide pb-2xl">
-    <h2 class="text-sm font-semibold tracking-widest text-gray-300 uppercase col-wide">Sider i prototypen</h2>
-    <ul class="mt-4 col-wide md:text-lg">
-    {% set pages = collections.template | sort(false, false, 'data.order') %}
-    {%- for page in pages -%}
-      <li class="grid items-center justify-start py-4 border-t border-gray-800 min-h-24">
-        <a href="{{ page.url }}" class="inline-block text-deepblue-200 fine:hover:underline decoration-from-font underline-offset-4">
-          {{ page.data.title | safe }}
+<aside x-ref="prototypeMenu" aria-label="Sider i prototypen" class="fixed inset-x-0 grid items-end justify-end font-mono bottom-6" x-data="{ prototypeMenuOpen: false }">
+  <button type="button" class="relative z-10 -translate-x-6 grid p-1.5 -rotate-45 bg-pink-500 hover:bg-pink-600 text-white rounded place-items-center aspect-square" x-on:click="prototypeMenuOpen = !prototypeMenuOpen">
+    {{ '/src/_includes/svg/icons/globe.svg' | svgContents('w-7 h-7 rotate-45') | safe }}
+  </button>
+  <div class="absolute right-0 z-0 max-w-lg p-8 text-sm bg-pink-300 shadow-2xl sm:text-base bottom-1/2 rounded-l-2xl text-slate-900" x-show="prototypeMenuOpen" x-on:click.outside="prototypeMenuOpen = false">
+    <h2 class="text-xs font-semibold tracking-widest uppercase">Sider i prototypen</h2>
+    <ul class="mt-3">
+    {% set pages = collections.proto | sort(false, false, 'data.order') %}
+    {%- for type, pages in pages | groupby('data.type') -%}
+      <li class="py-1 border-t border-black/10">
+        <b>{{ type }}:</b>
+        {% for item in pages -%}
+        <a href="{{ item.url }}" class="inline-block py-1 underline hover:decoration-2 decoration-from-font underline-offset-4">
+         {{ item.data.title | safe }}
         </a>
+        {%- if pages.length > 1 and not loop.last %}, {% endif %}
+        {%- endfor -%}
+        
       </li>
     {%- endfor -%}
     </ul>
