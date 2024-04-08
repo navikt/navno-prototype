@@ -24,6 +24,7 @@ const { minifyHtml, dummifyLinks } = require("./src/_11ty/transforms.js");
 // const {} = require("./src/_11ty/collections.js");
 const markdownIt = require("markdown-it");
 const markdownItAnchor = require("markdown-it-anchor");
+const compression = require("compression");
 
 module.exports = function (eleventyConfig) {
   // Eleventy Plugins
@@ -100,6 +101,7 @@ module.exports = function (eleventyConfig) {
     enabled: true,
     showVersion: true,
     port: 8888,
+    // middleware: [compression()],
   });
 
   eleventyConfig.setDataDeepMerge(true);
