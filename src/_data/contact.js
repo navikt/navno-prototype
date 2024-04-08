@@ -21,7 +21,7 @@ module.exports = [
     type: "skriv",
     title: "Skriv til oss",
     description:
-      "Send beskjed eller nye opplysninger i saken din. Du kan også sende spørsmål. \nSvartid er 4 arbeidsdager. Hvis du vil ha svar raskere, kan du bruke chat.",
+      "Send beskjed eller nye opplysninger i saken din. Du kan også sende spørsmål. \n\n  Svartid er noen arbeidsdager.Hvis du vil ha svar raskere, kan du bruke chat.",
   },
   {
     type: "ring",

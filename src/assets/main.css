@@ -400,39 +400,30 @@
     border-color: theme('colors.blue.100');
   }
 
+  .wave {
+    --size: 6px;
+    --p: 3px;
+    --R: 6px;
+
+    mask:
+    radial-gradient(var(--R) at left 50% top calc(var(--size) + var(--p)), #000 99%, #0000 101%) 
+      calc(50% - 2 * var(--size)) 0/calc(4 * var(--size)) 100%,
+    radial-gradient(var(--R) at left 50% top calc(-1 * var(--p)), #0000 99%, #000 101%) 
+      left 50% top var(--size) / calc(4 * var(--size)) 100% repeat-x;
+  }
 }
 
 
 @layer utilities {
   .grid-cols-center {
-    --_container: clamp(0rem, -16rem + 40vi, 16rem);
+    --_container: clamp(0rem, -14rem + 35vi, 17.5rem);
     --_prose: 20rem; 
     --_edge: theme('spacing.page');
     grid-template-columns: 
       [full-start] var(--_edge) [wide-start] minmax(0, 1fr) [container-start] var(--_container) [main-start side-start] minmax(0, var(--_prose)) minmax(0, var(--_prose)) [main-end side-end] var(--_container) [container-end] minmax(0, 1fr) [wide-end] var(--_edge) [full-end];
   }
 
-  .grid-cols-left-1 {
-    --_edge: theme('spacing.page');
-    --_main: 40rem;
-    --_side: var(--_main);
-    grid-template-columns: 
-      [full-start] var(--_edge) [wide-start] minmax(0, 1fr) [container-start main-start side-start] var(--_main) [main-end side-end] minmax(0, 1fr) [container-end] minmax(0, 1fr) [wide-end] var(--_edge) [full-end];
-  }
-
-  .grid-cols-left-2 {
-    --_edge: theme('spacing.page');
-    --_main: 40rem;
-    --_side: clamp(10rem, 0rem + 25vi, 20rem);
-    grid-template-columns: 
-      [full-start] var(--_edge)  
-      [wide-start] minmax(0, 1fr) 
-      [container-start main-start] minmax(0, var(--_main))
-      [main-end] minmax(0, clamp(4.5rem, -3rem + 18.75vi, 12rem)) 
-      [side-start] var(--_side) 
-      [side-end container-end] minmax(0, 1fr) [wide-end] var(--_edge) [full-end];
-  }
-  :where(.grid-cols-left-1 > *, .grid-cols-left-2 > *, .grid-cols-center > *) { grid-column: main }
+  :where(.grid-cols-center > *) { grid-column: main }
 
   .col-full { grid-column: full }
   .col-wide { grid-column: wide }

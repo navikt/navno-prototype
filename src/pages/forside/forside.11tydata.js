@@ -38,6 +38,14 @@ module.exports = {
       title: "Satser",
       icon: "/src/_includes/svg/piktogrammer/produkter/satser.svg",
     },
+    {
+      title: "Søknad og skjema",
+      icon: "/src/_includes/svg/piktogrammer/produkter/soknad-og-skjema.svg",
+    },
+    {
+      title: "Ettersende dokumentasjon",
+      icon: "/src/_includes/svg/piktogrammer/produkter/utbetalingsdatoer.svg",
+    },
   ],
   formsList: [
     {
