@@ -17,7 +17,7 @@ Som sykmeldt har du plikt til å være i arbeid eller annen arbeidsrettet aktivi
 {{ video({ 
   title: 'Hva innebærer aktivitetsplikten?', 
   duration: '2,5 min', 
-  image: '/assets/images/video-aktivitetsplikt.jpg' 
+  image: '/assets/images/video-aktivitetsplikt.webp' 
 }) }}
 
 #### Unntak fra aktivitetskravet
@@ -39,7 +39,7 @@ Aktivitetskravet og medvirkningsplikten gjelder i hele sykefraværet:
 {{ video({ 
   title: 'Hvordan bruker vi oppfølgingsplanen?', 
   duration: '1,5 min', 
-  image: '/assets/images/video-oppfolgingsplan.jpg' 
+  image: '/assets/images/video-oppfolgingsplan.webp' 
 }) }}
 
 #### God dialog er viktig for å se mulighetene for arbeid
@@ -51,7 +51,7 @@ NAV kan hjelpe deg og arbeidsgiveren din med å finne mulighetene for tilrettela
 {{ video({ 
   title: 'Hva skjer i dialogmøtet som NAV innkaller til?', 
   duration: '1,5 min', 
-  image: '/assets/images/video-dialogmote.jpg' 
+  image: '/assets/images/video-dialogmote.webp' 
 }) }}
 
 For at du fortsatt skal få sykepenger, er hovedregelen at du må være i aktivitet som har med arbeid å gjøre. Det vil si at du er delvis i jobb samtidig som du er sykmeldt.

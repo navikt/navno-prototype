@@ -38,7 +38,7 @@ Se hva du må vite i ulike situasjoner:
 {{ video({ 
   title: 'Hva skjer etter jeg har sendt sykemeldingen?', 
   duration: '1,5 min', 
-  image: '/assets/images/video-sykemelding.jpg' 
+  image: '/assets/images/video-sykemelding.webp' 
 }) }}
 
 ### Søknad og dokumentasjon
