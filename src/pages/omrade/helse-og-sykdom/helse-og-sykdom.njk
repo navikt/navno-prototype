@@ -7,22 +7,24 @@ permalink: '/omrade/helse-og-sykdom/index.html'
 {%- extends 'base.njk' -%}
 
 {%- block content -%}
-  <main class="bg-slate-100">
-    <div class="grid pt-12 bg-white grid-cols-left-1 lg:grid-cols-left-2 ">
-      <div class="relative col-container">
-        {{ '/src/_includes/svg/area-illustrations/helse.svg' | svgContents('h-auto min-w-32 mt-5 ml-auto w-1/3 xs:w-auto float-right xs:absolute xs:bottom-0 xs:right-0') | safe }}
+  <main class="pb-12 bg-white">
+    <div class="grid grid-cols-center">
+      <div class="relative pt-12 col-main">
+        {{ '/src/_includes/svg/area-illustrations/helse.svg' | svgContents('h-auto min-w-28 max-w-48 ml-auto w-1/3 float-right') | safe }}
         {# <div class="text-sm tracking-widest uppercase">{{ type | safe }}</div> #}
-        <h1 class="mt-0.5 -translate-x-[0.0625em] font-bold text-4xl/tight text-balance">{{ title | safe }}</h1>
-        <h2 class="col-span-2 col-start-1 mt-2 mb-8 text-lg xs:col-start-1 xs:col-span-1 max-w-prose">Hva er situasjonen din?</h2>
+        <h1 class="mt-2 -translate-x-[0.05em] font-extrabold text-4xl/tight text-balance">{{ title | safe }}</h1>
+        <h2 class="col-span-2 col-start-1 mt-1 text-lg xs:col-start-1 xs:col-span-1 max-w-prose">Hva er situasjonen din?</h2>
       </div>
-    </div>
-    <div class="grid grid-flow-row-dense pt-12 pb-24 grid-cols-left-1 lg:grid-cols-left-2">
-      <div class="mb-12 col-container lg:col-side">[spesielle elementer]</div>
-      <div class="col-container lg:col-main">
+
+      {# <div class="mb-12 col-main">
+        [spesielle elementer]
+      </div> #}
+
+      <div class="pt-12 col-main">
         <ul>
           {%- for item in situationList -%}
-            <li class="{{ 'border-t border-slate-300' if not loop.first }}">
-              <div class="relative flex items-center justify-between flex-1 mb-8 gap-x-16 {{ 'mt-8' if not loop.first }}">
+            <li class="border-t border-slate-300">
+              <div class="relative flex items-center justify-between flex-1 py-6 gap-x-20">
                 <div class="flex-col justify-start">
                   <a class="text-lg font-semibold leading-tight text-blue-600 text-balance hover:text-blue-500 hover:underline after:absolute after:inset-0" href="#">{{ item.title | safe }}</a>
                   <p>{{ item.ingress | safe }}</p>
