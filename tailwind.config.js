@@ -249,7 +249,7 @@ module.exports = {
       },
       spacing: {
         edge: "clamp(0.75rem, -1.25rem + 10vi, 10rem)",
-        page: "clamp(1rem, -5rem + 15vi, 10rem)",
+        page: "clamp(1rem, -3rem + 13.3333vi, 5rem)",
       },
     },
   },
