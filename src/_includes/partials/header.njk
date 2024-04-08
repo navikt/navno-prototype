@@ -2,7 +2,7 @@
 
 <header class="relative z-50 bg-white">
   <div class="text-sm text-center border-b border-slate-200 sm:hidden px-edge">
-    <button class="py-1 tracking-widest uppercase cursor-default" x-on:click="menuOpen = !menuOpen, myPage = false, loginOpen = false" type="button">{{ activeRole }}</button>
+    <button class="py-1 tracking-widest uppercase cursor-default" x-on:click="menuOpen = !menuOpen, myPageOpen = false, loginOpen = false" type="button">{{ activeRole }}</button>
   </div>
 
   <nav class="z-10 grid grid-cols-center">
@@ -18,7 +18,7 @@
 
       {# Audience #}
       <div class="self-center hidden pl-5 ml-2 text-lg leading-tight border-l sm:block border-slate-300">
-        <button class="cursor-default" x-on:click="menuOpen = !menuOpen, myPage = false, loginOpen = false" type="button">
+        <button class="cursor-default" x-on:click="menuOpen = !menuOpen, myPageOpen = false, loginOpen = false" type="button">
           {{ activeRole }}
         </button>
       </div>
@@ -35,16 +35,16 @@
           <span class="mt-px">Logg inn</span>
         </button>
 
-        <button class="{{ menuButtonClasses }}" x-on:click="myPage = !myPage, menuOpen = false" x-bind:class="myPage && 'bg-slate-200'" x-show="loggedIn" x-bind:aria-expanded="myPage">
+        <button class="{{ menuButtonClasses }}" x-on:click="myPageOpen = !myPageOpen, menuOpen = false" x-bind:class="myPageOpen && 'bg-slate-200'" x-show="loggedIn" x-bind:aria-expanded="myPageOpen" x-bind:hidden="!myPageOpen" hidden>
           <span class="relative">
             {{ '/src/_includes/svg/icons/person-circle.svg' | svgContents('w-6 h-6 sm:w-7 sm:h-7 -ml-0.5 shrink-0 pointer-events-none') | safe }}
-            <span x-show="newNotifications" class="absolute right-0 block w-1.5 h-1.5 sm:w-2 sm:h-2 bg-red-400 rounded-full top-0.5" x-bind:class="myPage ? 'ring-2 ring-slate-200' : 'ring-2 ring-white fine:group-hover:ring-slate-200'"></span>
+            <span x-show="newNotifications" class="absolute right-0 block w-1.5 h-1.5 sm:w-2 sm:h-2 bg-red-400 rounded-full top-0.5" x-bind:class="myPageOpen ? 'ring-2 ring-slate-200' : 'ring-2 ring-white fine:group-hover:ring-slate-200'"></span>
           </span>
           <span class="mt-px sm:hidden">Min side</span>
           <span class="hidden mt-px sm:inline-block">Isac Norland</span>
         </button>
 
-        <button class="{{ menuButtonClasses }} ml-1 order-2" type="button" x-on:click="menuOpen = !menuOpen, myPage = false, loginOpen = false" x-bind:class="menuOpen && 'bg-blue-50'" x-bind:aria-expanded="menuOpen">
+        <button class="{{ menuButtonClasses }} ml-1 order-2" type="button" x-on:click="menuOpen = !menuOpen, myPageOpen = false, loginOpen = false" x-bind:class="menuOpen && 'bg-blue-50'" x-bind:aria-expanded="menuOpen">
           <template x-if="!menuOpen">
             {{ '/src/_includes/svg/icons/menusearch.svg' | svgContents('w-6 h-6 sm:w-7 sm:h-7 shrink-0 pointer-events-none') | safe }}
           </template>
@@ -65,14 +65,14 @@
 {# Overlay #}
 <button 
   class="fixed inset-0 z-40 w-full h-full cursor-default bg-deepblue-900/50 backdrop-blur-sm" 
-  x-show="(menuOpen || myPage || loginOpen)" 
-  x-on:click="menuOpen = false, myPage = false, loginOpen = false" 
-  x-on:keyup.escape.window="menuOpen = false, myPage = false,  loginOpen = false"
+  x-show="(menuOpen || myPageOpen || loginOpen)" 
+  x-on:click="menuOpen = false, myPageOpen = false, loginOpen = false" 
+  x-on:keyup.escape.window="menuOpen = false, myPageOpen = false,  loginOpen = false"
   x-transition:enter="transition ease-out duration-75"
   x-transition:enter-start="opacity-0"
   x-transition:enter-end="opacity-100"
   x-bind:hidden="!menuOpen"
-  x-bind:hidden="!myPage"
+  x-bind:hidden="!myPageOpen"
   x-bind:hidden="!loginOpen"
   hidden
   ></button>
