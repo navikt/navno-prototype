@@ -10,7 +10,7 @@ variant: '2'
   {% set chapters = collections.all | onlyTags('sykepenger', 'innhold') | sort(false, false, 'data.order') %}
 
   <main class="grid py-16 grid-cols-center" data-theme="sykepenger" x-data="{ showChapter1: false, showChapter2: false, showChapter3: false, showChapter4: false, showChapter5: false, showToc: false, expandToc: false }">
-    <div class="text-sm tracking-widest uppercase">{{ type | safe }}</div>
+    <div class="text-sm tracking-widest uppercase">{{ category | safe }}</div>
     <h1 class="mt-1 font-extrabold text-4xl/tight text-balance ">{{ title | safe }}</h1>
     <div class="mt-8 prose text-pretty max-w-prose">
       <p class="text-lg">{{ ingress | safe }}</p>

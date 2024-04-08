@@ -1,9 +1,8 @@
 module.exports = {
   tags: ["sykepenger"],
-  type: "Pengestøtte",
+  kategori: "Pengestøtte",
+  type: "Produktside",
   title: "Sykepenger",
-  // title: "Avtalefestet pensjon (AFP) i offentlig sektor",
-  // title: "Trekkopplysninger for arbeidstaker som skal ha syke&shy;penger, foreldre&shy;penger, svanger&shy;skaps&shy;penger, pleie-/opplæringspenger og omsorgspenger",
   ingress:
     "Sykepenger erstatter inntekten din når du ikke kan jobbe på grunn av sykdom eller skade.",
   audience:
