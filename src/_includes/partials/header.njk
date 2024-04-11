@@ -1,7 +1,7 @@
 {%- set audience = audienceOverride or menu.audience -%}
 
 <header class="relative z-50 bg-white">
-  <div class="text-sm text-center border-b border-slate-200 sm:hidden px-edge">
+  <div class="text-sm text-center bg-slate-100 sm:hidden px-edge">
     <button class="py-1 tracking-widest uppercase cursor-default" x-on:click="menuOpen = !menuOpen, myPageOpen = false, loginOpen = false" type="button">{{ activeRole }}</button>
   </div>
 
@@ -10,7 +10,7 @@
 
       {# Logo #}
       <div class="flex items-center py-5 sm:py-6">
-        <a href="#" class="block px-3 py-2.5 -ml-3.5 text-red-500 rounded-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-800">
+        <a href="/forside/" class="block px-3 py-2.5 -ml-3.5 text-red-500 rounded-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-800">
           {{ '/src/_includes/svg/logo.svg' | svgContents('w-logo h-auto') | safe }}
           <span class="sr-only">NAV</span>
         </a>
@@ -35,14 +35,14 @@
           <span class="mt-px">Logg inn</span>
         </button>
 
-        <button class="{{ menuButtonClasses }}" x-on:click="myPageOpen = !myPageOpen, menuOpen = false" x-bind:class="myPageOpen && 'bg-slate-200'" x-show="loggedIn" x-bind:aria-expanded="myPageOpen" x-bind:hidden="!myPageOpen" hidden>
+        {# <button class="{{ menuButtonClasses }}" x-on:click="myPageOpen = !myPageOpen, menuOpen = false" x-bind:class="myPageOpen && 'bg-slate-200'" x-show="loggedIn" x-bind:aria-expanded="myPageOpen" x-bind:hidden="!myPageOpen" hidden>
           <span class="relative">
             {{ '/src/_includes/svg/icons/person-circle.svg' | svgContents('w-6 h-6 sm:w-7 sm:h-7 -ml-0.5 shrink-0 pointer-events-none') | safe }}
             <span x-show="newNotifications" class="absolute right-0 block w-1.5 h-1.5 sm:w-2 sm:h-2 bg-red-400 rounded-full top-0.5" x-bind:class="myPageOpen ? 'ring-2 ring-slate-200' : 'ring-2 ring-white fine:group-hover:ring-slate-200'"></span>
           </span>
           <span class="mt-px sm:hidden">Min side</span>
           <span class="hidden mt-px sm:inline-block">Isac Norland</span>
-        </button>
+        </button> #}
 
         <button class="{{ menuButtonClasses }} ml-1 order-2" type="button" x-on:click="menuOpen = !menuOpen, myPageOpen = false, loginOpen = false" x-bind:class="menuOpen && 'bg-blue-50'" x-bind:aria-expanded="menuOpen">
           <template x-if="!menuOpen">
