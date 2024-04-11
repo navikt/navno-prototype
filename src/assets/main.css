@@ -38,10 +38,10 @@
     margin-block-start: 1.75em;
   }
   .prose > :where(h1, h2, h3, h4, h5) {
-    text-wrap: pretty;
-    font-weight: 600;
-    color: theme('colors.gray.900');
     margin-block: 1.5em 0.25em;
+    color: theme('colors.gray.900');
+    font-weight: 700;
+    text-wrap: pretty;
   }
   :is(.prose, .accordion, .expander) > :where(h2, h3) {
     font-size: var(--text-fluid-2);
@@ -54,6 +54,7 @@
       content: "– ⚒︎ –" / "";
       content: "– • –" / "";
       content: " ✽ " / "";
+      content: "・・・" / "";
       display: block;
       padding-inline-end: 0.5em;
       margin-inline: auto;
@@ -418,7 +419,7 @@
     --_prose: 20rem; 
     --_edge: theme('spacing.page');
     grid-template-columns: 
-      [full-start] var(--_edge) [wide-start] minmax(0, 1fr) [container-start] var(--_container) [main-start side-start] minmax(0, var(--_prose)) minmax(0, var(--_prose)) [main-end side-end] var(--_container) [container-end] minmax(0, 1fr) [wide-end] var(--_edge) [full-end];
+      [full-start] var(--_edge) [wide-start] minmax(0, 1fr) [container-start] var(--_container) [main-start] minmax(0, var(--_prose)) minmax(0, var(--_prose)) [main-end] var(--_container) [container-end] minmax(0, 1fr) [wide-end] var(--_edge) [full-end];
   }
 
   :where(.grid-cols-center > *) { grid-column: main }
@@ -427,7 +428,6 @@
   .col-wide { grid-column: wide }
   .col-container { grid-column: container }
   .col-main { grid-column: main }
-  .col-side { grid-column: side }
 
   .border-warning {
     border-image: repeating-linear-gradient(-64deg, #FFAC33, #FFAC33 10px, #00243a 0, #00243a 20px) 20;
