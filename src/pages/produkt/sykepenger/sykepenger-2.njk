@@ -9,7 +9,7 @@ variant: '2'
 {%- block content -%}
   {% set chapters = collections.all | onlyTags('sykepenger', 'innhold') | sort(false, false, 'data.order') %}
 
-  <main class="grid py-16 grid-cols-center" data-theme="sykepenger" x-data="{ showChapter1: false, showChapter2: false, showChapter3: false, showChapter4: false, showChapter5: false, showToc: false, expandToc: false }">
+  <main class="grid py-16 grid-cols-combi" data-theme="sykepenger" x-data="{ showChapter1: false, showChapter2: false, showChapter3: false, showChapter4: false, showChapter5: false, showToc: false, expandToc: false }">
     <div class="text-sm tracking-widest uppercase">{{ category | safe }}</div>
     <h1 class="mt-1 font-extrabold text-4xl/tight text-balance ">{{ title | safe }}</h1>
     <div class="mt-8 prose text-pretty max-w-prose">
@@ -51,7 +51,7 @@ variant: '2'
         {{ '/src/_includes/svg/icons/chevron-down.svg' | svgContents('w-5 h-5') | safe }}
       </button>
       <div 
-        class="absolute inset-x-0 z-10 px-5 pt-20 pb-8 text-white rounded-xl top-2 bg-slate-500 grid-cols-center" 
+        class="absolute inset-x-0 z-10 px-5 pt-20 pb-8 text-white rounded-xl top-2 bg-slate-500 grid-cols-combi" 
         x-bind:class="expandToc ? 'bg-slate-100 shadow-lg' : 'hidden'"
       >
         <ol class="grid gap-3 toc toc--multi toc--sticky">
@@ -90,7 +90,7 @@ variant: '2'
     {% for chapter in chapters %}
       {% set chapterIndex = loop.index %}
       <section 
-        class="grid grid-flow-row-dense mt-24 col-full grid-cols-center" 
+        class="grid grid-flow-row-dense mt-24 col-full grid-cols-combi" 
         id="{{ chapter.data.title | slugify }}" 
         x-data="{ tocOpen: false }"
         x-intersect:enter.margin.-20%.0px.-60%.0px="showChapter{{ chapterIndex }} = true"

@@ -9,7 +9,7 @@ variant: '1'
 {%- block content -%}
   {% set chapters = collections.all | onlyTags('sykepenger', 'innhold') | sort(false, false, 'data.order') %}
 
-  <main class="grid py-16 grid-cols-center" data-theme="sykepenger">
+  <main class="grid py-16 grid-cols-combi" data-theme="sykepenger">
     <div class="col-main">
       <div class="text-sm tracking-widest uppercase">{{ category | safe }}</div>
       <h1 class="mt-1 font-extrabold text-4xl/tight text-balance ">{{ title | safe }}</h1>
@@ -44,7 +44,7 @@ variant: '1'
     {# Innhold #}
     {% for chapter in chapters %}
       {% set chapterIndex = loop.index %}
-      <section class="grid grid-flow-row-dense mt-24 col-full grid-cols-center " id="{{ chapter.data.title | slugify }}" x-data="{ tocOpen: false }">
+      <section class="grid grid-flow-row-dense mt-24 col-full grid-cols-combi " id="{{ chapter.data.title | slugify }}" x-data="{ tocOpen: false }">
         {# <div class="col-wide">
           {{ '/src/_includes/svg/placeholder.svg' | svgContents('w-full h-auto max-w-screen-md mx-auto') | safe }}
         </div> #}

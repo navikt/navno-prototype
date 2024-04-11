@@ -16,7 +16,7 @@ permalink: 'produkt/alderspensjon/index.html'
 {%- block content -%}
   {% set chapters = collections.all | onlyTags('alderspensjon', 'innhold') | sort(false, false, 'data.order') %}
 
-  <main class="grid py-16 grid-cols-center" data-theme="alderspensjon">
+  <main class="grid py-16 grid-cols-combi" data-theme="alderspensjon">
     <div class="col-main">
       <div class="text-sm tracking-widest uppercase">{{ type | safe }}</div>
       <h1 class="mt-1 font-bold text-4xl/tight text-balance ">{{ title | safe }}</h1>
@@ -54,7 +54,7 @@ permalink: 'produkt/alderspensjon/index.html'
     {# Innhold #}
     {% for chapter in chapters %}
       {% set chapterIndex = loop.index %}
-      <section class="grid grid-flow-row-dense col-full grid-cols-center " id="{{ chapter.data.title | slugify }}" x-data="{ tocOpen: false }">
+      <section class="grid grid-flow-row-dense col-full grid-cols-combi " id="{{ chapter.data.title | slugify }}" x-data="{ tocOpen: false }">
         <div class="col-wide">
           {{ '/src/_includes/svg/placeholder.svg' | svgContents('w-full h-auto max-w-screen-md mx-auto') | safe }}
         </div>

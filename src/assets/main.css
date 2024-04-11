@@ -414,7 +414,7 @@
 
 
 @layer utilities {
-  .grid-cols-center {
+  .grid-cols-combi {
     --_container: clamp(0rem, -14rem + 35vi, 17.5rem);
     --_prose: 20rem; 
     --_edge: theme('spacing.page');
@@ -422,7 +422,7 @@
       [full-start] var(--_edge) [wide-start] minmax(0, 1fr) [container-start] var(--_container) [main-start] minmax(0, var(--_prose)) minmax(0, var(--_prose)) [main-end] var(--_container) [container-end] minmax(0, 1fr) [wide-end] var(--_edge) [full-end];
   }
 
-  :where(.grid-cols-center > *) { grid-column: main }
+  :where(.grid-cols-combi > *) { grid-column: main }
 
   .col-full { grid-column: full }
   .col-wide { grid-column: wide }
