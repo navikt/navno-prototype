@@ -15,8 +15,8 @@
 
       {# Områder #}
       <div class="flex-1 row-start-1 lg:grid-flow-col-dense lg:pr-4 lg:col-span-2 lg:col-start-1 lg:row-span-2">
-        <h3 class="text-sm tracking-widest uppercase opacity-80">{{ menu.areas.title | safe }}</h3>
-        <ul class="grid gap-3 mt-2 sm:grid-cols-2 lg:grid-cols-1">
+        <h3 class="text-xs font-bold tracking-widest uppercase opacity-80">{{ menu.areas.title | safe }}</h3>
+        <ul class="grid gap-3 mt-3 sm:grid-cols-2 lg:grid-cols-1">
           {%- for link in menu.areas.linkList -%}
             <li class="">
               <a class="inline-flex items-center gap-2 pr-4 leading-normal text-blue-500 rounded group fine:hover:text-blue-700 fine:hover:underline" href="#">
@@ -35,7 +35,7 @@
 
       {# Søk #}
       <form class="w-full gap-2 lg:col-start-3 lg:max-w-2xl lg:col-span-4 lg:row-start-1 lg:pr-20">
-        <label class="block text-sm tracking-widest uppercase opacity-80" for="search">Søk</label>
+        <label class="block text-xs font-bold tracking-widest uppercase opacity-80" for="search">Søk</label>
         <div class="flex mt-2">
           <input class="flex-1 p-2 border border-gray-300 rounded-l focus:outline-none focus:rounded focus:z-10 focus:ring focus:ring-blue-800" id="search" type="text">
           <button class="flex items-center col-start-2 row-start-1 gap-2 px-6 py-2 text-xl text-white bg-blue-500 rounded-r fine:hover:bg-blue-600 focus:outline-none focus:rounded focus:z-10 focus:ring focus:ring-blue-800 focus:ring-offset-1 focus:ring-offset-white focus:bg-blue-600" type="submit">
@@ -48,7 +48,7 @@
 
       {# Snarveier #}
       <div class="flex flex-col lg:row-start-2 lg:col-start-3 lg:col-span-3">
-        <h3 class="text-sm tracking-widest uppercase opacity-80">{{ menu.shortcuts.title | safe }}</h3>
+        <h3 class="text-xs font-bold tracking-widest uppercase opacity-80">{{ menu.shortcuts.title | safe }}</h3>
         <ul class="mt-1 sm:columns-2">
           {%- for link in menu.shortcuts.linkList -%}
             <li class="py-0.5">

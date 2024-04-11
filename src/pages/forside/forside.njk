@@ -13,13 +13,13 @@ alpine: true
     <div class="grid py-12 grid-cols-center">
       <div class="col-container">
         <h2 class="text-xl font-semibold">Hva kan vi hjelpe deg med?</h2>
-        <ul class="grid gap-1 mt-4 text-lg sm:gap-4 sm:grid-cols-2">
+        <ul class="grid gap-1.5 mt-4 xs:text-lg sm:gap-4 sm:grid-cols-2 xl:grid-cols-3">
           {%- for area in areaList -%}
-            <li class="relative grid items-center break-inside-avoid pl-5 sm:pl-8 pr-32 py-3 rounded-xl min-h-16 sm:min-h-24 text-blue-600 bg-slate-100 has-[a:hover]:bg-blue-50 has-[a:hover]:text-blue-700">
-              <a class="leading-tight after:absolute after:inset-0 text-balance" href="#">
+            <li class="relative grid items-center break-inside-avoid pl-5 sm:pl-8 pr-28 sm:pr-36 py-3 rounded-xl min-h-16 sm:min-h-24 xl:min-h-32 text-blue-600 bg-slate-100 has-[a:hover]:bg-white has-[a:hover]:ring-1 has-[a:hover]:ring-slate-300/25 has-[a:hover]:shadow-lg">
+              <a class="leading-tight after:absolute after:inset-0 text-balance hover:underline hover:decoration-2" href="#">
                 <span>{{ area.title | safe }}</span>
               </a>
-              {{ area.icon | svgContents("z-10 right-0 h-full w-auto rounded-r-lg self-stretch absolute inset-y-0 pointer-events-none pr-5 sm:pr-0") | safe if area.icon }}
+              {{ area.icon | svgContents("z-10 right-4 pt-4 sm:pt-8 max-h-full h-auto w-auto self-stretch absolute bottom-0 pointer-events-none") | safe if area.icon }}
             </li>
           {%- endfor -%}
         </ul>
@@ -60,12 +60,12 @@ alpine: true
       </div>
     </div> #}
 
-    <div class="grid pt-10 pb-8 grid-cols-center bg-slate-50">
+    <div class="grid pt-10 pb-8 grid-cols-center">
       <div class="col-container">
         <h2 class="text-xl font-semibold">Aktuelt</h2>
-        <div class="-mx-5 sm:gap-8 sm:columns-2">
+        <div class="grid gap-2 sm:block sm:gap-8 sm:columns-2">
           {%- for news in newsList -%}
-          <article class="relative px-5 py-3 rounded-lg has-[a:hover]:bg-white">
+          <article class="relative px-5 py-3 rounded-xl has-[a:hover]:shadow-lg bg-orange-100 has-[a:hover]:ring-1] has-[a:hover]:ring-slate-300/25 has-[a:hover]:bg-orange-200/75">
             <h3 class="text-lg">
               <a class="text-blue-600 underline hover:decoration-2 after:absolute after:inset-0" href="#">{{ news.title | safe }}</a>
             </h3>
@@ -76,11 +76,11 @@ alpine: true
       </div>
     </div>
 
-    <div class="grid pt-8 pb-16 grid-cols-center">
+    <div class="grid pt-8 pb-24 grid-cols-center">
       <div class="col-container">
         <h2 class="text-xl font-semibold">Kontakt oss</h2>
         <div class="grid gap-8 mt-4 sm:grid-cols-2">
-          <div class="relative px-8 py-6 rounded-bl-none rounded-xl bg-blue-50">
+          <div class="relative px-5 py-3.5 rounded-bl-none rounded-xl bg-blue-50">
             <h3 class="text-lg ">
               <a class="text-blue-500 underline hover:decoration-2" href="#">Du kan chatte med oss</a>
             </h3>
@@ -89,7 +89,7 @@ alpine: true
               <polygon fill="rgb(230 240 255)" points="0 0, 24 0, 0 24" />
             </svg>
           </div>
-          <div class="px-8 py-6">
+          <div class="px-5 py-4 bg-slate-100 rounded-xl">
             <h3 class="text-lg">
               <a class="text-blue-500 underline hover:decoration-2" href="#">Du kan også ringe eller skrive til oss</a>
             </h3>

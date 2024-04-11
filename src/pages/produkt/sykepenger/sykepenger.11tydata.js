@@ -1,6 +1,6 @@
 module.exports = {
   tags: ["sykepenger"],
-  kategori: "Pengestøtte",
+  category: "Pengestøtte",
   type: "Produktside",
   title: "Sykepenger",
   ingress:
