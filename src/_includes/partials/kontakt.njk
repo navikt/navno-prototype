@@ -15,9 +15,9 @@
       {% if item.options %}
       <div class="grid gap-4 mt-6 leading-tight">
         {% for option in item.options %}         
-          <p class="grid gap-1">
+          <p class="grid gap-1 {{ 'mt-2' if loop.last }}">
             {% if option.name %}
-            <strong class="font-semibold">{{ option.name | safe }}:</strong>
+            <strong class="text-xs font-bold tracking-wider uppercase">{{ option.name | safe }}:</strong>
             {% endif %}
             <span class="flex items-baseline gap-x-1">
               <svg class="inline-block translate-y-1 -ml-0.5 {{ 'text-green-400' if (option.isOpen === true) else 'text-slate-500' }}" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
