@@ -1,27 +1,28 @@
 ---
-tags: ['produkt']
-description: 'Med sticky innholdsmeny og enkel kapittelmeny.'
-permalink: 'produkt/sykepenger/2/index.html'
-variant: '2'
+tags: ['produkt', 'proto']
+description: 'Med «bytteknapp» i bunnen av hver kapittelmeny.'
+permalink: 'produkt/sykepenger/index.html'
+variant: '1'
 ---
 {%- extends 'base.njk' -%}
 
 {%- block content -%}
   {% set chapters = collections.all | onlyTags('sykepenger', 'innhold') | sort(false, false, 'data.order') %}
 
-  <main class="grid py-16 grid-cols-combi" data-theme="sykepenger" x-data="{ showChapter1: false, showChapter2: false, showChapter3: false, showChapter4: false, showChapter5: false, showToc: false, expandToc: false }">
-    <div class="text-sm tracking-widest uppercase">{{ category | safe }}</div>
-    <h1 class="mt-1 font-extrabold text-4xl/tight text-balance ">{{ title | safe }}</h1>
-    <div class="mt-8 prose text-pretty max-w-prose">
-      <p class="text-lg">{{ ingress | safe }}</p>
-
-      <div class="px-5 py-3 border rounded-lg border-slate-300 text-balance">
-        {{ audience | markdown | safe if audience }}
+  <main class="grid py-16 grid-cols-combi" data-theme="sykepenger">
+    <div class="col-main">
+      <div class="tracking-widest small-caps">{{ category | safe }}</div>
+      <h1 class="mt-1 font-extrabold text-2xl/tight text-balance ">{{ title | safe }}</h1>
+      <div class="mt-6 prose text-pretty max-w-prose">
+        <p class="text-lg">{{ ingress | safe }}</p>
+        <div class="px-5 py-4 border rounded-lg border-slate-300 text-balance">
+          {{ audience | markdown | safe if audience }}
+        </div>
       </div>
     </div>
 
     {# Innholdsfortegnelse #}
-    <nav class="px-5 pt-4 pb-5 mt-8 rounded-lg bg-slate-100" x-intersect:enter.margin.-5px.0%.0%.0%="showToc = false" x-intersect:leave.margin.-5px.0%.0%.0%="showToc = true">
+    <div class="px-5 py-4 mt-8 rounded-lg bg-slate-100">
       <h2 class="pb-2 text-base font-semibold">Innhold på siden</h2>
       <ul class="grid gap-4 py-1">
         {% for chapter in chapters %}
@@ -34,10 +35,11 @@ variant: '2'
         </li>
         {% endfor %}
       </ul>
-    </nav>
+    </div>
+
 
     {# Sticky Chapter TOC #}
-    <div 
+    {# <div 
       class="sticky top-0 z-10 isolate col-main" 
       aria-hidden="true"
       x-show="showToc"
@@ -80,42 +82,44 @@ variant: '2'
           </li>
         </ol>
       </div>
-    </div>
-
-    {# <div class="pt-6 mt-6 prose border-t col-main border-slate-200">
-      {{ audience | markdown | safe if audience }}
     </div> #}
-
     {# Innhold #}
     {% for chapter in chapters %}
       {% set chapterIndex = loop.index %}
-      <section 
-        class="grid grid-flow-row-dense mt-24 col-full grid-cols-combi" 
-        id="{{ chapter.data.title | slugify }}" 
-        x-data="{ tocOpen: false }"
-        x-intersect:enter.margin.-20%.0px.-60%.0px="showChapter{{ chapterIndex }} = true"
-        x-intersect:leave.margin.-20%.0px.-60%.0px="showChapter{{ chapterIndex }} = false"
-      >
-        <div class="col-main">
-          <h2 class="mt-8 mb-6 font-bold text-3xl/tight text-balance ">{{ chapter.data.title }}</h2>
+      <section class="grid grid-flow-row-dense mt-24 col-full grid-cols-combi " id="{{ chapter.data.title | slugify }}" x-data="{ tocOpen: false }">
+        <div class="mb-8 col-main">
+          <h2 class="mt-8 mb-6 font-bold text-xl/tight text-balance ">
+            {{ chapter.data.title }}
+          </h2>
 
-          {% if chapter.templateContent and chapter.templateContent | tocData | length > 0 %}
-            <nav class="px-5 pt-4 pb-4 rounded-lg bg-slate-100">
-              <h3 class="font-semibold">I dette kapittelet</h3>
-              <ul class="grid gap-1 py-1">
-                {% for item in chapter.templateContent | tocData %}
-                <li>
-                  <a class="flex gap-1 py-1 -mx-1 text-blue-500 underline group hover:text-blue-700 text-base/snug hover:decoration-2" href="#{{ item.id }}">
-                    {{ '/src/_includes/svg/icons/arrow-right-angle-aksel.svg' | svgContents('translate-y-1 w-5 h-5') | safe }}
-                    {{ item.text }}
-                  </a>
-                </li>
-                {% endfor %}
-              </ul>
-            </nav>
+          {# Chapter TOC #}
+          {% if chapter.templateContent and chapter.templateContent | tocData | length > 0 and not chapter.data.hideToc %}
+          <nav class="relative px-5 py-3 rounded-lg bg-slate-100">
+            <h3 class="pb-2 font-semibold">I dette kapittelet</h3>
+            <ul class="grid gap-4 mt-1 justify-items-start">
+              {% for item in chapter.templateContent | tocData %}
+              <li>
+                <a class="flex items-start gap-1 p-1 -m-1 text-blue-500 group hover:text-blue-700 text-base/snug hover:underline" href="#{{ item.id }}">
+                  {{ '/src/_includes/svg/icons/arrow-right-angle-aksel.svg' | svgContents('translate-y-0.5 w-5 h-5') | safe }}
+                  <span>{{ item.text }}</span>
+                </a>
+              </li>
+              {% endfor %}
+              {# <li class="pt-5 border-t justify-self-stretch border-slate-400/25">
+                <a 
+                  class="inline-flex items-center gap-0.5 -m-1 text-blue-500 group hover:text-blue-700 text-base/snug hover:underline" 
+                  href="{{ page.url }}" 
+                >
+                  {{ '/src/_includes/svg/icons/arrow-up.svg' | svgContents('-translate-y-0.5 opacity-85') | safe }}
+                  <span>Til toppen av siden</span>
+                </a>
+              </li> #}
+            </ul>
+          </nav>
           {% endif %}
 
-          <div class="prose">
+          {# Main Content #}
+          <div class="prose prose--separator col-main">
             {{ chapter.templateContent | markdown | safe }}
           </div>
         </div>

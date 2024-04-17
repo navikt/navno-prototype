@@ -165,8 +165,6 @@ module.exports = {
       lg: "var(--text-fluid-1)",
       xl: "var(--text-fluid-2)",
       "2xl": "var(--text-fluid-3)",
-      "3xl": "var(--text-fluid-4)",
-      "4xl": "var(--text-fluid-5)",
     },
     extend: {
       animation: {

@@ -4,17 +4,27 @@
 
 @layer base {
 
-/* @link https://utopia.fyi/type/calculator?c=320,18,1.125,1280,20,1.2,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
 :root {
-    --text-fluid--2: clamp(0.8681rem, 0.8958rem + -0.0347vi, 0.8889rem);
-    --text-fluid--1: clamp(1rem, 0.9861rem + 0.0694vi, 1.0417rem);
+    --text-fluid--2: clamp(0.75rem, 0.7083rem + 0.2083vi, 0.875rem);
+    --text-fluid--1: clamp(0.875rem, 0.8333rem + 0.2083vi, 1rem);
     --text-fluid-0: clamp(1.125rem, 1.0833rem + 0.2083vi, 1.25rem);
-    --text-fluid-1: clamp(1.2656rem, 1.1875rem + 0.3906vi, 1.5rem);
-    --text-fluid-2: clamp(1.4238rem, 1.2984rem + 0.627vi, 1.8rem);
-    --text-fluid-3: clamp(1.6018rem, 1.4157rem + 0.9303vi, 2.16rem);
-    --text-fluid-4: clamp(1.802rem, 1.5387rem + 1.3166vi, 2.592rem);
-    --text-fluid-5: clamp(2.0273rem, 1.6662rem + 1.8052vi, 3.1104rem);
+    --text-fluid-1: clamp(1.25rem, 1.1667rem + 0.4167vi, 1.5rem);
+    --text-fluid-2: clamp(1.75rem, 1.5833rem + 0.8333vi, 2.25rem);
+    --text-fluid-3: clamp(2rem, 1.625rem + 1.875vi, 3.125rem);
   }
+
+
+
+  /*
+  https://utopia.fyi/clamp/calculator?a=320,1280
+
+  12-14: clamp(0.75rem, 0.7083rem + 0.2083vi, 0.875rem)
+  14-16: clamp(0.875rem, 0.8333rem + 0.2083vi, 1rem)
+  18-20: clamp(1.125rem, 1.0833rem + 0.2083vi, 1.25rem)
+  20-24: clamp(1.25rem, 1.1667rem + 0.4167vi, 1.5rem)
+  28-36: clamp(1.75rem, 1.5833rem + 0.8333vi, 2.25rem)
+  32-50: clamp(2rem, 1.625rem + 1.875vi, 3.125rem)
+  */
 
 
 
@@ -44,7 +54,7 @@
     text-wrap: pretty;
   }
   :is(.prose, .accordion, .expander) > :where(h2, h3) {
-    font-size: var(--text-fluid-2);
+    font-size: var(--text-fluid-1);
     line-height: 1.33;
     letter-spacing: -0.0125em;
     display: grid;
@@ -65,7 +75,7 @@
   }
 
   :is(.prose, .accordion, .expander) > h4 {
-    font-size: var(--text-fluid-1);
+    font-size: var(--text-fluid-0);
     line-height: 1.33;
     letter-spacing: -0.0125em;
   }
@@ -445,5 +455,8 @@
   }
   .flip-x {
     transform: rotateY(-180deg);
+  }
+  .small-caps {
+    font-variant-caps: all-small-caps;
   }
 }

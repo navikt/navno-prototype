@@ -26,7 +26,25 @@ Se hva som gjelder for deg:
 <div class="accordion">
   <details>
     <summary>Arbeidstaker</summary>
-      <p>Innhold mangler</p>
+      {% prose %}
+Arbeidsgiveren din utbetaler sykepengene for de første 16 dagene du er syk. Dette kalles arbeidsgiverperioden. Hvis du er sykmeldt lenger enn dette, er det NAV som utbetaler sykepengene. NAV utbetaler opp til 711 720 (6G) i sykepenger. Hvis du tjener mer enn 6G, får du mindre utbetalt i sykepenger enn det du normalt har i lønn.
+
+Noen arbeidsgivere gir imidlertid sykepenger etter et sykepengegrunnlag som overstiger 6G. Kontakt arbeidsgiveren din for å undersøke hva som gjelder på din arbeidsplass.
+
+Hvis sykmeldingen din skyldes yrkesskade, kan du ha andre rettigheter i tillegg. Sykmeldingen din må i tilfelle helt og fullt skyldes yrkesskaden, og NAV må ha godkjent yrkesskaden.
+
+#### Hvis du har et tidsbegrenset arbeidsforhold
+
+Du får sykepenger som arbeidstaker i den perioden arbeidsforholdet er avtalt å vare. Hvis du er sykmeldt lenger enn dette, kan sykepengene dine bli vurdert på nytt.
+
+Du får utbetalt feriepenger fra NAV. Feriepengene beregnes på grunnlag av de første 48 dagene med sykepenger per kalenderår.
+
+#### Hvis du er arbeidstaker på skip
+
+Hvis du jobber på et norskregistrert skip (NOR), har du rett til sykepenger etter de samme reglene som gjelder for andre arbeidstakere. Dette gjelder også om du jobber på et norsk skip i utenriksfart.
+
+Hvis du jobber på et skip som registrert i Norsk internasjonalt skipsregister (NIS), kan du ha rett til sykepenger hvis skipet seiler under norsk flagg på det tidspunktet du ble arbeidsufør.
+      {% endprose %}
   </details>
   <details>
     <summary>Selvstendig næringsdrivende</summary>
