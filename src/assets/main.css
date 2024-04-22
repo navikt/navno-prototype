@@ -29,7 +29,7 @@
 
 
   body {
-    color: theme('colors.slate.700');
+    color: theme('colors.slate.900');
   }
   * {
     text-decoration-thickness: 0.0625rem;
@@ -48,8 +48,8 @@
     margin-block-start: 1.75em;
   }
   .prose > :where(h1, h2, h3, h4, h5) {
-    margin-block: 1.5em 0.25em;
-    color: theme('colors.gray.900');
+    margin-block: 1.5em 0.3em;
+    color: theme('colors.gray.800');
     font-weight: 700;
     text-wrap: pretty;
   }
@@ -61,14 +61,11 @@
   }
 
   :where(.prose--separator) > h3:not(:first-of-type):before {
-      content: "– ⚒︎ –" / "";
-      content: "– • –" / "";
-      content: " ✽ " / "";
       content: "・・・" / "";
       display: block;
       padding-inline-end: 0.5em;
       margin-inline: auto;
-      margin-block: -0.25em 0.75em;
+      margin-block: 0 1.125em;
       opacity: 0.625;
       font-weight: 100;
       font-size: 100%;
@@ -78,6 +75,7 @@
     font-size: var(--text-fluid-0);
     line-height: 1.33;
     letter-spacing: -0.0125em;
+    margin-block-start: 1.6em;
   }
   :is(.prose, .accordion, .expander) > h5 {
       font-size: var(--text-fluid--1);
@@ -177,7 +175,7 @@
     appearance: none;
     display: block;
     list-style: none;
-    padding: 0.625em 44px;
+    padding: 0.5em 44px;
     margin-inline: -44px -10px;
     border-radius: 4px;
     cursor: pointer;
@@ -185,20 +183,20 @@
     text-indent: -31px;
     text-wrap: pretty;
     font-size: theme('fontSize.base');
-    font-weight: 500;
+    font-weight: 400;
     line-height: 1.375;
     background-color: theme('colors.transparent');
-    color: theme('colors.blue.700');
+    color: theme('colors.blue.500');
   }
   .accordion summary::-webkit-details-marker {
     display: none;
   }
-  .accordion details:first-child summary {
+  /* .accordion details:first-child summary {
     border-radius: 8px 8px 4px 4px;
   }
   .accordion details:last-child summary {
     border-radius: 4px 4px 8px 8px;
-  }
+  } */
   .accordion details[open] summary {
     background-color: theme('colors.slate.100');
     color: theme('colors.blue.700');
@@ -206,7 +204,7 @@
   }
   .accordion summary:hover {
     background-color: theme('colors.blue.50');
-    color: theme('colors.blue.700');
+    color: theme('colors.blue.600');
   }
   .accordion summary:before {
     background-color: theme('colors.blue.50');
@@ -254,9 +252,6 @@
   .expander {
     display: grid;
     padding-inline: 44px;
-    background-color: theme('colors.white');
-    border-radius: theme('borderRadius.lg');
-    border: 1px solid theme('colors.slate.300');
   }
   .expander[open] {
     padding-block-end: 32px;
@@ -265,7 +260,7 @@
     appearance: none;
     display: flex;
     list-style: none;
-    padding: 0.75em 12px 0.625em 44px;
+    padding: 0.75em 4px 0.625em 8px;
     margin-inline: -44px;
     border-radius: theme('borderRadius.lg');
     cursor: pointer;
@@ -274,19 +269,19 @@
     line-height: 1.375;
     color: theme('colors.blue.700');
     font-weight: 500;
+    gap: theme(spacing.[0.5]);
+    background-color: theme('colors.slate.100');
   }
   :where(.expander) summary::-webkit-details-marker {
     display: none;
   }
   :where(.expander[open]) summary {
-    border-radius: theme('borderRadius.lg') theme('borderRadius.lg') 0 0;
-    border-bottom: 1px solid theme('colors.slate.300');
-    margin-block-end: 20px;
+    margin-block-end: theme('spacing.2');
   }
   :where(.expander) summary:hover {
     background-color: theme('colors.slate.100');
   }
-  :where(.expander) summary:before {
+  :where(.expander) summary:after {
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath stroke='rgba(0, 69, 156, 1)' stroke-linecap='round' stroke-width='1.875' d='m6.5 10 5.493 5.493a.01.01 0 0 0 .014 0L17.5 10'/%3E%3C/svg%3E");
     background-position: center;
     background-repeat: no-repeat;
@@ -295,13 +290,13 @@
     flex-shrink: 0;
     place-items: center;
     align-self: baseline;
-    margin-inline: -30px 10px;
+    margin-inline: auto 10px;
     transition: rotate 150ms;
     transform: translateY(0);
     width: 22px;
     height: 22px;
   }
-  :where(.expander[open]) summary:before {
+  :where(.expander[open]) summary:after {
     transform: rotate(-180deg);
   }
   :where(.expander) summary > * {

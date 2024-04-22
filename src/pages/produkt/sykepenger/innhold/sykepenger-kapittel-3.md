@@ -47,49 +47,49 @@ Se hva du må vite i ulike situasjoner:
 
 Du søker du om sykepenger når perioden for sykmeldingen er over.
 
-<div class="grid gap-2">
+<div class="grid gap-2 mt-3">
   {{ button({ text: 'Søk om sykepenger', variant: 'primary' }) }}
-  {{ button({ text: 'Ettersend dokumentasjon' }) }}
+  {{ button({ text: 'Ettersend dokumentasjon', variant: 'secondary' }) }}
 </div>
 
 #### Trekkopplysninger for arbeidstakere
 
 Arbeidsgiver bruker dette skjemaet for å opplyse NAV om trekk hos arbeidstaker i forbindelse med utbetaling av sykepenger, foreldrepenger, svangerskapspenger eller pleie-/ opplærings- og omsorgspenger.
 
-<div class="grid gap-1">
+<div class="grid gap-2 mt-3">
   {{ button({ text: 'Send inn', variant: 'primary' }) }}
-  {{ button({ text: 'Ettersend dokumentasjon' }) }}
+  {{ button({ text: 'Ettersend dokumentasjon', variant: 'secondary' }) }}
 </div>
 
 #### Inntektsopplysninger for selvstendig næringsdrivende eller frilansere som skal ha sykepenger
 
-<div class="grid gap-2">
+<div class="grid gap-2 mt-3">
   {{ button({ text: 'Send inn', variant: 'primary' }) }}
-  {{ button({ text: 'Ettersend dokumentasjon' }) }}
+  {{ button({ text: 'Ettersend dokumentasjon', variant: 'secondary' }) }}
 </div>
 
 #### Søknad om sykepenger når du midlertidig er ute av arbeid
 
 Dette skjemaet bruker du hvis det er under en måned siden forrige arbeidsforhold opphørte, du mottar etterlønn/sluttvederlag, er i utdanningspermisjon, eller du har startet i nytt arbeidsforhold uten å ha ny opptjening til sykepenger.
 
-<div class="grid gap-2">
+<div class="grid gap-2 mt-3">
   {{ button({ text: 'Søk om sykepenger', variant: 'primary' }) }}
-  {{ button({ text: 'Ettersend dokumentasjon' }) }}
+  {{ button({ text: 'Ettersend dokumentasjon', variant: 'secondary' }) }}
 </div>
 
 #### Søknad om å beholde sykepenger under opphold i utlandet
 
-<div class="grid gap-2">
+<div class="grid gap-2 mt-3">
   {{ button({ text: 'Send søknad', variant: 'primary' }) }}
-  {{ button({ text: 'Ettersend dokumentasjon' }) }}
+  {{ button({ text: 'Ettersend dokumentasjon', variant: 'secondary' }) }}
  </div>
 
 #### Dokumentasjon for sykepenger når du bor i utlandet
 
 Hvis du er fast bosatt i utlandet og skal sende inn dokumentasjon som gjelder sykepenger, sender du dette sammen med en førsteside.
 
-<div class="grid gap-2">
-  {{ button({ text: 'Hent førsteside' }) }}
+<div class="grid gap-2 mt-3">
+  {{ button({ text: 'Hent førsteside', variant: 'secondary' }) }}
 </div>
 
 #### Egenerklæring for utenlandske sykmeldinger
@@ -104,10 +104,10 @@ Du får skriftlig vedtak når søknaden er behandlet.
 
 <details class="expander">
   <summary>
+    {{ '/src/_includes/svg/icons/briefcase-clock.svg' | svgContents('mr-1 -my-1 w-8 h-8') | safe }}
     <span>Saksbehandlingstider</span>
-    {{ '/src/_includes/svg/icons/briefcase-clock.svg' | svgContents('ml-auto mr-1 -my-1 opacity-80 w-8 h-8') | safe }}
   </summary>
-  <div class="prose">
+  <div class="py-2 pl-5 -ml-5 prose -translate-x-px border-l-2 border-blue-500">
     <p>Innhold mangler</p>
   </div>
 </details>
@@ -120,26 +120,23 @@ Har du fått et vedtak fra oss som du mener er feil? Da kan du klage til NAV-enh
 
 I vedtaket står det hvordan du går fram hvis du skal klage, hvem du skal klage til og klagefrist. Hvis du har spørsmål om vedtaket, kan du kontakte oss.
 
-<div class="grid gap-2">
+<div class="grid gap-2 mt-3">
   {{ button({ text: 'Send klage', variant: 'primary' }) }}
-  {{ button({ text: 'Ettersend dokumentasjon' }) }}
+  {{ button({ text: 'Ettersend dokumentasjon', variant: 'secondary' }) }}
 </div>
 
 #### Anke vedtak
 
 Hvis du er uenig i svaret på klagen din fra NAV klageinstans, kan du med noen unntak anke vedtaket. Fristen for å anke står i vedtaket.
 
-<div class="grid gap-2">
+<div class="grid gap-2 mt-3">
   {{ button({ text: 'Send anke', variant: 'primary' }) }}
-  {{ button({ text: 'Ettersend dokumentasjon' }) }}
+  {{ button({ text: 'Ettersend dokumentasjon', variant: 'secondary' }) }}
 </div>
 
 Du kan også bruke advokat eller gi fullmakt til en person som klager på dine vegne.
 
-[Klagerettigheter](#)
-
 {{ tile({
-  theme: 'bg-slate-50', 
   title: 'Klagerettigheter',
   content: '…',
   kicker: 'Slik gjør du det'
@@ -147,10 +144,10 @@ Du kan også bruke advokat eller gi fullmakt til en person som klager på dine v
 
 <details class="expander">
   <summary>
+    {{ '/src/_includes/svg/icons/briefcase-clock.svg' | svgContents('mr-1 -my-1 w-8 h-8') | safe }}
     <span>Saksbehandlingstider</span>
-    {{ '/src/_includes/svg/icons/briefcase-clock.svg' | svgContents('ml-auto mr-1 -my-1 opacity-80 w-8 h-8') | safe }}
   </summary>
-  <div class="prose">
+  <div class="py-2 pl-5 -ml-5 prose -translate-x-px border-l-2 border-blue-500">
     <p>Innhold mangler</p>
   </div>
 </details>
