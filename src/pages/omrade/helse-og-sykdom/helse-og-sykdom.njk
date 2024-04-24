@@ -24,12 +24,12 @@ permalink: '/omrade/helse-og-sykdom/index.html'
         <ul>
           {%- for item in situationList -%}
             <li class="border-t border-slate-300">
-              <div class="relative flex items-center justify-between flex-1 py-6 gap-x-20">
+              <div class="relative flex items-center justify-between flex-1 py-4 gap-x-20">
                 <div class="flex-col justify-start">
-                  <a class="text-lg font-semibold leading-tight text-blue-600 text-balance hover:text-blue-500 hover:underline after:absolute after:inset-0" href="#">{{ item.title | safe }}</a>
-                  <p>{{ item.ingress | safe }}</p>
+                  <a class="text-lg leading-snug text-blue-600 text-balance hover:text-blue-500 hover:underline after:absolute after:inset-0" href="#">{{ item.title | safe }}</a>
+                  {# <p>{{ item.ingress | safe }}</p> #}
                 </div>
-                {{ item.icon | svgContents('shrink-0 w-16 aspect-square h-auto') | safe if item.icon }}
+                {# {{ item.icon | svgContents('shrink-0 w-16 aspect-square h-auto') | safe if item.icon }} #}
               </div>
             </li>
           {%- endfor -%}
