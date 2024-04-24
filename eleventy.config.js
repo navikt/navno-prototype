@@ -24,6 +24,7 @@ const { minifyHtml, dummifyLinks } = require("./src/_11ty/transforms.js");
 // const {} = require("./src/_11ty/collections.js");
 const markdownIt = require("markdown-it");
 const markdownItAnchor = require("markdown-it-anchor");
+const markdownItMark = require("markdown-it-mark");
 const compression = require("compression");
 
 module.exports = function (eleventyConfig) {
@@ -38,10 +39,12 @@ module.exports = function (eleventyConfig) {
 
   // Markdown-it plugins
   eleventyConfig.amendLibrary("md", (mdLib) =>
-    mdLib.use(markdownItAnchor, {
-      level: [2, 3],
-      slugify: (s) => slugify(s.toLowerCase()),
-    }),
+    mdLib
+      .use(markdownItAnchor, {
+        level: [2, 3],
+        slugify: (s) => slugify(s.toLowerCase()),
+      })
+      .use(markdownItMark),
   );
 
   // Copy static assets to build folder
@@ -76,7 +79,7 @@ module.exports = function (eleventyConfig) {
 
   // Templating shortcodes
   eleventyConfig.addShortcode("now", timestampNow);
-  eleventyConfig.addPairedShortcode("prose", function (content) {
+  eleventyConfig.addPairedShortcode("prose", function (content, classes = "") {
     const markdown = new markdownIt({
       html: true,
       linkify: false,
@@ -87,14 +90,15 @@ module.exports = function (eleventyConfig) {
         level: 3,
         slugify: (s) => slugify(s.toLowerCase()),
       })
+      .use(markdownItMark)
       .disable("code")
       .render(content);
-    return `<div class="prose">${markdown}</div>`;
+    return `<div class="prose ${classes}">${markdown}</div>`;
   });
 
   // Transforms
   eleventyConfig.addTransform("dummifyLinks", dummifyLinks);
-  eleventyConfig.addTransform("minifyHtml", minifyHtml);
+  // eleventyConfig.addTransform("minifyHtml", minifyHtml);
 
   // Dev server options
   eleventyConfig.setServerOptions({
