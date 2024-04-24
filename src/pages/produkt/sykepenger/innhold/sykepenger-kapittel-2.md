@@ -26,7 +26,7 @@ Hvis du mottar sykepenger for en deltidsstilling på inntil 60 prosent, kan du h
 <div class="accordion">
   <details>
     <summary>Arbeidstaker</summary>
-      {% prose %}
+      {% prose "py-2 pl-5 -ml-5 -translate-x-px border-l-2 border-blue-500"  %}
 Arbeidsgiveren din utbetaler sykepengene for de første 16 dagene du er syk. Dette kalles arbeidsgiverperioden. Hvis du er sykmeldt lenger enn dette, er det NAV som utbetaler sykepengene. NAV utbetaler opp til 711 720 (6G) i sykepenger. 
 
 Sykepengene beregnes med utgangspunkt i lønnen din de siste tre månedene før du ble sykmeldt.
@@ -49,7 +49,7 @@ Hvis du jobber på et skip som registrert i Norsk internasjonalt skipsregister (
 
   <details>
     <summary>Selvstendig næringsdrivende</summary>
-    {% prose %}
+    {% prose "py-2 pl-5 -ml-5 -translate-x-px border-l-2 border-blue-500"  %}
 Som selvstendig næringsdrivende har du rett til sykepenger fra 17. fraværsdag. Sykepengene utgjør 80 prosent av sykepengegrunnlaget. Men du kan forsikre deg for å få dekket større deler av inntektstapet.
 
 Beregningen av sykepengegrunnlaget tar som regel utgangspunkt i gjennomsnittet av den pensjonsgivende årsinntekten for de siste 3 siste årene du har fått skatteoppgjør for. Dette gjelder hvis det ikke har skjedd en varig endring.
@@ -77,7 +77,7 @@ Hvis sykmeldingen din skyldes yrkesskade, og du har tegnet en egen yrkesskadefor
 
   <details>
     <summary>Frilanser</summary>
-    {% prose %}
+    {% prose "py-2 pl-5 -ml-5 -translate-x-px border-l-2 border-blue-500"  %}
 Som frilanser har du rett til sykepenger fra 17. fraværsdag. Hvis du har tegnet [forsikring](#), kan du få sykepenger de første 16 kalenderdagene, men da må du levere sykmelding.
 
 Sykepengene utgjør 100 prosent av sykepengegrunnlaget. Beregningen tar utgangspunkt i gjennomsnittet av frilansinntekten som rapporteres til a-ordningen for de siste 3 kalendermånedene før du ble syk. Reglene for beregning av sykepenger er de samme som for arbeidstakere.
@@ -90,7 +90,7 @@ Hvis sykmeldingen din skyldes yrkesskade, og du har tegnet en egen yrkesskadefor
 
   <details>
     <summary>Jordbruker eller reindriftsutøver - <mark>skal ikke dette være med?</mark></summary>
-    {% prose %}
+    {% prose "py-2 pl-5 -ml-5 -translate-x-px border-l-2 border-blue-500"  %}
 Du har rett til sykepenger fra dag 17 av sykefraværet ditt, og du kan få sykepenger som tilsvarer 80 prosent av lønnen din.
 
 * Du kan ha en kollektiv forsikring som gir deg rett til syke­penger med full lønn opp til 711 720 (6G). Sjekk med Skatteetaten om du er omfattet av denne forsikringen.
@@ -101,7 +101,7 @@ Du har rett til sykepenger fra dag 17 av sykefraværet ditt, og du kan få sykep
 
   <details>
     <summary>Fisker</summary>
-    {% prose %}
+    {% prose "py-2 pl-5 -ml-5 -translate-x-px border-l-2 border-blue-500"  %}
 Hvis du mottar lott, får du beregnet sykepenger etter reglene for selvstendig næringsdrivende. Hvis du har hyre, beregnes sykepengene etter de samme reglene som for arbeidstakere. Hvis du både mottar lott og er på hyre, beregnes sykepengene på grunnlag av begge disse, les mer under avsnittet hvis du har flere jobber.
 
 Hvis du er registrert i fiskermanntallet på blad B, er du omfattet av en kollektiv forsikring som gir rett til sykepenger med 100 prosent dekning fra første sykefraværsdag. Du har rett til sykepenger selv om du har vært i arbeid i mindre enn fire uker.
@@ -110,7 +110,7 @@ Hvis du er registrert i fiskermanntallet på blad B, er du omfattet av en kollek
 
   <details>
     <summary>Tilkallingsvikar</summary>
-    {% prose %}
+    {% prose "py-2 pl-5 -ml-5 -translate-x-px border-l-2 border-blue-500"  %}
 Hvis du er tilkallingsvikar er du normalt arbeidstaker, og det er disse reglene som gjelder for deg.
 
 Hvis du jobber som tilkallingsvikar i egen næringsvirksomhet eller som frilanser, beregnes sykepengene på samme måte som for øvrige næringsdrivende eller frilansere.
@@ -119,7 +119,7 @@ Hvis du jobber som tilkallingsvikar i egen næringsvirksomhet eller som frilanse
 
   <details>
     <summary>Har flere arbeidsforhold</summary>
-    {% prose %}
+    {% prose "py-2 pl-5 -ml-5 -translate-x-px border-l-2 border-blue-500"  %}
 Hvis du har flere arbeidsforhold, blir sykepengene beregnet ut fra den samlede inntekten din, begrenset til 711 720 (6G). Dette gjelder selv om du ikke er sykmeldt fra alle arbeidsforholdene.
 
 Hvis den samlede inntekten din er mindre enn 6G vil utbetaling av sykepenger være lik inntektstapet ditt.
@@ -135,14 +135,14 @@ Hvis den samlede inntekten din er mer enn 6G og
 
   <details>
     <summary>Jobber i flere land – <mark>Tekst mangler</mark></summary>
-    {% prose %}
+    {% prose "py-2 pl-5 -ml-5 -translate-x-px border-l-2 border-blue-500"  %}
 Tekst mangler
     {% endprose %}
   </details>
 
   <details>
     <summary>Midlertidig ute av arbeid</summary>
-    {% prose %}
+    {% prose "py-2 pl-5 -ml-5 -translate-x-px border-l-2 border-blue-500"  %}
 Du kan få sykepenger fra og med den 15. dagen etter at du ble sykmeldt. Sykepengene utgjør 65 prosent av sykepengegrunnlaget hvis du ikke jobber, og 100 prosent hvis du jobber når du blir sykmeldt.
 
 For å ha rett til sykepenger må du miste en årlig inntekt som minst tilsvarer 118 620 (1G). 
@@ -151,21 +151,21 @@ For å ha rett til sykepenger må du miste en årlig inntekt som minst tilsvarer
 
   <details>
     <summary>Arbeidsledig</summary>
-    {% prose %}
+    {% prose "py-2 pl-5 -ml-5 -translate-x-px border-l-2 border-blue-500"  %}
 Hvis du får dagpenger, vil du få sykepenger fra den første fraværsdagen hvis du har sykmelding for denne. Du får det samme utbetalt per dag i sykepenger som du får utbetalt i dagpenger.
     {% endprose %}
   </details>
 
   <details>
     <summary>Permittert – <mark>Tekst mangler</mark></summary>
-    {% prose %}
+    {% prose "py-2 pl-5 -ml-5 -translate-x-px border-l-2 border-blue-500"  %}
 ==Bør denne også være med her siden den er lagt til i Hvem kan få?==
     {% endprose %}
   </details>
 
   <details>
     <summary>Har avtjent militærtjeneste</summary>
-    {% prose %}
+    {% prose "py-2 pl-5 -ml-5 -translate-x-px border-l-2 border-blue-500"  %}
 Hvis du har avtjent militær eller sivil tjeneste, har du samme rett til sykepenger som arbeidstakere, men med følgende særbestemmelser:
 
 * Sykepengegrunnlaget beregnes på grunnlag av det arbeids – og inntektsforholdet du var i før du begynte i tjenesten.
@@ -175,7 +175,7 @@ Hvis du har avtjent militær eller sivil tjeneste, har du samme rett til sykepen
 
   <details>
     <summary>Innlagt på helseinstitusjon</summary>
-    {% prose %}
+    {% prose "py-2 pl-5 -ml-5 -translate-x-px border-l-2 border-blue-500"  %}
 Du får sykepenger for måneden du er innlagt og de tre påfølgende månedene. Deretter blir sykepengene redusert med 50 prosent, men skal likevel ikke være lavere enn et sykepengegrunnlag på 50 prosent av grunnbeløpet.
 
 Hvis du fortsatt har faste og nødvendige utgifter til bolig eller forsørgingsansvar, kan du likevel få utbetalt sykepengene uten reduksjon.
@@ -184,7 +184,7 @@ Hvis du fortsatt har faste og nødvendige utgifter til bolig eller forsørgingsa
 
   <details>
     <summary>Tar utdanning</summary>
-    {% prose %}
+    {% prose "py-2 pl-5 -ml-5 -translate-x-px border-l-2 border-blue-500"  %}
 
 #### Studier på deltid
 
@@ -213,7 +213,7 @@ Noen ganger kan en arbeidsgiver nekte å betale sykepenger de første 16 dagene 
 
 <details class="readmore">
   <summary>Slik søker du om at NAV betaler sykepengene de første 16 dagene</summary>
-  {% prose %}
+  {% prose "py-2 pl-5 -ml-5 -translate-x-px border-l-2 border-blue-500"  %}
 NAV vil vurdere om du har rett til sykepenger, både for disse 16 dagene og for eventuelle påfølgende dager du også er syk.
 
 Du kan logge deg inn og bruke [Send beskjed til NAV](#). Velg kategorien «Syk». Her skriver du:
@@ -262,7 +262,7 @@ Hvor lenge du kan få sykepenger avhenger av alderen din.
 <div class="accordion">
   <details>
     <summary>Under 67 år</summary>
-    {% prose %}
+    {% prose "py-2 pl-5 -ml-5 -translate-x-px border-l-2 border-blue-500"  %}
 Du kan maksimalt få sykepenger i 52 uker. Grensen er den samme enten du er helt eller delvis sykmeldt.
 
 * Sykefravær 3 år tilbake i tid blir lagt sammen hvis det er mindre enn 26 uker mellom noen av fraværene. 
@@ -274,7 +274,7 @@ Hvis du har fått sykepenger i 52 uker og fortsatt ikke kan arbeide på grunn av
 
   <details>
     <summary>Mellom 67 og 70 år</summary>
-    {% prose %}
+    {% prose "py-2 pl-5 -ml-5 -translate-x-px border-l-2 border-blue-500"  %}
 Du kan få sykepenger i opptil 60 dager, uavhengig av om du har tatt ut alderspensjon.
 
 60-dagersregelen gjelder fra og med dagen etter du fylte 67 år og til og med dagen før du fyller 70 år. Hvis du har fylt 70 år, har du ikke rett til sykepenger.
@@ -287,14 +287,14 @@ Du kan få sykepenger i opptil 60 dager, uavhengig av om du har tatt ut alderspe
 <div class="accordion">
   <details>
     <summary>Sykmelding</summary>
-    {% prose %}
+    {% prose "py-2 pl-5 -ml-5 -translate-x-px border-l-2 border-blue-500"  %}
 Du kan få [sykmelding](#) av fastlegen eller en annen som har rett til å sykmelde deg hvis det er medisinske grunner til at du ikke kan jobbe.
     {% endprose %}
   </details>
 
   <details>
     <summary>Gradert sykmelding</summary>
-    {% prose %}
+    {% prose "py-2 pl-5 -ml-5 -translate-x-px border-l-2 border-blue-500"  %}
 [Hvis du kan være delvis i arbeid](#), skal du bli delvis sykmeldt. Hensikten er å holde kontakten med arbeidsplassen og bruke de mulighetene du har til å jobbe – hvis det er medisinsk forsvarlig.
 
 Den som sykmelder deg skal alltid vurdere om du kan jobbe. Ofte kan det være behov for å  tilrettelegge arbeidet.
@@ -303,20 +303,20 @@ Den som sykmelder deg skal alltid vurdere om du kan jobbe. Ofte kan det være be
 
   <details>
     <summary>Sykmelding for enkeltstående behandlingsdager</summary>
-    {% prose %}
+    {% prose "py-2 pl-5 -ml-5 -translate-x-px border-l-2 border-blue-500"  %}
 Du kan få sykmelding hvis [behandlingen](#) har en slik virkning på deg at du ikke kan jobbe noe den samme dagen.
     {% endprose %}
   </details>
   <details>
     <summary>Avventende sykmelding</summary>
-    {% prose %}
+    {% prose "py-2 pl-5 -ml-5 -translate-x-px border-l-2 border-blue-500"  %}
 [Avventende sykmelding](#) er en beskjed til arbeidsgiveren din om at du kan unngå sykmelding hvis det blir lagt til rette for deg på arbeidsplassen.
     {% endprose %}
   </details>
 
   <details>
     <summary>Egenmeldt sykmelding</summary>
-    {% prose %}
+    {% prose "py-2 pl-5 -ml-5 -translate-x-px border-l-2 border-blue-500"  %}
 Du som er arbeidstaker kan ha rett til å melde ifra til arbeidsgiveren din om at du er syk, uten at du leverer sykmelding i løpet av de første 16 kalenderdagene du er syk. Du kan lese mer om [egenmelding](#) her.
 
 Du som er selvstendig næringsdrivende eller frilanser kan kontakte NAV i løpet av de første 16 kalenderdagene for å melde ifra at du er syk. Men for å få sykepenger utbetalt fra NAV må du ha en sykmelding. Lenke til selvstendig og frilanser.

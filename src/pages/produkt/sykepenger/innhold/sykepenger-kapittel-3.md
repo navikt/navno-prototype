@@ -31,7 +31,7 @@ Se hva du må vite i ulike situasjoner:
 <div class="accordion">
   <details>
     <summary>Arbeidstaker</summary>
-    {% prose %}
+    {% prose "py-2 pl-5 -ml-5 -translate-x-px border-l-2 border-blue-500"  %}
 Først leverer du sykmeldingen til arbeidsgiveren din. Du logger deg inn på [Ditt sykefravær](#) på nav.no og sender sykmeldingen derfra. Hvis du har fått en [papirsykmelding](), venter du noen dager, så vil den også komme digitalt på Ditt sykefravær.
 
 1. Når perioden for sykmeldingen er over, søker du om sykepenger. Du får en melding når den er klar til å fylles ut på Ditt sykefravær. Du sender søknaden fra Ditt sykefravær. Merk! Du må sende søknad om sykepenger selv om arbeidsgiveren din betaler deg lønn mens du er syk. Arbeidsgiveren krever pengene tilbake fra NAV basert på søknaden din. 
@@ -44,7 +44,7 @@ Først leverer du sykmeldingen til arbeidsgiveren din. Du logger deg inn på [Di
 
   <details>
     <summary>Selvstendig næringsdrivende</summary>
-    {% prose %}
+    {% prose "py-2 pl-5 -ml-5 -translate-x-px border-l-2 border-blue-500"  %}
 Du søker om sykepenger etter at sykmeldingsperioden er over. Du vil få en melding fra oss når den digitale søknaden er klar til å fylles ut. 
 
 Du logger deg inn på nav.no og sender søknaden derfra. 
@@ -59,7 +59,7 @@ Hvis du ikke har det vi trenger lett tilgjengelig, kan du velge å sende inn sø
 
   <details>
     <summary>Flere jobber</summary>
-    {% prose %}
+    {% prose "py-2 pl-5 -ml-5 -translate-x-px border-l-2 border-blue-500"  %}
 Hvis du er sykmeldt fra flere jobber, må du ha en sykmelding for hver av dem.
 
 Sykepengene blir beregnet ut fra den samlede inntekten din. [Fosterhjemsgodtgjørelse](#) eller [kommunal omsorgslønn](#) / [omsorgsstønad](#) i kombinasjon med annen inntekt, blir regnet som flere jobber.
@@ -153,7 +153,7 @@ Du finner sykmeldingen og søknaden om sykepenger ved å logge deg inn på nav.n
     <span>Saksbehandlingstider for søknader</span>
   </summary>
   <div class="py-2 pl-5 -ml-5 prose -translate-x-px border-l-2 border-blue-500">
-    {% prose %}
+    {% prose "py-2 pl-5 -ml-5 -translate-x-px border-l-2 border-blue-500"  %}
 Saksbehandlingstiden er tiden fra vi får søknaden din og til vi har gjort et vedtak. Husk at vi trenger all nødvendig dokumentasjon for å behandle søknaden din. 
 
 Det gjelder også inntektsmeldingen fra arbeidsgiveren din.
@@ -215,7 +215,7 @@ Du kan også bruke advokat eller gi fullmakt til en person som klager på dine v
     <span>Saksbehandlingstider for klage og anke</span>
   </summary>
   <div class="py-2 pl-5 -ml-5 prose -translate-x-px border-l-2 border-blue-500">
-    {% prose %}
+    {% prose "py-2 pl-5 -ml-5 -translate-x-px border-l-2 border-blue-500"  %}
 Har du fått et vedtak fra oss som du mener er feil? Da kan du klage til NAV-enheten som skrev vedtaket. De vil vurdere saken din på nytt. Hvis de ikke er enig i klagen din, sender de den videre til NAV Klageinstans.
 
 | Saken gjelder	| Forventet saksbehandlingstid |

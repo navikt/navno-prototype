@@ -332,7 +332,7 @@ Du kan få sykepenger fra NAV i opptil 60 dager hvis gjennomsnittet av inntekten
 
   <details>
     <summary>Permittert</summary>
-    {% prose %}
+    {% prose "py-2 pl-5 -ml-5 -translate-x-px border-l-2 border-blue-500"  %}
 ==Noe innledende ==Tekst her?== Se arbeidsledig==
 
 #### Hvis du er 100 prosent sykmeldt
@@ -380,7 +380,7 @@ Du kan få sykepenger fra NAV i opptil 60 dager hvis gjennomsnittet av inntekten
 
   <details>
     <summary>Avtjent militær- eller siviltjeneste</summary>
-    {% prose %}
+    {% prose "py-2 pl-5 -ml-5 -translate-x-px border-l-2 border-blue-500"  %}
 Hvis du har avtjent militær- eller siviltjeneste, har du rett til sykepenger fra den første dagen du begynner å jobbe.
 
 * Du har rett til sykepenger selv om du har vært i tjenesten i mindre enn fire uker.
@@ -405,14 +405,14 @@ Hvis du er syk lenger enn egenmeldingsdagene, må du kontakte lege.
 
   <details>
     <summary>Tar utdanning</summary>
-    {% prose %}
+    {% prose "py-2 pl-5 -ml-5 -translate-x-px border-l-2 border-blue-500"  %}
 I utgangspunktet får du ikke sykepenger mens du tar utdanning. Hvis du klarer å studere på heltid, går NAV ut fra at du også kan arbeide, men vi vil vurdere dette individuelt ut fra situasjonen din når du ble sykmeldt.
     {% endprose %}
   </details>
 
   <details>
     <summary>Innlagt på helseinstitusjon</summary>
-    {% prose %}
+    {% prose "py-2 pl-5 -ml-5 -translate-x-px border-l-2 border-blue-500"  %}
 Når du er innlagt på sykehus eller andre helseinstitusjoner, kan du få sykepenger.
 
 ==Dette står i skissen:==  
@@ -427,7 +427,7 @@ Hvis du fortsatt har faste og nødvendige utgifter til bolig eller forsørgingsa
 
   <details>
     <summary>I fengsel</summary>
-    {% prose %}
+    {% prose "py-2 pl-5 -ml-5 -translate-x-px border-l-2 border-blue-500"  %}
 Du har ikke rett til sykepenger når du sitter i varetekt, soner straff eller har en særreaksjon i en av kriminalomsorgens anstalter eller tilsvarende anstalt i utlandet.
     {% endprose %}
   </details>
