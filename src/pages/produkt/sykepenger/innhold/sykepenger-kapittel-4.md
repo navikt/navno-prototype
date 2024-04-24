@@ -25,7 +25,7 @@ I noen tilfeller kan du få unntak fra aktivitetskravet
 <div class="readmore">
   <details>
     <summary>I disse tilfellene kan du få unntak fra aktivitetskravet</summary>
-    {% prose "py-2 pl-5 -ml-5 -translate-x-px border-l-2 border-blue-500"  %}
+    {% prose "py-2 pl-5 -translate-x-px border-l-2 border-blue-500"  %}
 1. Hvis det er alvorlige medisinske grunner til at du ikke kan være i aktivitet. Den som sykmelder deg må i tilfelle dokumentere dette ved å gi utfyllende medisinske opplysninger i sykmeldingen.
 2. Hvis det ikke er mulig å gjennomføre aktiviteter på arbeidsplassen. Arbeidsgiveren din må i så fall begrunne dette i oppfølgingsplanen som sendes til legen og NAV.
     {% endprose %}
@@ -148,7 +148,7 @@ Datoen du får sykepengene dine avhenger av hvilken periode du har vært sykmeld
 <div class="readmore">
   <details>
     <summary>Eksempler på utbetaling i ulike situasjoner</summary>
-    {% prose "py-2 pl-5 -ml-5 -translate-x-px border-l-2 border-blue-500"  %}
+    {% prose "py-2 pl-5 -translate-x-px border-l-2 border-blue-500"  %}
 
 ##### Eksempel 1 
 Du er sykmeldt fra 1. april til 14. april. Vi innvilger søknaden din 15. april. Da får du sykepenger for hele perioden 25. april. 
