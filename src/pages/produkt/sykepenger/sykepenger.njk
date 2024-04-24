@@ -15,7 +15,7 @@ variant: '1'
       <h1 class="mt-1 font-extrabold text-2xl/tight text-balance ">{{ title | safe }}</h1>
       <div class="mt-6 prose text-pretty max-w-prose">
         <p class="text-lg">{{ ingress | safe }}</p>
-        <div class="px-5 py-4 border rounded-lg border-slate-300 text-balance">
+        <div class="px-4 py-3 leading-normal border-l-4 border-slate-300 bg-slate-100 text-balance">
           {{ audience | markdown | safe if audience }}
         </div>
       </div>
@@ -129,45 +129,3 @@ variant: '1'
     <div class="pt-2 mt-12 text-sm italic border-t border-slate-200 col-main">{{ published | safe }}</div>
   </main>
 {%- endblock -%}
-
-
-{% block bodyscript %}
-  <script>
-    const headings = document.querySelectorAll('.prose h3');
-    const headingsArr = Array.from(headings);
-
-    const navItems = document.querySelectorAll('.toc--sticky li');
-
-    function activateNavByIndex(index) {
-      if (headings[index].classList.contains('active'))
-        return;
-
-      const currentActive = document.querySelectorAll('.toc--sticky .active');
-      for (let i = currentActive.length - 1; i >= 0; i--) {
-        currentActive[i].classList.remove('active');
-      }
-      navItems[index].classList.add('active');
-    };
-
-    const intersectionCallback = (entries, observer) => {
-      if (entries[0].intesectionRatio <= 0)
-          return;
-      
-      if (entries[0].intersectionRatio > 0.90) {    
-        activateNavByIndex(headingsArr.indexOf(entries[0].target))
-      }
-    };
-
-    const intersectionOptions = {
-      threshold: 1,
-      rootMargin: '15% 0px -60% 0px'
-    };
-
-    const intersectionObserver = new IntersectionObserver(intersectionCallback, intersectionOptions);
-
-    for (let i = 0; i < headings.length; i++) {
-      intersectionObserver.observe(headings[i]);  
-    };
-
-  </script>
-{% endblock %}
