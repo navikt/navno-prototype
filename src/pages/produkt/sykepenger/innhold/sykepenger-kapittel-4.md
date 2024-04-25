@@ -106,6 +106,9 @@ Hvis du ikke har en arbeidsgiver, er det NAV-kontoret du holder kontakt med. Du 
   </details>
 </div>
 
+***
+
+
 ### Når utbetales pengene?
 
 Pengene utbetales innen den 25. i måneden.
@@ -186,11 +189,17 @@ Feriepenger for inneværende kalenderår utbetales ved neste års feriepengeutbe
 
 Perioden som benyttes på utbetaling av feriepenger, og som vises på utbetalingsmeldingen, er 1. til 31. mai i det året de utbetales. 
 
+***
+
+
 ### Meld fra om endringer
 
 Er det endringer i inntekten eller jobbsituasjonen din? Eller planlegger du å bo i utlandet? Det kan ha betydning for beløpet du får utbetalt fra NAV. I slike tilfeller må du derfor [straks melde fra til NAV](#).
 
 ==Er straks et enkelt ord å forstå for de som ikke er så stødige i norsk?==
+
+***
+
 
 ### Reise eller flytte til utlandet
 
@@ -236,6 +245,9 @@ Hvis du reiser utenfor EØS, har du i utgangspunktet ikke rett til sykepenger. D
 * Hvis reisen forlenger sykefraværet ditt eller hindrer planlagte aktiviteter, kan du risikere at sykepengene stanses i den perioden du er på reise.
 * Hvis sykepengene stanses, risikerer du også at sykepengene beregnes etter et nytt og lavere grunnlag når du er tilbake fra reisen.
 * Hvis du er på reise i 4 uker eller mer og sykepengene stanses i denne perioden, risikerer du også å få avslag på videre søknad om sykepenger.
+
+***
+
 
 ### Ferie og sykepenger
 
@@ -307,7 +319,7 @@ Har du flere jobber, men er ikke sykmeldt fra alle? Hvis du bare skal ha ferie f
   </details>
 </div>
 
-
+***
 
 
 ### Jobb og sykepenger
@@ -466,6 +478,10 @@ Hvis du er delvis sykmeldt og skal kombinere sykepenger og dagpenger, må du [se
 
 Hvis du er 100 prosent sykmeldt over lengre tid og ikke ønsker å sende meldekort hver 14. dag, må du markere dette i meldekortet. Da svarer du «nei» på spørsmålet om du fortsatt vil stå registrert som arbeidssøker de neste 14 dagene. Som friskmeldt må du registrere deg på nytt hvis du skal søke om dagpenger.
 
+
+***
+
+
 ### Når det snart er slutt på sykepengene
 
 Når du har mindre enn 90 arbeidsdager igjen med sykepenger, skal du få en oppgave med informasjon på Min side eller et brev i posten.
@@ -530,10 +546,9 @@ Det er bare sykepenger som erstatter inntekten din med 100 prosent, opp til 6G. 
 
 Du kan også undersøke om du har rettigheter hos forsikringsselskapet ditt eller pensjonskassen du eventuelt er medlem i. Det er ikke NAV som administrerer slike ordninger. Snakk med arbeidsgiveren din om dette.
 
+***
+
+
 ### Når tiden med sykepenger er over
 
 Du kan ikke bli sagt opp det første året du er sykmeldt. Hvis du har vært syk i mer enn ett år, gjelder vanlige regler om saklig grunn til oppsigelse. [Les mer om reglene for oppsigelse på arbeidstilsynet.no](#).
-
-## Hva sier loven?
-
-[Folketrygdloven kapittel 8. Sykepenger (lovdata)](#)

@@ -25,7 +25,7 @@ variant: '1'
     <div class="px-5 py-4 mt-8 rounded-lg bg-slate-100">
       <h2 class="pb-2 text-base font-semibold">Innhold på siden</h2>
       <ul class="grid gap-4 py-1">
-        {% for chapter in chapters %}
+        {% for chapter in chapters.slice(0, -1) %}
         <li class="grid">
           <a class="flex gap-1 p-1 -m-1 font-medium text-blue-500 underline group hover:text-blue-700 text-base/snug hover:decoration-2" href="#{{ chapter.data.title | slugify }}">
             {{ '/src/_includes/svg/icons/arrow-right-angle-aksel.svg' | svgContents('translate-y-0.5 w-5 h-5') | safe }}
@@ -83,10 +83,15 @@ variant: '1'
         </ol>
       </div>
     </div> #}
+
     {# Innhold #}
     {% for chapter in chapters %}
       {% set chapterIndex = loop.index %}
-      <section class="grid grid-flow-row-dense mt-24 col-full grid-cols-combi " id="{{ chapter.data.title | slugify }}" x-data="{ tocOpen: false }">
+      <section class="grid grid-flow-row-dense mt-8 col-full grid-cols-combi " id="{{ chapter.data.title | slugify }}" x-data="{ tocOpen: false }">
+        {% if not loop.last %}
+        <div class="aspect-square rounded-full w-1/2 max-w-[8ch] bg-green-200 mt-24"></div>
+        {% endif %}
+
         <div class="mb-8 col-main">
           <h2 class="mt-8 mb-6 font-bold text-xl/tight text-balance ">
             {{ chapter.data.title }}

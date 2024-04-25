@@ -26,7 +26,11 @@ Du kan fortsatt sende inn søknad etter fristen, men du vil kun få sykepenger h
 Eksempel:  
 Hvis du vil ha sykepenger for dager i mai, må du søke senest i løpet av august. Hvis du også var sykmeldt i april, må du søke for disse dagene senest i løpet av juli.
 
-Se hva du må vite i ulike situasjoner:
+***
+
+### Søknad og dokumentasjon
+
+Se hvordan du går frem i din situasjon:
 
 <div class="accordion">
   <details>
@@ -39,6 +43,28 @@ Først leverer du sykmeldingen til arbeidsgiveren din. Du logger deg inn på [Di
 2. I søknaden oppgir du om du har jobbet litt mens du har vært sykmeldt, om du kom tilbake tidligere enn forventet, om du har jobbet i utlandet, om du var på reise utenfor EØS og andre opplysninger vi trenger for å behandle søknaden din.
 
 3. Når du har sendt inn søknaden om sykepenger, kan NAV behandle søknaden din. Det skjer først når arbeidsgiveren din har sendt oss opplysninger om inntekten (inntektsmelding). Hvis du har pålegg om faste trekk, må arbeidsgiveren din også fylle ut skjemaet for trekkopplysninger.
+
+#### Søknad om sykepenger for arbeidstakere
+
+Du søker du om sykepenger når perioden for sykmeldingen er over.
+
+Du får en melding når søknaden er klar til å fylles ut på [Ditt sykefravær](#) og sender den derfra.
+
+Du må sende søknad om sykepenger selv om arbeidsgiveren din betaler deg lønn mens du er syk. Arbeidsgiveren krever pengene tilbake fra NAV basert på søknaden din.
+
+<div class="flex flex-wrap gap-2 mt-3">
+  {{ button({ text: 'Send søknad', variant: 'primary' }) }}
+  {{ button({ text: 'Ettersend dokumentasjon', variant: 'secondary' }) }}
+</div>
+
+#### Trekkopplysninger for arbeidstakere
+
+Arbeidsgiver bruker dette skjemaet for å opplyse NAV om trekk hos arbeidstaker i forbindelse med utbetaling av sykepenger, foreldrepenger, svangerskapspenger eller pleie-/ opplærings- og omsorgspenger.
+
+<div class="flex flex-wrap gap-2 mt-3">
+  {{ button({ text: 'Send inn', variant: 'primary' }) }}
+  {{ button({ text: 'Ettersend dokumentasjon', variant: 'secondary' }) }}
+</div>
     {% endprose %}
   </details>
 
@@ -53,78 +79,52 @@ Du logger deg inn på nav.no og sender søknaden derfra.
 
 * På den første søknaden i sykefraværet får du noen ekstra spørsmål for å avgjøre om du trenger å sende inn dokumentasjon på inntekten din eller annen informasjon. Hvis vi trenger dokumentasjon på inntekten din, blir du videreført til siden for innsending. Der vil det også stå hva vi trenger fra deg.
 
-Hvis du ikke har det vi trenger lett tilgjengelig, kan du velge å sende inn søknaden uten dokumentasjonen. Da får du en oppgave på Min side på nav.no om dette senere. Vi kan ikke behandle søknaden din før du har sendt inn nødvendig dokumentasjon. 
+Hvis du ikke har det vi trenger lett tilgjengelig, kan du velge å sende inn søknaden uten dokumentasjonen. Da får du en oppgave på Min side på nav.no om dette senere. Vi kan ikke behandle søknaden din før du har sendt inn nødvendig dokumentasjon.
+
+#### Inntektsopplysninger for selvstendig næringsdrivende eller frilansere som skal ha sykepenger
+
+<div class="flex flex-wrap gap-2 mt-3">
+  {{ button({ text: 'Send inntektsopplysninger', variant: 'primary' }) }}
+  {{ button({ text: 'Ettersend dokumentasjon', variant: 'secondary' }) }}
+</div>
     {% endprose %}
   </details>
 
   <details>
-    <summary>Flere jobber</summary>
+    <summary>Midlertidig ute av arbeid</summary>
     {% prose "py-2 pl-5 -ml-5 -translate-x-px border-l-2 border-blue-500"  %}
-Hvis du er sykmeldt fra flere jobber, må du ha en sykmelding for hver av dem.
-
-Sykepengene blir beregnet ut fra den samlede inntekten din. [Fosterhjemsgodtgjørelse](#) eller [kommunal omsorgslønn](#) / [omsorgsstønad](#) i kombinasjon med annen inntekt, blir regnet som flere jobber.
-    {% endprose %}
-  </details>
-</div>
-
-==Er «Flere jobber» det samme som «Har flere arbeidsforhold», som er brukt i en tidligere Accordion?==
-
-### Søknad og dokumentasjon
-
-Hvis du mangler BankID, ikke har legitimasjon på høyeste sikkerhetsnivå eller har fortrolig adresse i Folkeregisteret, må du bruke del D av papirsykmeldingen til å søke om sykepenger. [Finn riktig adresse](#).
-
-Hvis du har en arbeidsgiver, må du levere del C av sykmeldingen til arbeidsgiveren din. Del D – søknaden – leverer du til den som skal utbetale sykepenger.
-
-#### Søknad om sykepenger for arbeidstakere
-
-Du søker du om sykepenger når perioden for sykmeldingen er over.
-
-Du får en melding når søknaden er klar til å fylles ut på [Ditt sykefravær](#) og sender den derfra.
-
-Du må sende søknad om sykepenger selv om arbeidsgiveren din betaler deg lønn mens du er syk. Arbeidsgiveren krever pengene tilbake fra NAV basert på søknaden din.
-
-<div class="grid gap-2 mt-3">
-  {{ button({ text: 'Send søknad', variant: 'primary' }) }}
-  {{ button({ text: 'Ettersend dokumentasjon', variant: 'secondary' }) }}
-</div>
-
-#### Trekkopplysninger for arbeidstakere
-
-Arbeidsgiver bruker dette skjemaet for å opplyse NAV om trekk hos arbeidstaker i forbindelse med utbetaling av sykepenger, foreldrepenger, svangerskapspenger eller pleie-/ opplærings- og omsorgspenger.
-
-<div class="grid gap-2 mt-3">
-  {{ button({ text: 'Send inn', variant: 'primary' }) }}
-  {{ button({ text: 'Ettersend dokumentasjon', variant: 'secondary' }) }}
-</div>
-
-#### Inntektsopplysninger for selvstendig næringsdrivende eller frilansere som skal ha sykepenger
-
-<div class="grid gap-2 mt-3">
-  {{ button({ text: 'Send inntektsopplysninger', variant: 'primary' }) }}
-  {{ button({ text: 'Ettersend dokumentasjon', variant: 'secondary' }) }}
-</div>
-
-#### Søknad om sykepenger når du midlertidig er ute av arbeid
+Du kan søke om sykepenger når du midlertidig er ute av arbeid.
 
 Dette skjemaet bruker du hvis det er under en måned siden forrige arbeidsforhold opphørte, du mottar etterlønn/sluttvederlag, er i utdanningspermisjon, eller du har startet i nytt arbeidsforhold uten å ha ny opptjening til sykepenger.
 
-<div class="grid gap-2 mt-3">
+<div class="flex flex-wrap gap-2 mt-3">
   {{ button({ text: 'Søk om sykepenger', variant: 'primary' }) }}
   {{ button({ text: 'Ettersend dokumentasjon', variant: 'secondary' }) }}
 </div>
+    {% endprose %}
+  </details>
 
-#### Søknad om å beholde sykepenger under opphold i utlandet
+  <details>
+    <summary>Planlegger opphold i utlandet</summary>
+    {% prose "py-2 pl-5 -ml-5 -translate-x-px border-l-2 border-blue-500"  %}
+Søknad om å beholde sykepenger under opphold i utlandet
 
-<div class="grid gap-2 mt-3">
+<div class="flex flex-wrap gap-2 mt-3">
   {{ button({ text: 'Send søknad', variant: 'primary' }) }}
   {{ button({ text: 'Ettersend dokumentasjon', variant: 'secondary' }) }}
- </div>
+</div>
+     {% endprose %}
+  </details>
+
+  <details>
+    <summary>Bor i utlandet</summary>
+    {% prose "py-2 pl-5 -ml-5 -translate-x-px border-l-2 border-blue-500"  %}
 
 #### Dokumentasjon for sykepenger når du bor i utlandet
 
 Hvis du er fast bosatt i utlandet og skal sende inn dokumentasjon som gjelder sykepenger, sender du dette sammen med en førsteside.
 
-<div class="grid gap-2 mt-3">
+<div class="flex flex-wrap gap-2 mt-3">
   {{ button({ text: 'Hent førsteside', variant: 'secondary' }) }}
 </div>
 
@@ -132,12 +132,26 @@ Hvis du er fast bosatt i utlandet og skal sende inn dokumentasjon som gjelder sy
 
 Du må fylle ut dette skjemaet hvis du har sykmelding fra lege utenfor Norge. Legg ved sykmeldingen din og send skjemaet til NAV.
 
-<div class="grid gap-2 mt-3">
+<div class="flex flex-wrap gap-2 mt-3">
   {{ button({ text: 'Send skjema', variant: 'primary' }) }}
   {{ button({ text: 'Ettersend dokumentasjon', variant: 'secondary' }) }}
  </div>
+    {% endprose %}
+  </details>
+</div>
 
 [Slik behandler vi personopplysningene dine](#)
+
+#### Hvis du mangler BankID
+
+Hvis du mangler BankID, ikke har legitimasjon på høyeste sikkerhetsnivå eller har fortrolig adresse i Folkeregisteret, må du bruke del D av papirsykmeldingen til å søke om sykepenger. [Finn riktig adresse](#).
+
+Hvis du har en arbeidsgiver, må du levere del C av sykmeldingen til arbeidsgiveren din. Del D – søknaden – leverer du til den som skal utbetale sykepenger.
+
+
+
+***
+
 
 ### Etter at du har søkt
 
@@ -152,8 +166,7 @@ Du finner sykmeldingen og søknaden om sykepenger ved å logge deg inn på nav.n
     {{ '/src/_includes/svg/icons/briefcase-clock.svg' | svgContents('mr-1 -my-1 w-8 h-8') | safe }}
     <span>Saksbehandlingstider for søknader</span>
   </summary>
-  <div class="py-2 pl-5 -ml-5 prose -translate-x-px border-l-2 border-blue-500">
-    {% prose "py-2 pl-5 -ml-5 -translate-x-px border-l-2 border-blue-500"  %}
+  {% prose "py-2 pl-5 -ml-5 -translate-x-px border-l-2 border-blue-500"  %}
 Saksbehandlingstiden er tiden fra vi får søknaden din og til vi har gjort et vedtak. Husk at vi trenger all nødvendig dokumentasjon for å behandle søknaden din. 
 
 Det gjelder også inntektsmeldingen fra arbeidsgiveren din.
@@ -165,8 +178,7 @@ Det gjelder også inntektsmeldingen fra arbeidsgiveren din.
 | Utenlandsk sykmelding - førstegangssøknad |	10 uker |
 | Utenlandsk sykmelding - forlengelse |	10 uker |
 | Arbeidsgiver godtar ikke sykmeldingen (bestridelse) |	6 måneder |
-    {% endprose %}
-  </div>
+  {% endprose %}
 </details>
 
 {{ video({ 
@@ -187,7 +199,7 @@ Hvis det er feil i søknaden din om sykepenger, kan du selv korrigere dette inne
 
 I vedtaket står det hvordan du går fram hvis du skal klage, hvem du skal klage til og klagefrist. Hvis du har spørsmål om vedtaket, kan du [kontakte oss](#).
 
-<div class="grid gap-2 mt-3">
+<div class="flex flex-wrap gap-2 mt-3">
   {{ button({ text: 'Send klage', variant: 'primary' }) }}
   {{ button({ text: 'Ettersend dokumentasjon', variant: 'secondary' }) }}
 </div>
@@ -196,7 +208,7 @@ I vedtaket står det hvordan du går fram hvis du skal klage, hvem du skal klage
 
 Hvis du er uenig i svaret på klagen din fra NAV klageinstans, kan du med noen unntak anke vedtaket. Fristen for å anke står i vedtaket.
 
-<div class="grid gap-2 mt-3">
+<div class="flex flex-wrap gap-2 mt-3">
   {{ button({ text: 'Send anke', variant: 'primary' }) }}
   {{ button({ text: 'Ettersend dokumentasjon', variant: 'secondary' }) }}
 </div>
@@ -214,16 +226,14 @@ Du kan også bruke advokat eller gi fullmakt til en person som klager på dine v
     {{ '/src/_includes/svg/icons/briefcase-clock.svg' | svgContents('mr-1 -my-1 w-8 h-8') | safe }}
     <span>Saksbehandlingstider for klage og anke</span>
   </summary>
-  <div class="py-2 pl-5 -ml-5 prose -translate-x-px border-l-2 border-blue-500">
-    {% prose "py-2 pl-5 -ml-5 -translate-x-px border-l-2 border-blue-500"  %}
+  {% prose "py-2 pl-5 -ml-5 -translate-x-px border-l-2 border-blue-500"  %}
 Har du fått et vedtak fra oss som du mener er feil? Da kan du klage til NAV-enheten som skrev vedtaket. De vil vurdere saken din på nytt. Hvis de ikke er enig i klagen din, sender de den videre til NAV Klageinstans.
 
-| Saken gjelder	| Forventet saksbehandlingstid |
-| ------------- | ---------------------------- |
-| Klage til NAV-enhet	| 12 uker |
-| Klage til NAV Klageinstans	| 12 uker |
-| Anke til NAV Klageinstans	| 12 uker |
-    {% endprose %}
-  </div>
+Saken gjelder	| Forventet saksbehandlingstid |
+------------- | ---------------------------- |
+Klage til NAV-enhet	| 12 uker |
+Klage til NAV Klageinstans	| 12 uker |
+Anke til NAV Klageinstans	| 12 uker |
+  {% endprose %}
 </details>
 

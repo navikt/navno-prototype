@@ -207,9 +207,23 @@ Hvis du blir syk og ikke kan møte til undervisningen, kan du få [sykestipend f
   </details>
 </div>
 
+***
+
 ### Hvis arbeidsgiveren ikke godtar sykmeldingen din
 
 Noen ganger kan en arbeidsgiver nekte å betale sykepenger de første 16 dagene av sykefraværet. Hvis arbeidsgiveren din ikke godkjenner sykmeldingen, kan du søke om at NAV betaler deg sykepenger disse 16 dagene.
+
+#### Når kan arbeidsgiveren tvile på sykmeldingen?
+Arbeidsgiveren din har ikke rett til å få vite sykdomshistorien eller diagnosen din. Det hender likevel at arbeidsgiveren kan stille spørsmål ved om du har rett til sykepenger.
+
+Her ser du eksempler på situasjoner som kan gi arbeidsgiveren grunnlag for å tvile på sykmeldingen:
+
+* Hvis sykmeldingen kommer i forbindelse med permittering, streik, konkurs, oppsigelse, arbeidskonflikt, livskriser, vanskelige livssituasjoner eller ferie.
+* Hvis du gjennomfører aktiviteter som tilsier at du hadde klart å jobbe.
+* Hvis du har latt være å si fra om at du var syk, eller sagt fra først etter 14 dager.
+* Hvis sykmeldingen er tilbakedatert selv om du har hatt mulighet til å oppsøke lege.
+* Hvis legen din uttrykker tvil om du er for syk til å jobbe.
+
 
 <details class="readmore">
   <summary>Slik søker du om at NAV betaler sykepengene de første 16 dagene</summary>
@@ -232,17 +246,8 @@ Du kan logge deg inn og bruke [Send beskjed til NAV](#). Velg kategorien «Syk»
 Hvis du ønsker det, kan du i stedet be oss om å sende deg et søknadsskjema på papir. Etter at du har fylt ut søknadsskjemaet, kan du sende det til oss digitalt eller i posten. Ta [kontakt med oss](#) hvis du ønsker dette.
 
 Når du har søkt, vil vi avgjøre om du har rett til sykepenger. Du får et skriftlig svar når søknaden er ferdig behandlet. Saksbehandlingstiden kan ofte være lengre i disse sakene.
-
-#### Når kan arbeidsgiveren tvile på sykmeldingen?
-Arbeidsgiveren din har ikke rett til å få vite sykdomshistorien eller diagnosen din. Det hender likevel at arbeidsgiveren kan stille spørsmål ved om du har rett til sykepenger.
-
-Her ser du eksempler på situasjoner som kan gi arbeidsgiveren grunnlag for å tvile på sykmeldingen:
-
-* Hvis sykmeldingen kommer i forbindelse med permittering, streik, konkurs, oppsigelse, arbeidskonflikt, livskriser, vanskelige livssituasjoner eller ferie.
-* Hvis du gjennomfører aktiviteter som tilsier at du hadde klart å jobbe.
-* Hvis du har latt være å si fra om at du var syk, eller sagt fra først etter 14 dager.
-* Hvis sykmeldingen er tilbakedatert selv om du har hatt mulighet til å oppsøke lege.
-* Hvis legen din uttrykker tvil om du er for syk til å jobbe.
+  {% endprose %}
+</details>
 
 #### Hva gjør NAV?
 Vi undersøker saken når du har sendt oss søknaden, se beskrivelsen over. Da innhenter vi opplysninger fra arbeidsgiveren din, eventuelt fra den som har sykmeldt deg.
@@ -252,8 +257,8 @@ Ofte må vi innhente utskrift av pasientjournalen din. Som regel ber vi om utskr
 Hvis vi mener at du har rett til sykepenger, vil vi utbetale sykepengene til deg og kreve dem tilbake fra arbeidsgiveren etterpå.
 
 Hvis vi derimot kommer til samme konklusjon som arbeidsgiveren din, kan vi ikke utbetale sykepenger for de første 16 dagene av sykefraværet. Vi må også vurdere om du har rett til sykepenger fra dag 17 når vi overtar ansvaret for å utbetale sykepenger.
-  {% endprose %}
-</details>
+
+***
 
 ### Hvor lenge kan du få?
 
@@ -281,6 +286,8 @@ Du kan få sykepenger i opptil 60 dager, uavhengig av om du har tatt ut alderspe
     {% endprose %}
   </details>
 </div>
+
+***
 
 ### Ulike former for sykmelding
 
@@ -324,6 +331,8 @@ Du som er selvstendig næringsdrivende eller frilanser kan kontakte NAV i løpet
   </details>
 </div>
 
+***
+
 ### Reisetilskudd som alternativ til sykepenger
 
 Klarer du å jobbe, men har problemer med å reise til og fra arbeidsstedet? Da kan du ha rett til reisetilskudd i stedet for sykepenger fra 17. dag etter at du ble sykmeldt.
@@ -333,6 +342,10 @@ Klarer du å jobbe, men har problemer med å reise til og fra arbeidsstedet? Da 
   content: 'Tilskudd i stedet for sykepenger eller sammen med graderte sykepenger når det gjør at du kan jobbe helt eller delvis.',
   kicker: 'Pengestøtte'
 }) }}
+
+
+***
+
 
 ### Andre tilbud
 

@@ -44,7 +44,7 @@
 }
 
 @layer components {
-  :where(.prose, .accordion, .expander) > *:not(summary, h3, h2) + * {
+  :where(.prose) > *:not(summary, h2, h3, h4, h5) + * {
     margin-block-start: 1.75em;
   }
   .prose > :where(h1, h2, h3, h4, h5) {
@@ -53,100 +53,109 @@
     font-weight: 700;
     text-wrap: pretty;
   }
-  :is(.prose, .accordion, .expander) > :where(h2) {
+  :is(.prose) > :where(h2) {
     font-size: var(--text-fluid-2);
     line-height: 1.33;
     letter-spacing: -0.0125em;
   }
 
-  :is(.prose, .accordion, .expander) > :where(h3) {
+  :is(.prose) > :where(h3) {
     font-size: var(--text-fluid-1);
     line-height: 1.33;
     letter-spacing: -0.0125em;
     display: grid;
   }
 
-  :where(.prose--separator) > h3:not(:first-of-type):before {
-      content: "・・・" / "";
-      display: block;
-      padding-inline-end: 0.5em;
-      margin-inline: auto;
-      margin-block: 0 1.125em;
-      opacity: 0.625;
-      font-weight: 100;
-      font-size: 100%;
-  }
-
-  :is(.prose, .accordion, .expander) > h4 {
+  :is(.prose) > h4 {
     font-size: var(--text-fluid-0);
     line-height: 1.33;
     letter-spacing: 0;
     margin-block-start: 1.6em;
   }
-  :is(.prose, .accordion, .expander) > h5 {
-      font-size: var(--text-fluid-0);
-      font-weight: 650;
-      line-height: 1.33;
-      margin-block-end: 0.25em;
-      letter-spacing: 0.05em;
-      font-variant-caps: all-small-caps;
+  :is(.prose) > h5 {
+    font-size: var(--text-fluid-0);
+    font-weight: 650;
+    line-height: 1.33;
+    margin-block-end: 0.25em;
+    letter-spacing: 0.05em;
+    font-variant-caps: all-small-caps;
   }
-  :where(.prose, .accordion, .expander) > :where(h3, h4, h5) + *:not(h3, h4, h5, ul, ol, details) {
+  :is(.prose) > :is(h5):first-child {
     margin-block-start: 0.25em;
   }
-  :where(.prose, .accordion, .expander) > ul {
+
+  :where(.prose) > ul {
     list-style-type: disc;
     padding-inline-start: theme('spacing.6');
   }
-  :where(.prose, .accordion, .expander) > ol {
+
+  :where(.prose) > ol {
     list-style-type: decimal;
     padding-inline-start: theme('spacing.6');
   }
-  :where(.prose, .accordion, .expander) > ol ::marker {
-    font-weight: 700;
-    font-family: theme('fontFamily.sans');
+  :where(.prose) > ol ::marker {
+    font-weight: 800;
+    font-size: var(--text-fluid-1);
+    font-variant-caps: all-small-caps;
   }
-  :where(.prose, .accordion, .expander) > :where(ol, ul) li {
+  :where(.prose) > :where(ol, ul) li {
     padding-inline-start: theme('spacing.1');
   }
-  :where(.prose, .accordion, .expander) > :where(ol, ul) li + li {
+  :where(.prose) > :where(ol, ul) li + li {
     margin-block-start: theme('spacing.[2.5]');
 
   }
-  :where(.prose, .accordion, .expander) > :is(p, ul, ol) {
+  :where(.prose) > :is(p, ul, ol) {
     text-wrap: pretty;
   }
-  :where(.prose, .accordion, .expander) > * a {
+  :where(.prose) > * a {
     color: theme('colors.blue.600');
     text-decoration-line: underline;
   }
-  :where(.prose, .accordion, .expander) > * a:hover {
+  :where(.prose) > * a:hover {
     text-decoration-thickness: 2px;
   }
-  :where(.prose, .accordion, .expander) > table {
+
+  :is(.prose) > hr {
+    border: 0;    
+    height: auto;
+    text-align: center;
+    opacity: 0.625;
+    padding-inline-end: 1em;
+  }
+
+  :is(.prose) > hr:after {
+    content: "・・・" / "";
+    display: block;
+    margin-inline: auto;
+    font-weight: 100;
+    font-size: 100%;
+  }
+  
+  :where(.prose) > table {
     text-align: left;
     inline-size: 100%;
   }
-  :where(.prose, .accordion, .expander) > table :where(th, td) {
+  :where(.prose) > table :where(th, td) {
     padding-inline: theme('spacing.2') theme('spacing.4');
     padding-block: theme('spacing.2');
   }
-  :where(.prose, .accordion, .expander) > table :where(tbody tr) :where(th, td) {
+  :where(.prose) > table :where(tbody tr) :where(th, td) {
     border-top-width: 1px;
     border-color: theme('colors.slate.300');
   }
-  :where(.prose, .accordion, .expander) > table :where(thead th) {
+  :where(.prose) > table :where(thead th) {
     font-weight: 600;
     line-height: theme('lineHeight.snug');
     vertical-align: bottom;
   }
-  :where(.prose, .accordion, .expander) > table :where(tbody th) {
+  :where(.prose) > table :where(tbody th) {
     font-weight: 375;
   }
-  :where(.prose, .accordion, .expander) > table :where(tbody tr:nth-child(odd)) > * {
+  :where(.prose) > table :where(tbody tr:nth-child(odd)) > * {
     background-color: theme('colors.slate.100');
   }
-  :where(.prose, .accordion, .expander) > table :where(tbody tr:first-child) :where(th, td) {
+  :where(.prose) > table :where(tbody tr:first-child) :where(th, td) {
     border-top-width: 2px;
     border-color: theme('colors.slate.400');
   }
@@ -294,7 +303,7 @@
     margin-block-end: theme('spacing.2');
   }
   :where(.expander) summary:hover {
-    background-color: theme('colors.slate.100');
+    background-color: theme('colors.slate.200');
   }
   :where(.expander) summary:after {
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath stroke='rgba(0, 69, 156, 1)' stroke-linecap='round' stroke-width='1.875' d='m6.5 10 5.493 5.493a.01.01 0 0 0 .014 0L17.5 10'/%3E%3C/svg%3E");
