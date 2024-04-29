@@ -1,6 +1,7 @@
 ---
 title: 'Søke, ettersende og klage'
 ingress: 'Skjema for å søke, ettersende eller klage, og saksbehandlingstider.'
+icon: '/src/_includes/svg/icons/tasks.svg'
 order: 3
 ---
 
@@ -35,7 +36,7 @@ Se hvordan du går frem i din situasjon:
 <div class="accordion">
   <details>
     <summary>Arbeidstaker</summary>
-    {% prose "py-2 pl-5 -ml-5 -translate-x-px border-l-2 border-blue-500"  %}
+    {% prose "py-2 pl-5 -ml-5 -translate-x-px border-l-2 border-slate-400"  %}
 Først leverer du sykmeldingen til arbeidsgiveren din. Du logger deg inn på [Ditt sykefravær](#) på nav.no og sender sykmeldingen derfra. Hvis du har fått en [papirsykmelding](), venter du noen dager, så vil den også komme digitalt på Ditt sykefravær.
 
 1. Når perioden for sykmeldingen er over, søker du om sykepenger. Du får en melding når den er klar til å fylles ut på Ditt sykefravær. Du sender søknaden fra Ditt sykefravær. Merk! Du må sende søknad om sykepenger selv om arbeidsgiveren din betaler deg lønn mens du er syk. Arbeidsgiveren krever pengene tilbake fra NAV basert på søknaden din. 
@@ -70,7 +71,7 @@ Arbeidsgiver bruker dette skjemaet for å opplyse NAV om trekk hos arbeidstaker 
 
   <details>
     <summary>Selvstendig næringsdrivende</summary>
-    {% prose "py-2 pl-5 -ml-5 -translate-x-px border-l-2 border-blue-500"  %}
+    {% prose "py-2 pl-5 -ml-5 -translate-x-px border-l-2 border-slate-400"  %}
 Du søker om sykepenger etter at sykmeldingsperioden er over. Du vil få en melding fra oss når den digitale søknaden er klar til å fylles ut. 
 
 Du logger deg inn på nav.no og sender søknaden derfra. 
@@ -92,7 +93,7 @@ Hvis du ikke har det vi trenger lett tilgjengelig, kan du velge å sende inn sø
 
   <details>
     <summary>Midlertidig ute av arbeid</summary>
-    {% prose "py-2 pl-5 -ml-5 -translate-x-px border-l-2 border-blue-500"  %}
+    {% prose "py-2 pl-5 -ml-5 -translate-x-px border-l-2 border-slate-400"  %}
 Du kan søke om sykepenger når du midlertidig er ute av arbeid.
 
 Dette skjemaet bruker du hvis det er under en måned siden forrige arbeidsforhold opphørte, du mottar etterlønn/sluttvederlag, er i utdanningspermisjon, eller du har startet i nytt arbeidsforhold uten å ha ny opptjening til sykepenger.
@@ -106,7 +107,7 @@ Dette skjemaet bruker du hvis det er under en måned siden forrige arbeidsforhol
 
   <details>
     <summary>Planlegger opphold i utlandet</summary>
-    {% prose "py-2 pl-5 -ml-5 -translate-x-px border-l-2 border-blue-500"  %}
+    {% prose "py-2 pl-5 -ml-5 -translate-x-px border-l-2 border-slate-400"  %}
 Søknad om å beholde sykepenger under opphold i utlandet
 
 <div class="flex flex-wrap gap-2 mt-3">
@@ -118,7 +119,7 @@ Søknad om å beholde sykepenger under opphold i utlandet
 
   <details>
     <summary>Bor i utlandet</summary>
-    {% prose "py-2 pl-5 -ml-5 -translate-x-px border-l-2 border-blue-500"  %}
+    {% prose "py-2 pl-5 -ml-5 -translate-x-px border-l-2 border-slate-400"  %}
 
 #### Dokumentasjon for sykepenger når du bor i utlandet
 
@@ -166,7 +167,7 @@ Du finner sykmeldingen og søknaden om sykepenger ved å logge deg inn på nav.n
     {{ '/src/_includes/svg/icons/briefcase-clock.svg' | svgContents('mr-1 -my-1 w-8 h-8') | safe }}
     <span>Saksbehandlingstider for søknader</span>
   </summary>
-  {% prose "py-2 pl-5 -ml-5 -translate-x-px border-l-2 border-blue-500"  %}
+  {% prose %}
 Saksbehandlingstiden er tiden fra vi får søknaden din og til vi har gjort et vedtak. Husk at vi trenger all nødvendig dokumentasjon for å behandle søknaden din. 
 
 Det gjelder også inntektsmeldingen fra arbeidsgiveren din.
@@ -218,7 +219,8 @@ Du kan også bruke advokat eller gi fullmakt til en person som klager på dine v
 {{ tile({
   title: 'Klagerettigheter',
   content: '…',
-  kicker: 'Slik gjør du det'
+  kicker: ['Slik gjør du det'],
+  mark: 'bg-green-400'
 }) }}
 
 <details class="expander">
@@ -226,7 +228,7 @@ Du kan også bruke advokat eller gi fullmakt til en person som klager på dine v
     {{ '/src/_includes/svg/icons/briefcase-clock.svg' | svgContents('mr-1 -my-1 w-8 h-8') | safe }}
     <span>Saksbehandlingstider for klage og anke</span>
   </summary>
-  {% prose "py-2 pl-5 -ml-5 -translate-x-px border-l-2 border-blue-500"  %}
+  {% prose %}
 Har du fått et vedtak fra oss som du mener er feil? Da kan du klage til NAV-enheten som skrev vedtaket. De vil vurdere saken din på nytt. Hvis de ikke er enig i klagen din, sender de den videre til NAV Klageinstans.
 
 Saken gjelder	| Forventet saksbehandlingstid |

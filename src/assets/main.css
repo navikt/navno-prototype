@@ -84,15 +84,17 @@
     margin-block-start: 0.25em;
   }
 
-  :where(.prose) > ul {
-    list-style-type: disc;
-    padding-inline-start: theme('spacing.6');
+  :where(.prose) > :is(ul, ol) {
+    padding-inline-start: theme('spacing.5');
   }
 
+  :where(.prose) > ul {
+    list-style-type: disc;
+  }
   :where(.prose) > ol {
     list-style-type: decimal;
-    padding-inline-start: theme('spacing.6');
   }
+
   :where(.prose) > ol ::marker {
     font-weight: 800;
     font-size: var(--text-fluid-1);
@@ -100,9 +102,10 @@
   }
   :where(.prose) > :where(ol, ul) li {
     padding-inline-start: theme('spacing.1');
+    margin-inline-start: theme('spacing.[2.5]');
   }
   :where(.prose) > :where(ol, ul) li + li {
-    margin-block-start: theme('spacing.[2.5]');
+    margin-block-start: theme('spacing.[5]');
 
   }
   :where(.prose) > :is(p, ul, ol) {
@@ -121,6 +124,7 @@
     height: auto;
     text-align: center;
     opacity: 0.625;
+    padding-block: 0.75em 0.25em;
     padding-inline-end: 1em;
   }
 
@@ -201,7 +205,7 @@
     list-style: none;
     padding: 0.5em 44px;
     margin-inline: -44px -10px;
-    border-radius: 4px;
+    border-radius: theme('borderRadius.lg');
     cursor: pointer;
     text-align: left;
     text-indent: -31px;
@@ -215,16 +219,8 @@
   .accordion summary::-webkit-details-marker {
     display: none;
   }
-  /* .accordion details:first-child summary {
-    border-radius: 8px 8px 4px 4px;
-  }
-  .accordion details:last-child summary {
-    border-radius: 4px 4px 8px 8px;
-  } */
   .accordion details[open] summary {
-    background-color: theme('colors.slate.100');
-    color: theme('colors.blue.700');
-    margin-block-end: 12px;
+    margin-block-end: 8px;
   }
   .accordion summary:hover {
     background-color: theme('colors.blue.50');
@@ -246,12 +242,10 @@
     width: 22px;
     height: 22px;
   }
-  .accordion :where(details[open], details:has(summary:hover)) summary:not(:focus-visible) {
+  .accordion :where(details:has(summary:hover)) summary:not(:focus-visible) {
     outline: 3px solid white;
   }
   .accordion :where(details[open]) summary:before {
-    background-color: theme('colors.white');
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none'%3E%3Cpath stroke='rgb(0 103 197 / 1)' stroke-linecap='round' stroke-width='2' d='m6.5 10 5.493 5.493a.01.01 0 0 0 .014 0L17.5 10'/%3E%3C/svg%3E");
     rotate: -180deg;
   }
   .accordion summary:hover:before {
@@ -275,17 +269,19 @@
   /* Expander */
   .expander {
     display: grid;
-    padding-inline: 44px;
+    padding-inline: 16px;
+    border: 1px solid theme('colors.slate.300');
+    border-radius: theme('borderRadius.lg');
   }
   .expander[open] {
-    padding-block-end: 32px;
+    padding-block-end: 20px;
   }
   :where(.expander) summary {
     appearance: none;
     display: flex;
     list-style: none;
-    padding: 0.75em 4px 0.625em 8px;
-    margin-inline: -44px;
+    padding: 0.75em 8px 0.625em 12px;
+    margin-inline: -16px;
     border-radius: theme('borderRadius.lg');
     cursor: pointer;
     text-align: left;
@@ -294,19 +290,21 @@
     color: theme('colors.blue.700');
     font-weight: 500;
     gap: theme(spacing.[0.5]);
-    background-color: theme('colors.slate.100');
+    background-color: theme('colors.white');
   }
   :where(.expander) summary::-webkit-details-marker {
     display: none;
   }
   :where(.expander[open]) summary {
     margin-block-end: theme('spacing.2');
+    border-radius: theme('borderRadius.lg') theme('borderRadius.lg') 0 0;
+    border-bottom: 1px solid theme('colors.slate.300');
   }
   :where(.expander) summary:hover {
-    background-color: theme('colors.slate.200');
+    background-color: theme('colors.blue.50');
   }
   :where(.expander) summary:after {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath stroke='rgba(0, 69, 156, 1)' stroke-linecap='round' stroke-width='1.875' d='m6.5 10 5.493 5.493a.01.01 0 0 0 .014 0L17.5 10'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath stroke='rgba(0, 69, 156, 1)' stroke-linecap='round' stroke-width='1.75' d='m6.5 10 5.493 5.493a.01.01 0 0 0 .014 0L17.5 10'/%3E%3C/svg%3E");
     background-position: center;
     background-repeat: no-repeat;
     content: "";
@@ -335,16 +333,17 @@
   /* ReadMore */
   .readmore {
     display: grid;
-  }
-  .readmore[open] {
-    padding-block-end: 32px;
+    margin-block-end: 40px;
   }
   :where(.readmore) summary {
     appearance: none;
     display: flex;
+    width: fit-content;
     list-style: none;
-    padding: 0.75em 12px 0.625em 42px;
+    padding: 0.5em 16px 0.375em 44px;
     cursor: pointer;
+    background-color: theme('colors.slate.100');
+    border-radius: theme('borderRadius.lg');
     color: theme('colors.blue.600');
     line-height: 1.375;
     font-weight: 500;
@@ -354,9 +353,8 @@
   :where(.readmore) summary::-webkit-details-marker {
     display: none;
   }
-  
   :where(.readmore) summary:before {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath stroke='rgba(0, 69, 156, 1)' stroke-linecap='round' stroke-width='1.875' d='m6.5 10 5.493 5.493a.01.01 0 0 0 .014 0L17.5 10'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath stroke='rgba(0, 69, 156, 1)' stroke-linecap='round' stroke-width='1.75' d='m6.5 10 5.493 5.493a.01.01 0 0 0 .014 0L17.5 10'/%3E%3C/svg%3E");
     background-position: center;
     background-repeat: no-repeat;
     content: "";
@@ -364,14 +362,21 @@
     flex-shrink: 0;
     place-items: center;
     align-self: baseline;
-    margin-inline: -32px 10px;
-    transition: rotate 150ms;
-    transform: translateY(0);
-    width: 22px;
-    height: 22px;
+    margin-inline: -32px 8px;
+    transition: transform 150ms;
+    transform: translateY(2px);
+    width: 20px;
+    height: 20px;
+  }
+  :where(.readmore) summary:hover {
+    background-color: theme('colors.slate.200');
+  }
+
+  :where(.readmore[open]) summary {
+    margin-bottom: 16px;
   }
   :where(.readmore[open]) summary:before {
-    transform: rotate(-180deg);
+    transform: translateY(2px) rotate(-180deg);
   }
   :where(.readmore) summary > * {
     text-wrap: pretty;
@@ -379,13 +384,6 @@
   :where(.readmore) summary > span {
     transform: translateY(-1px);
   }
-  :where(.readmore) > div {
-    padding-inline-start: 22px;
-    padding-block: 12px;
-    margin-inline-start: 20px;
-    border-left: 2px solid theme('colors.slate.200');
-  }
-
 
 
   .button {
