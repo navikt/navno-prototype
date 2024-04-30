@@ -42,12 +42,6 @@ Først leverer du sykmeldingen til arbeidsgiveren din. Du logger deg inn på [Di
 3. Når du har sendt inn søknaden om sykepenger, kan NAV behandle søknaden din. Det skjer først når arbeidsgiveren din har sendt oss opplysninger om inntekten (inntektsmelding). Hvis du har pålegg om faste trekk, må arbeidsgiveren din også fylle ut skjemaet for trekkopplysninger.
 
 #### Søknad om sykepenger for arbeidstakere
-Du søker du om sykepenger når perioden for sykmeldingen er over.
-
-Du får en melding når søknaden er klar til å fylles ut på [Ditt sykefravær](#) og sender den derfra.
-
-Du må sende søknad om sykepenger selv om arbeidsgiveren din betaler deg lønn mens du er syk. Arbeidsgiveren krever pengene tilbake fra NAV basert på søknaden din.
-
 <div class="flex flex-wrap gap-2 mt-3">
   {{ button({ text: 'Send søknad', variant: 'primary' }) }}
   {{ button({ text: 'Ettersend dokumentasjon', variant: 'secondary' }) }}

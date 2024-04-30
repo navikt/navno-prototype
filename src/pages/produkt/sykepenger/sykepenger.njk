@@ -90,9 +90,9 @@ permalink: 'produkt/sykepenger/index.html'
     {% for chapter in chapters %}
       {% set chapterIndex = loop.index %}
       <section class="grid grid-flow-row-dense mt-8 col-full grid-cols-combi " id="{{ chapter.data.title | slugify }}" x-data="{ tocOpen: false, isStuck: false }">
-        <div class="z-20 grid text-lg font-semibold bg-white col-full grid-cols-combi">
+        <div class="z-20 grid mt-8 text-lg font-semibold bg-white col-full grid-cols-combi">
           {% if chapter.data.icon %}
-          <div class="aspect-square rounded-full grid place-items-center w-1/2 max-w-[4.75ch] bg-green-200 mt-16 mb-4">
+          <div class="aspect-square rounded-full grid place-items-center w-1/2 max-w-[4.75ch] bg-green-200 mt-8 mb-4">
             {{ chapter.data.icon | svgContents('w-[3ch] h-[3ch] text-green-800') | safe if chapter.data.icon }}
           </div>
           {% endif %}
