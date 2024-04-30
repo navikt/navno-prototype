@@ -212,7 +212,7 @@
     font-size: theme('fontSize.base');
     font-weight: 400;
     line-height: 1.375;
-    background-color: theme('colors.transparent');
+    background-color: theme('colors.white');
     color: theme('colors.blue.500');
   }
   .accordion summary::-webkit-details-marker {
@@ -220,6 +220,9 @@
   }
   .accordion details[open] summary {
     margin-block-end: 8px;
+    position: sticky;
+    top: 0;
+    z-index: 20;
   }
   .accordion summary:hover {
     background-color: theme('colors.slate.100');
@@ -298,6 +301,9 @@
     margin-block-end: theme('spacing.2');
     border-radius: theme('borderRadius.lg') theme('borderRadius.lg') 0 0;
     border-bottom: 1px solid theme('colors.slate.300');
+    position: sticky;
+    top: 0;
+    z-index: 20;
   }
   :where(.expander) summary:hover {
     background-color: theme('colors.slate.100');
@@ -372,6 +378,10 @@
   }
 
   :where(.readmore[open]) summary {
+    outline: 4px solid white;
+    position: sticky;
+    top: 4px;
+    z-index: 20;
     margin-bottom: 16px;
   }
   :where(.readmore[open]) summary:before {
