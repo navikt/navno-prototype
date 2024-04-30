@@ -90,9 +90,9 @@ permalink: 'produkt/sykepenger/index.html'
     {% for chapter in chapters %}
       {% set chapterIndex = loop.index %}
       <section class="grid grid-flow-row-dense mt-8 col-full grid-cols-combi " id="{{ chapter.data.title | slugify }}" x-data="{ tocOpen: false, isStuck: false }">
-        <div class="z-20 grid py-6 text-lg font-semibold bg-white col-full grid-cols-combi">
+        <div class="z-20 grid text-lg font-semibold bg-white col-full grid-cols-combi">
           {% if chapter.data.icon %}
-          <div class="aspect-square rounded-full grid place-items-center w-1/2 max-w-[4.75ch] bg-green-200 mt-24 mb-6">
+          <div class="aspect-square rounded-full grid place-items-center w-1/2 max-w-[4.75ch] bg-green-200 mt-16 mb-4">
             {{ chapter.data.icon | svgContents('w-[3ch] h-[3ch] text-green-800') | safe if chapter.data.icon }}
           </div>
           {% endif %}
@@ -121,7 +121,7 @@ permalink: 'produkt/sykepenger/index.html'
 
         {# Chapter TOC #}
         {% if chapter.templateContent and chapter.templateContent | tocData | length > 0 and not chapter.data.hideToc %}
-        <nav class="relative px-5 py-3 rounded-lg bg-slate-100">
+        <nav class="relative px-5 py-3 mt-4 mb-8 rounded-lg bg-slate-100">
           <h3 class="pb-2 font-semibold">I dette kapittelet</h3>
           <ul class="grid gap-4 mt-1 justify-items-start">
             {% for item in chapter.templateContent | tocData %}

@@ -1,6 +1,6 @@
 {% macro tile(args) %}
-<div class="relative overflow-clip">
- <div class="px-6 py-4 flex gap-4 rounded-lg bg-white border leading-normal border-slate-300 has-[a:hover]:bg-slate-100 has-[a:hover]:border-slate-200 {{ args.theme }} group">
+<div class="relative overflow-clip {{ args.theme }}">
+ <div class="px-6 py-4 flex gap-4 rounded-lg bg-white border leading-normal border-slate-300 has-[a:hover]:bg-slate-100 has-[a:hover]:border-slate-200 group">
     <div class="grid gap-px -mt-0.5">
       {% if args.kicker %}
       <p class="font-medium leading-tight tracking-wider pointer-events-none opacity-80 small-caps">

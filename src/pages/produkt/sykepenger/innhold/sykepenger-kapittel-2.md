@@ -14,15 +14,13 @@ order: 2
 
 Sykepengene skal dekke inntekten du vanligvis har, opp til 711 720 kroner (6 ganger folketrygdens grunnbeløp). 
 
-Når NAV skal utbetale sykepenger, fastsetter vi et sykepengegrunnlag som sykepengene regnes ut etter. 
+Når NAV skal utbetale sykepenger, fastsetter vi et sykepengegrunnlag som sykepengene regnes ut etter. I noen saker må NAV bruke skjønn for å beregne sykepengegrunnlaget ditt, det vil si inntekten som NAV kommer fram til at du ville hatt om du ikke hadde blitt syk.
 
 Inntekt fra overtid regnes ikke med i sykepengegrunnlaget.
 
 Hvis du starter i ny jobb eller får ny inntekt mens du er sykmeldt, vil sykepengene dine bli gradert.
 
 Hvis du fyller vilkårene for både sykepenger og AAP, må du først bruke sykepengene dine fullt ut. Hvis sykepengegrunnlaget ditt er mindre enn to ganger grunnbeløpet (2G), kan du likevel velge mellom sykepenger og AAP.
-
-Hvis du mottar sykepenger for en deltidsstilling på inntil 60 prosent, kan du ha rett til både sykepenger og reduserte AAP.
 
 <div class="accordion">
   <details>
@@ -32,19 +30,13 @@ Arbeidsgiveren din utbetaler sykepengene for de første 16 dagene du er syk. Det
 
 Sykepengene beregnes med utgangspunkt i lønnen din de siste tre månedene før du ble sykmeldt.
 
-I noen saker må NAV bruke skjønn for å beregne sykepengegrunnlaget ditt, det vil si inntekten som kan godtgjøres at du ville hatt om du ikke hadde blitt syk.
+Hvis sykmeldingen din skyldes yrkesskade, kan du ha andre rettigheter i tillegg. Sykmeldingen din må i tilfelle helt og fullt skyldes yrkesskaden, og NAV må ha godkjent [yrkesskaden](#).
 
-Hvis sykmeldingen din skyldes yrkesskade, kan du ha andre rettigheter i tillegg. Sykmeldingen din må i tilfelle helt og fullt skyldes yrkesskaden, og NAV må ha godkjent yrkesskaden.
-
-Du får utbetalt feriepenger fra NAV. Feriepengene beregnes på grunnlag av de første 48 dagene med sykepenger per kalenderår.
+Du får utbetalt [feriepenger](#) fra NAV. Feriepengene beregnes på grunnlag av de første 48 dagene med sykepenger per kalenderår.
 
 #### Hvis du har et tidsbegrenset arbeidsforhold
-Du får sykepenger som arbeidstaker i den perioden arbeidsforholdet er avtalt å vare. Hvis du er sykmeldt lenger enn dette, kan sykepengene dine bli vurdert på nytt. 
 
-#### Hvis du er arbeidstaker på skip
-Hvis du jobber på et norskregistrert skip (NOR), har du rett til sykepenger etter de samme reglene som gjelder for andre arbeidstakere. Dette gjelder også om du jobber på et norsk skip i utenriksfart.
-
-Hvis du jobber på et skip som registrert i Norsk internasjonalt skipsregister (NIS), kan du ha rett til sykepenger hvis  skipet seiler under norsk flagg på det tidspunktet du ble arbeidsufør.
+Du får sykepenger som arbeidstaker i den perioden arbeidsforholdet er avtalt å vare. Hvis du er sykmeldt lenger enn dette, kan sykepengene dine bli vurdert på nytt.
       {% endprose %}
   </details>
 
@@ -53,7 +45,7 @@ Hvis du jobber på et skip som registrert i Norsk internasjonalt skipsregister (
     {% prose "py-2 pl-5 -ml-5 -translate-x-px border-l-2 border-slate-400"  %}
 Som selvstendig næringsdrivende har du rett til sykepenger fra 17. fraværsdag. Sykepengene utgjør 80 prosent av sykepengegrunnlaget. Men du kan forsikre deg for å få dekket større deler av inntektstapet.
 
-Beregningen av sykepengegrunnlaget tar som regel utgangspunkt i gjennomsnittet av den pensjonsgivende årsinntekten for de siste 3 siste årene du har fått skatteoppgjør for. Dette gjelder hvis det ikke har skjedd en varig endring.
+Beregningen av sykepengegrunnlaget tar som regel utgangspunkt i gjennomsnittet av den pensjonsgivende årsinntekten for de siste 3 årene du har fått skatteoppgjør for. Dette gjelder hvis det ikke har skjedd en varig endring.
 
 Har det skjedd varige endringer i arbeidssituasjonen din eller virksomheten? Eller har du nylig startet opp som selvstendig næringsdrivende?
 
@@ -73,6 +65,15 @@ Selvstendig næringsdrivende har ikke rett til feriepenger av sykepengene.
 Du kan [forsikre])(#) deg for å få dekket større deler av inntektstapet ditt.
 
 Hvis sykmeldingen din skyldes yrkesskade, og du har tegnet en egen yrkesskadeforsikring, kan du ha andre rettigheter i tillegg. Sykmeldingen din må i tilfelle helt og fullt skyldes yrkesskaden, og NAV må ha godkjent yrkesskaden.
+
+#### Jordbrukere og reindriftsutøvere
+
+Du har rett til sykepenger fra dag 17 av sykefraværet ditt, og du kan få sykepenger som tilsvarer 80 prosent av lønnen din.
+
+* Du kan ha en kollektiv forsikring som gir deg rett til syke­penger med full lønn opp til 711 720 (6G). Sjekk med Skatteetaten om du er omfattet av denne forsikringen.
+* Du kan i tillegg tegne individuell forsikring for jordbrukere og reindriftsutøvere som gir deg full lønn de 16 første sykefraværsdagene.
+
+{{ tile({ title: 'Forsikring for jordbrukere og reindriftsutøvere', mark: 'bg-green-400', kicker: ['Forsikring'] }) }}
     {% endprose %}
   </details>
 
@@ -89,17 +90,7 @@ Hvis sykmeldingen din skyldes yrkesskade, og du har tegnet en egen yrkesskadefor
     {% endprose %}
   </details>
 
-  <details>
-    <summary>Jordbruker eller reindriftsutøver - <mark>skal ikke dette være med?</mark></summary>
-    {% prose "py-2 pl-5 -ml-5 -translate-x-px border-l-2 border-slate-400"  %}
-Du har rett til sykepenger fra dag 17 av sykefraværet ditt, og du kan få sykepenger som tilsvarer 80 prosent av lønnen din.
-
-* Du kan ha en kollektiv forsikring som gir deg rett til syke­penger med full lønn opp til 711 720 (6G). Sjekk med Skatteetaten om du er omfattet av denne forsikringen.
-* Du kan i tillegg tegne individuell forsikring for jordbrukere og reindriftsutøvere som gir deg full lønn de 16 første sykefraværsdagene. Les mer om forsikring for jordbrukere og reindriftsutøvere.
-
-    {% endprose %}
-  </details>
-
+ 
   <details>
     <summary>Fisker</summary>
     {% prose "py-2 pl-5 -ml-5 -translate-x-px border-l-2 border-slate-400"  %}
@@ -127,40 +118,31 @@ Hvis den samlede inntekten din er mindre enn 6G vil utbetaling av sykepenger væ
 
 Hvis den samlede inntekten din er mer enn 6G og
 
-* du har flere arbeidsgivere som alle utbetaler sykepenger mens du er syk, og du er syk fra alle arbeidsforholdene: Da blir sykepengene dine forholdsmessig fordelt ut fra hvor stor andel du jobber i de ulike arbeidsforholdene.
-* du har én arbeidsgiver som utbetaler sykepenger mens du er syk, og én arbeidsgiver som ikke gjør det: Den arbeidsgiveren som utbetaler sykepenger får dekket hele refusjonskravet sitt, begrenset til 6G. Hvis du tjener mindre enn 6G hos denne arbeidsgiveren, får du utbetalt resten.
-* du er selvstendig næringsdrivende i tillegg til at du har en arbeidsgiver som utbetaler sykepenger mens du er syk. Se punkt 2.  
-* du har frilansinntekt i tillegg til at du har en arbeidsgiver som utbetaler sykepenger mens du er syk. Se punkt 2.
-    {% endprose %}
-  </details>
-
-  <details>
-    <summary>Jobber i flere land – <mark>Tekst mangler</mark></summary>
-    {% prose "py-2 pl-5 -ml-5 -translate-x-px border-l-2 border-slate-400"  %}
-Tekst mangler
+1. du har flere arbeidsgivere som alle utbetaler sykepenger mens du er syk, og du er syk fra alle arbeidsforholdene: Da blir sykepengene dine forholdsmessig fordelt ut fra hvor stor andel du jobber i de ulike arbeidsforholdene.
+2. du har én arbeidsgiver som utbetaler sykepenger mens du er syk, og én arbeidsgiver som ikke gjør det: Den arbeidsgiveren som utbetaler sykepenger får dekket hele refusjonskravet sitt, begrenset til 6G. Hvis du tjener mindre enn 6G hos denne arbeidsgiveren, får du utbetalt resten.
+3. du er selvstendig næringsdrivende i tillegg til at du har en arbeidsgiver som utbetaler sykepenger mens du er syk. Se punkt 2.  
+4. du har frilansinntekt i tillegg til at du har en arbeidsgiver som utbetaler sykepenger mens du er syk. Se punkt 2.
     {% endprose %}
   </details>
 
   <details>
     <summary>Midlertidig ute av arbeid</summary>
     {% prose "py-2 pl-5 -ml-5 -translate-x-px border-l-2 border-slate-400"  %}
-Du kan få sykepenger fra og med den 15. dagen etter at du ble sykmeldt. Sykepengene utgjør 65 prosent av sykepengegrunnlaget hvis du ikke jobber, og 100 prosent hvis du jobber når du blir sykmeldt.
-
-For å ha rett til sykepenger må du miste en årlig inntekt som minst tilsvarer 118 620 (1G). 
+Hvis du har vært ute av arbeid i under en måned kan du få sykepenger fra og med den 15. dagen etter at du ble sykmeldt. Sykepengene utgjør 65 prosent av sykepengegrunnlaget hvis du ikke jobber, og 100 prosent hvis du jobber når du blir sykmeldt.
     {% endprose %}
   </details>
 
   <details>
-    <summary>Arbeidsledig</summary>
+    <summary>Arbeidsledig (dagpengemottaker)</summary>
     {% prose "py-2 pl-5 -ml-5 -translate-x-px border-l-2 border-slate-400"  %}
-Hvis du får dagpenger, vil du få sykepenger fra den første fraværsdagen hvis du har sykmelding for denne. Du får det samme utbetalt per dag i sykepenger som du får utbetalt i dagpenger.
+Hvis du får dagpenger, vil du få sykepenger fra den første dagen du er sykmeldt. Du får det samme utbetalt per dag i sykepenger som du får utbetalt i dagpenger.
     {% endprose %}
   </details>
 
   <details>
-    <summary>Permittert – <mark>Tekst mangler</mark></summary>
+    <summary>Permittert</summary>
     {% prose "py-2 pl-5 -ml-5 -translate-x-px border-l-2 border-slate-400"  %}
-==Bør denne også være med her siden den er lagt til i Hvem kan få?==
+Hvis du er permittert og mottar dagpenger, vil du få sykepenger fra den første dagen du er sykmeldt. Du får det samme utbetalt per dag i sykepenger som du får utbetalt i dagpenger.
     {% endprose %}
   </details>
 
@@ -190,16 +172,8 @@ Hvis du fortsatt har faste og nødvendige utgifter til bolig eller forsørgingsa
 #### Studier på deltid
 
 * Er du sykmeldt fra en deltidsjobb, men klarer likevel å fortsette studiene? Da kan du få sykepenger basert på inntekten din hvis du har kombinert jobb og studier over et visst tidsrom. 
-* Klarer du å fortsette i jobben, men må avbryte studiene på grunn av sykdom? Da kan du ha rett til arbeidsavklaringspenger som student. Pengene blir beregnet etter hvor mange timer du jobber.
+* Klarer du å fortsette i jobben, men må avbryte studiene på grunn av sykdom? Da kan du ha rett til [arbeidsavklaringspenger](#) som student. Pengene blir beregnet etter hvor mange timer du jobber.
 * Hvis du blir sykmeldt fra deltidsjobben og må avbryte studiene, kan du ha rett til sykepenger i kombinasjon med arbeidsavklaringspenger.
-
-#### Utdanning for å komme tilbake i arbeid
-
-I noen tilfeller kan NAV godkjenne utdanningen din som et arbeidsrettet tiltak mens du får sykepenger eller [arbeidsavklaringspenger](#).
-
-{{ microcard({ text: 'Arbeidsavklarings­penger (AAP)', dot: 'bg-green-400' }) }}
-
-Det lokale NAV-kontoret vil vurdere situasjonen og hvilke opplysninger som trengs til søknaden din. Se hvordan [du kan kontakte oss](#).
 
 #### Sykestipend fra Lånekassen
 
@@ -208,13 +182,12 @@ Hvis du blir syk og ikke kan møte til undervisningen, kan du få [sykestipend f
   </details>
 </div>
 
-***
-
 ### Hvis arbeidsgiveren ikke godtar sykmeldingen din
 
 Noen ganger kan en arbeidsgiver nekte å betale sykepenger de første 16 dagene av sykefraværet. Hvis arbeidsgiveren din ikke godkjenner sykmeldingen, kan du søke om at NAV betaler deg sykepenger disse 16 dagene.
 
 #### Når kan arbeidsgiveren tvile på sykmeldingen?
+
 Arbeidsgiveren din har ikke rett til å få vite sykdomshistorien eller diagnosen din. Det hender likevel at arbeidsgiveren kan stille spørsmål ved om du har rett til sykepenger.
 
 Her ser du eksempler på situasjoner som kan gi arbeidsgiveren grunnlag for å tvile på sykmeldingen:
@@ -224,7 +197,6 @@ Her ser du eksempler på situasjoner som kan gi arbeidsgiveren grunnlag for å t
 * Hvis du har latt være å si fra om at du var syk, eller sagt fra først etter 14 dager.
 * Hvis sykmeldingen er tilbakedatert selv om du har hatt mulighet til å oppsøke lege.
 * Hvis legen din uttrykker tvil om du er for syk til å jobbe.
-
 
 <details class="readmore">
   <summary>Slik søker du om at NAV betaler sykepengene de første 16 dagene</summary>
@@ -259,8 +231,6 @@ Hvis vi mener at du har rett til sykepenger, vil vi utbetale sykepengene til deg
 
 Hvis vi derimot kommer til samme konklusjon som arbeidsgiveren din, kan vi ikke utbetale sykepenger for de første 16 dagene av sykefraværet. Vi må også vurdere om du har rett til sykepenger fra dag 17 når vi overtar ansvaret for å utbetale sykepenger.
 
-***
-
 ### Hvor lenge kan du få?
 
 Hvor lenge du kan få sykepenger avhenger av alderen din.
@@ -273,6 +243,7 @@ Du kan maksimalt få sykepenger i 52 uker. Grensen er den samme enten du er helt
 
 * Sykefravær 3 år tilbake i tid blir lagt sammen hvis det er mindre enn 26 uker mellom noen av fraværene. 
 * Hvis du har brukt opp de 52 ukene, må det gå 26 uker uten sykepenger eller arbeidsavklaringspenger for at du kan få sykepenger på nytt.
+* Hvis du mottar [arbeidsavklaringspenger](#) som arbeidssøker, vil du likevel starte opptjeningen av ny rett til sykepenger. 
 
 Hvis du har fått sykepenger i 52 uker og fortsatt ikke kan arbeide på grunn av sykdom eller skade, kan du ha rett til arbeidsavklaringspenger eller uføretrygd.
     {% endprose %}
@@ -287,8 +258,6 @@ Du kan få sykepenger i opptil 60 dager, uavhengig av om du har tatt ut alderspe
     {% endprose %}
   </details>
 </div>
-
-***
 
 ### Ulike former for sykmelding
 
@@ -321,18 +290,7 @@ Du kan få sykmelding hvis [behandlingen](#) har en slik virkning på deg at du 
 [Avventende sykmelding](#) er en beskjed til arbeidsgiveren din om at du kan unngå sykmelding hvis det blir lagt til rette for deg på arbeidsplassen.
     {% endprose %}
   </details>
-
-  <details>
-    <summary>Egenmeldt sykmelding</summary>
-    {% prose "py-2 pl-5 -ml-5 -translate-x-px border-l-2 border-slate-400"  %}
-Du som er arbeidstaker kan ha rett til å melde ifra til arbeidsgiveren din om at du er syk, uten at du leverer sykmelding i løpet av de første 16 kalenderdagene du er syk. Du kan lese mer om [egenmelding](#) her.
-
-Du som er selvstendig næringsdrivende eller frilanser kan kontakte NAV i løpet av de første 16 kalenderdagene for å melde ifra at du er syk. Men for å få sykepenger utbetalt fra NAV må du ha en sykmelding. Lenke til selvstendig og frilanser.
-    {% endprose %}
-  </details>
 </div>
-
-***
 
 ### Reisetilskudd som alternativ til sykepenger
 
@@ -344,9 +302,6 @@ Klarer du å jobbe, men har problemer med å reise til og fra arbeidsstedet? Da 
   kicker: ['Pengestøtte'],
   mark: 'bg-green-400'
 }) }}
-
-***
-
 
 ### Andre tilbud
 
@@ -373,11 +328,4 @@ Mer informasjon til deg som
     mark: 'bg-orange-400', 
     kicker: ['Helse og sykdom'] 
   }) }}
-</div>
-
-<div class="grid gap-2 mt-8 justify-items-start">
-  {{ microcard({ text: 'Har blitt sykmeldt', dot: 'bg-orange-400' }) }}
-  {{ microcard({ text: 'Kan bare jobbe noe på grunn av langvarig sykdom eller skade', dot: 'bg-orange-400' }) }}
-  {{ microcard({ text: 'Har vært syk eller skadet lenge', dot: 'bg-orange-400' }) }}
-  {{ microcard({ text: 'Har en varig sykdom eller skade og kan ikke jobbe', dot: 'bg-orange-400' }) }}
 </div>

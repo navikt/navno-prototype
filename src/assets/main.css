@@ -48,12 +48,15 @@
     margin-block-start: 1.75em;
   }
   .prose > :where(h1, h2, h3, h4, h5) {
-    margin-block: 1.5em 0.3em;
     color: theme('colors.gray.800');
     font-weight: 700;
     text-wrap: pretty;
+    margin-block: 1.5em 0.3em;
   }
-  :is(.prose) > :where(h2) {
+  .prose > :where(h1, h2, h3, h4, h5):first-child {
+    margin-block-start: 0;
+  }
+    :is(.prose) > :where(h2) {
     font-size: var(--text-fluid-2);
     line-height: 1.33;
     letter-spacing: -0.0125em;
@@ -63,14 +66,13 @@
     font-size: var(--text-fluid-1);
     line-height: 1.33;
     letter-spacing: -0.0125em;
-    display: grid;
   }
 
   :is(.prose) > h4 {
     font-size: var(--text-fluid-0);
     line-height: 1.33;
     letter-spacing: 0;
-    margin-block-start: 1.6em;
+ 
   }
   :is(.prose) > h5 {
     font-size: var(--text-fluid-0);
@@ -80,10 +82,7 @@
     letter-spacing: 0.05em;
     font-variant-caps: all-small-caps;
   }
-  :is(.prose) > :is(h5):first-child {
-    margin-block-start: 0.25em;
-  }
-
+ 
   :where(.prose) > :is(ul, ol) {
     padding-inline-start: theme('spacing.5');
   }
@@ -105,7 +104,7 @@
     margin-inline-start: theme('spacing.[2.5]');
   }
   :where(.prose) > :where(ol, ul) li + li {
-    margin-block-start: theme('spacing.[5]');
+    margin-block-start: theme('spacing.1');
 
   }
   :where(.prose) > :is(p, ul, ol) {
@@ -223,7 +222,7 @@
     margin-block-end: 8px;
   }
   .accordion summary:hover {
-    background-color: theme('colors.blue.50');
+    background-color: theme('colors.slate.100');
     color: theme('colors.blue.600');
   }
   .accordion summary:before {
@@ -301,7 +300,7 @@
     border-bottom: 1px solid theme('colors.slate.300');
   }
   :where(.expander) summary:hover {
-    background-color: theme('colors.blue.50');
+    background-color: theme('colors.slate.100');
   }
   :where(.expander) summary:after {
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath stroke='rgba(0, 69, 156, 1)' stroke-linecap='round' stroke-width='1.75' d='m6.5 10 5.493 5.493a.01.01 0 0 0 .014 0L17.5 10'/%3E%3C/svg%3E");
@@ -340,7 +339,7 @@
     display: flex;
     width: fit-content;
     list-style: none;
-    padding: 0.5em 16px 0.375em 44px;
+    padding: 0.25em 16px 0.25em 44px;
     cursor: pointer;
     background-color: theme('colors.slate.100');
     border-radius: theme('borderRadius.lg');

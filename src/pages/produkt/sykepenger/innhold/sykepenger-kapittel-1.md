@@ -52,6 +52,15 @@ Sykepenger for arbeidstakere på skip beregnes i hovedsak på samme måte som fo
 * Det har betydning for sykepengene hvilket flagg skipet seiler under når du blir sykmeldt. Les mer om sykepenger innenfor og utenfor EØS-området.
 * Hvis du er ansatt på turistskip innen hotell- og restaurantvirksomhet, er du ikke medlem i folketrygden, og har dermed ikke rett til sykepenger.
 
+#### Tilkallingsvikar
+
+Du kan ha rett til sykepenger, men det avhenger blant annet på hvor mye og ofte du har jobbet før du ble sykmeldt.
+
+Hvis du er tilkallingsvikar, er det viktig å avgjøre om
+
+* du oppfyller kravet til opptjeningstid hvis du bare har jobbet noen vakter av og på i en periode.
+* du kan sies å tape pensjonsgivende inntekt hvis du ikke har avtalt noen vakter med arbeidsgiveren din framover.
+
 #### Hvis du er mellom 67 og 70 år
 
 Du kan få sykepenger fra NAV i opptil 60 dager hvis gjennomsnittet av inntekten din de siste 3 månedene før du ble syk omgjort til årsinntekt overstiger 237 240 kroner (2 ganger grunnbeløpet i folketrygden). Dette gjelder hvis du er mellom 67 og 70 år, uavhengig av om du har tatt ut alderspensjon.
@@ -60,7 +69,7 @@ Du kan få sykepenger fra NAV i opptil 60 dager hvis gjennomsnittet av inntekten
 
 #### Friskmelding til arbeidsformidling
 
-Hvis alle muligheter for å komme tilbake til arbeidsplassen din er forsøkt, kan du få sykepenger i inntil 12 uker mens du søker ny jobb.
+Hvis alle muligheter for å komme tilbake til arbeidsplassen din er forsøkt, kan du få [sykepenger i inntil 12](#) uker mens du søker ny jobb.
 
 {{ tile({ title: 'Friskmelding til arbeidsformidling', mark: 'bg-limegreen-400', kicker: ['Når du er syk'] }) }}
 
@@ -83,6 +92,16 @@ Gjennomsnittet av årsinntekten din fastsatt for de 3 siste årene må være min
 
 Det samme gjelder hvis du kombinerer arbeid med uføretrygd.
 
+#### Jordbruker eller reindriftsutøver
+
+##### Hvem regnes som jordbruker?
+
+Du regnes som jordbruker hvis skatteoppgjøret for det siste året viste at du hadde en nærings­inntekt fra jord‑ eller skogbruk på minst 8 000 kroner, og at det utgjorde minst 20 prosent av den samlede nettoinntekten din. Du regnes også som jordbruker hvis du kan dokumentere at du vil ha tilsvarende inntekt framover.
+
+##### Hvem regnes som reindriftsutøver?
+
+Du regnes som reindriftsutøver når du ifølge [lov om reindrift (Lovdata.no)](#) har rett til å utøve reindrift. For å dokumentere at du er omfattet av den kollektive forsikringen må reindriftsagronomen i beiteområdet ditt attesterer at du er registrert reindriftsutøver.
+
 #### Hvis du er mellom 67 og 70 år
 
 Du kan få sykepenger fra NAV i opptil 60 dager hvis gjennomsnittet av inntekten din de siste 3 månedene før du ble syk omgjort til årsinntekt overstiger 237 240 kroner (2 ganger grunnbeløpet i folketrygden). Dette gjelder hvis du er mellom 67 og 70 år, uavhengig av om du har tatt ut alderspensjon.
@@ -95,8 +114,7 @@ De første 16 dagene telles fra du oppsøker lege eller NAV får melding om at d
 
 Hvis du har tegnet forsikring, kan du få sykepenger de første 16 kalenderdagene, men da må du levere en sykmelding.
 
-{{ microcard({ text: 'Forsikring for selvstendig næringsdrivende', dot: 'bg-green-400' }) }}
-
+{{ tile({ title: 'Forsikring for jordbrukere og reindriftsutøvere', mark: 'bg-green-400', kicker: ['Forsikring'] }) }}
     {% endprose %}
   </details>
 
@@ -121,42 +139,10 @@ De første 16 dagene telles fra du oppsøker lege eller NAV får melding om at d
 
 Hvis du har tegnet forsikring, kan du få sykepenger de første 16 kalenderdagene, men da må du levere en sykmelding.
 
-{{ microcard({ text: 'Forsikring for frilansere', dot: 'bg-green-400' }) }}
+{{ tile({ title: 'Forsikring for frilansere', mark: 'bg-green-400', kicker: ['Forsikring'] }) }}
     {% endprose %}
   </details>
 
-  <details>
-    <summary>Jordbruker eller reindriftsutøver</summary>
-    {% prose "py-2 pl-5 -ml-5 -translate-x-px border-l-2 border-slate-400" %}
-Du har rett til sykepenger fra dag 17 av sykefraværet ditt.
-
-Gjennomsnittet av årsinntekten din fastsatt for de 3 siste årene må være må være minst 59 310 kroner. Det tilsvarer femti prosent av grunnbeløpet i folketrygden (1/2 G).
-
-#### Hvem regnes som jordbruker?
-
-Du regnes som jordbruker hvis skatteoppgjøret for det siste året viste at du hadde en nærings­inntekt fra jord‑ eller skogbruk på minst 8 000 kroner, og at det utgjorde minst 20 prosent av den samlede nettoinntekten din. Du regnes også som jordbruker hvis du kan dokumentere at du vil ha tilsvarende inntekt framover.
-
-#### Hvem regnes som reindriftsutøver?
-
-Du regnes som reindriftsutøver når du ifølge [lov om reindrift (Lovdata.no)](#) har rett til å utøve reindrift. For å dokumentere at du er omfattet av den kollektive forsikringen må reindriftsagronomen i beiteområdet ditt attesterer at du er registrert reindriftsutøver.
-
-#### Hvis du er mellom 67 og 70 år
-
-Du kan få sykepenger fra NAV i opptil 60 dager hvis gjennomsnittet av inntekten din de siste 3 månedene før du ble syk omgjort til årsinntekt overstiger 237 240 kroner (2 ganger grunnbeløpet i folketrygden). Dette gjelder hvis du er mellom 67 og 70 år, uavhengig av om du har tatt ut alderspensjon.
-
-60-dagersregelen gjelder fra og med dagen etter du fylte 67 år og til og med dagen før du fyller 70 år. Hvis du har fylt 70 år, har du ikke rett til sykepenger.
-
-#### Dette må du gjøre når du blir syk
-
-De første 16 dagene telles fra du oppsøker lege eller NAV får melding om at du ikke kan jobbe. [Ta kontakt med oss](#).
-
-Hvis du har tegnet forsikring, kan du få sykepenger de første 16 kalenderdagene, men da må du levere en sykmelding.
-
-{{ tile({ title: 'Forsikring for jordbrukere og reindriftsutøvere', mark: 'bg-green-400', kicker: ['Forsikring'] }) }}
-
-{{ microcard({ text: 'Forsikring for jordbrukere og reindriftsutøvere', dot: 'bg-green-400' }) }}
-    {% endprose %}
-  </details>
 
   <details>
     <summary>Fisker</summary>
@@ -177,39 +163,10 @@ Hvis du har hyre, regnes du som arbeidstaker.
 Du kan få sykepenger fra NAV i opptil 60 dager hvis gjennomsnittet av inntekten din de siste 3 månedene før du ble syk omgjort til årsinntekt overstiger 237 240 kroner (2 ganger grunnbeløpet i folketrygden). Dette gjelder hvis du er mellom 67 og 70 år, uavhengig av om du har tatt ut alderspensjon.
 
 60-dagersregelen gjelder fra og med dagen etter du fylte 67 år og til og med dagen før du fyller 70 år. Hvis du har fylt 70 år, har du ikke rett til sykepenger.
-
-#### Dette må du gjøre når du blir syk
-
-==Tekst her?==
     {% endprose %}
   </details>
+  
 
-  <details>
-    <summary>Tilkallingsvikar</summary>
-    {% prose "py-2 pl-5 -ml-5 -translate-x-px border-l-2 border-slate-400" %}
-Du kan ha rett til sykepenger, men det avhenger blant annet på hvor mye og ofte du har jobbet før du ble sykmeldt.
-
-* [Du må ha jobbet i minst fire uker rett før du ble syk.(Lovdata.no)](#)
-* [Du må tape pensjonsgivende inntekt fordi du er syk (Lovdata.no).](#)
-
-Inntekten din må være minst 59 310 kroner. Det tilsvarer femti prosent av grunnbeløpet i folketrygden (1/2 G). Denne inntektsgrensen gjelder etter arbeidsgiverperioden. Arbeidsgiverperioden er de dagene arbeidsgiveren din betaler sykepenger.
-
-De fleste som arbeider i en midlertidig stilling vil ha rett til sykepenger, også i arbeidsgiverperioden, etter at de har arbeidet i bedriften i fire uker. Hvis du er tilkallingsvikar, er det viktig å avgjøre om
-
-* du oppfyller kravet til opptjeningstid hvis du bare har jobbet noen vakter av og på i en periode.
-* du kan sies å tape pensjonsgivende inntekt hvis du ikke har avtalt noen vakter med arbeidsgiveren din framover.
-
-#### Hvis du er mellom 67 og 70 år
-
-Du kan få sykepenger fra NAV i opptil 60 dager hvis gjennomsnittet av inntekten din de siste 3 månedene før du ble syk omgjort til årsinntekt overstiger 237 240 kroner (2 ganger grunnbeløpet i folketrygden). Dette gjelder hvis du er mellom 67 og 70 år, uavhengig av om du har tatt ut alderspensjon.
-
-60-dagersregelen gjelder fra og med dagen etter du fylte 67 år og til og med dagen før du fyller 70 år. Hvis du har fylt 70 år, har du ikke rett til sykepenger.
-
-#### Dette må du gjøre når du blir syk
-
-==Tekst her?==
-    {% endprose %}
-  </details>
 
   <details>
     <summary>Har flere jobber</summary>
@@ -227,27 +184,15 @@ Hvis du har inntekt både som frilanser og som arbeidstaker, utbetales sykepenge
 Du kan få sykepenger fra NAV i opptil 60 dager hvis gjennomsnittet av inntekten din de siste 3 månedene før du ble syk omgjort til årsinntekt overstiger 237 240 kroner (2 ganger grunnbeløpet i folketrygden). Dette gjelder hvis du er mellom 67 og 70 år, uavhengig av om du har tatt ut alderspensjon.
 
 60-dagersregelen gjelder fra og med dagen etter du fylte 67 år og til og med dagen før du fyller 70 år. Hvis du har fylt 70 år, har du ikke rett til sykepenger.
-
-#### Dette må du gjøre når du blir syk
-
-Hvis du er sykmeldt fra flere jobber, må du ha en sykmelding for hver jobb.
     {% endprose %}
   </details>
 
   <details>
     <summary>Jobber i flere land</summary>
     {% prose "py-2 pl-5 -ml-5 -translate-x-px border-l-2 border-slate-400" %}
-Hvis du jobber i flere land, må NAV vurdere om du har rett til sykepenger etter norsk lov eller om du omfattes av andre lands lover. Denne vurderingen gjøres ut fra blant annet hvilket land du bor i, hvilket land du jobber mest i og i hvilket land arbeidsgiverne dine er registrert.
+Hvis du jobber i flere land, må NAV vurdere om du har rett til sykepenger etter norsk lov eller om du omfattes av andre lands lover. Denne vurderingen gjøres ut fra blant annet hvilket land du bor i, hva slags arbeid du utfører i hvilket land og i hvilket land arbeidsgiverne dine er registrert.
 
 Noen ganger må vi kontakte andre lands trygdemyndigheter for å avklare dette. Du kan kun være omfattet av ett lands lover på det tidspunktet du ble syk.
-
-#### Hvis du er mellom 67 og 70 år
-
-==Skal dette være med her?==
-
-#### Dette må du gjøre når du blir syk
-
-==Tekst her?==
     {% endprose %}
   </details>
 
@@ -276,16 +221,14 @@ Du kan få sykepenger fra NAV i opptil 60 dager hvis gjennomsnittet av inntekten
 
 #### Dette må du gjøre når du blir syk
 
-==Tekst her?==
+Du må ha sykmelding fra den første dagen du blir syk.
     {% endprose %}
   </details>
 
   <details>
-    <summary>Arbeidsledig</summary>
+    <summary>Arbeidsledig (dagpengemottaker)</summary>
     {% prose "py-2 pl-5 -ml-5 -translate-x-px border-l-2 border-slate-400" %}
-Hvis du blir sykmeldt mens du er arbeidsledig og mottar dagpenger, har du rett til sykepenger fra den første dagen du er sykmeldt.
-
-Det samme gjelder hvis du mottar dagpenger mens du er permittert.
+Hvis du blir sykmeldt mens du er arbeidsledig og mottar dagpenger, har du rett til sykepenger fra den første dagen du er sykmeldt. Du må ha mottatt dagpenger eller jobbet i minst fire uker til sammen for å ha rett til sykepenger.
 
 #### Hvis du er 100 prosent sykmeldt
 
@@ -300,7 +243,7 @@ Dette må du gjøre:
 1. Du sender sykmeldingen til oss fra Ditt sykefravær på nav.no.
 2. Den siste dagen i sykmeldingsperioden får du en SMS om at du kan fylle ut søknaden om sykepenger.
 3. Send meldekort til og med den perioden du ble sykmeldt. Kryss «ja» på spørsmål 3 om sykdom, og kryss deretter av hvilke dager i perioden du har vært syk.
-4. Når du blir friskmeldt, registrerer du deg som arbeidssøker og søker om dagpenger på nytt. Du får tidligst dagpenger fra når du har registrert deg og levert søknad. Hvis du får problemer med registreringen, kan du bruke Skriv til oss.
+4. Når du blir friskmeldt, registrerer du deg som arbeidssøker og søker om dagpenger på nytt. Du får tidligst dagpenger fra når du har registrert deg og levert søknad. Hvis du får problemer med registreringen, kan du bruke [Skriv til oss](#).
 
 [Her søker du om dagpenger](#)
 
@@ -316,8 +259,8 @@ Er du bare delvis arbeidsledig? Be legen om å få to sykmeldinger hvis du er sy
 
 Dette må du gjøre:
 
-1. Du sender sykmeldingen til oss fra Ditt sykefravær på nav.no.
-2. Send beskjed til oss om at du har blitt syk, slik at vi kan samordne dagpengene med sykepengene. Pass på å få med fra-dato og til-dato for sykmeldingen. Send beskjed til NAV
+1. Du sender sykmeldingen til oss fra [Ditt sykefravær](#) på nav.no.
+2. Send beskjed til oss om at du har blitt syk, slik at vi kan samordne dagpengene med sykepengene. Pass på å få med fra-dato og til-dato for sykmeldingen. [Send beskjed til NAV](#).
 3. Den siste dagen i sykmeldingsperioden får du en SMS om at du kan fylle ut søknaden om sykepenger.
 4. Send meldekort. Hvis du er sykmeldt 51 prosent eller mer, skal du krysse «ja» på spørsmål 3 om sykdom. Hvis du er 50 prosent sykmeldt eller mindre, skal du sende meldekort som vanlig mens du er sykmeldt. Kryss da «nei» på spørsmål 3 om sykdom.
 
@@ -325,22 +268,23 @@ Hvorfor skal du krysse «nei» på at du er syk i meldekortet når du er 50 pros
 
 Vi er enige i at det høres rart ut! Du blir trukket i dagpenger hvis du fører dager med sykdom på meldekortet. For å få de dagpengene du skal ha, må du derfor krysse «nei» på spørsmålet om at du er syk. Selv om du krysser «nei» forstår vi at du er sykmeldt ut fra sykmeldingen du har sendt oss.
 
-#### Hvis du er mellom 67 og 70 år
+#### Syk etter at du kom tilbake i jobb
 
-Du kan få sykepenger fra NAV i opptil 60 dager hvis gjennomsnittet av inntekten din de siste 3 månedene før du ble syk omgjort til årsinntekt overstiger 237 240 kroner (2 ganger grunnbeløpet i folketrygden). Dette gjelder hvis du er mellom 67 og 70 år, uavhengig av om du har tatt ut alderspensjon.
+NAV betaler sykepengene dine fra første dag hvis det har gått mindre enn 4 uker fra du begynte å jobbe igjen og til du ble syk. Hvis du blir syk senere enn 4 uker etter at du begynte å jobbe igjen, betaler arbeidsgiveren din de første 16 dagene av sykefraværet.
 
-60-dagersregelen gjelder fra og med dagen etter du fylte 67 år og til og med dagen før du fyller 70 år. Hvis du har fylt 70 år, har du ikke rett til sykepenger.
+Dette må du gjøre:
 
-#### Dette må du gjøre når du blir syk
+1. Du sender sykmeldingen til oss fra [Ditt sykefravær](#) på nav.no.
+2. Den siste dagen i sykmeldingsperioden får du en SMS om at du kan fylle ut søknaden om sykepenger.
+3. Arbeidsgiveren din må sende en inntektsmelding som brukes til å beregne sykepengene dine.  
 
-==Dette er kanskje dekket av listene over?==
     {% endprose %}
   </details>
 
   <details>
     <summary>Permittert</summary>
     {% prose "py-2 pl-5 -ml-5 -translate-x-px border-l-2 border-slate-400"  %}
-==Noe innledende ==Tekst her?== Se arbeidsledig==
+Hvis du blir sykmeldt mens du er permittert og mottar dagpenger, har du rett til sykepenger fra den første dagen du er sykmeldt. Du må ha mottatt dagpenger eller jobbet i minst fire uker for å ha rett til sykepenger.
 
 #### Hvis du er 100 prosent sykmeldt
 
@@ -364,8 +308,8 @@ Er du bare delvis permittert? Be legen om å få to sykmeldinger hvis du er sykm
 
 Dette må du gjøre:
 
-1. Du sender sykmeldingen til oss fra Ditt sykefravær på nav.no.
-2. Send beskjed til oss om at du har blitt syk, slik at vi kan samordne dagpengene med sykepengene. Pass på å få med fra-dato og til-dato for sykmeldingen. Send beskjed til NAV
+1. Du sender sykmeldingen til oss fra [Ditt sykefravær](#) på nav.no.
+2. Send beskjed til oss om at du har blitt syk, slik at vi kan samordne dagpengene med sykepengene. Pass på å få med fra-dato og til-dato for sykmeldingen. [Send beskjed til NAV](#).
 3. Den siste dagen i sykmeldingsperioden får du en SMS om at du kan fylle ut søknaden om sykepenger.
 4. Send meldekort. Hvis du er sykmeldt 51 prosent eller mer skal du krysse «ja» på spørsmål 3 om sykdom. Hvis du er 50 prosent sykmeldt eller mindre skal du sende meldekort som vanlig mens du er sykmeldt. Kryss da «nei» på spørsmål 3 om sykdom.
 
@@ -373,15 +317,15 @@ Hvorfor skal du krysse «nei» på at du er syk i meldekortet når du er 50 pros
 
 Vi er enige i at det høres rart ut! Du blir trukket i dagpenger hvis du fører dager med sykdom på meldekortet. For å få de dagpengene du skal ha, må du derfor krysse «nei» på spørsmålet om at du er syk. Selv om du krysser «nei» forstår vi at du er sykmeldt ut fra sykmeldingen du har sendt oss.
 
-#### Hvis du er mellom 67 og 70 år
+#### Syk etter at du kom tilbake i jobb
 
-Du kan få sykepenger fra NAV i opptil 60 dager hvis gjennomsnittet av inntekten din de siste 3 månedene før du ble syk omgjort til årsinntekt overstiger 237 240 kroner (2 ganger grunnbeløpet i folketrygden). Dette gjelder hvis du er mellom 67 og 70 år, uavhengig av om du har tatt ut alderspensjon.
+NAV betaler sykepengene dine fra første dag hvis det har gått mindre enn 4 uker fra du begynte å jobbe igjen og til du ble syk. Hvis du blir syk senere enn 4 uker etter at du begynte å jobbe igjen, betaler arbeidsgiveren din de første 16 dagene av sykefraværet.
 
-60-dagersregelen gjelder fra og med dagen etter du fylte 67 år og til og med dagen før du fyller 70 år. Hvis du har fylt 70 år, har du ikke rett til sykepenger.
+Dette må du gjøre:
 
-#### Dette må du gjøre når du blir syk
-
-==Dette er kanskje dekket av listene over?==
+1. Du sender sykmeldingen til oss fra Ditt sykefravær på nav.no.
+2. Den siste dagen i sykmeldingsperioden får du en SMS om at du kan fylle ut søknaden om sykepenger.
+3. Arbeidsgiveren din må sende en inntektsmelding som brukes til å beregne sykepengene dine.
     {% endprose %}
   </details>
 
@@ -414,6 +358,8 @@ Hvis du er syk lenger enn egenmeldingsdagene, må du kontakte lege.
     <summary>Tar utdanning</summary>
     {% prose "py-2 pl-5 -ml-5 -translate-x-px border-l-2 border-slate-400"  %}
 I utgangspunktet får du ikke sykepenger mens du tar utdanning. Hvis du klarer å studere på heltid, går NAV ut fra at du også kan arbeide, men vi vil vurdere dette individuelt ut fra situasjonen din når du ble sykmeldt.
+
+Er du sykmeldt fra en deltidsjobb, men klarer likevel å fortsette studiene? Da kan du få sykepenger basert på inntekten din hvis du har kombinert jobb og studier over et visst tidsrom.
     {% endprose %}
   </details>
 
@@ -422,13 +368,9 @@ I utgangspunktet får du ikke sykepenger mens du tar utdanning. Hvis du klarer �
     {% prose "py-2 pl-5 -ml-5 -translate-x-px border-l-2 border-slate-400"  %}
 Når du er innlagt på sykehus eller andre helseinstitusjoner, kan du få sykepenger.
 
-==Dette står i skissen:==  
 Du får sykepenger for måneden du er innlagt og de tre påfølgende månedene. Deretter blir sykepengene redusert med 50 prosent, men skal likevel ikke være lavere enn et sykepengegrunnlag på 50 prosent av grunnbeløpet.
 
 Hvis du fortsatt har faste og nødvendige utgifter til bolig eller forsørgingsansvar, kan du likevel få utbetalt sykepengene uten reduksjon.
-
-#### Dette må du gjøre når du blir syk
-==Tekst her?==
     {% endprose %}
   </details>
 
@@ -436,6 +378,8 @@ Hvis du fortsatt har faste og nødvendige utgifter til bolig eller forsørgingsa
     <summary>I fengsel</summary>
     {% prose "py-2 pl-5 -ml-5 -translate-x-px border-l-2 border-slate-400"  %}
 Du har ikke rett til sykepenger når du sitter i varetekt, soner straff eller har en særreaksjon i en av kriminalomsorgens anstalter eller tilsvarende anstalt i utlandet.
+
+Du kan ha rett til sykepenger hvis du jobber for en arbeidsgiver utenfor fengselet mens du soner straff.
     {% endprose %}
   </details>
 </div>
