@@ -40,7 +40,6 @@ Vanligvis utbetaler arbeidsgiveren din sykepengene for de første 16 dagene du e
 Hvis du har hyppige og/eller uforutsigbare sykefravær, kan du eller arbeidsgiveren din søke om at NAV dekker sykepengene arbeidsgiveren har utbetalt i arbeidsgiverperioden.
 
 {{ tile({ title: 'Kronisk syk eller gravid arbeidstaker', mark: 'bg-green-400', kicker: ['Tiltak'] }) }}
-{{ microcard({ text: 'Kronisk syk eller gravid arbeidstaker', dot: 'bg-green-400' }) }}
 
 #### Hvis du er arbeidstaker på skip
 
@@ -72,8 +71,6 @@ Du kan få sykepenger fra NAV i opptil 60 dager hvis gjennomsnittet av inntekten
 Hvis alle muligheter for å komme tilbake til arbeidsplassen din er forsøkt, kan du få [sykepenger i inntil 12](#) uker mens du søker ny jobb.
 
 {{ tile({ title: 'Friskmelding til arbeidsformidling', mark: 'bg-limegreen-400', kicker: ['Når du er syk'] }) }}
-
-{{ microcard({ text: 'Friskmelding til arbeidsformidling', dot: 'bg-limegreen-400' }) }}
 
 #### Dette gjør du når du blir syk
 
