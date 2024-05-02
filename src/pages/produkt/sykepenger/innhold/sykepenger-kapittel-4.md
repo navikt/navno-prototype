@@ -210,7 +210,7 @@ Hvilke regler som gjelder, kommer an på hvor du skal reise.
   <details>
     <summary>I Norden</summary>
     {% prose "py-2 pl-5 -ml-5 -translate-x-px border-l-2 border-slate-400" %}
-Hvis du skal reise innenfor Norden, trenger du ikke søke om sykepenger, men du må sjekke at reisen er forenelig med pliktene du har som sykmeldt.
+Hvis du skal reise innenfor Norden, trenger du ikke søke om å beholde sykepenger, men du må sjekke at reisen er forenelig med pliktene du har som sykmeldt.
     {% endprose %}
   </details>
 
@@ -493,9 +493,7 @@ Det må gå 26 uker uten sykepenger eller AAP før du kan få sykepenger igjen. 
 
 #### Hvordan blir økonomien din? 
 
-Det er bare sykepenger som erstatter inntekten din med 100 prosent, opp til 6G. Derfor må du være forberedt på å gå ned i inntekt etter de 52 ukene med sykepenger. Du kan ha rett til annen økonomisk støtte fra NAV hvis du ikke kan jobbe. Dette må du i tilfelle søke om. Situasjonen din avgjør hva som er aktuelt for deg:
-
-==Skal det komme noe her, siden forrige setning avsluter med kolon?==
+Det er bare sykepenger som erstatter inntekten din med 100 prosent, opp til 6G. Derfor må du være forberedt på å gå ned i inntekt etter de 52 ukene med sykepenger. Du kan ha rett til annen økonomisk støtte fra NAV hvis du ikke kan jobbe. Dette må du i tilfelle søke om. Situasjonen din avgjør hva som er aktuelt for deg.
 
 #### Sjekk forsikring og pensjon
 
