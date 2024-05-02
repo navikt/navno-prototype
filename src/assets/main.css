@@ -346,7 +346,7 @@
     display: flex;
     width: fit-content;
     list-style: none;
-    padding: 0.375em 16px 0.25em 44px;
+    padding: 0.375em 16px 0.375em 44px;
     cursor: pointer;
     background-color: theme('colors.slate.100');
     border-radius: theme('borderRadius.lg');
@@ -370,11 +370,11 @@
     flex-shrink: 0;
     place-items: center;
     align-self: baseline;
-    margin-inline: -31px 8px;
+    margin-inline: -32px 6px;
     transition: transform 150ms;
     transform: translateY(3px);
-    width: 20px;
-    height: 20px;
+    width: 22px;
+    height: 22px;
   }
   :where(.readmore) summary:hover {
     background-color: theme('colors.slate.200');
