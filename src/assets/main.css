@@ -67,6 +67,9 @@
     line-height: 1.33;
     letter-spacing: -0.0125em;
   }
+  :where(.prose) > :where(h2, h3, h4, h5) + :is(.accordion, .readmore, .expander, div) {
+    margin-block-start: 0.75em;
+  }
 
   :is(.prose) > h4 {
     font-size: var(--text-fluid-0);
@@ -185,13 +188,13 @@
 
   /* Accordion */
   .accordion {
-    border-bottom: 1px solid theme('colors.slate.200');
+    border-bottom: 1px solid theme('colors.slate.300');
     margin-block-end: theme('spacing.12');
   }
   .accordion details {
     display: grid;
     padding-inline: 44px 10px;
-    border-top: 1px solid theme('colors.slate.200');
+    border-top: 1px solid theme('colors.slate.300');
   }
   .accordion details + details {
     margin-block-start: 0;
@@ -226,7 +229,7 @@
     z-index: 20;
   }
   .accordion summary:hover {
-    background-color: theme('colors.slate.100');
+    background-color: theme('colors.blue.50');
     color: theme('colors.blue.600');
   }
   .accordion summary:before {
@@ -307,7 +310,7 @@
     z-index: 20;
   }
   :where(.expander) summary:hover {
-    background-color: theme('colors.slate.100');
+    background-color: theme('colors.blue.50');
   }
   :where(.expander) summary:after {
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath stroke='rgba(0, 69, 156, 1)' stroke-linecap='round' stroke-width='1.75' d='m6.5 10 5.493 5.493a.01.01 0 0 0 .014 0L17.5 10'/%3E%3C/svg%3E");
@@ -319,7 +322,7 @@
     place-items: center;
     align-self: baseline;
     margin-inline: auto 10px;
-    transition: rotate 150ms;
+    transition: transform 150ms;
     transform: translateY(1px);
     width: 22px;
     height: 22px;
@@ -346,9 +349,9 @@
     display: flex;
     width: fit-content;
     list-style: none;
-    padding: 0.375em 16px 0.375em 44px;
+    padding: 0.375em 18px 0.375em 44px;
     cursor: pointer;
-    background-color: theme('colors.slate.100');
+    background-color: theme('colors.blue.50 / 75%');
     border-radius: theme('borderRadius.lg');
     color: theme('colors.blue.600');
     line-height: 1.375;
@@ -370,14 +373,14 @@
     flex-shrink: 0;
     place-items: center;
     align-self: baseline;
-    margin-inline: -32px 6px;
+    margin-inline: -33px 8px;
     transition: transform 150ms;
-    transform: translateY(3px);
+    transform: translateY(2px);
     width: 22px;
     height: 22px;
   }
   :where(.readmore) summary:hover {
-    background-color: theme('colors.slate.200');
+    background-color: theme('colors.blue.100 / 75%');
   }
 
   :where(.readmore[open]) summary {
@@ -388,7 +391,7 @@
     margin-bottom: 16px;
   }
   :where(.readmore[open]) summary:before {
-    transform: translateY(3px) rotate(-180deg);
+    transform: translateY(2px) rotate(-180deg);
   }
   :where(.readmore) summary > * {
     text-wrap: pretty;
