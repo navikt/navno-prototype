@@ -1,6 +1,7 @@
 module.exports = [
   {
     type: "chat",
+    icon: "/src/_includes/svg/icons/chat2.svg",
     title: "Chat med oss",
     description:
       "Du møter først chatbot Frida som har døgnåpent. Mellom klokken 9 og 15 på hverdager kan du be Frida om å få chatte med en veileder.",
@@ -19,12 +20,14 @@ module.exports = [
   },
   {
     type: "skriv",
+    icon: "/src/_includes/svg/icons/paperplane.svg",
     title: "Skriv til oss",
     description:
-      "Send beskjed eller nye opplysninger i saken din. Du kan også sende spørsmål. \n\n  Svartid er noen arbeidsdager.Hvis du vil ha svar raskere, kan du bruke chat.",
+      "Send beskjed eller nye opplysninger i saken din. Du kan også sende spørsmål. Svartid er noen arbeidsdager. \n\n Hvis du vil ha svar raskere, kan du bruke chat.",
   },
   {
     type: "ring",
+    icon: "/src/_includes/svg/icons/phone.svg",
     title: "Ring oss på 55 55 33 33",
     description:
       "Åpent hverdager kl. 9–15. Vi kan ringe deg tilbake hvis ventetiden er over 5 min.",

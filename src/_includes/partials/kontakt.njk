@@ -1,39 +1,40 @@
 <aside class="grid pt-16 pb-16 grid-cols-combi bg-slate-100 wave">
-  <h2 class="text-2xl font-semibold col-container">Kontakt oss</h2>
+  <h2 class="text-xl font-bold col-container">Kontakt oss</h2>
   <div class="grid gap-8 mt-4 {{ 'md:grid-cols-3' if contact.length === 3 }} md:gap-x-12 col-container"> 
     {% for item in contact %}
-    <div>
-      <h3 class="text-lg font-semibold">
-        <a class="text-blue-500 underline hover:decoration-2" href="javascript:void(0);">
-          {{ item.title | markdown | safe }}
-        </a>
-      </h3>
-      <div class="mt-1 prose">
-        {{ item.description | markdown | safe }}
+    <div class="flex items-baseline gap-3">
+      <div class="grid p-2 text-blue-500 translate-y-1 bg-white rounded-full place-items-center shrink-0">
+        {{ item.icon | svgContents('w-7 h-7 items-baseline') | safe if item.icon }}
       </div>
-
-      {% if item.options %}
-      <div class="grid gap-4 mt-6 leading-tight">
-        {% for option in item.options %}         
-          <p class="grid gap-1 {{ 'mt-2' if loop.last }}">
-            {% if option.name %}
-            <strong class="text-xs font-bold tracking-wider uppercase">{{ option.name | safe }}:</strong>
-            {% endif %}
-            <span class="flex items-baseline gap-x-1">
-              <svg class="inline-block translate-y-1 -ml-0.5 {{ 'text-green-400' if (option.isOpen === true) else 'text-slate-500' }}" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
-                <circle fill="currentColor" cx="10" cy="10" r="5" />
-                <circle fill="currentColor" cx="10" cy="10" r="8" opacity="0.25" />
-              </svg>
-              <span class="text-pretty">{{ option.status | safe }}</span>
-            </span>
-          </p>
-        {% endfor %}
-      </div>        
-      {% endif %}
-
-
+      <div>
+        <h3 class="text-lg font-bold">
+          <a class="text-blue-500 underline hover:decoration-2" href="javascript:void(0);">
+            {{ item.title | markdown | safe }}
+          </a>
+        </h3>
+        <div class="mt-1 prose">
+          {{ item.description | markdown | safe }}
+        </div>
+        {% if item.options %}
+        <div class="grid gap-4 mt-6 leading-tight">
+          {% for option in item.options %}         
+            <p class="grid gap-1 {{ 'mt-2' if loop.last }}">
+              {% if option.name %}
+              <strong class="text-xs font-bold tracking-wider uppercase">{{ option.name | safe }}:</strong>
+              {% endif %}
+              <span class="flex items-baseline gap-x-1">
+                <svg class="inline-block translate-y-1 -ml-0.5 {{ 'text-green-400' if (option.isOpen === true) else 'text-slate-500' }}" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+                  <circle fill="currentColor" cx="10" cy="10" r="5" />
+                  <circle fill="currentColor" cx="10" cy="10" r="8" opacity="0.25" />
+                </svg>
+                <span class="text-pretty">{{ option.status | safe }}</span>
+              </span>
+            </p>
+          {% endfor %}
+        </div>        
+        {% endif %}
+      </div>
     </div>     
     {% endfor %}
-
   </div>
 </aside>
