@@ -73,7 +73,7 @@ Du har rett til sykepenger fra dag 17 av sykefraværet ditt, og du kan få sykep
 * Du kan ha en kollektiv forsikring som gir deg rett til syke­penger med full lønn opp til 711 720 (6G). Sjekk med Skatteetaten om du er omfattet av denne forsikringen.
 * Du kan i tillegg tegne individuell forsikring for jordbrukere og reindriftsutøvere som gir deg full lønn de 16 første sykefraværsdagene.
 
-{{ tile({ title: 'Forsikring for jordbrukere og reindriftsutøvere', mark: 'bg-green-400', kicker: ['Forsikring'] }) }}
+{{ tile({ title: 'Forsikring for jordbrukere og reindriftsutøvere', mark: 'bg-green-200', kicker: ['Forsikring'] }) }}
     {% endprose %}
   </details>
 
@@ -300,7 +300,7 @@ Klarer du å jobbe, men har problemer med å reise til og fra arbeidsstedet? Da 
   title: 'Reisetilskudd',
   content: 'Tilskudd i stedet for sykepenger eller sammen med graderte sykepenger når det gjør at du kan jobbe helt eller delvis.',
   kicker: ['Pengestøtte'],
-  mark: 'bg-green-400'
+  mark: 'bg-green-200'
 }) }}
 
 ### Andre tilbud
@@ -310,22 +310,22 @@ Mer informasjon til deg som
 <div class="grid gap-2 mt-2">
   {{ tile({ 
     title: 'Har blitt sykmeldt', 
-    mark: 'bg-orange-400', 
+    mark: 'bg-orange-200', 
     kicker: ['Helse og sykdom'] 
   }) }}
   {{ tile({ 
     title: 'Kan bare jobbe noe på grunn av langvarig sykdom eller skade', 
-    mark: 'bg-orange-400', 
+    mark: 'bg-orange-200', 
     kicker: ['Arbeid', 'Helse og sykdom'] 
   }) }}
   {{ tile({ 
     title: 'Har vært syk eller skadet lenge', 
-    mark: 'bg-orange-400', 
+    mark: 'bg-orange-200', 
     kicker: ['Arbeid', 'Helse og sykdom'] 
   }) }}
   {{ tile({ 
     title: 'Har en varig sykdom eller skade og kan ikke jobbe', 
-    mark: 'bg-orange-400', 
+    mark: 'bg-orange-200', 
     kicker: ['Helse og sykdom'] 
   }) }}
 </div>

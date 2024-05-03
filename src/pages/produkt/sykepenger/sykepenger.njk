@@ -24,13 +24,13 @@ permalink: 'produkt/sykepenger/index.html'
     </div>
 
     {# Innholdsfortegnelse #}
-    <div class="px-5 py-4 mt-8 rounded-lg bg-slate-100">
+    <div class="px-5 py-4 mt-8 rounded-lg bg-blue-50/75">
       <h2 class="pb-2 text-base font-semibold">Innhold på siden</h2>
       <ul class="grid gap-4 py-1">
         {% for chapter in chapters.slice(0, -1) %}
         <li class="grid">
-          <a class="flex gap-1 p-1 -m-1 font-medium text-blue-500 underline group hover:text-blue-700 text-base/snug hover:decoration-2" href="#{{ chapter.data.title | slugify }}">
-            {{ '/src/_includes/svg/icons/arrow-right-angle-aksel.svg' | svgContents('translate-y-0.5 w-5 h-5') | safe }}
+          <a class="flex gap-1.5 p-1 -m-1 font-medium text-blue-500 underline group hover:text-blue-700 text-base/snug hover:decoration-2" href="#{{ chapter.data.title | slugify }}">
+            {{ '/src/_includes/svg/icons/arrow-right-angle.svg' | svgContents('w-4 h-4') | safe }}
             {{ chapter.data.title }}
           </a>
           {# <p class="pr-4 pl-6 mt-0.5 text-pretty opacity-85">{{ chapter.data.ingress | safe }}</p> #}
@@ -121,13 +121,13 @@ permalink: 'produkt/sykepenger/index.html'
 
         {# Chapter TOC #}
         {% if chapter.templateContent and chapter.templateContent | tocData | length > 0 and not chapter.data.hideToc %}
-        <nav class="relative px-5 py-3 mt-4 mb-8 rounded-lg bg-slate-100">
+        <nav class="relative px-5 pt-3 pb-4 mt-4 mb-8 rounded-lg bg-blue-50/75">
           <h3 class="pb-2 font-semibold">I dette kapittelet</h3>
-          <ul class="grid gap-4 mt-1 justify-items-start">
+          <ul class="grid gap-2 mt-1 justify-items-start">
             {% for item in chapter.templateContent | tocData %}
             <li>
-              <a class="flex items-start gap-1 p-1 -m-1 text-blue-500 group hover:text-blue-700 text-base/snug hover:underline" href="#{{ item.id }}">
-                {{ '/src/_includes/svg/icons/arrow-right-angle-aksel.svg' | svgContents('translate-y-0.5 w-5 h-5') | safe }}
+              <a class="flex items-start gap-1 px-1 py-2 -m-1 text-blue-500 group hover:text-blue-700 text-base/snug hover:underline" href="#{{ item.id }}">
+                {{ '/src/_includes/svg/icons/arrow-right-angle.svg' | svgContents('w-4 h-4') | safe }}
                 <span>{{ item.text }}</span>
               </a>
             </li>

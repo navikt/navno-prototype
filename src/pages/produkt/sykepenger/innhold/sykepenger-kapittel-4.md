@@ -336,7 +336,7 @@ Du kan bli permittert selv om du er 100 prosent sykmeldt. Da får du fortsatt sy
 
 Hvis du fremdeles er permittert når du blir friskmeldt, får du som hovedregel lønn fra arbeidsgiveren din de 15 første dagene. Deretter kan du ha rett til dagpenger.
 
-{{ tile({ title: 'Dagpenger', mark: 'bg-green-400', kicker: ['Pengestøtte'] }) }}
+{{ tile({ title: 'Dagpenger', mark: 'bg-green-200', kicker: ['Pengestøtte'] }) }}
 
 Du må ha sykmelding fra lege for å få sykepenger når du er permittert. Du kan ikke bruke egenmelding.
 
@@ -364,7 +364,7 @@ Dette må du gjøre:
 4. Arbeidsgiveren din må sende en inntektsmelding som brukes til å beregne sykepengene dine.
 5. Når permitteringen starter, kan du registrere deg som arbeidssøker og søke om dagpenger. Du får tidligst dagpenger fra når du har registrert deg og levert søknad. Hvis du får problemer med registreringen, kan du bruke [Skriv til oss](#).
 
-{{ tile({ title: 'Dagpenger', mark: 'bg-green-400', kicker: ['Pengestøtte'] }) }}
+{{ tile({ title: 'Dagpenger', mark: 'bg-green-200', kicker: ['Pengestøtte'] }) }}
 
     {% endprose %}
   </details>
@@ -381,7 +381,7 @@ Det er NAV som skal ta over oppfølgingsansvaret når du ikke lenger har en arbe
 
 Hvis du fremdeles er arbeidsledig når du blir friskmeldt, kan du ha rett til dagpenger.
 
-{{ tile({ title: 'Dagpenger', mark: 'bg-green-400', kicker: ['Pengestøtte'] }) }}
+{{ tile({ title: 'Dagpenger', mark: 'bg-green-200', kicker: ['Pengestøtte'] }) }}
 
 Er du bare delvis arbeidsledig? Be legen om å få to sykmeldinger hvis du er sykmeldt både fra jobben din og fra å være arbeidssøker. De to sykmeldingene fører til hver sin søknad om sykepenger – én som arbeidstaker og én som arbeidsledig. Vi trenger de to ulike søknadene for å beregne sykepengene dine riktig. Arbeidsgiveren din må sende oss inntektsmelding.
 
@@ -406,7 +406,7 @@ Dette må du gjøre:
 
 Du må registrere deg som arbeidssøker og søke om dagpenger. Du får tidligst dagpenger fra når du har registrert deg og levert søknad. Hvis du får problemer med registreringen, kan du bruke [Skriv til oss](#).
 
-{{ tile({ title: 'Dagpenger', mark: 'bg-green-400', kicker: ['Pengestøtte'] }) }}
+{{ tile({ title: 'Dagpenger', mark: 'bg-green-200', kicker: ['Pengestøtte'] }) }}
     {% endprose %}
   </details>
 
@@ -420,19 +420,19 @@ Ofte er det mulig å fungere bedre i en annen jobb enn den man ble sykmeldt fra.
 
 Snakk gjerne med [en av våre veiledere](#) om hva som kan gjøre det lettere for deg å komme i ny jobb.
 
-{{ tile({ title: 'Trenger hjelp til å komme i jobb', mark: 'bg-orange-400', kicker: ['Arbeid'] }) }}
+{{ tile({ title: 'Trenger hjelp til å komme i jobb', mark: 'bg-orange-200', kicker: ['Arbeid'] }) }}
 
 På [arbeidsplassen.no](#) finner du ledige stillinger i hele landet. Her legger du også inn eller oppdaterer CV-en din.
 
-{{ tile({ title: 'Søker jobb', mark: 'bg-orange-400', kicker: ['Arbeid'] }) }}
+{{ tile({ title: 'Søker jobb', mark: 'bg-orange-200', kicker: ['Arbeid'] }) }}
 
 Hvis alle muligheter for å komme tilbake til arbeidsplassen din er forsøkt, kan du få sykepenger i inntil 12 uker mens du søker ny jobb. Dette må skje innenfor de 52 ukene som er maksimal periode med sykepenger.
 
-{{ tile({ title: 'Friskmelding til arbeidsformidling', mark: 'bg-orange-400', kicker: ['Hjelp til å komme i jobb'] }) }}
+{{ tile({ title: 'Friskmelding til arbeidsformidling', mark: 'bg-orange-200', kicker: ['Hjelp til å komme i jobb'] }) }}
 
 Hvis du leter du etter ny jobb i en kort periode, kan det være riktig å søke dagpenger. Du kan tidligst motta dagpenger fra det tidspunktet du søker om dagpenger og er registrert som arbeidssøker. 
 
-{{ tile({ title: 'Dagpenger', mark: 'bg-green-400', kicker: ['Pengestøtte'] }) }}
+{{ tile({ title: 'Dagpenger', mark: 'bg-green-200', kicker: ['Pengestøtte'] }) }}
 
     {% endprose %}
   </details>
@@ -442,7 +442,7 @@ Hvis du leter du etter ny jobb i en kort periode, kan det være riktig å søke 
     {% prose "py-2 pl-5 -ml-5 -translate-x-px border-l-2 border-slate-400" %}
 I noen tilfeller kan NAV godkjenne utdanningen din som et arbeidsrettet tiltak mens du får sykepenger eller arbeidsavklaringspenger.
 
-{{ tile({ title: 'Arbeidsavklarings­penger (AAP)', mark: 'bg-green-400', kicker: ['Pengestøtte'] }) }}
+{{ tile({ title: 'Arbeidsavklarings­penger (AAP)', mark: 'bg-green-200', kicker: ['Pengestøtte'] }) }}
 
 Det lokale NAV-kontoret vil vurdere situasjonen og hvilke opplysninger som trengs til søknaden din. Se hvordan [du kan kontakte oss](#).
     {% endprose %}
@@ -486,7 +486,7 @@ Du kan få AAP fra den dagen det er slutt på sykepengene, men ikke før du har 
     {% prose "py-2 pl-5 -ml-5 -translate-x-px border-l-2 border-slate-400" %}
 Det må gå 26 uker uten sykepenger eller AAP før du kan få sykepenger igjen. Ta gjerne kontakt med NAV eller snakk med veilederen din om dette.
 
-{{ tile({ title: 'Arbeidsavklarings­penger (AAP)', mark: 'bg-green-400', kicker: ['Pengestøtte'] }) }}
+{{ tile({ title: 'Arbeidsavklarings­penger (AAP)', mark: 'bg-green-200', kicker: ['Pengestøtte'] }) }}
     {% endprose %}
   </details>
 </div>

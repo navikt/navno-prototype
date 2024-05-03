@@ -1,19 +1,19 @@
 {% macro tile(args) %}
-<div class="relative overflow-clip {{ args.theme }}">
- <div class="px-6 py-4 flex gap-4 rounded-lg bg-white border leading-normal border-slate-300 has-[a:hover]:bg-slate-100 has-[a:hover]:border-slate-200 group">
-    <div class="grid gap-px -mt-0.5">
+<div class="relative overflow-clip rounded-lg border border-slate-300 has-[a:hover]:border-slate-400 {{ args.theme }}">
+ <div class="px-5 py-3 flex gap-4 rounded-lg bg-white  leading-normal  has-[a:hover]:bg-blue-50/75  group">
+    <div class="">
       {% if args.kicker %}
-      <p class="font-medium leading-tight tracking-wider pointer-events-none opacity-80 small-caps">
+      <p class="font-medium leading-tight tracking-wide pointer-events-none opacity-70 small-caps">
         {%- for item in args.kicker %}{{ item }}{{ ', ' if not loop.last }}{% endfor -%}
       </p>
       {% endif %}
-      <a class="z-10 flex-1 font-semibold no-underline text-lg/tight after:absolute after:inset-0 hover:underline hover:decoration-2" href="#">{{ args.title }}</a>
+      <a class="z-10 flex-1 font-semibold no-underline text-base/tight after:absolute after:inset-0 hover:underline hover:decoration-2" href="#">{{ args.title }}</a>
       {# {% if args.content %}
         <p class="opacity-85">{{ args.content | safe }}</p>
       {% endif %} #}
     </div>
-    <div class="absolute inset-y-0 w-1.5 rounded-l-lg left-0 pointer-events-none  transition-all {{ args.mark }}"></div>
-    {{ '/src/_includes/svg/icons/arrow-right.svg' | svgContents('ml-auto w-5 h-5 my-auto -mr-1 opacity-75 shrink-0 order-2 group-hover:translate-x-1 transition duration-200') | safe }}
+    <div class="absolute inset-y-0 w-1 rounded-l-lg left-0 pointer-events-none  transition-all {{ args.mark }}"></div>
+    {{ '/src/_includes/svg/icons/arrow-right.svg' | svgContents('ml-auto w-5 h-5 my-auto -mr-1 opacity-60 shrink-0 order-2 group-hover:translate-x-1 transition duration-200') | safe }}
   </div>
 </div>
 {% endmacro %}
