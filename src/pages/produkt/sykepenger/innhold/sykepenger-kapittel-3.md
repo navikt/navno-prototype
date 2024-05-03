@@ -27,7 +27,7 @@ Du kan fortsatt sende inn søknad etter fristen, men du vil kun få sykepenger h
 Eksempel:  
 Hvis du vil ha sykepenger for dager i mai, må du søke senest i løpet av august. Hvis du også var sykmeldt i april, må du søke for disse dagene senest i løpet av juli.
 
-### Søknad og dokumentasjon
+### Søknad og ettersendelse
 
 Se hvordan du går frem i din situasjon:
 
