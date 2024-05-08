@@ -206,8 +206,8 @@ Du kan også bruke advokat eller gi fullmakt til en person som klager på dine v
   title: 'Klagerettigheter',
   content: '…',
   kicker: ['Slik gjør du det'],
-  mark: 'bg-green-200',
-  theme: 'mt-2'
+  mark: 'bg-green-300',
+  theme: 'mt-2 has-[a:hover]:bg-green-50/75 has-[a:hover]:border-green-500/50'
 }) }}
 
 <details class="expander">

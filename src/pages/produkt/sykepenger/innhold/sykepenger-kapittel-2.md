@@ -300,32 +300,37 @@ Klarer du å jobbe, men har problemer med å reise til og fra arbeidsstedet? Da 
   title: 'Reisetilskudd',
   content: 'Tilskudd i stedet for sykepenger eller sammen med graderte sykepenger når det gjør at du kan jobbe helt eller delvis.',
   kicker: ['Pengestøtte'],
-  mark: 'bg-green-200'
+  mark: 'bg-green-300',
+  theme: 'has-[a:hover]:bg-green-50/75 has-[a:hover]:border-green-500/50' 
 }) }}
 
 ### Andre tilbud
 
 Mer informasjon til deg som
 
-<div class="grid gap-2 mt-2">
+<div class="grid gap-3 mt-2">
   {{ tile({ 
     title: 'Har blitt sykmeldt', 
-    mark: 'bg-orange-200', 
-    kicker: ['Helse og sykdom'] 
+    mark: 'bg-orange-300', 
+    kicker: ['Helse og sykdom'],
+    theme: 'has-[a:hover]:bg-orange-50/75 has-[a:hover]:border-orange-500/50' 
   }) }}
   {{ tile({ 
     title: 'Kan bare jobbe noe på grunn av langvarig sykdom eller skade', 
-    mark: 'bg-orange-200', 
-    kicker: ['Arbeid', 'Helse og sykdom'] 
+    mark: 'bg-orange-300', 
+    kicker: ['Arbeid', 'Helse og sykdom'],
+    theme: 'has-[a:hover]:bg-orange-50/75 has-[a:hover]:border-orange-500/50' 
   }) }}
   {{ tile({ 
     title: 'Har vært syk eller skadet lenge', 
-    mark: 'bg-orange-200', 
-    kicker: ['Arbeid', 'Helse og sykdom'] 
+    mark: 'bg-orange-300', 
+    kicker: ['Arbeid', 'Helse og sykdom'],
+    theme: 'has-[a:hover]:bg-orange-50/75 has-[a:hover]:border-orange-500/50' 
   }) }}
   {{ tile({ 
     title: 'Har en varig sykdom eller skade og kan ikke jobbe', 
-    mark: 'bg-orange-200', 
-    kicker: ['Helse og sykdom'] 
+    mark: 'bg-orange-300', 
+    kicker: ['Helse og sykdom'],
+    theme: 'has-[a:hover]:bg-orange-50/75 has-[a:hover]:border-orange-500/50' 
   }) }}
 </div>

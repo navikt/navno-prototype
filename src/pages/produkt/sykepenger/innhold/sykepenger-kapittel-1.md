@@ -39,7 +39,12 @@ Vanligvis utbetaler arbeidsgiveren din sykepengene for de første 16 dagene du e
 
 Hvis du har hyppige og/eller uforutsigbare sykefravær, kan du eller arbeidsgiveren din søke om at NAV dekker sykepengene arbeidsgiveren har utbetalt i arbeidsgiverperioden.
 
-{{ tile({ title: 'Kronisk syk eller gravid arbeidstaker', mark: 'bg-green-400', kicker: ['Tiltak'] }) }}
+{{ tile({ 
+  title: 'Kronisk syk eller gravid arbeidstaker', 
+  mark: 'bg-green-300', 
+  kicker: ['Tiltak'],
+  theme: 'has-[a:hover]:bg-green-50/75 has-[a:hover]:border-green-500/50' 
+}) }}
 
 #### Hvis du er arbeidstaker på skip
 
