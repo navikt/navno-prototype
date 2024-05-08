@@ -24,10 +24,10 @@ permalink: 'slik-gjor-du-det/klagerettigheter/index.html'
     </div>
 
     {# Innholdsfortegnelse #}
-    <div class="px-5 py-4 mt-8 rounded-lg bg-blue-50/75" x-intersect:leave="showTopAnchor = true" x-intersect:enter.margin.-400px.0.0.0="showTopAnchor = false">
+    <div class="px-5 py-4 mt-8 rounded-lg bg-blue-50/75 toc" x-intersect:leave="showTopAnchor = true" x-intersect:enter.margin.-400px.0.0.0="showTopAnchor = false">
       <h2 class="pb-2 text-base font-semibold">Innhold på siden</h2>
       <ul class="grid gap-4 py-1">
-        {% for chapter in chapters %}
+        {% for chapter in chapters.slice(0,-1) %}
         <li class="grid">
           <a class="flex gap-1.5 p-1 -m-1 font-medium text-blue-500 underline group hover:text-blue-700 text-base/snug hover:decoration-2" href="#{{ chapter.data.title | slugify }}">
             {{ '/src/_includes/svg/icons/arrow-right-angle.svg' | svgContents('w-4 h-4') | safe }}
@@ -102,7 +102,7 @@ permalink: 'slik-gjor-du-det/klagerettigheter/index.html'
 
         {# Chapter TOC #}
         {% if chapter.templateContent and chapter.templateContent | tocData | length > 0 and not chapter.data.hideToc %}
-        <nav class="relative px-5 pt-3 pb-4 mt-4 mb-8 rounded-lg bg-blue-50/75">
+        <nav class="relative px-5 pt-3 pb-4 mt-4 mb-8 rounded-lg toc bg-blue-50/75">
           <h3 class="pb-2 font-semibold">I dette kapittelet</h3>
           <ul class="grid gap-2 mt-1 justify-items-start">
             {% for item in chapter.templateContent | tocData %}
@@ -138,8 +138,8 @@ permalink: 'slik-gjor-du-det/klagerettigheter/index.html'
     <div 
       class="sticky z-20 hidden mx-auto mb-8 bottom-3 sm:grid sm:items-center" 
       x-show="showTopAnchor" 
-      x-transition:enter="transition duration-200 ease-in"
-      x-transition:enter-start="translate-y-6 opacity-0"
+      x-transition:enter="transition duration-200 ease-out"
+      x-transition:enter-start="translate-y-8 opacity-0"
       x-transition:enter-end="translate-y-0 opacity-100"
     >
       <a href="#toppen" class="inline-flex items-center justify-center gap-1 py-3 pl-3 pr-5 mx-auto text-sm leading-tight text-center text-white rounded-full ring-4 ring-white hover:underline bg-deepblue-400">
