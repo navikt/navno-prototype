@@ -229,7 +229,7 @@
     z-index: 20;
   }
   .accordion summary:hover {
-    background-color: theme('colors.blue.50');
+    background-color: theme('colors.blue.50 / 75%');
     color: theme('colors.blue.600');
   }
   .accordion summary:before {
