@@ -249,7 +249,7 @@
     height: 22px;
   }
   .accordion :where(details:has(summary:hover)) summary:not(:focus-visible) {
-    outline: 3px solid white;
+    outline: 4px solid white;
   }
   .accordion :where(details[open]) summary:before {
     rotate: -180deg;
