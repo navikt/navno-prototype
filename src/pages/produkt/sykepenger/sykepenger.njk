@@ -10,13 +10,13 @@ permalink: 'produkt/sykepenger/index.html'
 
   <main class="grid pt-16 grid-cols-combi" data-theme="sykepenger" x-data="{ showTopAnchor: false }">
     <div class="col-main">
-      <div class="tracking-widest small-caps">{{ category | safe }}</div>
+      <div class="text-lg tracking-widest small-caps">{{ category | safe }}</div>
       <h1 class="mt-1 font-extrabold text-2xl/tight text-balance ">{{ title | safe }}</h1>
       <div class="mt-6 prose text-pretty max-w-prose">
         <p class="text-lg">{{ ingress | safe }}</p>
 
         {% if audience %}          
-        <div class="leading-normal bg-white border  border-slate-300 text-balance {{ 'px-4 py-3 rounded-lg' if audience.style === 'default' }} {{'px-4 py-1 rounded-full w-fit' if audience.style === 'simple' }}">
+        <div class="text-base leading-normal text-pretty">
           {{ audience.text | markdown | safe if audience }}
         </div>
         {% endif %}
@@ -89,10 +89,10 @@ permalink: 'produkt/sykepenger/index.html'
     {% for chapter in chapters %}
       {% set chapterIndex = loop.index %}
       <section class="grid grid-flow-row-dense mt-8 col-full grid-cols-combi " id="{{ chapter.data.title | slugify }}">
-        <div class="grid mt-8 text-lg font-semibold col-full grid-cols-combi">
+        <div class="grid mt-8 mb-4 text-lg font-semibold col-full grid-cols-combi">
           {% if chapter.data.icon %}
-          <div class="aspect-square rounded-full grid place-items-center w-1/2 max-w-[4.75ch] bg-green-200 mt-8 mb-4">
-            {{ chapter.data.icon | svgContents('w-[3ch] h-[3ch] text-green-800') | safe if chapter.data.icon }}
+          <div class="aspect-square rounded-full grid place-items-center w-1/2 max-w-[4ch] bg-green-200 mt-8 mb-4">
+            {{ chapter.data.icon | svgContents('w-[2.5ch] h-[2.5ch] text-green-800') | safe if chapter.data.icon }}
           </div>
           {% endif %}
           <h2 class="font-bold text-xl/tight text-balance">
@@ -102,7 +102,7 @@ permalink: 'produkt/sykepenger/index.html'
 
         {# Chapter TOC #}
         {% if chapter.templateContent and chapter.templateContent | tocData | length > 0 and not chapter.data.hideToc %}
-        <nav class="relative px-5 pt-3 pb-4 mt-4 mb-8 rounded-lg bg-blue-50/75">
+        <nav class="relative px-5 pt-3 pb-4 mb-8 rounded-lg bg-blue-50/75">
           <h3 class="pb-2 font-semibold">I dette kapittelet</h3>
           <ul class="grid gap-2 mt-1 justify-items-start">
             {% for item in chapter.templateContent | tocData %}
