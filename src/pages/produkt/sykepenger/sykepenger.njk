@@ -11,12 +11,12 @@ permalink: 'produkt/sykepenger/index.html'
   <main class="grid pt-16 grid-cols-combi" data-theme="sykepenger" x-data="{ showTopAnchor: false }">
     <div class="col-main">
       <div class="text-lg tracking-widest small-caps">{{ category | safe }}</div>
-      <h1 class="mt-1 font-extrabold text-2xl/tight text-balance ">{{ title | safe }}</h1>
+      <h1 class="mt-1 font-extrabold text-3xl/tight text-balance ">{{ title | safe }}</h1>
       <div class="mt-6 prose text-pretty max-w-prose">
-        <p class="text-lg">{{ ingress | safe }}</p>
+        <p class="text-xl">{{ ingress | safe }}</p>
 
         {% if audience %}          
-        <div class="text-base leading-normal text-pretty">
+        <div class="text-sm leading-normal text-pretty">
           {{ audience.text | markdown | safe if audience }}
         </div>
         {% endif %}
@@ -25,7 +25,7 @@ permalink: 'produkt/sykepenger/index.html'
 
     {# Innholdsfortegnelse #}
     <div class="px-5 py-4 mt-8 rounded-lg bg-blue-50/75" x-intersect:leave="showTopAnchor = true" x-intersect:enter.margin.-400px.0.0.0="showTopAnchor = false">
-      <h2 class="pb-2 text-base font-semibold">Innhold på siden</h2>
+      <h2 class="pb-2 text-sm font-semibold">Innhold på siden</h2>
       <ul class="grid gap-4 py-1">
         {% for chapter in chapters.slice(0, -1) %}
         <li class="grid">
@@ -95,7 +95,7 @@ permalink: 'produkt/sykepenger/index.html'
             {{ chapter.data.icon | svgContents('w-[2.5ch] h-[2.5ch] text-green-800') | safe if chapter.data.icon }}
           </div>
           {% endif %}
-          <h2 class="font-bold text-xl/tight text-balance">
+          <h2 class="font-bold text-2xl/tight text-balance">
             <a href="#{{ chapter.data.title | slugify }}">{{ chapter.data.title }}</a>
           </h2>
         </div>
@@ -103,7 +103,7 @@ permalink: 'produkt/sykepenger/index.html'
         {# Chapter TOC #}
         {% if chapter.templateContent and chapter.templateContent | tocData | length > 0 and not chapter.data.hideToc %}
         <nav class="relative px-5 pt-3 pb-4 mb-8 rounded-lg bg-blue-50/75">
-          <h3 class="pb-2 font-semibold">I dette kapittelet</h3>
+          <h3 class="pb-2 text-sm font-semibold">I dette kapittelet</h3>
           <ul class="grid gap-2 mt-1 justify-items-start">
             {% for item in chapter.templateContent | tocData %}
             <li>

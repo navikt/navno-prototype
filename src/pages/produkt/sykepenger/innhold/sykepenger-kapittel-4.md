@@ -296,9 +296,6 @@ Har du flere jobber, men er ikke sykmeldt fra alle? Hvis du bare skal ha ferie f
   </details>
 </div>
 
-***
-
-
 ### Jobb og sykepenger
 
 Når det nærmer seg datoen du ikke lenger kan få sykepenger, er det viktig å planlegge veien videre.
