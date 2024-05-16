@@ -8,19 +8,24 @@
   <nav class="z-10 grid grid-cols-combi">
     <div class="grid grid-cols-[auto_1fr] sm:grid-cols-[auto_auto_1fr] col-container">
 
-      {# Logo #}
-      <div class="flex items-center py-5 sm:py-6">
-        <a href="/forside/" class="block px-3 py-2.5 -ml-3.5 text-red-500 rounded-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-800">
-          {{ '/src/_includes/svg/logo.svg' | svgContents('w-logo h-auto') | safe }}
-          <span class="sr-only">NAV</span>
-        </a>
-      </div>
+      <div class="flex items-center col-span-2">
+        {# Logo #}
+        <div class="flex items-center py-5 sm:py-6">
+          <a href="/forside/" class="block px-3 py-2.5 -ml-3.5 text-red-500 rounded-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-800">
+            {{ '/src/_includes/svg/logo.svg' | svgContents('w-logo h-auto') | safe }}
+            <span class="sr-only">NAV</span>
+          </a>
+        </div>
 
-      {# Audience #}
-      <div class="self-center hidden pl-5 ml-2 text-lg leading-tight border-l sm:block border-slate-300">
-        <button class="cursor-default" x-on:click="menuOpen = !menuOpen, myPageOpen = false, loginOpen = false" type="button">
-          {{ activeRole }}
-        </button>
+        {# Separator #}
+        <div class="w-px h-8 rotate-[22deg] origin-center mx-2 bg-slate-300"></div>
+
+        {# Audience #}
+        <div class="self-center hidden pl-2.5 text-lg leading-tight sm:block">
+          <button class="cursor-default" x-on:click="menuOpen = !menuOpen, myPageOpen = false, loginOpen = false" type="button">
+            {{ activeRole }}
+          </button>
+        </div>
       </div>
 
 
