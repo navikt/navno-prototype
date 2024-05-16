@@ -1,5 +1,5 @@
 {% macro tile(args) %}
-<div class="relative overflow-clip flex gap-4 px-5 py-3 leading-normal rounded-lg group border border-slate-300 bg-white {{ args.theme or "has-[a:hover]:bg-blue-50/75 has-[a:hover]:border-slate-400" }}">
+<div class="relative overflow-clip flex gap-4 px-5 py-3 leading-normal rounded-lg group border border-slate-300 bg-white {{ args.theme or "has-[a:hover]:bg-blue-50/75 has-[a:hover]:border-blue-300 has-[a:active]:border-blue-500 has-[a:active]:bg-blue-50" }}">
  <div class="">
     {%- if args.kicker %}
     <p class="font-medium leading-tight tracking-wide pointer-events-none opacity-70 small-caps">
@@ -11,7 +11,7 @@
       <p class="opacity-85">{{ args.content | safe }}</p>
     {% endif %} #}
   </div>
-  <div class="absolute inset-y-0 w-1 rounded-l-lg left-0 pointer-events-none  transition-all {{ args.mark }}"></div>
-  {{ '/src/_includes/svg/icons/arrow-right.svg' | svgContents('ml-auto w-5 h-5 my-auto -mr-1 opacity-60 shrink-0 order-2 group-hover:translate-x-1 transition duration-200') | safe }}
+  {# <div class="absolute inset-y-0 w-1 rounded-l-lg left-0 pointer-events-none  transition-all {{ args.mark }}"></div> #}
+  {{ '/src/_includes/svg/icons/arrow-right.svg' | svgContents('ml-auto w-6 h-6 my-auto -mr-1 opacity-60 shrink-0 order-2') | safe }}
 </div>
 {% endmacro %}

@@ -202,12 +202,12 @@ Hvis du er uenig i svaret på klagen din fra NAV klageinstans, kan du med noen u
 Du kan også bruke advokat eller gi fullmakt til en person som klager på dine vegne.
 
 **Mer om dine**  
+
 {{ tile({
   title: 'Klagerettigheter',
   content: '…',
   kicker: ['Slik gjør du det'],
-  mark: 'bg-green-300',
-  theme: 'mt-2 has-[a:hover]:bg-green-50/75 has-[a:hover]:border-green-500/50'
+  mark: 'bg-green-300'
 }) }}
 
 <details class="expander">
