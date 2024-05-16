@@ -10,8 +10,11 @@ permalink: 'produkt/sykepenger/index.html'
 
   <main class="grid pt-16 grid-cols-combi" data-theme="sykepenger" x-data="{ showTopAnchor: false }">
     <div class="col-main">
+      <div class="md:absolute md:-ml-32 md:mt-3">
+        {{ '/src/_includes/svg/piktogrammer/produkter/sykepenger.svg' | svgContents('text-[#99185E]') | safe  }}
+      </div>
       <div class="text-lg tracking-widest small-caps">{{ category | safe }}</div>
-      <h1 class="mt-1 font-extrabold text-3xl/tight text-balance ">{{ title | safe }}</h1>
+      <h1 class="mt-1 font-extrabold text-3xl/tight text-balance text-[#99185E]">{{ title | safe }}</h1>
       <div class="mt-6 prose text-pretty max-w-prose">
         <p class="text-xl">{{ ingress | safe }}</p>
 
@@ -24,7 +27,7 @@ permalink: 'produkt/sykepenger/index.html'
     </div>
 
     {# Innholdsfortegnelse #}
-    <div class="px-5 py-4 mt-8 rounded-lg bg-blue-50/75" x-intersect:leave="showTopAnchor = true" x-intersect:enter.margin.-400px.0.0.0="showTopAnchor = false">
+    <div class="px-5 py-4 mt-8 border-t-4 border-[#99185E] rounded-b-lg bg-[#FEF7F4]" x-intersect:leave="showTopAnchor = true" x-intersect:enter.margin.-400px.0.0.0="showTopAnchor = false">
       <h2 class="pb-2 text-sm font-semibold">Innhold på siden</h2>
       <ul class="grid gap-4 py-1">
         {% for chapter in chapters.slice(0, -1) %}
@@ -90,19 +93,15 @@ permalink: 'produkt/sykepenger/index.html'
       {% set chapterIndex = loop.index %}
       <section class="grid grid-flow-row-dense mt-8 col-full grid-cols-combi " id="{{ chapter.data.title | slugify }}">
         <div class="grid mt-8 mb-4 text-lg font-semibold col-full grid-cols-combi">
-          {% if chapter.data.icon %}
-          <div class="aspect-square rounded-full grid place-items-center w-1/2 max-w-[4ch] bg-green-200 mt-8 mb-4">
-            {{ chapter.data.icon | svgContents('w-[2.5ch] h-[2.5ch] text-green-800') | safe if chapter.data.icon }}
-          </div>
-          {% endif %}
-          <h2 class="font-bold text-2xl/tight text-balance">
+          <div class="w-10 h-1 bg-[#E6C7D8] mb-5 mt-5"></div>
+          <h2 class="font-bold text-2xl/tight text-balance text-[#99185E]">
             <a href="#{{ chapter.data.title | slugify }}">{{ chapter.data.title }}</a>
           </h2>
         </div>
 
         {# Chapter TOC #}
         {% if chapter.templateContent and chapter.templateContent | tocData | length > 0 and not chapter.data.hideToc %}
-        <nav class="relative px-5 pt-3 pb-4 mb-8 rounded-lg bg-blue-50/75">
+        <nav class="relative px-5 pt-3 pb-4 mb-8 rounded-lg bg-[#FEF7F4]">
           <h3 class="pb-2 text-sm font-semibold">I dette kapittelet</h3>
           <ul class="grid gap-2 mt-1 justify-items-start">
             {% for item in chapter.templateContent | tocData %}
