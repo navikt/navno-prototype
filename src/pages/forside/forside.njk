@@ -15,7 +15,7 @@ alpine: true
         <h2 class="text-xl font-semibold">Hva kan vi hjelpe deg med?</h2>
         <ul class="grid gap-1.5 mt-4 xs:text-lg sm:gap-4 sm:grid-cols-2 xl:grid-cols-3">
           {%- for area in areaList -%}
-            <li class="relative grid items-center break-inside-avoid pl-5 sm:pl-8 pr-28 sm:pr-36 py-3 rounded-xl min-h-16 sm:min-h-24 xl:min-h-32 text-blue-600 bg-slate-100 has-[a:hover]:bg-white has-[a:hover]:ring-1 has-[a:hover]:ring-slate-300/25 has-[a:hover]:shadow-lg">
+            <li class="relative grid items-center break-inside-avoid pl-5 sm:pl-8 pr-28 sm:pr-36 py-3 rounded-xl min-h-16 sm:min-h-24 xl:min-h-32 text-blue-600 bg-slate-100 has-[a:hover]:bg-blue-50 has-[a:hover]:ring-1 has-[a:hover]:ring-slate-300/25 has-[a:hover]:shadow-lg">
               <a class="leading-tight after:absolute after:inset-0 text-balance hover:underline hover:decoration-2" href="#">
                 <span>{{ area.title | safe }}</span>
               </a>
@@ -31,10 +31,10 @@ alpine: true
         <h2 class="text-xl font-semibold">Snarveier</h2>
         <ul class="text-lg sm:gap-8 sm:columns-2">
           {%- for shortcut in shortcutsList -%}
-            <li class="block">
-              <a class="inline-flex gap-2 items-center py-0.5 text-blue-600 underline hover:decoration-2" href="#">
-                {{ '/src/_includes/svg/icons/arrow-right.svg' | svgContents("w-6 h-6") | safe if shortcut.icon }}
+            <li class="block border-t border-slate-200">
+              <a class="flex items-center justify-between gap-2 px-1.5 py-2 -mx-1.5 text-blue-600 underline hover:z-10 hover:relative hover:bg-blue-50 hover:rounded hover:ring-2 hover:ring-blue-50 hover:decoration-2" href="#">
                 <span>{{ shortcut.title | safe }}</span>
+                {{ '/src/_includes/svg/icons/arrow-right.svg' | svgContents("w-6 h-6") | safe if shortcut.icon }}
               </a>
             </li>
           {%- endfor -%}
