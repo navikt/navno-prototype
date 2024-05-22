@@ -159,14 +159,14 @@ module.exports = {
       ],
     },
     fontSize: {
-      "2xs": "var(--fluid-12-14)",
-      xs: "var(--fluid-14-16)",
-      sm: "var(--fluid-16-18)",
-      base: "var(--fluid-18-20)",
-      lg: "var(--fluid-22-24)",
-      xl: "var(--fluid-24-28)",
-      "2xl": "var(--fluid-32-36)",
-      "3xl": "var(--fluid-36-48)",
+      "2xs": "var(--text-fluid-12-14)",
+      xs: "var(--text-fluid-14-16)",
+      sm: "var(--text-fluid-16-18)",
+      base: "var(--text-fluid-18-20)",
+      lg: "var(--text-fluid-22-24)",
+      xl: "var(--text-fluid-24-28)",
+      "2xl": "var(--text-fluid-32-36)",
+      "3xl": "var(--text-fluid-36-48)",
     },
     extend: {
       animation: {

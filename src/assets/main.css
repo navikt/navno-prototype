@@ -12,14 +12,14 @@
     --text-fluid-2: clamp(1.75rem, 1.5833rem + 0.8333vi, 2.25rem);
     --text-fluid-3: clamp(2rem, 1.625rem + 1.875vi, 3.125rem);
 
-    --fluid-12-14: clamp(0.75rem, 0.7083rem + 0.2083vi, 0.875rem);
-    --fluid-14-16: clamp(0.875rem, 0.8333rem + 0.2083vi, 1rem);
-    --fluid-16-18: clamp(1rem, 0.9583rem + 0.2083vi, 1.125rem);
-    --fluid-18-20: clamp(1.125rem, 1.0833rem + 0.2083vi, 1.25rem);
-    --fluid-22-24: clamp(1.375rem, 1.3333rem + 0.2083vi, 1.5rem);
-    --fluid-24-28: clamp(1.5rem, 1.4167rem + 0.4167vi, 1.75rem);
-    --fluid-32-36: clamp(2rem, 1.9167rem + 0.4167vi, 2.25rem);
-    --fluid-36-48: clamp(2.25rem, 2rem + 1.25vi, 3rem);
+    --text-fluid-12-14: clamp(0.75rem, 0.7083rem + 0.2083vi, 0.875rem);
+    --text-fluid-14-16: clamp(0.875rem, 0.8333rem + 0.2083vi, 1rem);
+    --text-fluid-16-18: clamp(1rem, 0.9583rem + 0.2083vi, 1.125rem);
+    --text-fluid-18-20: clamp(1.125rem, 1.0833rem + 0.2083vi, 1.25rem);
+    --text-fluid-22-24: clamp(1.375rem, 1.3333rem + 0.2083vi, 1.5rem);
+    --text-fluid-24-28: clamp(1.5rem, 1.4167rem + 0.4167vi, 1.75rem);
+    --text-fluid-32-36: clamp(2rem, 1.9167rem + 0.4167vi, 2.25rem);
+    --text-fluid-36-48: clamp(2.25rem, 2rem + 1.25vi, 3rem);
   }
 
   /* @link https://utopia.fyi/clamp/calculator?a=320,1280,12—14|14—16|16—18|18—20|22—24|24—28|32—36|36—48 */
@@ -60,7 +60,7 @@
   }
 
   :is(.prose) > :where(h3) {
-    font-size: var(--text-fluid-22-24);
+    font-size: var(--text-fluid-24-28);
     line-height: 1.33;
     letter-spacing: -0.0125em;
   }
@@ -93,7 +93,9 @@
   :where(.prose) > ol {
     list-style-type: decimal;
   }
-
+  :where(.prose) > :is(ol,ul) ::marker {
+    color: #99185E;
+  }
   :where(.prose) > ol ::marker {
     font-weight: 800;
     font-size: var(--text-fluid-20-24);
@@ -210,7 +212,7 @@
     text-align: left;
     text-indent: -31px;
     text-wrap: pretty;
-    font-size: var(--fluid-18-20);
+    font-size: var(--text-fluid-18-20);
     font-weight: 400;
     line-height: 1.375;
     background-color: theme('colors.white');
