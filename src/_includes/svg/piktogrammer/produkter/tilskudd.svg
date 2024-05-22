@@ -1,8 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" fill="none" viewBox="0 0 96 96">
   <path fill="var(--pictogram, #CCF1D6)" d="M53 22h33v9H53zM17 52h47v15H17z"/>
   <path fill="var(--pictogram, #CCF1D6)" d="M74 10v33h-9V10zM48 36v47H33V36z"/>
-  <path stroke="#262626" stroke-width="3" d="M26 13.7H2v15.8h24v10.6l24-18.5L26 3.1v10.6ZM42 64h51v30H42z"/>
-  <circle cx="72" cy="74" r="7" stroke="#262626" stroke-width="3"/>
-  <circle cx="83" cy="48" r="10" stroke="#262626" stroke-width="3"/>
+  <path stroke="currentColor" stroke-width="3" d="M26 13.7H2v15.8h24v10.6l24-18.5L26 3.1v10.6ZM42 64h51v30H42z"/>
+  <circle cx="72" cy="74" r="7" stroke="currentColor" stroke-width="3"/>
+  <circle cx="83" cy="48" r="10" stroke="currentColor" stroke-width="3"/>
   <circle cx="2" cy="2" r="2" fill="#262626" transform="matrix(1 0 0 -1 81 50)"/>
 </svg>

@@ -2,12 +2,12 @@
 <g clip-path="url(#clip0_1_2100)">
 <rect x="17" y="57" width="64" height="16" fill="var(--pictogram, rgb(204 241 214))"/>
 <rect x="17" y="27" width="64" height="16" fill="var(--pictogram, rgb(204 241 214))"/>
-<circle cx="79.7014" cy="58.8889" r="11.3889" stroke="#262626" stroke-width="3"/>
-<path d="M94 95.8544V91.1111C94 83.103 87.5081 76.6111 79.5 76.6111V76.6111C71.4919 76.6111 65 83.103 65 91.1111V95.8544" stroke="#262626" stroke-width="3"/>
-<circle cx="14.7987" cy="14.2208" r="9.72077" stroke="#262626" stroke-width="3"/>
+<circle cx="79.7014" cy="58.8889" r="11.3889" stroke="currentColor" stroke-width="3"/>
+<path d="M94 95.8544V91.1111C94 83.103 87.5081 76.6111 79.5 76.6111V76.6111C71.4919 76.6111 65 83.103 65 91.1111V95.8544" stroke="currentColor" stroke-width="3"/>
+<circle cx="14.7987" cy="14.2208" r="9.72077" stroke="currentColor" stroke-width="3"/>
 <path d="M25.7467 42.2728C25.7467 43.1012 26.4183 43.7728 27.2467 43.7728C28.0752 43.7728 28.7467 43.1012 28.7467 42.2728H25.7467ZM3.5 57.0001V42.2728H0.5V57.0001H3.5ZM14.6234 31.1494C20.7666 31.1494 25.7467 36.1295 25.7467 42.2728H28.7467C28.7467 34.4727 22.4235 28.1494 14.6234 28.1494V31.1494ZM14.6234 28.1494C6.82325 28.1494 0.5 34.4727 0.5 42.2728H3.5C3.5 36.1295 8.4801 31.1494 14.6234 31.1494V28.1494Z" fill="currentColor"/>
-<path d="M27.5 42L50.8787 19" stroke="#262626" stroke-width="3" stroke-linecap="round"/>
-<path d="M27 2H72V40H41" stroke="#262626" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M27.5 42L50.8787 19" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+<path d="M27 2H72V40H41" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
 </g>
 <defs>
 <clipPath id="clip0_1_2100">

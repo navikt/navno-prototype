@@ -6,12 +6,12 @@
 <path d="M48 21.7058L48 29.9411" stroke="#CCF1D6" stroke-width="3"/>
 <path d="M31.6924 25.2354L36.0001 32.3673" stroke="#CCF1D6" stroke-width="3"/>
 <path d="M64 25.2354L59.6923 32.3673" stroke="#CCF1D6" stroke-width="3"/>
-<path d="M14.875 38.875H14.3943L14.0031 39.1544L1.5 48.0852V8.5C1.5 4.75752 4.43764 1.70025 8.13186 1.50948L8.51839 1.5H42.5C46.2425 1.5 49.2997 4.43764 49.4905 8.13186L49.5 8.51841V31.875C49.5 35.6175 46.5624 38.6747 42.8681 38.8655L42.4816 38.875H14.875Z" stroke="#262626" stroke-width="3"/>
-<line x1="10" y1="14.5" x2="42" y2="14.5" stroke="#262626" stroke-width="3"/>
-<line x1="10" y1="26.5" x2="30" y2="26.5" stroke="#262626" stroke-width="3"/>
-<circle cx="72" cy="72" r="22.5" transform="rotate(45 72 72)" stroke="#262626" stroke-width="3"/>
-<path d="M67.5102 67.4872L82.7018 61.2981L76.5126 76.4897L61.8837 82.1162L67.5102 67.4872Z" stroke="#262626" stroke-width="3"/>
-<line x1="67.7573" y1="67.7572" x2="76.2426" y2="76.2425" stroke="#262626" stroke-width="3"/>
+<path d="M14.875 38.875H14.3943L14.0031 39.1544L1.5 48.0852V8.5C1.5 4.75752 4.43764 1.70025 8.13186 1.50948L8.51839 1.5H42.5C46.2425 1.5 49.2997 4.43764 49.4905 8.13186L49.5 8.51841V31.875C49.5 35.6175 46.5624 38.6747 42.8681 38.8655L42.4816 38.875H14.875Z" stroke="currentColor" stroke-width="3"/>
+<line x1="10" y1="14.5" x2="42" y2="14.5" stroke="currentColor" stroke-width="3"/>
+<line x1="10" y1="26.5" x2="30" y2="26.5" stroke="currentColor" stroke-width="3"/>
+<circle cx="72" cy="72" r="22.5" transform="rotate(45 72 72)" stroke="currentColor" stroke-width="3"/>
+<path d="M67.5102 67.4872L82.7018 61.2981L76.5126 76.4897L61.8837 82.1162L67.5102 67.4872Z" stroke="currentColor" stroke-width="3"/>
+<line x1="67.7573" y1="67.7572" x2="76.2426" y2="76.2425" stroke="currentColor" stroke-width="3"/>
 </g>
 <defs>
 <clipPath id="clip0_1_2465">

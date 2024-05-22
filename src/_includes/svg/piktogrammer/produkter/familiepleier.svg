@@ -1,14 +1,14 @@
 <svg width="96" height="96" viewBox="0 0 96 96" fill="none" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
 <g clip-path="url(#clip0_1_1386)">
 <path d="M83.5 57L50.5 29L16 57L24 66.5L50.5 45.5L75 66.5L83.5 57Z" fill="var(--pictogram, rgb(204 241 214))"/>
-<circle cx="20.25" cy="16" r="14.5" stroke="#262626" stroke-width="3"/>
-<path d="M38 56V56C38 46.0589 29.9411 38 20 38V38C10.0589 38 2 46.0589 2 56V77" stroke="#262626" stroke-width="3"/>
-<circle cx="60" cy="57.5" r="14.5" stroke="#262626" stroke-width="3"/>
-<path d="M78 97V97C78 87.0589 69.9411 79 60 79H59.55C49.8574 79 42 86.8574 42 96.55V96.55" stroke="#262626" stroke-width="3"/>
+<circle cx="20.25" cy="16" r="14.5" stroke="currentColor" stroke-width="3"/>
+<path d="M38 56V56C38 46.0589 29.9411 38 20 38V38C10.0589 38 2 46.0589 2 56V77" stroke="currentColor" stroke-width="3"/>
+<circle cx="60" cy="57.5" r="14.5" stroke="currentColor" stroke-width="3"/>
+<path d="M78 97V97C78 87.0589 69.9411 79 60 79H59.55C49.8574 79 42 86.8574 42 96.55V96.55" stroke="currentColor" stroke-width="3"/>
 <path d="M26 79.5C25.1716 79.5 24.5 80.1716 24.5 81C24.5 81.8284 25.1716 82.5 26 82.5V79.5ZM37.5 96V85H34.5V96H37.5ZM32 79.5H26V82.5H32V79.5ZM37.5 85C37.5 81.9624 35.0376 79.5 32 79.5V82.5C33.3807 82.5 34.5 83.6193 34.5 85H37.5Z" fill="currentColor"/>
 <path d="M94 79.5C94.8284 79.5 95.5 80.1716 95.5 81C95.5 81.8284 94.8284 82.5 94 82.5V79.5ZM82.5 96V85H85.5V96H82.5ZM88 79.5H94V82.5H88V79.5ZM82.5 85C82.5 81.9624 84.9624 79.5 88 79.5V82.5C86.6193 82.5 85.5 83.6193 85.5 85H82.5Z" fill="currentColor"/>
-<path d="M36 86.5H45" stroke="#262626" stroke-width="3"/>
-<path d="M75 86.5H84" stroke="#262626" stroke-width="3"/>
+<path d="M36 86.5H45" stroke="currentColor" stroke-width="3"/>
+<path d="M75 86.5H84" stroke="currentColor" stroke-width="3"/>
 </g>
 <defs>
 <clipPath id="clip0_1_1386">

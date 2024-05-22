@@ -6,9 +6,9 @@
 <path d="M2 2H39.3333" stroke="#23262A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
 <path d="M16 14H25.3333" stroke="#23262A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
 <path d="M2 44H39.3333" stroke="#23262A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-<rect x="52" y="61.3333" width="42" height="32.6667" stroke="#262626" stroke-width="3" stroke-linejoin="round"/>
-<path d="M63.6667 61.3333V56.6667C63.6667 54.0893 65.7561 52 68.3334 52H77.6667C80.2441 52 82.3334 54.0893 82.3334 56.6667V61.3333" stroke="#262626" stroke-width="3" stroke-linejoin="round"/>
-<path d="M73 85V86.6667" stroke="#262626" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="52" y="61.3333" width="42" height="32.6667" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/>
+<path d="M63.6667 61.3333V56.6667C63.6667 54.0893 65.7561 52 68.3334 52H77.6667C80.2441 52 82.3334 54.0893 82.3334 56.6667V61.3333" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/>
+<path d="M73 85V86.6667" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
 <path d="M73 80V79.5C73 77.9262 73.741 76.4443 75 75.5L75.4 75.2C76.4072 74.4446 77 73.259 77 72V72C77 69.7909 75.2091 68 73 68H72.5C70.0147 68 68 70.0147 68 72.5V73" stroke="#23262A" stroke-width="3" stroke-linecap="round"/>
 </g>
 <defs>

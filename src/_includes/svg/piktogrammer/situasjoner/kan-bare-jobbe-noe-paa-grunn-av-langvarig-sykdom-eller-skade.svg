@@ -6,11 +6,11 @@
 <path d="M2 2H39.3333" stroke="#23262A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
 <path d="M16 14H25.3333" stroke="#23262A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
 <path d="M2 44H39.3333" stroke="#23262A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-<rect x="52" y="61.3333" width="42" height="32.6667" stroke="#262626" stroke-width="3" stroke-linejoin="round"/>
-<path d="M66 84.6667L80 70.6667" stroke="#262626" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M63.6667 61.3333V56.6667C63.6667 54.0893 65.7561 52 68.3334 52H77.6667C80.2441 52 82.3334 54.0893 82.3334 56.6667V61.3333" stroke="#262626" stroke-width="3" stroke-linejoin="round"/>
-<path d="M66 71.6667V73.3334" stroke="#262626" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M80 82V83.6667" stroke="#262626" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="52" y="61.3333" width="42" height="32.6667" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/>
+<path d="M66 84.6667L80 70.6667" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M63.6667 61.3333V56.6667C63.6667 54.0893 65.7561 52 68.3334 52H77.6667C80.2441 52 82.3334 54.0893 82.3334 56.6667V61.3333" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/>
+<path d="M66 71.6667V73.3334" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M80 82V83.6667" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
 </g>
 <defs>
 <clipPath id="clip0_595_4659">
