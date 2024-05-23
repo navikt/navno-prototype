@@ -27,7 +27,7 @@ permalink: 'situasjon/barn/index.html'
     </div>
 
     {# Innholdsfortegnelse #}
-    <div class="px-5 py-4 mt-8 border-t-[0.625ch] border-[#99185E] rounded-b-lg bg-[#FEF5F1]" x-intersect:leave="showTopAnchor = true" x-intersect:enter.margin.-400px.0.0.0="showTopAnchor = false">
+    <div class="px-5 py-4 mt-8 mb-12 border-t-[0.625ch] border-[#99185E] rounded-b-lg bg-[#FEF5F1]" x-intersect:leave="showTopAnchor = true" x-intersect:enter.margin.-400px.0.0.0="showTopAnchor = false">
       <h2 class="pb-2 text-sm font-semibold">Innhold på siden</h2>
       <ul class="grid gap-4 py-1">
         {% for chapter in chapters.slice(0, -1) %}
@@ -91,9 +91,9 @@ permalink: 'situasjon/barn/index.html'
     {# Innhold #}
     {% for chapter in chapters %}
       {% set chapterIndex = loop.index %}
-      <section class="grid grid-flow-row-dense mt-8 pb-8 col-full grid-cols-combi {{ 'bg-[#FEF5F1] text-center' if chapter.data.sectionType === 'varehylle' }}" id="{{ chapter.data.title | slugify }}">
+      <section class="grid grid-flow-row-dense pt-4 pb-12 col-full grid-cols-combi {{ 'bg-[#FEF5F1] text-center' if chapter.data.sectionType === 'varehylle' }}" id="{{ chapter.data.title | slugify }}">
         <div class="grid mt-8 mb-4 col-full grid-cols-combi">
-          <div class="w-10 h-[0.675ch] bg-[#E6C7D8] mb-5 mt-5 {{ 'mx-auto' if chapter.data.sectionType === 'varehylle' }}"></div>
+          {%- if not chapter.data.sectionType %}<div class="w-10 h-[0.675ch] bg-[#E6C7D8] mb-5 mt-5 {{ 'mx-auto' if chapter.data.sectionType === 'varehylle' }}"></div>{% endif -%}
           <h2 class="font-bold text-2xl/tight text-balance text-[#99185E]">
             <a href="#{{ chapter.data.title | slugify }}">{{ chapter.data.title }}</a>
           </h2>
