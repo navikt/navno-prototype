@@ -34,7 +34,7 @@ Trygderetten vil behandle saken, avgjøre den og skrive en kjennelse. Trygderett
 
 #### Andre klagemuligheter
 
-<div class="mt-4 accordion">
+<div class="accordion">
   <details>
     <summary>Slik melder du saken for en domstol</summary>
     {% prose "py-2 pl-5 -ml-5 -translate-x-px border-l-2 border-slate-400" %}

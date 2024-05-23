@@ -23,7 +23,7 @@ Får du [fosterhjemsgodtgjørelse](#)? Da regnes du som frilanser. Det samme gje
 
 Se hvilke regler som gjelder for deg:
 
-<div class="mt-4 accordion">
+<div class="accordion">
   <details>
     <summary>Arbeidstaker</summary>
     {% prose "py-2 pl-5 -ml-5 -translate-x-px border-l-2 border-slate-400" %}

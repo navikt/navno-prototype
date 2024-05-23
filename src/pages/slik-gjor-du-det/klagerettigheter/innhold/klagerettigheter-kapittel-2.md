@@ -11,7 +11,7 @@ order: 2
 
 Velg hva slags tjeneste eller pengestøtte du skal klage på under.
 
-<div class="mt-4 accordion">
+<div class="accordion">
   <details>
     <summary>Klage på sosiale tjenester</summary>
     {% prose "py-2 pl-5 -ml-5 -translate-x-px border-l-2 border-slate-400" %}
