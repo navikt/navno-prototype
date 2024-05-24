@@ -10,8 +10,10 @@ permalink: 'slik-gjor-du-det/klagerettigheter/index.html'
 
   <main class="grid pt-16 grid-cols-combi" data-theme="sykepenger" x-data="{ showTopAnchor: false }">
     <div class="col-main">
-      <div class="text-base tracking-widest small-caps">{{ category | safe }}</div>
-      <h1 class="font-extrabold text-3xl/tight text-balance text-[#99185E]">{{ title | safe }}</h1>
+      <div class="text-base font-medium tracking-widest small-caps">
+        {{ category | safe }}
+      </div>
+      <h1 class="font-extrabold text-4xl/tight text-balance text-[#99185E]">{{ title | safe }}</h1>
       <div class="mt-6 prose text-pretty max-w-prose">
         <p class="text-lg/snug">{{ ingress | safe }}</p>
 
@@ -91,7 +93,7 @@ permalink: 'slik-gjor-du-det/klagerettigheter/index.html'
       <section class="grid grid-flow-row-dense mt-16 col-full grid-cols-combi " id="{{ chapter.data.title | slugify }}">
         <div class="grid mt-8 mb-4 col-full grid-cols-combi">
           <div class="w-10 h-[0.675ch] bg-[#E6C7D8] mb-5 mt-5"></div>
-          <h2 class="font-bold text-2xl/tight text-balance text-[#99185E]">
+          <h2 class="font-bold text-3xl/tight text-balance text-[#99185E]">
             <a href="#{{ chapter.data.title | slugify }}">{{ chapter.data.title }}</a>
           </h2>
         </div>

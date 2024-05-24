@@ -163,10 +163,11 @@ module.exports = {
       xs: "var(--text-fluid-14-16)",
       sm: "var(--text-fluid-16-18)",
       base: "var(--text-fluid-18-20)",
-      lg: "var(--text-fluid-22-24)",
-      xl: "var(--text-fluid-24-28)",
-      "2xl": "var(--text-fluid-32-36)",
-      "3xl": "var(--text-fluid-36-48)",
+      lg: "var(--text-fluid-20-22)",
+      xl: "var(--text-fluid-22-24)",
+      "2xl": "var(--text-fluid-24-28)",
+      "3xl": "var(--text-fluid-32-36)",
+      "4xl": "var(--text-fluid-36-48)",
     },
     extend: {
       animation: {

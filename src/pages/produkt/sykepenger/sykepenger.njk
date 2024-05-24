@@ -13,8 +13,10 @@ permalink: 'produkt/sykepenger/index.html'
       <div class="mb-3 sm:absolute sm:-ml-32 sm:mt-3">
         {{ '/src/_includes/svg/piktogrammer/produkter/sykepenger.svg' | svgContents('text-[#99185E] w-16 h-16 sm:w-24 sm:h-24') | safe  }}
       </div>
-      <div class="text-base tracking-widest small-caps">{{ category | safe }}</div>
-      <h1 class="font-extrabold text-3xl/tight text-balance text-[#99185E]">{{ title | safe }}</h1>
+      <div class="text-base font-medium tracking-widest small-caps">
+        {{ category | safe }}
+      </div>
+      <h1 class="font-extrabold text-4xl/tight text-pretty text-[#99185E]">{{ title | safe }}</h1>
       <div class="mt-6 prose text-pretty max-w-prose">
         <p class="text-lg">{{ ingress | safe }}</p>
 
@@ -94,7 +96,7 @@ permalink: 'produkt/sykepenger/index.html'
       <section class="grid grid-flow-row-dense mt-8 col-full grid-cols-combi " id="{{ chapter.data.title | slugify }}">
         <div class="grid mt-8 mb-4 col-full grid-cols-combi">
           <div class="w-10 h-[0.675ch] bg-[#E6C7D8] mb-5 mt-5"></div>
-          <h2 class="font-bold text-2xl/tight text-balance text-[#99185E]">
+          <h2 class="font-bold text-3xl/tight text-balance text-[#99185E]">
             <a href="#{{ chapter.data.title | slugify }}">{{ chapter.data.title }}</a>
           </h2>
         </div>
