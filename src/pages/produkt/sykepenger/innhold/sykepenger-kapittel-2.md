@@ -319,12 +319,12 @@ Mer informasjon til deg som
     kicker: ['Arbeid', 'Helse og sykdom'] 
   }) }}
   {{ tile({ 
-    title: 'Har vært syk eller skadet lenge', 
+    title: 'Har vært syk eller skadet lenge', 
     mark: 'bg-orange-300', 
     kicker: ['Arbeid', 'Helse og sykdom'] 
   }) }}
   {{ tile({ 
-    title: 'Har en varig sykdom eller skade og kan ikke jobbe', 
+    title: 'Har en varig sykdom eller skade og kan ikke jobbe', 
     mark: 'bg-orange-300', 
     kicker: ['Helse og sykdom'] 
   }) }}

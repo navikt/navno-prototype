@@ -1,18 +1,10 @@
 <footer class="grid pb-12 text-white grid-cols-combi bg-deepblue-800" x-bind:inert="menuOpen || myPageOpen">
-  {# <div class="flex flex-col items-center">
-    <a class="flex items-center gap-1.5 py-3 pl-2.5 pr-4 text-sm text-center hover:underline" href="{{ page.url }}#">
-      <svg class="w-4 h-4 -translate-y-px" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
-        <path stroke="currentColor" stroke-width="2" d="m7 9 6-6 6 6m-6 10V4" />
-      </svg>
-      <span>Til toppen</span>
-    </a>
-  </div> #}
-  <div class="text-white col-container ">
+  <div class="col-container">
     <div class="pt-16">
       <div class="sm:columns-2 md:columns-3">
         {%- for section in footer.links -%}
           <div class="mb-8 sm:pr-8 md:mb-0">
-            <h2 class="text-xs font-bold tracking-wider uppercase text-deepblue-300">
+            <h2 class="font-semibold tracking-widest small-caps text-deepblue-300">
               {{ section.title | safe }}
             </h2>
             <ul class="mt-2 mb-7 break-inside-avoid">
