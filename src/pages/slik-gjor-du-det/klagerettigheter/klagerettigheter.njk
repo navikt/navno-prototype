@@ -31,7 +31,7 @@ permalink: 'slik-gjor-du-det/klagerettigheter/index.html'
       <ul class="grid gap-4 py-1">
         {% for chapter in chapters.slice(0,-1) %}
         <li class="grid">
-          <a class="flex gap-1.5 p-1 -m-1 font-medium text-blue-500 underline group hover:text-blue-700 text-base/snug hover:decoration-2" href="#{{ chapter.data.title | slugify }}">
+          <a class="flex gap-1.5 p-1 -m-1 text-blue-600 underline group hover:text-blue-700 text-base/snug hover:decoration-2" href="#{{ chapter.data.title | slugify }}">
             {{ '/src/_includes/svg/icons/arrow-right-angle.svg' | svgContents('w-4 h-4') | safe }}
             {{ chapter.data.title }}
           </a>
@@ -105,7 +105,7 @@ permalink: 'slik-gjor-du-det/klagerettigheter/index.html'
           <ul class="grid gap-2 mt-1 justify-items-start">
             {% for item in chapter.templateContent | tocData %}
             <li>
-              <a class="flex items-start gap-1 px-1 py-2 -m-1 text-blue-500 group hover:text-blue-700 text-base/snug hover:underline" href="#{{ item.id }}">
+              <a class="flex items-start gap-1 px-1 py-2 -m-1 text-blue-600 group hover:text-blue-700 text-base/snug hover:underline" href="#{{ item.id }}">
                 {{ '/src/_includes/svg/icons/arrow-right-angle.svg' | svgContents('w-4 h-4') | safe }}
                 <span>{{ item.text }}</span>
               </a>
@@ -113,7 +113,7 @@ permalink: 'slik-gjor-du-det/klagerettigheter/index.html'
             {% endfor %}
             {# <li class="pt-5 border-t justify-self-stretch border-slate-400/25">
               <a 
-                class="inline-flex items-center gap-0.5 -m-1 text-blue-500 group hover:text-blue-700 text-base/snug hover:underline" 
+                class="inline-flex items-center gap-0.5 -m-1 text-blue-600 group hover:text-blue-700 text-base/snug hover:underline" 
                 href="{{ page.url }}" 
               >
                 {{ '/src/_includes/svg/icons/arrow-up.svg' | svgContents('-translate-y-0.5 opacity-85') | safe }}

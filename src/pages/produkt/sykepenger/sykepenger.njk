@@ -2,13 +2,14 @@
 tags: ['produkt', 'proto']
 description: ''
 permalink: 'produkt/sykepenger/index.html'
+
 ---
 {%- extends 'base.njk' -%}
 
 {%- block content -%}
   {% set chapters = collections.all | onlyTags('sykepenger', 'innhold') | sort(false, false, 'data.order') %}
 
-  <main class="grid pt-16 grid-cols-combi" data-theme="sykepenger" x-data="{ showTopAnchor: false }">
+  <main class="grid pt-16 pb-4 grid-cols-combi" data-theme="sykepenger" x-data="{ showTopAnchor: false }">
     <div class="col-main">
       <div class="mb-3 sm:absolute sm:-ml-32 sm:mt-3">
         {{ '/src/_includes/svg/piktogrammer/produkter/sykepenger.svg' | svgContents('text-[#99185E] w-16 h-16 sm:w-24 sm:h-24') | safe  }}
@@ -18,7 +19,7 @@ permalink: 'produkt/sykepenger/index.html'
       </div>
       <h1 class="font-extrabold text-4xl/tight text-pretty text-[#99185E]">{{ title | safe }}</h1>
       <div class="mt-6 prose text-pretty max-w-prose">
-        <p class="text-lg">{{ ingress | safe }}</p>
+        <p class="text-lg/normal">{{ ingress | safe }}</p>
 
         {% if audience %}          
         <div class="text-sm leading-normal text-pretty">
@@ -34,7 +35,7 @@ permalink: 'produkt/sykepenger/index.html'
       <ul class="grid gap-4 py-1">
         {% for chapter in chapters.slice(0, -1) %}
         <li class="grid">
-          <a class="flex gap-1.5 p-1 -m-1 font-medium text-blue-500 underline group hover:text-blue-700 text-base/snug hover:decoration-2" href="#{{ chapter.data.title | slugify }}">
+          <a class="flex gap-1.5 p-1 -m-1 text-blue-600 hover:underline group hover:text-blue-700 text-base/snug hover:decoration-2" href="#{{ chapter.data.title | slugify }}">
             {{ '/src/_includes/svg/icons/arrow-right-angle.svg' | svgContents('w-4 h-4') | safe }}
             {{ chapter.data.title }}
           </a>
@@ -108,7 +109,7 @@ permalink: 'produkt/sykepenger/index.html'
           <ul class="grid gap-2 mt-1 justify-items-start">
             {% for item in chapter.templateContent | tocData %}
             <li>
-              <a class="flex items-start gap-1 px-1 py-2 -m-1 text-blue-500 group hover:text-blue-700 text-base/snug hover:underline" href="#{{ item.id }}">
+              <a class="flex items-start gap-1 px-1 py-2 -m-1 text-blue-600 group hover:text-blue-700 text-base/snug hover:underline hover:decoration-2" href="#{{ item.id }}">
                 {{ '/src/_includes/svg/icons/arrow-right-angle.svg' | svgContents('w-4 h-4') | safe }}
                 <span>{{ item.text }}</span>
               </a>
@@ -116,7 +117,7 @@ permalink: 'produkt/sykepenger/index.html'
             {% endfor %}
             {# <li class="pt-5 border-t justify-self-stretch border-slate-400/25">
               <a 
-                class="inline-flex items-center gap-0.5 -m-1 text-blue-500 group hover:text-blue-700 text-base/snug hover:underline" 
+                class="inline-flex items-center gap-0.5 -m-1 text-blue-600 group hover:text-blue-700 text-base/snug hover:underline" 
                 href="{{ page.url }}" 
               >
                 {{ '/src/_includes/svg/icons/arrow-up.svg' | svgContents('-translate-y-0.5 opacity-85') | safe }}

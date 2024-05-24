@@ -3,38 +3,33 @@ title: 'Helse og sykdom'
 description: 'Listeside med ingress og piktogram'
 tags: ['listeside', 'proto']
 permalink: '/omrade/helse-og-sykdom/index.html'
+contactTheme: white
 ---
 {%- extends 'base.njk' -%}
 
 {%- block content -%}
-  <main class="pb-12 bg-white">
+  <main class="bg-white">
     <div class="grid grid-cols-combi">
-      <div class="relative pt-12 col-main">
-        {{ '/src/_includes/svg/area-illustrations/helse.svg' | svgContents('h-auto min-w-28 max-w-48 ml-auto w-1/3 float-right') | safe }}
+      <div class="relative pt-12 pb-8 col-container">
+        {{ '/src/_includes/svg/area-illustrations/helse.svg' | svgContents('h-auto min-w-28 max-w-40 ml-auto w-1/3 float-right') | safe }}
         <div class="tracking-widest small-caps">{{ category | safe }}</div>
         <h1 class="-translate-x-[0.05em] font-extrabold text-4xl/tight text-pretty text-[#99185E]">{{ title | safe }}</h1>
         <h2 class="col-span-2 col-start-1 mt-1 text-lg xs:col-start-1 xs:col-span-1 max-w-prose">Hva er situasjonen din?</h2>
       </div>
+    </div>
 
-      {# <div class="mb-12 col-main">
-        [spesielle elementer]
-      </div> #}
-
-      <div class="pt-12 col-main">
-        <ul>
-          {%- for item in situationList -%}
-            <li class="border-t border-slate-300">
-              <div class="relative flex items-center justify-between flex-1 py-4 gap-x-20">
-                <div class="flex-col justify-start">
-                  <a class="text-lg leading-snug text-blue-600 text-balance hover:text-blue-500 hover:underline after:absolute after:inset-0" href="#">{{ item.title | safe }}</a>
-                  {# <p>{{ item.ingress | safe }}</p> #}
-                </div>
-                {# {{ item.icon | svgContents('shrink-0 w-16 aspect-square h-auto') | safe if item.icon }} #}
-              </div>
-            </li>
-          {%- endfor -%}
-        </ul>
-      </div>
+    <div class="grid py-12 grid-cols-combi bg-[#FEF5F1]">
+      <ul class="overflow-clip col-container md:grid md:grid-cols-2" style="--pictogram: #F5D3E2;">
+        {%- for item in situationList -%}
+          <li class="relative flex items-start gap-6 py-6 sm:odd:pr-8 sm:even:pl-8 ring-1 ring-slate-200">
+            {{ item.icon | svgContents('w-12 h-12 shrink-0') | safe if item.icon }}
+            <div>
+            <a class="text-blue-600 text-base/snug text-pretty hover:text-blue-600 hover:underline after:absolute after:inset-0" href="#">{{ item.title | safe }}</a>
+            <p>{{ item.ingress | safe }}</p>
+            </div>
+          </li>
+        {%- endfor -%}
+      </ul>
     </div>
   </main>
 

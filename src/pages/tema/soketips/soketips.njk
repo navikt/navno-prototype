@@ -72,7 +72,7 @@ Du vil fortsatt få treff på andre språk hvis innholdet ikke er oversatt til d
       <ul class="grid gap-4 mt-1 justify-items-start">
         {% for item in mainMarkup | tocData(["h2"]) %}
         <li>
-          <a class="flex items-start gap-1 p-1 -m-1 text-blue-500 group hover:text-blue-700 text-base/snug hover:underline" href="#{{ item.id }}">
+          <a class="flex items-start gap-1 p-1 -m-1 text-blue-600 group hover:text-blue-700 text-base/snug hover:underline" href="#{{ item.id }}">
             {{ '/src/_includes/svg/icons/arrow-right-angle-aksel.svg' | svgContents('translate-y-0.5 w-5 h-5') | safe }}
             <span>{{ item.text }}</span>
           </a>

@@ -19,7 +19,7 @@
         <ul class="grid gap-3 mt-3 sm:grid-cols-2 lg:grid-cols-1">
           {%- for link in menu.areas.linkList -%}
             <li class="">
-              <a class="inline-flex items-center gap-2 pr-4 leading-normal text-blue-500 rounded group fine:hover:text-blue-700 fine:hover:underline" href="#">
+              <a class="inline-flex items-center gap-2 pr-4 leading-normal text-blue-600 rounded group fine:hover:text-blue-700 fine:hover:underline" href="#">
                 {%- if link.icon -%}
                   <span class="grid p-2 rounded-full bg-blue-50 place-items-center group-hover:bg-deepblue-600 group-hover:text-white">
                     {{ link.icon | svgContents('w-6 h-6') | safe }}
@@ -52,7 +52,7 @@
         <ul class="mt-1 sm:columns-2">
           {%- for link in menu.shortcuts.linkList -%}
             <li class="py-0.5">
-              <a class="inline-flex items-center gap-3 px-2 py-1 -mx-2 leading-normal text-blue-500 rounded fine:hover:text-blue-700 fine:hover:underline" href="#">
+              <a class="inline-flex items-center gap-3 px-2 py-1 -mx-2 leading-normal text-blue-600 rounded fine:hover:text-blue-700 fine:hover:underline" href="#">
                 {%- if link.icon -%}
                   {{ link.icon | svgContents('w-6 h-6 opacity-80') | safe }}
                 {%- endif -%}
