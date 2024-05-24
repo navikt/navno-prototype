@@ -16,6 +16,11 @@ noJS: true
     url: 'produkt'
   },
   {
+    title: 'Situasjonsside',
+    description: 'Gir best mulig informasjon ut fra en gitt situasjon.',
+    url: 'situasjon'
+  },
+  {
     title: 'Temaartikkel',
     description: 'Gir dybdeinformasjon om ett konkret tema.',
     url: 'tema'
@@ -37,7 +42,7 @@ noJS: true
 {%- block content -%}
   <div class="py-page lg:py-20 grid grid-cols-combi font-[375]">
     <div class="grid items-start gap-2 col-container overflow-clip rounded-xl">
-      <div class="grid gap-2 lg:grid-cols-3">
+      <div class="grid gap-2 lg:grid-cols-2">
         {% for item in pages %}      
         {{ link(item) }}
         {% endfor %}
