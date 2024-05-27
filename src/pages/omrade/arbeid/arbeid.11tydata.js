@@ -1,7 +1,7 @@
 module.exports = {
   situationList: [
     {
-      title: "Er arbeidsledig eller permittert",
+      title: "Er arbeidsledig eller permittert",
       ingress:
         "Om pengestøtte og hjelp fra NAV når du har mistet jobben eller er permittert.",
       category: "Dette kan du ha rett til",
@@ -13,32 +13,32 @@ module.exports = {
       category: "Dette kan du ha rett til",
     },
     {
-      title: "Trenger hjelp til å komme i jobb",
+      title: "Trenger hjelp til å komme i jobb",
       ingress: "NAV har tilbud når du trenger hjelp til å komme i jobb.",
       category: "Dette kan du ha rett til",
     },
     {
-      title: "Trenger hjelp til å fullføre utdanning",
+      title: "Trenger hjelp til å fullføre utdanning",
       ingress:
         "Hjelp og støtte når du har avbrutt utdanning eller har utfordringer med å gjennomføre skolegangen.",
       category: "Dette kan du ha rett til",
     },
     {
-      title: "Trenger tilrettelegging på jobb eller i utdanning",
+      title: "Trenger tilrettelegging på jobb eller i utdanning",
       ingress:
         "Om hjelpemidler og tilrettelegging på arbeidsplassen eller skolen for å kunne jobbe eller gjennomføre utdanning.",
       category: "Dette kan du ha rett til",
     },
     {
-      title: "Kan bare jobbe noe på grunn av langvarig sykdom eller skade",
+      title: "Kan bare jobbe noe på grunn av langvarig sykdom eller skade",
       ingress:
-        "Om muligheter til å komme i jobb eller aktivitet og pengestøtter som sykepenger, AAP, uføretrygd med flere.",
+        "Om muligheter til å komme i jobb eller aktivitet og pengestøtter som sykepenger, AAP, uføretrygd med flere.",
       category: "Dette kan du ha rett til",
     },
     {
-      title: "Har vært syk eller skadet lenge",
+      title: "Har vært syk eller skadet lenge",
       ingress:
-        "Om støtteordninger og veien videre når du er usikker på hvor mye du kan jobbe fremover.",
+        "Om støtteordninger og veien videre når du er usikker på hvor mye du kan jobbe fremover.",
       category: "Dette kan du ha rett til",
     },
     {
