@@ -115,6 +115,16 @@ const akselColors = {
   white: "rgba(255, 255, 255, 1)",
   black: "rgba(0, 0, 0, 1)",
 };
+const brandColors = {
+  brand: {
+    purple: {
+      deep: "#99185E",
+      faded: "#F0B7D6",
+      light: "#F9D8E7",
+    },
+    beige: "#FEF5EF",
+  },
+};
 
 module.exports = {
   content: ["./src/**/*.{njk,md,json,js,svg}"],
@@ -186,6 +196,7 @@ module.exports = {
       },
       colors: {
         ...akselColors,
+        ...brandColors,
         current: "currentColor",
         transparent: "rgb(255 255 255 / 0%)",
         white: "rgb(255 255 255)",

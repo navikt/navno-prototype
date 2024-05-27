@@ -351,7 +351,7 @@
     list-style: none;
     padding: 0.375em 18px 0.375em 44px;
     cursor: pointer;
-    background-color: theme('colors.blue.50 / 75%');
+    background-color: theme('colors.blue.50');
     border-radius: theme('borderRadius.lg');
     color: theme('colors.blue.600');
     line-height: 1.375;
@@ -380,7 +380,7 @@
     height: 22px;
   }
   :where(.readmore) summary:hover {
-    background-color: theme('colors.blue.100 / 75%');
+    background-color: theme('colors.blue.100');
   }
 
   :where(.readmore[open]) summary {

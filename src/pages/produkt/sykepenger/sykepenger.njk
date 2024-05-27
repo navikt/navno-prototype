@@ -11,13 +11,13 @@ permalink: 'produkt/sykepenger/index.html'
 
   <main class="grid pt-16 pb-4 grid-cols-combi" data-theme="sykepenger" x-data="{ showTopAnchor: false }">
     <div class="col-main">
-      <div class="mb-3 sm:absolute sm:-ml-32 sm:mt-3">
-        {{ '/src/_includes/svg/piktogrammer/produkter/sykepenger.svg' | svgContents('text-[#99185E] w-16 h-16 sm:w-24 sm:h-24') | safe  }}
+      <div class="mb-3 sm:absolute sm:-ml-32 sm:mt-3" style="--pictogram: #F5D3E2;">
+        {{ '/src/_includes/svg/piktogrammer/produkter/sykepenger.svg' | svgContents('text-brand-purple-deep w-16 h-16 sm:w-24 sm:h-24') | safe  }}
       </div>
       <div class="text-base font-medium tracking-widest small-caps">
         {{ category | safe }}
       </div>
-      <h1 class="font-extrabold text-4xl/tight text-pretty text-[#99185E]">{{ title | safe }}</h1>
+      <h1 class="font-extrabold text-4xl/tight text-pretty text-brand-purple-deep">{{ title | safe }}</h1>
       <div class="mt-6 prose text-pretty max-w-prose">
         <p class="text-lg/normal">{{ ingress | safe }}</p>
 
@@ -30,7 +30,7 @@ permalink: 'produkt/sykepenger/index.html'
     </div>
 
     {# Innholdsfortegnelse #}
-    <div class="px-5 py-4 mt-8 border-t-[0.625ch] border-[#99185E] rounded-b-lg bg-[#FEF5F1]" x-intersect:leave="showTopAnchor = true" x-intersect:enter.margin.-400px.0.0.0="showTopAnchor = false">
+    <div class="px-5 py-4 mt-8 border-t-[0.625ch] border-brand-purple-deep rounded-b-lg bg-brand-beige" x-intersect:leave="showTopAnchor = true" x-intersect:enter.margin.-400px.0.0.0="showTopAnchor = false">
       <h2 class="pb-2 text-base font-semibold">Innhold på siden</h2>
       <ul class="grid gap-4 py-1">
         {% for chapter in chapters.slice(0, -1) %}
@@ -39,7 +39,6 @@ permalink: 'produkt/sykepenger/index.html'
             {{ '/src/_includes/svg/icons/arrow-right-angle.svg' | svgContents('w-4 h-4') | safe }}
             {{ chapter.data.title }}
           </a>
-          {# <p class="pr-4 pl-6 mt-0.5 text-pretty opacity-85">{{ chapter.data.ingress | safe }}</p> #}
         </li>
         {% endfor %}
       </ul>
@@ -51,14 +50,14 @@ permalink: 'produkt/sykepenger/index.html'
       <section class="grid grid-flow-row-dense mt-8 col-full grid-cols-combi " id="{{ chapter.data.title | slugify }}">
         <div class="grid mt-8 mb-4 col-full grid-cols-combi">
           <div class="w-10 h-[0.675ch] bg-[#E6C7D8] mb-5 mt-5"></div>
-          <h2 class="font-bold text-3xl/tight text-balance text-[#99185E]">
+          <h2 class="font-bold text-3xl/tight text-balance text-brand-purple-deep">
             <a href="#{{ chapter.data.title | slugify }}">{{ chapter.data.title }}</a>
           </h2>
         </div>
 
         {# Chapter TOC #}
         {% if chapter.templateContent and chapter.templateContent | tocData | length > 0 and not chapter.data.hideToc %}
-        <nav class="relative px-5 pt-3 pb-4 mb-8 rounded-lg bg-[#FEF5F1]">
+        <nav class="relative px-5 pt-3 pb-4 mb-8 rounded-lg bg-brand-beige">
           <h3 class="pb-2 text-base font-semibold">I dette kapittelet</h3>
           <ul class="grid gap-2 mt-1 justify-items-start">
             {% for item in chapter.templateContent | tocData %}
@@ -69,15 +68,6 @@ permalink: 'produkt/sykepenger/index.html'
               </a>
             </li>
             {% endfor %}
-            {# <li class="pt-5 border-t justify-self-stretch border-slate-400/25">
-              <a 
-                class="inline-flex items-center gap-0.5 -m-1 text-blue-600 group hover:text-blue-700 text-base/snug hover:underline" 
-                href="{{ page.url }}" 
-              >
-                {{ '/src/_includes/svg/icons/arrow-up.svg' | svgContents('-translate-y-0.5 opacity-85') | safe }}
-                <span>Til toppen av siden</span>
-              </a>
-            </li> #}
           </ul>
         </nav>
         {% endif %}

@@ -13,20 +13,18 @@ contactTheme: white
       <div class="relative flex items-end justify-between col-container">
         <div class="flex-1 pt-8 pb-6">
           {# <div class="tracking-widest small-caps">{{ category | safe }}</div> #}
-          <h1 class="-translate-x-[0.05em] font-extrabold text-4xl/tight text-pretty text-[#99185E]">{{ title | safe }}</h1>
+          <h1 class="-translate-x-[0.05em] font-extrabold text-4xl/tight text-pretty text-brand-purple-deep">{{ title | safe }}</h1>
           <h2 class="col-span-2 col-start-1 mt-1 text-lg xs:col-start-1 xs:col-span-1 max-w-prose">Hva er situasjonen din?</h2>
         </div>
         {{ '/src/_includes/svg/area-illustrations/helse.svg' | svgContents('h-auto min-w-32 max-w-52 w-2/5') | safe }}
       </div>
     </div>
 
-    {# bg-[#FEF5F1] #}
-
-    <div class="grid pt-8 pb-12 grid-cols-combi bg-[#FEF5F1]">
-      <ul class="gap-px overflow-clip col-container md:grid md:grid-cols-2" style="--pictogram: #F5D3E2;">
+    <div class="grid pt-8 pb-12 grid-cols-combi bg-brand-beige">
+      <ul class="gap-px overflow-clip col-container md:grid md:grid-cols-2" style="--pictogram: #F9D8E7;">
         {%- for item in situationList -%}
           <li class="relative flex items-start gap-5 pt-6 pb-8 md:gap-6 md:odd:pr-8 md:even:pl-8 ring-1 ring-slate-200">
-            {{ item.icon | svgContents('w-12 h-12 sm:w-16 sm:h-16 shrink-0 mt-1 text-[#99185E]') | safe if item.icon }}
+            {{ item.icon | svgContents('w-12 h-12 sm:w-16 sm:h-16 shrink-0 mt-1 text-brand-purple-deep') | safe if item.icon }}
             <div class="grid flex-1 gap-1 text-pretty">
               <a class="font-semibold text-blue-600 hover:underline text-xl/snug hover:text-blue-600 hover:decoration-2 after:absolute after:inset-0" href="#">{{ item.title | safe }}</a>
               <p>{{ item.ingress | safe }}</p>

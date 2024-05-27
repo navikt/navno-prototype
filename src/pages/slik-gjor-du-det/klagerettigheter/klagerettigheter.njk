@@ -13,7 +13,7 @@ permalink: 'slik-gjor-du-det/klagerettigheter/index.html'
       <div class="text-base font-medium tracking-widest small-caps">
         {{ category | safe }}
       </div>
-      <h1 class="font-extrabold text-4xl/tight text-balance text-[#99185E]">{{ title | safe }}</h1>
+      <h1 class="font-extrabold text-4xl/tight text-balance text-brand-purple-deep">{{ title | safe }}</h1>
       <div class="mt-6 prose text-pretty max-w-prose">
         <p class="text-lg/normal">{{ ingress | safe }}</p>
 
@@ -26,7 +26,7 @@ permalink: 'slik-gjor-du-det/klagerettigheter/index.html'
     </div>
 
     {# Innholdsfortegnelse #}
-    <div class="px-5 py-4 mt-8 border-t-[0.625ch] border-[#99185E] rounded-b-lg bg-[#FEF5F1]" x-intersect:leave="showTopAnchor = true" x-intersect:enter="showTopAnchor = false">
+    <div class="px-5 py-4 mt-8 border-t-[0.625ch] border-brand-purple-deep rounded-b-lg bg-brand-beige" x-intersect:leave="showTopAnchor = true" x-intersect:enter="showTopAnchor = false">
       <h2 class="pb-2 text-base font-semibold">Innhold på siden</h2>
       <ul class="grid gap-4 py-1">
         {% for chapter in chapters.slice(0,-1) %}
@@ -35,72 +35,25 @@ permalink: 'slik-gjor-du-det/klagerettigheter/index.html'
             {{ '/src/_includes/svg/icons/arrow-right-angle.svg' | svgContents('w-4 h-4') | safe }}
             {{ chapter.data.title }}
           </a>
-          {# <p class="pr-4 pl-6 mt-0.5 text-pretty opacity-85">{{ chapter.data.ingress | safe }}</p> #}
         </li>
         {% endfor %}
       </ul>
     </div>
-
-    {# Sticky Chapter TOC #}
-    {# <div 
-      class="sticky top-0 z-10 isolate col-main" 
-      aria-hidden="true"
-      x-show="showToc"
-      x-transition:enter="transition ease-out duration-200"
-      x-transition:enter-start="opacity-0 -translate-y-full"
-      x-transition:enter-end="opacity-100 translate-y-0"
-      x-on:click.outside="expandToc = false"
-    >
-      <button class="relative mx-auto z-20 mt-2 flex items-center justify-center gap-1 pl-5 pr-3.5 py-2.5 whitespace-nowrap bg-slate-500 text-white" x-bind:class="expandToc ? 'w-full rounded-t-xl hover:bg-slate-600' : 'rounded-full shadow-lg'" type="button" x-on:click="expandToc = !expandToc">
-        <span>Innhold på siden</span>
-        {{ '/src/_includes/svg/icons/chevron-down.svg' | svgContents('w-5 h-5') | safe }}
-      </button>
-      <div 
-        class="absolute inset-x-0 z-10 px-5 pt-20 pb-8 text-white rounded-xl top-2 bg-slate-500 grid-cols-combi" 
-        x-bind:class="expandToc ? 'bg-slate-100 shadow-lg' : 'hidden'"
-      >
-        <ol class="grid gap-3 toc toc--multi toc--sticky">
-          {% for chapter in chapters %}
-          <li class="grid">
-            <a 
-              class="flex gap-1 p-1 -m-1 font-medium text-white underline group text-base/snug hover:decoration-2" 
-              href="#{{ chapter.data.title | slugify }}" 
-              x-on:click="expandToc = false"
-            >
-              {{ '/src/_includes/svg/icons/arrow-right-angle-aksel.svg' | svgContents('translate-y-0.5 w-5 h-5') | safe }}
-              {{ chapter.data.title }}
-            </a>
-            <p class="pr-4 pl-6 mt-0.5 text-pretty opacity-80">{{ chapter.data.ingress | safe }}</p>
-          </li>
-          {% endfor %}
-          <li class="pt-4 mt-1 border-t border-slate-400/25">
-            <a 
-              class="flex gap-1 p-1 text-white underline group text-base/snug hover:decoration-2" 
-              href="{{ page.url }}" 
-              x-on:click="expandToc = false"
-            >
-              {{ '/src/_includes/svg/icons/arrow-up.svg' | svgContents('translate-y-0.5 w-5 h-5') | safe }}
-              Til toppen av siden
-            </a>
-          </li>
-        </ol>
-      </div>
-    </div> #}
 
     {# Innhold #}
     {% for chapter in chapters %}
       {% set chapterIndex = loop.index %}
       <section class="grid grid-flow-row-dense mt-16 col-full grid-cols-combi " id="{{ chapter.data.title | slugify }}">
         <div class="grid mt-8 mb-4 col-full grid-cols-combi">
-          <div class="w-10 h-[0.675ch] bg-[#E6C7D8] mb-5 mt-5"></div>
-          <h2 class="font-bold text-3xl/tight text-balance text-[#99185E]">
+          <div class="w-10 h-[0.675ch] bg-brand-purple-faded mb-5 mt-5"></div>
+          <h2 class="font-bold text-3xl/tight text-balance text-brand-purple-deep">
             <a href="#{{ chapter.data.title | slugify }}">{{ chapter.data.title }}</a>
           </h2>
         </div>
 
         {# Chapter TOC #}
         {% if chapter.templateContent and chapter.templateContent | tocData | length > 0 and not chapter.data.hideToc %}
-        <nav class="relative px-5 pt-3 pb-4 mt-4 mb-8 rounded-lg bg-[#FEF5F1]">
+        <nav class="relative px-5 pt-3 pb-4 mt-4 mb-8 rounded-lg bg-brand-beige">
           <h3 class="pb-2 font-semibold">I dette kapittelet</h3>
           <ul class="grid gap-2 mt-1 justify-items-start">
             {% for item in chapter.templateContent | tocData %}
@@ -140,7 +93,7 @@ permalink: 'slik-gjor-du-det/klagerettigheter/index.html'
       x-transition:enter-start="translate-y-8 opacity-0"
       x-transition:enter-end="translate-y-0 opacity-100"
     >
-      <a href="#toppen" class="inline-flex items-center justify-center gap-1 py-3 pl-3 pr-5 mx-auto text-sm leading-tight text-center text-white rounded-full ring-4 ring-[#E6C7D8] hover:underline bg-[#99185E]">
+      <a href="#toppen" class="inline-flex items-center justify-center gap-1 py-3 pl-3 pr-5 mx-auto text-sm leading-tight text-center text-white rounded-full ring-4 ring-brand-purple-faded hover:underline bg-brand-purple-deep">
         {{ '/src/_includes/svg/icons/arrow-up.svg' | svgContents('w-5 h-5 -translate-y-px') | safe }}
         <span>Til toppen av siden</span>
       </a>
