@@ -1,17 +1,10 @@
 {% macro tile(args) %}
-<div class="relative overflow-clip flex gap-4 px-5 py-3 leading-tight rounded-lg group border border-slate-300 bg-white {{ args.theme or "has-[a:hover]:bg-blue-50/75 has-[a:hover]:border-blue-300 has-[a:active]:border-blue-500 has-[a:active]:bg-blue-50" }}">
- <div class="grid gap-0.5">
-    <a class="z-10 flex-1 inline-block text-base font-semibold no-underline text-pretty after:absolute after:inset-0 hover:underline hover:decoration-2" href="#">{{ args.title }}</a>
-    {%- if args.kicker %}
-    <p class="font-medium tracking-wide pointer-events-none opacity-70 small-caps">
-      {%- for item in args.kicker %}{{ item }}{{ ', ' if not loop.last }}{% endfor -%}
-    </p>
-    {%- endif %}
-    {# {% if args.content %}
-      <p class="opacity-85">{{ args.content | safe }}</p>
-    {% endif %} #}
-  </div>
-  {# <div class="absolute inset-y-0 w-1 rounded-l-lg left-0 pointer-events-none  transition-all {{ args.mark }}"></div> #}
-  {{ '/src/_includes/svg/icons/arrow-right.svg' | svgContents('ml-auto w-6 h-6 my-auto -mr-1 opacity-60 shrink-0 order-2') | safe }}
+<div class="relative px-5 py-4 rounded-lg group leading-tight border border-slate-300 bg-white {{ args.theme or "has-[a:hover]:bg-blue-50/75 has-[a:active]:border-blue-500 has-[a:active]:bg-blue-50" }}">
+  <a class="z-10 flex-1 text-base font-semibold no-underline text-pretty after:absolute after:inset-0 hover:underline hover:decoration-2" href="#">{{ args.title }}</a>
+  {%- if args.kicker %}
+  <p class="font-medium leading-tight tracking-wide pointer-events-none opacity-70 small-caps">
+    {%- for item in args.kicker %}{{ item }}{{ ', ' if not loop.last }}{% endfor -%}
+  </p>
+  {%- endif %}
 </div>
 {% endmacro %}
