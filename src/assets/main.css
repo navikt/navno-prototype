@@ -5,13 +5,6 @@
 @layer base {
 
   :root {
-    --text-fluid--2: clamp(0.75rem, 0.7083rem + 0.2083vi, 0.875rem);
-    --text-fluid--1: clamp(0.875rem, 0.8333rem + 0.2083vi, 1rem);
-    --text-fluid-0: clamp(1.125rem, 1.0833rem + 0.2083vi, 1.25rem);
-    --text-fluid-1: clamp(1.25rem, 1.1667rem + 0.4167vi, 1.5rem);
-    --text-fluid-2: clamp(1.75rem, 1.5833rem + 0.8333vi, 2.25rem);
-    --text-fluid-3: clamp(2rem, 1.625rem + 1.875vi, 3.125rem);
-
     --text-fluid-12-14: clamp(0.75rem, 0.7083rem + 0.2083vi, 0.875rem);
     --text-fluid-14-16: clamp(0.875rem, 0.8333rem + 0.2083vi, 1rem);
     --text-fluid-16-18: clamp(1rem, 0.9583rem + 0.2083vi, 1.125rem);
@@ -23,15 +16,14 @@
     --text-fluid-36-48: clamp(2.25rem, 2rem + 1.25vi, 3rem);
   }
 
-  /* @link https://utopia.fyi/clamp/calculator?a=320,1280,12—14|14—16|16—18|18—20|22—24|24—28|32—36|36—48 */
+  /* @link https://utopia.fyi/clamp/calculator?a=320,1280,12—14|14—16|16—18|18—20|20-22|22—24|24—28|32—36|36—48 */
 
-
-  body {
-    color: theme('colors.slate.900');
-  }
   * {
     text-decoration-thickness: 0.0625rem;
     text-underline-offset: 0.15625rem;
+  }
+  body {
+    color: theme('colors.slate.900');
   }
   strong {
     font-weight: 650;
@@ -52,7 +44,7 @@
     margin-block: 1.75em 0.25em;
   }
   .prose > :where(h1, h2, h3, h4, h5):first-child {
-    margin-block-start: 0;
+    margin-block-start: 0.5em;
   }
     :is(.prose) > :where(h2) {
     font-size: var(--text-fluid-28-32);
@@ -349,7 +341,7 @@
     display: flex;
     width: fit-content;
     list-style: none;
-    padding: 0.375em 18px 0.375em 44px;
+    padding: 0.375em 18px 0.375em 40px;
     cursor: pointer;
     background-color: theme('colors.blue.50');
     border-radius: theme('borderRadius.lg');
@@ -373,7 +365,7 @@
     flex-shrink: 0;
     place-items: center;
     align-self: baseline;
-    margin-inline: -33px 8px;
+    margin-inline: -30px 8px;
     transition: transform 150ms;
     transform: translateY(2px);
     width: 22px;
