@@ -42,7 +42,7 @@ Først leverer du sykmeldingen til arbeidsgiveren din. Du logger deg inn på [Di
 3. Når du har sendt inn søknaden om sykepenger, kan NAV behandle søknaden din. Det skjer først når arbeidsgiveren din har sendt oss opplysninger om inntekten (inntektsmelding). Hvis du har pålegg om faste trekk, må arbeidsgiveren din også fylle ut skjemaet for trekkopplysninger.
 
 #### Søknad om sykepenger for arbeidstakere
-<div class="flex flex-wrap gap-2 mt-3">
+<div class="flex flex-wrap gap-3 mb-12">
   {{ button({ text: 'Send søknad', variant: 'primary' }) }}
   {{ button({ text: 'Ettersend dokumentasjon', variant: 'secondary' }) }}
 </div>
@@ -51,7 +51,7 @@ Først leverer du sykmeldingen til arbeidsgiveren din. Du logger deg inn på [Di
 
 Arbeidsgiver bruker dette skjemaet for å opplyse NAV om trekk hos arbeidstaker i forbindelse med utbetaling av sykepenger, foreldrepenger, svangerskapspenger eller pleie-/ opplærings- og omsorgspenger.
 
-<div class="flex flex-wrap gap-2 mt-3">
+<div class="flex flex-wrap gap-3 mb-12">
   {{ button({ text: 'Send inn', variant: 'primary' }) }}
   {{ button({ text: 'Ettersend dokumentasjon', variant: 'secondary' }) }}
 </div>
@@ -80,7 +80,7 @@ Hvis du ikke har det vi trenger lett tilgjengelig, kan du velge å sende inn sø
 
 Dette skjemaet bruker du hvis det er under en måned siden forrige arbeidsforhold opphørte, du mottar etterlønn/sluttvederlag, er i utdanningspermisjon, eller du har startet i nytt arbeidsforhold uten å ha ny opptjening til sykepenger.
 
-<div class="flex flex-wrap gap-2 mt-3">
+<div class="flex flex-wrap gap-3 mb-12">
   {{ button({ text: 'Søk om sykepenger', variant: 'primary' }) }}
   {{ button({ text: 'Ettersend dokumentasjon', variant: 'secondary' }) }}
 </div>
@@ -99,7 +99,7 @@ Du har kun rett til sykepenger under opphold utenfor EU/EØS i 4 uker i løpet a
 
 Hvis du skal avvikle lovbestemt ferie, skal du ikke søke. I stedet krysser du av for ferie i søknaden om sykepenger som sendes etter at sykmeldingsperioden er over.
 
-<div class="flex flex-wrap gap-2 mt-3">
+<div class="flex flex-wrap gap-3 mb-12">
   {{ button({ text: 'Send søknad', variant: 'primary' }) }}
   {{ button({ text: 'Ettersend dokumentasjon', variant: 'secondary' }) }}
 </div>
@@ -114,7 +114,7 @@ Hvis du skal avvikle lovbestemt ferie, skal du ikke søke. I stedet krysser du a
 
 Hvis du er fast bosatt i utlandet og skal sende inn dokumentasjon som gjelder sykepenger, sender du dette sammen med en førsteside.
 
-<div class="flex flex-wrap gap-2 mt-3">
+<div class="flex flex-wrap gap-3 mb-12">
   {{ button({ text: 'Hent førsteside', variant: 'secondary' }) }}
 </div>
 
@@ -122,7 +122,7 @@ Hvis du er fast bosatt i utlandet og skal sende inn dokumentasjon som gjelder sy
 
 Du må fylle ut dette skjemaet hvis du har sykmelding fra lege utenfor Norge. Legg ved sykmeldingen din og send skjemaet til NAV.
 
-<div class="flex flex-wrap gap-2 mt-3">
+<div class="flex flex-wrap gap-3 mb-12">
   {{ button({ text: 'Send skjema', variant: 'primary' }) }}
   {{ button({ text: 'Ettersend dokumentasjon', variant: 'secondary' }) }}
  </div>
@@ -132,7 +132,7 @@ Du må fylle ut dette skjemaet hvis du har sykmelding fra lege utenfor Norge. Le
 
 <details class="readmore">
   <summary>Hvis du mangler BankID</summary>
-  {% prose "py-2 pl-5 ml-5 translate-x-px border-l-2 border-slate-400"  %}
+  {% prose "py-2 pl-5 ml-5 -translate-x-px border-l-2 border-slate-400"  %}
 Hvis du mangler BankID, ikke har legitimasjon på høyeste sikkerhetsnivå eller har fortrolig adresse i Folkeregisteret, må du bruke del D av papirsykmeldingen til å søke om sykepenger. Finn riktig adresse.
 
 Hvis du har en arbeidsgiver, må du levere del C av sykmeldingen til arbeidsgiveren din. Del D – søknaden – leverer du til den som skal utbetale sykepenger.
@@ -185,7 +185,7 @@ Hvis det er feil i søknaden din om sykepenger, kan du selv korrigere dette inne
 
 I vedtaket står det hvordan du går fram hvis du skal klage, hvem du skal klage til og klagefrist. Hvis du har spørsmål om vedtaket, kan du [kontakte oss](#).
 
-<div class="flex flex-wrap gap-2 mt-3">
+<div class="flex flex-wrap gap-3 mb-12">
   {{ button({ text: 'Send klage', variant: 'primary' }) }}
   {{ button({ text: 'Ettersend dokumentasjon', variant: 'secondary' }) }}
 </div>
@@ -194,15 +194,14 @@ I vedtaket står det hvordan du går fram hvis du skal klage, hvem du skal klage
 
 Hvis du er uenig i svaret på klagen din fra NAV klageinstans, kan du med noen unntak anke vedtaket. Fristen for å anke står i vedtaket.
 
-<div class="flex flex-wrap gap-2 mt-3">
+<div class="flex flex-wrap gap-3 mb-12">
   {{ button({ text: 'Send anke', variant: 'primary' }) }}
   {{ button({ text: 'Ettersend dokumentasjon', variant: 'secondary' }) }}
 </div>
 
 Du kan også bruke advokat eller gi fullmakt til en person som klager på dine vegne.
 
-**Mer om dine**  
-
+#### Mer om dine
 {{ tile({
   title: 'Klagerettigheter',
   content: '…',
