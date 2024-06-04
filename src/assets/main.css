@@ -276,6 +276,7 @@
     display: flex;
     list-style: none;
     place-self: start;
+    width: fit-content;
     padding: 0.5em 8px 0.375em 16px;
     border-radius: theme('borderRadius.full');
     cursor: pointer;
