@@ -17,7 +17,7 @@ I noen tilfeller kan du få unntak fra aktivitetskravet
 
 <details class="readmore">
   <summary>Aktivitetsplikten</summary>
-  {% prose "py-2 pl-5 ml-5 -translate-x-px border-l-2 border-slate-400" %}
+  {% prose "py-2 pl-5 ml-6 border-l-2 border-slate-400" %}
  Som sykmeldt har du plikt til å være i arbeid eller annen arbeidsrettet aktivitet hvis det er mulig. Dette kalles for aktivitetskravet.
 
 I noen tilfeller kan du få unntak fra aktivitetskravet:
@@ -119,7 +119,7 @@ I [din utbetalingsoversikt](#) kan du se utbetalingen på kvelden den dagen peng
     {{ '/src/_includes/svg/icons/briefcase-clock.svg' | svgContents('mr-1 -my-1 w-8 h-8') | safe }}
     <span>Saksbehandlingstider for søknader</span>
   </summary>
-  {% prose %}
+  {% prose "py-2 pl-5 ml-7 translate-x-px border-l-2 border-slate-400" %}
 
 #### Saksbehandlingstider for søknader
 Saksbehandlingstiden er tiden fra vi får søknaden din og til vi har gjort et vedtak. Husk at vi trenger all nødvendig dokumentasjon for å behandle søknaden din. 
@@ -155,7 +155,7 @@ Datoen du får sykepengene dine avhenger av hvilken periode du har vært sykmeld
 
 <details class="readmore">
   <summary>Eksempler på utbetaling i ulike situasjoner</summary>
-  {% prose "py-2 pl-5 ml-5 -translate-x-px border-l-2 border-slate-400" %}
+  {% prose "py-2 pl-5 ml-6 border-l-2 border-slate-400" %}
 
 ##### Eksempel 1 
 Du er sykmeldt fra 1. april til 14. april. Vi innvilger søknaden din 15. april. Da får du sykepenger for hele perioden 25. april. 

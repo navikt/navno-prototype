@@ -235,10 +235,10 @@
     place-items: center;
     translate: 0 4px;
     margin-inline-end: 10px;
-    border-radius: 9px;
+    border-radius: 99px;
     transition: rotate 150ms;
-    width: 22px;
-    height: 22px;
+    width: 24px;
+    height: 24px;
   }
   .accordion :where(details:has(summary:hover)) summary:not(:focus-visible) {
     outline: 4px solid white;
@@ -277,7 +277,6 @@
     list-style: none;
     place-self: start;
     padding: 0.5em 8px 0.375em 16px;
-    margin-inline: -8px;
     border-radius: theme('borderRadius.full');
     cursor: pointer;
     text-align: left;
@@ -340,7 +339,7 @@
     padding: 0.5em 24px 0.375em 44px;
     cursor: pointer;
     background-color: theme('colors.blue.50');
-    border-radius: theme('borderRadius.full');
+    border-radius: 22px;
     color: theme('colors.blue.600');
     line-height: 1.375;
     font-weight: 500;

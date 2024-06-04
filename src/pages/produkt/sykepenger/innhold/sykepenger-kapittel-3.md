@@ -149,12 +149,12 @@ Du får skriftlig vedtak når søknaden er behandlet.
 
 Du finner sykmeldingen og søknaden om sykepenger ved å logge deg inn på nav.no. 
 
-<details class="expander expander--pill">
+<details class="expander">
   <summary>
     {{ '/src/_includes/svg/icons/briefcase-clock.svg' | svgContents('mr-1 -my-1 w-8 h-8') | safe }}
     <span>Saksbehandlingstider for søknader</span>
   </summary>
-  {% prose "py-2 pl-5 ml-6 -translate-x-px border-l-2 border-slate-400" %}
+  {% prose "py-2 pl-5 ml-7 translate-x-px border-l-2 border-slate-400" %}
 
 #### Saksbehandlingstid for søknader
 Saksbehandlingstiden er tiden fra vi får søknaden din og til vi har gjort et vedtak. Husk at vi trenger all nødvendig dokumentasjon for å behandle søknaden din. 
@@ -216,12 +216,12 @@ Du kan også bruke advokat eller gi fullmakt til en person som klager på dine v
 
 
 
-<details class="expander expander--pill">
+<details class="expander">
   <summary>
     {{ '/src/_includes/svg/icons/briefcase-clock.svg' | svgContents('mr-1 -my-1 w-8 h-8') | safe }}
     <span>Saksbehandlingstider</span>
   </summary>
-  {% prose "py-2 pl-5 ml-[26px] border-l-2 border-slate-400" %}
+  {% prose "py-2 pl-5 ml-7 translate-x-px border-l-2 border-slate-400" %}
 #### Saksbehandlingstid for klage og anke
 Har du fått et vedtak fra oss som du mener er feil? Da kan du klage til NAV-enheten som skrev vedtaket. De vil vurdere saken din på nytt. Hvis de ikke er enig i klagen din, sender de den videre til NAV Klageinstans.
 
