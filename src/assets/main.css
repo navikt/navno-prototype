@@ -209,7 +209,7 @@
     font-weight: 400;
     line-height: 1.375;
     background-color: theme('colors.white');
-    color: theme('colors.blue.500');
+    color: theme('colors.blue.600');
   }
   .accordion summary::-webkit-details-marker {
     display: none;
@@ -267,9 +267,6 @@
   /* Expander */
   .expander {
     display: grid;
-    padding-inline: 20px;
-    border: 1px solid theme('colors.slate.300');
-    border-radius: theme('borderRadius.lg');
   }
   .expander[open] {
     padding-block-end: 20px;
@@ -278,9 +275,10 @@
     appearance: none;
     display: flex;
     list-style: none;
-    padding: 0.75em 8px 0.625em 16px;
-    margin-inline: -20px;
-    border-radius: theme('borderRadius.lg');
+    place-self: start;
+    padding: 0.5em 8px 0.4375em 16px;
+    margin-inline: -8px;
+    border-radius: theme('borderRadius.full');
     cursor: pointer;
     text-align: left;
     text-wrap: pretty;
@@ -288,21 +286,20 @@
     color: theme('colors.blue.700');
     font-weight: 500;
     gap: theme(spacing.[0.5]);
-    background-color: theme('colors.white');
+    background-color: theme('colors.blue.50');
   }
   :where(.expander) summary::-webkit-details-marker {
     display: none;
   }
   :where(.expander[open]) summary {
     margin-block-end: theme('spacing.2');
-    border-radius: theme('borderRadius.lg') theme('borderRadius.lg') 0 0;
-    border-bottom: 1px solid theme('colors.slate.300');
+    outline: 4px solid white;
     position: sticky;
-    top: 0;
+    top: 4px;
     z-index: 20;
   }
   :where(.expander) summary:hover {
-    background-color: theme('colors.blue.50');
+    background-color: theme('colors.blue.100');
   }
   :where(.expander) summary:after {
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath stroke='rgba(0, 69, 156, 1)' stroke-linecap='round' stroke-width='1.75' d='m6.5 10 5.493 5.493a.01.01 0 0 0 .014 0L17.5 10'/%3E%3C/svg%3E");
@@ -313,14 +310,14 @@
     flex-shrink: 0;
     place-items: center;
     align-self: baseline;
-    margin-inline: auto 10px;
+    margin-inline: 1.5rem 10px;
     transition: transform 150ms;
     transform: translateY(1px);
     width: 22px;
     height: 22px;
   }
   :where(.expander[open]) summary:after {
-    transform: rotate(-180deg);
+    transform: translateY(1px) rotate(-180deg) ;
   }
   :where(.expander) summary > * {
     text-wrap: pretty;
@@ -328,7 +325,6 @@
   :where(.expander) summary > span {
     transform: translateY(0px);
   }
-
 
 
   /* ReadMore */
@@ -341,10 +337,10 @@
     display: flex;
     width: fit-content;
     list-style: none;
-    padding: 0.375em 18px 0.375em 40px;
+    padding: 0.5625em 24px 0.375em 44px;
     cursor: pointer;
     background-color: theme('colors.blue.50');
-    border-radius: theme('borderRadius.lg');
+    border-radius: theme('borderRadius.full');
     color: theme('colors.blue.600');
     line-height: 1.375;
     font-weight: 500;
@@ -357,7 +353,7 @@
   :where(.readmore) summary:before {
     /* background-color: theme('colors.white');
     border-radius: theme('borderRadius.full'); */
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none'%3E%3Cpath stroke='rgba(0, 69, 156, 1)' stroke-linecap='round' stroke-width='1.75' d='m6.5 10 5.493 5.493a.01.01 0 0 0 .014 0L17.5 10'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath stroke='rgba(0, 69, 156, 1)' stroke-linecap='round' stroke-width='1.75' d='m6.5 10 5.493 5.493a.01.01 0 0 0 .014 0L17.5 10'/%3E%3C/svg%3E");
     background-position: center;
     background-repeat: no-repeat;
     content: "";
@@ -380,7 +376,7 @@
     position: sticky;
     top: 4px;
     z-index: 20;
-    margin-bottom: 16px;
+    margin-bottom: 8px;
   }
   :where(.readmore[open]) summary:before {
     transform: translateY(2px) rotate(-180deg);
@@ -398,7 +394,7 @@
     overflow: visible;
     padding: theme('spacing.3') theme('spacing.5');
     align-items: center;
-    border: 2px solid theme('colors.blue.500');
+    border: 2px solid theme('colors.blue.600');
     border-radius: theme('borderRadius.md');
     cursor: pointer;
     display: inline-flex;
@@ -410,8 +406,8 @@
   }
   .button--primary {
     background-color: theme('colors.white');
-    border-color: theme('colors.blue.500');
-    color: theme('colors.blue.500');
+    border-color: theme('colors.blue.600');
+    color: theme('colors.blue.600');
   }
   .button--primary:hover {
     border-color: theme('colors.blue.700');

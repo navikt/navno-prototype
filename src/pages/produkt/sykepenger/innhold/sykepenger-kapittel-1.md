@@ -284,7 +284,7 @@ Dette må du gjøre:
 
   <details>
     <summary>Permittert</summary>
-    {% prose "py-2 pl-5 -ml-5 -translate-x-px border-l-2 border-slate-400"  %}
+    {% prose "py-2 pl-5 -ml-5 -translate-x-px border-l-2 border-slate-400" %}
 Hvis du blir sykmeldt mens du er permittert og mottar dagpenger, har du rett til sykepenger fra den første dagen du er sykmeldt. Du må ha mottatt dagpenger eller jobbet i minst fire uker for å ha rett til sykepenger.
 
 #### Hvis du er 100 prosent sykmeldt
@@ -332,7 +332,7 @@ Dette må du gjøre:
 
   <details>
     <summary>Avtjent militær- eller siviltjeneste</summary>
-    {% prose "py-2 pl-5 -ml-5 -translate-x-px border-l-2 border-slate-400"  %}
+    {% prose "py-2 pl-5 -ml-5 -translate-x-px border-l-2 border-slate-400" %}
 Hvis du har avtjent militær- eller siviltjeneste, har du rett til sykepenger fra den første dagen du begynner å jobbe.
 
 * Du har rett til sykepenger selv om du har vært i tjenesten i mindre enn fire uker.
@@ -357,7 +357,7 @@ Hvis du er syk lenger enn egenmeldingsdagene, må du kontakte lege.
 
   <details>
     <summary>Tar utdanning</summary>
-    {% prose "py-2 pl-5 -ml-5 -translate-x-px border-l-2 border-slate-400"  %}
+    {% prose "py-2 pl-5 -ml-5 -translate-x-px border-l-2 border-slate-400" %}
 I utgangspunktet får du ikke sykepenger mens du tar utdanning. Hvis du klarer å studere på heltid, går NAV ut fra at du også kan arbeide, men vi vil vurdere dette individuelt ut fra situasjonen din når du ble sykmeldt.
 
 Er du sykmeldt fra en deltidsjobb, men klarer likevel å fortsette studiene? Da kan du få sykepenger basert på inntekten din hvis du har kombinert jobb og studier over et visst tidsrom.
@@ -366,7 +366,7 @@ Er du sykmeldt fra en deltidsjobb, men klarer likevel å fortsette studiene? Da 
 
   <details>
     <summary>Innlagt på helseinstitusjon</summary>
-    {% prose "py-2 pl-5 -ml-5 -translate-x-px border-l-2 border-slate-400"  %}
+    {% prose "py-2 pl-5 -ml-5 -translate-x-px border-l-2 border-slate-400" %}
 Når du er innlagt på sykehus eller andre helseinstitusjoner, kan du få sykepenger.
 
 Du får sykepenger for måneden du er innlagt og de tre påfølgende månedene. Deretter blir sykepengene redusert med 50 prosent, men skal likevel ikke være lavere enn et sykepengegrunnlag på 50 prosent av grunnbeløpet.
@@ -377,7 +377,7 @@ Hvis du fortsatt har faste og nødvendige utgifter til bolig eller forsørgingsa
 
   <details>
     <summary>I fengsel</summary>
-    {% prose "py-2 pl-5 -ml-5 -translate-x-px border-l-2 border-slate-400"  %}
+    {% prose "py-2 pl-5 -ml-5 -translate-x-px border-l-2 border-slate-400" %}
 Du har ikke rett til sykepenger når du sitter i varetekt, soner straff eller har en særreaksjon i en av kriminalomsorgens anstalter eller tilsvarende anstalt i utlandet.
 
 Du kan ha rett til sykepenger hvis du jobber for en arbeidsgiver utenfor fengselet mens du soner straff.
