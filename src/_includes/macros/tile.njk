@@ -1,10 +1,13 @@
 {% macro tile(args) %}
-<div class="relative px-5 py-4 rounded-lg group leading-tight border border-slate-300 bg-white {{ args.theme or "has-[a:hover]:bg-blue-50/75 has-[a:active]:border-blue-500 has-[a:active]:bg-blue-50" }}">
-  <a class="z-10 flex-1 text-base font-semibold no-underline text-pretty after:absolute after:inset-0 hover:underline hover:decoration-2" href="#">{{ args.title }}</a>
+<div class="relative px-5 py-4 rounded-lg group leading-tight bg-slate-100  {{ args.theme or "has-[a:hover]:bg-blue-50/75 has-[a:active]:bg-blue-50" }}">
+  <a class="z-10 flex-1 text-base font-semibold no-underline text-pretty after:absolute after:inset-0 hover:underline hover:decoration-2" href="#">
+    {{ args.title }}&nbsp;{{ '/src/_includes/svg/icons/arrow-right.svg' | svgContents('w-5 h-5 shrink-0 inline -translate-y-px') | safe }}
+  </a>
   {%- if args.kicker %}
-  <p class="font-medium leading-tight tracking-wide pointer-events-none opacity-70 small-caps">
+  <p class="font-medium leading-tight tracking-wider pointer-events-none opacity-70 small-caps">
     {%- for item in args.kicker %}{{ item }}{{ ', ' if not loop.last }}{% endfor -%}
   </p>
   {%- endif %}
+  {# <div class="absolute inset-y-0 left-0 w-1 rounded-l bg-brand-purple-deep"></div> #}
 </div>
 {% endmacro %}
