@@ -276,7 +276,7 @@
     display: flex;
     list-style: none;
     place-self: start;
-    padding: 0.5em 8px 0.4375em 16px;
+    padding: 0.5em 8px 0.375em 16px;
     margin-inline: -8px;
     border-radius: theme('borderRadius.full');
     cursor: pointer;
@@ -337,7 +337,7 @@
     display: flex;
     width: fit-content;
     list-style: none;
-    padding: 0.5625em 24px 0.375em 44px;
+    padding: 0.5em 24px 0.375em 44px;
     cursor: pointer;
     background-color: theme('colors.blue.50');
     border-radius: theme('borderRadius.full');
