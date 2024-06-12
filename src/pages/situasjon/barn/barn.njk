@@ -48,9 +48,10 @@ permalink: 'situasjon/barn/index.html'
     {# Innhold #}
     {% for chapter in chapters %}
       {% set chapterIndex = loop.index %}
-      <section class="grid grid-flow-row-dense pt-4 pb-12 col-full grid-cols-combi {{ 'bg-brand-beige text-center' if chapter.data.sectionType === 'varehylle' }}" id="{{ chapter.data.title | slugify }}">
+      <section class="grid grid-flow-row-dense pt-4 pb-12 col-full grid-cols-combi" id="{{ chapter.data.title | slugify }}">
         <div class="grid mt-8 mb-4 col-full grid-cols-combi">
-          {%- if not chapter.data.sectionType %}<div class="w-10 h-[0.675ch] bg-brand-purple-faded mb-5 mt-5 {{ 'mx-auto' if chapter.data.sectionType === 'varehylle' }}"></div>{% endif -%}
+          {%- if not chapter.data.sectionType %}{% endif -%}
+          <div class="w-10 h-[0.675ch] bg-brand-purple-faded mb-5 mt-5"></div>
           <h2 class="font-bold text-3xl/tight text-balance text-brand-purple-deep">
             <a href="#{{ chapter.data.title | slugify }}">{{ chapter.data.title }}</a>
           </h2>
@@ -74,7 +75,7 @@ permalink: 'situasjon/barn/index.html'
         {% endif %}
 
         {# Main Content #}
-        <div class="prose prose--separator {{ 'col-container' if chapter.data.sectionType === 'varehylle' else 'col-main' }}">
+        <div class="prose prose--separator col-main">
           {{ chapter.templateContent | markdown | safe }}
         </div>
       </section>

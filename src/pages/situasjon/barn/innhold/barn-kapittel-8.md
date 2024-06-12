@@ -1,6 +1,7 @@
 ---
 title: 'Andre som kan hjelpe'
 sectionType: 'varehylle'
+order: 8
 ---
 
 
@@ -17,12 +18,12 @@ sectionType: 'varehylle'
   }
 ] %}
 
-<div class="grid gap-px mb-12 text-left sm:grid-cols-2 overflow-clip" style="--pictogram: #F5D3E2;">
+<div class="grid gap-3 text-left" style="--pictogram: #F5D3E2;">
   {% for item in varekort %}
-  <div class="grid gap-3 pt-4 pb-6 sm:odd:pr-6 sm:even:pl-6 xs:flex xs:gap-6 xs:items-start ring-1 ring-slate-300">
+  <div class="relative border rounded-lg border-slate-300 has-[a:hover]:bg-blue-50 grid w-full gap-3 px-5 py-4 xs:flex xs:gap-6 xs:items-start">
     {{ item.pictogram | svgContents('mt-3 w-[6ch] h-[6ch] shrink-0 text-[#99185E]') | safe if item.pictogram }}
     <div>
-      <a href="#" class="text-lg font-semibold">{{ item.title }}</a>
+      <a href="#" class="text-lg font-semibold after:absolute after:inset-0">{{ item.title }}</a>
       <p>{{ item.description }}</p>
       <div class="pt-4 mt-auto tracking-widest small-caps">{{ item.kicker }}</div>
     </div>

@@ -1,5 +1,6 @@
 ---
 title: 'Er du student?'
+order: 6
 ---
 
 {%- from "macros/microcard.njk" import microcard -%}

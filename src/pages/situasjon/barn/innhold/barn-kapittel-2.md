@@ -1,5 +1,6 @@
 ---
 title: 'Har du nylig fått barn?'
+order: 2
 ---
 
 {%- from "macros/microcard.njk" import microcard -%}

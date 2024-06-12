@@ -75,6 +75,10 @@
     letter-spacing: 0.05em;
     font-variant-caps: all-small-caps;
   }
+
+  p:empty {
+    display: none;
+  }
  
   :where(.prose) > :is(ul, ol) {
     padding-inline-start: theme('spacing.5');

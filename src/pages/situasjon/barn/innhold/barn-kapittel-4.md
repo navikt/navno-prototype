@@ -1,5 +1,6 @@
 ---
 title: 'Hvis barnet ditt er født for tidlig og er innlagt på sykehus'
+order: 4
 ---
 
 {%- from "macros/microcard.njk" import microcard -%}

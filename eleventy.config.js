@@ -98,7 +98,7 @@ module.exports = function (eleventyConfig) {
 
   // Transforms
   eleventyConfig.addTransform("dummifyLinks", dummifyLinks);
-  // eleventyConfig.addTransform("minifyHtml", minifyHtml);
+  eleventyConfig.addTransform("minifyHtml", minifyHtml);
 
   // Dev server options
   eleventyConfig.setServerOptions({

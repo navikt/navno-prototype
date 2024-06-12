@@ -1,6 +1,7 @@
 ---
 title: 'Pengestøtte når du får barn'
 sectionType: 'varehylle'
+order: 3
 ---
 
 {% set varekort = [
@@ -36,9 +37,9 @@ sectionType: 'varehylle'
   }
 ] %}
 
-<div class="grid gap-px my-4 text-left sm:grid-cols-2 overflow-clip" style="--pictogram: #F5D3E2;">
+<div class="grid gap-3 text-left" style="--pictogram: #F5D3E2;">
   {% for item in varekort %}
-  <div class="relative grid gap-3 py-6 sm:odd:pr-8 sm:even:pl-8 xs:flex xs:gap-6 xs:items-start ring-1 ring-slate-300">
+  <div class="relative border rounded-lg border-slate-300 has-[a:hover]:bg-blue-50 grid w-full gap-3 px-5 py-4 xs:flex xs:gap-6 xs:items-start">
     {{ item.pictogram | svgContents('mt-3 w-[6ch] h-[6ch] shrink-0 text-[#99185E]') | safe }}
     <div>
       <a href="#" class="text-lg font-semibold after:absolute after:inset-0">{{ item.title }}</a>
