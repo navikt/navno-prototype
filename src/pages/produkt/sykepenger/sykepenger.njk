@@ -50,9 +50,14 @@ permalink: 'produkt/sykepenger/index.html'
       <section class="grid grid-flow-row-dense mt-8 col-full grid-cols-combi " id="{{ chapter.data.title | slugify }}">
         <div class="grid mt-8 mb-4 col-full grid-cols-combi">
           <div class="w-10 h-[0.675ch] bg-[#E6C7D8] mb-5 mt-5"></div>
-          <h2 class="font-bold text-3xl/tight text-balance text-brand-purple-deep">
-            <a href="#{{ chapter.data.title | slugify }}">{{ chapter.data.title }}</a>
-          </h2>
+          <div class="relative">
+            <h2 class="font-bold text-3xl/tight text-balance text-brand-purple-deep">
+              {{ chapter.data.title }}
+            </h2>
+            <a href="#{{ chapter.data.title | slugify }}" class="absolute inset-0">
+              <span class="sr-only">{{ chapter.data.title }}</span>
+            </a>
+          </div>
         </div>
 
         {# Chapter TOC #}

@@ -1,0 +1,105 @@
+---
+title: 'Spørsmål til oss'
+description: 'Listeside …'
+tags: ['listeside', 'proto']
+permalink: '/seksjon/index.html'
+ingress: 'Her kan du skrive til NAV om saken din.'
+alpine: true
+---
+{%- extends 'base.njk' -%}
+
+{% set messageList = [
+  { title: 'Arbeid',
+    description: 'Arbeidsledig, dagpenger, registrer deg som jobbsøker, permittert, arbeidsavklaringspenger, tiltakspenger, CV.' },
+  { title: 'Helse og sykdom',
+    description: 'Sykmeldt, sykepenger, arbeidsavklaringspenger, yrkesskade/ménerstatning, grunn- og hjelpestønad.',
+    children: [
+      { title: 'Syk', description: 'Sykmeldt, sykepenger, arbeidsavklaringspenger, yrkesskade/ménerstatning, grunn- og hjelpestønad.' },
+      { title: 'Pleiepenger for sykt barn', description: 'Skal du melde om endringer i en periode du har søkt om eller får pleiepenger?' }
+    ]
+  },
+  { title: 'Bor eller jobber i utlandet',
+    description: 'Utenlandsk sykemelding, medlemskap i folketrygden, trygdeavgift, barnebidrag og farskap fastsatt i utlandet.' },
+  { title: 'Familie og barn',
+    description: 'Foreldrepenger, overgangsstønad, kontantstøtte, svangerskapspenger, barnetrygd, barnebidrag, pleiepenger, omsorgspenger.',
+    children: [
+      { title: 'Foreldre, barn og familie', description: 'Foreldrepenger, overgangsstønad, kontantstøtte, svangerskapspenger, barnetrygd, barnebidrag, omsorgspenger.' },
+      { title: 'Pleiepenger for sykt barn', description: 'Skal du melde om endringer i en periode du har søkt om eller får pleiepenger?' }
+    ]
+  },
+  { title: 'Pensjon',
+    description: 'Alderspensjon, barnepensjon, omstillingsstønad, etterlattepensjon, supplerende stønad, krigspensjon, AFP fra Statens pensjonskasse mellom 62 og 65 år, AFP i privat sektor.'
+ },
+  { title: 'Hjelpemidler og tilrettelegging',
+    description: 'Tekniske hjelpemidler, ortopediske hjelpemidler, bilstønad, tolk, tilrettelegging og tilpasning.',
+    children: [
+      { title: 'Hjelpemidler og tiltak for personer med nedsatt funksjonsevne', description: 'Hjelpemidler, briller, tilrettelegging eller tiltak for personer med funksjonsnedsettelse.' },
+      { title: 'Ortopediske hjelpemidler', description: 'Nye opplysninger i saken din om høreapparat, parykk, protese, ortose eller ortopediske fottøy.' },
+      { title: 'Bil og spesialutstyr til bil', description: 'Bil eller spesialutstyr for personer med nedsatt funksjonsevne.' }
+    ]
+  },
+  { title: 'Ufør',
+    description: 'Uføretrygd, barnetillegg og gjenlevendetillegg.'
+  },
+  { title: 'Økonomisk sosialhjelp og andre sosiale tjenester',
+    description: 'Kontakt oss på chat eller telefon 55 55 33 33 (tastevalg 1) hvis du har spørsmål om økonomisk sosialhjelp, midlertidig botilbud, kvalifiseringsprogrammet, økonomisk rådgivning, eller opplysning, råd og veiledning.'
+  }
+] %}
+
+
+
+{%- block content -%}
+  <main class="py-16">
+    <div class="grid grid-cols-combi">
+      <div class="mb-8 col-main">
+        <div class="mb-3 md:absolute md:-ml-32" style="--pictogram: #F5D3E2;">
+          {{ '/src/_includes/svg/piktogrammer/kontakt.svg' | svgContents('text-brand-purple-deep w-16 h-16 sm:w-24 sm:h-24') | safe  }}
+        </div>
+
+        <h1 class="mt-2 mb-3 font-extrabold tracking-tight text-4xl/tight text-pretty text-brand-purple-deep">
+          {{ title | safe }}
+        </h1>
+        <p class="col-span-2 col-start-1 text-lg text-pretty xs:col-start-1 xs:col-span-1 max-w-prose ">{{ ingress }}</p>
+      </div>
+      <div class="prose">
+        <p>Skriv bare spørsmål eller opplysninger som gjelder deg selv. Du kan ikke skrive for andre. Hvis du vil kontakte oss på vegne av andre, må du ringe oss og ha muntlig eller skriftlig fullmakt.</p>
+
+        <p>Svartid: 4 arbeidsdager</p>
+
+        <ul>
+          <li>Vil du ha raskere svar, kan du <a href="#">chatte med en veileder i åpningstiden (kl. 9–15)</a>.</li>
+          <li>Skal du bare sende en enkel beskjed eller opplysninger i saken din? Da kan du sende en <a href="#">beskjed til oss</a>.</li>
+        </ul>
+      </div>
+      <div class="py-16">
+
+        <div class="mb-8">
+          <div class="w-10 h-[0.675ch] bg-[#E6C7D8] mb-5 mt-5"></div>
+          <h2 class="font-bold text-3xl/tight text-balance text-brand-purple-deep">
+            <a href="#velg-tema">Velg tema</a>
+          </h2>
+        </div>
+        <ul class="">
+          {% for item in messageList %}
+          <li class="mt-6 mb-16 {{ '!mt-0' if loop.first }}">
+            {% if item.children %}
+              <div class="text-lg font-semibold">{{ item.title }}</div>
+              <ul class="mt-3">
+                {% for subitem in item.children %}
+                <li>
+                  <a class="font-semibold text-blue-600 underline hover:decoration-2" href="#">{{ subitem.title }}</a>
+                  <p class="mb-4 text-sm opacity-80">{{ item.description if item.description }}</p>
+                </li>
+                {% endfor %}
+              </ul>
+            {% else %}
+              <a class="text-lg font-semibold text-blue-600 underline hover:decoration-2" href="#">{{ item.title }}</a>
+              <p class="mb-4 text-sm opacity-80">{{ item.description if item.description }}</p>
+            {% endif %}
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </main>
+{%- endblock -%}
