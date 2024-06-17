@@ -4,7 +4,7 @@
     {{ args.title }}
   </a>
   {%- if args.kicker %}
-  <p class="font-medium leading-none mt-0.5 tracking-wider pointer-events-none opacity-70 small-caps">
+  <p class="font-normal leading-none mt-0.5 tracking-wider pointer-events-none small-caps text-gray-700">
     {%- for item in args.kicker %}{{ item }}{{ ', ' if not loop.last }}{% endfor -%}
   </p>
   {%- endif %}

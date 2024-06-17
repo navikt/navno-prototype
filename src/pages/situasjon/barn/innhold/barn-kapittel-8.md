@@ -25,7 +25,7 @@ order: 8
     <div>
       <a href="#" class="text-lg font-semibold after:absolute after:inset-0">{{ item.title }}</a>
       <p>{{ item.description }}</p>
-      <div class="pt-4 mt-auto tracking-widest small-caps">{{ item.kicker }}</div>
+      <div class="pt-4 mt-auto font-normal tracking-wider text-gray-700 small-caps">{{ item.kicker }}</div>
     </div>
   </div>
   {% endfor %}
