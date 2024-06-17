@@ -14,7 +14,7 @@ permalink: 'produkt/sykepenger/index.html'
       <div class="mb-3 md:absolute md:-ml-32 sm:mt-3" style="--pictogram: #F5D3E2;">
         {{ '/src/_includes/svg/piktogrammer/produkter/sykepenger.svg' | svgContents('text-brand-purple-deep w-16 h-16 sm:w-24 sm:h-24') | safe  }}
       </div>
-      <div class="text-base font-normal tracking-wider text-gray-700 small-caps">
+      <div class="text-base font-medium tracking-wider text-gray-700 small-caps">
         {{ category | safe }}
       </div>
       <h1 class="font-bold text-4xl/tight text-pretty text-brand-purple-deep">{{ title | safe }}</h1>
@@ -52,11 +52,10 @@ permalink: 'produkt/sykepenger/index.html'
           <div class="w-10 h-[0.675ch] bg-[#E6C7D8] mb-5 mt-5"></div>
           <div class="relative">
             <h2 class="font-bold text-3xl/tight text-balance text-brand-purple-deep">
-              {{ chapter.data.title }}
+              <a href="#{{ chapter.data.title | slugify }}" class="">
+                {{ chapter.data.title }}
+              </a>
             </h2>
-            <a href="#{{ chapter.data.title | slugify }}" class="absolute inset-0">
-              <span class="sr-only">{{ chapter.data.title }}</span>
-            </a>
           </div>
         </div>
 
