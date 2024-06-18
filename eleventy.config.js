@@ -27,6 +27,21 @@ const markdownItAnchor = require("markdown-it-anchor");
 const markdownItMark = require("markdown-it-mark");
 const compression = require("compression");
 
+const linkAfterHeaderOptions = {
+  class: "absolute inset-0",
+  style: "visually-hidden",
+  visuallyHiddenClass: "sr-only",
+  assistiveText: (title) => `Lenke til kapittel «${title}»`,
+  placement: "after",
+  symbol: "",
+  wrapper: ['<div class="relative heading-3">', "</div>"],
+};
+
+const headerLinkOptions = {
+  safariReaderFix: true,
+  class: "",
+};
+
 module.exports = function (eleventyConfig) {
   // Eleventy Plugins
   eleventyConfig.addPlugin(EleventyHtmlBasePlugin);
@@ -43,10 +58,7 @@ module.exports = function (eleventyConfig) {
       .use(markdownItAnchor, {
         level: [2, 3],
         slugify: (s) => slugify(s.toLowerCase()),
-        permalink: markdownItAnchor.permalink.headerLink({
-          safariReaderFix: true,
-          class: "",
-        }),
+        permalink: markdownItAnchor.permalink.headerLink(headerLinkOptions),
       })
       .use(markdownItMark),
   );
@@ -93,9 +105,7 @@ module.exports = function (eleventyConfig) {
       .use(markdownItAnchor, {
         level: 3,
         slugify: (s) => slugify(s.toLowerCase()),
-        permalink: markdownItAnchor.permalink.linkInsideHeader({
-          placement: "after",
-        }),
+        permalink: markdownItAnchor.permalink.headerLink(headerLinkOptions),
       })
       .use(markdownItMark)
       .disable("code")
