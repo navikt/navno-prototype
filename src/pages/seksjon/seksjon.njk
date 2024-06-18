@@ -9,46 +9,6 @@ alpine: true
 ---
 {%- extends 'base.njk' -%}
 
-{% set messageList = [
-  { title: 'Arbeid',
-    description: 'Arbeidsledig, dagpenger, registrer deg som jobbsøker, permittert, arbeidsavklaringspenger, tiltakspenger, CV.' },
-  { title: 'Helse og sykdom',
-    description: 'Sykmeldt, sykepenger, arbeidsavklaringspenger, yrkesskade/ménerstatning, grunn- og hjelpestønad.',
-    children: [
-      { title: 'Syk', description: 'Sykmeldt, sykepenger, arbeidsavklaringspenger, yrkesskade/ménerstatning, grunn- og hjelpestønad.' },
-      { title: 'Pleiepenger for sykt barn', description: 'Skal du melde om endringer i en periode du har søkt om eller får pleiepenger?' }
-    ]
-  },
-  { title: 'Bor eller jobber i utlandet',
-    description: 'Utenlandsk sykemelding, medlemskap i folketrygden, trygdeavgift, barnebidrag og farskap fastsatt i utlandet.' },
-  { title: 'Familie og barn',
-    description: 'Foreldrepenger, overgangsstønad, kontantstøtte, svangerskapspenger, barnetrygd, barnebidrag, pleiepenger, omsorgspenger.',
-    children: [
-      { title: 'Foreldre, barn og familie', description: 'Foreldrepenger, overgangsstønad, kontantstøtte, svangerskapspenger, barnetrygd, barnebidrag, omsorgspenger.' },
-      { title: 'Pleiepenger for sykt barn', description: 'Skal du melde om endringer i en periode du har søkt om eller får pleiepenger?' }
-    ]
-  },
-  { title: 'Pensjon',
-    description: 'Alderspensjon, barnepensjon, omstillingsstønad, etterlattepensjon, supplerende stønad, krigspensjon, AFP fra Statens pensjonskasse mellom 62 og 65 år, AFP i privat sektor.'
- },
-  { title: 'Hjelpemidler og tilrettelegging',
-    description: 'Tekniske hjelpemidler, ortopediske hjelpemidler, bilstønad, tolk, tilrettelegging og tilpasning.',
-    children: [
-      { title: 'Hjelpemidler og tiltak for personer med nedsatt funksjonsevne', description: 'Hjelpemidler, briller, tilrettelegging eller tiltak for personer med funksjonsnedsettelse.' },
-      { title: 'Ortopediske hjelpemidler', description: 'Nye opplysninger i saken din om høreapparat, parykk, protese, ortose eller ortopediske fottøy.' },
-      { title: 'Bil og spesialutstyr til bil', description: 'Bil eller spesialutstyr for personer med nedsatt funksjonsevne.' }
-    ]
-  },
-  { title: 'Ufør',
-    description: 'Uføretrygd, barnetillegg og gjenlevendetillegg.'
-  },
-  { title: 'Økonomisk sosialhjelp og andre sosiale tjenester',
-    description: 'Kontakt oss på chat eller telefon 55 55 33 33 (tastevalg 1) hvis du har spørsmål om økonomisk sosialhjelp, midlertidig botilbud, kvalifiseringsprogrammet, økonomisk rådgivning, eller opplysning, råd og veiledning.'
-  }
-] %}
-
-
-
 {%- block content -%}
   <main class="py-16">
     <div class="grid grid-cols-combi">
@@ -68,38 +28,41 @@ alpine: true
         <p>Svartid: 4 arbeidsdager</p>
 
         <ul>
-          <li>Vil du ha raskere svar, kan du <a href="#">chatte med en veileder i åpningstiden (kl. 9–15)</a>.</li>
-          <li>Skal du bare sende en enkel beskjed eller opplysninger i saken din? Da kan du sende en <a href="#">beskjed til oss</a>.</li>
+          <li>Vil du ha raskere svar, kan du <a href="#">chatte med en veileder i åpningstiden (kl. 9–15)</a>.</li>
+          <li>Skal du bare sende en enkel beskjed eller opplysninger i saken din? Da kan du sende en <a href="#">beskjed til oss</a>.</li>
         </ul>
       </div>
       <div class="py-16">
 
         <div class="mb-8">
-          <div class="w-10 h-[0.675ch] bg-[#E6C7D8] mb-5 mt-5"></div>
-          <h2 class="font-bold text-3xl/tight text-balance text-brand-purple-deep">
+          {# <div class="w-10 h-[0.675ch] bg-[#E6C7D8] mb-5 mt-5"></div> #}
+          <h2 class="font-bold text-gray-800 text-2xl/tight text-balance">
             <a href="#velg-tema">Velg tema</a>
           </h2>
+          <p>Krever innlogging</p>
         </div>
-        <ul class="">
-          {% for item in messageList %}
-          <li class="mt-6 mb-16 {{ '!mt-0' if loop.first }}">
-            {% if item.children %}
-              <div class="text-lg font-semibold">{{ item.title }}</div>
-              <ul class="mt-3">
-                {% for subitem in item.children %}
-                <li>
-                  <a class="font-semibold text-blue-600 underline hover:decoration-2" href="#">{{ subitem.title }}</a>
-                  <p class="mb-4 text-sm opacity-80">{{ item.description if item.description }}</p>
-                </li>
-                {% endfor %}
-              </ul>
-            {% else %}
-              <a class="text-lg font-semibold text-blue-600 underline hover:decoration-2" href="#">{{ item.title }}</a>
-              <p class="mb-4 text-sm opacity-80">{{ item.description if item.description }}</p>
-            {% endif %}
-          </li>
-          {% endfor %}
-        </ul>
+
+        {% for item in messageList %}
+        <h3 class="mt-6 {{ '!mt-0' if loop.first }} text-lg font-semibold">
+          {{ item.title }}
+        </h3>
+        {% if item.description %}
+          <p class="mt-2 text-sm opacity-80">{{ item.description }}</p>
+        {% endif %}
+        {% if item.links %}
+          <ul class="grid gap-3 mt-2 mb-8">
+          {% for link in item.links %}
+            <li class="grid px-5 py-4 relative bg-white has-[a:focus-visible]:ring has-[a:focus-visible]:ring-blue-600 has-[a:hover]:bg-blue-50 border rounded-lg gap-x-8 border-slate-300">
+              <a class="font-semibold leading-snug text-blue-600 after:absolute after:inset-0 after:z-10 hover:decoration-2 focus-visible:outline-none" href="#">{{ link.title }}</a>
+              <p class="col-start-1 mt-0.5 text-sm text-pretty opacity-80">{{ link.description if link.description }}</p>
+              <span class="col-start-2 row-span-2 row-start-1 my-auto ml-auto text-blue-600">
+              {{ '/src/_includes/svg/icons/arrow-right.svg' | svgContents('w-5 h-5 opacity-80') | safe }}
+              </span>
+            </li>
+            {% endfor %}
+          </ul>
+          {% endif %}
+        {% endfor %}
       </div>
     </div>
   </main>
