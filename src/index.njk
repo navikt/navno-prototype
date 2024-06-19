@@ -1,39 +1,17 @@
 ---
 title: 'Index'
+eleventyExcludeFromCollections: true
 noJS: true
 ---
 {%- extends 'blank.njk' -%}
 
-{% set pages = [
-  {
-    title: 'Områdeside',
-    description: 'Samler inngang til alle situasjonssider som er aktuelle for det aktuelle området.',
-    url: 'omrade'
-  },
-  {
-    title: 'Produktside',
-    description: 'Informasjon om en ytelse, tjeneste eller et hjelpemiddel.',
-    url: 'produkt'
-  },
-  {
-    title: 'Situasjonsside',
-    description: 'Gir best mulig informasjon ut fra en gitt situasjon.',
-    url: 'situasjon'
-  },
-  {
-    title: 'Temaartikkel',
-    description: 'Gir dybdeinformasjon om ett konkret tema.',
-    url: 'tema'
-  }
-] %}
-
 {% macro link(item) %}
-  <div class="relative grid place-content-start gap-1 py-6 pl-6 pr-8 text-lg rounded bg-slate-100 overflow-clip has-[a:hover]:bg-blue-500 has-[a:hover]:text-white">
-    <a class="font-semibold text-blue-600 after:absolute hover:text-white after:z-10 after:inset-0" href="/{{ item.url }}/">
-      {{ item.title }}
+  <div class="relative grid place-content-start items-center gap-1 pt-5 pb-4 px-6 bg-slate-100 overflow-clip rounded-xl has-[a:hover]:bg-blue-500 has-[a:hover]:text-white">
+    <a class="font-semibold text-blue-600 text-lg/tight after:absolute hover:text-white after:z-10 after:inset-0" href="{{ item.url }}">
+      {{ item.data.title }}
     </a>     
-    {% if item.description %}      
-      <p class="text-base text-pretty max-w-prose opacity-85">{{ item.description | safe }}</p>
+    {% if item.data.category %}     
+      <p class="leading-tight tracking-wider opacity-80 small-caps">{{ item.data.category }}</p>
     {% endif %}
   </div> 
 {% endmacro %}
@@ -41,10 +19,12 @@ noJS: true
 
 {%- block content -%}
   <div class="py-page lg:py-20 grid grid-cols-combi font-[375]">
-    <div class="grid items-start gap-2 col-container overflow-clip rounded-xl">
-      <div class="grid gap-2 lg:grid-cols-2">
-        {% for item in pages %}      
-        {{ link(item) }}
+    <div class="col-main">
+      <div class="grid gap-3">
+        {% for item in collections.all %}
+          {% if item.url %}         
+            {{ link(item) }}
+          {% endif %}
         {% endfor %}
       </div>
     </div>
