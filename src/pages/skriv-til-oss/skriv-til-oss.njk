@@ -3,7 +3,7 @@ title: 'Spørsmål til oss'
 description: 'Listeside …'
 type: 'Seksjon'
 tags: ['listeside', 'proto']
-permalink: '/seksjon/index.html'
+permalink: '/skriv-til-oss/index.html'
 ingress: 'Her kan du skrive til NAV om saken din.'
 alpine: true
 ---
@@ -25,7 +25,7 @@ alpine: true
       <div class="prose">
         <p>Skriv bare spørsmål eller opplysninger som gjelder deg selv. Du kan ikke skrive for andre. Hvis du vil kontakte oss på vegne av andre, må du ringe oss og ha muntlig eller skriftlig fullmakt.</p>
 
-        <p>Svartid: 4 arbeidsdager</p>
+        <p>Svartid:<br><strong>4 arbeidsdager</strong></p>
 
         <ul>
           <li>Vil du ha raskere svar, kan du <a href="#">chatte med en veileder i åpningstiden (kl. 9–15)</a>.</li>
@@ -52,11 +52,11 @@ alpine: true
         {% if item.links %}
           <ul class="grid gap-3 mt-2 mb-8">
           {% for link in item.links %}
-            <li class="grid px-5 py-4 relative bg-white has-[a:focus-visible]:ring has-[a:focus-visible]:ring-blue-600 has-[a:hover]:bg-blue-50 border rounded-lg gap-x-8 border-slate-300">
-              <a class="font-semibold leading-snug text-blue-600 after:absolute after:inset-0 after:z-10 hover:decoration-2 focus-visible:outline-none" href="#">{{ link.title }}</a>
+            <li class="grid px-5 py-4 relative bg-white has-[a:focus-visible]:ring has-[a:focus-visible]:ring-blue-600 has-[a:hover]:bg-blue-50 border rounded-lg gap-x-12 border-slate-300">
+              <a class="font-semibold leading-normal text-blue-600 after:absolute after:inset-0 after:z-10 hover:decoration-2 focus-visible:outline-none" href="#">{{ link.title }}</a>
               <p class="col-start-1 mt-0.5 text-sm text-pretty opacity-80">{{ link.description if link.description }}</p>
               <span class="col-start-2 row-span-2 row-start-1 my-auto ml-auto text-blue-600">
-              {{ '/src/_includes/svg/icons/arrow-right.svg' | svgContents('w-5 h-5 opacity-80') | safe }}
+              {{ '/src/_includes/svg/icons/enter.svg' | svgContents('w-6 h-6 opacity-80') | safe }}
               </span>
             </li>
             {% endfor %}
