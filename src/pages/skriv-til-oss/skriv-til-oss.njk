@@ -2,6 +2,7 @@
 title: 'Spørsmål til oss'
 description: 'Listeside …'
 type: 'Seksjon'
+category: 'For privatpersoner'
 tags: ['listeside', 'proto']
 permalink: '/skriv-til-oss/index.html'
 ingress: 'Her kan du skrive til NAV om saken din.'
@@ -17,33 +18,30 @@ alpine: true
           {{ '/src/_includes/svg/piktogrammer/kontakt.svg' | svgContents('text-brand-purple-deep w-16 h-16 sm:w-24 sm:h-24') | safe  }}
         </div>
 
+        <div class="text-base font-medium tracking-wider text-gray-700 small-caps">
+          {{ category | safe }}
+        </div>
         <h1 class="mt-2 mb-3 font-extrabold tracking-tight text-4xl/tight text-pretty text-brand-purple-deep">
           {{ title | safe }}
         </h1>
         <p class="col-span-2 col-start-1 text-lg text-pretty xs:col-start-1 xs:col-span-1 max-w-prose ">{{ ingress }}</p>
       </div>
       <div class="prose">
-        <p>Skriv bare spørsmål eller opplysninger som gjelder deg selv. Du kan ikke skrive for andre. Hvis du vil kontakte oss på vegne av andre, må du ringe oss og ha muntlig eller skriftlig fullmakt.</p>
+        <p>For å skrive til oss, må du logge inn. Bare skriv spørsmål eller opplysninger som gjelder deg selv. Du kan ikke skrive for andre. Hvis du vil kontakte oss på vegne av andre, må du ringe oss og ha muntlig eller skriftlig fullmakt.</p>
 
-        <p>Svartid:<br><strong>4 arbeidsdager</strong></p>
-
-        <ul>
-          <li>Vil du ha raskere svar, kan du <a href="#">chatte med en veileder i åpningstiden (kl. 9–15)</a>.</li>
-          <li>Skal du bare sende en enkel beskjed eller opplysninger i saken din? Da kan du sende en <a href="#">beskjed til oss</a>.</li>
-        </ul>
+        <p>Svartid er <strong>4 arbeidsdager</strong>. Vil du ha raskere svar, kan du <a href="#">chatte med en veileder i åpningstiden (kl. 9–15)</a>. <span class="opacity-10">Skal du bare sende en enkel beskjed eller opplysninger i saken din? Da kan du sende en <a href="#">beskjed til oss</a>.</span></p>
       </div>
-      <div class="py-16">
 
+      <div class="py-16">
         <div class="mb-8">
-          {# <div class="w-10 h-[0.675ch] bg-[#E6C7D8] mb-5 mt-5"></div> #}
-          <h2 class="font-bold text-gray-800 text-2xl/tight text-balance">
+          <div class="w-10 h-[0.675ch] bg-[#E6C7D8] mb-5 mt-5"></div>
+          <h2 class="font-bold text-brand-purple-deep text-3xl/tight text-balance">
             <a href="#velg-tema">Velg tema</a>
           </h2>
-          <p>Krever innlogging</p>
         </div>
 
         {% for item in messageList %}
-        <h3 class="mt-6 {{ '!mt-0' if loop.first }} text-lg font-semibold">
+        <h3 class="mt-6 {{ '!mt-0' if loop.first }} text-xl/tight font-bold">
           {{ item.title }}
         </h3>
         {% if item.description %}
@@ -53,7 +51,7 @@ alpine: true
           <ul class="grid gap-3 mt-2 mb-8">
           {% for link in item.links %}
             <li class="grid px-5 py-4 relative bg-white has-[a:focus-visible]:ring has-[a:focus-visible]:ring-blue-600 has-[a:hover]:bg-blue-50 border rounded-lg gap-x-12 border-slate-300">
-              <a class="font-semibold leading-normal text-blue-600 after:absolute after:inset-0 after:z-10 hover:decoration-2 focus-visible:outline-none" href="#">{{ link.title }}</a>
+              <a class="font-semibold leading-normal text-blue-600 after:absolute after:inset-0 after:z-10 hover:underline hover:decoration-2 focus-visible:outline-none" href="#">{{ link.title }}</a>
               <p class="col-start-1 mt-0.5 text-sm text-pretty opacity-80">{{ link.description if link.description }}</p>
               <span class="col-start-2 row-span-2 row-start-1 my-auto ml-auto text-blue-600">
               {{ '/src/_includes/svg/icons/enter.svg' | svgContents('w-6 h-6 opacity-80') | safe }}
