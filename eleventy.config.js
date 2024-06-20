@@ -58,7 +58,7 @@ module.exports = function (eleventyConfig) {
       .use(markdownItAnchor, {
         level: [2, 3],
         slugify: (s) => slugify(s.toLowerCase()),
-        permalink: markdownItAnchor.permalink.headerLink(headerLinkOptions),
+        // permalink: markdownItAnchor.permalink.headerLink(headerLinkOptions),
       })
       .use(markdownItMark),
   );
@@ -105,7 +105,7 @@ module.exports = function (eleventyConfig) {
       .use(markdownItAnchor, {
         level: 3,
         slugify: (s) => slugify(s.toLowerCase()),
-        permalink: markdownItAnchor.permalink.headerLink(headerLinkOptions),
+        // permalink: markdownItAnchor.permalink.headerLink(headerLinkOptions),
       })
       .use(markdownItMark)
       .disable("code")
