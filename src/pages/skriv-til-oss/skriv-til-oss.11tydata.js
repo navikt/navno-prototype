@@ -1,11 +1,21 @@
 const messageList = [
   {
-    title: "Arbeid",
+    title: "Bosted og jobb",
     links: [
       {
         title: "Arbeid",
         description:
           "Arbeidsledig, dagpenger, registrer deg som jobbsøker, permittert, arbeidsavklaringspenger, tiltakspenger, CV.",
+      },
+      {
+        title: "Bor eller jobber i utlandet",
+        description:
+          "Utenlandsk sykemelding, medlemskap i folketrygden, trygdeavgift, barnebidrag og farskap fastsatt i utlandet.",
+      },
+      {
+        title: "Pensjon",
+        description:
+          "Alderspensjon, barnepensjon, omstillingsstønad, etterlattepensjon, supplerende stønad, krigspensjon, AFP fra Statens pensjonskasse mellom 62 og 65 år, AFP i privat sektor.",
       },
     ],
   },
@@ -22,15 +32,9 @@ const messageList = [
         description:
           "Skal du melde om endringer i en periode du har søkt om eller får pleiepenger?",
       },
-    ],
-  },
-  {
-    title: "Bor eller jobber i utlandet",
-    links: [
       {
-        title: "Bor eller jobber i utlandet",
-        description:
-          "Utenlandsk sykemelding, medlemskap i folketrygden, trygdeavgift, barnebidrag og farskap fastsatt i utlandet.",
+        title: "Ufør",
+        description: "Uføretrygd, barnetillegg og gjenlevendetillegg.",
       },
     ],
   },
@@ -46,16 +50,6 @@ const messageList = [
         title: "Pleiepenger for sykt barn",
         description:
           "Skal du melde om endringer i en periode du har søkt om eller får pleiepenger?",
-      },
-    ],
-  },
-  {
-    title: "Pensjon",
-    links: [
-      {
-        title: "Pensjon",
-        description:
-          "Alderspensjon, barnepensjon, omstillingsstønad, etterlattepensjon, supplerende stønad, krigspensjon, AFP fra Statens pensjonskasse mellom 62 og 65 år, AFP i privat sektor.",
       },
     ],
   },
@@ -79,15 +73,15 @@ const messageList = [
       },
     ],
   },
-  {
-    title: "Ufør",
-    links: [
-      {
-        title: "Ufør",
-        description: "Uføretrygd, barnetillegg og gjenlevendetillegg.",
-      },
-    ],
-  },
+  // {
+  //   title: "Ufør",
+  //   links: [
+  //     {
+  //       title: "Ufør",
+  //       description: "Uføretrygd, barnetillegg og gjenlevendetillegg.",
+  //     },
+  //   ],
+  // },
   {
     title: "Økonomisk sosialhjelp og andre sosiale tjenester",
     description:
