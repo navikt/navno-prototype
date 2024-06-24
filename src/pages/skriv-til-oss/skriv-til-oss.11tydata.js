@@ -73,15 +73,6 @@ const messageList = [
       },
     ],
   },
-  // {
-  //   title: "Ufør",
-  //   links: [
-  //     {
-  //       title: "Ufør",
-  //       description: "Uføretrygd, barnetillegg og gjenlevendetillegg.",
-  //     },
-  //   ],
-  // },
   {
     title: "Økonomisk sosialhjelp og andre sosiale tjenester",
     description:
