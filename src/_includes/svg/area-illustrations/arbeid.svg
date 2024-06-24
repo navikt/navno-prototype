@@ -1,26 +1,19 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="224" height="136" fill="none" viewBox="0 0 224 136">
-  <g clip-path="url(#a)">
-    <g class="c-area-card__shapes">
-      <path fill="#99C4DD" d="m30 136-12-30-12 30h24Z"/>
-      <path fill="#FFB8B8" d="M44 136a10 10 0 1 0 0-20 10 10 0 0 0 0 20Z"/>
-    </g>
-    <g class="c-area-card__letter-group">
-      <path fill="#FBD492" d="M136 58h42v42h-42V58Z"/>
-      <path fill="#94BAD7" d="M178 0h-42l46 136h42L178 0Z"/>
-    </g>
-
-    <path class="c-area-card__letter-diagonal" fill="#FFB8B8" d="M139.9-11H182l-57.9 158H82l57.9-158Z"/>
-
-    <g class="c-area-card__briefcase">
-      <path fill="#5C0000" d="M61.8 107.7h70.6v24.8c0 2-1.6 3.5-3.5 3.5H65.3c-2 0-3.5-1.6-3.5-3.5v-24.8Z"/>
-      <path stroke="#5C0000" stroke-width="7.1" d="M109.5 83.9a12.4 12.4 0 0 0-24.8 0"/>
-      <path fill="#FFD799" fill-rule="evenodd" d="M97 96.3c2 0 3.6 1.6 3.6 3.6v17.4c0 2-1.6 3.7-3.5 3.7-2 0-3.5-1.7-3.5-3.7V99.9c0-2 1.5-3.6 3.5-3.6H97Z" clip-rule="evenodd"/>
-      <path fill="#F68282" d="M60 82h74.2v22.9c0 2-1.6 3.5-3.6 3.5h-67c-2 0-3.6-1.6-3.6-3.5v-23 .1Z"/>
-    </g>
+  <g class="c-area-card__shapes">
+    <path fill="#99C4DD" d="m30 136-12-30-12 30h24Z"/>
+    <path fill="#FFB8B8" d="M44 136a10 10 0 1 0 0-20 10 10 0 0 0 0 20Z"/>
   </g>
-  <defs>
-    <clipPath id="a">
-      <path fill="#fff" d="M0 0h224v136H0z"/>
-    </clipPath>
-  </defs>
+  <g class="c-area-card__letter-group">
+    <path fill="#FBD492" d="M136 58h42v42h-42V58Z"/>
+    <path fill="#94BAD7" d="M178 0h-42l46 136h42L178 0Z"/>
+  </g>
+
+  <path class="c-area-card__letter-diagonal" fill="#FFB8B8" d="M139.9-11H182l-57.9 158H82l57.9-158Z"/>
+
+  <g class="c-area-card__briefcase">
+    <path fill="#5C0000" d="M61.8 107.7h70.6v24.8c0 2-1.6 3.5-3.5 3.5H65.3c-2 0-3.5-1.6-3.5-3.5v-24.8Z"/>
+    <path stroke="#5C0000" stroke-width="7.1" d="M109.5 83.9a12.4 12.4 0 0 0-24.8 0"/>
+    <path fill="#FFD799" fill-rule="evenodd" d="M97 96.3c2 0 3.6 1.6 3.6 3.6v17.4c0 2-1.6 3.7-3.5 3.7-2 0-3.5-1.7-3.5-3.7V99.9c0-2 1.5-3.6 3.5-3.6H97Z" clip-rule="evenodd"/>
+    <path fill="#F68282" d="M60 82h74.2v22.9c0 2-1.6 3.5-3.6 3.5h-67c-2 0-3.6-1.6-3.6-3.5v-23 .1Z"/>
+  </g>
 </svg>
