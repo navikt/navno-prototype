@@ -16,8 +16,8 @@ alpine: true
         <h2 class="text-xl font-semibold">Hva kan vi hjelpe deg med?</h2>
         <ul class="grid gap-1.5 mt-4 xs:text-lg sm:gap-4 sm:grid-cols-2 xl:grid-cols-3">
           {%- for area in areaList -%}
-            <li class="relative grid items-center break-inside-avoid pl-5 sm:pl-8 pr-28 sm:pr-36 py-3 rounded-xl min-h-16 sm:min-h-24 xl:min-h-32 text-blue-600 bg-slate-100 has-[a:hover]:bg-blue-50 has-[a:hover]:ring-1 has-[a:hover]:ring-slate-300/25 has-[a:hover]:shadow-lg">
-              <a class="leading-tight after:absolute after:inset-0 text-balance hover:underline hover:decoration-2" href="#">
+            <li class="relative grid items-center break-inside-avoid pl-5 sm:pl-8 pr-28 sm:pr-36 py-3 rounded-lg min-h-16 sm:min-h-24 xl:min-h-32 transition-shadow shadow-none text-blue-600 bg-blue-50 has-[a:hover]:bg-blue-50 has-[a:focus-visible]:ring has-[a:focus-visible]:ring-blue-600 has-[a:hover]:shadow-lg">
+              <a class="font-semibold leading-tight focus-visible:outline-none after:absolute after:inset-0 text-balance hover:underline hover:decoration-2" href="#">
                 <span>{{ area.title | safe }}</span>
               </a>
               {{ area.icon | svgContents("z-10 right-4 pt-4 sm:pt-8 max-h-full h-auto w-auto self-stretch absolute bottom-0 pointer-events-none") | safe if area.icon }}
@@ -33,9 +33,9 @@ alpine: true
         <ul class="text-lg sm:gap-8 sm:columns-2">
           {%- for shortcut in shortcutsList -%}
             <li class="block border-t border-slate-200">
-              <a class="flex items-center justify-between gap-2 px-1.5 py-2 -mx-1.5 text-blue-600 underline hover:z-10 hover:relative hover:bg-blue-50 hover:rounded hover:ring-2 hover:ring-blue-50 hover:decoration-2" href="#">
-                <span>{{ shortcut.title | safe }}</span>
+              <a class="relative flex items-center justify-start gap-2 px-1 py-2 text-blue-600 underline focus-visible:z-10 hover:z-10 hover:bg-blue-50 hover:rounded-lg focus-visible:rounded-lg hover:ring-4 hover:ring-white focus-visible:outline-none focus-visible:ring hover:ring-offset-2 hover:ring-offset-blue-50 focus-visible:ring-blue-600 hover:decoration-2" href="#">
                 {{ '/src/_includes/svg/icons/arrow-right.svg' | svgContents("w-6 h-6") | safe if shortcut.icon }}
+                <span>{{ shortcut.title | safe }}</span>
               </a>
             </li>
           {%- endfor -%}
@@ -66,11 +66,12 @@ alpine: true
         <h2 class="text-xl font-semibold">Aktuelt</h2>
         <div class="grid gap-2 sm:block sm:gap-8 sm:columns-2">
           {%- for news in newsList -%}
-          <article class="relative px-5 py-3 rounded-xl has-[a:hover]:shadow-lg bg-orange-100 has-[a:hover]:ring-1] has-[a:hover]:ring-slate-300/25 has-[a:hover]:bg-orange-200/75">
-            <h3 class="text-lg">
-              <a class="text-blue-600 underline hover:decoration-2 after:absolute after:inset-0" href="#">{{ news.title | safe }}</a>
+          <article class="relative px-5 py-3 rounded-lg bg-white ring-1 ring-slate-300 has-[a:hover]:bg-blue-50 has-[a:focus-visible]:ring has-[a:focus-visible]:ring-blue-600">
+            <h3 class="text-lg leading-snug">
+              <a class="text-blue-600 underline after:z-10 hover:decoration-2 after:absolute after:inset-0 focus-visible:outline-none" href="#">{{ news.title | safe }}</a>
             </h3>
-            <div>{{ news.date }}</div>
+            <p class="text-lg leading-tight tracking-wider text-gray-800 small-caps">{{ news.date }}</p>
+            {{ '/src/_includes/svg/icons/arrow-right.svg' | svgContents('w-5 h-5 shrink-0 absolute my-auto inset-y-0 right-5 text-blue-600') | safe }}
             </article>
           {%- endfor -%}
         </div>
@@ -81,18 +82,18 @@ alpine: true
       <div class="col-container">
         <h2 class="text-xl font-semibold">Kontakt oss</h2>
         <div class="grid gap-8 mt-4 sm:grid-cols-2">
-          <div class="relative px-5 py-3.5 rounded-bl-none rounded-xl bg-blue-50">
+          <div class="relative px-5 py-3.5 rounded-bl-none focus-within:rounded-bl-lg rounded-lg bg-blue-50 has-[a:focus-visible]:ring has-[a:focus-visible]:ring-blue-600 group">
             <h3 class="text-lg ">
-              <a class="text-blue-600 underline hover:decoration-2" href="#">Du kan chatte med oss</a>
+              <a class="text-blue-600 underline hover:decoration-2 after:inset-0 after:absolute after:z-10 focus-visible:outline-none" href="#">Du kan chatte med oss</a>
             </h3>
             <p class="mt-1 text-balance">Du møter først chatbot Frida. Du kan be Frida om å få chatte med en veileder (hverdager 09.00–15.00)</p>
-            <svg class="absolute left-0 top-full" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" focusable="false" >
+            <svg class="absolute left-0 top-full group-focus-within:hidden" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" focusable="false" >
               <polygon fill="rgb(230 240 255)" points="0 0, 24 0, 0 24" />
             </svg>
           </div>
-          <div class="px-5 py-4 bg-slate-100 rounded-xl">
+          <div class="relative px-5 py-4 bg-white rounded-lg has-[a:focus-visible]:ring has-[a:focus-visible]:ring-blue-600">
             <h3 class="text-lg">
-              <a class="text-blue-600 underline hover:decoration-2" href="#">Du kan også ringe eller skrive til oss</a>
+              <a class="text-blue-600 underline hover:decoration-2 focus-visible:outline-none" href="#">Du kan også ringe eller skrive til oss</a>
             </h3>
             <p class="mt-1 leading-snug text-balance">Se hvordan du kan kontakte oss på ulike måter.</p>
           </div>
