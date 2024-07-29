@@ -16,12 +16,11 @@ noJS: true
   </div> 
 {% endmacro %}
 
-
 {%- block content -%}
   <div class="py-page lg:py-20 grid grid-cols-combi font-[375]">
     <div class="col-main">
       <div class="grid gap-3">
-        {% for item in collections.all %}
+        {% for item in collections.all | sort(false, false, 'data.order') %}
           {% if item.url %}         
             {{ link(item) }}
           {% endif %}
