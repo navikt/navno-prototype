@@ -16,7 +16,7 @@ const {
   extractTags,
   sortStringLast,
   lowerfirst,
-  onlyTags,
+  filterByTags,
   tocData,
 } = require("./src/_11ty/filters.js");
 const { timestampNow } = require("./src/_11ty/shortcodes.js");
@@ -58,7 +58,7 @@ module.exports = function (eleventyConfig) {
       .use(markdownItAnchor, {
         level: [2, 3],
         slugify: (s) => slugify(s.toLowerCase()),
-        // permalink: markdownItAnchor.permalink.headerLink(headerLinkOptions),
+        permalink: markdownItAnchor.permalink.headerLink(headerLinkOptions),
       })
       .use(markdownItMark),
   );
@@ -86,7 +86,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter("lowerfirst", lowerfirst);
   eleventyConfig.addFilter("extractTags", extractTags);
   eleventyConfig.addFilter("sortStringLast", sortStringLast);
-  eleventyConfig.addFilter("onlyTags", onlyTags);
+  eleventyConfig.addFilter("filterByTags", filterByTags);
   eleventyConfig.addFilter("tocData", tocData);
 
   // Templating collections
@@ -105,7 +105,7 @@ module.exports = function (eleventyConfig) {
       .use(markdownItAnchor, {
         level: 3,
         slugify: (s) => slugify(s.toLowerCase()),
-        // permalink: markdownItAnchor.permalink.headerLink(headerLinkOptions),
+        permalink: markdownItAnchor.permalink.headerLink(headerLinkOptions),
       })
       .use(markdownItMark)
       .disable("code")
