@@ -109,11 +109,11 @@
   :where(.prose) > :is(p, ul, ol) {
     text-wrap: pretty;
   }
-  :where(.prose) > * :where(a) {
+  :where(.prose) > *:not(h2, h3, h4) a {
     color: theme('colors.blue.600');
     text-decoration-line: underline;
   }
-  :where(.prose) > * :where(a:hover) {
+  :where(.prose) > *:not(h2, h3, h4) a:hover {
     text-decoration-thickness: 2px;
   }
 
