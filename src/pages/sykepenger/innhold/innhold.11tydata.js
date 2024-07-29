@@ -1,4 +1,4 @@
 module.exports = {
-  tags: ["innhold"],
+  tags: ["sykepenger"],
   permalink: false,
 };
