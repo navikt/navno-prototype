@@ -47,26 +47,14 @@ module.exports = {
       icon: "/src/_includes/svg/piktogrammer/produkter/utbetalingsdatoer.svg",
     },
   ],
-  formsList: [
-    {
-      title: "Søknad og skjema",
-      href: "/soknad-og-skjema/",
-      icon: "/src/_includes/svg/piktogrammer/produkter/soknad-og-skjema.svg",
-    },
-    {
-      title: "Ettersende dokumentasjon",
-      href: "/ettersende-dokumentasjon/",
-      icon: "/src/_includes/svg/piktogrammer/produkter/utbetalingsdatoer.svg",
-    },
-  ],
   newsList: [
     {
-      title: "Kontantstøtte - melde endring",
-      date: "03.08.2022",
+      title: "Har du gått glipp av dager med foreldrepenger?",
+      date: "24. mai 2024",
     },
     {
-      title: "Briller til barn",
-      date: "02.08.2022",
+      title: "Har du økonomiske bekymringer?",
+      date: "3. april 2024",
     },
   ],
 };

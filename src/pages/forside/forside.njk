@@ -14,7 +14,7 @@ alpine: true
     <div class="grid py-12 grid-cols-combi">
       <div class="col-container">
         <h2 class="text-xl font-semibold">Hva kan vi hjelpe deg med?</h2>
-        <ul class="grid gap-1.5 mt-4 xs:text-lg sm:gap-4 sm:grid-cols-2 xl:grid-cols-3">
+        <ul class="grid gap-1.5 mt-4 lg:text-xl sm:gap-4 sm:grid-cols-2 xl:grid-cols-3">
           {%- for area in areaList -%}
             <li class="relative grid items-center break-inside-avoid pl-5 sm:pl-8 pr-28 sm:pr-36 py-3 rounded-lg min-h-16 sm:min-h-24 xl:min-h-32 transition-shadow shadow-none text-blue-600 bg-blue-50 has-[a:hover]:bg-blue-50 has-[a:focus-visible]:ring has-[a:focus-visible]:ring-blue-600 has-[a:hover]:shadow-lg">
               <a class="font-semibold leading-tight focus-visible:outline-none after:absolute after:inset-0 text-balance hover:underline hover:decoration-2" href="#">
@@ -27,13 +27,13 @@ alpine: true
       </div>
     </div>
 
-    <div class="grid pt-4 pb-12 grid-cols-combi">
+    <div class="grid pt-4 pb-8 grid-cols-combi">
       <div class="col-container">
         <h2 class="text-xl font-semibold">Snarveier</h2>
         <ul class="text-lg sm:gap-8 sm:columns-2">
           {%- for shortcut in shortcutsList -%}
             <li class="block border-t border-slate-200">
-              <a class="relative flex items-center justify-start gap-2 px-1 py-2 text-blue-600 underline focus-visible:z-10 hover:z-10 hover:bg-blue-50 hover:rounded-lg focus-visible:rounded-lg hover:ring-4 hover:ring-white focus-visible:outline-none focus-visible:ring hover:ring-offset-2 hover:ring-offset-blue-50 focus-visible:ring-blue-600 hover:decoration-2" href="#">
+              <a class="relative flex items-center justify-start gap-2 px-1 py-3 text-blue-600 hover:underline focus-visible:z-10 hover:z-10 hover:bg-blue-50 hover:rounded-lg focus-visible:rounded-lg hover:ring-4 hover:ring-white focus-visible:outline-none focus-visible:ring hover:ring-offset-2 hover:ring-offset-blue-50 focus-visible:ring-blue-600 hover:decoration-2" href="#">
                 {{ '/src/_includes/svg/icons/arrow-right.svg' | svgContents("w-6 h-6") | safe if shortcut.icon }}
                 <span>{{ shortcut.title | safe }}</span>
               </a>
@@ -44,34 +44,17 @@ alpine: true
       </div>
     </div>
 
-
-    {# <div class="grid grid-cols-combi">
-      <div class="col-container">
-        <h2>Søke og ettersende</h2>
-        <ul>
-          {%- for form in formsList -%}
-            <li>
-              <a href="{{ form.href or '#'}}">
-                {{ form.icon | svgContents("w-12 h-12 md:w-16 md:h-16") | safe if form.icon }}
-                <span>{{ form.title | safe }}</span>
-              </a>
-            </li>
-          {%- endfor -%}
-        </ul>
-      </div>
-    </div> #}
-
-    <div class="grid pt-10 pb-8 grid-cols-combi">
+    <div class="grid pt-6 pb-8 grid-cols-combi">
       <div class="col-container">
         <h2 class="text-xl font-semibold">Aktuelt</h2>
-        <div class="grid gap-2 sm:block sm:gap-8 sm:columns-2">
+        <div class="grid gap-3 sm:grid-cols-2 sm:gap-8">
           {%- for news in newsList -%}
-          <article class="relative px-5 py-3 rounded-lg bg-white ring-1 ring-slate-300 has-[a:hover]:bg-blue-50 has-[a:focus-visible]:ring has-[a:focus-visible]:ring-blue-600">
-            <h3 class="text-lg leading-snug">
+          <article class="relative grid pl-5 pr-16 py-5 rounded-lg bg-white ring-1 ring-slate-300 has-[a:hover]:bg-blue-50 has-[a:focus-visible]:ring has-[a:focus-visible]:ring-blue-600 content-between">
+            <h3 class="mb-auto text-lg leading-snug">
               <a class="text-blue-600 underline after:z-10 hover:decoration-2 after:absolute after:inset-0 focus-visible:outline-none" href="#">{{ news.title | safe }}</a>
             </h3>
             <p class="text-lg leading-tight tracking-wider text-gray-800 small-caps">{{ news.date }}</p>
-            {{ '/src/_includes/svg/icons/arrow-right.svg' | svgContents('w-5 h-5 shrink-0 absolute my-auto inset-y-0 right-5 text-blue-600') | safe }}
+            {{ '/src/_includes/svg/icons/arrow-right.svg' | svgContents('w-6 h-6 shrink-0 absolute my-auto inset-y-0 right-5 text-blue-600') | safe }}
             </article>
           {%- endfor -%}
         </div>
