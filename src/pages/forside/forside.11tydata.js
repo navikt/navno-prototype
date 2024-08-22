@@ -3,10 +3,12 @@ module.exports = {
     {
       title: "Arbeid",
       icon: "/src/_includes/svg/area-illustrations/arbeid.svg",
+      href: "/omrade/arbeid/",
     },
     {
       title: "Helse og sykdom",
       icon: "/src/_includes/svg/area-illustrations/helse.svg",
+      href: "/omrade/helse-og-sykdom/",
     },
     {
       title: "Familie og barn",
