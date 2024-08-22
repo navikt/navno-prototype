@@ -11,8 +11,10 @@
       </div>
       <div class="text-base font-medium tracking-wider text-gray-700 small-caps">
         {{ category | safe }}
-        <span aria-hidden="true" class="inline-block -translate-y-px">—</span>
-        {{ audience.current if audience | safe }}
+        {% if audience %}
+          <span aria-hidden="true" class="inline-block -translate-y-px">—</span>
+          {{ audience.current | safe }}
+        {% endif %}
       </div>
       <h1 class="font-bold text-4xl/tight text-pretty text-brand-purple-deep">{{ title | safe }}</h1>
       <div class="mt-6 prose text-pretty max-w-prose">

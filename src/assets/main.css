@@ -239,7 +239,7 @@
     place-items: center;
     translate: 0 4px;
     margin-inline-end: 10px;
-    border-radius: theme('borderRadius.xl');
+    border-radius: 10px;
     transition: rotate 150ms;
     width: 24px;
     height: 24px;
