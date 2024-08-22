@@ -49,14 +49,14 @@ alpine: true
             </h3>         
           {% endif %}
           {% if item.description %}
-            <p class="mt-2 text-sm opacity-80">{{ item.description }}</p>
+            <p class="mt-2 text-sm">{{ item.description }}</p>
           {% endif %}
           {% if item.links %}
           <ul class="grid gap-3 mt-2 mb-12">
             {% for link in item.links %}
               <li class="grid px-5 py-4 relative bg-white has-[a:focus-visible]:ring has-[a:focus-visible]:ring-blue-600 has-[a:hover]:bg-blue-50 border rounded-lg gap-x-12 border-slate-300">
                 <a class="font-semibold leading-normal text-blue-600 after:absolute after:inset-0 after:z-10 hover:underline hover:decoration-2 focus-visible:outline-none" href="#">{{ link.title }}</a>
-                <p class="col-start-1 mt-0.5 text-sm text-pretty opacity-80">{{ link.description if link.description }}</p>
+                <p class="col-start-1 mt-0.5 text-sm text-pretty">{{ link.description if link.description }}</p>
                 <span class="col-start-2 row-span-2 row-start-1 my-auto ml-auto text-blue-600">
                 {{ '/src/_includes/svg/icons/enter.svg' | svgContents('w-6 h-6 opacity-80') | safe }}
                 </span>
