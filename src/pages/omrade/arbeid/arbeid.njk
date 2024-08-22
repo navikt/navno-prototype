@@ -23,16 +23,16 @@ contactTheme: white
     </div>
 
     <div class="grid pt-12 pb-12 grid-cols-combi bg-brand-beige">
-      <ul class="grid col-container md:grid-cols-2 md:gap-x-12">
+      <ul class="col-container columns-[42ch] gap-x-12">
         {%- for item in situationList -%}
-          <li class="relative flex items-center justify-between gap-8 py-4 -mt-px border-t border-b text-pretty bg-brand-beige border-slate-300/75">
+          <li class="relative flex items-start gap-2 px-2 pt-4 pb-3 -mt-px border-t border-b text-pretty bg-brand-beige border-slate-300/75">
+            {{ '/src/_includes/svg/icons/arrow-right.svg' | svgContents('w-6 h-6 translate-y-1 shrink-0 text-blue-500') | safe }}
             <div class="grid gap-0.5">
               <h3><a class="font-normal text-blue-600 text-lg/normal hover:text-blue-600 hover:underline hover:decoration-2 after:absolute after:inset-0" href="#">
                 {{ item.title | safe }}
               </a></h3>
               {# <p class="text-sm/normal">{{ item.ingress | safe }}</p> #}
             </div>
-            {{ '/src/_includes/svg/icons/arrow-right.svg' | svgContents('w-5 h-5 shrink-0 text-blue-500 self-center') | safe }}
           </li>
         {%- endfor -%}
       </ul>
