@@ -1,17 +1,21 @@
 ---
 title: 'Søk på nav.no'
+type: 'Søkeresultat'
 description: 'Resultatside'
 order: 12
-permalink: false
+permalink: '/sok/'
+alpine: true
 ---
 {%- extends 'base.njk' -%}
 
 {%- block content -%}
-  <main class="min-h-[61vh] py-8 text-lg md:pt-12 md:pb-20 text-gray-900 grid grid-cols-layout relative">
-    <div class="col-narrow md:col-wide md:grid md:grid-cols-[2fr_max-content] md:gap-x-12 items-start" x-data="{ filterOpen: false, searchFilter: 'innhold' }">
+  <main class="min-h-[61vh] py-8 text-lg md:pt-12 md:pb-20 text-gray-900 grid grid-cols-combi relative z-50">
+    <div class="items-start col-container md:grid md:grid-cols-12 md:gap-x-16" x-data="{ filterOpen: false, searchFilter: 'innhold' }">
 
       {# Tittel og søkefelt #}
-      <div class="col-start-1 row-start-1">
+      <div class="col-span-8 col-start-1 row-start-1">
+
+        {# Tittel #}
         <h1 class="text-2xl font-semibold leading-tight tracking-normal md:text-2xl">
           {{ title | safe }}
         </h1>
@@ -27,14 +31,14 @@ permalink: false
       </div>
 
       {# Sortering og filter #}
-      <div class="relative z-20 mt-8 md:mt-12 md:row-start-1 isolate md:col-start-2 grid-flow-dense md:row-span-2 ">
+      <div class="relative z-10 mt-8 md:mt-5 md:row-start-2 isolate md:col-start-9 grid-flow-dense md:col-span-4 md:row-span-2">
           <div class="fixed inset-y-0 right-0 z-30 flex flex-col w-10/12 h-full max-w-md bg-white shadow-lg md:w-full md:bg-transparent md:shadow-none md:static" x-bind:class="filterOpen ? ' animate-openDrawer ' : 'hidden md:block'">
 
-          <div class="flex-1 p-5 overflow-y-auto">
+          <div class="flex-1 p-5 overflow-y-auto overscroll-contain">
             {# Sortering #}
             <fieldset class="">
               <legend class="text-xl font-semibold ">Sortering</legend>
-              <div class="">
+              <div class="mt-1">
                 <span class="flex items-center gap-2">
                   <input class="inline-block w-5 h-5" name="sort" id="bestResult" type="radio" checked>
                   <label for="bestResult" class="py-1">Beste treff</label>
@@ -50,17 +54,17 @@ permalink: false
             <div class="mt-8">
               <fieldset>
                 <legend class="text-xl font-semibold">Søkefilter</legend>
-                <div class="mt-2">
+                <div class="grid gap-1 mt-2">
                   {%- for item in filters -%}
                     <div
                       class="flex flex-wrap "
-                      x-bind:class="searchFilter === '{{ item.title | slugify }}' ? 'isolate z-10 border-l-4 border-blue-500 ml-0.5 {{ 'mb-3' if item.children.length }}' : ''"
+                      x-bind:class="searchFilter === '{{ item.title | slugify }}' ? 'isolate z-10 border-l-4 bg-slate-100 border-blue-500 -ml-5 -mr-4 rounded-r {{ 'mb-3' if item.children.length }}' : ''"
 
                     >
                       <button
                         type="button"
-                        class="flex items-baseline flex-1 gap-2 py-2.5 pr-2 leading-snug text-left transition-all duration-200 ease-out rounded-md"
-                        x-bind:class="searchFilter === '{{ item.title | slugify }}' ? 'cursor-default pl-3' : 'fine:hover:bg-blue-50 fine:hover:pl-2'"
+                        class="flex items-baseline flex-1 gap-2 py-2.5 leading-snug text-left transition-all duration-200 ease-out rounded-md"
+                        x-bind:class="searchFilter === '{{ item.title | slugify }}' ? 'cursor-default px-4' : 'fine:hover:bg-slate-100 fine:hover:px-4 fine:hover:-mx-4'"
                         x-on:click="searchFilter = '{{ item.title | slugify }}'"
                       >
                         <span
@@ -71,15 +75,15 @@ permalink: false
                       </button>
                       {%- if item.children.length -%}
                       <fieldset
-                        class="w-full pl-4 pr-2"
+                        class="w-full pl-5 pr-4"
                         x-bind:class="searchFilter === '{{ item.title | slugify }}' ? '' : 'hidden'"
                       >
                         <legend class="sr-only">Underkategorier</legend>
                         <ul>
                           {%- for subitem in item.children -%}
                           <li class="flex items-baseline">
-                            <input class="w-4 h-4 mr-2 translate-y-0.5 -translate-x-0.5" type="checkbox" name="{{ item.title | slugify }}-sublevel" id="{{ subitem | slugify }}-sublevel" />
-                            <label class="inline-flex items-baseline justify-between flex-1 gap-2 py-1.5" for="{{ subitem | slugify }}-sublevel">
+                            <input class="w-4 h-4 translate-y-0.5" type="checkbox" name="{{ item.title | slugify }}-sublevel" id="{{ subitem | slugify }}-sublevel" />
+                            <label class="inline-flex items-baseline justify-between flex-1 pl-2 gap-2 py-1.5" for="{{ subitem | slugify }}-sublevel">
                               <span class="pr-2">{{ subitem | safe }}</span>
                               <span class="ml-auto text-right">{{ subitem.length }}</span>
                             </label>
@@ -107,7 +111,7 @@ permalink: false
       </div>
 
       {# Resultat #}
-      <div class="mt-12 md:row-start-2 md:col-start-1">
+      <div class="mt-12 md:row-start-2 md:col-start-1 md:col-span-8">
         <div class="flex items-baseline justify-between gap-4">
         <h2 class="leading-snug">74 treff på <strong>«penger»</strong> i&nbsp;innhold</h2>
           <button
