@@ -46,7 +46,8 @@
   .prose > :where(h1, h2, h3, h4, h5):first-child {
     margin-block-start: 0.5em;
   }
-    :is(.prose) > :where(h2) {
+
+  :is(.prose) > :where(h2) {
     font-size: var(--text-fluid-28-32);
     line-height: 1.33;
     letter-spacing: -0.0125em;
