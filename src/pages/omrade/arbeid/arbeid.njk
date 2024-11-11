@@ -22,7 +22,15 @@ contactTheme: white
       </div>
     </div>
 
-    <div class="grid pt-12 pb-12 grid-cols-combi bg-brand-beige">
+    <div class="grid pt-10 pb-12 grid-cols-combi bg-brand-beige">
+
+      <div class="mb-10">
+        <p class="text-base leading-snug text-center">
+          Finn ledige stillinger på
+          <a class="text-blue-600 underline hover:text-blue-600 hover:decoration-2" href="#">arbeidsplassen.no</a>
+        </p>
+      </div>
+
       <ul class="col-container columns-[42ch] gap-x-12">
         {%- for item in situationList -%}
           <li class="relative flex items-start gap-2 px-2 pt-4 pb-3 -mt-px border-t border-b text-pretty bg-brand-beige border-slate-300/75">
@@ -36,13 +44,6 @@ contactTheme: white
           </li>
         {%- endfor -%}
       </ul>
-
-      <div class="mt-16">
-        <p class="text-sm leading-snug text-center">
-          Finn ledige stillinger på
-          <a class="text-blue-600 underline hover:text-blue-600 hover:decoration-2" href="#">arbeidsplassen.no</a>
-        </p>
-      </div>
 
     </div>
   </main>
