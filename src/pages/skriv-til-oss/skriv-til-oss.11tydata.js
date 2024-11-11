@@ -73,11 +73,6 @@ const messageList = [
       },
     ],
   },
-  {
-    title: "Økonomisk sosialhjelp og andre sosiale tjenester",
-    description:
-      "Kontakt oss på chat eller telefon 55 55 33 33 (tastevalg 1) hvis du har spørsmål om økonomisk sosialhjelp, midlertidig botilbud, kvalifiseringsprogrammet, økonomisk rådgivning, eller opplysning, råd og veiledning.",
-  },
 ];
 
 module.exports = { messageList };

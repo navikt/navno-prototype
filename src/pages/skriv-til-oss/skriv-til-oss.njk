@@ -24,35 +24,51 @@ alpine: true
         <h1 class="mt-2 mb-3 font-extrabold tracking-tight text-4xl/tight text-pretty text-brand-purple-deep">
           {{ title | safe }}
         </h1>
-        <p class="col-span-2 col-start-1 text-lg text-pretty xs:col-start-1 xs:col-span-1 max-w-prose ">{{ ingress }}</p>
+        <p class="col-span-2 col-start-1 text-lg text-pretty xs:col-start-1 xs:col-span-1">{{ ingress }}</p>
       </div>
       <div class="prose">
         <p>For å skrive til oss, må du logge inn. Bare skriv spørsmål eller opplysninger som gjelder deg selv. Du kan ikke skrive for andre. Hvis du vil kontakte oss på vegne av andre, må du ringe oss og ha muntlig eller skriftlig fullmakt.</p>
 
-        <p>Svartid er <strong>4 arbeidsdager</strong>. Vil du ha raskere svar, kan du <a href="#">chatte med en veileder i åpningstiden (kl. 9–15)</a>. 
+        <p>Svartid er <strong>4 arbeidsdager</strong>. For raskere svar, kan du <a href="#">chatte med en veileder i åpningstiden (kl. 9–15)</a>. 
         {# <span class="opacity-10">Skal du bare sende en enkel beskjed eller opplysninger i saken din? Da kan du sende en <a href="#">beskjed til oss</a>.</span> #}
         </p>
+
+        <div class="p-8 prose bg-brand-beige rounded-xs">
+          <h2 class="text-xl">Økonomisk sosialhjelp og andre sosiale tjenester</h2>
+          <p>Kontakt oss på chat eller telefon 55 55 33 33 (tastevalg 1) hvis du har spørsmål om</p>
+          <ul>
+            <li>økonomisk sosialhjelp</li>
+            <li>midlertidig botilbud</li>
+            <li>kvalifiseringsprogrammet</li>
+            <li>økonomisk rådgivning, opplysning, råd og veiledning</li>
+          </ul>
+        </div>
+
+        {# <div class="p-8 prose bg-brand-beige rounded-xs">
+          <h2 class="text-xl">Økonomisk sosialhjelp og andre sosiale tjenester</h2>
+          <p>Kontakt oss på chat eller telefon 55 55 33 33 (tastevalg 1) hvis du har spørsmål om økonomisk sosialhjelp, midlertidig botilbud, kvalifiseringsprogrammet, økonomisk rådgivning, opplysning, råd og veiledning</p>
+        </div> #}
       </div>
 
       <div class="py-16">
         <div class="mb-8">
           <div class="w-10 h-[0.675ch] bg-[#E6C7D8] mb-5 mt-5"></div>
           <h2 class="font-bold text-brand-purple-deep text-3xl/tight text-balance">
-            <a href="#velg-tema">Velg tema</a>
+            <a href="#velg-tema">Andre tema</a>
           </h2>
         </div>
 
         {% for item in messageList %}
-          {% if (item.links.length > 1) or (item.links === undefined) %}
+          {# {% if (item.links.length > 1) or (item.links === undefined) %}
             <h3 class="mt-6 {{ '!mt-0' if loop.first }} text-xl/tight font-bold">
               {{ item.title }}
             </h3>         
-          {% endif %}
-          {% if item.description %}
+          {% endif %} #}
+          {# {% if item.description %}
             <p class="mt-2 text-sm">{{ item.description }}</p>
-          {% endif %}
+          {% endif %} #}
           {% if item.links %}
-          <ul class="grid gap-3 mt-2 mb-12">
+          <ul class="grid gap-3 mt-3">
             {% for link in item.links %}
               <li class="grid px-5 py-4 relative bg-white has-[a:focus-visible]:ring has-[a:focus-visible]:ring-blue-600 has-[a:hover]:bg-blue-50 border rounded-lg gap-x-12 border-slate-300">
                 <a class="font-semibold leading-normal text-blue-600 after:absolute after:inset-0 after:z-10 hover:underline hover:decoration-2 focus-visible:outline-none" href="#">{{ link.title }}</a>
