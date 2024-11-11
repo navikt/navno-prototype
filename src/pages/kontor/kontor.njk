@@ -1,0 +1,103 @@
+---
+title: 'Lokalkontor'
+category: 'Kontorside'
+order: 3
+bodyClass: 'bg-white'
+alpine: true
+---
+
+{%- extends 'base.njk' -%}
+
+{%- macro iconBox(box) -%}
+  <div class="grid isolate">
+    <div class="z-10 grid w-16 mx-auto translate-y-1/2 bg-blue-100 rounded-full place-items-center aspect-square">
+      {{ box.icon | svgContents('w-7 h-7 shrink-0') | safe }}
+    </div>
+    <div class="px-6 py-8 bg-white md:py-12 md:px-10">
+      <h2 class="mt-8 text-2xl font-semibold">{{ box.title | safe }}</h2>
+      <div class="mt-2 prose markdown">
+        {{ box.content | markdown | safe }}
+      </div>
+    </div>
+  </div>
+{%- endmacro -%}
+
+
+{%- block content -%}
+  <main data-theme="kontor">
+
+    <div class="grid py-16 grid-cols-combi">
+      <div class="mb-8 col-main">
+        <h1 class="text-3xl font-semibold leading-tight text-gray-900 md:text-4xl">
+          NAV Andeby
+        </h1>
+        <p class="flex items-baseline gap-4 mt-1">
+          <span class="text-sm tracking-wider text-gray-700 uppercase">
+            NAV kontor
+          </span>
+          <span aria-hidden="true">|</span>
+          <span class="text-sm text-gray-600">Lokalkontor for Andeby, Gåseby og Fjærby</span>
+        </p>
+      </div>
+
+      <div class="col-main">
+        <div class="p-8 bg-orange-50">
+          <h3 class="text-xl font-semibold">Adresse</h3>
+          <address class="mt-1">
+            Kvakkegata 24,<br />
+            1234 Andeby
+          </address>
+          <p class="mt-2 text-sm">Bruk inngang ved lekeplass</p>
+
+          <h3 class="text-xl font-semibold mt-7">Åpningstider når du ikke har avtale</h3>
+          <table class="mt-2 text-left">
+            <tr>
+              <th class="py-0.5 w-24 font-normal">Mandag</th>
+              <td class="py-0.5 font-semibold">10.00–14.00</td>
+            </tr>
+            <tr>
+              <th class="py-0.5 w-24 font-normal">Tirsdag</th>
+              <td class="py-0.5 font-semibold">10.00–14.00</td>
+            </tr>
+            <tr>
+              <th class="py-0.5 w-24 font-normal">Onsdag</th>
+              <td class="py-0.5 font-semibold">10.00–14.00</td>
+            </tr>
+            <tr>
+              <th class="py-0.5 w-24 font-normal">Torsdag</th>
+              <td class="py-0.5 font-semibold">Kun timeavtale</td>
+            </tr>
+            <tr>
+              <th class="py-0.5 w-24 font-normal">Fredag</th>
+              <td class="py-0.5 font-semibold">10.00–14.00</td>
+            </tr>
+          </table>
+          <div class="flex items-start gap-3 mt-7">
+            <svg class="w-6 h-6 mt-px" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false" >
+              <path d="M12 0C5.38226 0 0 5.38226 0 12C0 18.6177 5.38226 24 12 24C18.6167 24 24 18.6177 24 12C24 5.38226 18.6167 0 12 0Z" fill="#368DA8" />
+              <path d="M13.5 6.5C13.5 5.67157 12.8284 5 12 5C11.1716 5 10.5 5.67157 10.5 6.5C10.5 7.32843 11.1716 8 12 8C12.8284 8 13.5 7.32843 13.5 6.5ZM9 17V19H15V17H13V10H9V12H11V17H9Z" fill="white" />
+            </svg>
+            <p>Du kan avtale møte med veilederen din utenom disse åpningstidene.</p>
+          </div>
+        </div>
+
+        <div class="p-8 mt-7 bg-gray-50">
+          <p>Telefonnummeret til NAV er <span class="block text-2xl font-semibold leading-tight">55 55 33 33</span></p>
+          <p class="pt-4">Du kan ikke ringe direkte til NAV-kontoret.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid pb-20 grid-cols-combi bg-gray-50">
+      <div class="col-narrow">
+        {% for box in boxes %}
+          {{ iconBox(box) }}
+        {% endfor %}
+      </div>
+    </div>
+
+  </main>
+{%- endblock -%}
+
+{%- block styles -%}{%- endblock -%}
+{%- block script -%}{%- endblock -%}
