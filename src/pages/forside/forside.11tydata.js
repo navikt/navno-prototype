@@ -48,6 +48,10 @@ module.exports = {
       title: "Ettersende dokumentasjon",
       icon: "/src/_includes/svg/piktogrammer/produkter/utbetalingsdatoer.svg",
     },
+    {
+      title: "Pengestøtter og tjenester fra A til Å",
+      icon: "/src/_includes/svg/piktogrammer/produkter/utbetalingsdatoer.svg",
+    },
   ],
   newsList: [
     {

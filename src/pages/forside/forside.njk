@@ -11,13 +11,13 @@ alpine: true
 
 {%- block content -%}
   <main class="" x-bind:inert="menuOpen || myPageOpen">
-    <div class="grid pt-8 pb-12 grid-cols-combi bg-brand-beige">
+    <div class="grid pt-8 pb-16 grid-cols-combi ">
       <div class="col-container">
-        <h2 class="text-2xl font-extrabold text-brand-purple-deep">Hva kan vi hjelpe deg med?</h2>
-        <ul class="grid gap-1.5 mt-4 lg:text-xl sm:gap-4 sm:grid-cols-2 xl:grid-cols-3">
+        <h2 class="text-2xl font-bold text-brand-purple-deep">Hva kan vi hjelpe deg med?</h2>
+        <ul class="grid gap-3 mt-4 lg:text-xl sm:grid-cols-2 xl:grid-cols-3">
           {%- for area in areaList -%}
-            <li class="relative grid items-center break-inside-avoid pl-5 sm:pl-8 pr-28 sm:pr-36 py-3 rounded-lg min-h-16 sm:min-h-24 xl:min-h-32 transition shadow text-blue-600 bg-white has-[a:hover]:bg-blue-50 has-[a:focus-visible]:ring has-[a:focus-visible]:ring-blue-600 has-[a:hover]:shadow-none">
-              <a class="leading-tight focus-visible:outline-none after:absolute after:inset-0 text-balance hover:underline hover:decoration-2" href="{{ area.href or '#'}}">
+            <li class="relative grid items-center break-inside-avoid pl-5 sm:pl-8 pr-28 sm:pr-36 py-3 rounded-lg min-h-16 sm:min-h-24 xl:min-h-32 transition shadow text-blue-600 bg-blue-50 has-[a:hover]:bg-blue-50 has-[a:focus-visible]:ring has-[a:focus-visible]:ring-blue-600 has-[a:hover]:shadow-none hover:ring-2 hover:ring-blue-600">
+              <a class="leading-snug focus-visible:outline-none after:absolute after:inset-0 text-balance hover:decoration-2" href="{{ area.href or '#'}}">
                 <span>{{ area.title | safe }}</span>
               </a>
               {{ area.icon | svgContents("z-10 right-4 pt-4 sm:pt-8 max-h-full h-auto w-auto self-stretch absolute bottom-0 pointer-events-none") | safe if area.icon }}
@@ -27,13 +27,13 @@ alpine: true
       </div>
     </div>
 
-    <div class="grid py-6 mt-4 grid-cols-combi">
+    <div class="grid pt-10 pb-8 grid-cols-combi bg-brand-beige">
       <div class="col-container">
-        <h2 class="text-2xl font-extrabold text-brand-purple-deep">Snarveier</h2>
-        <ul class="mt-3 text-lg sm:gap-8 sm:columns-2">
+        <h2 class="text-2xl font-bold text-brand-purple-deep">Snarveier</h2>
+        <ul class="mt-3 mb-4 text-lg sm:gap-8 sm:columns-2">
           {%- for shortcut in shortcutsList -%}
-            <li class="block border-t border-slate-200">
-              <a class="relative flex items-center justify-start gap-2 px-2 py-3 text-blue-600 hover:underline focus-visible:z-10 hover:z-10 hover:bg-blue-50 hover:rounded-lg focus-visible:rounded-lg hover:ring-4 hover:ring-white focus-visible:outline-none focus-visible:ring hover:ring-offset-2 hover:ring-offset-blue-50 focus-visible:ring-blue-600 hover:decoration-2" href="#">
+            <li class="block -my-px border-y border-[#D9C9BF]">
+              <a class="relative flex items-center justify-start gap-2 px-2 py-3 text-blue-600 focus-visible:bg-brand-beige focus-visible:z-10 focus-visible:rounded focus-visible:outline-none hover:underline hover:decoration-2 focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2 focus-visible:ring-offset-brand-beige" href="#">
                 {{ '/src/_includes/svg/icons/arrow-right.svg' | svgContents("w-6 h-6") | safe if shortcut.icon }}
                 <span>{{ shortcut.title | safe }}</span>
               </a>
@@ -44,26 +44,32 @@ alpine: true
       </div>
     </div>
 
-    <div class="grid pt-4 pb-16 grid-cols-combi">
+    <div class="grid pt-12 pb-16 bg-white grid-cols-combi">
       <div class="col-container">
-        <h2 class="text-2xl font-extrabold text-brand-purple-deep">Aktuelt</h2>
+        <h2 class="text-2xl font-bold text-brand-purple-deep">Aktuelt</h2>
         <div class="grid gap-3 mt-3 sm:grid-cols-2 sm:gap-8">
           {%- for news in newsList -%}
-          <article class="relative grid pl-5 pr-16 py-5 rounded-lg bg-white ring-1 ring-slate-300 has-[a:hover]:bg-blue-50 has-[a:focus-visible]:ring has-[a:focus-visible]:ring-blue-600 content-between">
+          <article class="relative grid pl-5 pr-16 py-5 rounded-lg bg-white ring-1 ring-slate-300 has-[a:hover]:bg-blue-50 has-[a:focus-visible]:ring has-[a:focus-visible]:ring-blue-600 content-between hover:ring-2 hover:ring-blue-600">
             <h3 class="mb-auto text-lg leading-snug">
-              <a class="text-blue-600 underline after:z-10 hover:decoration-2 after:absolute after:inset-0 focus-visible:outline-none" href="#">{{ news.title | safe }}</a>
+              <a class="text-blue-600 after:z-10 after:absolute after:inset-0 focus-visible:outline-none" href="#">{{ news.title | safe }}</a>
             </h3>
-            <p class="text-lg leading-tight tracking-wider text-gray-800 small-caps">{{ news.date }}</p>
+            <p class="text-lg leading-tight tracking-wide text-gray-800 small-caps">{{ news.date }}</p>
             {{ '/src/_includes/svg/icons/arrow-right.svg' | svgContents('w-6 h-6 shrink-0 absolute my-auto inset-y-0 right-5 text-blue-600') | safe }}
-            </article>
+          </article>
           {%- endfor -%}
+        </div>
+        <div class="mt-6">
+          <a class="inline-flex gap-3 leading-tight text-blue-600 underline focus-visible:outline-none text-balance hover:decoration-2" href="#">
+            <span>Flere saker</span> 
+            {{ '/src/_includes/svg/icons/arrow-right.svg' | svgContents('w-6 h-6 shrink-0 right-5 text-blue-600') | safe }} 
+          </a>
         </div>
       </div>
     </div>
 
-    <div class="grid pt-12 pb-20 grid-cols-combi bg-slate-100 wave">
+    <div class="grid pt-12 pb-20 -mt-3 bg-slate-100 grid-cols-combi wave">
       <div class="col-container">
-        <h2 class="text-2xl font-extrabold text-brand-purple-deep">Kontakt oss</h2>
+        <h2 class="text-2xl font-bold text-brand-purple-deep">Kontakt oss</h2>
         <div class="grid gap-8 mt-4 sm:grid-cols-2">
           <div class="relative px-5 py-3.5 rounded-bl-none focus-within:rounded-bl-lg rounded-lg bg-white has-[a:focus-visible]:ring has-[a:focus-visible]:ring-blue-600 group has-[a:hover]:drop-shadow">
             <h3 class="text-lg ">
