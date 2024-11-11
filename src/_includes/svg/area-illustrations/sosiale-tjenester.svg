@@ -8,6 +8,9 @@
     <path fill="#95BAD6" fill-rule="evenodd" d="M180.5 51h.5a42.5 42.5 0 1 1 0 85h-72v-34h71.5a8.5 8.5 0 0 0 0-17H164V51h16.5Z" clip-rule="evenodd"/>
   </g>
 
+  <path class="c-area-card__letter-cover" fill="#ffb8b8" d="M224 0h40v136h-40z"/>
+
+
   <path class="c-area-card__heart" fill="#F68282" d="m128.4 76.5-5.4 2.8-5.4-2.8a12.7 12.7 0 0 0-14.4 20.7L123 115l19.8-18a12.8 12.8 0 0 0-14.4-20.6v.1Z"/>
 
   <g class="c-area-card__hand">
