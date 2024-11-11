@@ -11,7 +11,7 @@ module.exports = {
     },
     {
       title: "Nyheter og presse",
-      linkList: [{ text: "Nyheter, pressemeldinger og pressekontakt" }],
+      linkList: [{ text: "Nyheter, pressemeldinger og pressekontakt" }],
     },
     {
       title: "NAV og samfunn",

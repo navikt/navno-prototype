@@ -9,7 +9,7 @@
             </h2>
             <ul class="mt-2 mb-7 break-inside-avoid">
               {%- for item in section.linkList -%}
-                <li class="py-1 pr-2 break-before-avoid">
+                <li class="py-1.5 pr-3 break-before-avoid">
                   <a class="underline underline-offset-3 decoration-blue-300/70 hover:decoration-2 hover:text-orange-200" href="#">{{ item.text }}</a>
                 </li>
               {%- endfor -%}
@@ -17,10 +17,11 @@
           </div>
         {%- endfor -%}
 
-        <div class="mt-3">
-          <a href="#" class="inline-flex items-center gap-2 px-3 py-1.5 bg-deepblue-700 border border-deepblue-600 hover:border-deepblue-400/50 hover:bg-deepblue-600 rounded hover:shadow-lg hover:text-orange-200">
+        {# Screensharing #}
+        <div class="mt-6">
+          <a href="#" class="inline-flex items-center gap-4 px-4 pt-2 pb-1.5  bg-deepblue-600 border rounded-lg border-deepblue-500 hover:border-deepblue-400/50 hover:bg-deepblue-500 hover:shadow-lg hover:text-orange-200">
             <span class="">{{ footer.screenshare.text }}</span>
-            {{ footer.screenshare.icon | svgContents("w-5 h-5") | safe }}
+            {{ footer.screenshare.icon | svgContents("w-6 h-6") | safe }}
           </a>
         </div>
       </div>
