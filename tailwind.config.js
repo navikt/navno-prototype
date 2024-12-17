@@ -1,6 +1,3 @@
-const plugin = require("tailwindcss/plugin");
-const defaults = require("tailwindcss/defaultConfig");
-
 const akselColors = {
   blue: {
     50: "rgba(230, 240, 255, 1)",
@@ -126,7 +123,7 @@ const brandColors = {
   },
 };
 
-module.exports = {
+export default {
   content: ["./src/**/*.{njk,md,json,js,svg}"],
   theme: {
     screens: {

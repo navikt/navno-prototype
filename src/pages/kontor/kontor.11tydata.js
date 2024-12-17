@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   boxes: [
     {
       icon: "/src/_includes/svg/icons/box-list.svg",

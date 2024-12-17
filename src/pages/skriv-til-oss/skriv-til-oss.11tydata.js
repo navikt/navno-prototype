@@ -75,4 +75,4 @@ const messageList = [
   },
 ];
 
-module.exports = { messageList };
+export default { messageList };

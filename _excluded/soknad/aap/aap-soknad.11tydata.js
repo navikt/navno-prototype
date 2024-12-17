@@ -146,4 +146,4 @@ const formSteps = [
   },
 ];
 
-module.exports = { formSteps };
+export default { formSteps };

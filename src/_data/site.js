@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   title: "Prototype av enkelte nav.no-sider",
   language: [
     {

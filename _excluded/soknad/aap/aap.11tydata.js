@@ -17,4 +17,4 @@ const preSteps = [
   },
 ];
 
-module.exports = { preSteps };
+export default { preSteps };

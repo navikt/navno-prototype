@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   permalink: "/{{ page.fileSlug}}/",
   activeRole: "Privatperson",
 };

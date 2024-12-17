@@ -1665,7 +1665,7 @@ const getTags = (array, key) => {
   });
 };
 
-module.exports = {
+export default {
   products,
   typeFilter: getTags(products, "type"),
   areaFilter: getTags(products, "area"),

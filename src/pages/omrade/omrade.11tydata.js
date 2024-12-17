@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   type: "Områdeside",
   category: "Område",
   tags: ["omrade"],

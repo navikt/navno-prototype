@@ -2656,8 +2656,8 @@ Fullmakten gjelder ikke for tilleggsskjemaer som krever underskrift. Der hvor de
   },
 ];
 
-module.exports = {
+export default {
   products,
   activeRole: "Samarbeidspartner",
-  roleFilter: [...new Set(products.map(item => item["role"]).flat())],
+  roleFilter: [...new Set(products.map((item) => item["role"]).flat())],
 };

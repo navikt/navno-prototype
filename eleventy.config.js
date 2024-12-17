@@ -2,14 +2,16 @@
  * @param { import('@11ty/eleventy/src/UserConfig') } eleventyConfig
  */
 
-const slugify = require("slugify");
-const {
-  EleventyHtmlBasePlugin,
-  EleventyRenderPlugin,
-} = require("@11ty/eleventy");
-const tocPlugin = require("eleventy-plugin-toc");
-const svgContents = require("eleventy-plugin-svg-contents");
-const {
+import slugify from "slugify";
+import markdownIt from "markdown-it";
+import markdownItAnchor from "markdown-it-anchor";
+import markdownItMark from "markdown-it-mark";
+import compression from "compression";
+import { EleventyHtmlBasePlugin, EleventyRenderPlugin } from "@11ty/eleventy";
+import tocPlugin from "eleventy-plugin-toc";
+
+import svgContents from "eleventy-plugin-svg-contents";
+import {
   markdown,
   markdownInline,
   filterByArray,
@@ -18,14 +20,10 @@ const {
   lowerfirst,
   filterByTags,
   tocData,
-} = require("./src/_11ty/filters.js");
-const { timestampNow } = require("./src/_11ty/shortcodes.js");
-const { minifyHtml, dummifyLinks } = require("./src/_11ty/transforms.js");
-// const {} = require("./src/_11ty/collections.js");
-const markdownIt = require("markdown-it");
-const markdownItAnchor = require("markdown-it-anchor");
-const markdownItMark = require("markdown-it-mark");
-const compression = require("compression");
+} from "./src/_11ty/filters.js";
+import { timestampNow } from "./src/_11ty/shortcodes.js";
+import { minifyHtml, dummifyLinks } from "./src/_11ty/transforms.js";
+// import {} from "./src/_11ty/collections.js";
 
 const linkAfterHeaderOptions = {
   class: "absolute inset-0",
@@ -42,7 +40,7 @@ const headerLinkOptions = {
   class: "",
 };
 
-module.exports = function (eleventyConfig) {
+export default function (eleventyConfig) {
   // Eleventy Plugins
   eleventyConfig.addPlugin(EleventyHtmlBasePlugin);
   eleventyConfig.addPlugin(EleventyRenderPlugin);
@@ -89,10 +87,6 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter("filterByTags", filterByTags);
   eleventyConfig.addFilter("tocData", tocData);
 
-  // Templating collections
-  // eleventyConfig.addCollection("typeFilter", typeFilter);
-  // eleventyConfig.addCollection("areaFilter", areaFilter);
-
   // Templating shortcodes
   eleventyConfig.addShortcode("now", timestampNow);
   eleventyConfig.addPairedShortcode("prose", function (content, classes = "") {
@@ -122,7 +116,7 @@ module.exports = function (eleventyConfig) {
     enabled: true,
     showVersion: true,
     port: 8888,
-    // middleware: [compression()],
+    middleware: [compression({ level: 9 })],
   });
 
   eleventyConfig.setDataDeepMerge(true);
@@ -138,4 +132,4 @@ module.exports = function (eleventyConfig) {
       output: "build",
     },
   };
-};
+}

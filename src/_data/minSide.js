@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   myTasks: [
     {
       title: "Du har motatt et vedtak på søknaden din om foreldrepenger",

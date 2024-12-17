@@ -1,7 +1,7 @@
-const markdownIt = require("markdown-it");
-const cheerio = require("cheerio");
-const markdownItAnchor = require("markdown-it-anchor");
-const slugify = require("slugify");
+import markdownIt from "markdown-it";
+import * as cheerio from "cheerio";
+import markdownItAnchor from "markdown-it-anchor";
+import slugify from "slugify";
 
 const markdown = (value) => {
   return new markdownIt({
@@ -128,7 +128,7 @@ const tocData = (content, tags = ["h3"]) => {
   return headings;
 };
 
-module.exports = {
+export {
   markdown,
   markdownInline,
   filterByArray,

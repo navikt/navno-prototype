@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   situationList: [
     {
       title: "Er arbeidsledig eller permittert",

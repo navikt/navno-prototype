@@ -2475,7 +2475,7 @@ const products = [
   },
 ];
 
-module.exports = {
+export default {
   products,
   activeRole: "Arbeidsgiver",
 };

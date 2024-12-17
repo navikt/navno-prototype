@@ -1,4 +1,4 @@
-const htmlMinifier = require("html-minifier-terser");
+import htmlMinifier from "html-minifier-terser";
 
 const minifyHtml = (content, outputPath) => {
   const env = process.env.ELEVENTY_ENV;
@@ -22,4 +22,4 @@ const dummifyLinks = (content) => {
   return content.replace(regexPattern, "javascript:void(0);");
 };
 
-module.exports = { minifyHtml, dummifyLinks };
+export { minifyHtml, dummifyLinks };

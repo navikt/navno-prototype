@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   tags: ["pleiepenger"],
   type: "Pengestøtte",
   title: "Pleiepenger for sykt barn",

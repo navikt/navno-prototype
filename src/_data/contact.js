@@ -1,4 +1,4 @@
-module.exports = [
+export default [
   {
     type: "chat",
     icon: "/src/_includes/svg/icons/chat2.svg",

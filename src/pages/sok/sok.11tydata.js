@@ -1,11 +1,8 @@
-module.exports = {
+export default {
   filters: [
     {
       title: "Innhold",
-      children: [
-        "Informasjon",
-        "Kontor",
-      ],
+      children: ["Informasjon", "Kontor"],
     },
     {
       title: "English",
