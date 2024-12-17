@@ -137,7 +137,6 @@ export default {
     fontFamily: {
       sans: ['"Source Sans 3"', "Arial", "sans-serif"],
       serif: ['"Source Serif 4"', "serif"],
-      recursive: ['"Recursive"', "sans-serif"],
       system: [
         "ui-sans-serif",
         "system-ui",
