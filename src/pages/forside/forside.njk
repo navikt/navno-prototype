@@ -14,9 +14,9 @@ alpine: true
     <div class="grid pt-8 pb-8 grid-cols-combi ">
       <div class="col-container">
         <h2 class="text-2xl font-semibold">Hva kan vi hjelpe deg med?</h2>
-        <ul class="grid gap-2 mt-4 sm:gap-4 lg:text-xl sm:grid-cols-2 xl:grid-cols-3 xl:gap-6">
+        <ul class="grid gap-3 mt-4 md:text-xl sm:grid-cols-2 xl:grid-cols-3 sm:gap-6">
           {%- for area in areaList -%}
-            <li class="relative grid items-center overflow-clip break-inside-avoid pl-5 sm:pl-8 pr-28 sm:pr-36 py-3 rounded-lg min-h-20 sm:min-h-24 xl:min-h-32 transition underline hover:text-blue-600 hover:decoration-2 bg-deepblue-50 has-[a:hover]:bg-slate-100 has-[a:focus-visible]:ring has-[a:focus-visible]:ring-blue-600 c-area-card">
+            <li class="relative grid items-center overflow-clip break-inside-avoid pl-5 sm:pl-8 pr-28 sm:pr-36 py-3 rounded-lg min-h-20 md:min-h-32 transition underline hover:text-blue-600 hover:decoration-2 bg-deepblue-50 has-[a:hover]:bg-slate-100 has-[a:focus-visible]:ring has-[a:focus-visible]:ring-blue-600 c-area-card">
               <a class="leading-snug focus-visible:outline-none after:absolute after:inset-0 text-balance hover:decoration-2" href="{{ area.href or '#'}}">
                 <span>{{ area.title | safe }}</span>
               </a>
@@ -30,7 +30,7 @@ alpine: true
     <div class="grid pt-8 pb-8 grid-cols-combi">
       <div class="col-container">
         <h2 class="text-2xl font-semibold">Snarveier</h2>
-        <ul class="mt-3 text-lg sm:gap-8 sm:columns-2">
+        <ul class="mt-3 text-lg sm:gap-6 sm:columns-2">
           {%- for shortcut in shortcutsList -%}
             <li class="block -my-px border-y border-slate-300">
               <a class="relative flex items-center justify-start gap-2 px-2 py-3 text-blue-600 focus-visible:bg-white focus-visible:z-10 focus-visible:rounded focus-visible:outline-none hover:underline hover:decoration-2 focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2 focus-visible:ring-offset-white" href="#">
@@ -47,7 +47,7 @@ alpine: true
     <div class="grid pt-8 pb-12 bg-white grid-cols-combi">
       <div class="col-container">
         <h2 class="text-2xl font-semibold ">Aktuelt</h2>
-        <div class="grid gap-3 mt-3 sm:grid-cols-2 sm:gap-8">
+        <div class="grid gap-3 mt-3 sm:grid-cols-2 sm:gap-6">
           {%- for news in newsList -%}
           <article class="relative grid pl-5 pr-16 py-5 rounded-lg bg-slate-100 has-[a:hover]:bg-blue-50 has-[a:focus-visible]:ring has-[a:focus-visible]:ring-blue-600 content-between hover:ring-2 hover:ring-blue-600">
             <h3 class="mb-auto text-lg leading-snug">
@@ -70,7 +70,7 @@ alpine: true
     <div class="grid pt-10 pb-20 bg-slate-100 grid-cols-combi ">
       <div class="col-container">
         <h2 class="text-2xl font-semibold ">Kontakt oss</h2>
-        <div class="grid gap-8 mt-4 sm:grid-cols-2">
+        <div class="grid gap-6 mt-4 sm:grid-cols-2">
           <div class="relative px-5 py-3.5 rounded-bl-none focus-within:rounded-bl-lg rounded-lg bg-white has-[a:focus-visible]:ring has-[a:focus-visible]:ring-blue-600 group has-[a:hover]:drop-shadow">
             <h3 class="text-lg ">
               <a class="text-blue-600 underline hover:decoration-2 after:inset-0 after:absolute after:z-10 focus-visible:outline-none" href="#">Du kan chatte med oss</a>

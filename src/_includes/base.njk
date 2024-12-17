@@ -19,7 +19,7 @@
     <link rel="preload" href="/assets/fonts/SourceSans3-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="/assets/main.min.css" type="text/css" />
     {%- block styles -%}{%- endblock -%}
-    {% if alpine %}      
+    {% if alpine %}
     <script src="/assets/alpine-intersect-plugin.min.js" type="text/javascript" defer></script>
     <script src="/assets/alpine.min.js" type="text/javascript" defer></script>
     {% endif %}
@@ -27,7 +27,7 @@
     {%- block script -%}{%- endblock -%}
   </head>
   <body
-    id="toppen" class="min-h-full text-base leading-relaxed overflow-x-hidden overflow-y-scroll {{ bodyClass }}" x-data="{ indexOpen: false, audienceDropdownOpen: false, languageDropdownOpen: false, loggedIn: false, loginOpen: false, menuOpen: false, myPageOpen: false, newNotifications: true }">
+    id="toppen" class="min-h-full text-base leading-relaxed overflow-x-hidden overflow-y-scroll {{ bodyClass }}" x-data="{ indexOpen: false, audienceDropdownOpen: false, languageDropdownOpen: false, loggedIn: true, loginOpen: false, menuOpen: false, myPageOpen: false, newNotifications: true }">
 
     {%- if environment === 'production' -%}
     {# {%- include "partials/banner.njk" -%} #}

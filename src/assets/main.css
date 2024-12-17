@@ -31,6 +31,9 @@
   b {
     font-weight: 500;
   }
+  :where([hidden]) {
+    display: none;
+  }
 }
 
 @layer components {
