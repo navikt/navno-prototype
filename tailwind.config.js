@@ -126,6 +126,7 @@ const brandColors = {
   },
 };
 
+/** @type {import('@tailwindcss/postcss').Config} */
 module.exports = {
   content: ["./src/**/*.{njk,md,json,js,svg}"],
   theme: {
