@@ -177,7 +177,7 @@ permalink: false
                 data-area="alle {% for item in product.area %}{{ item | slugify }} {% endfor %}"
               >
 
-                <div class="relative flex items-center gap-4 p-4 pr-8 text-left rounded-lg md:py-6 focus-within:z-20" x-bind:class="expanded ? 'bg-deepblue-50 ring-1 ring-deepblue-50 fine:hover:bg-deepblue-100' : 'fine:hover:bg-deepblue-100'">
+                <div class="relative flex items-center gap-4 p-4 pr-8 text-left rounded-lg md:py-6 focus-within:z-20" x-bind:class="expanded ? 'bg-deepblue-50 ring-1 ring-deepblue-50 pointer-fine:hover:bg-deepblue-100' : 'pointer-fine:hover:bg-deepblue-100'">
                   {%- if product.icon -%}
                     {{ product.icon | svgContents('w-12 h-12 shrink-0') | safe }}
                   {%- endif -%}
@@ -199,11 +199,11 @@ permalink: false
                     x-on:click="expanded = !expanded"
                     class="absolute inset-0 flex items-center justify-end w-full pr-3 rounded-sm sm:rounded-lg group focus:outline-none focus-visible:ring focus-visible:ring-inset focus-visible:ring-blue-800 focus-visible:ring-offset-2 focus-visible:ring-offset-white"
                     aria-expanded="false"
-                    x-bind:class="expanded ? 'ring ring-white' : 'fine:hover:ring fine:hover:ring-white'"
+                    x-bind:class="expanded ? 'ring ring-white' : 'pointer-fine:hover:ring pointer-fine:hover:ring-white'"
                     x-bind:aria-expanded="expanded"
                   >
                     <span class="sr-only">Vis</span>
-                    {{ '/src/_includes/svg/icons/chevron-down.svg' | svgContents('mr-1.5 w-5 h-5 text-deepblue-400 fine:group-hover:text-deepblue-600 group-aria-expanded:text-deepblue-600 transition duration-100 group-aria-expanded:rotate-180') | safe }}
+                    {{ '/src/_includes/svg/icons/chevron-down.svg' | svgContents('mr-1.5 w-5 h-5 text-deepblue-400 pointer-fine:group-hover:text-deepblue-600 group-aria-expanded:text-deepblue-600 transition duration-100 group-aria-expanded:rotate-180') | safe }}
                   </button>
                 </div>
 
@@ -228,7 +228,7 @@ permalink: false
               Klage eller anke på vedtak?
             </h3>
             <p class="mt-2 max-w-prose">Hvis du har fått et vedtak fra NAV og du er uenig i vedtaket, har du rett til å klage eller anke.</p>
-            <p class="mb-2 mt-7"><a href="#" class="underline text-deepblue-600 fine:hover:decoration-2 fine:hover:text-deepblue-700">Les mer om dine klagerettigheter</a>.</p>
+            <p class="mb-2 mt-7"><a href="#" class="underline text-deepblue-600 pointer-fine:hover:decoration-2 pointer-fine:hover:text-deepblue-700">Les mer om dine klagerettigheter</a>.</p>
           </div>
         </div>
       </div>

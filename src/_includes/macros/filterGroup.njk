@@ -16,7 +16,7 @@
         type="button"
         class="{{ buttonClasses }}"
         x-on:click="{{ params.value }} = 'alle', updateCount($refs)"
-        x-bind:class="{{ params.value }} === 'alle' ? 'text-white bg-deepblue-600' : 'bg-deepblue-50 fine:hover:bg-deepblue-100'"
+        x-bind:class="{{ params.value }} === 'alle' ? 'text-white bg-deepblue-600' : 'bg-deepblue-50 pointer-fine:hover:bg-deepblue-100'"
       >Alle</button>
     </li>
     {%- endif -%}
@@ -27,7 +27,7 @@
         type="button"
         class="{{ buttonClasses }}"
         x-on:click="{{ params.value }} = '{{ item | slugify }}', updateCount($refs)"
-        x-bind:class="{{ params.value }} === '{{ item | slugify }}' ? 'text-white bg-deepblue-600' : 'bg-deepblue-50 fine:hover:bg-deepblue-100'"
+        x-bind:class="{{ params.value }} === '{{ item | slugify }}' ? 'text-white bg-deepblue-600' : 'bg-deepblue-50 pointer-fine:hover:bg-deepblue-100'"
       >{{ item | safe }}</button>
     </li>
     {%- endfor -%}

@@ -163,7 +163,7 @@
                   x-show="filterItem($el)"
                   data-type="alle {% for item in product.type %}{{ item | slugify }} {% endfor %}"
                 >
-                  <div class="relative flex items-center gap-4 p-4 pr-8 text-left rounded-lg md:py-6 focus-within:z-20" x-bind:class="expanded ? 'bg-deepblue-50 ring-1 ring-deepblue-50 fine:hover:bg-deepblue-100' : 'fine:hover:bg-deepblue-100'">
+                  <div class="relative flex items-center gap-4 p-4 pr-8 text-left rounded-lg md:py-6 focus-within:z-20" x-bind:class="expanded ? 'bg-deepblue-50 ring-1 ring-deepblue-50 pointer-fine:hover:bg-deepblue-100' : 'pointer-fine:hover:bg-deepblue-100'">
 
                     {%- if product.icon -%}
                       {{ product.icon | svgContents('w-12 h-12 shrink-0') | safe }}
@@ -184,7 +184,7 @@
                         x-on:click="expanded = !expanded"
                         class="absolute inset-0 flex items-center justify-end w-full pr-4 rounded-sm sm:rounded-lg group focus:outline-none focus-visible:ring focus-visible:ring-inset focus-visible:ring-blue-800 focus-visible:ring-offset-2 focus-visible:ring-offset-white"
                         aria-expanded="false"
-                        x-bind:class="expanded ? 'ring ring-white' : 'fine:hover:ring fine:hover:ring-white'"
+                        x-bind:class="expanded ? 'ring ring-white' : 'pointer-fine:hover:ring pointer-fine:hover:ring-white'"
                         x-bind:aria-expanded="expanded"
                       >
                         <span class="sr-only">Vis</span>

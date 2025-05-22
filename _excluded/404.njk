@@ -13,13 +13,13 @@ bodyClass: 'flex flex-col min-h-full'
 <header class="relative z-50 grid bg-white grid-cols-layout shadow-border isolate">
   <nav class="col-full md:col-wide grid grid-cols-[auto_1fr] justify-center sm:gap-x-16">
     <div class="flex items-center p-2 pl-clamp-gap md:pl-0 md:mr-auto">
-      <a href="/" class="block p-2 text-red-500 rounded-sm fine:hover:text-red-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-800 xs:-ml-2">
+      <a href="/" class="block p-2 text-red-500 rounded-sm pointer-fine:hover:text-red-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-800 xs:-ml-2">
         {{ '/src/_includes/svg/logo.svg' | svgContents('w-auto h-5') | safe }}
         <span class="sr-only">NAV</span>
       </a>
     </div>
     <div class="flex self-center gap-2 py-2 justify-self-end md:col-span-1">
-      <button class="flex flex-col xs:flex-row items-center justify-center p-1 xs:pl-2.5 xs:pr-3 leading-none font-semibold gap-0.5 text-blue-500 rounded min-w-16 xs:py-2 xs:text-lg fine:hover:bg-deepblue-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-800 group" type="button" x-on:click="menuOpen = !menuOpen, myPageOpen = false, loginOpen = false" x-bind:class="menuOpen && 'bg-deepblue-50'" x-bind:aria-expanded="menuOpen">
+      <button class="flex flex-col xs:flex-row items-center justify-center p-1 xs:pl-2.5 xs:pr-3 leading-none font-semibold gap-0.5 text-blue-500 rounded min-w-16 xs:py-2 xs:text-lg pointer-fine:hover:bg-deepblue-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-800 group" type="button" x-on:click="menuOpen = !menuOpen, myPageOpen = false, loginOpen = false" x-bind:class="menuOpen && 'bg-deepblue-50'" x-bind:aria-expanded="menuOpen">
         <template x-if="!menuOpen">
           {{ '/src/_includes/svg/icons/menusearch.svg' | svgContents('w-6 h-6 sm:w-7 sm:h-7 shrink-0 pointer-events-none') | safe }}
         </template>

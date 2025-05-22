@@ -64,7 +64,7 @@ alpine: true
                       <button
                         type="button"
                         class="flex items-baseline flex-1 gap-2 py-2.5 leading-snug text-left transition-all duration-200 ease-out rounded-md"
-                        x-bind:class="searchFilter === '{{ item.title | slugify }}' ? 'cursor-default px-4' : 'fine:hover:bg-slate-100 fine:hover:px-4 fine:hover:-mx-4'"
+                        x-bind:class="searchFilter === '{{ item.title | slugify }}' ? 'cursor-default px-4' : 'pointer-fine:hover:bg-slate-100 pointer-fine:hover:px-4 pointer-fine:hover:-mx-4'"
                         x-on:click="searchFilter = '{{ item.title | slugify }}'"
                       >
                         <span
