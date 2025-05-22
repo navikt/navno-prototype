@@ -1,7 +1,7 @@
 {%- set audience = audienceOverride or menu.audience -%}
 
 <header class="relative z-50 bg-white">
-  <div class="text-sm text-center bg-slate-100 sm:hidden px-edge">
+  <div class="text-center text-fluid-16-18 bg-slate-100 sm:hidden px-edge">
     <button class="py-1 tracking-widest uppercase cursor-default" x-on:click="menuOpen = !menuOpen, myPageOpen = false, loginOpen = false" type="button">{{ activeRole }}</button>
   </div>
 
@@ -21,7 +21,7 @@
         <div class="w-px h-8 hidden sm:block rotate-[22.5deg] origin-center mx-2 bg-slate-300"></div>
 
         {# Audience #}
-        <div class="self-center hidden pl-3 text-lg leading-tight sm:block">
+        <div class="self-center hidden pl-3 leading-tight text-fluid-20-22 sm:block">
           <button class="cursor-default" x-on:click="menuOpen = !menuOpen, myPageOpen = false, loginOpen = false" type="button">
             {{ activeRole }}
           </button>
@@ -30,7 +30,7 @@
 
 
       {# Menu Buttons #}
-      {%- set menuButtonClasses = "flex flex-col xs:flex-row items-center justify-center pl-2 pr-3 leading-none font-semibold gap-1 text-blue-600 rounded min-w-16 py-2 text-sm xs:text-base pointer-fine:hover:bg-blue-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-800 group peer" -%}
+      {%- set menuButtonClasses = "flex flex-col xs:flex-row items-center justify-center pl-2 pr-3 leading-none font-semibold gap-1 text-blue-600 rounded min-w-16 py-2 text-fluid-16-18 xs:text-fluid-18-20 pointer-fine:hover:bg-blue-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-800 group peer" -%}
 
       <div class="flex self-center py-2 -mr-1 sm:gap-1 justify-self-end">
         <button class="{{ menuButtonClasses }}" type="button" x-show="!loggedIn" x-on:click="loginOpen = !loginOpen, menuOpen = false, myPageOpen = false" x-bind:aria-expanded="loginOpen">
@@ -75,5 +75,5 @@
   x-transition:enter="transition ease-out duration-75"
   x-transition:enter-start="opacity-0"
   x-transition:enter-end="opacity-100"
-  x-bind:hidden="!overlayOpen"
+  x-bind:hidden="overlayOpen"
   hidden></button>

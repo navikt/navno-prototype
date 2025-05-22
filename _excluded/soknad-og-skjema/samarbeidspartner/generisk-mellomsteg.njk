@@ -24,7 +24,7 @@
 
 
 {%- block content -%}
-  <main class="grid py-8 md:py-12 text-lg grid-cols-layout min-h-[70vh]" x-data="{ stepperOpen: false }">
+  <main class="grid py-8 md:py-12 text-fluid-20-22 grid-cols-layout min-h-[70vh]" x-data="{ stepperOpen: false }">
     <div class="relative col-wide max-w-prose md:max-w-none mx-auto md:mx-0 md:grid md:grid-cols-[6rem_auto] md:gap-8 items-start mb-12 w-full auto-rows-min">
 
       {# Pictogram #}
@@ -32,8 +32,8 @@
 
       {# Intro #}
       <div class="md:col-start-2 md:row-start-1">
-        <h1 class="text-3xl font-semibold leading-tight md:text-5xl md:leading-tight">{{ title | safe }}</h1>
-        <p class="mt-2 text-base tracking-wider uppercase opacity-70">
+        <h1 class="text-fluid-32-36 font-semibold leading-tight md:text-5xl md:leading-tight">{{ title | safe }}</h1>
+        <p class="mt-2 text-fluid-18-20 tracking-wider uppercase opacity-70">
           {{ kicker | upper }}
           {{ '–' if formId }}
           {{ formId | safe }}
@@ -41,7 +41,7 @@
       </div>
 
       <div class="md:col-start-2 md:grid md:grid-cols-[2.2fr_0.8fr] gap-x-16 items-start gap-4">
-        <div class="mt-12 text-lg max-w-prose markup">
+        <div class="mt-12 text-fluid-20-22 max-w-prose markup">
           <p>Søknad starter her …</p>
           <p class="mt-12"><a class="text-blue-500 underline hover:decoration-2" href="/soknad-og-skjema-samarbeidspartner/">Tilbake</a>
         </div>

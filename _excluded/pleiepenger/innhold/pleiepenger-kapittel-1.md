@@ -77,7 +77,7 @@ Når et barn er innlagt på sykehus har begge foreldre som hovedregel rett til 1
 Sykdom som luftveisinfeksjoner, omgangssyke og liknende, vil normalt ikke gi rett til pleiepenger. Da kan omsorgspenger for bruk av [omsorgsdager (hjemme med sykt barn dager)](#) være aktuelt.
 
 <article class="relative px-6 py-4 grid gap-2 rounded-lg bg-slate-100 has-[a:hover]:bg-slate-200">
-  <a class="font-semibold text-lg/snug text-balance before:absolute before:inset-0" href="#">Omsorgspenger (hjemme med sykt barn-dager)</a>
+  <a class="font-semibold text-fluid-20-22/snug text-balance before:absolute before:inset-0" href="#">Omsorgspenger (hjemme med sykt barn-dager)</a>
   <p>Sikrer deg inntekt når du må være borte fra jobb fordi barnet ditt for eksempel har omgangssyke.</p>
 </article>
 

@@ -116,7 +116,6 @@ export default function (eleventyConfig) {
     enabled: true,
     showVersion: true,
     port: 8888,
-    middleware: [compression({ level: 9 })],
   });
 
   eleventyConfig.setDataDeepMerge(true);

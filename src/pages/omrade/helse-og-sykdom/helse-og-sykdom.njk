@@ -13,8 +13,8 @@ contactTheme: white
       <div class="relative flex items-end justify-between col-container">
         <div class="flex-1 pt-8 pb-6">
           {# <div class="tracking-wider text-gray-700 small-caps">{{ category | safe }}</div> #}
-          <h1 class="-translate-x-[0.05em] font-extrabold text-4xl/tight text-pretty text-brand-purple-deep">{{ title | safe }}</h1>
-          <h2 class="col-span-2 col-start-1 mt-1 text-lg xs:col-start-1 xs:col-span-1 max-w-prose">Hva er situasjonen din?</h2>
+          <h1 class="-translate-x-[0.05em] font-extrabold text-fluid-36-48/tight text-pretty text-brand-purple-deep">{{ title | safe }}</h1>
+          <h2 class="col-span-2 col-start-1 mt-1 text-fluid-20-22 xs:col-start-1 xs:col-span-1 max-w-prose">Hva er situasjonen din?</h2>
         </div>
         {{ '/src/_includes/svg/area-illustrations/helse.svg' | svgContents('h-auto min-w-32 max-w-52 w-2/5') | safe }}
       </div>
@@ -26,7 +26,7 @@ contactTheme: white
           <li class="relative flex items-center gap-5 pt-6 pb-6 md:gap-8 md:odd:pr-12 md:even:pl-10 ring-1 ring-slate-300">
             {{ item.icon | svgContents('w-12 h-12 sm:w-16 sm:h-16 shrink-0 mt-1 text-brand-purple-deep') | safe if item.icon }}
             <div class="grid flex-1 gap-1 text-pretty">
-              <a class="font-semibold text-blue-600 hover:underline text-xl/snug hover:text-blue-600 hover:decoration-2 after:absolute after:inset-0" href="#">{{ item.title | safe }}</a>
+              <a class="font-semibold text-blue-600 hover:underline text-fluid-22-24/snug hover:text-blue-600 hover:decoration-2 after:absolute after:inset-0" href="#">{{ item.title | safe }}</a>
               {# <p>{{ item.ingress | safe }}</p> #}
             </div>
           </li>

@@ -30,7 +30,7 @@
   {% include "partials/language.njk" %}
 
   <main
-    class="grid pb-4 text-lg md:pb-12 grid-cols-layout"
+    class="grid pb-4 text-fluid-20-22 md:pb-12 grid-cols-layout"
     x-data="{
       typeFilter: new URLSearchParams(location.search).get('type') || 'alle',
       filterItem(el) {
@@ -79,9 +79,9 @@
       <div class="lg:grid lg:col-start-2 lg:grid-cols-12 lg:gap-x-10 md:pr-20 lg:pr-0">
         {# Intro #}
         <div class="md:col-start-1 md:col-end-9">
-          <h1 class="text-3xl font-semibold leading-tight md:text-5xl md:leading-tight">{{ title | safe }}</h1>
-          <p class="mt-2 text-sm tracking-wider text-gray-700 uppercase">{{ kicker | safe }}</p>
-          <p class="max-w-2xl mt-6 text-xl md:text-2xl">{{ description | safe }}. <a class="text-blue-500 underline hover:decoration-2 hover:text-deepblue-600" href="/soknad-og-skjema-samarbeidspartner/">Bytt rolle</a>.</p>
+          <h1 class="text-fluid-32-36 font-semibold leading-tight md:text-5xl md:leading-tight">{{ title | safe }}</h1>
+          <p class="mt-2 text-fluid-16-18 tracking-wider text-gray-700 uppercase">{{ kicker | safe }}</p>
+          <p class="max-w-2xl mt-6 text-fluid-22-24 md:text-fluid-24-28">{{ description | safe }}. <a class="text-blue-500 underline hover:decoration-2 hover:text-deepblue-600" href="/soknad-og-skjema-samarbeidspartner/">Bytt rolle</a>.</p>
         </div>
 
 
@@ -170,10 +170,10 @@
                     {%- endif -%}
 
                     <div class="grid gap-1">
-                      <h2 class="text-xl font-semibold leading-tight">
+                      <h2 class="text-fluid-22-24 font-semibold leading-tight">
                         {{ product.title | safe }}
                       </h2>
-                      <p class="text-base opacity-80">
+                      <p class="text-fluid-18-20 opacity-80">
                       {%- for item in product.type -%}
                         <span>{{ item }}</span>{{ ', ' if product.type.length > 1 and not loop.last }}
                       {%- endfor -%}
@@ -206,7 +206,7 @@
               {%- endfor -%}
             </div>
 
-            <div x-show="count === 0" class="p-6 py-8 text-center overflow-hidden grid items-center leading-snug rounded-lg bg-gray-100 min-h-[4.75rem] lg:col-span-6">
+            <div x-show="count === 0" class="p-6 py-8 text-center overflow-hidden grid items-center leading-snug rounded-lg bg-gray-100 min-h-19 lg:col-span-6">
               <p class="max-w-prose">Ingen søknader eller skjema er merket med denne kombinasjonen av type og rolle.</p>
             </div>
           </div>

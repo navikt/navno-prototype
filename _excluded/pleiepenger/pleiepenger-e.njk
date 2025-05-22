@@ -16,13 +16,13 @@ permalink: 'produkt/pleiepenger/e/index.html'
 
   <main class="grid py-16 grid-cols-left-1 lg:grid-cols-left-2">
     <div class="col-main lg:col-wide">
-      <div class="text-sm tracking-widest uppercase">{{ type | safe }}</div>
-      <h1 class="mt-1 -translate-x-[0.0625em] font-bold text-4xl/tight text-balance">{{ title | safe }}</h1>
-      <div class="mt-8 text-lg text-pretty max-w-prose">{{ ingress | markdown | safe }}</div>
+      <div class="text-fluid-16-18 tracking-widest uppercase">{{ type | safe }}</div>
+      <h1 class="mt-1 -translate-x-[0.0625em] font-semibold text-fluid-36-48/tight text-balance">{{ title | safe }}</h1>
+      <div class="mt-8 text-fluid-20-22 text-pretty max-w-prose">{{ ingress | markdown | safe }}</div>
 
       {# Audience #}
       <div class="mt-6 -ml-1">
-        <span class="inline-block px-3 py-2 text-sm leading-none rounded-full bg-slate-200 ">
+        <span class="inline-block px-3 py-2 text-fluid-16-18 leading-none rounded-full bg-slate-200 ">
           {{ 'For ' if audience }}{{ audience | lower | safe }}
         </span>
       </div>
@@ -30,11 +30,11 @@ permalink: 'produkt/pleiepenger/e/index.html'
 
     {# Innholdsfortegnelse #}
     <div class="z-10 mt-12 isolate">
-      <h2 class="text-base font-semibold">Innhold på siden</h2>
+      <h2 class="text-fluid-18-20 font-semibold">Innhold på siden</h2>
       <ul class="grid gap-3 mt-2">
         {% for chapter in chapters.slice(0, -1) %}
         <li class="relative py-1">
-          <a class="flex items-end gap-2 p-1 -m-1 text-blue-500 group hover:text-blue-700 text-base/snug hover:underline" href="#{{ chapter.data.title | slugify }}">
+          <a class="flex items-end gap-2 p-1 -m-1 text-blue-500 group hover:text-blue-700 text-fluid-18-20/snug hover:underline" href="#{{ chapter.data.title | slugify }}">
             {{ chapter.data.title }}
             <span class="flex-1 h-px min-w-4 -translate-y-[0.25em] bg-dotted-x" aria-hidden="true"></span>
             {{ '/src/_includes/svg/icons/arrow-down.svg' | svgContents('w-8 h-8 bg-slate-100 p-1.5 rounded-full group-hover:bg-blue-500 group-hover:text-white') | safe }}
@@ -52,10 +52,10 @@ permalink: 'produkt/pleiepenger/e/index.html'
       {% set chapterIndex = loop.index %}
       <section class="grid pt-12 col-full grid-cols-left-1 lg:grid-cols-left-2" id="{{ chapter.data.title | slugify }}"  x-data="{ tocOpen: false }">
         <div class=" col-main lg:col-wide">
-          <div class="grid items-end pl-8 rounded-lg bg-slate-100 pt-2xl aspect-[2/1]">
+          <div class="grid items-end pl-8 rounded-lg bg-slate-100 pt-2xl aspect-2/1">
             <span class="font-black -mb-9 text-white text-[20em]/[0.8]">{{ loop.index }}</span>
           </div>
-          <h2 class="mt-8 font-bold text-3xl/snug text-balance">{{ chapter.data.title }}</h2>
+          <h2 class="mt-8 font-semibold text-fluid-32-36/snug text-balance">{{ chapter.data.title }}</h2>
         </div>
 
         {# Chapter TOC #}
@@ -102,7 +102,7 @@ permalink: 'produkt/pleiepenger/e/index.html'
       </section>
     {% endfor %}
 
-    <div class="pt-2 mt-12 text-sm italic border-t border-slate-200 col-main">{{ published | safe }}</div>
+    <div class="pt-2 mt-12 text-fluid-16-18 italic border-t border-slate-200 col-main">{{ published | safe }}</div>
   </main>
 {%- endblock -%}
 

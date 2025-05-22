@@ -4,10 +4,10 @@
 
 {%- macro filterGroup(params) -%}
 <fieldset class="">
-  {# text-sm tracking-widest uppercase opacity-70 #}
+  {# text-fluid-16-18 tracking-widest uppercase opacity-70 #}
   <legend class="font-semibold">{{ params.title }}</legend>
 
-  {%- set buttonClasses = "inline-flex cursor-pointer px-4 pt-1.5 pb-1.5 leading-tight text-base text-left rounded-full focus:ring-2" -%}
+  {%- set buttonClasses = "inline-flex cursor-pointer px-4 pt-1.5 pb-1.5 leading-tight text-fluid-18-20 text-left rounded-full focus:ring-2" -%}
 
   <ul class="flex flex-wrap items-start mt-2.5 gap-x-2 gap-y-2.5">
     {%- if params.showAll -%}

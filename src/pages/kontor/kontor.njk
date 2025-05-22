@@ -14,7 +14,7 @@ alpine: true
       {{ box.icon | svgContents('w-7 h-7 shrink-0') | safe }}
     </div>
     <div class="px-6 py-8 bg-white md:py-12 md:px-10">
-      <h2 class="mt-8 text-2xl font-semibold">{{ box.title | safe }}</h2>
+      <h2 class="mt-8 text-fluid-24-28 font-semibold">{{ box.title | safe }}</h2>
       <div class="mt-2 prose markdown">
         {{ box.content | markdown | safe }}
       </div>
@@ -28,28 +28,28 @@ alpine: true
 
     <div class="grid py-16 grid-cols-combi">
       <div class="mb-8 col-main">
-        <h1 class="text-3xl font-semibold leading-tight text-gray-900 md:text-4xl">
+        <h1 class="text-fluid-32-36 font-semibold leading-tight text-gray-900 md:text-fluid-36-48">
           NAV Andeby
         </h1>
         <p class="flex items-baseline gap-4 mt-1">
-          <span class="text-sm tracking-wider text-gray-700 uppercase">
+          <span class="text-fluid-16-18 tracking-wider text-gray-700 uppercase">
             NAV kontor
           </span>
           <span aria-hidden="true">|</span>
-          <span class="text-sm text-gray-600">Lokalkontor for Andeby, Gåseby og Fjærby</span>
+          <span class="text-fluid-16-18 text-gray-600">Lokalkontor for Andeby, Gåseby og Fjærby</span>
         </p>
       </div>
 
       <div class="col-main">
         <div class="p-8 bg-orange-50">
-          <h3 class="text-xl font-semibold">Adresse</h3>
+          <h3 class="text-fluid-22-24 font-semibold">Adresse</h3>
           <address class="mt-1">
             Kvakkegata 24,<br />
             1234 Andeby
           </address>
-          <p class="mt-2 text-sm">Bruk inngang ved lekeplass</p>
+          <p class="mt-2 text-fluid-16-18">Bruk inngang ved lekeplass</p>
 
-          <h3 class="text-xl font-semibold mt-7">Åpningstider når du ikke har avtale</h3>
+          <h3 class="text-fluid-22-24 font-semibold mt-7">Åpningstider når du ikke har avtale</h3>
           <table class="mt-2 text-left">
             <tr>
               <th class="py-0.5 w-24 font-normal">Mandag</th>
@@ -82,7 +82,7 @@ alpine: true
         </div>
 
         <div class="p-8 mt-7 bg-gray-50">
-          <p>Telefonnummeret til NAV er <span class="block text-2xl font-semibold leading-tight">55 55 33 33</span></p>
+          <p>Telefonnummeret til NAV er <span class="block text-fluid-24-28 font-semibold leading-tight">55 55 33 33</span></p>
           <p class="pt-4">Du kan ikke ringe direkte til NAV-kontoret.</p>
         </div>
       </div>

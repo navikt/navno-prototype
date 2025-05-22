@@ -2,8 +2,8 @@
 <div class="absolute inset-x-0 z-40 grid w-full h-0 grid-cols-combi top-full " x-bind:class="myPageOpen ? 'opacity-0 animate-dropdown' : 'hidden'" x-bind:hidden="!myPageOpen" hidden>
   <div class="sm:max-w-xl w-full bg-white rounded-b-lg shadow-lg md:max-h-[92vh] sm:col-container sm:justify-self-end">
     <p class="grid pt-5 pb-4 border-b mx-edge sm:mx-6 border-slate-200" x-on:click="newNotifications = !newNotifications">
-      <span class="text-xs tracking-wider uppercase opacity-80">Logget inn</span>
-      <span class="text-xl font-semibold">Isac Norland</span>
+      <span class="tracking-wider uppercase text-fluid-14-16 opacity-80">Logget inn</span>
+      <span class="font-semibold text-fluid-22-24">Isac Norland</span>
     </p>
     <p>
       <a href="#" class="flex items-center gap-2 py-3 -mt-px text-blue-600 px-edge sm:px-6 pointer-fine:hover:bg-blue-500 pointer-fine:hover:text-white">
@@ -19,9 +19,9 @@
       </a>
     </p>
     <div class="bg-slate-100 border-b relative border-slate-200 border-t max-h-[55dvh] overflow-y-auto overscroll-contain fancy-scroll" x-show="newNotifications">
-      <div class="sticky inset-x-0 top-0 h-3 -mb-3 bg-gradient-to-b from-slate-100 to-transparent mix-blend-multiply"></div>
+      <div class="sticky inset-x-0 top-0 h-3 -mb-3 bg-linear-to-b from-slate-100 to-transparent mix-blend-multiply"></div>
       <div class="py-4 sm:p-6 px-edge">
-        <h2 class="text-lg font-semibold">Varsler</h2>
+        <h2 class="font-semibold text-fluid-20-22">Varsler</h2>
         <div class="grid gap-1 mt-2">
           {%- for item in minSide.notifications -%}
           {%- if loop.index < 5 %}           
@@ -33,10 +33,10 @@
                 <a class="text-blue-600 group-hover:underline after:absolute after:inset-0 after:z-10" href="#">
                   {{ item.title | safe }}
                 </a>
-                <p class="text-sm opacity-80">{{ item.timestamp }}
+                <p class="text-fluid-16-18 opacity-80">{{ item.timestamp }}
                   {{ '   •   ' if item.tags }}
                   {%- for tag in item.tags if item.tags -%}
-                    <span class="px-2 text-slate-800 leading-none py-1 inline-block text-sm rounded {{ tag.color or "bg-slate-200" }}">{{ tag.title | safe }}</span>
+                    <span class="px-2 text-slate-800 leading-none py-1 inline-block text-fluid-16-18 rounded {{ tag.color or "bg-slate-200" }}">{{ tag.title | safe }}</span>
                   {%- endfor -%}
                 </p>
 
@@ -47,7 +47,7 @@
           {%- endfor -%}
         </div>
       </div>
-      <div class="sticky inset-x-0 bottom-0 h-3 bg-gradient-to-t from-slate-100 to-transparent mix-blend-multiply"></div>
+      <div class="sticky inset-x-0 bottom-0 h-3 bg-linear-to-t from-slate-100 to-transparent mix-blend-multiply"></div>
     </div>
     <div class="grid">
       <div x-show="!newNotifications" class="border-t border-slate-200 mx-clamp-gap sm:mx-6"></div>

@@ -19,7 +19,7 @@ bodyClass: 'flex flex-col min-h-full'
       </a>
     </div>
     <div class="flex self-center gap-2 py-2 justify-self-end md:col-span-1">
-      <button class="flex flex-col xs:flex-row items-center justify-center p-1 xs:pl-2.5 xs:pr-3 leading-none font-semibold gap-0.5 text-blue-500 rounded min-w-16 xs:py-2 xs:text-lg pointer-fine:hover:bg-deepblue-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-800 group" type="button" x-on:click="menuOpen = !menuOpen, myPageOpen = false, loginOpen = false" x-bind:class="menuOpen && 'bg-deepblue-50'" x-bind:aria-expanded="menuOpen">
+      <button class="flex flex-col xs:flex-row items-center justify-center p-1 xs:pl-2.5 xs:pr-3 leading-none font-semibold gap-0.5 text-blue-500 rounded min-w-16 xs:py-2 xs:text-fluid-20-22 pointer-fine:hover:bg-deepblue-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-800 group" type="button" x-on:click="menuOpen = !menuOpen, myPageOpen = false, loginOpen = false" x-bind:class="menuOpen && 'bg-deepblue-50'" x-bind:aria-expanded="menuOpen">
         <template x-if="!menuOpen">
           {{ '/src/_includes/svg/icons/menusearch.svg' | svgContents('w-6 h-6 sm:w-7 sm:h-7 shrink-0 pointer-events-none') | safe }}
         </template>
@@ -38,10 +38,10 @@ bodyClass: 'flex flex-col min-h-full'
   <div class="relative flex flex-col col-wide py-clamp-gap">
     <div class="relative z-10">
       <h1 class="grid leading-snug">
-        <span class="text-sm md:text-base tracking-wide font-semibold uppercase text-red-500 translate-x-0.5">{{ kicker }}</span>
-        <span class="text-3xl font-semibold md:text-5xl">{{ title }}</span>
+        <span class="text-fluid-16-18 md:text-fluid-18-20 tracking-wide font-semibold uppercase text-red-500 translate-x-0.5">{{ kicker }}</span>
+        <span class="text-fluid-32-36 font-semibold md:text-5xl">{{ title }}</span>
       </h1>
-      <p class="max-w-xs mt-4 text-lg">{{ description | safe }}</p>
+      <p class="max-w-xs mt-4 text-fluid-20-22">{{ description | safe }}</p>
       <p class="mt-8"><a class="bg-blue-50 inline-flex rounded-lg py-2.5 px-6 font-semibold text-blue-600" href="/">Til forsiden</a></p>
     </div>
 

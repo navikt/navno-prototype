@@ -9,19 +9,19 @@
       <div class="mb-3 md:absolute md:-ml-32 sm:mt-3" style="--pictogram: #F5D3E2;">
         {{ '/src/_includes/svg/piktogrammer/produkter/sykepenger.svg' | svgContents('text-brand-purple-deep w-16 h-16 sm:w-24 sm:h-24') | safe  }}
       </div>
-      <div class="text-base font-medium tracking-wider text-gray-700 small-caps">
+      <div class="text-fluid-18-20 font-medium tracking-wider text-gray-700 small-caps">
         {{ category | safe }}
         {% if audience %}
           <span aria-hidden="true" class="inline-block -translate-y-px">—</span>
           {{ audience.current | safe }}
         {% endif %}
       </div>
-      <h1 class="font-bold text-4xl/tight text-pretty text-brand-purple-deep">{{ title | safe }}</h1>
+      <h1 class="font-semibold text-fluid-36-48/tight text-pretty text-brand-purple-deep">{{ title | safe }}</h1>
       <div class="mt-6 prose text-pretty max-w-prose">
-        <p class="text-lg/normal">{{ ingress | safe }}</p>
+        <p class="text-fluid-20-22/normal">{{ ingress | safe }}</p>
 
         {% if audience %}          
-        <p class="text-sm leading-relaxed text-pretty">
+        <p class="text-fluid-16-18 leading-relaxed text-pretty">
           <span>{{ audience.others | markdownInline | safe if audience }}</span>
         </p>
         {% endif %}
@@ -30,11 +30,11 @@
 
     {# Innholdsfortegnelse #}
     <div class="px-5 py-4 mt-8 border-t-[0.625ch] border-brand-purple-deep rounded-b-lg bg-brand-beige" x-intersect:leave="showTopAnchor = true" x-intersect:enter.margin.-400px.0.0.0="showTopAnchor = false">
-      <h2 class="pb-2 text-base font-semibold">Innhold på siden</h2>
+      <h2 class="pb-2 text-fluid-18-20 font-semibold">Innhold på siden</h2>
       <ul class="grid gap-4 py-1">
         {% for chapter in chapters.slice(0, -1) %}
         <li class="grid">
-          <a class="flex gap-1.5 p-1 -m-1 text-blue-600 hover:underline group hover:text-blue-700 text-base/snug hover:decoration-2" href="#{{ chapter.data.title | slugify }}">
+          <a class="flex gap-1.5 p-1 -m-1 text-blue-600 hover:underline group hover:text-blue-700 text-fluid-18-20/snug hover:decoration-2" href="#{{ chapter.data.title | slugify }}">
             {{ '/src/_includes/svg/icons/arrow-right-angle.svg' | svgContents('w-4 h-4') | safe }}
             {{ chapter.data.title }}
           </a>
@@ -50,7 +50,7 @@
         <div class="grid mt-8 mb-4 col-full grid-cols-combi">
           <div class="w-10 h-[0.675ch] bg-[#E6C7D8] mb-5 mt-5"></div>
           <div class="relative">
-            <h2 class="font-bold text-3xl/tight text-balance text-brand-purple-deep">
+            <h2 class="font-semibold text-fluid-32-36/tight text-balance text-brand-purple-deep">
               <a href="#{{ chapter.data.title | slugify }}">
                 <span>{{ chapter.data.title }}</span>
               </a>
@@ -61,11 +61,11 @@
         {# Chapter TOC #}
         {% if chapter.templateContent and chapter.templateContent | tocData | length > 0 and not chapter.data.hideToc %}
         <nav class="relative px-5 pt-3 pb-4 mb-8 rounded-lg bg-brand-beige">
-          <h3 class="pb-2 text-base font-semibold">I dette kapittelet</h3>
+          <h3 class="pb-2 text-fluid-18-20 font-semibold">I dette kapittelet</h3>
           <ul class="grid gap-2 mt-1 justify-items-start">
             {% for item in chapter.templateContent | tocData %}
             <li>
-              <a class="flex items-start gap-1 px-1 py-2 -m-1 text-blue-600 group hover:text-blue-700 text-base/snug hover:underline hover:decoration-2" href="#{{ item.id }}">
+              <a class="flex items-start gap-1 px-1 py-2 -m-1 text-blue-600 group hover:text-blue-700 text-fluid-18-20/snug hover:underline hover:decoration-2" href="#{{ item.id }}">
                 {{ '/src/_includes/svg/icons/arrow-right-angle.svg' | svgContents('w-4 h-4') | safe }}
                 <span>{{ item.text }}</span>
               </a>
@@ -82,7 +82,7 @@
       </section>
     {% endfor %}
 
-    <div class="pt-2 my-12 text-sm italic border-t border-slate-200 col-main">{{ published | safe }}</div>
+    <div class="pt-2 my-12 text-fluid-16-18 italic border-t border-slate-200 col-main">{{ published | safe }}</div>
 
   </main>
 

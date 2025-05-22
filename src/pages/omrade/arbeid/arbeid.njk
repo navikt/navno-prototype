@@ -12,10 +12,10 @@ contactTheme: white
     <div class="grid grid-cols-combi">
       <div class="relative flex items-end justify-between col-container">
         <div class="flex-1 pt-8 pb-6">
-          <h1 class="font-semibold text-4xl/tight text-pretty">
+          <h1 class="font-semibold text-fluid-36-48/tight text-pretty">
             {{ title | safe }}
           </h1>
-          <h2 class="col-span-2 col-start-1 text-lg text-pretty xs:col-start-1 xs:col-span-1 max-w-prose ">Hva er situasjonen din?</h2>
+          <h2 class="col-span-2 col-start-1 text-fluid-20-22 text-pretty xs:col-start-1 xs:col-span-1 max-w-prose ">Hva er situasjonen din?</h2>
         </div>
         {{ '/src/_includes/svg/area-illustrations/arbeid.svg' | svgContents('h-auto min-w-32 max-w-52 w-2/5 ') | safe }}
       </div>
@@ -24,7 +24,7 @@ contactTheme: white
     <div class="grid pt-10 pb-12 grid-cols-combi bg-slate-100">
 
       <div class="mb-10">
-        <p class="text-base leading-snug text-center">
+        <p class="text-fluid-18-20 leading-snug text-center">
           Finn ledige stillinger på
           <a class="text-blue-600 underline hover:text-blue-600 hover:decoration-2" href="#">arbeidsplassen.no</a>
         </p>
@@ -35,10 +35,10 @@ contactTheme: white
           <li class="relative flex items-start gap-2 px-2 pt-4 pb-3 -mt-px border-t border-b text-pretty bg-slate-100 border-slate-300/75 break-inside-avoid">
             {{ '/src/_includes/svg/icons/arrow-right.svg' | svgContents('w-6 h-6 translate-y-1 shrink-0 text-blue-500') | safe }}
             <div class="grid gap-0.5">
-              <h3><a class="font-normal text-blue-600 text-lg/normal hover:text-blue-600 hover:underline hover:decoration-2 after:absolute after:inset-0" href="#">
+              <h3><a class="font-normal text-blue-600 text-fluid-20-22/normal hover:text-blue-600 hover:underline hover:decoration-2 after:absolute after:inset-0" href="#">
                 {{ item.title | safe }}
               </a></h3>
-              {# <p class="text-sm/normal">{{ item.ingress | safe }}</p> #}
+              {# <p class="text-fluid-16-18/normal">{{ item.ingress | safe }}</p> #}
             </div>
           </li>
         {%- endfor -%}

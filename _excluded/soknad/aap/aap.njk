@@ -24,7 +24,7 @@
 
 
 {%- block content -%}
-  <main class="grid py-8 md:py-12 text-lg grid-cols-layout min-h-[70vh]" x-data="{ stepperOpen: false }">
+  <main class="grid py-8 md:py-12 text-fluid-20-22 grid-cols-layout min-h-[70vh]" x-data="{ stepperOpen: false }">
     <div class="relative col-wide max-w-prose md:max-w-none mx-auto md:mx-0 md:grid md:grid-cols-[6rem_auto] md:gap-8 items-start mb-12 w-full auto-rows-min">
 
       {# Pictogram #}
@@ -32,8 +32,8 @@
 
       {# Intro #}
       <div class="md:col-start-2 md:row-start-1">
-        <h1 class="text-3xl font-semibold leading-tight md:text-5xl md:leading-tight">{{ title | safe }}</h1>
-        <p class="mt-2 text-base tracking-wider uppercase opacity-70">
+        <h1 class="text-fluid-32-36 font-semibold leading-tight md:text-5xl md:leading-tight">{{ title | safe }}</h1>
+        <p class="mt-2 text-fluid-18-20 tracking-wider uppercase opacity-70">
           {{ kicker | upper }}
           {{ '–' if formId }}
           {{ formId | safe }}
@@ -41,20 +41,20 @@
       </div>
 
       <div class="md:col-start-2">
-        <div class="mt-6 text-lg max-w-prose">
+        <div class="mt-6 text-fluid-20-22 max-w-prose">
           {% if step.markdown %}
             <div class="markdown">
               {{ step.markdown | markdown | safe }}
             </div>
           {% endif %}
 
-          <h2 class="mt-8 text-xl font-semibold">{{ step.question }}</h2>
+          <h2 class="mt-8 text-fluid-22-24 font-semibold">{{ step.question }}</h2>
           <ul class="grid gap-2 mt-2">
             {% for answer in step.answers %}
             <li>
               <a href="{{ answer.href or '#' }}" class="flex items-center justify-between gap-4 px-4 py-3 border border-gray-400 rounded group sm:px-6 sm:py-4 hover:border-gray-600 hover:bg-blue-50 min-h-20">
                 <span class="grid">
-                <span class="text-xl font-semibold">{{ answer.title }}</span>
+                <span class="text-fluid-22-24 font-semibold">{{ answer.title }}</span>
                 <span>{{ answer.description }}</span>
                 </span>
                 {{ '/src/_includes/svg/icons/chevron-right.svg' | svgContents('w-5 h-5 opacity-80 group-hover:translate-x-1 transition') | safe }}

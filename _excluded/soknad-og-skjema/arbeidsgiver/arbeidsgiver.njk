@@ -18,7 +18,7 @@ permalink: false
   {% include "partials/language.njk" %}
 
   <main
-    class="grid pb-4 text-lg md:pb-12 grid-cols-layout"
+    class="grid pb-4 text-fluid-20-22 md:pb-12 grid-cols-layout"
     x-data="{
       typeFilter: new URLSearchParams(location.search).get('type') || 'alle',
       areaFilter: new URLSearchParams(location.search).get('area') || 'alle',
@@ -79,9 +79,9 @@ permalink: false
       <div class="lg:grid lg:col-start-2 lg:grid-cols-12 lg:gap-x-10 md:pr-20 lg:pr-0">
         {# Intro #}
         <div class="lg:col-start-1 lg:col-end-9">
-          <h1 class="text-3xl font-semibold leading-tight md:text-5xl md:leading-tight">{{ title | safe }}</h1>
-          <p class="mt-2 text-sm tracking-wider text-gray-700 uppercase">{{ kicker | safe }}</p>
-          <p class="max-w-2xl mt-6 text-xl md:text-2xl">{{ description | safe }}</p>
+          <h1 class="text-fluid-32-36 font-semibold leading-tight md:text-5xl md:leading-tight">{{ title | safe }}</h1>
+          <p class="mt-2 text-fluid-16-18 tracking-wider text-gray-700 uppercase">{{ kicker | safe }}</p>
+          <p class="max-w-2xl mt-6 text-fluid-22-24 md:text-fluid-24-28">{{ description | safe }}</p>
         </div>
 
         <div class="mt-6 lg:col-start-1 lg:col-end-9" x-data="{ filterDrawer: false }">
@@ -182,10 +182,10 @@ permalink: false
                     {{ product.icon | svgContents('w-12 h-12 shrink-0') | safe }}
                   {%- endif -%}
                   <div class="grid gap-0.5 pr-16">
-                    <h2 class="text-xl font-semibold leading-tight">
+                    <h2 class="text-fluid-22-24 font-semibold leading-tight">
                       {{ product.title | safe }}
                     </h2>
-                    <p class="pr-12 text-base opacity-80">
+                    <p class="pr-12 text-fluid-18-20 opacity-80">
                       {% for item in product.type %}
                         <span>{{ item }}</span>,
                       {% endfor %}
@@ -219,12 +219,12 @@ permalink: false
               </div>
             {%- endfor -%}
           </div>
-          <div x-show="count === 0" class="p-6 py-8 text-center overflow-hidden grid items-center leading-snug rounded-lg bg-gray-100 min-h-[4.75rem] md:col-span-6">
+          <div x-show="count === 0" class="p-6 py-8 text-center overflow-hidden grid items-center leading-snug rounded-lg bg-gray-100 min-h-19 md:col-span-6">
             <p class="max-w-prose">Ingen søknader eller skjema er merket med denne kombinasjonen av type og område.</p>
           </div>
 
           <div class="p-4 mt-8 bg-orange-100 rounded-lg md:px-6 md:py-5">
-            <h3 class="text-xl font-semibold">
+            <h3 class="text-fluid-22-24 font-semibold">
               Klage eller anke på vedtak?
             </h3>
             <p class="mt-2 max-w-prose">Hvis du har fått et vedtak fra NAV og du er uenig i vedtaket, har du rett til å klage eller anke.</p>

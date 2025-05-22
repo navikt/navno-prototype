@@ -1,55 +1,18 @@
 @import "tailwindcss";
 
 @theme {
-  --screen-xs: "512px";
-  --screen-sm: "768px";
-  --screen-md: "1024px";
-  --screen-lg: "1200px";
-  --screen-xl: "1440px";
-
-  --font-sans: "Source Sans 3", Arial, sans-serif;
-  --font-serif: "Source Serif 4", serif;
-  --font-system: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-
-
-  --text-fluid-12-14: clamp(0.75rem, 0.7083rem + 0.2083vi, 0.875rem);
-  --text-fluid-14-16: clamp(0.875rem, 0.8333rem + 0.2083vi, 1rem);
-  --text-fluid-16-18: clamp(1rem, 0.9583rem + 0.2083vi, 1.125rem);
-  --text-fluid-18-20: clamp(1.125rem, 1.0833rem + 0.2083vi, 1.25rem);
-  --text-fluid-20-22: clamp(1.25rem, 1.2065rem + 0.2174vi, 1.375rem);
-  --text-fluid-22-24: clamp(1.375rem, 1.3333rem + 0.2083vi, 1.5rem);
-  --text-fluid-24-28: clamp(1.5rem, 1.4167rem + 0.4167vi, 1.75rem);
-  --text-fluid-32-36: clamp(2rem, 1.9167rem + 0.4167vi, 2.25rem);
-  --text-fluid-36-48: clamp(2.25rem, 2rem + 1.25vi, 3rem);
-  --text-squishy: clamp(2rem, 10vw + 10%, 8rem);
-
-  /* @link https://utopia.fyi/clamp/calculator?a=320,1280,12—14|14—16|16—18|18—20|20-22|22—24|24—28|32—36|36—48 */
-
-  --spacing-edge: clamp(0.75rem, -1.25rem + 10vi, 10rem);
-  --spacing-page: clamp(1rem, -5rem + 15vi, 10rem);
-
-  --ring-12: 12px;
-
-  --max-width-base: 65.25rem;
-  --max-width-prose: 68ch;
-  --max-width-wide: 75rem;
-
-  --font-weight-bold: 675;
-
-  --flex-basis-side: min(100%, 36rem);
-  --flex-basis-main: min(100%, 48rem);
-
-
-  --shadow-border: 0 -1px 0 inset var(--color-gray-600/10);
-  --shadow-menuActive: 0 -3px 0 inset var(--color-blue-500);
-  --shadow-menuHover: 0 -3px 0 inset var(--color-black/10);
+  --animate-openDrawer: openDrawer 200ms cubic-bezier(0.3, 0.6, 0.25, 1) forwards;
+  --animate-dropdown: dropdown 200ms cubic-bezier(0.3, 0.6, 0.25, 1) forwards;
+  --animate-enter: enter 300ms cubic-bezier(0.3, 0.6, 0.25, 1.45) forwards;
+  --animate-fade-in: fade-in 400ms cubic-bezier(0.3, 0.6, 0.25, 1) forwards;
 
   --blur-xs: 2px;
 
-  --shrink-1: 1;
-  --shrink-5: 5;
-
+  --breakpoint-xs: 512px;
+  --breakpoint-sm: 768px;
+  --breakpoint-md: 1024px;
+  --breakpoint-lg: 1200px;
+  --breakpoint-xl: 1440px;
 
   --color-blue-50: rgb(230 240 255);
   --color-blue-100: rgb(204 225 255);
@@ -160,16 +123,47 @@
   --color-current: currentColor;
   --color-transparent: #fff0;
 
-  --underline-offset-3: 3px;
+  --flex-basis-side: min(100%, 36rem);
+  --flex-basis-main: min(100%, 48rem);
 
-  --animate-openDrawer: openDrawer 200ms cubic-bezier(0.3, 0.6, 0.25, 1) forwards,
-  --animate-dropdown: dropdown 200ms cubic-bezier(0.3, 0.6, 0.25, 1) forwards,
-  --animate-enter: enter 300ms cubic-bezier(0.3, 0.6, 0.25, 1.45) forwards,
-  --animate-fade-in: fade-in 400ms cubic-bezier(0.3, 0.6, 0.25, 1) forwards,
+  --font-sans: "Source Sans 3", Arial, sans-serif;
+  --font-serif: "Source Serif 4", serif;
+  --font-system: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+
+  --max-width-base: 65.25rem;
+  --max-width-prose: 68ch;
+  --max-width-wide: 75rem;
+
+  --ring-12: 12px;
+
+  --text-fluid-12-14: clamp(0.75rem, 0.7083rem + 0.2083vi, 0.875rem);
+  --text-fluid-14-16: clamp(0.875rem, 0.8333rem + 0.2083vi, 1rem);
+  --text-fluid-16-18: clamp(1rem, 0.9583rem + 0.2083vi, 1.125rem);
+  --text-fluid-18-20: clamp(1.125rem, 1.0833rem + 0.2083vi, 1.25rem);
+  --text-fluid-20-22: clamp(1.25rem, 1.2065rem + 0.2174vi, 1.375rem);
+  --text-fluid-22-24: clamp(1.375rem, 1.3333rem + 0.2083vi, 1.5rem);
+  --text-fluid-24-28: clamp(1.5rem, 1.4167rem + 0.4167vi, 1.75rem);
+  --text-fluid-32-36: clamp(2rem, 1.9167rem + 0.4167vi, 2.25rem);
+  --text-fluid-36-48: clamp(2.25rem, 2rem + 1.25vi, 3rem);
+  --text-squishy: clamp(2rem, 10vw + 10%, 8rem);
+  /* @link https://utopia.fyi/clamp/calculator?a=320,1280,12—14|14—16|16—18|18—20|20-22|22—24|24—28|32—36|36—48 */
+
+  --shadow-border: 0 -1px 0 inset var(--color-gray-600/10);
+  --shadow-menuActive: 0 -3px 0 inset var(--color-blue-500);
+  --shadow-menuHover: 0 -3px 0 inset var(--color-black/10);
+
+  --shrink-1: 1;
+  --shrink-5: 5;
+
+  --spacing-edge: clamp(0.75rem, -1.25rem + 10vi, 10rem);
+  --spacing-page: clamp(1rem, -5rem + 15vi, 10rem);
+
+  --underline-offset-3: 3px;
 
   @keyframes dropdown {
     0% { transform: translateY(-1rem) }
-    0%, 10% { opacity: 0 }
+    10% { opacity: 0 }
     100% {
       transform: translateY(0);
       opacity: 1;
@@ -197,24 +191,24 @@
   }
 }
 
-
-
-
 @layer base {
   * {
     text-decoration-thickness: 0.0625rem;
     text-underline-offset: 0.15625rem;
   }
+
   body {
     color: var(--color-slate-900);
   }
+
   strong {
-    font-weight: 650;
+    font-weight: var(--font-weight-semibold);
   }
+
   b {
-    font-weight: 500;
+    font-weight: var(--font-weight-medium);
   }
-  :where([hidden]) {
+  p:empty {
     display: none;
   }
 }
@@ -223,12 +217,14 @@
   :where(.prose) > *:not(summary, h2, h3, h4, h5) + * {
     margin-block-start: 1.75em;
   }
+
   .prose > :where(h1, h2, h3, h4, h5) {
     color: var(--color-gray-800);
-    font-weight: 700;
+    font-weight: var(--font-weight-semibold);
     text-wrap: pretty;
     margin-block: 1.75em 0.25em;
   }
+
   .prose > :where(h1, h2, h3, h4, h5):first-child {
     margin-block-start: 0.5em;
   }
@@ -244,6 +240,7 @@
     line-height: 1.33;
     letter-spacing: -0.0125em;
   }
+
   :where(.prose) > :where(h2, h3, h4, h5) + :is(.accordion, .readmore, .expander, div) {
     margin-block-start: 0.75em;
   }
@@ -263,10 +260,6 @@
     font-variant-caps: all-small-caps;
   }
 
-  p:empty {
-    display: none;
-  }
- 
   :where(.prose) > :is(ul, ol) {
     padding-inline-start: var(--spacing-5);
   }
@@ -278,7 +271,7 @@
     list-style-type: decimal;
   }
   :where(.prose) > :is(ol,ul) ::marker {
-    color: #99185E;
+    color: var(--color-brand-purple-deep);
   }
   :where(.prose) > ol ::marker {
     font-weight: 800;
@@ -614,7 +607,7 @@
     display: inline-flex;
     gap: var(--spacing-2);
     justify-content: center;
-    font-weight: 600;
+    font-weight: var(--font-weight-semibold);
     text-decoration: none;
     margin: 0;
   }
@@ -651,8 +644,8 @@
     --R: 6px;
 
     mask:
-      radial-gradient(var(--R) at left 50% top calc(var(--size) + var(--p)), #000 99%, #0000 101%) calc(50% - 2 * var(--size)) 0/calc(4 * var(--size)) 100%,
-      radial-gradient(var(--R) at left 50% top calc(-1 * var(--p)), #0000 99%, #000 101%) left 50% top var(--size) / calc(4 * var(--size)) 100% repeat-x;
+      radial-gradient(var(--R) at left 50% top calc(var(--size) + var(--p)), var(--color-black) 99%, var(--color-transparent) 101%) calc(50% - 2 * var(--size)) 0/calc(4 * var(--size)) 100%,
+      radial-gradient(var(--R) at left 50% top calc(-1 * var(--p)), var(--color-transparent) 99%, var(--color-black) 101%) left 50% top var(--size) / calc(4 * var(--size)) 100% repeat-x;
   }
 }
 
@@ -674,7 +667,7 @@
   .col-main { grid-column: main }
 
   .border-warning {
-    border-image: repeating-linear-gradient(-64deg, #FFAC33, #FFAC33 10px, #00243a 0, #00243a 20px) 20;
+    border-image: repeating-linear-gradient(-64deg, var(--color-orange-400), var(--color-orange-400) 10px, var(--color-deepblue-900) 0, var(--color-deepblue-900) 20px) 20;
   }
 
   .w-logo {

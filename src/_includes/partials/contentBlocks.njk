@@ -11,10 +11,10 @@
 
 {# Heading #}
 {% if block.type === "heading" %}
-  <h2 class="flex items-baseline gap-2 mb-2 text-2xl font-semibold sm:gap-4 sm:leading-snug" id="{{ block.title | slugify }}">
+  <h2 class="flex items-baseline gap-2 mb-2 text-fluid-24-28 font-semibold sm:gap-4 sm:leading-snug" id="{{ block.title | slugify }}">
     {{ block.title | safe }}
   </h2>
-  <!--<a href="#" class="inline-flex items-center gap-1.5 mt-2 mb-4 text-base text-blue-600 hover:underline hover:text-blue-700">
+  <!--<a href="#" class="inline-flex items-center gap-1.5 mt-2 mb-4 text-fluid-18-20 text-blue-600 hover:underline hover:text-blue-700">
     <span># Kopier lenke</span>
     {# {{ '/src/_includes/svg/icons/link.svg' | svgContents('w-3.5 h-3.5') | safe }} #}
   </a>-->
@@ -44,7 +44,7 @@
 
 {# Microcards #}
 {%- if block.type === 'microcards' -%}
-<div class="!mt-1">
+<div class="mt-1!">
   {%- if block.title -%}
   <h4 class="font-semibold">{{ block.title | safe }}</h4>
   {%- endif -%}
@@ -74,7 +74,7 @@
 {# Tiles #}
 {%- if block.type === 'tiles' -%}
   {% if block.title %}
-  <h4 class="text-xl font-semibold">{{ block.title | safe }}</h4>
+  <h4 class="text-fluid-22-24 font-semibold">{{ block.title | safe }}</h4>
   {% endif %}
   <div class="grid gap-1.5 {{ 'mt-1' if block.title else 'mt-8' }}">
     {%- for item in block.data -%}
@@ -88,7 +88,7 @@
   <div class="p-4 rounded bg-gray-50">
     <label class="font-semibold" for="country">{{ block.label }}</label>
     {% if block.description %}
-    <p class="text-base">{{ block.description }}</p>
+    <p class="text-fluid-18-20">{{ block.description }}</p>
     {% endif %}
     <select id="country" class="w-full px-3 py-2.5 mt-3 bg-white border border-gray-300 rounded appearance-none bg-select hover:border-gray-400">
       {% for option in block.options %}
@@ -103,7 +103,7 @@
 <div class="flex items-start gap-3 p-4 border rounded border-lightblue-200 bg-lightblue-50">
   {{ block.icon | svgContents('w-6 h-6 shrink-0 translate-y-0.5') | safe }}
   <div class="grid gap-1 markdown">
-    <h3 class="text-xl font-semibold">{{ block.title }}</h3>
+    <h3 class="text-fluid-22-24 font-semibold">{{ block.title }}</h3>
     {{ block.content | markdown | safe }}
   </div>
 </div>
@@ -115,7 +115,7 @@
     <fieldset>
       <legend class="font-semibold">{{ block.legend }}</legend>
       {% if block.description %}
-        <p class="text-base">{{ block.description }}</p>
+        <p class="text-fluid-18-20">{{ block.description }}</p>
       {% endif %}
       <ul class="mt-1">
         {% for option in block.options %}
@@ -132,7 +132,7 @@
     <fieldset>
       <legend class="font-semibold">{{ block.legend }}</legend>
       {% if block.description %}
-        <p class="text-base">{{ block.description }}</p>
+        <p class="text-fluid-18-20">{{ block.description }}</p>
       {% endif %}
       <ul class="mt-1">
         {% for option in block.options %}

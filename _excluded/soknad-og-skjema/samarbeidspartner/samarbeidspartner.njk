@@ -9,7 +9,7 @@ permalink: false
 {%- block content -%}
   {% include "partials/language.njk" %}
 
-  <main class="grid pb-4 text-lg md:pb-12 grid-cols-layout">
+  <main class="grid pb-4 text-fluid-20-22 md:pb-12 grid-cols-layout">
     <div class="relative col-wide max-w-prose md:max-w-none mx-auto md:mx-0 md:grid md:grid-cols-[8rem_auto] gap-x-8 items-start mb-12 w-full">
 
       {# Pictogram #}
@@ -17,13 +17,13 @@ permalink: false
 
       {# Intro #}
       <div class="md:col-start-2 md:row-start-1">
-        <h1 class="text-3xl font-semibold leading-tight md:text-5xl md:leading-tight">{{ title | safe }}</h1>
-        <p class="mt-2 text-sm tracking-wider text-gray-700 uppercase">{{ kicker | safe }}</p>
-        <p class="max-w-2xl mt-6 text-xl md:text-2xl">{{ description | safe }}</p>
+        <h1 class="text-fluid-32-36 font-semibold leading-tight md:text-5xl md:leading-tight">{{ title | safe }}</h1>
+        <p class="mt-2 text-fluid-16-18 tracking-wider text-gray-700 uppercase">{{ kicker | safe }}</p>
+        <p class="max-w-2xl mt-6 text-fluid-22-24 md:text-fluid-24-28">{{ description | safe }}</p>
       </div>
 
       <div class="mt-8 md:col-start-2">
-        <ul class="gap-12 text-xl lg:columns-2">
+        <ul class="gap-12 text-fluid-22-24 lg:columns-2">
           {% for item in roleFilter | sort(true, false) | reverse %}
           <li class="-mb-px border-t border-b border-gray-200 break-inside-avoid">
             <a href="/soknad-og-skjema-samarbeidspartner/{{ item | slugify }}/" class="relative z-10 inline-block py-4 text-left text-blue-500 underline hover:decoration-2 hover:text-deepblue-600">{{ item | safe }}</a>

@@ -40,9 +40,9 @@ order: 3
 <div class="grid gap-3 text-left" style="--pictogram: #F5D3E2;">
   {% for item in varekort %}
   <div class="relative border rounded-lg border-slate-300 has-[a:hover]:bg-blue-50 grid w-full gap-3 px-5 py-4 xs:flex xs:gap-6 xs:items-start">
-    {{ item.pictogram | svgContents('mt-3 w-[6ch] h-[6ch] shrink-0 text-[#99185E]') | safe }}
+    {{ item.pictogram | svgContents('mt-3 w-[6ch] h-[6ch] shrink-0 text-brand-purple-deep') | safe }}
     <div>
-      <a href="#" class="text-lg font-semibold after:absolute after:inset-0">{{ item.title }}</a>
+      <a href="#" class="text-fluid-20-22 font-semibold after:absolute after:inset-0">{{ item.title }}</a>
       <p>{{ item.description }}</p>
       <div class="pt-4 mt-auto font-normal tracking-wider text-gray-700 small-caps">{{ item.kicker }}</div>
     </div>

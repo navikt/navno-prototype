@@ -1,7 +1,7 @@
 {# Notifications #}
 <div class="absolute inset-x-0 z-40 grid w-full h-0 grid-cols-combi top-full" x-bind:class="loginOpen ? 'opacity-0 animate-dropdown' : 'hidden'" x-bind:hidden="!loginOpen" hidden>
   <div class="sm:max-w-lg sm:w-full bg-white rounded-b-lg shadow-16 md:max-h-[92vh] col-full sm:col-container sm:justify-self-end">
-    <div class="p-8 text-lg">
+    <div class="p-8 text-fluid-20-22">
       <button class="block px-6 py-2.5 w-full text-center text-white bg-blue-500 rounded hover:bg-blue-600" x-on:click="loggedIn = true, loginOpen = false">Logg inn</button>
     </div>
   </div>
