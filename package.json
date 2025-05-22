@@ -11,23 +11,22 @@
   "scripts": {
     "eleventy-debug": "DEBUG=Eleventy* npx @11ty/eleventy",
     "dev:eleventy": "eleventy --config=eleventy.config.js --serve",
-    "dev:css": "postcss ./src/assets/main.css -o ./build/assets/main.min.css --watch",
+    "dev:css": "npx @tailwindcss/cli -i ./src/assets/main.css -o ./build/assets/main.min.css --watch",
     "dev": "ELEVENTY_ENV=development concurrently npm:dev:*",
     "build:eleventy": "ELEVENTY_ENV=production eleventy --config=eleventy.config.js",
-    "build:css": "NODE_ENV=production postcss ./src/assets/main.css -o ./build/assets/main.min.css",
+    "build:css": "NODE_ENV=production npx @tailwindcss/cli -i ./src/assets/main.css -o ./build/assets/main.min.css",
     "build": "concurrently npm:build:*",
     "serve": "NODE_ENV=production ELEVENTY_ENV=production eleventy --config=eleventy.config.js --serve",
     "start": "node ./server/app.js"
   },
   "license": "MIT",
   "devDependencies": {
-    "@11ty/eleventy": "^3.0.0",
+    "@11ty/eleventy": "^3.1.0",
     "@alpinejs/intersect": "^3.14.9",
     "alpinejs": "^3.14.9",
     "autoprefixer": "^10.4.21",
     "cheerio": "^1.0.0",
     "concurrently": "^9.1.2",
-    "cssnano": "^7.0.6",
     "dotenv": "^16.5.0",
     "eleventy-plugin-svg-contents": "^0.7.0",
     "eleventy-plugin-toc": "^1.1.5",
@@ -35,11 +34,10 @@
     "markdown-it-anchor": "^9.2.0",
     "markdown-it-mark": "^4.0.0",
     "markdown-it-toc-done-right": "^4.2.0",
-    "postcss": "^8.5.3",
-    "postcss-cli": "^11.0.1",
     "prettier": "^3.5.3",
     "prettier-plugin-multiline-arrays": "^4.0.3",
-    "tailwindcss": "^4.1.5"
+    "tailwindcss": "^4.1.7",
+    "@tailwindcss/cli": "^4.1.7"
   },
   "dependencies": {
     "compression": "^1.8.0",
