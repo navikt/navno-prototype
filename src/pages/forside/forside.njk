@@ -11,12 +11,12 @@ alpine: true
 
 {%- block content -%}
   <main class="" x-bind:inert="menuOpen || myPageOpen">
-    <div class="grid pt-8 pb-8 grid-cols-combi ">
+    <div class="grid pt-8 pb-10 grid-cols-combi ">
       <div class="col-container">
         <h2 class="text-2xl font-semibold">Hva kan vi hjelpe deg med?</h2>
-        <ul class="grid gap-3 mt-4 md:text-xl sm:grid-cols-2 xl:grid-cols-3 sm:gap-6">
+        <ul class="grid gap-2 mt-4 md:text-xl sm:grid-cols-2 xl:grid-cols-3 sm:gap-6">
           {%- for area in areaList -%}
-            <li class="relative grid items-center overflow-clip break-inside-avoid pl-5 sm:pl-8 pr-28 sm:pr-36 py-3 rounded-lg min-h-20 md:min-h-32 transition underline hover:text-blue-600 hover:decoration-2 bg-deepblue-50 has-[a:hover]:bg-slate-100 has-[a:focus-visible]:ring has-[a:focus-visible]:ring-blue-600 c-area-card">
+            <li class="relative grid items-center overflow-clip break-inside-avoid pl-4 sm:pl-6 pr-28 sm:pr-36 py-3 rounded-lg min-h-20 md:min-h-32 transition text-blue-700 bg-deepblue-50 has-[a:hover]:bg-slate-100 has-[a:focus-visible]:ring has-[a:focus-visible]:ring-blue-600 has-[a:hover]:ring has-[a:hover]:ring-deepblue-100 c-area-card">
               <a class="leading-snug focus-visible:outline-none after:absolute after:inset-0 text-balance hover:decoration-2" href="{{ area.href or '#'}}">
                 <span>{{ area.title | safe }}</span>
               </a>
@@ -24,15 +24,21 @@ alpine: true
             </li>
           {%- endfor -%}
         </ul>
+        <div class="mt-4">
+          <a class="inline-flex gap-2 leading-tight text-blue-600 underline focus-visible:outline-none text-balance hover:decoration-2" href="#">
+            <span>Alle pengestøtter og tjenester fra A til Å</span> 
+            {{ '/src/_includes/svg/icons/arrow-right.svg' | svgContents('w-6 h-6 shrink-0 right-5 text-blue-600') | safe }} 
+          </a>
+        </div>
       </div>
     </div>
 
-    <div class="grid pt-8 pb-8 grid-cols-combi">
+    <div class="grid pt-8 pb-12 grid-cols-combi bg-red-50 ">
       <div class="col-container">
         <h2 class="text-2xl font-semibold">Snarveier</h2>
-        <ul class="mt-3 text-lg sm:gap-6 sm:columns-2">
+        <ul class="mt-3 md:text-lg sm:gap-x-6 sm:columns-2">
           {%- for shortcut in shortcutsList -%}
-            <li class="block -my-px border-y border-slate-300">
+            <li class="-mt-px border-t border-b border-slate-300">
               <a class="relative flex items-center justify-start gap-2 px-2 py-3 text-blue-600 focus-visible:bg-white focus-visible:z-10 focus-visible:rounded focus-visible:outline-none hover:underline hover:decoration-2 focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2 focus-visible:ring-offset-white" href="#">
                 {{ '/src/_includes/svg/icons/arrow-right.svg' | svgContents("w-6 h-6") | safe if shortcut.icon }}
                 <span>{{ shortcut.title | safe }}</span>
@@ -47,9 +53,9 @@ alpine: true
     <div class="grid pt-8 pb-12 bg-white grid-cols-combi">
       <div class="col-container">
         <h2 class="text-2xl font-semibold ">Aktuelt</h2>
-        <div class="grid gap-3 mt-3 sm:grid-cols-2 sm:gap-6">
+        <div class="grid gap-2 mt-3 sm:grid-cols-2 sm:gap-6">
           {%- for news in newsList -%}
-          <article class="relative grid pl-5 pr-16 py-5 rounded-lg bg-slate-100 has-[a:hover]:bg-blue-50 has-[a:focus-visible]:ring has-[a:focus-visible]:ring-blue-600 content-between hover:ring-2 hover:ring-blue-600">
+          <article class="relative grid pl-4 md:pl-6 pr-16 py-4 py-6 rounded-lg bg-slate-100 has-[a:focus-visible]:ring has-[a:focus-visible]:ring-blue-600 content-between has-[a:hover]:ring has-[a:hover]:ring-deepblue-300">
             <h3 class="mb-auto text-lg leading-snug">
               <a class="text-blue-600 after:z-10 after:absolute after:inset-0 focus-visible:outline-none" href="#">{{ news.title | safe }}</a>
             </h3>
@@ -58,8 +64,8 @@ alpine: true
           </article>
           {%- endfor -%}
         </div>
-        <div class="mt-6">
-          <a class="inline-flex gap-3 leading-tight text-blue-600 underline focus-visible:outline-none text-balance hover:decoration-2" href="#">
+        <div class="mt-4">
+          <a class="inline-flex gap-2 leading-tight text-blue-600 underline focus-visible:outline-none text-balance hover:decoration-2" href="#">
             <span>Flere saker</span> 
             {{ '/src/_includes/svg/icons/arrow-right.svg' | svgContents('w-6 h-6 shrink-0 right-5 text-blue-600') | safe }} 
           </a>

@@ -1,64 +1,49 @@
 {# Notifications #}
-<div class="absolute inset-x-0 z-40 grid w-full h-0 grid-cols-left-1 lg:grid-cols-left-2 top-full " x-bind:class="myPageOpen ? 'opacity-0 animate-dropdown' : 'hidden'" x-bind:hidden="!myPageOpen" hidden>
-  <div class="sm:max-w-xl w-full bg-white rounded-b-lg shadow-lg md:max-h-[92vh] col-full sm:col-wide sm:justify-self-end">
+<div class="absolute inset-x-0 z-40 grid w-full h-0 grid-cols-combi top-full " x-bind:class="myPageOpen ? 'opacity-0 animate-dropdown' : 'hidden'" x-bind:hidden="!myPageOpen" hidden>
+  <div class="sm:max-w-xl w-full bg-white rounded-b-lg shadow-lg md:max-h-[92vh] sm:col-container sm:justify-self-end">
     <p class="grid pt-5 pb-4 border-b mx-edge sm:mx-6 border-slate-200" x-on:click="newNotifications = !newNotifications">
-      <span class="text-sm tracking-wider uppercase opacity-80">Logget inn</span>
+      <span class="text-xs tracking-wider uppercase opacity-80">Logget inn</span>
       <span class="text-xl font-semibold">Isac Norland</span>
     </p>
     <p>
       <a href="#" class="flex items-center gap-2 py-3 -mt-px text-blue-600 px-edge sm:px-6 fine:hover:bg-blue-500 fine:hover:text-white">
-        {{ '/src/_includes/svg/icons/user.svg' | svgContents() | safe }}
+        {{ '/src/_includes/svg/icons/person-circle.svg' | svgContents() | safe }}
         <span>Min side</span>
+      </a>
+    </p>
+    <div class="h-px mx-6 bg-slate-200"></div>
+    <p>
+      <a href="#" class="flex items-center gap-2 py-3 -mt-px text-blue-600 px-edge sm:px-6 fine:hover:bg-blue-500 fine:hover:text-white">
+        {{ '/src/_includes/svg/icons/id-badge.svg' | svgContents() | safe }}
+        <span>Personopplysninger</span>
       </a>
     </p>
     <div class="bg-slate-100 border-b relative border-slate-200 border-t max-h-[55dvh] overflow-y-auto overscroll-contain fancy-scroll" x-show="newNotifications">
       <div class="sticky inset-x-0 top-0 h-3 -mb-3 bg-gradient-to-b from-slate-100 to-transparent mix-blend-multiply"></div>
       <div class="py-4 sm:p-6 px-edge">
         <h2 class="text-lg font-semibold">Varsler</h2>
-        <h3 class="mt-3 text-sm tracking-wider uppercase opacity-80">Oppgaver</h3>
         <div class="grid gap-1 mt-2">
-          {%- for task in minSide.myTasks -%}
-            <a class="grid gap-1 px-3.5 py-3 bg-white rounded-lg shadow-sm fine:hover:ring-2 fine:hover:ring-blue-600" href="#">
-              <h3 class="font-semibold leading-snug">{{ task.title | safe }}</h3>
-              <p class="text-sm opacity-80">{{ task.timestamp }}</p>
-              <div class="flex items-center justify-between mt-2">
-                <div class="flex flex-wrap gap-1">
-                  <span class="grid w-6 h-6 text-white bg-orange-600 rounded place-items-center">
-                    {{ '/src/_includes/svg/icons/tasks-filled.svg' | svgContents('w-4 h-4') | safe }}
-                  </span>
-                  {%- for tag in task.tags -%}
-                    <span class="px-2 text-slate-800 leading-none py-1 text-sm rounded {{ tag.color or "bg-slate-200" }}">{{ tag.title | safe }}</span>
+          {%- for item in minSide.notifications -%}
+          {%- if loop.index < 5 %}           
+            <div class="grid grid-cols-[auto_1fr] gap-3 px-3 py-4 bg-white rounded-xl shadow-sm fine:hover:ring-2 fine:hover:ring-blue-600 relative group">
+              <span class="grid self-start p-2 rounded-lg bg-slate-100 place-items-center">
+              {{ '/src/_includes/svg/icons/tasks.svg' | svgContents('w-5 h-5') | safe }}
+              </span>
+              <div class="leading-snug">
+                <a class="text-blue-600 group-hover:underline after:absolute after:inset-0 after:z-10" href="#">
+                  {{ item.title | safe }}
+                </a>
+                <p class="text-sm opacity-80">{{ item.timestamp }}
+                  {{ '   •   ' if item.tags }}
+                  {%- for tag in item.tags if item.tags -%}
+                    <span class="px-2 text-slate-800 leading-none py-1 inline-block text-sm rounded {{ tag.color or "bg-slate-200" }}">{{ tag.title | safe }}</span>
                   {%- endfor -%}
+                </p>
+
                 </div>
-                {{ '/src/_includes/svg/icons/chevron-right.svg' | svgContents('opacity-50 w-5 h-5') | safe }}
+                {# {{ '/src/_includes/svg/icons/chevron-right.svg' | svgContents('opacity-50 w-5 h-5') | safe }} #}
               </div>
-            </a>
-          {%- endfor -%}
-        </div>
-
-        <h3 class="mt-6 text-sm tracking-wider uppercase opacity-80">Beskjeder</h3>
-        <div class="grid gap-1 mt-2">
-          {%- for message in minSide.myMessages -%}
-            <a class="px-3.5 py-3 bg-white rounded-md shadow-sm fine:hover:ring-2 fine:hover:ring-blue-600" href="#">
-              <div>
-                <h3 class="font-semibold leading-snug">{{ message.title | safe }}</h3>
-                <p class="text-sm opacity-80">{{ message.timestamp }}</p>
-
-                {%- if message.tags -%}
-                  <div class="flex items-center justify-between pb-1 mt-2">
-                    <div class="flex flex-wrap gap-1">
-                      <span class="grid w-6 h-6 text-white rounded bg-lightblue-600 place-items-center">
-                        {{ '/src/_includes/svg/icons/chat-filled.svg' | svgContents('w-4 h-4') | safe }}
-                      </span>
-                      {%- for tag in message.tags -%}
-                        <span class="px-2 text-slate-800 leading-none py-1 text-sm rounded {{ tag.color or "bg-slate-200" }}">{{ tag }}</span>
-                      {%- endfor -%}
-                    </div>
-                  </div>
-                {%- endif -%}
-
-              </div>
-            </a>
+            {%- endif %}
           {%- endfor -%}
         </div>
       </div>
@@ -67,7 +52,7 @@
     <div class="grid">
       <div x-show="!newNotifications" class="border-t border-slate-200 mx-clamp-gap sm:mx-6"></div>
       <button class="flex items-center gap-2 py-3 text-blue-600 rounded-b-lg px-edge sm:px-6 fine:hover:bg-blue-500 fine:hover:text-white" x-on:click="loggedIn = false, myPageOpen = false">
-        {{ '/src/_includes/svg/icons/logout.svg' | svgContents() | safe }}
+        {{ '/src/_includes/svg/icons/logout.svg' | svgContents('-translate-y-px') | safe }}
         <span>Logg ut</span>
       </button>
     </div>

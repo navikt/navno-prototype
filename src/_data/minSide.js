@@ -1,13 +1,9 @@
 export default {
-  myTasks: [
+  notifications: [
     {
       title: "Du har motatt et vedtak på søknaden din om foreldrepenger",
       timestamp: "I går, kl 16.48",
-      tags: [
-        {
-          title: "Varslet på SMS",
-        },
-      ],
+      tags: [{ title: "Varslet på SMS" }],
     },
     {
       title:
@@ -15,8 +11,6 @@ export default {
       timestamp: "16. mars 2023, kl 16.48",
       tags: [{ title: "Varslet på SMS og e-post" }],
     },
-  ],
-  myMessages: [
     {
       title: "Familie – Samtalereferat",
       timestamp: "15. aug.",
