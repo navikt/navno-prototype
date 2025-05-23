@@ -30,15 +30,15 @@
 
 
       {# Menu Buttons #}
-      {%- set menuButtonClasses = "flex flex-col xs:flex-row items-center justify-center pl-2 pr-3 leading-none font-semibold gap-1 text-blue-600 rounded min-w-16 py-2 text-fluid-16-18 xs:text-fluid-18-20 pointer-fine:hover:bg-blue-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-800 group peer" -%}
+      {%- set menuButtonClasses = "flex flex-col xs:flex-row items-center justify-center pl-2 pr-3 leading-none cursor-pointer font-semibold gap-1 text-blue-600 rounded min-w-16 py-2 text-fluid-16-18 xs:text-fluid-18-20 pointer-fine:hover:bg-blue-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-800 group peer" -%}
 
-      <div class="flex self-center py-2 -mr-1 sm:gap-1 justify-self-end">
+      <div class="flex self-center py-2 -mr-1 sm:gap-2 justify-self-end">
         <button class="{{ menuButtonClasses }}" type="button" x-show="!loggedIn" x-on:click="loginOpen = !loginOpen, menuOpen = false, myPageOpen = false" x-bind:aria-expanded="loginOpen">
             {{ '/src/_includes/svg/icons/login.svg' | svgContents('w-6 h-6 sm:w-7 sm:h-7 shrink-0 pointer-events-none') | safe }}
           <span class="mt-px">Logg inn</span>
         </button>
 
-        <button class="{{ menuButtonClasses }}" type="button" x-on:click="myPageOpen = !myPageOpen, menuOpen = false, loginOpen = false" x-bind:class="myPageOpen && 'bg-slate-200'" x-show="loggedIn" x-bind:aria-expanded="myPageOpen" x-bind:hidden="!myPageOpen" hidden>
+        <button class="{{ menuButtonClasses }}" type="button" x-on:click="myPageOpen = !myPageOpen, menuOpen = false, loginOpen = false" x-bind:class="myPageOpen && 'bg-slate-200'" x-show="loggedIn" x-bind:aria-expanded="myPageOpen">
           <span class="relative">
             {{ '/src/_includes/svg/icons/person-circle.svg' | svgContents('w-6 h-6 sm:w-7 sm:h-7 -ml-0.5 shrink-0 pointer-events-none') | safe }}
             <span x-show="newNotifications" class="absolute right-0 block w-1.5 h-1.5 sm:w-2 sm:h-2 bg-red-400 rounded-full top-0.5" x-bind:class="myPageOpen ? 'ring-2 ring-slate-200' : 'ring-2 ring-white pointer-fine:group-hover:ring-slate-200'"></span>
@@ -57,7 +57,6 @@
           <span class="mt-px">Meny og søk</span>
         </button>
 
-        <span class="self-stretch order-1 hidden w-px my-1.5 transition-colors duration-100 bg-gray-300 xs:block peer-hover:bg-transparent" aria-hidden="true"></span>
     </div>
   </nav>
   {%- include "partials/navigation.njk" -%}
