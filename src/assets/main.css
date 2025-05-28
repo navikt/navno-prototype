@@ -192,6 +192,11 @@
 }
 
 @layer base {
+
+  @view-transition {
+      navigation: auto;
+  }
+
   * {
     text-decoration-thickness: 0.0625rem;
     text-underline-offset: 0.15625rem;
