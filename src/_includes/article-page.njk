@@ -9,19 +9,19 @@
       <div class="mb-3 md:absolute md:-ml-32 sm:mt-3" style="--pictogram: #F5D3E2;">
         {{ '/src/_includes/svg/piktogrammer/produkter/sykepenger.svg' | svgContents('text-brand-purple-deep w-16 h-16 sm:w-24 sm:h-24') | safe  }}
       </div>
-      <div class="text-fluid-18-20 font-medium tracking-wider text-gray-700 small-caps">
+      <h1 class="font-semibold text-fluid-36-48/tight text-pretty text-brand-purple-deep">{{ title | safe }}</h1>
+      <div class="mt-2 text-gray-700 text-fluid-18-20 font-regular">
         {{ category | safe }}
         {% if audience %}
           <span aria-hidden="true" class="inline-block -translate-y-px">—</span>
           {{ audience.current | safe }}
         {% endif %}
       </div>
-      <h1 class="font-semibold text-fluid-36-48/tight text-pretty text-brand-purple-deep">{{ title | safe }}</h1>
       <div class="mt-6 prose text-pretty max-w-prose">
         <p class="text-fluid-20-22/normal">{{ ingress | safe }}</p>
 
         {% if audience %}          
-        <p class="text-fluid-16-18 leading-relaxed text-pretty">
+        <p class="leading-relaxed text-fluid-16-18 text-pretty">
           <span>{{ audience.others | markdownInline | safe if audience }}</span>
         </p>
         {% endif %}
@@ -30,7 +30,7 @@
 
     {# Innholdsfortegnelse #}
     <div class="px-5 py-4 mt-8 border-t-[0.625ch] border-brand-purple-deep rounded-b-lg bg-brand-beige" x-intersect:leave="showTopAnchor = true" x-intersect:enter.margin.-400px.0.0.0="showTopAnchor = false">
-      <h2 class="pb-2 text-fluid-18-20 font-semibold">Innhold på siden</h2>
+      <h2 class="pb-2 font-semibold text-fluid-18-20">Innhold på siden</h2>
       <ul class="grid gap-4 py-1">
         {% for chapter in chapters.slice(0, -1) %}
         <li class="grid">
@@ -61,7 +61,7 @@
         {# Chapter TOC #}
         {% if chapter.templateContent and chapter.templateContent | tocData | length > 0 and not chapter.data.hideToc %}
         <nav class="relative px-5 pt-3 pb-4 mb-8 rounded-lg bg-brand-beige">
-          <h3 class="pb-2 text-fluid-18-20 font-semibold">I dette kapittelet</h3>
+          <h3 class="pb-2 font-semibold text-fluid-18-20">I dette kapittelet</h3>
           <ul class="grid gap-2 mt-1 justify-items-start">
             {% for item in chapter.templateContent | tocData %}
             <li>
@@ -82,7 +82,7 @@
       </section>
     {% endfor %}
 
-    <div class="pt-2 my-12 text-fluid-16-18 italic border-t border-slate-200 col-main">{{ published | safe }}</div>
+    <div class="pt-2 my-12 italic border-t text-fluid-16-18 border-slate-200 col-main">{{ published | safe }}</div>
 
   </main>
 
