@@ -4,11 +4,11 @@
 
   {% set chapters = collections.sykepenger | sort(false, false, 'data.order') %}
 
-  <main class="relative grid items-start pt-16 pb-4 grid-cols-combi" data-theme="sykepenger" x-data="{ chapterIndex: 0 }">
+  <main class="relative grid items-start pt-16 pb-16 grid-cols-article" data-theme="sykepenger" x-data="{ chapterIndex: 0 }">
+    <div class="mb-3 col-main md:col-pictogram" style="--pictogram: #F5D3E2">
+      {{ '/src/_includes/svg/piktogrammer/produkter/sykepenger.svg' | svgContents('text-brand-purple-deep w-16 h-16 sm:w-20 sm:h-20') | safe  }}
+    </div>
     <div class="col-main">
-      <div class="mb-3 md:absolute md:-ml-32 sm:mt-3" style="--pictogram: #F5D3E2">
-        {{ '/src/_includes/svg/piktogrammer/produkter/sykepenger.svg' | svgContents('text-brand-purple-deep w-16 h-16 sm:w-24 sm:h-24') | safe  }}
-      </div>
       <h1 class="font-semibold text-fluid-36-48/tight text-pretty text-brand-purple-deep">{{ title | safe }}</h1>
       <div class="mt-2 text-gray-700 text-fluid-16-18 font-regular">
         {{ category | safe }}
@@ -18,34 +18,32 @@
         {% endif %}
       </div>
     </div>
-      <div class="mt-6 prose max-w-prose col-main">
-        <p class="text-fluid-18-20 text-pretty">
-          {{ ingress | safe }}
-          {% if audience %}          
-            <span>{{ audience.others | markdownInline | safe if audience }}</span>      
-          {% endif %}
-        </p>
-
-      </div>
+    <div class="mt-6 col-main">
+      <p class="text-fluid-18-20 text-pretty">
+        {{ ingress | safe }}
+        {% if audience %}          
+          <span>{{ audience.others | markdownInline | safe if audience }}</span>      
+        {% endif %}
+      </p>
     </div>
 
     {# Innholdsfortegnelse #}
-    <div class="hidden mt-12 xl:block xl:sticky xl:top-12 xl:mt-5 xl:mb-20 xl:col-toc xl:row-span-2" id="toc" x-intersect:leave.margin.-300px.0.0.0="floatingToc = true" x-intersect:enter="floatingToc = false">
-      <h2 class="flex items-baseline mb-2 font-semibold gap-x-1.5 text-fluid-18-20">
-        {{ '/src/_includes/svg/icons/document.svg' | svgContents('w-6 h-6 translate-y-1 -translate-x-0.5') | safe  }}
+    <div class="mt-8 md:row-span-4 md:mt-5 lg:sticky lg:row-start-3 xl:row-start-2 lg:top-12 col-main md:col-toc" id="toc" x-intersect:leave.margin.-300px.0.0.0="floatingToc = true" x-intersect:enter="floatingToc = false">
+      <h2 class="flex items-baseline mb-2 font-semibold gap-x-0.5 text-fluid-18-20">
+        {{ '/src/_includes/svg/icons/document.svg' | svgContents('w-6 h-6 translate-y-1.5 -translate-x-1') | safe  }}
         <span>Innhold på siden</span>
       </h2>
-      <ul class="pb-1 ml-2 border-l-2 border-slate-400">
+      <ul class="pb-1 ml-1.5">
         {% for chapter in chapters %}
         {% set chapterIndex = loop.index %}
         <li class="mt-1">
-          <a class="inline-block py-1 pl-5 hover:underline hover:text-blue-700 hover:decoration-2" href="#{{ chapter.data.title | slugify }}">
+          <a class="inline-block py-1 pl-5 underline hover:text-blue-700 hover:decoration-2" href="#{{ chapter.data.title | slugify }}">
             {{ chapter.data.title }}
           </a>
           {% if (chapter.templateContent | tocData).length >= 2 %}           
-          <ul class="mb-4" x-show="chapterIndex == {{ chapterIndex }}">
+          <ul class="hidden md:block mb-4 ml-5.5 border-l-2 border-slate-400" x-show="chapterIndex == {{ chapterIndex }}">
           {% for item in chapter.templateContent | tocData %}
-            <li class="py-0.5"><a class="inline-block py-1 pl-8 text-gray-900/80 hover:text-blue-700 text-fluid-16-18/snug hover:underline hover:decoration-2" href="#{{ item.id }}">
+            <li class="py-0.5"><a class="inline-block py-1 pl-3 underline text-gray-900/80 hover:text-blue-700 text-fluid-16-18/snug hover:decoration-2" href="#{{ item.id }}">
                 <span>{{ item.text }}</span>
               </a>
             </li>
@@ -60,9 +58,9 @@
     {# Innhold #}
     {% for chapter in chapters %}
       {% set chapterIndex = loop.index %}
-      <section class="pt-20 prose" id="{{ chapter.data.title | slugify }}" x-intersect.margin.-250px="chapterIndex = {{ chapterIndex }}">
-        <div class="w-10 h-[0.625ch] bg-brand-purple-faded"></div>
-        <h2 class="mt-5 mb-4 -translate-x-0.5 font-semibold text-fluid-32-36/tight text-balance text-brand-purple-deep">
+      <section class="pt-8 prose col-main" id="{{ chapter.data.title | slugify }}" x-intersect.margin.-480px="chapterIndex = {{ chapterIndex }}">
+        {# <div class="w-10 h-[0.625ch] bg-brand-purple-faded"></div> #}
+        <h2 class="mt-5 mb-4 -translate-x-0.5 font-semibold text-fluid-32-36/tight text-balance">
           <a href="#{{ chapter.data.title | slugify }}">
             <span>{{ chapter.data.title }}</span>
           </a>
@@ -73,32 +71,36 @@
       </section>
     {% endfor %}
 
-    <div class="pt-2 my-12 italic border-t text-fluid-16-18 border-slate-200 col-main">{{ published | safe }}</div>
+    <div class="pt-2 mt-12 italic border-t text-fluid-16-18 border-slate-200 col-main">{{ published | safe }}</div>
 
     {# Floating TOC #}
-    <div class="sticky bottom-0 left-0 z-50 flex flex-col-reverse overflow-y-visible col-full max-h-svh xl:hidden">
+    <div class="sticky bottom-0 z-50 flex flex-col-reverse overflow-y-visible col-full lg:hidden">
       <button 
         type="button" 
-        class="absolute bottom-0 left-0 flex items-baseline self-start py-2 pl-5 pr-6 mx-4 mb-4 font-semibold text-white border-4 rounded-full bg-slate-800 gap-x-1 text-fluid-18-20 border-slate-200/75"
+        class="absolute bottom-0 right-0 flex items-baseline self-start py-2 pl-5 pr-6 mx-4 mb-4 font-semibold bg-white border-2 rounded-full cursor-pointer hover:bg-slate-100 gap-x-1 text-fluid-18-20 border-slate-400"
         x-on:click="floatingTocOpen = !floatingTocOpen"
         x-show="!floatingTocOpen"
       >
         {{ '/src/_includes/svg/icons/document.svg' | svgContents('w-6 h-6 translate-y-1 -translate-x-0.5') | safe  }}
         <span class="-translate-y-px">Innhold på siden</span>
       </button>
-      <div class="px-4 pb-6 overflow-y-auto rounded-t-3xl pt-4 shadow-2xl bg-slate-200 max-h-[60svh]" x-show="floatingTocOpen" x-on:click.outside="floatingTocOpen = false">
-        <ul class="border-l-2 border-slate-400">
+      <div class="pl-6 pr-8 py-6 overflow-y-auto rounded-tl-3xl shadow-2xl bg-white max-h-[60svh] max-w-8/12 ml-auto  overscroll-contain" x-show="floatingTocOpen" x-on:click.outside="floatingTocOpen = false">
+        <h2 class="inline-flex gap-1 font-semibold">
+          {{ '/src/_includes/svg/icons/document.svg' | svgContents('w-6 h-6 translate-y-1 -translate-x-0.5') | safe  }}
+          <span>Innhold på siden</span>
+        </h2>
+        <ul class="">
           {% for chapter in chapters %}
           {% set chapterIndex = loop.index %}
           <li class="mt-1">
-            <a class="inline-block py-1 pl-5 hover:underline hover:text-blue-700 hover:decoration-2" href="#{{ chapter.data.title | slugify }}" x-on:click="floatingTocOpen = false">
+            <a class="inline-block py-1 underline pl-7 hover:text-blue-700 hover:decoration-2 decoration-slate-800/40" href="#{{ chapter.data.title | slugify }}" x-on:click="floatingTocOpen = false">
               {{ chapter.data.title }}
             </a>
             {% if (chapter.templateContent | tocData).length >= 2 %}           
-            <ul class="mb-4">
+            <ul class="mb-5 mt-0.5 border-l-2 ml-7 border-slate-400">
             {% for item in chapter.templateContent | tocData %}
               <li class="py-0.5">
-                <a class="inline-block py-1 pl-8 text-gray-900/80 hover:text-blue-700 text-fluid-16-18/snug hover:underline hover:decoration-2" href="#{{ item.id }}" x-on:click="floatingTocOpen = false">
+                <a class="inline-block py-1 pl-3 underline text-gray-900/80 hover:text-blue-700 decoration-slate-800/40 text-fluid-16-18/snug hover:decoration-2" href="#{{ item.id }}" x-on:click="floatingTocOpen = false">
                   <span>{{ item.text }}</span>
                 </a>
               </li>

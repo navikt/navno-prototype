@@ -5,7 +5,7 @@
     <button class="py-1 tracking-widest uppercase cursor-default" x-on:click="menuOpen = !menuOpen, myPageOpen = false, loginOpen = false" type="button">{{ activeRole }}</button>
   </div>
 
-  <nav class="z-10 grid grid-cols-combi">
+  <nav class="z-10 grid grid-cols-article">
     <div class="grid grid-cols-[auto_1fr] sm:grid-cols-[auto_auto_1fr] col-container">
 
       <div class="flex items-center sm:col-span-2">
@@ -18,7 +18,7 @@
         </div>
 
         {# Separator #}
-        <div class="w-px h-8 hidden sm:block rotate-[22.5deg] origin-center mx-2 bg-slate-300"></div>
+        <div class="hidden w-px h-8 mx-2 origin-center translate-x-px sm:block bg-slate-300"></div>
 
         {# Audience #}
         <div class="self-center hidden pl-3 leading-tight text-fluid-20-22 sm:block">
@@ -66,7 +66,7 @@
 
 {# Overlay #}
 <button 
-  class="fixed inset-0 z-40 w-full h-full cursor-default bg-deepblue-900/50 backdrop-blur-sm" 
+  class="fixed inset-0 z-40 w-full h-full cursor-default bg-gray-200/25 backdrop-blur-xs" 
   type="button"
   x-show="(menuOpen || myPageOpen || loginOpen || floatingTocOpen)" 
   x-on:click="menuOpen = false, myPageOpen = false, loginOpen = false, floatingTocOpen = false" 
