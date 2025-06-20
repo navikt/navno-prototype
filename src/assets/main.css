@@ -671,7 +671,7 @@
 }
 
 .grid-cols-article {
-  --_main: minmax(0, min(42.5rem, 80%));
+  --_main: minmax(0, min(42.5rem, 100%));
   --_pictogram: 5rem;
   --_pictogram-gap: 1.5rem;
   --_main-toc-gap: clamp(2.5rem, -6.5rem + 15vw, 8.5rem);

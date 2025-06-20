@@ -6,7 +6,7 @@
 
   <main class="relative grid items-start pt-16 pb-16 grid-cols-article" data-theme="sykepenger" x-data="{ chapterIndex: 0 }">
     <div class="mb-3 col-main md:col-pictogram" style="--pictogram: #F5D3E2">
-      {{ '/src/_includes/svg/piktogrammer/produkter/sykepenger.svg' | svgContents('text-brand-purple-deep w-16 h-16 sm:w-20 sm:h-20') | safe  }}
+      {{ '/src/_includes/svg/piktogrammer/produkter/sykepenger.svg' | svgContents('text-brand-purple-deep w-16 h-16 sm:w-20 sm:h-20 -translate-x-1') | safe  }}
     </div>
     <div class="col-main">
       <h1 class="font-semibold text-fluid-36-48/tight text-pretty text-brand-purple-deep">{{ title | safe }}</h1>
@@ -41,9 +41,9 @@
             {{ chapter.data.title }}
           </a>
           {% if (chapter.templateContent | tocData).length >= 2 %}           
-          <ul class="hidden md:block mb-4 ml-5.5 border-l-2 border-slate-400" x-show="chapterIndex == {{ chapterIndex }}">
+          <ul class="hidden mt-2 mb-4 ml-5 border-l-2 md:block border-slate-400" x-show="chapterIndex == {{ chapterIndex }}">
           {% for item in chapter.templateContent | tocData %}
-            <li class="py-0.5"><a class="inline-block py-1 pl-3 underline text-gray-900/80 hover:text-blue-700 text-fluid-16-18/snug hover:decoration-2" href="#{{ item.id }}">
+            <li><a class="inline-block py-1.5 pl-3 underline text-gray-900/80 hover:text-blue-700 text-fluid-16-18/snug hover:decoration-2" href="#{{ item.id }}">
                 <span>{{ item.text }}</span>
               </a>
             </li>
