@@ -28,7 +28,7 @@
     </div>
 
     {# Innholdsfortegnelse #}
-    <div class="mt-8 lg:row-span-4 lg:mt-5 lg:sticky lg:row-start-3 xl:row-start-2 lg:top-12 col-toc" id="toc" x-intersect:leave.margin.-200px.0.0.0="floatingToc = true" x-intersect:enter.margin.100px.0.0.0="floatingToc = false, floatingTocOpen = false">
+    <div class="mt-8 lg:row-span-4 lg:mt-5 lg:sticky lg:row-start-2 xl:row-start-2 lg:top-12 col-toc" id="toc" x-intersect:leave.margin.-200px.0.0.0="floatingToc = true" x-intersect:enter.margin.100px.0.0.0="floatingToc = false, floatingTocOpen = false">
       <h2 class="flex items-baseline mb-2 font-semibold gap-x-0.5 text-fluid-18-20">
         {{ '/src/_includes/svg/icons/document.svg' | svgContents('w-6 h-6 translate-y-1 -translate-x-1') | safe  }}
         <span>Innhold på siden</span>
@@ -59,7 +59,7 @@
     {% for chapter in chapters %}
       {% set chapterIndex = loop.index %}
       <section class="pt-8 prose col-main" id="{{ chapter.data.title | slugify }}" x-intersect.margin.-480px="chapterIndex = {{ chapterIndex }}">
-        {# <div class="w-10 h-[0.625ch] bg-brand-purple-faded"></div> #}
+        <div class="w-10 h-[0.625ch] bg-deepblue-100 mt-12"></div>
         <h2 class="mt-5 mb-4 -translate-x-0.5 font-semibold text-fluid-32-36/tight text-balance">
           <a href="#{{ chapter.data.title | slugify }}">
             <span>{{ chapter.data.title }}</span>

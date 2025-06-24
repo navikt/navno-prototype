@@ -4,19 +4,20 @@ type: 'Søkeresultat'
 category: 'Søkeside'
 order: 12
 permalink: '/sok/'
+tags: ['listeslide', 'proto']
 alpine: true
 ---
 {%- extends 'base.njk' -%}
 
 {%- block content -%}
-  <main class="min-h-[61vh] py-8 text-fluid-20-22 md:pt-12 md:pb-20 text-gray-900 grid grid-cols-combi relative z-50">
+  <main class="min-h-[61vh] py-8 md:pt-12 md:pb-20 grid grid-cols-article relative z-20">
     <div class="items-start col-container md:grid md:grid-cols-12 md:gap-x-16" x-data="{ filterOpen: false, searchFilter: 'innhold' }">
 
       {# Tittel og søkefelt #}
       <div class="col-span-8 col-start-1 row-start-1">
 
         {# Tittel #}
-        <h1 class="text-fluid-24-28 font-semibold leading-tight tracking-normal md:text-fluid-24-28">
+        <h1 class="font-semibold leading-tight tracking-normal text-fluid-24-28">
           {{ title | safe }}
         </h1>
 
@@ -37,7 +38,7 @@ alpine: true
           <div class="flex-1 p-5 overflow-y-auto overscroll-contain">
             {# Sortering #}
             <fieldset class="">
-              <legend class="text-fluid-22-24 font-semibold ">Sortering</legend>
+              <legend class="font-semibold text-fluid-22-24 ">Sortering</legend>
               <div class="mt-1">
                 <span class="flex items-center gap-2">
                   <input class="inline-block w-5 h-5" name="sort" id="bestResult" type="radio" checked>
@@ -53,7 +54,7 @@ alpine: true
             {# Søkefilter #}
             <div class="mt-8">
               <fieldset>
-                <legend class="text-fluid-22-24 font-semibold">Søkefilter</legend>
+                <legend class="font-semibold text-fluid-22-24">Søkefilter</legend>
                 <div class="grid gap-1 mt-2">
                   {%- for item in filters -%}
                     <div
@@ -113,7 +114,7 @@ alpine: true
       {# Resultat #}
       <div class="mt-12 md:row-start-2 md:col-start-1 md:col-span-8">
         <div class="flex items-baseline justify-between gap-4">
-        <h2 class="leading-snug">74 treff på <strong>«penger»</strong> i&nbsp;innhold</h2>
+        <h2 class="leading-snug text-fluid-16-18">74 treff på <strong>«penger»</strong> i&nbsp;innhold</h2>
           <button
             class="inline-block ml-auto font-semibold leading-snug text-right text-blue-600 rounded md:hidden"
             type="button"
@@ -129,9 +130,11 @@ alpine: true
         <div class="grid mt-2">
           {%- for item in range(1,10) -%}
             <article class="pt-5 pb-4 border-t border-gray-200">
-              <h3><a class="text-fluid-24-28 font-semibold leading-tight text-blue-600 hover:underline hover:text-blue-700" href="#">Title</a></h3>
-              <p class="">Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
-              <p class="mt-0.5 text-fluid-18-20 opacity-75">Publisert 01.12.2019</p>
+              <h3>
+                <a class="font-semibold leading-tight text-blue-600 text-fluid-20-22 hover:underline hover:text-blue-700" href="#">Title</a>
+              </h3>
+              <p class="text-fluid-16-18">Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+              <p class="mt-0.5 text-fluid-16-18 opacity-75">Publisert 01.12.2019</p>
             </article>
           {%- endfor -%}
         </div>

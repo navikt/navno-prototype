@@ -1,4 +1,4 @@
-<aside x-ref="prototypeMenu" aria-label="Sider i prototypen" class="fixed top-0 right-0 z-40 grid items-end justify-end font-mono" x-data="{ prototypeMenuOpen: false }">
+<aside aria-label="Sider i prototypen" class="fixed top-0 right-0 z-40 grid items-end justify-end font-mono" x-data="{ prototypeMenuOpen: false }">
   <button type="button" class="relative z-20 grid p-1.5 group bg-orange-300 hover:bg-red-500 hover:text-yellow-400 rounded-bl place-items-center aspect-square cursor-pointer" x-on:click="prototypeMenuOpen = !prototypeMenuOpen" x-bind:class="prototypeMenuOpen && 'bg-slate-900 text-yellow-300'">
     {{ '/src/_includes/svg/icons/helmet.svg' | svgContents('w-7 h-7 origin-center transition-transform -translate-y-px translate-x-px group-hover:rotate-0') | safe }}
   </button>
