@@ -8,7 +8,7 @@
 
   --blur-xs: 2px;
 
-  --breakpoint-xs: 512px;
+  --breakpoint-xs: 400px;
   --breakpoint-sm: 768px;
   --breakpoint-md: 1024px;
   --breakpoint-lg: 1200px;
@@ -679,8 +679,20 @@
   --_pictogram: 5rem;
   --_pictogram-gap: 1.5rem;
   --_main-toc-gap: clamp(2.5rem, -6.5rem + 15vw, 8.5rem);
-  grid-template-columns: [full-start] var(--spacing-page) [container-start] auto [pictogram-start main-start toc-start] var(--_main) [pictogram-end main-end toc-end] auto [container-end] var(--spacing-page) [full-end]
+  justify-content: center;
+  grid-template-columns: [full-start] var(--spacing-page) [container-start] auto [pictogram-start main-start toc-start] var(--_main) [pictogram-end main-end toc-end] 1fr [container-end] var(--spacing-page) [full-end]
 }
+
+@media (width > 1024px) {
+  .grid-cols-article {
+    grid-template-columns: 
+      [full-start] var(--spacing-page) 
+      [container-start pictogram] var(--_pictogram) var(--_pictogram-gap) 
+      [main toc] var(--_main) 1fr 
+      [container-end] var(--spacing-page) [full-end]
+  }
+}
+
 
 @media (width > 1200px) {
   .grid-cols-article {
@@ -688,7 +700,8 @@
     --_toc: minmax(0, min(22.5rem, 30%));
     grid-template-columns:
       [full-start] var(--spacing-page) auto
-      [container-start pictogram main] 2fr var(--_main-toc-gap)
+      [container-start pictogram] var(--_pictogram) var(--_pictogram-gap)
+      [main] 2fr var(--_main-toc-gap)
       [toc] 1fr [container-end] 
       auto var(--spacing-page) [full-end];
   }

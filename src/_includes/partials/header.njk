@@ -1,6 +1,6 @@
 {%- set audience = audienceOverride or menu.audience -%}
 
-{%- set menuButtonClasses = "flex flex-col xs:flex-row items-center justify-center pl-2 pr-3 leading-none cursor-pointer font-semibold gap-1 text-blue-600 rounded min-w-16 py-2 text-fluid-16-18 xs:text-fluid-18-20 pointer-fine:hover:bg-blue-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-800 group peer" -%}
+{%- set menuButtonClasses = "flex flex-col xs:flex-row items-center justify-center px-2 xs:pl-2 xs:pr-3 leading-none cursor-pointer font-semibold gap-0.5 xs:gap-1 text-blue-600 rounded min-w-0 pt-1 pb-1.5 xs:py-2 text-fluid-16-18 xs:text-fluid-18-20 pointer-fine:hover:bg-blue-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-800 group peer" -%}
 
 <header class="relative z-50 bg-white">
   <div class="z-10 grid grid-cols-article">
@@ -17,7 +17,7 @@
         </div>
 
         {# Separator #}
-        <div class="w-px h-8 mx-2 origin-center bg-slate-300"></div>
+        <div class="w-px h-8 mx-0.5 md:mx-1 bg-slate-300"></div>
 
         {# Audience #}
         <div class="self-center pl-3 leading-tight text-fluid-20-22">
@@ -29,21 +29,21 @@
 
       {# Menu Buttons #}
 
-      <div class="flex self-center py-2 -mr-1 sm:gap-2 justify-self-end">
+      <div class="flex self-center justify-end gap-2 py-2 -mr-1 justify-self-end">
         <button 
-          class="{{ menuButtonClasses }} ml-1 order-2" 
+          class="{{ menuButtonClasses }} max-w-min xs:max-w-fit ml-auto order-2" 
           type="button" 
           x-on:click="menuOpen = !menuOpen, myPageOpen = false, loginOpen = false"
           x-bind:class="menuOpen && 'bg-blue-50'" 
           x-bind:aria-expanded="menuOpen"
         >
           <template x-if="!menuOpen">
-            {{ '/src/_includes/svg/icons/menusearch.svg' | svgContents('w-7 h-7  shrink-0 pointer-events-none') | safe }}
+            {{ '/src/_includes/svg/icons/menusearch.svg' | svgContents('w-7 h-7  shrink-0 pointer-events-none -translate-y-px') | safe }}
           </template>
           <template x-if="menuOpen">
             {{ '/src/_includes/svg/icons/close.svg' | svgContents('w-7 h-7 shrink-0 pointer-events-none') | safe }}
           </template>
-          <span class="mt-px">Meny og søk</span>
+          <span class="lg:mt-px">Meny og søk</span>
         </button>
       </div>
     </div>
