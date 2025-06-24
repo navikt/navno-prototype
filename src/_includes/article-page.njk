@@ -41,7 +41,7 @@
             {{ chapter.data.title }}
           </a>
           {% if (chapter.templateContent | tocData).length >= 2 %}           
-          <ul class="hidden mt-2 mb-4 ml-5 border-l-2 md:block border-slate-400" x-show="chapterIndex == {{ chapterIndex }}">
+          <ul class="hidden mt-2 mb-4 ml-5 border-l-2 lg:block border-slate-400" x-show="chapterIndex == {{ chapterIndex }}">
           {% for item in chapter.templateContent | tocData %}
             <li><a class="inline-block py-1.5 pl-3 underline opacity-90 hover:text-blue-700 text-fluid-16-18/snug decoration-slate-800/40 hover:decoration-2" href="#{{ item.id }}">
                 <span>{{ item.text }}</span>
