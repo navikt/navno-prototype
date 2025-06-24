@@ -679,9 +679,8 @@
   --_pictogram: 5rem;
   --_pictogram-gap: 1.5rem;
   --_main-toc-gap: clamp(2.5rem, -6.5rem + 15vw, 8.5rem);
-  grid-template-columns: [full-start] var(--spacing-page) [container-start] auto [pictogram main toc] var(--_main) auto [container-end] var(--spacing-page) [full-end]
+  grid-template-columns: [full-start] var(--spacing-page) [container-start] auto [pictogram-start main-start toc-start] var(--_main) [pictogram-end main-end toc-end] auto [container-end] var(--spacing-page) [full-end]
 }
-
 
 @media (width > 1200px) {
   .grid-cols-article {

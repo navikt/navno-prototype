@@ -8,7 +8,7 @@
     <div class="mb-3 col-main md:col-pictogram" style="--pictogram: #F5D3E2">
       {{ '/src/_includes/svg/piktogrammer/produkter/sykepenger.svg' | svgContents('text-brand-purple-deep w-16 h-16 sm:w-20 sm:h-20 -translate-x-1') | safe  }}
     </div>
-    <div class="col-start-[main] col-end-[container]">
+    <div class="col-main md:col-start-[main] md:col-end-[container]">
       <h1 class="font-semibold text-fluid-36-48/tight text-pretty text-brand-purple-deep">{{ title | safe }}</h1>
       <div class="mt-2 text-gray-700 text-fluid-16-18 font-regular">
         {{ category | safe }}
@@ -28,7 +28,7 @@
     </div>
 
     {# Innholdsfortegnelse #}
-    <div class="mt-8 md:row-span-4 md:mt-5 lg:sticky lg:row-start-3 xl:row-start-2 lg:top-12 col-main md:col-toc" id="toc" x-intersect:leave.margin.-200px.0.0.0="floatingToc = true" x-intersect:enter.margin.100px.0.0.0="floatingToc = false, floatingTocOpen = false">
+    <div class="mt-8 lg:row-span-4 lg:mt-5 lg:sticky lg:row-start-3 xl:row-start-2 lg:top-12 col-toc" id="toc" x-intersect:leave.margin.-200px.0.0.0="floatingToc = true" x-intersect:enter.margin.100px.0.0.0="floatingToc = false, floatingTocOpen = false">
       <h2 class="flex items-baseline mb-2 font-semibold gap-x-0.5 text-fluid-18-20">
         {{ '/src/_includes/svg/icons/document.svg' | svgContents('w-6 h-6 translate-y-1 -translate-x-1') | safe  }}
         <span>Innhold på siden</span>
