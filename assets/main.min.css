@@ -725,6 +725,9 @@
   .max-h-\[70svh\] {
     max-height: 70svh;
   }
+  .max-h-\[90svh\] {
+    max-height: 90svh;
+  }
   .max-h-full {
     max-height: 100%;
   }
@@ -853,9 +856,6 @@
   }
   .max-w-52 {
     max-width: calc(var(--spacing) * 52);
-  }
-  .max-w-\[50ch\] {
-    max-width: 50ch;
   }
   .max-w-lg {
     max-width: var(--container-lg);
@@ -1202,6 +1202,9 @@
   }
   .justify-self-end {
     justify-self: flex-end;
+  }
+  .overflow-auto {
+    overflow: auto;
   }
   .overflow-clip {
     overflow: clip;
