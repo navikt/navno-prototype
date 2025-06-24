@@ -121,7 +121,7 @@ export default function (eleventyConfig) {
   eleventyConfig.setDataDeepMerge(true);
 
   return {
-    pathPrefix: "/",
+    pathPrefix: "navno-prototype",
     markdownTemplateEngine: "njk",
     templateFormats: ["njk", "md"],
     dir: {
