@@ -199,9 +199,10 @@
       navigation: auto;
   }
 
-  * {
+  :where(*, button) {
     text-decoration-thickness: 0.0625rem;
-    text-underline-offset: 0.15625rem;
+    text-underline-offset: 0.1625rem;
+    text-decoration-skip-ink: auto;
   }
 
   body {
@@ -574,10 +575,9 @@
     display: inline-block;
     flex-shrink: 0;
     place-items: center;
-    align-self: baseline;
+    align-self: center;
     margin-inline: -30px 8px;
     transition: transform 150ms;
-    transform: translateY(2px);
     width: 22px;
     height: 22px;
   }
@@ -593,7 +593,7 @@
     margin-bottom: 8px;
   }
   :where(.readmore[open]) summary:before {
-    transform: translateY(2px) rotate(-180deg);
+    transform: rotate(-180deg);
   }
   :where(.readmore) summary > * {
     text-wrap: pretty;
@@ -664,10 +664,14 @@
   grid-template-columns: 
     [full-start] var(--_edge) 
     [container-start] var(--_container) var(--_gap)
-    [main-start] var(--_prose) var(--_prose) 
+    [main-start] var(--_prose) var(--_prose)
     [main-end] var(--_gap) 
     [toc-start] var(--_container) 
     [container-end toc-end] var(--_edge) [full-end];
+
+    :where(& > *) {
+      grid-column: main;
+    }
 }
 
 .grid-cols-article {

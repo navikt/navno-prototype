@@ -1,5 +1,6 @@
 ---
 title: 'Pengestøtte når du får barn'
+eleventyExcludeFromCollections: true
 sectionType: 'varehylle'
 order: 3
 ---
@@ -42,7 +43,7 @@ order: 3
   <div class="relative border rounded-lg border-slate-300 has-[a:hover]:bg-blue-50 grid w-full gap-3 px-5 py-4 xs:flex xs:gap-6 xs:items-start">
     {{ item.pictogram | svgContents('mt-3 w-[6ch] h-[6ch] shrink-0 text-brand-purple-deep') | safe }}
     <div>
-      <a href="#" class="text-fluid-20-22 font-semibold after:absolute after:inset-0">{{ item.title }}</a>
+      <a href="#" class="font-semibold text-fluid-20-22 after:absolute after:inset-0">{{ item.title }}</a>
       <p>{{ item.description }}</p>
       <div class="pt-4 mt-auto font-normal tracking-wider text-gray-700 small-caps">{{ item.kicker }}</div>
     </div>

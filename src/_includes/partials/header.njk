@@ -38,10 +38,10 @@
           x-bind:aria-expanded="menuOpen"
         >
           <template x-if="!menuOpen">
-            {{ '/src/_includes/svg/icons/menusearch.svg' | svgContents('w-6 h-6 sm:w-7 sm:h-7 shrink-0 pointer-events-none') | safe }}
+            {{ '/src/_includes/svg/icons/menusearch.svg' | svgContents('w-7 h-7  shrink-0 pointer-events-none') | safe }}
           </template>
           <template x-if="menuOpen">
-            {{ '/src/_includes/svg/icons/close.svg' | svgContents('w-6 h-6 sm:w-7 sm:h-7 shrink-0 pointer-events-none') | safe }}
+            {{ '/src/_includes/svg/icons/close.svg' | svgContents('w-7 h-7 shrink-0 pointer-events-none') | safe }}
           </template>
           <span class="mt-px">Meny og søk</span>
         </button>
@@ -52,28 +52,28 @@
 
   {%- include "partials/navigation.njk" -%}
 
-  <div class="grid justify-center py-1 bg-blue-100 min-h-8 grid-cols-page">
+  <div class="grid justify-center py-1 bg-blue-50 min-h-8 grid-cols-page">
     <a 
-      class="inline-flex items-center gap-2 px-3 py-1 text-blue-600" 
+      class="inline-flex items-center gap-1 px-3 py-1 text-blue-600" 
       href="/min-side" 
       x-bind:class="myPageOpen && 'bg-slate-200'" 
       x-show="loggedIn" 
       x-bind:aria-expanded="myPageOpen"
     >
-      {{ '/src/_includes/svg/icons/person-circle.svg' | svgContents('w-6 h-6 sm:w-7 sm:h-7 -ml-0.5 shrink-0 pointer-events-none') | safe }}
+      {{ '/src/_includes/svg/icons/person-circle.svg' | svgContents('w-7 h-7 -ml-0.5 shrink-0 pointer-events-none') | safe }}
       <span class="mt-px sm:hidden">Min side</span>
       <span class="hidden mt-px sm:inline-block">Isac Norland</span>
     </a>
     <button 
-      class="inline-flex items-center gap-2 px-3 py-1 text-blue-600" 
+      class="inline-flex items-center gap-2 px-3 py-1 text-blue-600 cursor-pointer hover:underline decoration-blue-400 underline-offset-3" 
       type="button" 
       x-show="!loggedIn" 
       x-on:click="loginOpen = !loginOpen, menuOpen = false, myPageOpen = false" 
       x-bind:aria-expanded="loginOpen"
     >
-            {{ '/src/_includes/svg/icons/login.svg' | svgContents('w-6 h-6 sm:w-7 sm:h-7 shrink-0 pointer-events-none') | safe }}
-          <span class="mt-px">Logg inn (Krever Bank-ID eller …)</span>
-        </button>
+      {{ '/src/_includes/svg/icons/login.svg' | svgContents('w-7 h-7 shrink-0 pointer-events-none') | safe }}
+      <span>Logg inn (Krever Bank-ID eller …)</span>
+    </button>
   </div>
 
   {%- include "partials/login.njk" -%}
@@ -81,7 +81,7 @@
 
 {# Overlay #}
 <button 
-  class="fixed inset-0 z-40 w-full h-full cursor-default bg-gray-200/25 backdrop-blur-xs" 
+  class="fixed inset-0 z-40 w-full h-full cursor-default bg-gray-400/40 backdrop-blur-xs" 
   type="button"
   x-show="(menuOpen || myPageOpen || loginOpen || floatingTocOpen)" 
   x-on:click="menuOpen = false, myPageOpen = false, loginOpen = false, floatingTocOpen = false" 

@@ -1,8 +1,8 @@
-<aside x-ref="prototypeMenu" aria-label="Sider i prototypen" class="fixed right-0 z-30 grid items-end justify-end font-mono bottom-5" x-data="{ prototypeMenuOpen: false }">
-  <button type="button" class="relative z-20 -translate-x-6 grid p-1.5 transition-transform -rotate-45 hover:rotate-0 group bg-pink-400/60 hover:bg-pink-600 hover:text-pink-300 text-white rounded place-items-center aspect-square" x-on:click="prototypeMenuOpen = !prototypeMenuOpen" x-bind:class="prototypeMenuOpen && 'bg-pink-700 text-pink-300'">
+<aside x-ref="prototypeMenu" aria-label="Sider i prototypen" class="fixed left-0 z-30 grid items-end justify-end font-mono bottom-5" x-data="{ prototypeMenuOpen: false }">
+  <button type="button" class="relative z-20 translate-x-6 grid p-1.5 transition-transform -rotate-45 hover:rotate-0 group bg-pink-400/60 hover:bg-pink-600 hover:text-pink-300 text-white rounded place-items-center aspect-square cursor-pointer" x-on:click="prototypeMenuOpen = !prototypeMenuOpen" x-bind:class="prototypeMenuOpen && 'bg-pink-700 text-pink-300'">
     {{ '/src/_includes/svg/icons/globe.svg' | svgContents('w-7 h-7 transition-transform rotate-45 group-hover:rotate-0') | safe }}
   </button>
-  <div class="absolute right-0 z-0 w-screen max-w-lg p-8 pb-12 text-white bg-pink-500 shadow-2xl text-fluid-16-18 sm:text-fluid-18-20 bottom-1/2 rounded-l-2xl" x-show="prototypeMenuOpen" x-on:click.outside="prototypeMenuOpen = false"
+  <div class="absolute left-0 z-0 w-screen max-w-lg p-8 pb-12 text-white bg-pink-500 shadow-2xl text-fluid-16-18 sm:text-fluid-18-20 bottom-1/2 rounded-r-2xl" x-show="prototypeMenuOpen" x-on:click.outside="prototypeMenuOpen = false"
     x-transition:enter="transition-transform "
     x-transition:enter-start="opacity-0"
     x-transition:enter-end="opacity-1"
