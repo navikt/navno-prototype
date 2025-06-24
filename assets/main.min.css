@@ -412,6 +412,9 @@
   .col-span-8 {
     grid-column: span 8 / span 8;
   }
+  .col-toc {
+    grid-column: toc;
+  }
   .col-wide {
     grid-column: wide;
   }
@@ -424,14 +427,8 @@
   .col-start-3 {
     grid-column-start: 3;
   }
-  .col-start-\[main\] {
-    grid-column-start: main;
-  }
   .col-end-2 {
     grid-column-end: 2;
-  }
-  .col-end-\[container\] {
-    grid-column-end: container;
   }
   .row-span-2 {
     grid-row: span 2 / span 2;
@@ -3267,11 +3264,6 @@
       grid-column: span 8 / span 8;
     }
   }
-  .md\:col-toc {
-    @media (width >= 1024px) {
-      grid-column: toc;
-    }
-  }
   .md\:col-wide {
     @media (width >= 1024px) {
       grid-column: wide;
@@ -3292,19 +3284,24 @@
       grid-column-start: 9;
     }
   }
+  .md\:col-start-\[main\] {
+    @media (width >= 1024px) {
+      grid-column-start: main;
+    }
+  }
   .md\:col-end-9 {
     @media (width >= 1024px) {
       grid-column-end: 9;
     }
   }
+  .md\:col-end-\[container\] {
+    @media (width >= 1024px) {
+      grid-column-end: container;
+    }
+  }
   .md\:row-span-2 {
     @media (width >= 1024px) {
       grid-row: span 2 / span 2;
-    }
-  }
-  .md\:row-span-4 {
-    @media (width >= 1024px) {
-      grid-row: span 4 / span 4;
     }
   }
   .md\:row-start-1 {
@@ -3720,6 +3717,11 @@
       grid-row: span 2 / span 2;
     }
   }
+  .lg\:row-span-4 {
+    @media (width >= 1200px) {
+      grid-row: span 4 / span 4;
+    }
+  }
   .lg\:row-start-1 {
     @media (width >= 1200px) {
       grid-row-start: 1;
@@ -3743,6 +3745,11 @@
   .lg\:mx-auto {
     @media (width >= 1200px) {
       margin-inline: auto;
+    }
+  }
+  .lg\:mt-5 {
+    @media (width >= 1200px) {
+      margin-top: calc(var(--spacing) * 5);
     }
   }
   .lg\:mt-8 {
@@ -4544,7 +4551,7 @@
   --_pictogram: 5rem;
   --_pictogram-gap: 1.5rem;
   --_main-toc-gap: clamp(2.5rem, -6.5rem + 15vw, 8.5rem);
-  grid-template-columns: [full-start] var(--spacing-page) [container-start] auto [pictogram main toc] var(--_main) auto [container-end] var(--spacing-page) [full-end];
+  grid-template-columns: [full-start] var(--spacing-page) [container-start] auto [pictogram-start main-start toc-start] var(--_main) [pictogram-end main-end toc-end] auto [container-end] var(--spacing-page) [full-end];
 }
 @media (width > 1200px) {
   .grid-cols-article {
