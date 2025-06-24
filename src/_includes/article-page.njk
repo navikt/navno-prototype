@@ -28,12 +28,12 @@
     </div>
 
     {# Innholdsfortegnelse #}
-    <div class="mt-8 lg:row-span-4 lg:mt-5 lg:sticky lg:row-start-2 xl:row-start-2 lg:top-12 col-toc" id="toc" x-intersect:leave.margin.-200px.0.0.0="floatingToc = true" x-intersect:enter.margin.100px.0.0.0="floatingToc = false, floatingTocOpen = false">
+    <div class="mt-8 lg:row-span-4 lg:mt-5 lg:sticky lg:row-start-2 xl:row-start-2 lg:top-12 col-toc max-h-[90svh] overflow-auto" id="toc" x-intersect:leave.margin.-200px.0.0.0="floatingToc = true" x-intersect:enter.margin.100px.0.0.0="floatingToc = false, floatingTocOpen = false">
       <h2 class="flex items-baseline mb-2 font-semibold gap-x-0.5 text-fluid-18-20">
         {{ '/src/_includes/svg/icons/document.svg' | svgContents('w-6 h-6 translate-y-1 -translate-x-1') | safe  }}
         <span>Innhold på siden</span>
       </h2>
-      <ul class="pb-1 ml-1.5">
+      <ul class="pb-1 ml-1.5 pr-6">
         {% for chapter in chapters %}
         {% set chapterIndex = loop.index %}
         <li class="mt-1">
