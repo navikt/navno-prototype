@@ -21,13 +21,13 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "@11ty/eleventy": "^3.1.0",
+    "@11ty/eleventy": "^3.1.2",
     "@alpinejs/intersect": "^3.14.9",
-    "@tailwindcss/cli": "^4.1.7",
+    "@tailwindcss/cli": "^4.1.10",
     "alpinejs": "^3.14.9",
     "autoprefixer": "^10.4.21",
-    "cheerio": "^1.0.0",
-    "concurrently": "^9.1.2",
+    "cheerio": "^1.1.0",
+    "concurrently": "^9.2.0",
     "dotenv": "^16.5.0",
     "eleventy-plugin-svg-contents": "^0.7.0",
     "eleventy-plugin-toc": "^1.1.5",
@@ -37,7 +37,7 @@
     "markdown-it-toc-done-right": "^4.2.0",
     "prettier": "^3.5.3",
     "prettier-plugin-multiline-arrays": "^4.0.3",
-    "tailwindcss": "^4.1.7"
+    "tailwindcss": "^4.1.10"
   },
   "dependencies": {
     "compression": "^1.8.0",

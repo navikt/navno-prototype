@@ -190,6 +190,12 @@
     0%, 20% { opacity: 0 }
     100% { opacity: 1 }
   }
+
+  @keyframes highlight {
+    0%, 99.9% {
+      background-color: var(--color-blue-300);
+    }
+  }
 }
 
 
@@ -353,26 +359,6 @@
     border-top-width: 2px;
     border-color: var(--color-slate-400);
   }
-
-  /* Table of contents (toc) */
-  .toc-highlight {
-    border-inline-start-width: 4px;
-    border-color: transparent;
-  }
-
-  .toc-highlight--active {
-    border-color: var(--color-blue-600);
-  }
-
-  .toc-highlight-pill {
-    border-radius: calc(infinity * 1px);
-  }
-
-  .toc-highlight-pill--active {
-    background-color: var(--color-blue-50);
-  }
-
-
 
 
   /* Accordion */
@@ -653,6 +639,33 @@
       radial-gradient(var(--R) at left 50% top calc(var(--size) + var(--p)), var(--color-black) 99%, var(--color-transparent) 101%) calc(50% - 2 * var(--size)) 0/calc(4 * var(--size)) 100%,
       radial-gradient(var(--R) at left 50% top calc(-1 * var(--p)), var(--color-transparent) 99%, var(--color-black) 101%) left 50% top var(--size) / calc(4 * var(--size)) 100% repeat-x;
   }
+
+
+  .toc-highlight {
+    timeline-scope: var(--scopes)
+  }
+  .toc-item {
+    position: relative;
+    &:before {
+      position: absolute;
+      content: "";
+      width: 0.5rem;
+      height: 0.15rem;
+      left: -0.75rem;
+      top: 2.125ch;
+      translate: 0 -50%;
+      animation: highlight linear;
+      animation-timeline: var(--for);
+      animation-range:
+        entry min(60cqh, 60%)
+        exit calc(100% - min(80cqh, 80%));
+    }
+  }
+  .toc-chapter {
+    view-timeline: var(--is);
+  }
+
+  
 }
 
 @utility grid-cols-combi {

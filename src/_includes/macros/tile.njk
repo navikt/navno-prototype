@@ -1,6 +1,7 @@
 {% macro tile(args) %}
+<!-- Tile -->
 <div class="relative pl-5 pr-16 py-4 rounded-lg group leading-tight bg-white border border-slate-300  {{ args.theme or "has-[a:hover]:bg-blue-50 has-[a:active]:bg-blue-50 has-[a:focus-visible]:ring has-[a:focus-visible]:ring-blue-600" }}">
-  <a class="z-10 flex-1 text-fluid-18-20 font-semibold text-blue-600 no-underline text-pretty after:absolute after:inset-0 hover:underline hover:decoration-2 focus-visible:outline-none" href="#">
+  <a class="z-10 flex-1 font-semibold text-blue-600 no-underline text-fluid-18-20 text-pretty after:absolute after:inset-0 hover:underline hover:decoration-2 focus-visible:outline-none" href="#">
     {{ args.title }}
   </a>
   {%- if args.kicker %}

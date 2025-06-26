@@ -1,63 +1,15 @@
 ---
 showFooter: true
 activeRole: 'Privat'
-showPrototypeNav: false
 kicker: 'Feilkode 404'
 title: 'Fant ikke siden'
 description: 'Siden kan være flyttet, slettet eller det er en feil i lenken.'
 bodyClass: 'flex flex-col min-h-full'
+eleventyExcludeFromCollections: true
+
 ---
 {% extends "blank.njk" %}
 
 {% block content %}
-<header class="relative z-50 grid bg-white grid-cols-layout shadow-border isolate">
-  <nav class="col-full md:col-wide grid grid-cols-[auto_1fr] justify-center sm:gap-x-16">
-    <div class="flex items-center p-2 pl-clamp-gap md:pl-0 md:mr-auto">
-      <a href="/" class="block p-2 text-red-500 rounded-sm pointer-fine:hover:text-red-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-800 xs:-ml-2">
-        {{ '/src/_includes/svg/logo.svg' | svgContents('w-auto h-5') | safe }}
-        <span class="sr-only">NAV</span>
-      </a>
-    </div>
-    <div class="flex self-center gap-2 py-2 justify-self-end md:col-span-1">
-      <button class="flex flex-col xs:flex-row items-center justify-center p-1 xs:pl-2.5 xs:pr-3 leading-none font-semibold gap-0.5 text-blue-500 rounded min-w-16 xs:py-2 xs:text-fluid-20-22 pointer-fine:hover:bg-deepblue-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-800 group" type="button" x-on:click="menuOpen = !menuOpen, myPageOpen = false, loginOpen = false" x-bind:class="menuOpen && 'bg-deepblue-50'" x-bind:aria-expanded="menuOpen">
-        <template x-if="!menuOpen">
-          {{ '/src/_includes/svg/icons/menusearch.svg' | svgContents('w-6 h-6 sm:w-7 sm:h-7 shrink-0 pointer-events-none') | safe }}
-        </template>
-        <template x-if="menuOpen">
-          {{ '/src/_includes/svg/icons/close.svg' | svgContents('w-6 h-6 sm:w-7 sm:h-7 shrink-0 pointer-events-none') | safe }}
-        </template>
-        <span class="mt-px">Meny</span>
-      </button>
-
-      {%- include "partials/navigation.njk" -%}
-    </div>
-  </nav>
-</header>
-
-<main class="grid flex-1 py-8 grid-cols-layout">
-  <div class="relative flex flex-col col-wide py-clamp-gap">
-    <div class="relative z-10">
-      <h1 class="grid leading-snug">
-        <span class="text-fluid-16-18 md:text-fluid-18-20 tracking-wide font-semibold uppercase text-red-500 translate-x-0.5">{{ kicker }}</span>
-        <span class="text-fluid-32-36 font-semibold md:text-5xl">{{ title }}</span>
-      </h1>
-      <p class="max-w-xs mt-4 text-fluid-20-22">{{ description | safe }}</p>
-      <p class="mt-8"><a class="bg-blue-50 inline-flex rounded-lg py-2.5 px-6 font-semibold text-blue-600" href="/">Til forsiden</a></p>
-    </div>
-
-    <div aria-hidden="true" class="z-0 flex justify-end pointer-events-none">
-      <svg class="h-auto c-404 text-gray-50" xmlns="http://www.w3.org/2000/svg" width="818" height="506" fill="none" viewBox="0 0 818 506">
-        <path fill="currentColor" d="m88.3 361.3 54 2.8 1.9-36a663 663 0 0 1 3-37.3c1.7-14.3 3-26.8 4-37.4h-2a1893 1893 0 0 1-14 27.7l-15 27.8-31.9 52.4Zm46.8 138.6 3.7-70.9L4 422l3.2-60 117.7-180 106.8 5.5-9.5 180.8 34 1.8-3.5 64.9-34-1.8-3.7 70.9-80-4.2Zm264.2-114.5c-35 0-63.5-14-85.5-42-21.6-28.3-32.5-69.7-32.5-124s10.9-95 32.5-122c22-27.3 50.5-41 85.5-41s63.4 13.7 85 41c22 27.3 33 68 33 122 0 54.3-11 95.7-33 124-21.6 28-50 42-85 42Zm0-66c6.7 0 12.9-2.5 18.5-7.5 5.7-5 10.2-14.7 13.5-29a301 301 0 0 0 5-63.5c0-28-1.6-48.8-5-62.5-3.3-14-7.8-23.2-13.5-27.5a28.1 28.1 0 0 0-37 0c-5.6 4.3-10.1 13.5-13.5 27.5a286 286 0 0 0-5 62.5c0 28 1.7 49.2 5 63.5 3.4 14.3 7.9 24 13.5 29 5.7 5 11.9 7.5 18.5 7.5Zm246.5-131.5 54-2.9-2-35.9c-.5-10.7-.9-23.2-1-37.5a996 996 0 0 0 0-37.6l-2 .2c-3.5 9.5-7.1 19.2-11 29a2100 2100 0 0 1-11.9 29.2L646 188Zm61.2 133-3.8-71-134.8 7.1-3.2-59.9 98-191.4L770 .1l9.6 180.8 34-1.8 3.5 64.9-34 1.8 3.8 70.9-79.9 4.2Z"/>
-      </svg>
-    </div>
-  </div>
-</main>
-
-{% include "partials/footer.njk" %}
-{% include "partials/prototypeNav.njk" %}
-
-
-{# Overlay #}
-<button class="fixed inset-0 z-40 w-full h-full opacity-0 cursor-default bg-black/20" x-bind:class="(menuOpen || myPageOpen || audienceDropdownOpen || loginOpen) ? 'animate-fade-in' : 'hidden'" x-on:click="menuOpen = false, myPageOpen = false, audienceDropdownOpen = false, loginOpen = false" x-on:keyup.escape.window="menuOpen = false, myPageOpen = false, audienceDropdownOpen = false, loginOpen = false"></button>
 
 {% endblock %}
