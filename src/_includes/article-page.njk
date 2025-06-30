@@ -5,11 +5,11 @@
   {% set chapters = collections[page.fileSlug] | sort(false, false, 'data.order') %}
 
   <main class="relative grid items-start pt-16 pb-16 grid-cols-article toc-highlight" data-theme="sykepenger" x-data="{ chapterIndex: 0 }" style="--scopes: {% for chapter in chapters %}--chapter-{{ loop.index }}{{ ',' if not loop.last else ';' }}{% endfor %}">
-    <div class="mb-3 col-pictogram" style="--pictogram: #F5D3E2">
-      {{ '/src/_includes/svg/piktogrammer/produkter/sykepenger.svg' | svgContents('text-brand-purple-deep w-16 h-16 sm:w-20 sm:h-20 -translate-x-1') | safe  }}
+    <div class="mb-3 col-pictogram" style="--pictogram: var(--color-deepblue-100)">
+      {{ '/src/_includes/svg/piktogrammer/produkter/sykepenger.svg' | svgContents('text-deepblue-900 w-16 h-16 sm:w-20 sm:h-20 -translate-x-1') | safe  }}
     </div>
     <div class="col-main md:col-start-[main] md:col-end-[container]">
-      <h1 class="font-semibold text-fluid-36-48/tight text-pretty text-brand-purple-deep">{{ title | safe }}</h1>
+      <h1 class="font-semibold text-fluid-36-48/tight text-pretty">{{ title | safe }}</h1>
       <div class="mt-2 text-gray-700 text-fluid-16-18 font-regular">
         {{ category | safe }}
         {% if audience %}
