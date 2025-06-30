@@ -18,7 +18,7 @@
         {% endif %}
       </div>
     </div>
-    <div class="mt-6 col-main">
+    <div class="pb-10 mt-6 border-b col-main border-slate-300">
       <p class="text-fluid-18-20 text-pretty">
         {{ ingress | safe }}
         {% if audience %}          
@@ -33,7 +33,7 @@
         {{ '/src/_includes/svg/icons/document.svg' | svgContents('w-6 h-6 translate-y-1 -translate-x-1') | safe  }}
         <span>Innhold på siden</span>
       </h2>
-      <ul class="pb-1 ml-1.5 pr-6">
+      <ul class="ml-1.5 pr-6 mb-8">
         {% for chapter in chapters %}
         {% set chapterIndex = loop.index %}
         <li class="mt-1">
