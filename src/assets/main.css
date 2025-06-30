@@ -193,7 +193,7 @@
 
   @keyframes highlight {
     0%, 99.9% {
-      background-color: var(--color-blue-300);
+      background-color: var(--color-blue-500);
     }
   }
 }
@@ -649,10 +649,11 @@
     &:before {
       position: absolute;
       content: "";
-      width: 0.5rem;
-      height: 0.15rem;
+      width: 0.4375rem;
+      height: 0.4375rem;
+      border-radius: var(--radius-xs);
       left: -0.75rem;
-      top: 2.125ch;
+      top: 2ch;
       translate: 0 -50%;
       animation: highlight linear;
       animation-timeline: var(--for);
