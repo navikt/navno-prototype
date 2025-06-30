@@ -10,15 +10,15 @@
     </div>
     <div class="col-main md:col-start-[main] md:col-end-[container]">
       <h1 class="font-semibold text-fluid-36-48/tight text-pretty">{{ title | safe }}</h1>
-      <div class="mt-2 text-gray-700 text-fluid-16-18 font-regular">
-        {{ category | safe }}
+      <div class="mt-4 text-gray-700 text-fluid-12-14 font-regular">
+        <span class="px-2 py-0.5 border rounded-md border-slate-300 bg-slate-50">{{ category | safe }}</span>
         {% if audience %}
-          <span aria-hidden="true" class="inline-block -translate-y-px">—</span>
+          <span aria-hidden="true" class="inline-block">—</span>
           {{ audience.current | safe }}
         {% endif %}
       </div>
     </div>
-    <div class="pb-10 mt-6 border-b col-main border-slate-300">
+    <div class="mt-6 border-b pb-9 col-main border-slate-300">
       <p class="text-fluid-18-20 text-pretty">
         {{ ingress | safe }}
         {% if audience %}          
