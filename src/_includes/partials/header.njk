@@ -98,9 +98,9 @@
 <button 
   class="fixed inset-0 z-40 w-full h-full cursor-default bg-gray-400/40 backdrop-blur-xs" 
   type="button"
-  x-show="(menuOpen || myPageOpen || loginOpen || floatingTocOpen)" 
-  x-on:click="menuOpen = false, myPageOpen = false, loginOpen = false, floatingTocOpen = false" 
-  x-on:keyup.escape.window="menuOpen = false, myPageOpen = false,  loginOpen = false"
+  x-show="(menuOpen || searchOpen || myPageOpen || loginOpen || floatingTocOpen)" 
+  x-on:click="menuOpen = false, searchOpen = false, myPageOpen = false, loginOpen = false, floatingTocOpen = false" 
+  x-on:keyup.escape.window="menuOpen = false, searchOpen = false, myPageOpen = false,  loginOpen = false"
   x-transition:enter="transition ease-out duration-75"
   x-transition:enter-start="opacity-0"
   x-transition:enter-end="opacity-100"
