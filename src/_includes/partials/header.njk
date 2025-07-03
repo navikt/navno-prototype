@@ -1,6 +1,6 @@
 {%- set audience = audienceOverride or menu.audience -%}
 
-{%- set menuButtonClasses = "flex flex-col xs:flex-row items-center justify-center pl-3 pr-4 leading-none cursor-pointer font-semibold gap-0.5 xs:gap-1 text-blue-600 rounded-full bg-slate-100 min-w-0 py-1 xs:py-2 text-fluid-16-18 xs:text-fluid-18-20 pointer-fine:hover:bg-blue-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-800 group peer" -%}
+{%- set menuButtonClasses = "flex flex-col xs:flex-row items-center justify-center pl-3 pr-4 leading-none cursor-pointer font-semibold gap-0.5 xs:gap-1 text-blue-600 rounded-full bg-slate-100 min-w-0 py-1.5 sm:py-2.5 text-fluid-16-18 xs:text-fluid-18-20 pointer-fine:hover:bg-blue-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-800 group peer" -%}
 
 <header class="relative z-50 bg-white border-t-8 -scroll-mt-16 border-warning" id="toppen">
   <div class="z-10 grid grid-cols-article">
@@ -41,7 +41,7 @@
           <template x-if="menuOpen">
             {{ '/src/_includes/svg/icons/close.svg' | svgContents('w-6 h-6 shrink-0 pointer-events-none') | safe }}
           </template>
-          <span class="lg:mt-px">Meny</span>
+          <span class="mt-px">Meny</span>
         </button>
         <button
           class="{{ menuButtonClasses }} max-w-min xs:max-w-fit ml-auto order-1" 
@@ -56,7 +56,7 @@
           <template x-if="searchOpen">
             {{ '/src/_includes/svg/icons/close.svg' | svgContents('w-6 h-6 shrink-0 pointer-events-none') | safe }}
           </template>
-          <span class="lg:mt-px">Søk</span>
+          <span class="mt-px">Søk</span>
         </button>
       </div>
     </div>
