@@ -22,7 +22,7 @@
       <li class="py-2 border-t border-black/10 break-inside-avoid">
         {% for item in pages -%}
         <a href="{{ item.url }}#toppen" class="py-1 underline hover:decoration-2 decoration-from-font underline-offset-4">{{ item.data.title | safe }}</a>
-        {% if pages.length > 1 and not loop.last %} | {% endif %}
+        {% if pages.length > 1 and not loop.last %}  |  {% endif %}
         {% if loop.last %}
           <b class="block pt-1 font-normal text-fluid-14-16 opacity-80">{{ type }}</b>
         {% endif %}
