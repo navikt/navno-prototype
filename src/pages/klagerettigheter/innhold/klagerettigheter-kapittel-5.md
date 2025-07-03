@@ -28,19 +28,19 @@ Du må skrive ut en førsteside som du sender i posten sammen med dokumentasjone
 <div class="accordion">
   <details>
     <summary>Erstatning som gjelder kommunale tjenester</summary>
-    {% prose "py-2 pl-5 -ml-5 -translate-x-px border-l-2 border-slate-400" %}
+    {% prose %}
     {% endprose %}
   </details>
 
   <details>
     <summary>Erstatning som følge av brudd på personvernreglene </summary>
-    {% prose "py-2 pl-5 -ml-5 -translate-x-px border-l-2 border-slate-400" %}
+    {% prose %}
     {% endprose %}
   </details>
 
   <details>
     <summary>Noen generelle vilkår for å få erstatning</summary>
-    {% prose "py-2 pl-5 -ml-5 -translate-x-px border-l-2 border-slate-400" %}
+    {% prose %}
     {% endprose %}
   </details>
 </div>

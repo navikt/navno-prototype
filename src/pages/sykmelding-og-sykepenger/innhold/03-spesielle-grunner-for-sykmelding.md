@@ -8,57 +8,57 @@ Visse situasjoner kan gi rett til sykepenger, selv om pasienten ikke er arbeidsu
 <div class="accordion">
   <details>
     <summary>Innlagt i helseinstitusjon</summary>
-    {% prose "py-2 pl-5 -ml-5 -translate-x-px border-l-2 border-slate-400" %}
+    {% prose %}
     {% endprose %}
   </details>
   <details>
     <summary>Behandling for barnløshet</summary>
-    {% prose "py-2 pl-5 -ml-5 -translate-x-px border-l-2 border-slate-400" %}
+    {% prose %}
     {% endprose %}
   </details>
   <details>
     <summary>Donor</summary>
-    {% prose "py-2 pl-5 -ml-5 -translate-x-px border-l-2 border-slate-400" %}
+    {% prose %}
     {% endprose %}
   </details>
   <details>
     <summary>Familiebehandling</summary>
-    {% prose "py-2 pl-5 -ml-5 -translate-x-px border-l-2 border-slate-400" %}
+    {% prose %}
     {% endprose %}
   </details>
   <details>
     <summary>Kontrollundersøkelse</summary>
-    {% prose "py-2 pl-5 -ml-5 -translate-x-px border-l-2 border-slate-400" %}
+    {% prose %}
     {% endprose %}
   </details>
   <details>
     <summary>Svangerskapsavbrudd</summary>
-    {% prose "py-2 pl-5 -ml-5 -translate-x-px border-l-2 border-slate-400" %}
+    {% prose %}
     {% endprose %}
   </details>
   <details>
     <summary>Smittefare</summary>
-    {% prose "py-2 pl-5 -ml-5 -translate-x-px border-l-2 border-slate-400" %}
+    {% prose %}
     {% endprose %}
   </details>
   <details>
     <summary>Opplæringstiltak</summary>
-    {% prose "py-2 pl-5 -ml-5 -translate-x-px border-l-2 border-slate-400" %}
+    {% prose %}
     {% endprose %}
   </details>
   <details>
     <summary>Sykdom hos familiemedlemmer</summary>
-    {% prose "py-2 pl-5 -ml-5 -translate-x-px border-l-2 border-slate-400" %}
+    {% prose %}
     {% endprose %}
   </details>
   <details>
     <summary>Sorg</summary>
-    {% prose "py-2 pl-5 -ml-5 -translate-x-px border-l-2 border-slate-400" %}
+    {% prose %}
     {% endprose %}
   </details>
   <details>
     <summary>Mobbing og konflikter på arbeidsplassen</summary>
-    {% prose "py-2 pl-5 -ml-5 -translate-x-px border-l-2 border-slate-400" %}
+    {% prose %}
     {% endprose %}
   </details>
 </div>

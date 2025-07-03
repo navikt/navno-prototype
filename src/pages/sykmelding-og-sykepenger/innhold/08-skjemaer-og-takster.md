@@ -58,12 +58,12 @@ Takstene er tilpasset bruk av digital sykmelding.
 <div class="accordion">
   <details>
     <summary>Sykmelding</summary>
-    {% prose "py-2 pl-5 -ml-5 -translate-x-px border-l-2 border-slate-400" %}
+    {% prose %}
     {% endprose %}
   </details>
   <details>
     <summary>Dialogmeldinger</summary>
-    {% prose "py-2 pl-5 -ml-5 -translate-x-px border-l-2 border-slate-400" %}
+    {% prose %}
     {% endprose %}
   </details>
 </div>

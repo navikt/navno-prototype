@@ -26,7 +26,7 @@ Se hvilke regler som gjelder for deg:
 <div class="accordion">
   <details>
     <summary>Arbeidstaker</summary>
-    {% prose "py-2 pl-5 -ml-5 -translate-x-px border-l-2 border-slate-400" %}
+    {% prose %}
 Du må ha jobbet i minst fire uker rett før du ble sykmeldt. For å få sykepenger fra NAV, må inntekten din per år, det vil si gjennomsnittsinntekten de siste tre månedene før du ble syk omgjort til årsinntekt være minst 59 310 kroner. Det tilsvarer femti prosent av grunnbeløpet i folketrygden (1/2 G). 
 
 Det samme gjelder hvis du kombinerer arbeid med uføretrygd.
@@ -86,7 +86,7 @@ Hvis du er syk lenger enn egenmeldingsdagene, må du kontakte lege.
 
   <details>
     <summary>Selvstendig næringsdrivende</summary>
-    {% prose "py-2 pl-5 -ml-5 -translate-x-px border-l-2 border-slate-400" %}
+    {% prose %}
 Du har rett til sykepenger fra dag 17 av sykefraværet ditt, og du må ha jobbet i minst fire uker rett før du ble sykmeldt. 
 
 Gjennomsnittet av årsinntekten din fastsatt for de 3 siste årene må være minst 59 310 kroner. Det tilsvarer femti prosent av grunnbeløpet i folketrygden (1/2 G).
@@ -121,7 +121,7 @@ Hvis du har tegnet forsikring, kan du få sykepenger de første 16 kalenderdagen
 
   <details>
     <summary>Frilanser</summary>
-    {% prose "py-2 pl-5 -ml-5 -translate-x-px border-l-2 border-slate-400" %}
+    {% prose %}
 Du har rett til sykepenger fra dag 17 av sykefraværet ditt.
 
 Inntekten din må være minst 59 310 kroner. Det tilsvarer femti prosent av grunnbeløpet i folketrygden (1/2 G).
@@ -147,7 +147,7 @@ Hvis du har tegnet forsikring, kan du få sykepenger de første 16 kalenderdagen
 
   <details>
     <summary>Fisker</summary>
-    {% prose "py-2 pl-5 -ml-5 -translate-x-px border-l-2 border-slate-400" %}
+    {% prose %}
 Sykepenger til deg som fisker beregnes  på samme måte som for arbeidstakere og/eller selvstendig  næringsdrivende, men det er noen særskilte regler for deg som er fisker på blad B i fiskermanntallet:
 
 * Du har rett til sykepenger selv om du har vært i arbeid i mindre enn fire uker.
@@ -171,7 +171,7 @@ Du kan få sykepenger fra NAV i opptil 60 dager hvis gjennomsnittet av inntekten
 
   <details>
     <summary>Har flere jobber</summary>
-    {% prose "py-2 pl-5 -ml-5 -translate-x-px border-l-2 border-slate-400" %}
+    {% prose %}
 Hvis du er sykmeldt fra flere jobber, må du informere legen din om dette, slik at du får en sykmelding for hver jobb. Sykepengene blir beregnet ut fra inntekten fra alle jobbene dine.
 
 For å få sykepenger fra NAV, må gjennomsnittet av den samlede inntekten din fra alle arbeidsforhold de tre siste månedene tilsvare en årsinntekt på minst 59 310 kroner. Det tilsvarer femti prosent av grunnbeløpet i folketrygden (1/2 G). 
@@ -190,7 +190,7 @@ Du kan få sykepenger fra NAV i opptil 60 dager hvis gjennomsnittet av inntekten
 
   <details>
     <summary>Jobber i flere land</summary>
-    {% prose "py-2 pl-5 -ml-5 -translate-x-px border-l-2 border-slate-400" %}
+    {% prose %}
 Hvis du jobber i flere land, må NAV vurdere om du har rett til sykepenger etter norsk lov eller om du omfattes av andre lands lover. Denne vurderingen gjøres ut fra blant annet hvilket land du bor i, hva slags arbeid du utfører i hvilket land og i hvilket land arbeidsgiverne dine er registrert.
 
 Noen ganger må vi kontakte andre lands trygdemyndigheter for å avklare dette. Du kan kun være omfattet av ett lands lover på det tidspunktet du ble syk.
@@ -199,7 +199,7 @@ Noen ganger må vi kontakte andre lands trygdemyndigheter for å avklare dette. 
 
   <details>
     <summary>Midlertidig ute av arbeid</summary>
-    {% prose "py-2 pl-5 -ml-5 -translate-x-px border-l-2 border-slate-400" %}
+    {% prose %}
 Hadde du vært ute av inntektsgivende arbeid i mindre enn en måned da du ble syk? Du kan ha rett til sykepenger fra NAV hvis du oppfyller ett av disse kravene:
 
 * Du er fremdeles ute av inntektsgivende arbeid
@@ -228,7 +228,7 @@ Du må ha sykmelding fra den første dagen du blir syk.
 
   <details>
     <summary>Arbeidsledig (dagpengemottaker)</summary>
-    {% prose "py-2 pl-5 -ml-5 -translate-x-px border-l-2 border-slate-400" %}
+    {% prose %}
 Hvis du blir sykmeldt mens du er arbeidsledig og mottar dagpenger, har du rett til sykepenger fra den første dagen du er sykmeldt. Du må ha mottatt dagpenger eller jobbet i minst fire uker til sammen for å ha rett til sykepenger.
 
 #### Hvis du er 100 prosent sykmeldt
@@ -284,7 +284,7 @@ Dette må du gjøre:
 
   <details>
     <summary>Permittert</summary>
-    {% prose "py-2 pl-5 -ml-5 -translate-x-px border-l-2 border-slate-400" %}
+    {% prose %}
 Hvis du blir sykmeldt mens du er permittert og mottar dagpenger, har du rett til sykepenger fra den første dagen du er sykmeldt. Du må ha mottatt dagpenger eller jobbet i minst fire uker for å ha rett til sykepenger.
 
 #### Hvis du er 100 prosent sykmeldt
@@ -332,7 +332,7 @@ Dette må du gjøre:
 
   <details>
     <summary>Avtjent militær- eller siviltjeneste</summary>
-    {% prose "py-2 pl-5 -ml-5 -translate-x-px border-l-2 border-slate-400" %}
+    {% prose %}
 Hvis du har avtjent militær- eller siviltjeneste, har du rett til sykepenger fra den første dagen du begynner å jobbe.
 
 * Du har rett til sykepenger selv om du har vært i tjenesten i mindre enn fire uker.
@@ -357,7 +357,7 @@ Hvis du er syk lenger enn egenmeldingsdagene, må du kontakte lege.
 
   <details>
     <summary>Tar utdanning</summary>
-    {% prose "py-2 pl-5 -ml-5 -translate-x-px border-l-2 border-slate-400" %}
+    {% prose %}
 I utgangspunktet får du ikke sykepenger mens du tar utdanning. Hvis du klarer å studere på heltid, går NAV ut fra at du også kan arbeide, men vi vil vurdere dette individuelt ut fra situasjonen din når du ble sykmeldt.
 
 Er du sykmeldt fra en deltidsjobb, men klarer likevel å fortsette studiene? Da kan du få sykepenger basert på inntekten din hvis du har kombinert jobb og studier over et visst tidsrom.
@@ -366,7 +366,7 @@ Er du sykmeldt fra en deltidsjobb, men klarer likevel å fortsette studiene? Da 
 
   <details>
     <summary>Innlagt på helseinstitusjon</summary>
-    {% prose "py-2 pl-5 -ml-5 -translate-x-px border-l-2 border-slate-400" %}
+    {% prose %}
 Når du er innlagt på sykehus eller andre helseinstitusjoner, kan du få sykepenger.
 
 Du får sykepenger for måneden du er innlagt og de tre påfølgende månedene. Deretter blir sykepengene redusert med 50 prosent, men skal likevel ikke være lavere enn et sykepengegrunnlag på 50 prosent av grunnbeløpet.
@@ -377,7 +377,7 @@ Hvis du fortsatt har faste og nødvendige utgifter til bolig eller forsørgingsa
 
   <details>
     <summary>I fengsel</summary>
-    {% prose "py-2 pl-5 -ml-5 -translate-x-px border-l-2 border-slate-400" %}
+    {% prose %}
 Du har ikke rett til sykepenger når du sitter i varetekt, soner straff eller har en særreaksjon i en av kriminalomsorgens anstalter eller tilsvarende anstalt i utlandet.
 
 Du kan ha rett til sykepenger hvis du jobber for en arbeidsgiver utenfor fengselet mens du soner straff.

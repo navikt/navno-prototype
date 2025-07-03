@@ -37,13 +37,13 @@ Trygderetten vil behandle saken, avgjøre den og skrive en kjennelse. Trygderett
 <div class="accordion">
   <details>
     <summary>Slik melder du saken for en domstol</summary>
-    {% prose "py-2 pl-5 -ml-5 -translate-x-px border-l-2 border-slate-400" %}
+    {% prose %}
     {% endprose %}
   </details>
 
   <details>
     <summary>Slik klager du til Sivilombudet</summary>
-    {% prose "py-2 pl-5 -ml-5 -translate-x-px border-l-2 border-slate-400" %}
+    {% prose %}
     {% endprose %}
   </details>
 </div>

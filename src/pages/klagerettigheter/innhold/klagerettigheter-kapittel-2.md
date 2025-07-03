@@ -14,19 +14,19 @@ Velg hva slags tjeneste eller pengestøtte du skal klage på under.
 <div class="accordion">
   <details>
     <summary>Klage på sosiale tjenester</summary>
-    {% prose "py-2 pl-5 -ml-5 -translate-x-px border-l-2 border-slate-400" %}
+    {% prose %}
     {% endprose %}
   </details>
 
   <details>
     <summary>Klage på et arbeidsmarkedstiltak</summary>
-    {% prose "py-2 pl-5 -ml-5 -translate-x-px border-l-2 border-slate-400" %}
+    {% prose %}
     {% endprose %}
   </details>
 
   <details>
     <summary>Klage på alle andre tjenester og pengestøtter</summary>
-    {% prose "py-2 pl-5 -ml-5 -translate-x-px border-l-2 border-slate-400" %}
+    {% prose %}
     {% endprose %}
   </details>
 </div>

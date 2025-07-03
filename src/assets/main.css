@@ -452,6 +452,14 @@
     text-wrap: pretty;
   }
 
+  .accordion :where(details[open]) > .prose {
+    padding-block: --spacing(2);
+    padding-inline-start: --spacing(5);
+    margin-inline-start: calc(--spacing(5) * -1);
+    translate: -1px 0;
+    border-inline-start: 2px solid var(--color-slate-400);
+  }
+
   [data-theme="sykepenger"] :where(.accordion) details {
     padding-inline: 42px;
   }

@@ -14,12 +14,12 @@ For at du skal kunne sende inn sykmeldinger og erklæringer til Nav, må du ha t
 <div class="accordion">
   <details>
     <summary>Forutsetninger for elektronisk innsending av sykmeldinger og legeerklæringer</summary>
-    {% prose "py-2 pl-5 -ml-5 -translate-x-px border-l-2 border-slate-400" %}
+    {% prose %}
     {% endprose %}
   </details>
   <details>
     <summary>Tekniske spesifikasjoner for EPJ-systemene på legekontorene</summary>
-    {% prose "py-2 pl-5 -ml-5 -translate-x-px border-l-2 border-slate-400" %}
+    {% prose %}
     {% endprose %}
   </details>
 </div>
@@ -107,48 +107,48 @@ Hvis du har spørsmål om sykmelding knyttet til spesifikke diagnoser, eller tre
 <div class="accordion">
   <details>
     <summary>Arbeidsledige eller permitterte</summary>
-    {% prose "py-2 pl-5 -ml-5 -translate-x-px border-l-2 border-slate-400" %}
+    {% prose %}
     {% endprose %}
   </details>
   <details>
     <summary>Studenter</summary>
-    {% prose "py-2 pl-5 -ml-5 -translate-x-px border-l-2 border-slate-400" %}
+    {% prose %}
     {% endprose %}
   </details>
   <details>
     <summary>Selvstendig næringsdrivende</summary>
-    {% prose "py-2 pl-5 -ml-5 -translate-x-px border-l-2 border-slate-400" %}
+    {% prose %}
     {% endprose %}
   </details>
   <details>
     <summary>Fiskere</summary>
-    {% prose "py-2 pl-5 -ml-5 -translate-x-px border-l-2 border-slate-400" %}
+    {% prose %}
     {% endprose %}
   </details>
   <details>
     <summary>Turnus-, skift- og offshorearbeidere</summary>
-    {% prose "py-2 pl-5 -ml-5 -translate-x-px border-l-2 border-slate-400" %}
+    {% prose %}
     {% endprose %}
   </details>
   <details>
     <summary>I foreldrepermisjon</summary>
-    {% prose "py-2 pl-5 -ml-5 -translate-x-px border-l-2 border-slate-400" %}
+    {% prose %}
     {% endprose %}
   </details>
   <details>
     <summary>Personer med flere ansettelsesforhold/arbeidsgivere</summary>
-    {% prose "py-2 pl-5 -ml-5 -translate-x-px border-l-2 border-slate-400" %}
+    {% prose %}
     {% endprose %}
   </details>
   <details>
     <summary>Personer i arbeidsrettet tiltak</summary>
-    {% prose "py-2 pl-5 -ml-5 -translate-x-px border-l-2 border-slate-400" %}
+    {% prose %}
     {% endprose %}
   </details>
   <details>
     <summary>Personer med varig tilrettelagt arbeid (VTA)
 </summary>
-    {% prose "py-2 pl-5 -ml-5 -translate-x-px border-l-2 border-slate-400" %}
+    {% prose %}
     {% endprose %}
   </details>
 </div>

@@ -19,42 +19,42 @@ Det innebærer å
 <div class="accordion">
   <details>
     <summary>4 uker – Oppfølgingsplan</summary>
-    {% prose "py-2 pl-5 -ml-5 -translate-x-px border-l-2 border-slate-400" %}
+    {% prose %}
     {% endprose %}
   </details>
   <details>
     <summary>7 uker – Dialogmøte 1</summary>
-    {% prose "py-2 pl-5 -ml-5 -translate-x-px border-l-2 border-slate-400" %}
+    {% prose %}
     {% endprose %}
   </details>
   <details>
     <summary>8 uker – Aktivitetskravet</summary>
-    {% prose "py-2 pl-5 -ml-5 -translate-x-px border-l-2 border-slate-400" %}
+    {% prose %}
     {% endprose %}
   </details>
   <details>
     <summary>12 uker – Endring til sykdomsdiagnose?</summary>
-    {% prose "py-2 pl-5 -ml-5 -translate-x-px border-l-2 border-slate-400" %}
+    {% prose %}
     {% endprose %}
   </details>
   <details>
     <summary>17 uker – Før dialogmøte 2</summary>
-    {% prose "py-2 pl-5 -ml-5 -translate-x-px border-l-2 border-slate-400" %}
+    {% prose %}
     {% endprose %}
   </details>
   <details>
     <summary>26 uker – Dialogmøte 2</summary>
-    {% prose "py-2 pl-5 -ml-5 -translate-x-px border-l-2 border-slate-400" %}
+    {% prose %}
     {% endprose %}
   </details>
   <details>
     <summary>39 uker – Hvilke muligheter har pasienten?</summary>
-    {% prose "py-2 pl-5 -ml-5 -translate-x-px border-l-2 border-slate-400" %}
+    {% prose %}
     {% endprose %}
   </details>
   <details>
     <summary>52 uker – Sykepengene opphører</summary>
-    {% prose "py-2 pl-5 -ml-5 -translate-x-px border-l-2 border-slate-400" %}
+    {% prose %}
     {% endprose %}
   </details>
 </div>
@@ -68,22 +68,22 @@ Arbeidsgiveren har ansvar for å utarbeide en oppfølgingsplan innen fire ukers 
 <div class="accordion">
   <details>
     <summary>Dialog med pasienten</summary>
-    {% prose "py-2 pl-5 -ml-5 -translate-x-px border-l-2 border-slate-400" %}
+    {% prose %}
     {% endprose %}
   </details>
   <details>
     <summary>Du kan gi innspill til arbeidsgiveren</summary>
-    {% prose "py-2 pl-5 -ml-5 -translate-x-px border-l-2 border-slate-400" %}
+    {% prose %}
     {% endprose %}
   </details>
   <details>
     <summary>Slik deles den digitale planen med legen</summary>
-    {% prose "py-2 pl-5 -ml-5 -translate-x-px border-l-2 border-slate-400" %}
+    {% prose %}
     {% endprose %}
   </details>
   <details>
     <summary>Hvis planen ikke lar seg dele digitalt</summary>
-    {% prose "py-2 pl-5 -ml-5 -translate-x-px border-l-2 border-slate-400" %}
+    {% prose %}
     {% endprose %}
   </details>
 </div>

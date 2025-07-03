@@ -71,7 +71,7 @@ Arbeidsgiveren din har plikt til å følge deg opp når du er sykmeldt. Hvis du 
 <div class="accordion">
   <details>
     <summary>Hvis du har en arbeidsgiver</summary>
-    {% prose "py-2 pl-5 -ml-5 -translate-x-px border-l-2 border-slate-400" %}
+    {% prose %}
 Aktivitetsplikten din henger nært sammen med arbeidsgiverens plikt og muligheter for tilrettelegging. Hvis det ikke er mulig for arbeidsgiveren din å tilpasse arbeidsplassen eller oppgavene slik at du kan jobbe, må arbeidsgiveren dokumentere dette i [oppfølgingsplanen](#) som sendes til NAV.
 
 ##### Sykefraværsoppfølging fra arbeidsgiveren
@@ -103,7 +103,7 @@ Hvis arbeidsforholdet avsluttes mens du er sykmeldt, er det viktig at du gir bes
 
   <details>
     <summary>Hvis du ikke har en arbeidsgiver</summary>
-    {% prose "py-2 pl-5 -ml-5 -translate-x-px border-l-2 border-slate-400" %}
+    {% prose %}
 Hvis du ikke har en arbeidsgiver, er det NAV-kontoret du holder kontakt med. Du får derfor en aktivitetsplan med NAV hvis sykefraværet blir langvarig. I [den digitale aktivitetsplanen](#) som du kan opprette på nav.no, kan du kommunisere direkte med NAV-veilederen din.
     {% endprose %}
   </details>
@@ -209,14 +209,14 @@ Hvilke regler som gjelder, kommer an på hvor du skal reise.
 <div class="accordion">
   <details>
     <summary>I Norden</summary>
-    {% prose "py-2 pl-5 -ml-5 -translate-x-px border-l-2 border-slate-400" %}
+    {% prose %}
 Hvis du skal reise innenfor Norden, trenger du ikke søke om å beholde sykepenger, men du må sjekke at reisen er forenelig med pliktene du har som sykmeldt.
     {% endprose %}
   </details>
 
   <details>
     <summary>Innenfor EØS</summary>
-    {% prose "py-2 pl-5 -ml-5 -translate-x-px border-l-2 border-slate-400" %}
+    {% prose %}
 Hvis du er EØS-borger og skal reise til et land innenfor EØS, trenger du ikke søke NAV på forhånd, men du må sjekke at reisen er forenelig med pliktene du har som sykmeldt.
 
 Hvis du ikke er statsborger i et EU/EØS-land, må du søke om å beholde sykepenger hvis du reiser utenfor Norden.
@@ -227,7 +227,7 @@ Hvis du er statsborger i et land utenfor EU/EØS, må du benytte søknaden på p
 
   <details>
     <summary>Utenfor EØS</summary>
-    {% prose "py-2 pl-5 -ml-5 -translate-x-px border-l-2 border-slate-400" %}
+    {% prose %}
 Hvis du reiser utenfor EØS, har du i utgangspunktet ikke rett til sykepenger. Du kan likevel søke NAV om å få beholde sykepengene i 4 uker i løpet av en 12 måneders periode. Hvis du vil være sikker på svaret, bør du søke før du reiser. Gå til søknad om å beholde sykepenger utenfor EØS.
     {% endprose %}
   </details>
@@ -251,7 +251,7 @@ Se hva som gjelder i din situasjon:
 <div class="accordion">
   <details>
     <summary>Syk i ferien</summary>
-    {% prose "py-2 pl-5 -ml-5 -translate-x-px border-l-2 border-slate-400" %}
+    {% prose %}
 Hvis du har begynt ferien og blir syk, kan du ha rett til å få utsatt ferien. Dette må du avtale med arbeidsgiveren din. Hvis ferien blir utsatt, krysser du nei på spørsmålet om du har hatt ferie. Blir ikke ferien utsatt og du har ferie som avtalt, krysser du ja på spørsmålet om du har hatt ferie.
 
 Er du delvis sykmeldt? Du krysser ja på spørsmålet om ferie hvis du har avtalt ferie i perioden. Som delvis sykmeldt kan du ikke utsette avtalt ferie.
@@ -268,21 +268,21 @@ Selvstendig næringsdrivende og frilansere har ikke rett til lovbestemt ferie sl
 
   <details>
     <summary>Avspasere og ta ferie</summary>
-    {% prose "py-2 pl-5 -ml-5 -translate-x-px border-l-2 border-slate-400" %}
+    {% prose %}
 Avspasering er ikke ferie. Avspasering er opptjent fritid. Hvis fridagene du har er avspasering, krysser du nei på spørsmålet om du har hatt ferie. Noen har både avspasering og feriedager i forbindelse med en ferieperiode. For dagene du avspaserer, krysser du nei på spørsmålet om ferie. For dagene du har ferie, krysser du ja på spørsmålet. Er du usikker på om fridagene er ferie eller ikke, bør du snakke med arbeidsgiveren din.
     {% endprose %}
   </details>
 
   <details>
     <summary>Ta ut seniordager</summary>
-    {% prose "py-2 pl-5 -ml-5 -translate-x-px border-l-2 border-slate-400" %}
+    {% prose %}
 Seniordager er tjenestefri og ikke ferie. Er du syk på seniordager, krysser du nei på spørsmålet om ferie. Du vil få sykepenger for de dagene.
     {% endprose %}
   </details>
 
   <details>
     <summary>Syk på en offentlig helligdag</summary>
-    {% prose "py-2 pl-5 -ml-5 -translate-x-px border-l-2 border-slate-400" %}
+    {% prose %}
 En offentlig helligdag hvor man normalt har fri, er ikke en feriedag. Du skal derfor krysse nei på spørsmålet om ferie. Hvis du likevel har avtalt ferie i en periode der det er én eller flere helligdager, skal du krysse ja på spørsmålet om ferie.
     {% endprose %}
   </details>
@@ -290,7 +290,7 @@ En offentlig helligdag hvor man normalt har fri, er ikke en feriedag. Du skal de
 
   <details>
     <summary>Skal ha ferie i en jobb du ikke er sykmeldt fra</summary>
-    {% prose "py-2 pl-5 -ml-5 -translate-x-px border-l-2 border-slate-400" %}
+    {% prose %}
 Har du flere jobber, men er ikke sykmeldt fra alle? Hvis du bare skal ha ferie fra den arbeidsplassen du ikke er sykmeldt fra, skal du krysse nei på spørsmålet om du har hatt ferie.
     {% endprose %}
   </details>
@@ -307,7 +307,7 @@ Se hva du gjør i ulike situasjoner:
 <div class="accordion">
   <details>
     <summary>Du kan være delvis i arbeid</summary>
-    {% prose "py-2 pl-5 -ml-5 -translate-x-px border-l-2 border-slate-400" %}
+    {% prose %}
 Hvis du kan være delvis i arbeid, skal du bli delvis sykmeldt. Hensikten er å holde kontakten med arbeidsplassen og bruke de mulighetene du har til å jobbe – hvis det er medisinsk forsvarlig.
 
 Den som sykmelder deg skal alltid vurdere om du kan jobbe. Ofte kan det være behov for å tilrettelegge arbeidet.
@@ -316,7 +316,7 @@ Den som sykmelder deg skal alltid vurdere om du kan jobbe. Ofte kan det være be
 
   <details>
     <summary>Du vil komme tidligere tilbake i jobb</summary>
-    {% prose "py-2 pl-5 -ml-5 -translate-x-px border-l-2 border-slate-400" %}
+    {% prose %}
 Du kan begynne å jobbe før sykmeldingsperioden er utløpt, og du trenger ikke gi beskjed til NAV på forhånd. Det er heller ikke nødvendig å be legen om friskmelding. Du avtaler oppstart med arbeidsgiveren din.
 
 #### Du er forsikret
@@ -326,7 +326,7 @@ Hvis du er 100 prosent sykmeldt, er du dekket av yrkesskadeforsikringen hvis du 
 
   <details>
     <summary>Du blir permittert</summary>
-    {% prose "py-2 pl-5 -ml-5 -translate-x-px border-l-2 border-slate-400" %}
+    {% prose %}
 
 #### Hvis du er 100 prosent sykmeldt
 Du kan bli permittert selv om du er 100 prosent sykmeldt. Da får du fortsatt sykepenger fra NAV, maksimalt 6 ganger grunnbeløpet i folketrygden.
@@ -368,7 +368,7 @@ Dette må du gjøre:
 
   <details>
     <summary>Du blir arbeidsledig</summary>
-    {% prose "py-2 pl-5 -ml-5 -translate-x-px border-l-2 border-slate-400" %}
+    {% prose %}
 
 #### Hvis du er 100 prosent sykmeldt
 
@@ -409,7 +409,7 @@ Du må registrere deg som arbeidssøker og søke om dagpenger. Du får tidligst 
 
   <details>
     <summary>Du må bytte jobb</summary>
-    {% prose "py-2 pl-5 -ml-5 -translate-x-px border-l-2 border-slate-400" %}
+    {% prose %}
 Ofte er det mulig å fungere bedre i en annen jobb enn den man ble sykmeldt fra. Ny jobb kan være aktuelt hvis
 
 * det er vanskelig for deg å utføre arbeidsoppgavene du hadde før du ble syk
@@ -436,7 +436,7 @@ Hvis du leter du etter ny jobb i en kort periode, kan det være riktig å søke 
 
   <details>
     <summary>Utdanning for å komme tilbake i arbeid</summary>
-    {% prose "py-2 pl-5 -ml-5 -translate-x-px border-l-2 border-slate-400" %}
+    {% prose %}
 I noen tilfeller kan NAV godkjenne utdanningen din som et arbeidsrettet tiltak mens du får sykepenger eller arbeidsavklaringspenger.
 
 {{ tile({ title: 'Arbeidsavklarings­penger (AAP)', mark: 'bg-green-200', kicker: ['Pengestøtte'] }) }}
@@ -462,7 +462,7 @@ Ditt ansvar er å være med og finne løsninger slik at du kan komme tilbake i j
 <div class="accordion">
   <details>
     <summary>Du skal tilbake i jobben din</summary>
-    {% prose "py-2 pl-5 -ml-5 -translate-x-px border-l-2 border-slate-400" %}
+    {% prose %}
 Arbeidsgiveren din har ansvar for å følge deg opp mens du er syk og så lenge du er ansatt. Arbeidsgiveren din skal, så langt det er mulig, tilpasse arbeidsplassen og oppgavene dine slik at du kan jobbe.
 
 Ditt ansvar er å være med og finne løsninger slik at du kan komme tilbake i jobb. Snakk med lederen din og undersøk hvilke muligheter det er for tilrettelegging, og hvordan dere sammen kan planlegge oppstarten.
@@ -471,7 +471,7 @@ Ditt ansvar er å være med og finne løsninger slik at du kan komme tilbake i j
 
   <details>
     <summary>Du fortsatt er syk</summary>
-    {% prose "py-2 pl-5 -ml-5 -translate-x-px border-l-2 border-slate-400" %}
+    {% prose %}
 Hvis du ser at du ikke er frisk nok til å gå tilbake til jobb slik som før, kan det være riktig å søke om arbeidsavklaringspenger (AAP). Du må selv søke om AAP.
 
 Du kan få AAP fra den dagen det er slutt på sykepengene, men ikke før du har søkt. Derfor er det viktig at du søker i god tid før retten din til sykepenger er brukt opp. 
@@ -480,7 +480,7 @@ Du kan få AAP fra den dagen det er slutt på sykepengene, men ikke før du har 
 
   <details>
     <summary>Du blir syk på nytt</summary>
-    {% prose "py-2 pl-5 -ml-5 -translate-x-px border-l-2 border-slate-400" %}
+    {% prose %}
 Det må gå 26 uker uten sykepenger eller AAP før du kan få sykepenger igjen. Ta gjerne kontakt med NAV eller snakk med veilederen din om dette.
 
 {{ tile({ title: 'Arbeidsavklarings­penger (AAP)', mark: 'bg-green-200', kicker: ['Pengestøtte'] }) }}

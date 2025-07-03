@@ -34,7 +34,7 @@ Se hvordan du går frem i din situasjon:
 <div class="accordion">
   <details>
     <summary>Arbeidstaker</summary>
-    {% prose "py-2 pl-5 -ml-5 -translate-x-px border-l-2 border-slate-400" %}
+    {% prose %}
 Først leverer du sykmeldingen til arbeidsgiveren din. Du logger deg inn på [Ditt sykefravær](#) på nav.no og sender sykmeldingen derfra. Hvis du har fått en [papirsykmelding](#), venter du noen dager, så vil den også komme digitalt på Ditt sykefravær.
 
 1. Når perioden for sykmeldingen er over, søker du om sykepenger. Du får en melding når den er klar til å fylles ut på Ditt sykefravær. Du sender søknaden fra Ditt sykefravær. Merk! Du må sende søknad om sykepenger selv om arbeidsgiveren din betaler deg lønn mens du er syk. Arbeidsgiveren krever pengene tilbake fra NAV basert på søknaden din. 
@@ -60,7 +60,7 @@ Arbeidsgiver bruker dette skjemaet for å opplyse NAV om trekk hos arbeidstaker 
 
   <details>
     <summary>Selvstendig næringsdrivende</summary>
-    {% prose "py-2 pl-5 -ml-5 -translate-x-px border-l-2 border-slate-400" %}
+    {% prose %}
 Du søker om sykepenger etter at sykmeldingsperioden er over. Du vil få en melding fra oss når den digitale søknaden er klar til å fylles ut. 
 
 Du logger deg inn på nav.no og sender søknaden derfra. 
@@ -75,7 +75,7 @@ Hvis du ikke har det vi trenger lett tilgjengelig, kan du velge å sende inn sø
 
   <details>
     <summary>Midlertidig ute av arbeid</summary>
-    {% prose "py-2 pl-5 -ml-5 -translate-x-px border-l-2 border-slate-400" %}
+    {% prose %}
 #### Søknad om sykepenger når du midlertidig er ute av arbeid
 
 Dette skjemaet bruker du hvis det er under en måned siden forrige arbeidsforhold opphørte, du mottar etterlønn/sluttvederlag, er i utdanningspermisjon, eller du har startet i nytt arbeidsforhold uten å ha ny opptjening til sykepenger.
@@ -89,7 +89,7 @@ Dette skjemaet bruker du hvis det er under en måned siden forrige arbeidsforhol
 
   <details>
     <summary>Planlegger opphold i utlandet</summary>
-    {% prose "py-2 pl-5 -ml-5 -translate-x-px border-l-2 border-slate-400" %}
+    {% prose %}
 
 #### Søknad om å beholde sykepenger under opphold i utlandet
 
@@ -108,7 +108,7 @@ Hvis du skal avvikle lovbestemt ferie, skal du ikke søke. I stedet krysser du a
 
   <details>
     <summary>Bor i utlandet</summary>
-    {% prose "py-2 pl-5 -ml-5 -translate-x-px border-l-2 border-slate-400" %}
+    {% prose %}
 
 #### Dokumentasjon for sykepenger når du bor i utlandet
 
