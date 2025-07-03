@@ -32,22 +32,8 @@
         </ul>
       </div>
 
-
-      {# Søk #}
-      <form class="w-full gap-2 lg:col-start-3 lg:max-w-2xl lg:col-span-4 lg:row-start-1 lg:pr-20">
-        <label class="block font-semibold tracking-widest uppercase text-fluid-14-16 opacity-80" for="search">Søk</label>
-        <div class="flex mt-2">
-          <input class="flex-1 p-2 border border-gray-300 rounded-l focus:outline-none focus:rounded focus:z-10 focus:ring focus:ring-blue-800" id="search" type="text">
-          <button class="flex items-center col-start-2 row-start-1 gap-2 px-6 py-2 text-white bg-blue-500 rounded-r text-fluid-22-24 pointer-fine:hover:bg-blue-600 focus:outline-none focus:rounded focus:z-10 focus:ring focus:ring-blue-800 focus:ring-offset-1 focus:ring-offset-white focus:bg-blue-600" type="submit">
-            <svg class="w-5 h-5" viewBox="0 0 28 28" width="28" height="28" fill="currentColor"><path d="M3.5 12C3.5 8.41015 6.41015 5.5 10 5.5C13.5899 5.5 16.5 8.41015 16.5 12C16.5 15.5899 13.5899 18.5 10 18.5C6.41015 18.5 3.5 15.5899 3.5 12ZM10 2.5C4.75329 2.5 0.5 6.75329 0.5 12C0.5 17.2467 4.75329 21.5 10 21.5C12.6243 21.5 15.0001 20.4359 16.7195 18.7156L25.4966 26.6149L27.5034 24.3851L18.488 16.2712C19.1354 14.9871 19.5 13.5362 19.5 12C19.5 6.75329 15.2467 2.5 10 2.5Z" /></svg>
-            <span class="sr-only">Søk</span>
-          </button>
-        </div>
-      </form>
-
-
       {# Snarveier #}
-      <div class="flex flex-col lg:row-start-2 lg:col-start-3 lg:col-span-3">
+      <div class="flex flex-col lg:col-start-3 lg:col-span-3">
         <h3 class="font-semibold tracking-widest uppercase text-fluid-14-16 opacity-80">{{ menu.shortcuts.title | safe }}</h3>
         <ul class="mt-1 sm:columns-2">
           {%- for link in menu.shortcuts.linkList -%}

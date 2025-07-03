@@ -157,7 +157,6 @@
   --shrink-1: 1;
   --shrink-5: 5;
 
-  --spacing-edge: clamp(0.75rem, -1.25rem + 10vi, 10rem);
   --spacing-page: clamp(1rem, -5rem + 15vi, 10rem);
 
   --underline-offset-3: 3px;
@@ -214,6 +213,9 @@
 
   body {
     color: var(--color-slate-800);
+  }
+  main {
+    background-color: var(--color-white);
   }
 
   strong {
@@ -274,14 +276,14 @@
   }
 
   :where(.prose) > :is(ul, ol) {
-    padding-inline-start: --spacing(5);
+    padding-inline-start: --spacing(2.5);
   }
 
   :where(.prose) > ul {
     list-style-type: disc;
   }
   :where(.prose) > ol {
-    list-style-type: decimal;
+    list-style-type: decimal-leading-zero;
   }
   :where(.prose) > :is(ol,ul) ::marker {
     color: var(--color-brand-purple-deep);
@@ -434,7 +436,7 @@
   }
 
   .accordion :where(details:has(summary:hover)) summary:not(:focus-visible) {
-    outline: 4px solid white;
+    outline: 6px solid white;
   }
 
   .accordion :where(details[open]) summary:before {
@@ -665,8 +667,6 @@
   .toc-chapter {
     view-timeline: var(--is);
   }
-
-  
 }
 
 @utility grid-cols-combi {
@@ -760,4 +760,3 @@
 @utility small-caps {
   font-variant-caps: all-small-caps;
 }
-

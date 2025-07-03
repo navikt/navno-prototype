@@ -3,12 +3,12 @@ export default {
     {
       title: "Arbeid",
       icon: "/src/_includes/svg/area-illustrations/arbeid.svg",
-      href: "/omrade/arbeid/",
+      href: "/omrade/arbeid/#toppen",
     },
     {
       title: "Helse og sykdom",
       icon: "/src/_includes/svg/area-illustrations/helse.svg",
-      href: "/omrade/helse-og-sykdom/",
+      href: "/omrade/helse-og-sykdom/#toppen",
     },
     {
       title: "Familie og barn",

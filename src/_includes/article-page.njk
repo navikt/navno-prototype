@@ -4,14 +4,14 @@
 
   {% set chapters = collections[page.fileSlug] | sort(false, false, 'data.order') %}
 
-  <main class="relative grid items-start pt-16 pb-16 grid-cols-article toc-highlight" data-theme="sykepenger" x-data="{ chapterIndex: 0 }" style="--scopes: {% for chapter in chapters %}--chapter-{{ loop.index }}{{ ',' if not loop.last else ';' }}{% endfor %}">
+  <main class="relative grid items-start pt-16 pb-16 bg-white grid-cols-article toc-highlight" data-theme="sykepenger" x-data="{ chapterIndex: 0 }" style="--scopes: {% for chapter in chapters %}--chapter-{{ loop.index }}{{ ',' if not loop.last else ';' }}{% endfor %}">
     <div class="mb-3 col-pictogram" style="--pictogram: var(--color-deepblue-100)">
       {{ '/src/_includes/svg/piktogrammer/produkter/sykepenger.svg' | svgContents('text-deepblue-900 w-16 h-16 sm:w-20 sm:h-20 -translate-x-1') | safe  }}
     </div>
     <div class="col-main md:col-start-[main] md:col-end-[container]">
-      <h1 class="font-semibold text-fluid-36-48/tight text-pretty">{{ title | safe }}</h1>
+      <h1 class="font-bold text-fluid-36-48/tight text-pretty">{{ title | safe }}</h1>
       <div class="mt-4 text-gray-700 text-fluid-12-14 font-regular">
-        <span class="px-2 py-0.5 border rounded-md border-slate-300 bg-slate-50">{{ category | safe }}</span>
+        <span class="px-1.5 py-px border rounded-sm border-slate-300 bg-slate-50">{{ category | safe }}</span>
         {% if audience %}
           <span aria-hidden="true" class="inline-block">—</span>
           {{ audience.current | safe }}
@@ -19,8 +19,9 @@
       </div>
     </div>
     <div class="mt-6 border-b pb-9 col-main border-slate-300">
-      <p class="text-fluid-18-20 text-pretty">
+      <p class="prose text-fluid-18-20 text-pretty">
         {{ ingress | safe }}
+
         {% if audience %}          
           <span>{{ audience.others | markdownInline | safe if audience }}</span>      
         {% endif %}
@@ -28,8 +29,8 @@
     </div>
 
     {# Innholdsfortegnelse #}
-    <div class="mt-8 lg:row-span-4 lg:mt-5 lg:sticky lg:row-start-2 xl:row-start-2 lg:top-12 col-toc max-h-[90svh] overflow-auto" id="toc" x-intersect:leave.margin.-200px.0.0.0="floatingToc = true" x-intersect:enter.margin.100px.0.0.0="floatingToc = false, floatingTocOpen = false">
-      <h2 class="flex items-baseline mb-2 font-semibold gap-x-0.5 text-fluid-18-20">
+    <div class="pt-6 lg:row-span-4 lg:pt-3 lg:sticky lg:row-start-2 xl:row-start-2 lg:top-0 col-toc max-h-[99svh] overflow-auto" id="toc" x-intersect:leave.margin.-200px.0.0.0="floatingToc = true" x-intersect:enter.margin.100px.0.0.0="floatingToc = false, floatingTocOpen = false">
+      <h2 class="flex items-baseline sticky z-10 bg-white top-0 py-2 font-semibold gap-x-0.5 text-fluid-18-20">
         {{ '/src/_includes/svg/icons/document.svg' | svgContents('w-6 h-6 translate-y-1 -translate-x-1') | safe  }}
         <span>Innhold på siden</span>
       </h2>

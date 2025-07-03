@@ -3,31 +3,30 @@ title: 'Helse og sykdom'
 description: 'Listeside med ingress og piktogram'
 tags: ['listeside', 'proto']
 permalink: '/omrade/helse-og-sykdom/index.html'
-contactTheme: white
 ---
 {%- extends 'base.njk' -%}
 
 {%- block content -%}
-  <main class="bg-white">
+  <main class="relative z-10">
     <div class="grid grid-cols-combi">
       <div class="relative flex items-end justify-between col-container">
         <div class="flex-1 pt-8 pb-6">
           {# <div class="tracking-wider text-gray-700 small-caps">{{ category | safe }}</div> #}
-          <h1 class="-translate-x-[0.05em] font-extrabold text-fluid-36-48/tight text-pretty text-brand-purple-deep">{{ title | safe }}</h1>
+          <h1 class="-translate-x-[0.05em] font-bold text-fluid-36-48/tight text-pretty">{{ title | safe }}</h1>
           <h2 class="col-span-2 col-start-1 mt-1 text-fluid-20-22 xs:col-start-1 xs:col-span-1 max-w-prose">Hva er situasjonen din?</h2>
         </div>
-        {{ '/src/_includes/svg/area-illustrations/helse.svg' | svgContents('h-auto min-w-32 max-w-52 w-2/5') | safe }}
+        {{ '/src/_includes/svg/area-illustrations/helse.svg' | svgContents('h-auto min-w-32 max-w-52 w-2/5 mr-4') | safe }}
       </div>
     </div>
 
-    <div class="grid pt-12 pb-12 grid-cols-combi bg-brand-beige">
-      <ul class="gap-px overflow-clip col-container md:grid md:grid-cols-2" style="--pictogram: #F9D8E7;">
+    <div class="grid pb-12 bg-white grid-cols-combi">
+      <ul class="gap-px border-t overflow-clip col-container border-slate-300 md:grid md:grid-cols-2" style="--pictogram: var(--color-deepblue-100);">
         {%- for item in situationList -%}
-          <li class="relative flex items-center gap-5 pt-6 pb-6 md:gap-8 md:odd:pr-12 md:even:pl-10 ring-1 ring-slate-300">
-            {{ item.icon | svgContents('w-12 h-12 sm:w-16 sm:h-16 shrink-0 mt-1 text-brand-purple-deep') | safe if item.icon }}
+          <li class="relative flex items-center gap-3 py-8 md:py-10 md:gap-6 md:odd:pr-12 md:even:pl-10 ring-1 ring-slate-300">
+            {{ item.icon | svgContents('w-12 h-12 sm:w-16 order-2 sm:h-16 shrink-0 mt-1 self-start') | safe if item.icon }}
             <div class="grid flex-1 gap-1 text-pretty">
               <a class="font-semibold text-blue-600 hover:underline text-fluid-22-24/snug hover:text-blue-600 hover:decoration-2 after:absolute after:inset-0" href="#">{{ item.title | safe }}</a>
-              {# <p>{{ item.ingress | safe }}</p> #}
+              <p class="text-fluid-18-20">{{ item.ingress | safe }}</p>
             </div>
           </li>
         {%- endfor -%}

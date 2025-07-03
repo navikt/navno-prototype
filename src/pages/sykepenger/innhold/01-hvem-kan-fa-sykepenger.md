@@ -7,7 +7,7 @@ hideToc: true
 ---
 {%- from "macros/microcard.njk" import microcard -%}
 {%- from "macros/tile.njk" import tile -%}
-
+{%- from "macros/readmore.njk" import readmore -%}
 
 Du kan ha rett til sykepenger hvis du oppfyller disse generelle vilkårene:
 

@@ -27,7 +27,9 @@
     {%- block script -%}{%- endblock -%}
   </head>
   <body
-    id="toppen" class="min-h-full text-fluid-18-20 leading-relaxed overflow-x-hidden overflow-y-scroll {{ bodyClass }}" x-data="{ indexOpen: false, audienceDropdownOpen: false, languageDropdownOpen: false, loggedIn: false, loginOpen: false, menuOpen: false, myPageOpen: false, newNotifications: true, overlayOpen: false, floatingToc: false, floatingTocOpen: false, prototypeMenuOpen: false }">
+    class="min-h-full text-fluid-18-20 leading-relaxed overflow-x-hidden overflow-y-scroll {{ bodyClass }}" 
+    x-data="{ indexOpen: false, audienceDropdownOpen: false, languageDropdownOpen: false, loggedIn: false, loginOpen: false, menuOpen: false, searchOpen: false, myPageOpen: false, newNotifications: true, overlayOpen: false, floatingToc: false, floatingTocOpen: false, prototypeMenuOpen: false }"
+  >
 
     {%- include "partials/banner.njk" -%}
 

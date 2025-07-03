@@ -3,12 +3,11 @@ title: 'Arbeid'
 description: 'Listeside uten ingress og piktogram'
 tags: ['listeside', 'proto']
 permalink: '/omrade/arbeid/index.html'
-contactTheme: white
 ---
 {%- extends 'base.njk' -%}
 
 {%- block content -%}
-  <main class="">
+  <main class="relative z-10">
     <div class="grid grid-cols-combi">
       <div class="relative flex items-end justify-between col-container">
         <div class="flex-1 pt-8 pb-6">
@@ -17,22 +16,22 @@ contactTheme: white
           </h1>
           <h2 class="col-span-2 col-start-1 text-fluid-20-22 text-pretty xs:col-start-1 xs:col-span-1 max-w-prose ">Hva er situasjonen din?</h2>
         </div>
-        {{ '/src/_includes/svg/area-illustrations/arbeid.svg' | svgContents('h-auto min-w-32 max-w-52 w-2/5 ') | safe }}
+        {{ '/src/_includes/svg/area-illustrations/arbeid.svg' | svgContents('h-auto min-w-32 max-w-52 w-2/5 mr-3') | safe }}
       </div>
     </div>
 
-    <div class="grid pt-10 pb-12 grid-cols-combi bg-slate-100">
+    <div class="grid grid-cols-combi">
 
-      <div class="mb-10">
-        <p class="text-fluid-18-20 leading-snug text-center">
+      <div class="pt-10 mb-10 border-t col-container border-slate-300">
+        <p class="leading-snug text-center text-fluid-18-20">
           Finn ledige stillinger på
           <a class="text-blue-600 underline hover:text-blue-600 hover:decoration-2" href="#">arbeidsplassen.no</a>
         </p>
       </div>
 
-      <ul class="col-container columns-[42ch] gap-x-12">
+      <ul class="col-container columns-[42ch] gap-x-12 pb-24">
         {%- for item in situationList -%}
-          <li class="relative flex items-start gap-2 px-2 pt-4 pb-3 -mt-px border-t border-b text-pretty bg-slate-100 border-slate-300/75 break-inside-avoid">
+          <li class="relative flex items-start gap-2 px-2 pt-4 pb-3 -mt-px border-t border-b text-pretty border-slate-300/75 break-inside-avoid">
             {{ '/src/_includes/svg/icons/arrow-right.svg' | svgContents('w-6 h-6 translate-y-1 shrink-0 text-blue-500') | safe }}
             <div class="grid gap-0.5">
               <h3><a class="font-normal text-blue-600 text-fluid-20-22/normal hover:text-blue-600 hover:underline hover:decoration-2 after:absolute after:inset-0" href="#">
