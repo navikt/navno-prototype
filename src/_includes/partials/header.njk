@@ -2,7 +2,7 @@
 
 {%- set menuButtonClasses = "flex flex-col xs:flex-row items-center justify-center pl-3 pr-4 leading-none cursor-pointer font-semibold gap-0.5 xs:gap-1 text-blue-600 rounded-full bg-slate-100 min-w-0 py-1.5 sm:py-2.5 text-fluid-16-18 xs:text-fluid-18-20 pointer-fine:hover:bg-blue-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-800 group peer" -%}
 
-<header class="relative z-50 bg-white border-t-8 -scroll-mt-16 border-warning" id="toppen">
+<header class="relative z-50 bg-white border-t-8 -scroll-mt-16 border-warning snap-start" id="toppen">
   <div class="z-10 grid grid-cols-article">
 
     <div class="grid grid-cols-[auto_1fr] sm:grid-cols-[auto_auto_1fr] col-container">
@@ -31,7 +31,7 @@
         <button 
           class="{{ menuButtonClasses }} max-w-min xs:max-w-fit ml-auto order-2" 
           type="button" 
-          x-on:click="menuOpen = !menuOpen, myPageOpen = false, loginOpen = false, searchOpen = false"
+          x-on:click="menuOpen = !menuOpen, searchOpen = false"
           x-bind:class="menuOpen && 'bg-blue-50'" 
           x-bind:aria-expanded="menuOpen"
         >
@@ -46,7 +46,7 @@
         <button
           class="{{ menuButtonClasses }} max-w-min xs:max-w-fit ml-auto order-1" 
           type="button" 
-          x-on:click="searchOpen = !searchOpen, menuOpen = false, myPageOpen = false, loginOpen = false"
+          x-on:click="searchOpen = !searchOpen, menuOpen = false"
           x-bind:class="searchOpen && 'bg-blue-50'" 
           x-bind:aria-expanded="searchOpen"
         >
@@ -67,40 +67,29 @@
 
   {%- include "partials/search.njk" -%}
 
-  <div class="grid justify-center py-1 bg-blue-50 min-h-8 grid-cols-page">
-    <a 
-      class="inline-flex items-center gap-1 px-3 py-1 text-blue-600" 
-      href="/min-side" 
-      x-bind:class="myPageOpen && 'bg-slate-200'" 
-      x-show="loggedIn" 
-      x-bind:aria-expanded="myPageOpen"
-    >
-      {{ '/src/_includes/svg/icons/person-circle.svg' | svgContents('w-7 h-7 -ml-0.5 shrink-0 pointer-events-none') | safe }}
-      <span class="mt-px sm:hidden">Min side</span>
-      <span class="hidden mt-px sm:inline-block">Isac Norland</span>
-    </a>
-    <button 
-      class="inline-flex items-center gap-2 px-3 py-1 text-blue-600 cursor-pointer hover:underline decoration-blue-400 underline-offset-3" 
-      type="button" 
-      x-show="!loggedIn" 
-      x-on:click="loginOpen = !loginOpen, menuOpen = false, myPageOpen = false" 
-      x-bind:aria-expanded="loginOpen"
-    >
-      {{ '/src/_includes/svg/icons/login.svg' | svgContents('w-7 h-7 shrink-0 pointer-events-none') | safe }}
-      <span>Logg inn</span>
-    </button>
+  <div class="grid justify-center py-1 {{ 'bg-slate-100' if page.fileSlug !== 'min-side' else 'bg-deepblue-800 text-white' }} min-h-8 grid-cols-page has-[button:hover]:bg-slate-200">
+    {% if page.fileSlug === 'min-side' %}
+      <a class="inline-flex items-center gap-1 px-3 py-1 text-white" href="/min-side">
+        {{ '/src/_includes/svg/icons/person-circle.svg' | svgContents('w-7 h-7 -ml-0.5 shrink-0 pointer-events-none') | safe }}
+        <span class="mt-px sm:hidden">Min side</span>
+        <span class="hidden mt-px sm:inline-block">Isac Norland</span>
+      </a>
+    {% else %}
+      <a class="inline-flex items-center gap-2 px-3 py-1 text-blue-600 cursor-pointer hover:underline decoration-blue-400 underline-offset-3" href="/min-side">
+        {{ '/src/_includes/svg/icons/login.svg' | svgContents('w-7 h-7 shrink-0 pointer-events-none') | safe }}
+        <span>Logg inn</span>
+      </a>
+    {% endif %}
   </div>
-
-  {%- include "partials/login.njk" -%}
 </header>
 
 {# Overlay #}
 <button 
   class="fixed inset-0 z-40 w-full h-full cursor-default bg-gray-400/40 backdrop-blur-xs" 
   type="button"
-  x-show="(menuOpen || searchOpen || myPageOpen || loginOpen || floatingTocOpen)" 
-  x-on:click="menuOpen = false, searchOpen = false, myPageOpen = false, loginOpen = false, floatingTocOpen = false" 
-  x-on:keyup.escape.window="menuOpen = false, searchOpen = false, myPageOpen = false,  loginOpen = false"
+  x-show="(menuOpen || searchOpen || floatingTocOpen)" 
+  x-on:click="menuOpen = false, searchOpen = false, floatingTocOpen = false" 
+  x-on:keyup.escape.window="menuOpen = false, searchOpen = false"
   x-transition:enter="transition ease-out duration-75"
   x-transition:enter-start="opacity-0"
   x-transition:enter-end="opacity-100"
