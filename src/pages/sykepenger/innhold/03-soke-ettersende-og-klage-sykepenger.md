@@ -132,7 +132,7 @@ Du må fylle ut dette skjemaet hvis du har sykmelding fra lege utenfor Norge. Le
 
 <details class="readmore">
   <summary><span>Hvis du mangler BankID</span></summary>
-  {% prose "py-2 pl-5 ml-6 border-l-2 border-slate-400" %}
+  {% prose %}
 Hvis du mangler BankID, ikke har legitimasjon på høyeste sikkerhetsnivå eller har fortrolig adresse i Folkeregisteret, må du bruke del D av papirsykmeldingen til å søke om sykepenger. Finn riktig adresse.
 
 Hvis du har en arbeidsgiver, må du levere del C av sykmeldingen til arbeidsgiveren din. Del D – søknaden – leverer du til den som skal utbetale sykepenger.

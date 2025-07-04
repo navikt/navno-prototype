@@ -200,7 +200,7 @@ Her ser du eksempler på situasjoner som kan gi arbeidsgiveren grunnlag for å t
 
 <details class="readmore">
   <summary>Slik søker du om at NAV betaler sykepengene de første 16 dagene</summary>
-  {% prose "py-2 pl-5 ml-6 border-l-2 border-slate-400" %}
+  {% prose %}
 NAV vil vurdere om du har rett til sykepenger, både for disse 16 dagene og for eventuelle påfølgende dager du også er syk.
 
 Du kan logge deg inn og bruke [Send beskjed til NAV](#). Velg kategorien «Syk». Her skriver du:

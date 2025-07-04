@@ -17,7 +17,7 @@ I noen tilfeller kan du få unntak fra aktivitetskravet
 
 <details class="readmore">
   <summary>Aktivitetsplikten</summary>
-  {% prose "py-2 pl-5 ml-6 border-l-2 border-slate-400" %}
+  {% prose %}
  Som sykmeldt har du plikt til å være i arbeid eller annen arbeidsrettet aktivitet hvis det er mulig. Dette kalles for aktivitetskravet.
 
 I noen tilfeller kan du få unntak fra aktivitetskravet:
@@ -155,7 +155,7 @@ Datoen du får sykepengene dine avhenger av hvilken periode du har vært sykmeld
 
 <details class="readmore">
   <summary>Eksempler på utbetaling i ulike situasjoner</summary>
-  {% prose "py-2 pl-5 ml-6 border-l-2 border-slate-400" %}
+  {% prose %}
 
 ##### Eksempel 1 
 Du er sykmeldt fra 1. april til 14. april. Vi innvilger søknaden din 15. april. Da får du sykepenger for hele perioden 25. april. 
