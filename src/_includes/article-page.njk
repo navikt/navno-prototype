@@ -28,22 +28,22 @@
     </div>
 
     {# Innholdsfortegnelse #}
-    <div class="pt-6 lg:row-span-4 lg:pt-3 lg:sticky lg:row-start-2 xl:row-start-2 lg:top-0 col-toc max-h-[99svh] overflow-auto" id="toc" x-intersect:leave.margin.-200px.0.0.0="floatingToc = true" x-intersect:enter.margin.100px.0.0.0="floatingToc = false, floatingTocOpen = false">
+    <div class="lg:row-span-4 lg:sticky lg:row-start-2 xl:row-start-2 lg:top-0 col-toc max-h-[99svh] overflow-auto toc" id="toc" x-intersect:leave.margin.-200px.0.0.0="floatingToc = true" x-intersect:enter.margin.100px.0.0.0="floatingToc = false, floatingTocOpen = false">
       <h2 class="flex items-baseline sticky z-10 bg-white top-0 py-2 font-semibold gap-x-0.5 text-fluid-18-20">
         {{ '/src/_includes/svg/icons/document.svg' | svgContents('w-6 h-6 translate-y-1 -translate-x-1') | safe  }}
         <span>Innhold på siden</span>
       </h2>
-      <ul class="ml-1.5 pr-6 mb-8">
+      <ul class="ml-1.5 pr-6 mb-8 text-fluid-16-18/normal opacity-90">
         {% for chapter in chapters %}
         {% set chapterIndex = loop.index %}
-        <li class="mt-1">
-          <a class="inline-block px-3 py-1 ml-2 underline border-l-2 border-transparent hover:text-blue-700 hover:decoration-2 underline-offset-3 decoration-slate-800/40 toc-item" href="#{{ chapter.data.title | slugify }}" style="--for: --chapter-{{ loop.index }}">
+        <li class="not-first:mt-1.5">
+          <a class="inline-block px-3 py-1 ml-2 underline border-transparent hover:text-blue-700 hover:decoration-2 underline-offset-3 decoration-slate-800/40 hover:decoration-blue-700 toc-item" href="#{{ chapter.data.title | slugify }}" style="--for: --chapter-{{ loop.index }}">
             {{ chapter.data.title }}
           </a>
           {% if (chapter.templateContent | tocData).length >= 2 %}           
-          <ul class="hidden mt-2 mb-4 ml-5 translate-x-0.5 border-l-2 lg:block border-slate-400" x-show="chapterIndex == {{ chapterIndex }}">
+          <ul class="hidden mb-6 ml-7 lg:block" x-show="chapterIndex == {{ chapterIndex }}">
           {% for item in chapter.templateContent | tocData %}
-            <li><a class="inline-block py-1.5 px-3 underline opacity-90 hover:text-blue-700 text-fluid-16-18/snug decoration-slate-800/40 hover:decoration-2" href="#{{ item.id }}">
+            <li class="mt-1"><a class="inline-block py-1.5 px-3 underline hover:text-blue-700 decoration-slate-800/40 hover:decoration-blue-700 underline-offset-3 hover:decoration-2" href="#{{ item.id }}">
                 <span>{{ item.text }}</span>
               </a>
             </li>
@@ -89,7 +89,7 @@
           {{ '/src/_includes/svg/icons/document.svg' | svgContents('w-6 h-6 translate-y-1 -translate-x-0.5') | safe  }}
           <span>Innhold på siden</span>
         </h2>
-        <ul class="">
+        <ul class="text-fluid-16-18/snug">
           {% for chapter in chapters %}
           {% set chapterIndex = loop.index %}
           <li class="mt-1">
@@ -97,10 +97,10 @@
               {{ chapter.data.title }}
             </a>
             {% if (chapter.templateContent | tocData).length >= 2 %}           
-            <ul class="mb-5 mt-0.5 border-l-2 ml-7 border-slate-400">
+            <ul class="mb-5 mt-0.5 ml-8">
             {% for item in chapter.templateContent | tocData %}
               <li class="py-0.5">
-                <a class="inline-block py-1 pl-3 underline text-gray-900/80 hover:text-blue-700 decoration-slate-800/40 text-fluid-16-18/snug hover:decoration-2" href="#{{ item.id }}" x-on:click="floatingTocOpen = false">
+                <a class="inline-block py-1 pl-3 underline text-gray-900/80 hover:text-blue-700 decoration-slate-800/40 hover:decoration-2" href="#{{ item.id }}" x-on:click="floatingTocOpen = false">
                   <span>{{ item.text }}</span>
                 </a>
               </li>

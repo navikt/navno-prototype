@@ -10,7 +10,7 @@
       <div class="flex items-center sm:col-span-2">
         {# Logo #}
         <div class="flex items-center py-5 sm:py-6">
-          <a href="/" class="block px-3 py-2.5 -ml-3.5 text-nav-red rounded-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-800">
+          <a href="/#toppen" class="block px-3 py-2.5 -ml-3.5 text-nav-red rounded-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-800">
             {{ '/src/_includes/svg/logo.svg' | svgContents('w-logo h-auto') | safe }}
             <span class="sr-only">NAV</span>
           </a>
@@ -67,7 +67,7 @@
 
   {%- include "partials/search.njk" -%}
 
-  <div class="grid justify-center py-1 {{ 'bg-slate-100' if page.fileSlug !== 'min-side' else 'bg-deepblue-800 text-white' }} min-h-8 grid-cols-page has-[button:hover]:bg-slate-200">
+  <div class="grid justify-center py-1 {{ 'bg-deepblue-50 has-[a:hover]:bg-gray-100' if page.fileSlug !== 'min-side' else 'bg-deepblue-800 text-white' }} min-h-8 grid-cols-page has-[button:hover]:bg-slate-200">
     {% if page.fileSlug === 'min-side' %}
       <a class="inline-flex items-center gap-1 px-3 py-1 text-white" href="/min-side">
         {{ '/src/_includes/svg/icons/person-circle.svg' | svgContents('w-7 h-7 -ml-0.5 shrink-0 pointer-events-none') | safe }}
@@ -75,7 +75,7 @@
         <span class="hidden mt-px sm:inline-block">Isac Norland</span>
       </a>
     {% else %}
-      <a class="inline-flex items-center gap-2 px-3 py-1 text-blue-600 cursor-pointer hover:underline decoration-blue-400 underline-offset-3" href="/min-side">
+      <a class="inline-flex items-center gap-2 px-3 py-1 text-blue-600 cursor-pointer hover:underline decoration-blue-400 underline-offset-3" href="/min-side#toppen">
         {{ '/src/_includes/svg/icons/login.svg' | svgContents('w-7 h-7 shrink-0 pointer-events-none') | safe }}
         <span>Logg inn</span>
       </a>

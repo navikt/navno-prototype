@@ -660,12 +660,28 @@
       radial-gradient(var(--R) at left 50% top calc(-1 * var(--p)), var(--color-transparent) 99%, var(--color-black) 101%) left 50% top var(--size) / calc(4 * var(--size)) 100% repeat-x;
   }
 
+  .toc {
+    border-block: 0.375lh solid transparent;
+  }
+
+  .toc::-webkit-scrollbar {
+    background-color: var(--color-slate-200);
+    border-radius: 6px;
+    width: 0.75ch;
+  }
+
+  .toc::-webkit-scrollbar-thumb {
+    background-color: var(--color-slate-400);
+    border-radius: 6px;
+  }
 
   .toc-highlight {
     timeline-scope: var(--scopes)
   }
-  .toc-item {
+
+  /* .toc-item {
     position: relative;
+
     &:before {
       position: absolute;
       content: "";
@@ -681,7 +697,8 @@
         entry min(60cqh, 60%)
         exit calc(100% - min(80cqh, 80%));
     }
-  }
+  } */
+
   .toc-chapter {
     view-timeline: var(--is);
   }
