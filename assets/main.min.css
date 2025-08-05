@@ -1,4 +1,4 @@
-/*! tailwindcss v4.1.10 | MIT License | https://tailwindcss.com */
+/*! tailwindcss v4.1.11 | MIT License | https://tailwindcss.com */
 @layer properties;
 @layer theme, base, components, utilities;
 @layer theme {
@@ -507,6 +507,9 @@
   .mb-5 {
     margin-bottom: calc(var(--spacing) * 5);
   }
+  .mb-6 {
+    margin-bottom: calc(var(--spacing) * 6);
+  }
   .mb-7 {
     margin-bottom: calc(var(--spacing) * 7);
   }
@@ -540,11 +543,11 @@
   .ml-2 {
     margin-left: calc(var(--spacing) * 2);
   }
-  .ml-5 {
-    margin-left: calc(var(--spacing) * 5);
-  }
   .ml-7 {
     margin-left: calc(var(--spacing) * 7);
+  }
+  .ml-8 {
+    margin-left: calc(var(--spacing) * 8);
   }
   .ml-auto {
     margin-left: auto;
@@ -776,10 +779,6 @@
   }
   .-translate-x-px {
     --tw-translate-x: -1px;
-    translate: var(--tw-translate-x) var(--tw-translate-y);
-  }
-  .translate-x-0\.5 {
-    --tw-translate-x: calc(var(--spacing) * 0.5);
     translate: var(--tw-translate-x) var(--tw-translate-y);
   }
   .translate-x-px {
@@ -1354,9 +1353,6 @@
   .pt-5 {
     padding-top: calc(var(--spacing) * 5);
   }
-  .pt-6 {
-    padding-top: calc(var(--spacing) * 6);
-  }
   .pt-8 {
     padding-top: calc(var(--spacing) * 8);
   }
@@ -1793,6 +1789,11 @@
   .small-caps {
     font-variant-caps: all-small-caps;
   }
+  .not-first\:mt-1\.5 {
+    &:not(*:first-child) {
+      margin-top: calc(var(--spacing) * 1.5);
+    }
+  }
   .group-focus-within\:hidden {
     &:is(:where(.group):focus-within *) {
       display: none;
@@ -1991,6 +1992,13 @@
     &:hover {
       @media (hover: hover) {
         text-decoration-line: underline;
+      }
+    }
+  }
+  .hover\:decoration-blue-700 {
+    &:hover {
+      @media (hover: hover) {
+        text-decoration-color: var(--color-blue-700);
       }
     }
   }
@@ -2715,11 +2723,6 @@
       grid-template-rows: 1fr auto;
     }
   }
-  .lg\:pt-3 {
-    @media (width >= 1200px) {
-      padding-top: calc(var(--spacing) * 3);
-    }
-  }
   .lg\:pr-4 {
     @media (width >= 1200px) {
       padding-right: calc(var(--spacing) * 4);
@@ -3251,24 +3254,20 @@
     --R: 6px;
     mask: radial-gradient(var(--R) at left 50% top calc(var(--size) + var(--p)), var(--color-black) 99%, var(--color-transparent) 101%) calc(50% - 2 * var(--size)) 0/calc(4 * var(--size)) 100%, radial-gradient(var(--R) at left 50% top calc(-1 * var(--p)), var(--color-transparent) 99%, var(--color-black) 101%) left 50% top var(--size) / calc(4 * var(--size)) 100% repeat-x;
   }
+  .toc {
+    border-block: 0.375lh solid transparent;
+  }
+  .toc::-webkit-scrollbar {
+    background-color: var(--color-slate-200);
+    border-radius: 6px;
+    width: 0.75ch;
+  }
+  .toc::-webkit-scrollbar-thumb {
+    background-color: var(--color-slate-400);
+    border-radius: 6px;
+  }
   .toc-highlight {
     timeline-scope: var(--scopes);
-  }
-  .toc-item {
-    position: relative;
-    &:before {
-      position: absolute;
-      content: "";
-      width: 0.4375rem;
-      height: 0.4375rem;
-      border-radius: var(--radius-xs);
-      left: -0.75rem;
-      top: 2ch;
-      translate: 0 -50%;
-      animation: highlight linear;
-      animation-timeline: var(--for);
-      animation-range: entry min(60cqh, 60%) exit calc(100% - min(80cqh, 80%));
-    }
   }
   .toc-chapter {
     view-timeline: var(--is);
@@ -3603,11 +3602,6 @@
   }
   100% {
     opacity: 1;
-  }
-}
-@keyframes highlight {
-  0%, 99.9% {
-    background-color: var(--color-blue-500);
   }
 }
 @layer properties {
