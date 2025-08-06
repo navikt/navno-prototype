@@ -17,7 +17,7 @@
         {% endif %}
       </div>
     </div>
-    <div class="mt-6 border-b pb-9 col-main border-slate-300">
+    <div class="mt-6 pb-9 col-main">
       <p class="prose text-fluid-18-20 text-pretty">
         {{ ingress | safe }}
 
@@ -26,6 +26,7 @@
         {% endif %}
       </p>
     </div>
+
 
     {# Innholdsfortegnelse #}
     <div class="lg:row-span-4 lg:sticky lg:row-start-2 xl:row-start-2 lg:top-0 col-toc max-h-[99svh] overflow-auto toc" id="toc" x-intersect:leave.margin.-200px.0.0.0="floatingToc = true" x-intersect:enter.margin.100px.0.0.0="floatingToc = false, floatingTocOpen = false">
@@ -54,6 +55,9 @@
         {% endfor %}
       </ul>
     </div>
+
+    {% block quicklinks %}{% endblock %}
+
 
     {# Innhold #}
     {% for chapter in chapters %}

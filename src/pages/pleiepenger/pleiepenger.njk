@@ -1,0 +1,34 @@
+---
+tags: ['produkt', 'proto']
+category: "Pengestøtte"
+type: "Produktside"
+title: "Pleiepenger for sykt barn"
+description: ''
+ingress:
+  "Sikrer deg inntekt når du ikke kan gå på jobb fordi du pleier et sykt barn."
+audience:
+  style: "default"
+  current: "For arbeidsgivere"
+  others:
+    "Det finnes også informasjon om pleiepenger for sykt barn til [arbeidsgivere](#) og [leger og tannleger eller andre behandlere](#)."
+published: "Oppdatert 7. mai 2025"
+alpine: true
+order: 3
+permalink: 'produkt/pleiepenger-barn/index.html'
+---
+
+{% extends "article-page.njk" %}
+{%- from "macros/button.njk" import button -%}
+
+{% block quicklinks %}
+  <div class="px-5 pt-4 pb-6 rounded-xl max-md:mb-4 col-main bg-slate-100">
+    <div>
+    <h2 class="inline font-semibold">Snarveier</h2>
+    <p class="inline lowercase">For deg som kjenner ordningen og vet hva du skal gjøre.</p>
+    </div>
+    <div class="flex flex-wrap gap-3 mt-6">
+      {{ button({ text: 'Søk om pleiepenger', variant: 'primary' }) }}
+      {{ button({ text: 'Ettersend dokumentasjon', variant: 'secondary' }) }}
+    </div>
+  </div> 
+{% endblock %}

@@ -157,7 +157,7 @@
   --shrink-1: 1;
   --shrink-5: 5;
 
-  --spacing-page: clamp(1rem, -5rem + 15vi, 10rem);
+  --spacing-page: clamp(1rem, -3.5rem + 15vi, 10rem);
 
   --underline-offset-3: 3px;
 
