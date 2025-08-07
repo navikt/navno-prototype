@@ -629,9 +629,9 @@
     color: var(--color-blue-600);
   }
   .button--primary:hover {
-    border-color: var(--color-blue-700);
-    background-color: var(--color-blue-50);
-    color: var(--color-blue-700);
+    border-color: var(--color-blue-600);
+    background-color: var(--color-blue-600);
+    color: var(--color-white);
   }
   .button--secondary {
     border-color: var(--color-transparent);

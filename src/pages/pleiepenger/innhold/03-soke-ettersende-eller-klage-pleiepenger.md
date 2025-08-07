@@ -59,7 +59,7 @@ Dette skjer videre i saken din:
 * Hvis du skal få pleiepengene direkte fra Nav, utbetaler vi innen den 25. i måneden. Hvis du skal ha etterbetalt pleiepenger for måneder bakover i tid, er de vanligvis på konto innen 5 virkedager fra du fikk svar på søknaden. 
 
 <div class="flex flex-wrap gap-3">
-  {{ button({ text: 'Logg inn Dine pleiepenger', variant: 'primary' }) }}
+  {{ button({ text: 'Logg inn på Dine pleiepenger', variant: 'primary' }) }}
 </div>
 
 <div class='expander'>
