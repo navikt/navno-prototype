@@ -1,37 +1,38 @@
-<aside aria-label="Bare en prototype" class="sticky inset-x-0 top-0 -z-0 leading-snug pt-4 pb-8 text-black bg-orange-200  px-page grid md:grid-cols-[auto_1fr] gap-6 text-fluid-20-22">
-  <div class="grid p-3 translate-y-0.5 w-fit bg-black rounded-full aspect-square place-items-center">
-    {{ '/src/_includes/svg/icons/helmet.svg' | svgContents('w-7 h-7 translate-x-px text-orange-400 -translate-y-0.5') | safe }}
+<div class="fixed inset-x-0 border-t-8 z-90 border-warning"></div>
+
+<aside aria-label="Bare en prototype" class="sticky inset-x-0 top-0 leading-snug -z-0 overflow-clip">
+  <div class="pt-4 pb-8 text-black bg-orange-200  px-page grid md:grid-cols-[auto_1fr] gap-6 text-fluid-20-22">
+    <div class="grid p-3 translate-y-0.5 w-fit bg-black rounded-full aspect-square place-items-center">
+      {{ '/src/_includes/svg/icons/helmet.svg' | svgContents('w-7 h-7 translate-x-px text-orange-400 -translate-y-0.5') | safe }}
+    </div>
+    <p class="self-center translate-y-1 text-balance">
+      <span class="mr-1 font-semibold">Hei!</span> Dette er en en prototype til testing og utvikling.
+      <a class="text-blue-600 underline pointer-fine:hover:decoration-2 pointer-fine:hover:text-blue-600" href="https://www.nav.no/">Her er lenken til nav.no</a>, om du har kommet feil.
+    </p>
+
+    {# <div class="self-center col-start-12 ml-auto">
+      <button type="button" class="relative z-20 grid p-2 rounded cursor-pointer bg-orange-400/40 group hover:bg-black hover:text-yellow-400 place-items-center aspect-square" x-on:click="prototypeMenuOpen = !prototypeMenuOpen" x-bind:class="prototypeMenuOpen && 'bg-slate-900 text-orange-300'">
+      {{ '/src/_includes/svg/icons/chevron-down.svg' | svgContents('w-7 h-7') | safe }}
+    </button>
+    </div> #}
+    {# x-show="prototypeMenuOpen" #}
+
+    <div class="py-4 md:col-start-2">
+      <h2 class="font-semibold tracking-widest uppercase text-fluid-14-16">Sider i prototypen</h2>
+      <ul class="mt-3 md:columns-[32svw] gap-8">
+      {% set pages = collections.proto | sort(false, false, 'data.order') %}
+      {%- for type, pages in pages | groupby('data.type') -%}
+        <li class="py-2 border-t border-black/10 break-inside-avoid">
+          {% for item in pages -%}
+          <a href="{{ item.url }}#toppen" class="py-1 underline hover:decoration-2 decoration-from-font underline-offset-4">{{ item.data.title | safe }}</a>
+          {% if pages.length > 1 and not loop.last %}  |  {% endif %}
+          {% if loop.last %}
+            <b class="block pt-1 font-normal text-fluid-14-16 opacity-80">{{ type }}</b>
+          {% endif %}
+          {%- endfor -%}
+        </li>
+      {%- endfor -%}
+      </ul>
+    </div>
   </div>
-  <p class="self-center translate-y-1 text-balance">
-    <span class="mr-1 font-semibold">Hei!</span> Dette er en en prototype til testing og utvikling.
-    <a class="text-blue-600 underline pointer-fine:hover:decoration-2 pointer-fine:hover:text-blue-600" href="https://www.nav.no/">Her er lenken til nav.no</a>, om du har kommet feil.
-  </p>
-
-  {# <div class="self-center col-start-12 ml-auto">
-    <button type="button" class="relative z-20 grid p-2 rounded cursor-pointer bg-orange-400/40 group hover:bg-black hover:text-yellow-400 place-items-center aspect-square" x-on:click="prototypeMenuOpen = !prototypeMenuOpen" x-bind:class="prototypeMenuOpen && 'bg-slate-900 text-orange-300'">
-    {{ '/src/_includes/svg/icons/chevron-down.svg' | svgContents('w-7 h-7') | safe }}
-  </button>
-  </div> #}
-  {# x-show="prototypeMenuOpen" #}
-
-  <div class="py-4 md:col-start-2">
-    <h2 class="font-semibold tracking-widest uppercase text-fluid-14-16">Sider i prototypen</h2>
-    <ul class="mt-3 md:columns-[32svw] gap-8">
-    {% set pages = collections.proto | sort(false, false, 'data.order') %}
-    {%- for type, pages in pages | groupby('data.type') -%}
-      <li class="py-2 border-t border-black/10 break-inside-avoid">
-        {% for item in pages -%}
-        <a href="{{ item.url }}#toppen" class="py-1 underline hover:decoration-2 decoration-from-font underline-offset-4">{{ item.data.title | safe }}</a>
-        {% if pages.length > 1 and not loop.last %}  |  {% endif %}
-        {% if loop.last %}
-          <b class="block pt-1 font-normal text-fluid-14-16 opacity-80">{{ type }}</b>
-        {% endif %}
-        {%- endfor -%}
-      </li>
-    {%- endfor -%}
-    </ul>
-  </div>
-
 </aside>
-
-<div class="sticky inset-x-0 bottom-0 z-40 h-12 -mt-12 pointer-events-none bg-gradient-to-t from-orange-200 to-transparent via-orange-200"></div>

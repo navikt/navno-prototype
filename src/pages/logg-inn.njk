@@ -1,0 +1,13 @@
+---
+title: 'Logg inn'
+bodyClass: 'grid place-items-center min-h-full bg-slate-100'
+---
+
+{%- extends 'blank.njk' -%}
+
+{% block content %}
+  <a class="grid place-items-center content-center gap-2 px-6 py-4 rounded-lg bg-slate-300 hover:bg-slate-400 aspect-[5/7] min-w-64" href="/min-side#toppen">
+    {{ '/src/_includes/svg/icons/person-circle.svg' | svgContents('translate-y-[0.15lh]') | safe }}
+    <span>Min side</span>
+  </a>
+{% endblock %}

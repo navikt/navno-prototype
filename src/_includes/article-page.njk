@@ -27,6 +27,8 @@
       </p>
     </div>
 
+    {% block quicklinks %}{% endblock %}
+
 
     {# Innholdsfortegnelse #}
     <div class="lg:row-span-4 lg:sticky lg:row-start-2 xl:row-start-2 lg:top-0 col-toc max-h-[99svh] overflow-auto toc" id="toc" x-intersect:leave.margin.-200px.0.0.0="floatingToc = true" x-intersect:enter.margin.100px.0.0.0="floatingToc = false, floatingTocOpen = false">
@@ -58,13 +60,11 @@
       </ul>
     </div>
 
-    {% block quicklinks %}{% endblock %}
-
 
     {# Innhold #}
     {% for chapter in chapters %}
       {% set chapterIndex = loop.index %}
-      <section class="mb-16 prose col-main toc-chapter" id="{{ chapter.data.title | slugify }}" x-intersect:enter.margin.0%.0%.-75%.0%="chapterIndex = {{ chapterIndex }}" style="--is: --chapter-{{ loop.index }}">
+      <section class="mb-16 prose col-main toc-chapter" id="{{ chapter.data.title | slugify }}" x-intersect:enter.margin.0%.0%.-50%.0%="chapterIndex = {{ chapterIndex }}" style="--is: --chapter-{{ loop.index }}">
         <div class="w-10 h-[0.625ch] bg-deepblue-100 mt-8"></div>
         <h2 class="mt-5 mb-4 -translate-x-0.5 font-semibold text-fluid-32-36/tight text-balance">
           <a href="#{{ chapter.data.title | slugify }}">
