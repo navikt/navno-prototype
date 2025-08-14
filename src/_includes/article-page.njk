@@ -61,9 +61,9 @@
 
     {# Floating TOC #}
     <details 
-      class="fixed inset-x-0 bottom-0 z-50 flex flex-col justify-center pt-4 open:max-h-screen overflow-clip lg:hidden group" x-show="floatingToc"
+      class="fixed inset-x-0 bottom-0 z-50 flex flex-col justify-center bg-white ring-8 ring-white open:max-h-screen px-page overflow-clip lg:hidden group" x-show="floatingToc"
     >
-      <summary class="flex bg-slate-100 ring-8 max-w-main w-full mx-auto ring-white rounded-full group-open:rounded-t-2xl group-open:rounded-b-none items-baseline py-2 shrink-0 font-semibold gap-x-0.5 text-fluid-18-20 px-4 mb-2 group-open:mb-0">
+      <summary class="flex bg-slate-100 max-w-main w-full mx-auto rounded-full group-open:rounded-t-2xl group-open:rounded-b-none items-baseline py-2 shrink-0 font-semibold gap-x-0.5 text-fluid-18-20 px-4 mb-2 group-open:mb-0">
         {{ '/src/_includes/svg/icons/document.svg' | svgContents('w-6 h-6 translate-y-1 -translate-x-1') | safe  }}
         <span>Innhold på siden</span>
         {{ '/src/_includes/svg/icons/chevron-down.svg' | svgContents('w-6 h-6 ml-auto translate-y-1 -translate-x-1') | safe  }}
