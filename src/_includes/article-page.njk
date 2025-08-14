@@ -29,9 +29,8 @@
 
     {% block quicklinks %}{% endblock %}
 
-
     {# Innholdsfortegnelse #}
-    <div class="lg:row-span-4 lg:sticky lg:row-start-2 xl:row-start-2 lg:top-0 col-toc max-h-[99svh] overflow-auto toc" id="toc" x-intersect:leave.margin.-200px.0.0.0="floatingToc = true" x-intersect:enter.margin.100px.0.0.0="floatingToc = false, floatingTocOpen = false">
+    <div class="lg:row-span-4 lg:sticky lg:row-start-2 xl:row-start-2 lg:top-0 col-toc max-h-[99svh] overflow-auto toc" id="toc" x-intersect:leave.margin.-40px.0.0.0="floatingToc = true" x-intersect:enter.margin.40px.0.0.0="floatingToc = false, floatingTocOpen = false">
       <h2 class="flex items-baseline sticky z-10 lg:bg-white top-0 py-2 font-semibold gap-x-0.5 text-fluid-18-20">
         <a href="#toppen">{{ '/src/_includes/svg/icons/document.svg' | svgContents('w-6 h-6 translate-y-1 -translate-x-1') | safe  }}</a>
         <span>Innhold på siden</span>
@@ -60,6 +59,41 @@
       </ul>
     </div>
 
+    {# Floating TOC #}
+    <details 
+      class="fixed inset-x-0 bottom-0 z-50 flex flex-col justify-center pt-4 open:max-h-screen overflow-clip lg:hidden group" x-show="floatingToc"
+    >
+      <summary class="flex bg-slate-100 ring-8 max-w-main w-full mx-auto ring-white rounded-full group-open:rounded-t-2xl group-open:rounded-b-none items-baseline py-2 shrink-0 font-semibold gap-x-0.5 text-fluid-18-20 px-4 mb-2 group-open:mb-0">
+        {{ '/src/_includes/svg/icons/document.svg' | svgContents('w-6 h-6 translate-y-1 -translate-x-1') | safe  }}
+        <span>Innhold på siden</span>
+        {{ '/src/_includes/svg/icons/chevron-down.svg' | svgContents('w-6 h-6 ml-auto translate-y-1 -translate-x-1') | safe  }}
+      </summary>
+
+      <div class="grid grid-rows-[1fr_auto] overscroll-contain bg-slate-100 mt-auto overflow-y-auto max-w-main w-full mx-auto max-h-[70vh] px-10 pb-8">
+        <ul class="text-fluid-16-18/snug">
+          {% for chapter in chapters %}
+          {% set chapterIndex = loop.index %}
+          <li class="mt-1">
+            <a class="inline-block px-1 py-1 underline hover:text-blue-700 hover:decoration-2 decoration-slate-800/40" href="#{{ chapter.data.title | slugify }}" x-on:click="floatingTocOpen = false">
+              {{ chapter.data.title }}
+            </a>
+            {% if (chapter.templateContent | tocData).length >= 1 %}           
+            <ul class="mt-0.5 ml-1 border-l-2 pl-3 mb-6 border-slate-300">
+            {% for item in chapter.templateContent | tocData %}
+              <li class="py-0.5">
+                <a class="inline-block px-1 py-1 underline text-gray-900/80 hover:text-blue-700 decoration-slate-800/40 hover:decoration-2" href="#{{ item.id }}" x-on:click="floatingTocOpen = false">
+                  <span>{{ item.text }}</span>
+                </a>
+              </li>
+            {% endfor %}
+            </ul>
+            {% endif %}
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </details>
+
 
     {# Innhold #}
     {% for chapter in chapters %}
@@ -79,45 +113,6 @@
 
     <div class="pt-2 mt-12 italic border-t text-fluid-16-18 border-slate-200 col-main">{{ published | safe }}</div>
 
-    {# Floating TOC #}
-    <div class="sticky z-50 overflow-y-visible bottom-1 col-full lg:hidden" x-show="floatingToc" x-transition.scale.origin.bottom.right>
-      <button 
-        type="button" 
-        class="absolute flex items-baseline self-start py-1 pl-4 pr-5 mb-4 font-semibold text-white border-2 rounded-full cursor-pointer bg-slate-800 right-4 -bottom-1 hover:bg-slate-700 gap-x-1 text-fluid-18-20 border-slate-400"
-        x-on:click="floatingTocOpen = !floatingTocOpen"
-        x-show="!floatingTocOpen"
-      >
-        {{ '/src/_includes/svg/icons/document.svg' | svgContents('w-6 h-6 translate-y-1 -translate-x-0.5') | safe  }}
-        <span class="-translate-y-px">Innhold på siden</span>
-      </button>
-      <div class="pl-6 pr-8 py-6 fixed bottom-0 right-0 overflow-y-auto rounded-tl-xl shadow-2xl bg-white h-fit max-h-[70svh] max-w-8/12 ml-auto  overscroll-contain" x-show="floatingTocOpen" x-on:click.outside="floatingTocOpen = false">
-        <h2 class="inline-flex gap-1 font-semibold">
-          {{ '/src/_includes/svg/icons/document.svg' | svgContents('w-6 h-6 translate-y-1 -translate-x-0.5') | safe  }}
-          <span>Innhold på siden</span>
-        </h2>
-        <ul class="text-fluid-16-18/snug">
-          {% for chapter in chapters %}
-          {% set chapterIndex = loop.index %}
-          <li class="pl-6 mt-1">
-            <a class="inline-block px-1 py-1 underline hover:text-blue-700 hover:decoration-2 decoration-slate-800/40" href="#{{ chapter.data.title | slugify }}" x-on:click="floatingTocOpen = false">
-              {{ chapter.data.title }}
-            </a>
-            {% if (chapter.templateContent | tocData).length >= 2 %}           
-            <ul class="mt-0.5 ml-1 border-l-2 pl-3 mb-6 border-slate-300">
-            {% for item in chapter.templateContent | tocData %}
-              <li class="py-0.5">
-                <a class="inline-block px-1 py-1 underline text-gray-900/80 hover:text-blue-700 decoration-slate-800/40 hover:decoration-2" href="#{{ item.id }}" x-on:click="floatingTocOpen = false">
-                  <span>{{ item.text }}</span>
-                </a>
-              </li>
-            {% endfor %}
-            </ul>
-            {% endif %}
-          </li>
-          {% endfor %}
-        </ul>
-      </div>
-    </div>
   </main>
 
   {% include "partials/kontakt.njk" %}

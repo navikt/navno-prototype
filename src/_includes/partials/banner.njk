@@ -1,21 +1,14 @@
 <div class="fixed inset-x-0 border-t-8 z-90 border-warning"></div>
 
-<aside aria-label="Bare en prototype" class="sticky inset-x-0 top-0 leading-snug -z-0 overflow-clip">
+<aside aria-label="Bare en prototype" class="sticky inset-x-0 top-0 leading-snug -z-0 overflow-clip" x-data="{ showProto: true }" x-show="showProto">
   <div class="pt-4 pb-8 text-black bg-orange-200  px-page grid md:grid-cols-[auto_1fr] gap-6 text-fluid-20-22">
-    <div class="grid p-3 translate-y-0.5 w-fit bg-black rounded-full aspect-square place-items-center">
+    <button type="button" x-on:click="showProto = !showProto" class="grid p-3 translate-y-0.5 w-fit bg-black rounded-full aspect-square place-items-center">
       {{ '/src/_includes/svg/icons/helmet.svg' | svgContents('w-7 h-7 translate-x-px text-orange-400 -translate-y-0.5') | safe }}
-    </div>
+    </button>
     <p class="self-center translate-y-1 text-balance">
       <span class="mr-1 font-semibold">Hei!</span> Dette er en en prototype til testing og utvikling.
       <a class="text-blue-600 underline pointer-fine:hover:decoration-2 pointer-fine:hover:text-blue-600" href="https://www.nav.no/">Her er lenken til nav.no</a>, om du har kommet feil.
     </p>
-
-    {# <div class="self-center col-start-12 ml-auto">
-      <button type="button" class="relative z-20 grid p-2 rounded cursor-pointer bg-orange-400/40 group hover:bg-black hover:text-yellow-400 place-items-center aspect-square" x-on:click="prototypeMenuOpen = !prototypeMenuOpen" x-bind:class="prototypeMenuOpen && 'bg-slate-900 text-orange-300'">
-      {{ '/src/_includes/svg/icons/chevron-down.svg' | svgContents('w-7 h-7') | safe }}
-    </button>
-    </div> #}
-    {# x-show="prototypeMenuOpen" #}
 
     <div class="py-4 md:col-start-2">
       <h2 class="font-semibold tracking-widest uppercase text-fluid-14-16">Sider i prototypen</h2>
