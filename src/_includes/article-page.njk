@@ -106,6 +106,17 @@
         </div>
       </details>
       <button type="button" class="fixed inset-0 hidden peer-open:block bg-slate-800/25 backdrop-blur-xs -z-0" onclick="document.getElementById('floatingToc').removeAttribute('open')"></button>
+
+      <script>
+        const tocLinks = document.getElementById('floatingToc')
+        for (const tocLink of tocLinks.children) {
+          tocLink.addEventListener("click", (e) => {
+            if (e.target.hash !== undefined) {
+              tocLinks.removeAttribute('open')
+            }
+        })
+        }
+      </script>
     </div>
 
 
