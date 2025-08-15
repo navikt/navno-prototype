@@ -593,13 +593,13 @@
     z-index: 20;
     margin-bottom: 8px;
   }
-  :where(.readmore [open]) summary:before {
+  :where(.readmore[open]) summary:before {
     transform: rotate(-180deg);
   }
   :where(.readmore) summary > * {
     text-wrap: pretty;
   }
-  :where(.readmore [open]) .prose {
+  :where(.readmore[open]) .prose {
     padding-block: --spacing(2);
     padding-inline-start: --spacing(5);
     margin-block-start: --spacing(1);
@@ -607,7 +607,6 @@
     translate: -1px;
     border-inline-start: 2px solid var(--color-slate-400);
   } 
-
 
   :where(.readmore) summary > span {
     transform: translateY(-1px);
