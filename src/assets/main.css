@@ -167,9 +167,6 @@
 
   --height-stretch: stretch;
 
-  interpolate-size: allow-keywords;
-
-
 
   @keyframes dropdown {
     0% { transform: translateY(-1rem) }
@@ -219,6 +216,10 @@
     text-decoration-thickness: 0.0625rem;
     text-underline-offset: 0.1625rem;
     text-decoration-skip-ink: auto;
+  }
+
+  :root {
+    interpolate-size: allow-keywords;
   }
 
   body {
