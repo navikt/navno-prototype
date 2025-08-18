@@ -62,12 +62,7 @@
     </div>
   </div>
 
-
-  {%- include "partials/navigation.njk" -%}
-
-  {%- include "partials/search.njk" -%}
-
-  <div class="grid justify-center py-1 {{ 'bg-deepblue-50 has-[a:hover]:bg-gray-100' if page.fileSlug !== 'min-side' else 'bg-deepblue-800 text-white' }} min-h-8 grid-cols-page has-[button:hover]:bg-slate-200">
+  <div class="grid relative z-50 justify-center py-1 {{ 'bg-slate-200 has-[a:hover]:bg-gray-100' if page.fileSlug !== 'min-side' else 'bg-deepblue-800 text-white' }} min-h-8 grid-cols-page has-[button:hover]:bg-slate-200">
     {% if loggedIn %}
       <a class="inline-flex items-center gap-1 px-3 py-1 text-white" href="/min-side">
         {{ '/src/_includes/svg/icons/person-circle.svg' | svgContents('w-7 h-7 -ml-0.5 shrink-0 pointer-events-none') | safe }}
@@ -81,6 +76,9 @@
       </a>
     {% endif %}
   </div>
+
+  {%- include "partials/navigation.njk" -%}
+  {%- include "partials/search.njk" -%}
 </header>
 
 {# Overlay #}

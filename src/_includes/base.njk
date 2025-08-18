@@ -31,13 +31,13 @@
     x-data="{ indexOpen: false, audienceDropdownOpen: false, languageDropdownOpen: false, menuOpen: false, searchOpen: false, newNotifications: true, overlayOpen: false, floatingToc: false, floatingTocOpen: false }"
   >
 
-    {%- include "partials/banner.njk" -%}
 
     {%- include "partials/header.njk" -%}
     {%- block content -%}{%- endblock -%}
     {%- block bodyscript -%}{%- endblock -%}
     {%- include "partials/footer.njk" -%}    
 
+    {%- include "partials/banner.njk" -%}
 
     <!-- Fileslug: {{ page.fileSlug }} -->
   </body>

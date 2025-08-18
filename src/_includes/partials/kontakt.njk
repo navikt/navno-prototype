@@ -1,15 +1,15 @@
-<aside class="grid pt-16 pb-16 grid-cols-combi wave -mt-4 relative z-10 {{ 'bg-white' if contactTheme === "white" else 'bg-slate-100' }}" x-intersect:enter="floatingTocOpen = false">
+<aside class="grid pt-16 pb-16 grid-cols-combi wave -mt-4 relative z-10 {{ 'bg-white' if contactTheme === "white" else 'bg-slate-200' }}" x-intersect:enter="floatingTocOpen = false">
   <h2 class="font-semibold text-fluid-24-28 col-container">Kontakt oss</h2>
-  <div class="grid gap-8 mt-4 {{ 'md:grid-cols-3' if contact.length === 3 }} md:gap-x-12 col-container"> 
+  <div class="grid gap-8 mt-4 {{ 'md:grid-cols-3' if contact.length === 3 }} md:gap-x-6 col-container"> 
     {% for item in contact %}
-    <div class="flex items-baseline gap-2.5">
-      <div class="grid p-2 text-blue-600 translate-y-1.5 -ml-1.5 rounded-full place-items-center shrink-0 {{ 'bg-blue-50' if contactTheme === 'white' else 'bg-white' }}">
+    <div class="pr-4">
+      <div class="w-fit grid p-2 text-blue-600 mb-2.5 -ml-1.5 rounded-full place-items-center shrink-0 {{ 'bg-blue-50' if contactTheme === 'white' else 'bg-white' }}">
         {{ item.icon | svgContents('w-7 h-7 shrink-0 items-baseline') | safe if item.icon }}
       </div>
       <div>
         <h3 class="font-semibold text-fluid-20-22">
-          <a class="text-blue-600 underline hover:decoration-2" href="javascript:void(0);">
-            {{ item.title | markdown | safe }}
+          <a class="inline-block text-blue-600 underline hover:decoration-2" href="javascript:void(0);">
+            {{ item.title }}
           </a>
         </h3>
         <div class="mt-1 prose">
@@ -25,7 +25,7 @@
               <span class="flex items-baseline gap-x-1">
                 <svg class="inline-block translate-y-1 -ml-0.5 {{ 'text-green-400' if (option.isOpen === true) else 'text-slate-500' }}" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
                   <circle fill="currentColor" cx="10" cy="10" r="5" />
-                  <circle fill="currentColor" cx="10" cy="10" r="8" opacity="0.25" />
+                  <circle fill="currentColor" cx="10" cy="10" r="7" opacity="0.25" />
                 </svg>
                 <span class="text-pretty">{{ option.status | safe }}</span>
               </span>

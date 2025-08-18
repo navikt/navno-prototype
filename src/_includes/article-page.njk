@@ -3,14 +3,14 @@
 {%- block content -%}
 
   {% set chapters = collections[page.fileSlug] | sort(false, false, 'data.order') %}
-  <main class="relative grid items-start pt-16 pb-16 bg-white grid-cols-article toc-highlight" data-theme="sykepenger" x-data="{ chapterIndex: 0 }" style="--scopes: {% for chapter in chapters %}--chapter-{{ loop.index }}{{ ',' if not loop.last else ';' }}{% endfor %}">
-    <div class="mb-3 col-pictogram" style="--pictogram: var(--color-deepblue-100)">
+  <main class="relative grid items-start pt-16 pb-16 bg-orange-50 grid-cols-article toc-highlight" data-theme="sykepenger" x-data="{ chapterIndex: 0 }" style="--scopes: {% for chapter in chapters %}--chapter-{{ loop.index }}{{ ',' if not loop.last else ';' }}{% endfor %}">
+    <div class="mb-3 col-pictogram" style="--pictogram: var(--color-orange-200)">
       {{ '/src/_includes/svg/piktogrammer/produkter/sykepenger.svg' | svgContents('text-deepblue-900 w-16 h-16 sm:w-20 sm:h-20 -translate-x-1') | safe  }}
     </div>
     <div class="col-main md:col-start-[main] md:col-end-[container]">
       <h1 class="font-bold text-fluid-36-48/tight text-pretty">{{ title | safe }}</h1>
       <div class="mt-4 text-gray-700 text-fluid-12-14 font-regular">
-        <span class="px-1.5 py-px border rounded-sm border-slate-300 bg-slate-50">{{ category | safe }}</span>
+        <span class="px-1.5 py-px border rounded-sm border-orange-200 bg-orange-100">{{ category | safe }}</span>
         {% if audience.current %}
           <span aria-hidden="true" class="inline-block">—</span>
           {{ audience.current | safe }}
@@ -30,8 +30,8 @@
     {% block quicklinks %}{% endblock %}
 
     {# Innholdsfortegnelse #}
-    <div class="hidden lg:block lg:row-span-4 lg:sticky lg:row-start-2 xl:row-start-2 lg:top-0 col-toc max-h-[99svh] overflow-auto toc" id="toc" x-intersect:leave.margin.-120px.0.0.0="floatingToc = true" x-intersect:enter.margin.120px.0.0.0="floatingToc = false, floatingTocOpen = false">
-      <h2 class="flex items-baseline sticky z-10 lg:bg-white top-0 py-2 font-semibold gap-x-0.5 text-fluid-18-20">
+    <div class="lg:row-span-4 lg:sticky lg:row-start-2 xl:row-start-2 lg:top-0 col-toc max-h-[99svh] overflow-auto toc" id="toc" x-intersect:leave.margin.-120px.0.0.0="floatingToc = true" x-intersect:enter.margin.120px.0.0.0="floatingToc = false, floatingTocOpen = false">
+      <h2 class="flex items-baseline sticky z-10 lg:bg-orange-50 top-0 py-2 font-semibold gap-x-0.5 text-fluid-18-20">
         <a href="#toppen">{{ '/src/_includes/svg/icons/document.svg' | svgContents('w-6 h-6 translate-y-1 -translate-x-1') | safe  }}</a>
         <span>Innhold på siden</span>
       </h2>
@@ -59,13 +59,30 @@
       </ul>
     </div>
 
-    {# Floating TOC #}
-    <div 
-      class="fixed inset-x-0 bottom-0 z-50 grid justify-items-center open:max-h-screen px-page lg:hidden">
-      <div class="h-6 translate-y-2 border-b-8 border-white pointer-events-none w-stretch bg-gradient-to-b from-transparent to-white"></div>
+    {# Innhold #}
+    {% for chapter in chapters %}
+      {% set chapterIndex = loop.index %}
+      <section class="mb-16 prose col-main toc-chapter" id="{{ chapter.data.title | slugify }}" x-intersect:enter.margin.0%.0%.-50%.0%="chapterIndex = {{ chapterIndex }}" style="--is: --chapter-{{ loop.index }}">
+        <div class="w-10 h-[0.625ch] bg-orange-200 mt-8"></div>
+        <h2 class="mt-5 mb-4 -translate-x-0.5 font-semibold text-fluid-32-36/tight text-balance">
+          <a href="#{{ chapter.data.title | slugify }}">
+            <span>{{ chapter.data.title }}</span>
+          </a>
+        </h2>
 
-      <details class="relative z-10 flex flex-col justify-center bg-white shadow-toc w-stretch rounded-t-2xl max-w-main ring-2 ring-slate-300 open:ring-slate-100 isolate group peer/details" id="floatingToc">
-        <summary class="flex rounded-t-2xl z-20 items-baseline py-2 shrink-0 font-semibold bg-slate-100 hover:bg-slate-200 cursor-pointer gap-x-0.5 text-fluid-18-20 px-4">
+        {# Main Content #}
+        {{ chapter.templateContent | markdown | safe }}
+      </section>
+    {% endfor %}
+
+
+    {# Floating TOC #}
+    <div class="sticky inset-x-0 bottom-0 z-50 grid col-full justify-items-center open:max-h-screen px-page lg:hidden">
+
+      {# <div class="h-6 translate-y-2 border-b-8 border-white pointer-events-none w-stretch bg-gradient-to-b from-transparent to-white"></div> #}
+
+      <details class="relative z-10 flex flex-col justify-center bg-white w-stretch rounded-3xl max-w-main ring-2 ring-slate-300 open:ring-slate-100 overflow-clip isolate group peer/details" id="floatingToc">
+        <summary class="flex rounded-t-3xl z-20 items-baseline py-2 shrink-0 font-semibold bg-slate-100 hover:bg-slate-200 cursor-pointer gap-x-0.5 text-fluid-18-20 px-4">
           {{ '/src/_includes/svg/icons/document.svg' | svgContents('w-6 h-6 translate-y-1 -translate-x-1') | safe  }}
           <span>Innhold på siden</span>
           {{ '/src/_includes/svg/icons/chevron-down.svg' | svgContents('w-6 h-6 ml-auto translate-y-1 -translate-x-1 group-open:rotate-180') | safe  }}
@@ -111,26 +128,7 @@
       </script>
     </div>
 
-
-
-    {# Innhold #}
-    {% for chapter in chapters %}
-      {% set chapterIndex = loop.index %}
-      <section class="mb-16 prose col-main toc-chapter" id="{{ chapter.data.title | slugify }}" x-intersect:enter.margin.0%.0%.-50%.0%="chapterIndex = {{ chapterIndex }}" style="--is: --chapter-{{ loop.index }}">
-        <div class="w-10 h-[0.625ch] bg-deepblue-100 mt-8"></div>
-        <h2 class="mt-5 mb-4 -translate-x-0.5 font-semibold text-fluid-32-36/tight text-balance">
-          <a href="#{{ chapter.data.title | slugify }}">
-            <span>{{ chapter.data.title }}</span>
-          </a>
-        </h2>
-
-        {# Main Content #}
-        {{ chapter.templateContent | markdown | safe }}
-      </section>
-    {% endfor %}
-
     <div class="pt-2 mt-12 italic border-t text-fluid-16-18 border-slate-200 col-main">{{ published | safe }}</div>
-
   </main>
 
   {% include "partials/kontakt.njk" %}
