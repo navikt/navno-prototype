@@ -1,6 +1,6 @@
 {%- set audience = audienceOverride or menu.audience -%}
 
-{%- set menuButtonClasses = "flex flex-col xs:flex-row items-center justify-center pl-3 pr-4 leading-none cursor-pointer font-semibold gap-0.5 xs:gap-1 text-blue-600 rounded-full bg-slate-100 min-w-0 py-1.5 sm:py-2.5 text-fluid-16-18 xs:text-fluid-18-20 pointer-fine:hover:bg-blue-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-800 group peer" -%}
+{%- set menuButtonClasses = "flex flex-col xs:flex-row items-center justify-center pl-3.5 pr-4 leading-none cursor-pointer font-base gap-0.5 xs:gap-1 text-blue-600 rounded-full bg-deepblue-50 min-w-0 py-2 sm:py-2.5 text-fluid-16-18 xs:text-fluid-18-20 pointer-fine:hover:bg-blue-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-800 group peer" -%}
 
 <header class="relative z-50 bg-white -scroll-mt-16 snap-start" id="toppen">
   <div class="z-10 grid grid-cols-article">
@@ -32,7 +32,7 @@
           class="{{ menuButtonClasses }} max-w-min xs:max-w-fit ml-auto order-2" 
           type="button" 
           x-on:click="menuOpen = !menuOpen, searchOpen = false"
-          x-bind:class="menuOpen && 'bg-blue-50'" 
+          x-bind:class="menuOpen && 'bg-deepblue-50'" 
           x-bind:aria-expanded="menuOpen"
         >
           <template x-if="!menuOpen">
@@ -47,7 +47,7 @@
           class="{{ menuButtonClasses }} max-w-min xs:max-w-fit ml-auto order-1" 
           type="button" 
           x-on:click="searchOpen = !searchOpen, menuOpen = false"
-          x-bind:class="searchOpen && 'bg-blue-50'" 
+          x-bind:class="searchOpen && 'bg-deepblue-50'" 
           x-bind:aria-expanded="searchOpen"
         >
           <template x-if="!searchOpen">
@@ -62,7 +62,7 @@
     </div>
   </div>
 
-  <div class="grid relative z-50 justify-center py-1 {{ 'bg-slate-200 has-[a:hover]:bg-gray-100' if page.fileSlug !== 'min-side' else 'bg-deepblue-800 text-white' }} min-h-8 grid-cols-page has-[button:hover]:bg-slate-200">
+  <div class="grid relative z-50 justify-center py-1 {{ 'bg-deepblue-50' if page.fileSlug !== 'min-side' else 'bg-deepblue-800 text-white' }} min-h-8 grid-cols-page has-[button:hover]:bg-slate-200">
     {% if loggedIn %}
       <a class="inline-flex items-center gap-1 px-3 py-1 text-white" href="/min-side">
         {{ '/src/_includes/svg/icons/person-circle.svg' | svgContents('w-7 h-7 -ml-0.5 shrink-0 pointer-events-none') | safe }}
@@ -70,7 +70,7 @@
         <span class="hidden mt-px sm:inline-block">Isac Norland</span>
       </a>
     {% else %}
-      <a class="inline-flex items-center gap-2 px-3 py-1 text-blue-600 cursor-pointer hover:underline decoration-blue-400 underline-offset-3" href="/logg-inn">
+      <a class="inline-flex items-center gap-2 px-3 py-1 text-blue-600 underline cursor-pointer hover:decoration-2 decoration-blue-400 underline-offset-3" href="/logg-inn">
         {{ '/src/_includes/svg/icons/login.svg' | svgContents('w-7 h-7 shrink-0 pointer-events-none') | safe }}
         <span>Logg inn</span>
       </a>
