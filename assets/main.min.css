@@ -8,7 +8,6 @@
     --color-red-50: rgb(253 232 230);
     --color-red-300: rgb(225 128 113);
     --color-orange-50: rgb(255 249 240);
-    --color-orange-100: rgb(255 236 204);
     --color-orange-200: rgb(255 215 153);
     --color-orange-300: rgb(255 193 102);
     --color-orange-400: rgb(255 170 51);
@@ -81,6 +80,7 @@
     --animate-fade-in: fade-in 400ms cubic-bezier(0.3, 0.6, 0.25, 1) forwards;
     --color-deepblue-50: rgb(230 241 248);
     --color-deepblue-100: rgb(204 226 240);
+    --color-deepblue-200: rgb(153 196 221);
     --color-deepblue-300: rgb(102 163 196);
     --color-deepblue-400: rgb(51 128 165);
     --color-deepblue-500: rgb(0 91 130);
@@ -311,6 +311,9 @@
   .bottom-0 {
     bottom: calc(var(--spacing) * 0);
   }
+  .bottom-6 {
+    bottom: calc(var(--spacing) * 6);
+  }
   .left-0 {
     left: calc(var(--spacing) * 0);
   }
@@ -447,9 +450,6 @@
   .mt-3 {
     margin-top: calc(var(--spacing) * 3);
   }
-  .mt-3\.5 {
-    margin-top: calc(var(--spacing) * 3.5);
-  }
   .mt-4 {
     margin-top: calc(var(--spacing) * 4);
   }
@@ -491,6 +491,9 @@
   }
   .mr-4 {
     margin-right: calc(var(--spacing) * 4);
+  }
+  .mr-6 {
+    margin-right: calc(var(--spacing) * 6);
   }
   .mr-auto {
     margin-right: auto;
@@ -542,6 +545,12 @@
   }
   .ml-1 {
     margin-left: calc(var(--spacing) * 1);
+  }
+  .ml-1\.5 {
+    margin-left: calc(var(--spacing) * 1.5);
+  }
+  .ml-4 {
+    margin-left: calc(var(--spacing) * 4);
   }
   .ml-7 {
     margin-left: calc(var(--spacing) * 7);
@@ -615,6 +624,9 @@
   .h-\[0\.625ch\] {
     height: 0.625ch;
   }
+  .h-\[1\.375lh\] {
+    height: 1.375lh;
+  }
   .h-\[6ch\] {
     height: 6ch;
   }
@@ -650,6 +662,9 @@
   }
   .min-h-full {
     min-height: 100%;
+  }
+  .w-1 {
+    width: calc(var(--spacing) * 1);
   }
   .w-1\/4 {
     width: calc(1/4 * 100%);
@@ -922,9 +937,6 @@
   .justify-start {
     justify-content: flex-start;
   }
-  .justify-items-center {
-    justify-items: center;
-  }
   .justify-items-start {
     justify-items: start;
   }
@@ -1042,6 +1054,10 @@
     border-top-right-radius: 0.25rem;
     border-bottom-right-radius: 0.25rem;
   }
+  .rounded-r-xs {
+    border-top-right-radius: var(--radius-xs);
+    border-bottom-right-radius: var(--radius-xs);
+  }
   .rounded-b {
     border-bottom-right-radius: 0.25rem;
     border-bottom-left-radius: 0.25rem;
@@ -1126,9 +1142,6 @@
   .border-lightblue-200 {
     border-color: var(--color-lightblue-200);
   }
-  .border-orange-200 {
-    border-color: var(--color-orange-200);
-  }
   .border-slate-200 {
     border-color: var(--color-slate-200);
   }
@@ -1177,6 +1190,9 @@
   .bg-deepblue-50 {
     background-color: var(--color-deepblue-50);
   }
+  .bg-deepblue-200 {
+    background-color: var(--color-deepblue-200);
+  }
   .bg-deepblue-300 {
     background-color: var(--color-deepblue-300);
   }
@@ -1224,9 +1240,6 @@
   }
   .bg-orange-50 {
     background-color: var(--color-orange-50);
-  }
-  .bg-orange-100 {
-    background-color: var(--color-orange-100);
   }
   .bg-orange-200 {
     background-color: var(--color-orange-200);
@@ -1458,6 +1471,9 @@
   }
   .pl-3 {
     padding-left: calc(var(--spacing) * 3);
+  }
+  .pl-3\.5 {
+    padding-left: calc(var(--spacing) * 3.5);
   }
   .pl-4 {
     padding-left: calc(var(--spacing) * 4);
@@ -1737,9 +1753,6 @@
   .ring-gray-300 {
     --tw-ring-color: var(--color-gray-300);
   }
-  .ring-slate-200 {
-    --tw-ring-color: var(--color-slate-200);
-  }
   .ring-slate-300 {
     --tw-ring-color: var(--color-slate-300);
   }
@@ -1806,9 +1819,9 @@
       margin-top: calc(var(--spacing) * 1);
     }
   }
-  .group-open\:max-h-\[95vh\] {
+  .group-open\:max-h-\[60vh\] {
     &:is(:where(.group):is([open], :popover-open, :open) *) {
-      max-height: 95vh;
+      max-height: 60vh;
     }
   }
   .group-open\:rotate-180 {
@@ -1880,9 +1893,9 @@
       z-index: 10;
     }
   }
-  .open\:max-h-screen {
+  .open\:bg-white {
     &:is([open], :popover-open, :open) {
-      max-height: 100vh;
+      background-color: var(--color-white);
     }
   }
   .open\:ring-slate-100 {
@@ -2196,9 +2209,9 @@
       outline-style: none;
     }
   }
-  .has-\[a\:active\]\:bg-blue-50 {
+  .has-\[a\:active\]\:ring-slate-200 {
     &:has(*:is(a:active)) {
-      background-color: var(--color-blue-50);
+      --tw-ring-color: var(--color-slate-200);
     }
   }
   .has-\[a\:focus-visible\]\:ring {
@@ -2228,9 +2241,20 @@
       box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
     }
   }
+  .has-\[a\:hover\]\:ring-2 {
+    &:has(*:is(a:hover)) {
+      --tw-ring-shadow: var(--tw-ring-inset,) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color, currentcolor);
+      box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+    }
+  }
   .has-\[a\:hover\]\:ring-deepblue-300 {
     &:has(*:is(a:hover)) {
       --tw-ring-color: var(--color-deepblue-300);
+    }
+  }
+  .has-\[a\:hover\]\:ring-slate-400 {
+    &:has(*:is(a:hover)) {
+      --tw-ring-color: var(--color-slate-400);
     }
   }
   .has-\[a\:hover\]\:drop-shadow {
@@ -2486,13 +2510,6 @@
     @media (width >= 768px) {
       --tw-leading: var(--leading-snug);
       line-height: var(--leading-snug);
-    }
-  }
-  .sm\:group-open\:max-h-\[60vh\] {
-    @media (width >= 768px) {
-      &:is(:where(.group):is([open], :popover-open, :open) *) {
-        max-height: 60vh;
-      }
     }
   }
   .md\:static {
@@ -2775,11 +2792,6 @@
       display: block;
     }
   }
-  .lg\:hidden {
-    @media (width >= 1280px) {
-      display: none;
-    }
-  }
   .lg\:grid-flow-col-dense {
     @media (width >= 1280px) {
       grid-auto-flow: column dense;
@@ -2800,9 +2812,9 @@
       grid-template-rows: 1fr auto;
     }
   }
-  .lg\:bg-orange-50 {
+  .lg\:bg-white {
     @media (width >= 1280px) {
-      background-color: var(--color-orange-50);
+      background-color: var(--color-white);
     }
   }
   .lg\:pr-4 {
@@ -3108,7 +3120,7 @@
     font-size: var(--text-fluid-18-20);
     font-weight: 400;
     line-height: 1.375;
-    background-color: var(--color-orange-50);
+    background-color: var(--color-white);
     color: var(--color-blue-600);
   }
   .accordion summary::-webkit-details-marker {
