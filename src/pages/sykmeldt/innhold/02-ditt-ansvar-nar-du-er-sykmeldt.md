@@ -12,9 +12,7 @@ Hvis du ikke har en arbeidsgiver, er det [Nav som har ansvaret for å følge deg
 
 Ta gjerne en kikk på noen korte videoer: 
 
-<div class='readmore'>
-  <details>
-    <summary>Å være sykmeldt (videoer)</summary>
-    {% prose %}…{% endprose %}
-  </details>
-</div>
+<details class="readmore">
+  <summary>Å være sykmeldt (videoer)</summary>
+  {% prose %}…{% endprose %}
+</details>

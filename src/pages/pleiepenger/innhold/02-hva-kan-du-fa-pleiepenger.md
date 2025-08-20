@@ -88,12 +88,10 @@ I noen tilfeller kan barnets sykdom gjøre at du må være i beredskap eller væ
 
 Du opplyser i søknaden om hva som gjør at du må være i beredskap eller tilgjengelig. Hvis behovet oppstår etter at du har søkt, kan du skrive en [beskjed til oss](#).
 
-<div class='readmore'>
-  <details>
-    <summary>Eksempel på beredskap</summary>
-    {% prose %}{% endprose %}
-  </details>
-</div>
+<details class="readmore">
+  <summary>Eksempel på beredskap</summary>
+  {% prose %}{% endprose %}
+</details>
 
 #### Om nattevåk
 
@@ -101,12 +99,10 @@ I noen tilfeller kan barnets sykdom gjøre at du må være våken om natten for 
 
 Du opplyser i søknaden om hva som gjør at du må være våken. Hvis behovet oppstår etter at du har søkt, kan du [skrive en beskjed til oss](#).
 
-<div class='readmore'>
-  <details>
-    <summary>Eksempel på nattevåk</summary>
-    {% prose %}{% endprose %}
-  </details>
-</div>
+<details class="readmore">
+  <summary>Eksempel på nattevåk</summary>
+  {% prose %}{% endprose %}
+</details>
 
 ### Hvor lenge kan du få?
 

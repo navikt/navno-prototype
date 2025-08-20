@@ -114,7 +114,7 @@ Vi starter å saksbehandle søknaden din om sykepenger når vi har fått søknad
 
 I [din utbetalingsoversikt](#) kan du se utbetalingen på kvelden den dagen pengene er utbetalt.
 
-<details class="expander">
+<details class="readmore">
   <summary>
     {{ '/src/_includes/svg/icons/briefcase-clock.svg' | svgContents('mr-1 -my-1 w-8 h-8') | safe }}
     <span>Saksbehandlingstider for søknader</span>

@@ -62,7 +62,7 @@ Hvis du har spørsmål angående utfylling og anbefalinger, se [sykmelderveilede
 
 Pasienten får se den **diagnosekoden** som du skriver i sykmeldingen, men ikke teksten som du skriver i beskrivelsesfeltet. I skanningen og tolkningen er det koden som brukes. Denne samsvarer ikke bestandig med det du skriver i beskrivelsesfeltet. Derfor er det viktig at du er bevisst på hvilken diagnosekode du fyller ut sykmeldingen med.
 
-<details class="expander">
+<details class="readmore">
   <summary>
     <span>Diagnoser som fører til forenklet sykmelding</span>
   </summary>
@@ -212,7 +212,7 @@ Hvis du mangler enkelte punkter som du må fylle ut for å sende inn sykmeldinge
 
 Pasienten må i disse tilfellene få ny sykmelding. Pasienten og legen får beskjed samtidig.
 
-<details class="expander">
+<details class="readmore">
   <summary>
     <span>Slik unngår du at sykmeldingen blir avvist</span>
   </summary>

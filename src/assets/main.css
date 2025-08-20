@@ -448,7 +448,7 @@
   }
 
   .accordion :where(details:has(summary:hover)) summary:not(:focus-visible) {
-    outline: 6px solid var(--color-orange-50);
+    outline: 6px solid var(--color-white);
   }
 
   .accordion :where(details[open]) summary:before {
@@ -481,75 +481,6 @@
     padding-inline: 42px;
     text-indent: -31px;
   }
-
-  /* Expander */
-  .expander {
-    display: grid;
-  }
-
-  .expander[open] {
-    padding-block-end: 20px;
-  }
-
-  :where(.expander) summary {
-    appearance: none;
-    display: flex;
-    list-style: none;
-    place-self: start;
-    width: fit-content;
-    padding: 0.5em 8px 0.375em 16px;
-    border-radius: calc(infinity * 1px);
-    cursor: pointer;
-    text-align: left;
-    text-wrap: pretty;
-    line-height: 1.375;
-    color: var(--color-blue-700);
-    font-weight: 500;
-    gap: --spacing(0.5);
-    background-color: var(--color-blue-50);
-  }
-
-  :where(.expander) summary::-webkit-details-marker {
-    display: none;
-  }
-
-  :where(.expander[open]) summary {
-    margin-block-end: --spacing(2);
-    outline: 4px solid white;
-    position: sticky;
-    top: 4px;
-    z-index: 20;
-  }
-
-  :where(.expander) summary:hover {
-    background-color: var(--color-blue-100);
-  }
-
-  :where(.expander) summary:after {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath stroke='rgb(0 69 156)' stroke-linecap='round' stroke-width='1.75' d='m6.5 10 5.493 5.493a.01.01 0 0 0 .014 0L17.5 10'/%3E%3C/svg%3E");
-    background-position: center;
-    background-repeat: no-repeat;
-    content: "";
-    display: inline-block;
-    flex-shrink: 0;
-    place-items: center;
-    align-self: baseline;
-    margin-inline: 1.5rem 10px;
-    transition: transform 150ms;
-    transform: translateY(1px);
-    width: 22px;
-    height: 22px;
-  }
-  :where(.expander[open]) summary:after {
-    transform: translateY(1px) rotate(-180deg) ;
-  }
-  :where(.expander) summary > * {
-    text-wrap: pretty;
-  }
-  :where(.expander) summary > span {
-    transform: translateY(0px);
-  }
-
 
   /* ReadMore */
   .readmore {

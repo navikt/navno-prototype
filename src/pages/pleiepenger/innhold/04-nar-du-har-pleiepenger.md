@@ -81,21 +81,17 @@ Omsorgsstønad og fosterhjemsgodtgjørelse utbetales og skattelegges som frilans
 
 Pleiepengene skal dekke den inntekten du hadde da du startet med pleiepengene. Når du får ny inntekt, får du et lavere inntektstap, og Nav skal derfor vurdere å redusere utbetalingen av pleiepenger.
 
-<div class='readmore'>
-  <details>
-    <summary>Hvordan påvirker den nye inntekten pleiepengene?</summary>
-    {% prose %}{% endprose %}
-  </details>
-</div>
+<details class="readmore">
+  <summary>Hvordan påvirker den nye inntekten pleiepengene?</summary>
+  {% prose %}{% endprose %}
+</details>
 
 Denne reduksjonen gjøres uavhengig av om du får pleiepenger utbetalt direkte fra Nav, eller om du får pleiepengene utbetalt som lønn fra arbeidsgiver. Hvis arbeidsgiveren din forskutterer lønn, må du derfor informere om at refusjonen fra Nav kan bli redusert. 
 
-<div class='readmore'>
-  <details>
-    <summary>Kan jeg få den nye inntekten med i beregningen av pleiepengene?</summary>
-    {% prose %}{% endprose %}
-  </details>
-</div>
+<details class="readmore">
+  <summary>Kan jeg få den nye inntekten med i beregningen av pleiepengene?</summary>
+  {% prose %}{% endprose %}
+</details>
 
 Du må sende en melding til oss hvis du får ny inntekt, der du informerer om hvor du får ny inntekt fra og hvor mye du forventer å tjene fremover.
 

@@ -1,11 +1,11 @@
 {% macro tile(args) %}
 <!-- Tile -->
-<div class="relative pl-5 pr-16 py-4 rounded-lg shadow-sm group leading-tight bg-white ring ring-slate-300  {{ args.theme or "has-[a:hover]:ring-slate-400 transition has-[a:hover]:ring-2 has-[a:active]:ring-slate-200 has-[a:focus-visible]:ring has-[a:focus-visible]:ring-blue-600" }}">
+<div class="relative pl-5 pr-16 py-4 rounded-lg group leading-tight bg-slate-50/50 ring ring-slate-300  {{ args.theme or "has-[a:hover]:ring-slate-400 transition has-[a:hover]:ring-2 has-[a:active]:ring-slate-200 has-[a:focus-visible]:ring has-[a:focus-visible]:ring-blue-600" }}">
   <a class="z-10 flex-1 font-semibold text-blue-600 underline text-fluid-18-20 text-pretty after:absolute after:inset-0 focus-visible:outline-none" href="#">
     {{ args.title }}
   </a>
   {%- if args.kicker %}
-  <p class="font-normal leading-none mt-0.5 tracking-wider pointer-events-none small-caps text-gray-700">
+  <p class="mt-1 font-normal leading-none tracking-wider text-gray-700 pointer-events-none small-caps">
     {%- for item in args.kicker %}{{ item }}{{ ', ' if not loop.last }}{% endfor -%}
   </p>
   {%- endif %}

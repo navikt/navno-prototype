@@ -45,7 +45,7 @@ Det er utviklet flere verktøy for å bedre kvaliteten i sykmeldingsarbeidet. M�
 
 [Nasjonal faglig veileder for sykmelder](#) (helsedirektoratet.no) og [Statistikkverktøy for sykmeldere](#) er to slike verktøy. Disse er laget i samarbeid mellom Helsedirektoratet og Arbeids- og velferdsdirektoratet og forvaltes i samarbeid mellom disse direktoratene.
 
-<details class="expander">
+<details class="readmore">
   <summary>
     <span>Mer om statistikkverktøy for sykmeldere</span>
   </summary>
@@ -56,7 +56,7 @@ Det er utviklet flere verktøy for å bedre kvaliteten i sykmeldingsarbeidet. M�
 
 Et annet verktøy er Norsk funksjonsskjema. Dette er utviklet av Nav i samarbeid med blant annet Den norske legeforening og arbeidsgiverorganisasjoner. Det kan være nyttig for deg i oppfølgingen av pasienter og som bakgrunn for funksjonsvurderingen din når du skal kommunisere med Nav.
 
-<details class="expander">
+<details class="readmore">
   <summary>
     <span>Mer om Norsk funksjonsskjema</span>
   </summary>

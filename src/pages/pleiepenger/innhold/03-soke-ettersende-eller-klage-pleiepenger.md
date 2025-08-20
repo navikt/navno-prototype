@@ -29,12 +29,10 @@ Du bruker samme søknad både for pleiepenger for sykt barn og pleiepenger for e
   {{ button({ text: 'Ettersend dokumentasjon', variant: 'secondary' }) }}
 </div>
 
-<div class='expander'>
-  <details>
-    <summary>Dette må du dokumentere</summary>
-    {% prose %}{% endprose %}
-  </details>
-</div>
+<details class="readmore">
+  <summary>Dette må du dokumentere</summary>
+  {% prose %}{% endprose %}
+</details>
 
 #### Hva gjør du når situasjonen er uavklart?
 
@@ -62,12 +60,10 @@ Dette skjer videre i saken din:
   {{ button({ text: 'Logg inn på Dine pleiepenger', variant: 'primary' }) }}
 </div>
 
-<div class='expander'>
-  <details>
-    <summary>Saksbehandlingstider</summary>
-    {% prose %}{% endprose %}
-  </details>
-</div>
+<details class="readmore">
+  <summary>Saksbehandlingstider</summary>
+  {% prose %}{% endprose %}
+</details>
 
 #### Kan jeg påvirke saksbehandlingstiden?
 
@@ -126,9 +122,7 @@ Hvis du er uenig i svaret på klagen din fra Nav klageinstans, kan du med noen u
   {{ button({ text: 'Ettersend dokumentasjon', variant: 'secondary' }) }}
 </div>
 
-<div class='expander'>
-  <details>
-    <summary>Saksbehandlingstider klage</summary>
-    {% prose %}{% endprose %}
-  </details>
-</div>
+<details class="readmore">
+  <summary>Saksbehandlingstider klage</summary>
+  {% prose %}{% endprose %}
+</details>
