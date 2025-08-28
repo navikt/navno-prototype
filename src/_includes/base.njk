@@ -18,13 +18,15 @@
     <link rel="preconnect" href="https://www.nav.no" crossorigin />
     <link rel="preload" href="/assets/fonts/SourceSans3-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="/assets/main.min.css" type="text/css" />
-    {%- block styles -%}{%- endblock -%}
+
     {% if alpine %}
     <script src="/assets/alpine-intersect-plugin.min.js" type="text/javascript" defer></script>
     <script src="/assets/alpine.min.js" type="text/javascript" defer></script>
     {% endif %}
-    {%- block fonts -%}{%- endblock -%}
+
     {%- block script -%}{%- endblock -%}
+    {%- block fonts -%}{%- endblock -%}
+    {%- block styles -%}{%- endblock -%}
   </head>
   <body
     class="min-h-full text-fluid-18-20 leading-relaxed overflow-x-hidden overflow-y-scroll {{ bodyClass }}" 

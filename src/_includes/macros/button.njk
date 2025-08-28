@@ -14,7 +14,7 @@
     {%- endif -%}
   {%- endif -%}
 
-  <a href="{{ params.href or '#' }}" class="font-medium rounded-md text-center pt-2 pb-1.5 px-5 no-underline {{ variant or default }} {{ params.class }}">
+  <a href="{{ params.href or '#' }}" class="font-medium rounded-md text-center pt-2 pb-1.5 px-5 no-underline {{ variant or default }} {{ params.class }} button">
     <span>{{ params.text | safe }}</span>
   </a>
 {%- endmacro -%}

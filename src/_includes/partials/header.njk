@@ -1,6 +1,4 @@
-{%- set audience = audienceOverride or menu.audience -%}
-
-{%- set menuButtonClasses = "flex flex-col xs:flex-row items-center justify-center pl-3.5 pr-4 leading-none cursor-pointer font-base gap-0.5 xs:gap-1 text-blue-600 rounded-full bg-deepblue-50 min-w-0 py-2 sm:py-2.5 text-fluid-16-18 xs:text-fluid-18-20 pointer-fine:hover:bg-blue-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-800 group peer" -%}
+{%- set menuButtonClasses = "flex flex-col xs:flex-row items-center justify-center pl-3.5 pr-4 leading-none cursor-pointer gap-0.5 xs:gap-1 text-blue-600 rounded-full bg-deepblue-50 min-w-0 py-2 sm:py-2.5 text-fluid-16-18 xs:text-fluid-18-20 pointer-fine:hover:bg-blue-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-800 menu-button" -%}
 
 <header class="relative z-50 bg-white -scroll-mt-16 snap-start" id="toppen">
   <div class="z-10 grid grid-cols-article">
@@ -21,7 +19,7 @@
 
         {# Audience #}
         <div class="self-center pl-3 leading-tight text-fluid-20-22">
-          {{ activeRole }}
+          {{ audience.title or menu.audience[0].title }}
         </div>
       </div>
 

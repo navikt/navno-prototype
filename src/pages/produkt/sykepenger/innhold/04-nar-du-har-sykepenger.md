@@ -115,11 +115,8 @@ Vi starter å saksbehandle søknaden din om sykepenger når vi har fått søknad
 I [din utbetalingsoversikt](#) kan du se utbetalingen på kvelden den dagen pengene er utbetalt.
 
 <details class="readmore">
-  <summary>
-    {{ '/src/_includes/svg/icons/briefcase-clock.svg' | svgContents('mr-1 -my-1 w-8 h-8') | safe }}
-    <span>Saksbehandlingstider for søknader</span>
-  </summary>
-  {% prose "py-2 pl-5 ml-7 translate-x-px border-l-2 border-slate-400" %}
+  <summary>Saksbehandlingstider for søknader</summary>
+  {% prose %}
 
 #### Saksbehandlingstider for søknader
 Saksbehandlingstiden er tiden fra vi får søknaden din og til vi har gjort et vedtak. Husk at vi trenger all nødvendig dokumentasjon for å behandle søknaden din. 

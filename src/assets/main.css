@@ -396,19 +396,19 @@
   }
 
   .accordion summary {
+    position: relative;
+    isolation: isolate;
     appearance: none;
-    display: block;
+    display: flex;
+    align-items: baseline;
     list-style: none;
     padding: 0.5em 44px;
-    margin-inline: -44px -10px;
+    margin-inline: -44px -20px;
+    text-indent: 2px;
     border-radius: var(--radius-lg);
     cursor: pointer;
-    text-align: left;
-    text-indent: -31px;
     text-wrap: pretty;
-    font-size: var(--text-fluid-18-20);
-    font-weight: 400;
-    line-height: 1.375;
+    line-height: var(--leading-normal);
     background-color: var(--color-white);
     color: var(--color-blue-600);
   }
@@ -439,7 +439,9 @@
     display: inline-block;
     flex-shrink: 0;
     place-items: center;
-    translate: 0 4px;
+    position: absolute;
+    inset-inline-start: 13px;
+    translate: 0 2px;
     margin-inline-end: 10px;
     border-radius: 10px;
     transition: rotate 150ms;
@@ -468,19 +470,9 @@
     padding-block: --spacing(2);
     padding-inline-start: --spacing(5);
     margin-inline-start: calc(--spacing(5) * -1);
-    translate: -1px 0;
     border-inline-start: 2px solid var(--color-slate-300);
   }
 
-  [data-theme="sykepenger"] :where(.accordion) details {
-    padding-inline: 42px;
-  }
-
-  [data-theme="sykepenger"] :where(.accordion) summary {
-    margin-inline: -42px;
-    padding-inline: 42px;
-    text-indent: -31px;
-  }
 
   /* ReadMore */
   .readmore {
@@ -541,55 +533,11 @@
     padding-inline-start: --spacing(5);
     margin-block-start: --spacing(1);
     margin-inline-start: --spacing(6);
-    translate: -1px;
-    border-inline-start: 2px solid var(--color-slate-400);
+    border-inline-start: 2px solid var(--color-slate-300);
   } 
 
   :where(.readmore) summary > span {
     transform: translateY(-1px);
-  }
-
-
-  .button {
-    line-height: 1.15;
-    overflow: visible;
-    padding: --spacing(3) --spacing(5);
-    align-items: center;
-    border: 2px solid var(--color-blue-600);
-    border-radius: var(--radius-md);
-    cursor: pointer;
-    display: inline-flex;
-    gap: --spacing(2);
-    justify-content: center;
-    font-weight: var(--font-weight-semibold);
-    text-decoration: none;
-    margin: 0;
-  }
-  .button--primary {
-    background-color: var(--color-white);
-    border-color: var(--color-blue-600);
-    color: var(--color-blue-600);
-  }
-  .button--primary:hover {
-    border-color: var(--color-blue-600);
-    background-color: var(--color-blue-600);
-    color: var(--color-white);
-  }
-  .button--secondary {
-    border-color: var(--color-transparent);
-    background-color: var(--color-blue-50/75);
-  }
-  .button--secondary:hover {
-    border-color: var(--color-blue-600);
-    background-color: var(--color-blue-50);
-  }
-  .button--tertiary {
-    border-color: var(--color-blue-50);
-    background-color: var(--color-blue-50);
-  }
-  .button--tertiary:hover {
-    background-color: var(--color-blue-100);
-    border-color: var(--color-blue-100);
   }
 
   .wave {

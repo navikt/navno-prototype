@@ -49,7 +49,7 @@ Det er utviklet flere verktøy for å bedre kvaliteten i sykmeldingsarbeidet. M�
   <summary>
     <span>Mer om statistikkverktøy for sykmeldere</span>
   </summary>
-  {% prose "py-2 pl-5 ml-7 translate-x-px border-l-2 border-slate-400" %}
+  {% prose %}
   Ved følgende diagnoser hvor det er forventet kortvarig fravær (under 16 dager), vil det komme opp en forenklet sykmelding …
   {% endprose %}
 </details>
@@ -60,7 +60,7 @@ Et annet verktøy er Norsk funksjonsskjema. Dette er utviklet av Nav i samarbeid
   <summary>
     <span>Mer om Norsk funksjonsskjema</span>
   </summary>
-  {% prose "py-2 pl-5 ml-7 translate-x-px border-l-2 border-slate-400" %}
+  {% prose %}
   Ved følgende diagnoser hvor det er forventet kortvarig fravær (under 16 dager), vil det komme opp en forenklet sykmelding …
   {% endprose %}
 </details>

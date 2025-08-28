@@ -4,7 +4,7 @@
   {# Rollebytte #}
   <div class="grid py-3 bg-white grid-cols-combi">
     <div class="grid content-center -mx-1 col-container xs:gap-2 sm:gap-6 xs:text-center sm:mx-0 sm:justify-center sm:grid-flow-col max-w-wide lg:mx-auto">
-    {% for role in audience %}
+    {% for role in menu.audience %}
       <a href="#" class="block rounded-full py-1 px-5 {{ 'bg-blue-500 text-white font-semibold' if activeRole === role.title else 'hover:underline transition' }}">{{ role.title }}</a>
     {% endfor %}
     </div>

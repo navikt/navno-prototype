@@ -66,7 +66,7 @@ Pasienten får se den **diagnosekoden** som du skriver i sykmeldingen, men ikke 
   <summary>
     <span>Diagnoser som fører til forenklet sykmelding</span>
   </summary>
-  {% prose "py-2 pl-5 ml-7 translate-x-px border-l-2 border-slate-400" %}
+  {% prose %}
   Ved følgende diagnoser hvor det er forventet kortvarig fravær (under 16 dager), vil det komme opp en forenklet sykmelding …
   {% endprose %}
 </details>
@@ -216,7 +216,7 @@ Pasienten må i disse tilfellene få ny sykmelding. Pasienten og legen får besk
   <summary>
     <span>Slik unngår du at sykmeldingen blir avvist</span>
   </summary>
-  {% prose "py-2 pl-5 ml-7 translate-x-px border-l-2 border-slate-400" %}
+  {% prose %}
 Mange sykmeldinger blir forsinket fordi de ikke oppfyller formelle krav. Da blir de avvist i Navs mottak, og du må skrive en ny sykmelding. Slik kan du unngå avvisninger:
 
 * Den som skriver sykmeldingen, må ha rett til å gjøre det. 

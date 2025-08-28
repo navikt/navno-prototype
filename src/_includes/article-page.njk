@@ -2,7 +2,7 @@
 
 {%- block content -%}
 
-  {% set chapters = collections[page.fileSlug] | sort(false, false, 'data.order') %}
+  {% set chapters = collections[chapters] | sort(false, false, 'data.order') %}
   <main class="relative grid items-start pt-16 pb-16 grid-cols-article toc-highlight" data-theme="sykepenger" x-data="{ chapterIndex: 0 }" style="--scopes: {% for chapter in chapters %}--chapter-{{ loop.index }}{{ ',' if not loop.last else ';' }}{% endfor %}">
     <div class="mb-3 col-pictogram" style="--pictogram: var(--color-deepblue-100)">
       {{ '/src/_includes/svg/piktogrammer/produkter/sykepenger.svg' | svgContents('text-deepblue-900 w-16 h-16 sm:w-20 sm:h-20 -translate-x-1') | safe  }}
@@ -11,9 +11,9 @@
       <h1 class="font-bold text-fluid-36-48/tight text-pretty">{{ title | safe }}</h1>
       <div class="mt-4 text-gray-700 text-fluid-12-14 font-regular">
         <span class="px-1.5 py-px border rounded-sm border-slate-300 bg-slate-100">{{ category | safe }}</span>
-        {% if audience.current %}
+        {% if audience.description %}
           <span aria-hidden="true" class="inline-block">—</span>
-          {{ audience.current | safe }}
+          {{ audience.description | safe }}
         {% endif %}
       </div>
     </div>
@@ -39,8 +39,8 @@
         {% for chapter in chapters %}
         {% set chapterIndex = loop.index %}
         <li class="relative pl-4 not-first:mt-1">
-          <div class="hidden lg:block absolute -translate-x-px w-1 rounded-r-xs left-0 h-[1.375lh]" x-bind:class="(chapterIndex == {{ chapterIndex }}) && 'bg-deepblue-300'"></div>
-          <a class="inline-block p-1 underline border-transparent hover:text-blue-700 hover:decoration-2 underline-offset-3 decoration-slate-800/40 hover:decoration-blue-700 toc-item" href="#{{ chapter.data.title | slugify }}" style="--for: --chapter-{{ loop.index }}">
+          <div class="absolute left-0 hidden w-1 h-8 -translate-x-px lg:block rounded-r-xs" x-bind:class="(chapterIndex == {{ chapterIndex }}) && 'bg-deepblue-300'"></div>
+          <a class="inline-block px-1 pt-0.5 pb-1 underline border-transparent hover:text-blue-700 hover:decoration-2 underline-offset-3 decoration-slate-800/40 hover:decoration-blue-700 toc-item" href="#{{ chapter.data.title | slugify }}" style="--for: --chapter-{{ loop.index }}">
             {{ chapter.data.title }}
           </a>
           {% if (chapter.templateContent | tocData).length >= 2 %}           
