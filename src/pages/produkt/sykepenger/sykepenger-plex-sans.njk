@@ -1,0 +1,74 @@
+---
+category: "Pengestøtte"
+type: "Produktside"
+title: "Sykepenger"
+description: ''
+ingress: 
+  "Sykepenger erstatter inntekten din når du ikke kan jobbe på grunn av sykdom eller skade."
+chapters: 'sykepenger'
+audience:
+  style: "default"
+  others:
+    "Det finnes også informasjon om sykepenger til [privatpersoner](#) og [leger og andre behandlere](#)"
+published: "Oppdatert 23. april 2024"
+alpine: true
+order: 2
+permalink: 'produkt/sykepenger/plex-sans/index.html'
+---
+
+{% extends "article-page.njk" %}
+
+{% block fonts %}
+<style>
+@font-face {
+  font-family: 'Plex Sans';
+  font-style: normal;
+  font-weight: 300 700;
+  font-stretch: 75% 100%;
+  font-display: swap;
+  src: url({{ '/assets/fonts/PlexSans.woff2' | htmlBaseUrl }}) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+</style>
+{% endblock %}
+
+{% block styles %}
+  <style>
+    html.font-sans {
+      font-family: 'Plex Sans', sans-serif;
+    }
+    :root {
+      --text-fluid-12-14: 0.75em;
+      --text-fluid-14-16: 0.875em;
+      --text-fluid-16-18: 1em;
+      --text-fluid-18-20: 1.125em;
+      --text-fluid-20-22: 1.25em;
+      --text-fluid-22-24: 1.375em;
+      --text-fluid-24-28: 1.5em;
+      --text-fluid-32-36: 1.875em;
+      --text-fluid-36-48: 2.5em;
+
+      --font-weight-semibold: 600;
+      --leading-tight: 1.425;
+      --leading-normal: 1.6;
+      --leading-relaxed: 1.75;
+    }
+    body {
+      font-size: clamp(1rem, 0.875rem + 0.3125vw, 1.125rem);
+    }
+    .menu-button .mt-px {
+      margin-block: 0 1px;
+    }
+    :is(.readmore, .accordion) summary {
+      padding-block: 0.625em;
+    }
+    .tile {
+    }
+    .tile a {
+      --font-weight-semibold: 600;
+    }
+    .button {
+      padding-block: 7px;
+    }
+  </style>
+{% endblock %}

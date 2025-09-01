@@ -1,10 +1,10 @@
-<div class="absolute z-[70] w-full right-0 max-w-screen-sm min-h-[70vh] bg-white shadow-xl rounded-b-3xl sm:rounded-br-none" x-bind:class="searchOpen ? 'opacity-0 animate-dropdown' : 'hidden'" x-bind:aria-hidden="!searchOpen" x-bind:hidden="!searchOpen" hidden >
+<div class="absolute z-[70] h-0 w-full inset-x-0 grid grid-cols-combi" x-bind:class="searchOpen ? 'opacity-0 animate-dropdown' : 'hidden'" x-bind:aria-hidden="!searchOpen" x-bind:hidden="!searchOpen" hidden >
 
-<div class="px-8 pt-4 pb-12 ">
+<div class="max-w-3xl pt-6 pb-12 ml-auto bg-white md:px-8 w-stretch rounded-b-xl col-full px-page sm:col-container">
 
   {# Søk #}
   <form class="" action="/sok/#toppen">
-    <label class="block text-fluid-16-18 opacity-80" for="search">Søk</label>
+    <label class="block font-semibold text-fluid-16-18" for="search">Søk på nav.no</label>
     <div class="flex mt-2">
       <input class="flex-1 p-2 border border-gray-300 rounded-l focus:outline-none focus:rounded focus:z-10 focus:ring focus:ring-blue-800" id="search" type="text">
       <button class="flex items-center col-start-2 row-start-1 gap-2 px-6 py-2 text-white bg-blue-500 rounded-r text-fluid-22-24 pointer-fine:hover:bg-blue-600 focus:outline-none focus:rounded focus:z-10 focus:ring focus:ring-blue-800 focus:ring-offset-1 focus:ring-offset-white focus:bg-blue-600" type="submit" x-on:click="searchOpen = false">

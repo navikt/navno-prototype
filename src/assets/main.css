@@ -402,7 +402,7 @@
     display: flex;
     align-items: baseline;
     list-style: none;
-    padding: 0.5em 44px;
+    padding: 0.625em 44px;
     margin-inline: -44px -20px;
     text-indent: 2px;
     border-radius: var(--radius-lg);
