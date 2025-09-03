@@ -442,7 +442,7 @@
     place-items: center;
     position: absolute;
     inset-inline-start: 13px;
-    translate: 0 2px;
+    translate: 0 3px;
     margin-inline-end: 10px;
     border-radius: 10px;
     transition: rotate 150ms;
@@ -467,7 +467,7 @@
     text-wrap: pretty;
   }
 
-  .accordion :where(details[open]) > .prose {
+  .accordion :where(details[open]) > div {
     padding-block: --spacing(2);
     padding-inline-start: --spacing(5);
     margin-inline-start: calc(--spacing(5) * -1);
@@ -598,7 +598,7 @@
 @utility grid-cols-combi {
   --_container: clamp(0rem, -12.5rem + 31.25vw, 12.5rem);
   --_gap: auto;
-  --_prose: minmax(0, 27.5rem); 
+  --_prose: minmax(0, 24rem); 
   --_edge: var(--spacing-page);
   grid-template-columns: 
     [full-start] var(--_edge) var(--_gap)

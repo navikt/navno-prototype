@@ -1,4 +1,41 @@
 export default {
+  title: "Nav Andeby",
+  offices: [
+    {
+      title: "Andeby",
+      address: ["Kvakkegata 24", "1234 Andeby"],
+      openingHours: [
+        ["Mandag", "10.00–14.00"],
+        ["Tirsdag", "10.00–14.00"],
+        ["Onsdag", "10.00–14.00"],
+        ["Torsdag", "Kun timeavtale"],
+        ["Fredag", "10.00–14.00"],
+      ],
+    },
+    {
+      title: "Gåseby",
+      address: ["Kvakkegata 24", "1234 Gåseby"],
+      addressInfo: "Bruk inngangen til venstre for plaskedammen.",
+      openingHours: [
+        ["Mandag", "Kun timeavtale"],
+        ["Tirsdag", "10.00–14.00"],
+        ["Onsdag", "Kun timeavtale"],
+        ["Torsdag", "10.00–14.00"],
+        ["Fredag", "Kun timeavtale"],
+      ],
+    },
+    {
+      title: "Fjærby",
+      address: ["Kvakkegata 24", "1234 Fjærby"],
+      openingHours: [
+        ["Mandag", "Kun timeavtale"],
+        ["Tirsdag", "Kun timeavtale"],
+        ["Onsdag", "Kun timeavtale"],
+        ["Torsdag", "Kun timeavtale"],
+        ["Fredag", "Kun timeavtale"],
+      ],
+    },
+  ],
   boxes: [
     {
       icon: "/src/_includes/svg/icons/box-list.svg",

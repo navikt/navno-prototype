@@ -15,8 +15,8 @@ alpine: true
     <div class="z-10 grid w-16 mx-auto translate-y-1/2 bg-blue-100 rounded-full place-items-center aspect-square">
       {{ box.icon | svgContents('w-7 h-7 shrink-0') | safe }}
     </div>
-    <div class="px-6 py-8 bg-white md:py-12 md:px-10">
-      <h2 class="mt-8 font-semibold text-fluid-24-28">{{ box.title | safe }}</h2>
+    <div class="px-6 py-8 bg-white rounded-md md:py-12 md:px-10">
+      <h2 class="mt-3 font-semibold text-fluid-24-28">{{ box.title | safe }}</h2>
       <div class="mt-2 prose markdown">
         {{ box.content | markdown | safe }}
       </div>
@@ -27,63 +27,48 @@ alpine: true
 
 {%- block content -%}
   <main class="relative z-10" data-theme="kontor">
-
-    <div class="grid py-16 grid-cols-combi">
-      <div class="mb-8 col-main">
-        <h1 class="font-semibold leading-tight text-gray-900 text-fluid-32-36 md:text-fluid-36-48">
-          NAV Andeby
-        </h1>
-        <p class="flex items-baseline gap-4 mt-1">
-          <span class="tracking-wider text-gray-700 uppercase text-fluid-16-18">
-            NAV kontor
-          </span>
-          <span aria-hidden="true">|</span>
-          <span class="text-gray-600 text-fluid-16-18">Lokalkontor for Andeby, Gåseby og Fjærby</span>
-        </p>
+    <div class="grid pt-12 pb-16 grid-cols-combi">
+      <div class="mb-4 col-main">
+        <h1 class="font-semibold leading-tight text-fluid-32-36 md:text-fluid-36-48">Nav Andeby</h1>
+        <p class="mt-3">Lokalkontor for Andeby, Gåseby og Fjærby.</p>
       </div>
 
-      <div class="col-main">
-        <div class="p-8 bg-orange-50">
-          <h3 class="font-semibold text-fluid-22-24">Adresse</h3>
-          <address class="mt-1">
-            Kvakkegata 24,<br />
-            1234 Andeby
-          </address>
-          <p class="mt-2 text-fluid-16-18">Bruk inngang ved lekeplass</p>
-
-          <h3 class="font-semibold text-fluid-22-24 mt-7">Åpningstider når du ikke har avtale</h3>
-          <table class="mt-2 text-left">
-            <tr>
-              <th class="py-0.5 w-24 font-normal">Mandag</th>
-              <td class="py-0.5 font-semibold">10.00–14.00</td>
-            </tr>
-            <tr>
-              <th class="py-0.5 w-24 font-normal">Tirsdag</th>
-              <td class="py-0.5 font-semibold">10.00–14.00</td>
-            </tr>
-            <tr>
-              <th class="py-0.5 w-24 font-normal">Onsdag</th>
-              <td class="py-0.5 font-semibold">10.00–14.00</td>
-            </tr>
-            <tr>
-              <th class="py-0.5 w-24 font-normal">Torsdag</th>
-              <td class="py-0.5 font-semibold">Kun timeavtale</td>
-            </tr>
-            <tr>
-              <th class="py-0.5 w-24 font-normal">Fredag</th>
-              <td class="py-0.5 font-semibold">10.00–14.00</td>
-            </tr>
-          </table>
-          <div class="flex items-start gap-3 mt-7">
-            <svg class="w-6 h-6 mt-px" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false" >
-              <path d="M12 0C5.38226 0 0 5.38226 0 12C0 18.6177 5.38226 24 12 24C18.6167 24 24 18.6177 24 12C24 5.38226 18.6167 0 12 0Z" fill="#368DA8" />
-              <path d="M13.5 6.5C13.5 5.67157 12.8284 5 12 5C11.1716 5 10.5 5.67157 10.5 6.5C10.5 7.32843 11.1716 8 12 8C12.8284 8 13.5 7.32843 13.5 6.5ZM9 17V19H15V17H13V10H9V12H11V17H9Z" fill="white" />
-            </svg>
-            <p>Du kan avtale møte med veilederen din utenom disse åpningstidene.</p>
-          </div>
+      <div class="mt-8 col-main">
+        <h2 class="font-semibold text-fluid-24-28">Adresser og åpningstider når du ikke har en avtale</h2>
+        <p>Du kan avtale møte med veilederen din utenom disse åpningstidene.</p>
+        
+        <div class="mt-8 accordion">
+          {% for office in offices %}           
+          <details>
+            <summary>{{ office.title }}</summary>
+            <div class="columns-[32ch] gap-8 pt-4">
+              <div class="mb-8 prose break-inside-avoid">
+                <h3 class="text-fluid-20-22">Adresse</h3>
+                <address>
+                  {{ office.address[0] }}<br>
+                  {{ office.address[1] }}
+                </address>
+                {% if office.addressInfo -%}
+                <p>{{ office.addressInfo }}</p>
+                {%- endif %}
+              </div>
+              <div class="prose break-inside-avoid">
+                <h3 class="text-fluid-20-22">Åpningstider</h3>
+                <dl>
+                  {% for day in office.openingHours %}
+                    <div class="grid grid-cols-2 px-2 py-1.5 -mx-2 rounded-sm odd:bg-slate-100">
+                      <dt>{{ day[0] }}</dt>
+                      <dd class="font-semibold text-right">{{ day[1] }}</dd>
+                    </div>
+                  {% endfor %}
+                </dl>
+              </div>
+            </div>
+          </details>
+          {% endfor %}
         </div>
 
-        <div class="p-8 mt-7 bg-gray-50">
+        <div class="p-8 mt-8 rounded-md bg-gray-50">
           <p>Telefonnummeret til NAV er <span class="block font-semibold leading-tight text-fluid-24-28">55 55 33 33</span></p>
           <p class="pt-4">Du kan ikke ringe direkte til NAV-kontoret.</p>
         </div>
