@@ -855,9 +855,6 @@
   .appearance-none {
     appearance: none;
   }
-  .columns-\[32ch\] {
-    columns: 32ch;
-  }
   .columns-\[42ch\] {
     columns: 42ch;
   }
@@ -2790,6 +2787,11 @@
   .lg\:block {
     @media (width >= 1280px) {
       display: block;
+    }
+  }
+  .lg\:grid {
+    @media (width >= 1280px) {
+      display: grid;
     }
   }
   .lg\:grid-flow-col-dense {
