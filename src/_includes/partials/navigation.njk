@@ -6,7 +6,7 @@
     <div class="grid gap-x-12 gap-y-12 col-container lg:grid-cols-5 lg:grid-rows-[1fr_auto]">
 
       {# Områder #}
-      <div class="flex-1 row-start-1 lg:grid-flow-col-dense lg:pr-4 lg:col-span-2 lg:col-start-1 lg:row-span-2">
+      <div class="flex-1 row-start-1 lg:grid-flow-col-dense lg:pr-4 lg:col-span-2 lg:col-start-1 lg:row-span-2 lg:border-r lg:border-slate-300">
         <h3 class="font-semibold tracking-widest uppercase text-fluid-14-16 opacity-80">{{ menu.areas.title | safe }}</h3>
         <ul class="grid gap-3 mt-3 sm:grid-cols-2 lg:grid-cols-1">
           {%- for link in menu.areas.linkList -%}
@@ -49,7 +49,8 @@
   {# Rollebytte #}
   <div class="grid py-3 bg-white grid-cols-combi">
     <div class="grid content-center -mx-1 col-container xs:gap-2 sm:gap-6 xs:text-center sm:mx-0 sm:justify-center sm:grid-flow-col max-w-wide lg:mx-auto">   
-    <p>Bytt til sider for <a class="text-blue-600 underline underline-offset-2 hover:decoration-2" href="#">arbeidsgiver</a> eller <a class="text-blue-600 underline underline-offset-2 hover:decoration-2" href="#">samarbeidspartner</a>
+    <p>Bytt til <a class="text-blue-600 underline underline-offset-2 hover:decoration-2" href="#">arbeidsgiver</a> eller <a class="text-blue-600 underline underline-offset-2 hover:decoration-2" href="#">samarbeidspartner</a>
+
     {# {% for role in menu.audience %}
       <a href="#" class="block rounded-full py-1 px-5 {{ 'bg-blue-500 text-white font-semibold' if activeRole === role.title else 'hover:underline transition' }}">{{ role.title }}</a>
     {% endfor %} #}
