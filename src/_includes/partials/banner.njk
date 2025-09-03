@@ -10,7 +10,7 @@
     <div class="py-4 mt-12 md:col-start-2">
       <h2 class="font-semibold tracking-widest uppercase opacity-90 text-fluid-12-14">Sider i prototypen</h2>
       <ul class="mt-3 md:columns-[64ch] gap-16">
-      {% set pages = collections.proto | sort(false, false, 'data.order') %}
+      {% set pages = collections.proto | sort(false, false, 'data.title') %}
       {%- for type, pages in pages | groupby('data.type') -%}
         <li class="py-4 border-t md:pr-6 border-black/10 break-inside-avoid">
           {% for item in pages -%}
