@@ -15,7 +15,7 @@ permalink: '/'
     <div class="grid pt-10 pb-12 grid-cols-combi ">
       <div class="col-container">
         <h2 class="font-semibold text-fluid-24-28">Hva kan vi hjelpe deg med?</h2>
-        <ul class="grid gap-2 mt-4 md:text-fluid-22-24 sm:grid-cols-2 xl:grid-cols-3 sm:gap-6">
+        <ul class="grid gap-2 mt-4 sm:gap-4 md:text-fluid-20-22 sm:grid-cols-2 xl:grid-cols-3 md:gap-6">
           {%- for area in areaList -%}
             <li class="relative grid items-center overflow-clip break-inside-avoid pl-4 sm:pl-6 pr-28 sm:pr-36 py-3 rounded-lg min-h-20 md:min-h-32 transition text-blue-700 bg-deepblue-50 has-[a:hover]:bg-gray-100 has-[a:focus-visible]:ring has-[a:focus-visible]:ring-blue-600 c-area-card">
               <a class="leading-snug focus-visible:outline-none after:absolute after:inset-0 text-balance hover:decoration-2" href="{{ area.href or '#'}}">
