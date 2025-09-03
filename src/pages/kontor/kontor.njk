@@ -33,31 +33,28 @@ alpine: true
       </div>
 
       <div class="mt-8 col-main">
-        <h2 class="font-semibold text-fluid-24-28">Adresser og åpningstider når du ikke har en avtale</h2>
+        <h2 class="font-semibold text-fluid-24-28">Besøksadresser og åpningstider</h2>
         <p>Du kan avtale møte med veilederen din utenom disse åpningstidene.</p>
         
         <div class="mt-8 accordion">
           {% for office in offices %}           
           <details>
             <summary>{{ office.title }}</summary>
-            <div class="gap-8 pt-4 lg:grid lg:grid-cols-5">
-              <div class="mb-8 prose lg:col-span-2">
-                <h3 class="text-fluid-20-22">Adresse</h3>
-                <address>
-                  {{ office.address[0] }}<br>
-                  {{ office.address[1] }}
-                </address>
+            <div class="gap-8 pt-4 lg:grid-cols-7">
+              <div class="mb-10 prose lg:col-span-3">
+                <h3 class="text-fluid-20-22">Besøksadresse</h3>
+                <address>{{ office.address }}</address>
                 {% if office.addressInfo -%}
-                <p class="text-balance">{{ office.addressInfo }}</p>
+                <p class="mt-1 text-balance">{{ office.addressInfo }}</p>
                 {%- endif %}
               </div>
-              <div class="prose lg:col-span-3">
-                <h3 class="text-fluid-20-22">Åpningstider</h3>
+              <div class="prose lg:col-span-4">
+                <h3 class="text-fluid-20-22">Åpningstider når du ikke har en avtale</h3>
                 <dl>
                   {% for day in office.openingHours %}
-                    <div class="grid grid-cols-2 px-2 py-1.5 -mx-2 rounded-sm odd:bg-slate-100">
+                    <div class="columns-2 px-2 py-1.5 -mx-0.5 rounded-sm odd:bg-slate-100">
                       <dt>{{ day[0] }}</dt>
-                      <dd class="font-semibold text-right">{{ day[1] }}</dd>
+                      <dd class="font-semibold">{{ day[1] }}</dd>
                     </div>
                   {% endfor %}
                 </dl>
