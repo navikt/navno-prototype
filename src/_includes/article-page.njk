@@ -22,7 +22,7 @@
         {{ ingress | safe }}
 
         {% if audience.others %}          
-          <span>{{ audience.others | markdownInline | safe if audience }}</span>      
+          {{ audience.others | markdownInline | safe if audience }}      
         {% endif %}
       </p>
     </div>
