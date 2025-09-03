@@ -17,7 +17,7 @@
           {% if loop.first %}
             <b class="block pb-1 font-normal text-fluid-14-16 opacity-80">{{ type }}</b>
           {% endif %}
-          <a href="{{ item.url }}#toppen" class="py-1 font-semibold underline hover:decoration-2 decoration-from-font underline-offset-4">{{ item.data.title | safe }}</a>
+          <a href="{{ item.url }}" class="py-1 font-semibold underline hover:decoration-2 decoration-from-font underline-offset-4">{{ item.data.title | safe }}</a>
           {% if pages.length > 1 and not loop.last %}  |  {% endif %}
           {%- endfor -%}
         </li>
