@@ -354,9 +354,9 @@
     order: 2;
   }
   .grid-cols-combi {
-    --_container: clamp(0rem, -12.5rem + 31.25vw, 12.5rem);
-    --_gap: auto;
-    --_prose: minmax(0, 24rem);
+    --_container: minmax(0, min(18.75rem, 100%));
+    --_gap: minmax(0, 1fr);
+    --_prose: minmax(0, min(21.25rem, 100%));
     --_edge: var(--spacing-page);
     grid-template-columns: [full-start] var(--_edge) var(--_gap) [container-start] var(--_container) [main-start] var(--_prose) var(--_prose) [main-end] var(--_container) [container-end] var(--_gap) var(--_edge) [full-end];
     :where(& > *) {
@@ -413,6 +413,9 @@
   }
   .mx-0\.5 {
     margin-inline: calc(var(--spacing) * 0.5);
+  }
+  .mx-1 {
+    margin-inline: calc(var(--spacing) * 1);
   }
   .mx-auto {
     margin-inline: auto;
@@ -3266,16 +3269,9 @@
     background-color: var(--color-slate-400);
     border-radius: 6px;
   }
-  .toc-highlight {
-    timeline-scope: var(--scopes);
-  }
-  .toc-chapter {
-    view-timeline: var(--is);
-  }
 }
 .grid-cols-article {
   --_main: minmax(0, min(21.25rem, 100%));
-  justify-content: center;
   grid-template-columns: [full-start] var(--spacing-page) [margin-start container-start] minmax(0, 1fr) [pictogram-start main-start toc-start] var(--_main) [center] var(--_main) [main-end pictogram-end toc-end] minmax(0, 1fr) [container-end margin-end] var(--spacing-page) [full-end];
 }
 @media (width > 1280px) {
