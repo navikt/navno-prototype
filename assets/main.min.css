@@ -104,7 +104,7 @@
     --text-fluid-24-28: clamp(1.5rem, 1.4167rem + 0.4167vi, 1.75rem);
     --text-fluid-32-36: clamp(2rem, 1.9167rem + 0.4167vi, 2.25rem);
     --text-fluid-36-48: clamp(2.25rem, 2rem + 1.25vi, 3rem);
-    --spacing-page: clamp(1rem, -3.5rem + 15vw, 10rem);
+    --spacing-page: clamp(1rem, -1.25rem + 7.5vw, 10rem);
     --width-stretch: stretch;
     --max-width-main: min(42.5rem, 100%);
   }
@@ -3274,23 +3274,24 @@
   }
 }
 .grid-cols-article {
-  --_main: minmax(0, min(42.5rem, 100%));
-  --_pictogram: 5rem;
-  --_pictogram-gap: 1.5rem;
-  --_main-toc-gap: clamp(2.5rem, -6.5rem + 15vw, 8.5rem);
+  --_main: minmax(0, min(21.25rem, 100%));
   justify-content: center;
-  grid-template-columns: [full-start] var(--spacing-page) [container-start] minmax(0, 1fr) [pictogram-start main-start toc-start] var(--_main) [pictogram-end main-end toc-end] minmax(0, 1fr) [container-end] var(--spacing-page) [full-end];
+  grid-template-columns: [full-start] var(--spacing-page) [margin-start container-start] minmax(0, 1fr) [pictogram-start main-start toc-start] var(--_main) [center] var(--_main) [main-end pictogram-end toc-end] minmax(0, 1fr) [container-end margin-end] var(--spacing-page) [full-end];
 }
 @media (width > 1280px) {
   .grid-cols-article {
-    --_main: minmax(0, min(42.5rem, 70%));
-    --_toc: minmax(0, min(22.5rem, 30%));
-    grid-template-columns: [full-start] var(--spacing-page) auto [container-start pictogram] var(--_pictogram) var(--_pictogram-gap) [main] 2fr var(--_main-toc-gap) [toc] 1fr [container-end] auto var(--spacing-page) [full-end];
+    --_pictogram: 5rem;
+    --_pictogram-gap: 1.5rem;
+    --_toc-gap: clamp(2.5rem, -6.5rem + 15vw, 8.5rem);
+    grid-template-columns: [full-start] var(--spacing-page) [margin-start] auto [container-start pictogram] var(--_pictogram) var(--_pictogram-gap) [main-start] 1fr [center] 1fr [main-end] var(--_toc-gap) [toc] 1fr [container-end] auto [margin-end] var(--spacing-page) [full-end];
   }
 }
 @media (width > 1440px) {
   .grid-cols-article {
-    grid-template-columns: [full-start] var(--spacing-page) minmax(0, 1fr) [container-start pictogram] var(--_pictogram) var(--_pictogram-gap) [main] var(--_main) var(--_main-toc-gap) [toc-start] var(--_toc) [toc-end container-end] minmax(0, 1fr) var(--spacing-page) [full-end];
+    --_main: minmax(0, min(21.25rem, 35%));
+    --_toc: minmax(0, min(22.5rem, 30%));
+    --_toc-gap: clamp(2.5rem, -6.5rem + 15vw, 8.5rem);
+    grid-template-columns: [full-start] var(--spacing-page) [margin-start] minmax(0, 1fr) [container-start pictogram] var(--_pictogram) var(--_pictogram-gap) [main-start] var(--_main) [center] var(--_main) [main-end] var(--_toc-gap) [toc-start] var(--_toc) [toc-end container-end] minmax(0, 1fr) [margin-end] var(--spacing-page) [full-end];
   }
 }
 @property --tw-translate-x {
