@@ -566,40 +566,12 @@
     background-color: var(--color-slate-400);
     border-radius: 6px;
   }
-
-  .toc-highlight {
-    timeline-scope: var(--scopes)
-  }
-
-  /* .toc-item {
-    position: relative;
-
-    &:before {
-      position: absolute;
-      content: "";
-      width: 0.4375rem;
-      height: 0.4375rem;
-      border-radius: var(--radius-xs);
-      left: -0.75rem;
-      top: 2ch;
-      translate: 0 -50%;
-      animation: highlight linear;
-      animation-timeline: var(--for);
-      animation-range:
-        entry min(60cqh, 60%)
-        exit calc(100% - min(80cqh, 80%));
-    }
-  } */
-
-  .toc-chapter {
-    view-timeline: var(--is);
-  }
 }
 
 @utility grid-cols-combi {
-  --_container: clamp(0rem, -12.5rem + 31.25vw, 12.5rem);
-  --_gap: auto;
-  --_prose: minmax(0, 24rem); 
+  --_container: minmax(0, min(18.75rem, 100%));
+  --_gap: minmax(0, 1fr);
+  --_prose: minmax(0, min(21.25rem, 100%)); 
   --_edge: var(--spacing-page);
   grid-template-columns: 
     [full-start] var(--_edge) var(--_gap)
@@ -615,7 +587,6 @@
 
 .grid-cols-article {
   --_main: minmax(0, min(21.25rem, 100%));
-  justify-content: center;
   grid-template-columns: 
     [full-start] var(--spacing-page) 
     [margin-start container-start] minmax(0, 1fr) 
