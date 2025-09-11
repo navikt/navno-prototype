@@ -82,7 +82,7 @@
 <button 
   class="fixed inset-0 z-10 w-full h-full cursor-default bg-gray-400/25 backdrop-blur-xs" 
   type="button"
-  x-show="(menuOpen || searchOpen || floatingTocOpen)" 
+  x-show="(menuOpen || searchOpen)" 
   x-on:click="menuOpen = false, searchOpen = false, floatingTocOpen = false" 
   x-on:keyup.escape.window="menuOpen = false, searchOpen = false"
   x-transition:enter="transition ease-out duration-75"

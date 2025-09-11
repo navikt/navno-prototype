@@ -29,9 +29,8 @@
   </head>
   <body
     class="min-h-full text-fluid-18-20 leading-relaxed overflow-x-hidden overflow-y-scroll {{ bodyClass }}" 
-    x-data="{ indexOpen: false, audienceDropdownOpen: false, languageDropdownOpen: false, menuOpen: false, searchOpen: false, newNotifications: true, overlayOpen: false, floatingToc: false, floatingTocOpen: false }"
+    x-data="{ indexOpen: false, audienceDropdownOpen: false, languageDropdownOpen: false, menuOpen: false, searchOpen: false, newNotifications: true, overlayOpen: false, tocOpen: false, tocFixed: false, tocExpandAll: false }"
   >
-
 
     {%- include "partials/header.njk" -%}
     {%- block content -%}{%- endblock -%}
