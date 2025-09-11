@@ -6,11 +6,11 @@
     {% set chapterIndex = loop.index %}
     <li class="not-first:mt-1">
       <a class="relative inline-block px-1 pt-0.5 pl-4 pb-1 underline border-transparent hover:text-blue-700 hover:decoration-2 underline-offset-3 decoration-slate-800/40 hover:decoration-blue-700 toc-item" href="#{{ chapter.data.title | slugify }}" x-on:click="tocOpen = false">
-      <div class="absolute inset-y-0 left-0 block w-1 -translate-x-px rounded-r-xs" x-bind:class="(chapterIndex == {{ chapterIndex }}) && 'bg-deepblue-300'"></div>
+      <div class="absolute inset-y-0 left-0 block w-1 -translate-x-px rounded-r-xs" x-bind:class="(chapterIndex == {{ chapterIndex }}) && 'bg-deepblue-300', "></div>
         {{ chapter.data.title }}
       </a>
       {% if (chapter.templateContent | tocData).length >= 2 %}           
-      <ul class="hidden my-1.5 ml-8 mb-6" x-bind:class="{ 'hidden' : (chapterIndex != {{ chapterIndex }}) && !tocExpandAll }">
+      <ul class="hidden my-1.5 ml-8 mb-6" x-bind:class="{ 'hidden' : ((chapterIndex != {{ chapterIndex }}) && !tocExpandAll) || !tocFixed }">
         {% for item in chapter.templateContent | tocData %}
         <li class="not-first:mt-1">
           <a class="inline-block p-1 underline hover:text-blue-700 decoration-slate-800/40 hover:decoration-blue-700 underline-offset-3 hover:decoration-2" href="#{{ item.id }}" x-on:click="tocOpen = false">
