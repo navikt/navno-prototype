@@ -6,7 +6,7 @@
     {% set chapterIndex = loop.index %}
     <li class="not-first:mt-1">
       <a class="relative inline-block px-1 pt-0.5 pl-4 pb-1 underline border-transparent hover:text-blue-700 hover:decoration-2 underline-offset-3 decoration-slate-800/40 hover:decoration-blue-700 toc-item" href="#{{ chapter.data.title | slugify }}" x-on:click="tocOpen = false">
-      <div class="absolute inset-y-0 left-0 block w-1 -translate-x-px rounded-r-xs" x-bind:class="(chapterIndex == {{ chapterIndex }}) && 'bg-deepblue-300', "></div>
+      <div class="absolute inset-y-0 left-0 block w-1 -translate-x-px rounded-r-xs" x-bind:class="(chapterIndex == {{ chapterIndex }}) && 'bg-deepblue-300'"></div>
         {{ chapter.data.title }}
       </a>
       {% if (chapter.templateContent | tocData).length >= 2 %}           
