@@ -1,39 +1,5 @@
 {%- extends 'base.njk' -%}
 
-{% macro toc(chapters) %}
-  <ul class="pr-6 mb-8 ml-1.5 border-l-2 text-fluid-16-18/normal opacity-90 border-slate-300">
-    {% for chapter in chapters %}
-    {% set chapterIndex = loop.index %}
-    <li class="not-first:mt-1">
-      <a class="relative inline-block px-1 pt-0.5 pl-4 pb-1 underline border-transparent hover:text-blue-700 hover:decoration-2 underline-offset-3 decoration-slate-800/40 hover:decoration-blue-700 toc-item" href="#{{ chapter.data.title | slugify }}" x-on:click="tocOpen = false">
-      <div class="absolute inset-y-0 left-0 block w-1 -translate-x-px rounded-r-xs" x-bind:class="(chapterIndex == {{ chapterIndex }}) && 'bg-deepblue-300'"></div>
-        {{ chapter.data.title }}
-      </a>
-      {% if (chapter.templateContent | tocData).length >= 2 %}           
-      <ul class="hidden my-1.5 ml-8 mb-6" x-bind:class="{ 'hidden' : ((chapterIndex != {{ chapterIndex }}) && !tocExpandAll) || !tocFixed }">
-        {% for item in chapter.templateContent | tocData %}
-        <li class="not-first:mt-1">
-          <a class="inline-block p-1 underline hover:text-blue-700 decoration-slate-800/40 hover:decoration-blue-700 underline-offset-3 hover:decoration-2" href="#{{ item.id }}" x-on:click="tocOpen = false">
-            <span>{{ item.text }}</span>
-          </a>
-        </li>
-        {% endfor %}
-      </ul>
-      {% endif %}
-    </li>
-    {% endfor %}
-  </ul>
-  <button type="button" x-on:click="tocExpandAll = !tocExpandAll" class="flex items-center gap-2 px-4 py-1 mb-8 border rounded-lg bg-slate-100 border-slate-300 text-fluid-16-18">
-    <template x-if="!tocExpandAll">
-      <span>Vis full oversikt</span>
-    </template>
-    <template x-if="tocExpandAll">
-      <span>Vis fokusert oversikt</span>
-    </template>
-  </button>
-{% endmacro %}
-
-
 {%- block content -%}
 
   {% set chapters = collections[chapters] | sort(false, false, 'data.order') %}
@@ -70,11 +36,37 @@
         <a href="#toppen">{{ '/src/_includes/svg/icons/document.svg' | svgContents('w-6 h-6 translate-y-1 -translate-x-1') | safe  }}</a>
         <span>Innhold på siden</span>
       </h2>
-      {{ toc(chapters) }}
+        <ul class="pr-6 mb-8 ml-1.5 border-l-2 text-fluid-16-18/normal opacity-90 border-slate-300">
+        {% for chapter in chapters %}
+        {% set chapterIndex = loop.index %}
+        <li class="not-first:mt-1">
+          <a class="relative inline-block px-1 pt-0.5 pl-4 pb-1 underline border-transparent hover:text-blue-700 hover:decoration-2 underline-offset-3 decoration-slate-800/40 hover:decoration-blue-700 toc-item" href="#{{ chapter.data.title | slugify }}" x-on:click="tocOpen = false">
+          <div class="absolute inset-y-0 left-0 block w-1 -translate-x-px rounded-r-xs" x-bind:class="(chapterIndex == {{ chapterIndex }}) && 'lg:bg-deepblue-300'"></div>
+            {{ chapter.data.title }}
+          </a>
+          {% if (chapter.templateContent | tocData).length >= 2 %}           
+          <ul class="hidden my-1.5 ml-8 mb-6" x-bind:class="{ 'lg:block' : chapterIndex == {{ chapterIndex }} }">
+            {% for item in chapter.templateContent | tocData %}
+            <li class="not-first:mt-1">
+              <a class="inline-block p-1 underline hover:text-blue-700 decoration-slate-800/40 hover:decoration-blue-700 underline-offset-3 hover:decoration-2" href="#{{ item.id }}" x-on:click="tocOpen = false">
+                <span>{{ item.text }}</span>
+              </a>
+            </li>
+            {% endfor %}
+          </ul>
+          {% endif %}
+        </li>
+        {% endfor %}
+      </ul>
     </div>
 
     {# Innholdsfortegnelse fixed #}
-    <div class="fixed inset-x-0 top-0 z-50 grid max-h-full overflow-y-auto bg-white border-b shadow grid-cols-article lg:hidden border-slate-300 overscroll-y-contain" x-show="tocFixed" x-on:click.outside="tocOpen = false">
+    <div class="fixed inset-x-0 top-0 z-50 grid max-h-full overflow-y-auto bg-white border-b shadow grid-cols-article lg:hidden border-slate-300 overscroll-y-contain" x-show="tocFixed" x-transition:enter="transition ease-out duration-100"
+        x-transition:enter-start="opacity-0 -translate-y-3"
+        x-transition:enter-end="opacity-100 translate-y-0"
+        x-transition:leave="transition ease-in duration-100"
+        x-transition:leave-start="opacity-100 translate-y-0"
+        x-transition:leave-end="opacity-0 -translate-y-3">
         <button type="button" class="col-main flex items-center sticky z-10 bg-white top-0 py-4 font-semibold gap-x-0.5 text-fluid-18-20" x-on:click="tocOpen = !tocOpen">
           {{ '/src/_includes/svg/icons/document.svg' | svgContents('w-6 h-6 -translate-y-0.5 -translate-x-1') | safe  }}</a>
           <span>Innhold på siden</span>
@@ -83,7 +75,36 @@
 
         </button>
         <div x-show="tocOpen" class="col-main">
-          {{ toc(chapters) }}
+          <ul class="pr-6 mb-8 ml-1.5 border-l-2 text-fluid-16-18/normal opacity-90 border-slate-300">
+            {% for chapter in chapters %}
+            {% set chapterIndex = loop.index %}
+            <li class="not-first:mt-1">
+              <a class="relative inline-block px-1 pt-0.5 pl-4 pb-1 underline border-transparent hover:text-blue-700 hover:decoration-2 underline-offset-3 decoration-slate-800/40 hover:decoration-blue-700 toc-item" href="#{{ chapter.data.title | slugify }}" x-on:click="tocOpen = false">
+              <div class="absolute inset-y-0 left-0 block w-1 -translate-x-px rounded-r-xs" x-bind:class="(chapterIndex == {{ chapterIndex }}) && 'bg-deepblue-300'"></div>
+                {{ chapter.data.title }}
+              </a>
+              {% if (chapter.templateContent | tocData).length >= 2 %}           
+              <ul class="hidden my-1.5 ml-8 mb-6" x-bind:class="{ 'hidden' : ((chapterIndex != {{ chapterIndex }}) && !tocExpandAll) || !tocFixed }">
+                {% for item in chapter.templateContent | tocData %}
+                <li class="not-first:mt-1">
+                  <a class="inline-block p-1 underline hover:text-blue-700 decoration-slate-800/40 hover:decoration-blue-700 underline-offset-3 hover:decoration-2" href="#{{ item.id }}" x-on:click="tocOpen = false">
+                    <span>{{ item.text }}</span>
+                  </a>
+                </li>
+                {% endfor %}
+              </ul>
+              {% endif %}
+            </li>
+            {% endfor %}
+          </ul>
+          <button type="button" x-on:click="tocExpandAll = !tocExpandAll" class="flex items-center gap-2 px-4 py-1 mb-8 border rounded-lg bg-slate-100 border-slate-300 text-fluid-16-18">
+            <template x-if="!tocExpandAll">
+              <span>Vis full oversikt</span>
+            </template>
+            <template x-if="tocExpandAll">
+              <span>Vis fokusert oversikt</span>
+            </template>
+          </button>
         </div>
       </div>
     </div>
