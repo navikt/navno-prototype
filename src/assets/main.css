@@ -422,8 +422,13 @@
   .accordion details[open] summary {
     margin-block-end: 8px;
     position: sticky;
-    top: 0;
     z-index: 20;
+    top: 3rem;
+
+    @media (width > 1280px) {
+      top: 0;
+    }
+
   }
 
   .accordion summary:hover {
@@ -519,10 +524,14 @@
 
   :where(.readmore[open]) summary {
     outline: 4px solid white;
-    position: sticky;
-    top: 4px;
-    z-index: 20;
     margin-bottom: 8px;
+    position: sticky;
+    z-index: 20;
+    top: 3rem;
+
+    @media (width > 1280px) {
+      top: 0;
+    }
   }
   :where(.readmore[open]) summary:before {
     transform: rotate(-180deg);
