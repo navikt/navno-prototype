@@ -31,12 +31,12 @@
     {% block quicklinks %}{% endblock %}
 
     {# Innholdsfortegnelse sticky #}
-    <div class="lg:row-span-4 lg:sticky bg-white lg:row-start-2 xl:row-start-2 lg:top-0 col-toc max-h-[99svh] overflow-auto toc px-4" id="toc" x-intersect:leave.margin.-120px.0.0.0="tocFixed = true" x-intersect:enter.margin.0.0.0.0="tocFixed = false, tocOpen = false">
+    <div class="lg:row-span-4 lg:sticky ring ring-red-600 bg-white lg:row-start-2 xl:row-start-2 lg:top-0 col-toc max-h-[99svh] overflow-auto toc px-4 pt-3 pb-6 mb-4" id="toc" x-intersect:leave.margin.-25px.0.0.0="tocFixed = true" x-intersect:enter.margin.50px.0.0.0="tocFixed = false, tocOpen = false">
       <h2 class="flex items-baseline sticky z-10 lg:bg-white top-0 py-2 font-semibold gap-x-0.5 text-fluid-18-20">
         <a href="#toppen">{{ '/src/_includes/svg/icons/document.svg' | svgContents('w-6 h-6 translate-y-1 -translate-x-0.5') | safe  }}</a>
         <span>Innhold på siden</span>
       </h2>
-        <ul class="pr-6 mb-8 ml-2 border-l-2 text-fluid-16-18/normal opacity-90 border-slate-300">
+        <ul class="pr-6 ml-2 border-l-2 text-fluid-16-18/normal opacity-90 border-slate-300">
         {% for chapter in chapters %}
         {% set chapterIndex = loop.index %}
         <li class="not-first:mt-1">
