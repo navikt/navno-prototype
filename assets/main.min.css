@@ -7,6 +7,7 @@
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
     --color-red-50: rgb(253 232 230);
     --color-red-300: rgb(225 128 113);
+    --color-red-600: rgb(163 42 23);
     --color-orange-200: rgb(255 215 153);
     --color-orange-300: rgb(255 193 102);
     --color-orange-400: rgb(255 170 51);
@@ -841,8 +842,8 @@
   .scroll-pt-6 {
     scroll-padding-top: calc(var(--spacing) * 6);
   }
-  .scroll-pt-16 {
-    scroll-padding-top: calc(var(--spacing) * 16);
+  .scroll-pt-10 {
+    scroll-padding-top: calc(var(--spacing) * 10);
   }
   .appearance-none {
     appearance: none;
@@ -1346,6 +1347,9 @@
   .pt-2 {
     padding-top: calc(var(--spacing) * 2);
   }
+  .pt-3 {
+    padding-top: calc(var(--spacing) * 3);
+  }
   .pt-4 {
     padding-top: calc(var(--spacing) * 4);
   }
@@ -1706,6 +1710,9 @@
   }
   .ring-gray-300 {
     --tw-ring-color: var(--color-gray-300);
+  }
+  .ring-red-600 {
+    --tw-ring-color: var(--color-red-600);
   }
   .ring-slate-300 {
     --tw-ring-color: var(--color-slate-300);
@@ -3226,9 +3233,6 @@
     --p: 3px;
     --R: 6px;
     mask: radial-gradient(var(--R) at left 50% top calc(var(--size) + var(--p)), var(--color-black) 99%, var(--color-transparent) 101%) calc(50% - 2 * var(--size)) 0/calc(4 * var(--size)) 100%, radial-gradient(var(--R) at left 50% top calc(-1 * var(--p)), var(--color-transparent) 99%, var(--color-black) 101%) left 50% top var(--size) / calc(4 * var(--size)) 100% repeat-x;
-  }
-  .toc {
-    border-block: 0.375lh solid transparent;
   }
   .toc::-webkit-scrollbar {
     background-color: var(--color-slate-200);
