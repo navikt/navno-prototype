@@ -7,7 +7,6 @@
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
     --color-red-50: rgb(253 232 230);
     --color-red-300: rgb(225 128 113);
-    --color-red-600: rgb(163 42 23);
     --color-orange-200: rgb(255 215 153);
     --color-orange-300: rgb(255 193 102);
     --color-orange-400: rgb(255 170 51);
@@ -1710,9 +1709,6 @@
   }
   .ring-gray-300 {
     --tw-ring-color: var(--color-gray-300);
-  }
-  .ring-red-600 {
-    --tw-ring-color: var(--color-red-600);
   }
   .ring-slate-300 {
     --tw-ring-color: var(--color-slate-300);
