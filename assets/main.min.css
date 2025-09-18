@@ -2812,6 +2812,12 @@
       padding-right: calc(var(--spacing) * 4);
     }
   }
+  .lg\:text-fluid-16-18\/normal {
+    @media (width >= 1280px) {
+      font-size: var(--text-fluid-16-18);
+      line-height: var(--leading-normal);
+    }
+  }
   .xl\:row-start-2 {
     @media (width >= 1440px) {
       grid-row-start: 2;
