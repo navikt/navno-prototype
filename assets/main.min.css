@@ -994,6 +994,9 @@
   .overscroll-y-contain {
     overscroll-behavior-y: contain;
   }
+  .scroll-smooth {
+    scroll-behavior: smooth;
+  }
   .rounded {
     border-radius: 0.25rem;
   }
