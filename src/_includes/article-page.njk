@@ -40,7 +40,7 @@
         {% for chapter in chapters %}
         {% set chapterIndex = loop.index %}
         <li class="not-first:mt-1">
-          <a class="block px-1 py-1.5 pl-4 border-l-2 -ml-0.5 underline border-transparent hover:text-blue-700 hover:decoration-2 underline-offset-3 decoration-slate-800/40 hover:decoration-blue-700 rounded-r-md toc-item" href="#{{ chapter.data.title | slugify }}" x-on:click="tocOpen = false" x-bind:class="(chapterIndex == {{ chapterIndex }}) && 'lg:border-deepblue-600 lg:bg-deepblue-100/50'">
+          <a class="inline-block px-1 py-1.5 pl-4 pr-8 border-l-2 -ml-0.5 underline border-transparent hover:text-blue-700 hover:decoration-2 underline-offset-3 decoration-slate-800/40 hover:decoration-blue-700 rounded-r-md toc-item" href="#{{ chapter.data.title | slugify }}" x-on:click="tocOpen = false" x-bind:class="(chapterIndex == {{ chapterIndex }}) && 'lg:border-deepblue-600 lg:bg-deepblue-100/50'">
             {{ chapter.data.title }}
           </a>
           {% if (chapter.templateContent | tocData).length >= 2 %}           
