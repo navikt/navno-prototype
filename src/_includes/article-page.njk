@@ -76,7 +76,7 @@
           <span class="-translate-y-0.5 ml-auto" x-bind:class="tocOpen && 'rotate-180 transition-transform duration-200'">
           {{ '/src/_includes/svg/icons/chevron-down.svg' | svgContents('') | safe }}</span>
         </button>
-        <div x-show="tocOpen" class="grid h-[10lh] pt-2 overflow-y-auto overscroll-y-contain px-6" style="scrollbar-width: none">
+        <div x-show="tocOpen" class="grid h-[15lh] pt-2 overflow-y-auto overscroll-y-contain px-6" style="scrollbar-width: none">
           <ul class="pr-6 border-l-2 text-fluid-16-18/normal border-slate-300">
             {% for chapter in chapters %}
             {% set chapterIndex = loop.index %}
