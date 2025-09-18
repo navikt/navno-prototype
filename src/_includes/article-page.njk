@@ -4,7 +4,7 @@
 
   {% set chapters = collections[chapters] | sort(false, false, 'data.order') %}
 
-  <main class="relative grid items-start pt-16 pb-16 grid-cols-article toc-highlight" data-theme="sykepenger" x-data="{ chapterIndex: 0 }" style="--scopes: {% for chapter in chapters %}--chapter-{{ loop.index }}{{ ',' if not loop.last else ';' }}{% endfor %}">
+  <main class="relative grid items-start pt-16 pb-16 grid-cols-article toc-highlight" data-theme="sykepenger" x-data="{ chapterIndex: 0 }" style="--scopes: {% for chapter in chapters %}--chapter-{{ loop.index }}{{ ',' if not loop.last else ';' }}{% endfor %}" x-intersect:leave.margin.0.0.100px.0="tocFixed = false">
     <div class="mb-3 col-pictogram" style="--pictogram: var(--color-deepblue-100)">
       {{ '/src/_includes/svg/piktogrammer/produkter/sykepenger.svg' | svgContents('text-deepblue-900 w-16 h-16 sm:w-20 sm:h-20 -translate-x-1') | safe  }}
     </div>
@@ -31,7 +31,7 @@
     {% block quicklinks %}{% endblock %}
 
     {# Innholdsfortegnelse sticky #}
-    <div class="lg:row-span-4 lg:sticky ring ring-red-600 bg-white lg:row-start-2 xl:row-start-2 lg:top-0 col-toc max-h-[99svh] overflow-auto toc px-4 pt-3 pb-6 mb-4" id="toc" x-intersect:leave.margin.-25px.0.0.0="tocFixed = true" x-intersect:enter.margin.-120px.0.0.0="tocFixed = false, tocOpen = false">
+    <div class="lg:row-span-4 lg:sticky bg-white lg:row-start-2 xl:row-start-2 lg:top-0 col-toc max-h-[99svh] overflow-auto toc px-4 pt-3 pb-6 mb-4" id="toc" x-intersect:leave.margin.-25px.0.0.0="tocFixed = true" x-intersect:enter.margin.-120px.0.0.0="tocFixed = false, tocOpen = false">
       <h2 class="flex items-baseline sticky z-10 lg:bg-white top-0 py-2 font-semibold gap-x-0.5 text-fluid-18-20">
         <a href="#toppen">{{ '/src/_includes/svg/icons/document.svg' | svgContents('w-6 h-6 translate-y-1 -translate-x-0.5') | safe  }}</a>
         <span>Innhold på siden</span>
