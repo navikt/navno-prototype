@@ -36,18 +36,18 @@
         <a href="#toppen">{{ '/src/_includes/svg/icons/document.svg' | svgContents('w-6 h-6 translate-y-1 -translate-x-0.5') | safe  }}</a>
         <span>Innhold på siden</span>
       </h2>
-      <ul class="ml-2 border-l-2 lg:text-fluid-16-18/normal border-slate-300">
+      <ul class="ml-2 lg:text-fluid-16-18/normal">
         {% for chapter in chapters %}
         {% set chapterIndex = loop.index %}
-        <li>
-          <a class="inline-block py-1.5 pl-4 pr-8 border-l-2 -ml-0.5 underline border-transparent hover:text-blue-700 hover:decoration-2 underline-offset-3 decoration-slate-800/40 hover:decoration-blue-700 text-deepblue-900 toc-item" href="#{{ chapter.data.title | slugify }}" x-on:click="tocOpen = false" x-bind:class="(chapterIndex == {{ chapterIndex }}) && 'tocHighlight !border-deepblue-600'">
+        <li class="border-l-2 border-slate-300" x-bind:class="(chapterIndex == {{ chapterIndex }}) && '!border-deepblue-600'">
+          <a class="inline-block py-1.5 pl-4 pr-8 underline hover:text-blue-700 hover:decoration-2 underline-offset-3 decoration-slate-800/40 hover:decoration-blue-700 text-deepblue-900" href="#{{ chapter.data.title | slugify }}" x-on:click="tocOpen = false">
             {{ chapter.data.title }}
           </a>
           {% if (chapter.templateContent | tocData).length >= 2 %}           
-          <ul class="hidden" x-bind:class="{ 'lg:block' : chapterIndex == {{ chapterIndex }} }">
+          <ul x-show="(chapterIndex == {{ chapterIndex }})">
             {% for item in chapter.templateContent | tocData %}
             <li>
-              <a class="inline-block py-1.5 pr-6 pl-8 underline border-l-2 -ml-0.5 border-transparent text-deepblue-900 hover:text-blue-700 decoration-slate-800/40 hover:decoration-blue-700 underline-offset-3 hover:decoration-2" href="#{{ item.id }}" x-on:click="tocOpen = false">
+              <a class="inline-block py-1.5 pr-6 pl-8 underline text-deepblue-900 hover:text-blue-700 decoration-slate-800/40 hover:decoration-blue-700 underline-offset-3 hover:decoration-2" href="#{{ item.id }}" x-on:click="tocOpen = false">
                 <span>{{ item.text }}</span>
               </a>
             </li>
@@ -61,15 +61,16 @@
 
     {# Innholdsfortegnelse fixed #}
     <div 
-      class="fixed inset-x-0 top-0 z-50 grid grid-cols-article lg:hidden" x-show="tocFixed" 
-      x-transition:enter="transition ease-out duration-200"
+      class="fixed inset-x-0 top-0 z-50 grid grid-cols-article lg:hidden"
+      x-show="tocFixed" 
+      x-transition:enter="transition duration-200"
       x-transition:enter-start="opacity-0 -translate-y-6"
       x-transition:enter-end="opacity-100 translate-y-0"
-      x-transition:leave="transition ease-in duration-200"
+      x-transition:leave="transition duration-200"
       x-transition:leave-start="opacity-100 translate-y-0"
       x-transition:leave-end="opacity-0 -translate-y-6"
     >
-      <div class="bg-white rounded-b-xl col-main overflow-clip" x-bind:class="tocOpen || 'ring-white ring-2'">
+      <div class="bg-white rounded-b-xl toc col-main overflow-clip" x-bind:class="tocOpen || 'ring-white ring-2'">
         <button type="button" class="flex items-center w-full gap-1 px-4 py-3 font-semibold text-blue-600 cursor-pointer rounded-b-xl bg-blue-50 text-fluid-18-20 hover:bg-blue-100" x-on:click="tocOpen = !tocOpen">
           {{ '/src/_includes/svg/icons/document.svg' | svgContents('w-6 h-6 -translate-y-0.5 -translate-x-[3px]') | safe  }}</a>
           <span>Innhold på siden</span>
@@ -77,18 +78,18 @@
           {{ '/src/_includes/svg/icons/chevron-down.svg' | svgContents('') | safe }}</span>
         </button>
         <div x-show="tocOpen" class="h-[13lh] pt-2 overflow-y-auto overscroll-y-contain" style="scrollbar-color:var(--color-slate-400) #0000">
-          <ul class="pr-6 mx-6 border-l-2 text-fluid-16-18/normal border-slate-300">
+          <ul class="px-4 ml-2 lg:text-fluid-16-18/normal">
             {% for chapter in chapters %}
             {% set chapterIndex = loop.index %}
-            <li class="not-first:mt-1">
-              <a class="inline-block border-l-2 py-1.5 pl-4 pr-8 -ml-0.5 underline hover:text-blue-700 hover:decoration-2 underline-offset-3 decoration-slate-800/40 rounded-r-md hover:decoration-blue-700 toc-item" x-bind:class="(chapterIndex == {{ chapterIndex }}) ? 'bg-deepblue-100/50' : 'border-transparent'" href="#{{ chapter.data.title | slugify }}" x-on:click="tocOpen = false">
+            <li class="border-l-2 border-slate-300" x-bind:class="(chapterIndex == {{ chapterIndex }}) && '!border-deepblue-600'">
+              <a class="inline-block py-1.5 pl-4 pr-8 underline hover:text-blue-700 hover:decoration-2 underline-offset-3 decoration-slate-800/40 hover:decoration-blue-700 text-deepblue-900" href="#{{ chapter.data.title | slugify }}" x-on:click="tocOpen = false">
                 {{ chapter.data.title }}
               </a>
               {% if (chapter.templateContent | tocData).length >= 2 %}           
-              <ul class="hidden my-1.5 ml-8 mb-2" x-bind:class="{ 'hidden' : ((chapterIndex != {{ chapterIndex }}) && !tocExpandAll) || !tocFixed }">
+              <ul x-show="(chapterIndex == {{ chapterIndex }})">
                 {% for item in chapter.templateContent | tocData %}
-                <li class="not-first:mt-1">
-                  <a class="inline-block p-1 underline hover:text-blue-700 decoration-slate-800/40 hover:decoration-blue-700 underline-offset-3 hover:decoration-2" href="#{{ item.id }}" x-on:click="tocOpen = false">
+                <li>
+                  <a class="inline-block py-1.5 pr-6 pl-8 underline text-deepblue-900 hover:text-blue-700 decoration-slate-800/40 hover:decoration-blue-700 underline-offset-3 hover:decoration-2" href="#{{ item.id }}" x-on:click="tocOpen = false">
                     <span>{{ item.text }}</span>
                   </a>
                 </li>
@@ -111,7 +112,7 @@
     {# Innhold #}
     {% for chapter in chapters %}
       {% set chapterIndex = loop.index %}
-      <section class="mb-16 prose col-main toc-chapter" id="{{ chapter.data.title | slugify }}" x-intersect.margin.-5%.0%.-10%.0%="chapterIndex = {{ chapterIndex }}">
+      <section class="mb-16 prose col-main toc-chapter" id="{{ chapter.data.title | slugify }}" x-intersect.threshold.01="chapterIndex = {{ chapterIndex }}">
         <div class="w-10 h-[0.625ch] bg-deepblue-200 mt-8"></div>
         <h2 class="mt-5 mb-4 -translate-x-0.5 font-bold text-fluid-32-36/tight text-balance" id="{{ chapter.data.title | slugify }}">
           <a href="#{{ chapter.data.title | slugify }}">
@@ -138,8 +139,6 @@
 {% block bodyscript %}
   <script>
       const headings = Array.from(document.querySelectorAll('main h2, main h3')).filter((heading) => heading.id != '');
-      const toc = document.getElementById('toc');
-
       const highlight = (item, headingId) => {
 
       }
@@ -148,15 +147,16 @@
         (entries, observer) => {
           entries.forEach((entry) => {
             const id = entry.target.id;
+            const highlighted = document.querySelectorAll(`.toc a[href="#${id}"]`)
             if (entry.isIntersecting) {
-              toc.querySelector(`a[href="#${id}"]`).classList.add('tocHighlight')
+              highlighted.forEach(el => el.classList.add('tocHighlight'))
             } else {
-              toc.querySelector(`a[href="#${id}"]`).classList.remove('tocHighlight')
+              highlighted.forEach(el => el.classList.remove('tocHighlight'))
             }
           })
         }, { 
-          rootMargin: '0px 0px -25% 0px',
-          threshold: 1.0
+          rootMargin: '30% 0% -15% 0%',
+          threshold: 0.05
         }
       );
       headings.forEach((heading) => {

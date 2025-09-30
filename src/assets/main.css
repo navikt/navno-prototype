@@ -574,9 +574,8 @@
   }
 
   .tocHighlight {
-    border-color: var(--color-deepblue-600) !important;
     background-color: --alpha(var(--color-deepblue-50) / 75%);
-    transition: background 200ms ease-in-out, border-color 100ms ease-in-out;
+    transition: background 200ms ease-in-out;
   }
 }
 

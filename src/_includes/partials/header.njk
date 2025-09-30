@@ -63,16 +63,16 @@
   {%- include "partials/navigation.njk" -%}
   {%- include "partials/search.njk" -%}
 
-  <div class="grid relative z-10 justify-center py-1 {{ 'bg-deepblue-50' if page.fileSlug !== 'min-side' else 'bg-deepblue-800 text-white' }} min-h-8 grid-cols-page has-[button:hover]:bg-slate-200">
+  <div class="grid relative z-10 justify-center {{ 'bg-deepblue-50' if page.fileSlug !== 'min-side' else 'bg-deepblue-800 text-white' }} min-h-8 grid-cols-page has-[button:hover]:bg-slate-200">
     {% if loggedIn %}
-      <a class="inline-flex items-center gap-1 px-3 py-1 text-white" href="/min-side">
+      <a class="inline-flex items-center gap-1 px-3 py-1.5 text-white" href="/min-side">
         {{ '/src/_includes/svg/icons/person-circle.svg' | svgContents('w-7 h-7 -ml-0.5 shrink-0 pointer-events-none') | safe }}
         <span class="mt-px sm:hidden">Min side</span>
         <span class="hidden mt-px sm:inline-block">Isac Norland</span>
       </a>
     {% else %}
-      <a class="inline-flex items-center gap-2 px-3 py-1 text-blue-600 underline cursor-pointer hover:decoration-2 decoration-blue-400 underline-offset-3" href="/logg-inn">
-        {{ '/src/_includes/svg/icons/login.svg' | svgContents('w-7 h-7 shrink-0 pointer-events-none') | safe }}
+      <a class="inline-flex items-center gap-2 px-3 py-1.5 text-blue-600 underline cursor-pointer hover:decoration-2 decoration-blue-400 underline-offset-3" href="/logg-inn">
+        {{ '/src/_includes/svg/icons/login.svg' | svgContents('w-6 h-6 shrink-0 pointer-events-none') | safe }}
         <span>Logg inn</span>
       </a>
     {% endif %}
