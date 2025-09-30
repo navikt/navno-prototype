@@ -77,7 +77,7 @@
           <span class="-translate-y-0.5 ml-auto" x-bind:class="tocOpen && 'rotate-180 transition-transform duration-200'">
           {{ '/src/_includes/svg/icons/chevron-down.svg' | svgContents('') | safe }}</span>
         </button>
-        <div x-show="tocOpen" class="h-[13lh] pt-2 overflow-y-auto overscroll-y-contain" style="scrollbar-color:var(--color-slate-400) #0000">
+        <div x-show="tocOpen" class="h-[13lh] pt-2 overflow-y-auto overscroll-y-contain" style="scrollbar-color:var(--color-slate-400) #0000" x-on:click.outside="tocOpen = false">
           <ul class="px-4 ml-2 lg:text-fluid-16-18/normal">
             {% for chapter in chapters %}
             {% set chapterIndex = loop.index %}
@@ -99,10 +99,13 @@
             </li>
             {% endfor %}
           </ul>
-          <a class="inline-flex items-center gap-1 px-1.5 mt-6 ml-2 underline text-fluid-16-18 hover:text-blue-700 decoration-slate-800/40 hover:decoration-blue-700 underline-offset-3 hover:decoration-2" x-on:click="tocOpen = false" href="#toppen">
-            {{ '/src/_includes/svg/icons/arrow-up.svg' | svgContents('w-6 h-6') | safe }}
-            <span>Til toppen av siden</span>
-          </a>
+          <div class="sticky bottom-0 pb-2 bg-white">
+            <div class="absolute inset-x-0 h-2 pointer-events-none bg-gradient-to-t from-white to-transparent bottom-full"></div>
+            <a class="inline-flex items-center gap-1 px-1.5 mt-6 ml-2 underline text-fluid-16-18 hover:text-blue-700 decoration-slate-800/40 hover:decoration-blue-700 underline-offset-3 hover:decoration-2" x-on:click="tocOpen = false" href="#toppen">
+              {{ '/src/_includes/svg/icons/arrow-up.svg' | svgContents('w-6 h-6') | safe }}
+              <span>Til toppen av siden</span>
+            </a>
+          </div>
         </div>
       </div>
     </div>
