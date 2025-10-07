@@ -1190,16 +1190,16 @@
   .bg-gray-50 {
     background-color: var(--color-gray-50);
   }
-  .bg-gray-400\/25 {
-    background-color: color-mix(in srgb, rgb(170 176 186) 25%, transparent);
-    @supports (color: color-mix(in lab, red, red)) {
-      background-color: color-mix(in oklab, var(--color-gray-400) 25%, transparent);
-    }
-  }
   .bg-gray-400\/50 {
     background-color: color-mix(in srgb, rgb(170 176 186) 50%, transparent);
     @supports (color: color-mix(in lab, red, red)) {
       background-color: color-mix(in oklab, var(--color-gray-400) 50%, transparent);
+    }
+  }
+  .bg-gray-800\/50 {
+    background-color: color-mix(in srgb, rgb(66 71 79) 50%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      background-color: color-mix(in oklab, var(--color-gray-800) 50%, transparent);
     }
   }
   .bg-green-100 {
