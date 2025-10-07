@@ -80,7 +80,7 @@
 
 {# Overlay #}
 <button 
-  class="fixed inset-0 z-10 w-full h-full cursor-default bg-gray-400/25" 
+  class="fixed z-10 w-full h-[102vh] cursor-default inset-0 bg-gray-400/25 overscroll-contain" 
   type="button"
   x-show="(menuOpen || searchOpen || tocOpen)" 
   x-on:click="menuOpen = false, searchOpen = false, tocOpen = false" 
