@@ -424,12 +424,7 @@
     margin-block-end: 8px;
     position: sticky;
     z-index: 20;
-    top: 3rem;
-
-    @media (width > 1280px) {
-      top: 0;
-    }
-
+    top: 0;
   }
 
   .accordion summary:hover {
@@ -528,11 +523,7 @@
     margin-bottom: 8px;
     position: sticky;
     z-index: 20;
-    top: 3rem;
-
-    @media (width > 1280px) {
-      top: 0;
-    }
+    top: 0;
   }
   :where(.readmore[open]) summary:before {
     transform: rotate(-180deg);
@@ -677,3 +668,5 @@
 body:has(.drawerOpen) {
   overflow:hidden;
 }
+
+
