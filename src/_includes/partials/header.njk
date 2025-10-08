@@ -1,4 +1,4 @@
-{%- set menuButtonClasses = "flex flex-col xs:flex-row items-center justify-center pl-3.5 pr-4 leading-none cursor-pointer gap-0.5 xs:gap-1 text-blue-600 rounded-full bg-deepblue-50 min-w-0 py-2 sm:py-2.5 max-xs:text-fluid-16-18 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-800 menu-button" -%}
+{%- set menuButtonClasses = "flex flex-col sm:flex-row items-center justify-center px-2 sm:pl-3.5 px-2 sm:pr-4 leading-none cursor-pointer gap-0.5 sm:gap-1 text-blue-600 rounded-full sm:bg-deepblue-50 min-w-0 py-2 sm:py-2.5 max-xs:text-fluid-16-18 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-800 menu-button" -%}
 
 <header class="relative z-50 bg-white -scroll-mt-16 snap-start" id="toppen">
   <div class="relative z-30 grid bg-white isolate grid-cols-combi">
@@ -18,7 +18,7 @@
         <div class="w-px h-8 mx-0.5 md:mx-1 bg-slate-300"></div>
 
         {# Audience #}
-        <div class="self-center pl-3 leading-tight text-fluid-20-22">
+        <div class="self-center pl-3 mr-3 leading-tight text-fluid-20-22">
           {{ audience.title or menu.audience[0].title }}
         </div>
       </div>
@@ -80,7 +80,7 @@
 
 {# Overlay #}
 <button 
-  class="fixed inset-0 z-10 w-full h-full cursor-default bg-gray-400/25" 
+  class="fixed z-10 w-full h-[102vh] cursor-default inset-0 bg-gray-800/50 overscroll-contain" 
   type="button"
   x-show="(menuOpen || searchOpen || tocOpen)" 
   x-on:click="menuOpen = false, searchOpen = false, tocOpen = false" 

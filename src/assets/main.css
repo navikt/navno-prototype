@@ -424,12 +424,7 @@
     margin-block-end: 8px;
     position: sticky;
     z-index: 20;
-    top: 3rem;
-
-    @media (width > 1280px) {
-      top: 0;
-    }
-
+    top: 0;
   }
 
   .accordion summary:hover {
@@ -528,11 +523,7 @@
     margin-bottom: 8px;
     position: sticky;
     z-index: 20;
-    top: 3rem;
-
-    @media (width > 1280px) {
-      top: 0;
-    }
+    top: 0;
   }
   :where(.readmore[open]) summary:before {
     transform: rotate(-180deg);
@@ -574,8 +565,10 @@
   }
 
   .tocHighlight {
-    background-color: --alpha(var(--color-deepblue-50) / 75%);
-    transition: background 200ms ease-in-out;
+    @media (width > 1280px) {
+      background-color: --alpha(var(--color-deepblue-50) / 75%);
+      transition: background 200ms ease-in-out;
+    }
   }
 }
 
@@ -671,3 +664,9 @@
 @utility small-caps {
   font-variant-caps: all-small-caps;
 }
+
+body:has(.drawerOpen) {
+  overflow:hidden;
+}
+
+
