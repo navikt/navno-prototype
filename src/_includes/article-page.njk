@@ -8,20 +8,20 @@
     class="relative grid items-start pt-16 pb-16 grid-cols-article toc-highlight overflow-clip" 
     x-data="{ chapterIndex: 0 }"
   >
-    <div class="mb-3 col-pictogram" style="--pictogram: var(--color-deepblue-100)">
-      {{ '/src/_includes/svg/piktogrammer/produkter/sykepenger.svg' | svgContents('text-deepblue-900 w-16 h-16 sm:w-20 sm:h-20 -translate-x-1') | safe  }}
+    <div class="mb-3 col-pictogram" style="--pictogram: var(--color-brand-purple-light)">
+      {{ '/src/_includes/svg/piktogrammer/produkter/sykepenger.svg' | svgContents('text-brand-purple-deep w-16 h-16 sm:w-20 sm:h-20 -translate-x-1') | safe  }}
     </div>
     <div class="col-main md:col-start-[main] md:col-end-[container]">
-      <h1 class="font-bold text-fluid-36-48/tight text-pretty">{{ title | safe }}</h1>
+      <h1 class="font-bold text-fluid-36-48/tight text-pretty text-brand-purple-deep">{{ title | safe }}</h1>
       <div class="mt-4 text-gray-700 text-fluid-12-14 font-regular">
-        <span class="px-1.5 py-px border rounded-sm border-slate-300 bg-slate-100">{{ category | safe }}</span>
+        <span class="px-1.5 py-px rounded-sm bg-brand-purple-light">{{ category | safe }}</span>
         {%- if audience.description %}
           <span aria-hidden="true" class="inline-block mx-1">—</span>
           {{- audience.description | safe -}}
         {% endif -%}
       </div>
     </div>
-    <div class="mt-6 pb-9 col-main">
+    <div class="mt-6 mb-6 col-main">
       <p class="prose text-fluid-18-20 text-pretty">
         {{ ingress | safe }}
 
@@ -34,23 +34,25 @@
     {% block quicklinks %}{% endblock %}
 
     {# Innholdsfortegnelse sticky #}
-    <div class="lg:row-span-4 lg:sticky bg-white lg:row-start-2 xl:row-start-2 lg:top-0 col-toc max-h-[99svh] overflow-auto toc px-4 lg:pr-0" id="toc" x-intersect:enter="tocFixed = false, tocOpen = false" x-intersect:leave="tocFixed = true">
-      <h2 class="flex items-baseline sticky z-10 lg:bg-white top-0 py-2 font-semibold gap-x-0.5 text-fluid-18-20" >
-        {{ '/src/_includes/svg/icons/document.svg' | svgContents('w-6 h-6 translate-y-1 -translate-x-0.5') | safe  }}
-        <span>Innhold på siden</span>
+    <div class="lg:row-span-4 lg:sticky bg-white lg:row-start-2 xl:row-start-2 lg:top-0 col-toc max-h-[99svh] overflow-auto toc lg:px-4 lg:pr-0" id="toc" x-intersect:enter="tocFixed = false, tocOpen = false" x-intersect:leave="tocFixed = true">
+      <h2 class="sticky top-0 z-10 hidden pt-6 pb-1 font-semibold lg:flex lg:items-baseline lg:gap-1 lg:bg-white text-fluid-18-20" >
+        {{ '/src/_includes/svg/icons/box-list.svg' | svgContents('w-5 h-5 translate-y-[3px] -translate-x-1 shrink-0 opacity-80') | safe  }}
+        <span>Innhold på denne siden</span>
       </h2>
-      <ul class="pb-4 ml-2 lg:text-fluid-16-18/normal">
+      <ul class="pb-4 lg:ml-6 lg:text-fluid-16-18/normal">
         {% for chapter in chapters %}
         {% set chapterIndex = loop.index %}
-        <li class="border-l-2 border-slate-300" x-bind:class="(chapterIndex == {{ chapterIndex }}) && 'lg:border-deepblue-500'">
-          <a class="inline-block py-1.5 pl-4 pr-8 underline hover:text-blue-700 hover:decoration-2 underline-offset-3 decoration-slate-800/40 hover:decoration-blue-700 text-deepblue-900" href="#{{ chapter.data.title | slugify }}" x-on:click="tocOpen = false">
+        <li>
+          <a class="inline-flex items-baseline py-1.5 pr-4 underline hover:text-blue-700 hover:decoration-2 underline-offset-3 decoration-slate-800/40 hover:decoration-blue-700 text-deepblue-900" href="#{{ chapter.data.title | slugify }}" x-on:click="tocOpen = false">
+            {{ '/src/_includes/svg/icons/right-angle.svg' | svgContents('w-6 h-6 -ml-1 -translate-x-0.5 translate-y-1.5 shrink-0 opacity-85 lg:hidden') | safe  }}
             {{ chapter.data.title }}
           </a>
           {% if (chapter.templateContent | tocData).length >= 2 %}           
-          <ul class="hidden pb-3" x-bind:class="(chapterIndex == {{ chapterIndex }}) && 'lg:block'">
+          <ul class="hidden pb-1" x-bind:class="(chapterIndex == {{ chapterIndex }}) && 'lg:block'">
             {% for item in chapter.templateContent | tocData %}
             <li>
-              <a class="inline-block py-1.5 pr-6 pl-8 underline text-deepblue-900 hover:text-blue-700 decoration-slate-800/40 opacity-85 hover:decoration-blue-700 underline-offset-3 hover:decoration-2" href="#{{ item.id }}" x-on:click="tocOpen = false">
+              <a class="inline-flex py-1.5 pr-4 underline items-baseline text-deepblue-900 hover:text-blue-700 decoration-slate-800/40 opacity-85 hover:decoration-blue-700 underline-offset-3 hover:decoration-2" href="#{{ item.id }}" x-on:click="tocOpen = false">
+                {{ '/src/_includes/svg/icons/right-angle.svg' | svgContents('w-6 h-6 -ml-1 translate-y-1.5 -translate-x-0.5 shrink-0 opacity-85') | safe  }}
                 <span>{{ item.text }}</span>
               </a>
             </li>
@@ -62,71 +64,30 @@
       </ul>
     </div>
 
-    {# Innholdsfortegnelse mobile #}
-    <div x-show="tocFixed" class="sticky top-4 right-0 w-0 z-50 row-start-5 col-[full-end] lg:hidden" x-bind:class="tocOpen && '!fixed'">
-      <button type="button" class="absolute right-0 flex items-center gap-1.5 whitespace-nowrap px-3.5  pt-2.5 pb-2 font-semibold cursor-pointer pop  text-fluid-18-20 rounded-l-full transition-all" x-on:click="tocOpen = !tocOpen" x-bind:class="tocOpen ? 'drawerOpen w-[368px] mr-4 max-w-[70vw] bg-white' : 'bg-deepblue-800 text-white hover:bg-deepblue-700 w-fit'">
-        {{ '/src/_includes/svg/icons/document.svg' | svgContents('w-6 h-6 shrink-0 -translate-y-px -translate-x-px') | safe  }}
-        <span>Innhold på siden</span>
-        <span x-show="!tocOpen">
-          {{ '/src/_includes/svg/icons/chevron-down.svg' | svgContents('w-6 h-6 shrink-0 -translate-y-px ml-4') | safe }}
-        </span>
-        <span class="ml-auto" x-show="tocOpen">
-        {{ '/src/_includes/svg/icons/close.svg' | svgContents('w-6 h-6 shrink-0') | safe }}
-        </span>
-      </button>
-
-
-      <div 
-        class="h-[90dvh] px-2 absolute top-0 pt-16 right-0 w-96 max-w-[70vw] overflow-y-auto overscroll-contain -z-10 bg-white rounded-l-2xl"
-        x-show="tocOpen"
-        x-transition:enter="transition ease-out duration-150"
-        x-transition:enter-start="opacity-0 translate-x-full"
-        x-transition:enter-end="opacity-100 translate-x-0"
-        x-transition:leave="transition ease-in duration-150"
-        x-transition:leave-start="opacity-100 translate-x-0"
-        x-transition:leave-end="opacity-0 translate-x-full"
-      >
-        <ul class="px-4 mb-6 lg:text-fluid-16-18/normal">
-          {% for chapter in chapters %}
-          {% set chapterIndex = loop.index %}
-          <li class="border-l-2 border-slate-300">
-            <a class="inline-block py-1.5 pl-4 pr-8 underline hover:text-blue-700 hover:decoration-2 underline-offset-3 decoration-slate-800/40 hover:decoration-blue-700 text-deepblue-900" href="#{{ chapter.data.title | slugify }}" x-on:click="tocOpen = false">
-              {{ chapter.data.title }}
-            </a>
-            {% if (chapter.templateContent | tocData).length >= 2 %}           
-            <ul class="pb-3">
-              {% for item in chapter.templateContent | tocData %}
-              <li>
-                <a class="inline-block py-1.5 pr-6 pl-9 underline text-deepblue-900 hover:text-blue-700 decoration-slate-800/40 opacity-85 hover:decoration-blue-700 underline-offset-3 hover:decoration-2" href="#{{ item.id }}" x-on:click="tocOpen = false">
-                  <span>{{ item.text }}</span>
-                </a>
-              </li>
-              {% endfor %}
-            </ul>
-            {% endif %}
-          </li>
-          {% endfor %}
-        </ul>
-        <div class="sticky bottom-0 py-4 bg-white rounded-bl-2xl">
-          <div class="absolute inset-x-0 h-8 pointer-events-none bottom-full bg-gradient-to-t from-white to-transparent"></div>
-          <a class="inline-flex items-center gap-1 px-1.5 underline text-fluid-16-18 hover:text-blue-700 decoration-slate-800/40 hover:decoration-blue-700 underline-offset-3 hover:decoration-2" x-on:click="tocOpen = false" href="#toppen">
-            {{ '/src/_includes/svg/icons/arrow-up.svg' | svgContents('w-6 h-6 -translate-x-px') | safe }}
-            <span>Til toppen av siden</span>
-          </a>
-        </div>
-      </div>
-    </div>
-
     {# Innhold #}
     {% for chapter in chapters %}
       {% set chapterIndex = loop.index %}
-      <section class="mb-16 prose col-main toc-chapter" id="{{ chapter.data.title | slugify }}" x-intersect.threshold.01="chapterIndex = {{ chapterIndex }}">
-        <div class="w-10 h-[0.625ch] bg-deepblue-200 mt-8"></div>
-        <h2 class="mt-5 mb-4 -translate-x-0.5 font-bold text-fluid-32-36/tight text-balance" id="{{ chapter.data.title | slugify }}">
+      <section class="mb-16 prose col-main toc-chapter" id="{{ chapter.data.title | slugify }}" x-intersect.margin.0%.0%.-50%.0%="chapterIndex = {{ chapterIndex }}">
+        <div class="w-8 h-[0.625ch] bg-brand-purple-faded mt-12"></div>
+        <h2 class="mt-4 mb-4 -translate-x-0.5 font-bold text-fluid-32-36/tight text-balance text-brand-purple-deep" id="{{ chapter.data.title | slugify }}">
           <a href="#{{ chapter.data.title | slugify }}">
             <span>{{ chapter.data.title }}</span>
           </a>
         </h2>
+
+        <nav class="lg:hidden">
+          {%- set tocLinks = chapter.templateContent | tocData(h3) -%}
+          <ul>
+          {% for item in tocLinks %}
+            <li>
+              <a href="#{{ item.id }}" class="inline-flex py-1.5 pr-4 text-slate-800 underline align-baseline hover:text-blue-500 decoration-slate-800/40 opacity-85 hover:decoration-blue-700 underline-offset-3 hover:decoration-2">
+                {{ '/src/_includes/svg/icons/right-angle.svg' | svgContents('w-6 h-6 -ml-1 translate-y-0.5 -translate-x-0.5 shrink-0 opacity-85') | safe  }}
+                <span>{{ item.text }}</span>
+              </a>
+            </li>
+          {% endfor %}
+          </ul>
+        </nav>
 
         {# Main Content #}
         {{ chapter.templateContent | markdown | safe }}
@@ -150,21 +111,21 @@
       const highlight = (item, headingId) => {
 
       }
+      const tocLinks = document.querySelectorAll(`.toc a`);
 
       let observer = new IntersectionObserver(
         (entries, observer) => {
-          entries.forEach((entry) => {
-            const id = entry.target.id;
-            const highlighted = document.querySelectorAll(`.toc a[href="#${id}"]`)
-            if (entry.isIntersecting) {
-              highlighted.forEach(el => el.classList.add('tocHighlight'))
-            } else {
-              highlighted.forEach(el => el.classList.remove('tocHighlight'))
-            }
-          })
+          entries.forEach(
+            (entry) => {
+              const id = entry.target.id;
+              if (entry.isIntersecting) {
+                tocLinks.forEach(el => el.classList.remove('tocHighlight'))
+                document.querySelector(`.toc a[href="#${id}"]`).classList.add('tocHighlight')
+              }
+            })
         }, { 
-          rootMargin: '30% 0% -15% 0%',
-          threshold: 0.05
+          rootMargin: '2% 0% -88% 0%',
+          threshold: 1
         }
       );
       headings.forEach((heading) => {

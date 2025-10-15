@@ -108,7 +108,7 @@ Blir du arbeidsledig etter å ha vært permittert, kan du søke om dagpenger på
 
 Mer informasjon til deg som
 
-<div class="grid gap-3 mt-2">
+<div class="grid gap-3 mt-6">
 {{ tile({
   title: 'Er arbeidsledig eller permittert',
   kicker: ['Dette kan du ha rett til']

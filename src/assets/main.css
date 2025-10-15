@@ -8,7 +8,7 @@
 
   --blur-xs: 2px;
 
-  --breakpoint-xs: 400px;
+  --breakpoint-xs: 480px;
   --breakpoint-sm: 768px;
   --breakpoint-md: 1024px;
   --breakpoint-lg: 1280px;
@@ -254,7 +254,7 @@
     color: var(--color-gray-900);
     font-weight: var(--font-weight-semibold);
     text-wrap: pretty;
-    margin-block: 1.75em 0.25em;
+    margin-block: 1.25em 0.25em;
   }
 
   .prose > :where(h1, h2, h3, h4, h5):first-child {
@@ -566,8 +566,10 @@
 
   .tocHighlight {
     @media (width > 1280px) {
-      background-color: --alpha(var(--color-deepblue-50) / 75%);
-      transition: background 200ms ease-in-out;
+      transition: font-weight 100ms ease-in-out;
+      font-weight: var(--font-weight-semibold);
+      color: var(--color-blue-600) !important;
+      padding-inline-end:0 !important;
     }
   }
 }
