@@ -90,7 +90,7 @@ Hvis du er uenig i svaret på klagen din fra Nav klageinstans, kan du med noen u
 
 Du kan også bruke advokat eller gi fullmakt til en person som klager på dine vegne.
 
-<div class="grid gap-3 mt-2">
+<div class="grid gap-3">
 {{ tile({
   title: 'Klagerettigheter',
   kicker: ['Slik gjør du det']

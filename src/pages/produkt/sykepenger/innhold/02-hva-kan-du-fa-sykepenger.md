@@ -308,7 +308,7 @@ Klarer du å jobbe, men har problemer med å reise til og fra arbeidsstedet? Da 
 
 Mer informasjon til deg som
 
-<div class="grid gap-3 mt-2">
+<div class="grid gap-3">
   {{ tile({ 
     title: 'Har blitt sykmeldt', 
     mark: 'bg-orange-300', 

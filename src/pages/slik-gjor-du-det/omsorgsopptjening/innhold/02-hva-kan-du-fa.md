@@ -55,7 +55,7 @@ Hadde du inntekt høyere enn 4,5 G før du kom i en omsorgssituasjon, kan omsorg
 
 Mer informasjon til deg som
 
-<div class="grid gap-3 mt-2">
+<div class="grid gap-3">
 {{ tile({
   title: 'Tar vare på noen som er syk, skadet eller har en funksjonsnedsettelse',
   kicker: ['Dette kan du ha rett til']

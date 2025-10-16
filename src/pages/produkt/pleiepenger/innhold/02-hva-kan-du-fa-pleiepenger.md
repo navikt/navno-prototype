@@ -153,7 +153,7 @@ Du kan få omsorgsopptjening hvis du tar deg av små barn. Omsorgsopptjening er 
 
 ### Andre tilbud
 
-<div class="grid gap-3 mt-2">
+<div class="grid gap-3">
 {{ tile({ title: 'Tar vare på noen som er syk, skadet eller har en funksjonsnedsettelse', kicker: ['Dette kan du ha rett til'] }) }}
 {{ tile({ title: 'Venter eller har nylig fått barn', kicker: ['Dette kan du ha rett til'] }) }}
 {{ tile({ title: 'Har ansvar for andres barn', kicker: ['Dette kan du ha rett til'] }) }}
