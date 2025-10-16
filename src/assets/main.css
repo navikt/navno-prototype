@@ -133,9 +133,12 @@
   --font-system: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 
+  --height-stretch: stretch;
+
   --max-width-base: 65.25rem;
   --max-width-prose: 68ch;
   --max-width-wide: 75rem;
+  --max-width-main: min(42.5rem, 100%);
 
   --ring-12: 12px;
 
@@ -146,10 +149,10 @@
   --text-fluid-20-22: clamp(1.25rem, 1.2065rem + 0.2174vi, 1.375rem);
   --text-fluid-22-24: clamp(1.375rem, 1.3333rem + 0.2083vi, 1.5rem);
   --text-fluid-24-28: clamp(1.5rem, 1.4167rem + 0.4167vi, 1.75rem);
-  --text-fluid-32-36: clamp(2rem, 1.9167rem + 0.4167vi, 2.25rem);
+  --text-fluid-28-36: clamp(1.75rem, 1.5833rem + 0.8333vw, 2.25rem);
   --text-fluid-36-48: clamp(2.25rem, 2rem + 1.25vi, 3rem);
   --text-squishy: clamp(2rem, 10vw + 10%, 8rem);
-  /* @link https://utopia.fyi/clamp/calculator?a=320,1280,12—14|14—16|16—18|18—20|20-22|22—24|24—28|32—36|36—48 */
+  /* @link https://utopia.fyi/clamp/calculator?a=320,1280,12—14|14—16|16—18|18—20|22—24|24—28|28—36|36—48 */
 
   --shadow-border: 0 -1px 0 inset var(--color-gray-600/10);
   --shadow-menuActive: 0 -3px 0 inset var(--color-blue-500);
@@ -159,16 +162,12 @@
   --shrink-1: 1;
   --shrink-5: 5;
 
-  --spacing-page: clamp(1rem, -1.25rem + 7.5vw, 10rem); 
-  /* clamp(1rem, -3.5rem + 15vw, 10rem) */
-  /* clamp(1rem, -5rem + 15vw, 10rem) */
+  --spacing-page: clamp(1rem, -1.25rem + 7.5vw, 10rem);
+  --spacing-fluid-16-48: clamp(1rem, 0.3333rem + 3.3333vw, 3rem);
 
   --underline-offset-3: 3px;
 
   --width-stretch: stretch;
-  --max-width-main: min(42.5rem, 100%);
-
-  --height-stretch: stretch;
 
 
   @keyframes dropdown {
@@ -201,8 +200,9 @@
   }
 
   @keyframes highlight {
-    0%, 99.9% {
-      background-color: var(--color-blue-500);
+    from {
+      opacity:0.8;
+      scale:0.95;
     }
   }
 }
@@ -405,7 +405,7 @@
     display: flex;
     align-items: baseline;
     list-style: none;
-    padding: 0.625em 44px;
+    padding: 0.5em 44px;
     margin-inline: -44px -20px;
     text-indent: 2px;
     border-radius: var(--radius-lg);
@@ -444,7 +444,7 @@
     place-items: center;
     position: absolute;
     inset-inline-start: 13px;
-    translate: 0 3px;
+    translate: 0 1px;
     margin-inline-end: 10px;
     border-radius: 10px;
     transition: rotate 150ms;
@@ -565,10 +565,12 @@
   }
 
   .tocHighlight {
-    @media (width > 1280px) {
-      transition: font-weight 100ms ease-in-out;
+    @media (width > 1280px) {     
+      transform-origin: left center;
+      animation: highlight 200ms ease-out forwards;
       font-weight: var(--font-weight-semibold);
-      color: var(--color-blue-600) !important;
+      color: var(--color-slate-800) !important;
+      text-decoration: none !important;
       padding-inline-end:0 !important;
     }
   }

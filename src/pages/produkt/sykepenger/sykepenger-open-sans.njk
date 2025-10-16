@@ -72,7 +72,7 @@ chapters: 'sykepenger'
       --text-fluid-20-22: 1.25em;
       --text-fluid-22-24: 1.375em;
       --text-fluid-24-28: 1.5em;
-      --text-fluid-32-36: 1.875em;
+      --text-fluid-28-36: 1.875em;
       --text-fluid-36-48: 2.5em;
 
       --font-weight-semibold: 700;
@@ -83,8 +83,8 @@ chapters: 'sykepenger'
     body {
       font-size: clamp(1rem, 0.875rem + 0.3125vw, 1.125rem);
     }
-    :is(h3, h4, .toc h2) {
-      font-stretch: 87.5%;
+    :is(h1, h2, h3, h4) {
+      font-stretch: 95%;
     }
     .menu-button .mt-px {
       margin-block: 0 1px;
