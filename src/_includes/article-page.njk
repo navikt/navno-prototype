@@ -96,8 +96,8 @@
 
 {# x-on:click="tocOpen = false" #}
 
-    <div x-show="tocFixed" class="fixed inset-x-0 z-50 bottom-2" x-bind:class="tocOpen && 'drawerOpen'">
-      <button x-on:click="tocOpen = !tocOpen" class="flex items-center gap-2 bg-slate-100 border border-b-0 border-slate-300 rounded-t-2xl justify-between cursor-pointer px-4 py-2.5 w-full  hover:bg-slate-50">
+    <div x-show="tocFixed" class="sticky inset-x-0 z-50 col-full bottom-2 lg:hidden" x-bind:class="tocOpen && 'drawerOpen'">
+      <button x-on:click="tocOpen = !tocOpen" class="flex items-center gap-2 mx-auto max-w-main bg-slate-100 border border-b-0 border-slate-300 rounded-t-2xl justify-between cursor-pointer px-4 py-2.5 w-full  hover:bg-slate-50">
         <span class="flex items-center gap-2 mr-auto">
           {{ '/src/_includes/svg/icons/box-list.svg' | svgContents('w-5 h-5 -translate-y-px shrink-0 opacity-85') | safe  }}
           <span>Innhold på denne siden</span>
@@ -105,31 +105,29 @@
         <span x-show="!tocOpen">{{ '/src/_includes/svg/icons/chevron-up-down.svg' | svgContents('w-5 h-5 -translate-y-px shrink-0 opacity-85') | safe  }}</span>
         <span x-show="tocOpen">{{ '/src/_includes/svg/icons/chevron-down-up.svg' | svgContents('w-5 h-5 -translate-y-px shrink-0 opacity-85') | safe  }}</span>
       </button>
-      <div class="max-h-[70svh] overflow-y-auto overscroll-contain bg-white px-4 py-3" x-show="tocOpen">
-        <div class="">
-          <ul class="pb-8 lg:pt-2 lg:text-fluid-16-18/normal">
-            {% for chapter in chapters %}
-              {% set chapterIndex = loop.index %}
-              <li>
-                <a class="inline-flex items-baseline py-1.5 pr-4 font-semibold text-blue-600 underline hover:text-blue-700 hover:decoration-2 underline-offset-3 decoration-slate-800/40 hover:decoration-blue-700" href="#{{ chapter.data.title | slugify }}">
-                  {{ chapter.data.title }}
-                </a>
-                {% if (chapter.templateContent | tocData).length >= 2 %}           
-                <ul class="pb-4">
-                  {% for item in chapter.templateContent | tocData %}
-                  <li>
-                    <a class="inline-flex py-1.5 pr-4 pl-1 underline items-baseline text-blue-600 hover:text-blue-700 decoration-slate-800/40 hover:decoration-blue-700 underline-offset-3 hover:decoration-2" href="#{{ item.id }}">
-                      {{ '/src/_includes/svg/icons/right-angle.svg' | svgContents('w-6 h-6 -ml-1 translate-y-1.5 -translate-x-0.5 shrink-0 opacity-85') | safe  }}
-                      <span>{{ item.text }}</span>
-                    </a>
-                  </li>
-                  {% endfor %}
-                </ul>
-                {% endif %}
-              </li>
-            {% endfor %}
-          </ul>
-        </div>
+      <div class="max-h-[70svh] overflow-y-auto overscroll-contain bg-white px-4 py-3 mx-auto max-w-main" x-show="tocOpen">
+        <ul class="pb-8 lg:pt-2 lg:text-fluid-16-18/normal">
+          {% for chapter in chapters %}
+            {% set chapterIndex = loop.index %}
+            <li>
+              <a class="inline-flex items-baseline py-1.5 pr-4 font-semibold text-blue-600 underline hover:text-blue-700 hover:decoration-2 underline-offset-3 decoration-slate-800/40 hover:decoration-blue-700" href="#{{ chapter.data.title | slugify }}">
+                {{ chapter.data.title }}
+              </a>
+              {% if (chapter.templateContent | tocData).length >= 2 %}           
+              <ul class="pb-4">
+                {% for item in chapter.templateContent | tocData %}
+                <li>
+                  <a class="inline-flex py-1.5 pr-4 pl-1 underline items-baseline text-blue-600 hover:text-blue-700 decoration-slate-800/40 hover:decoration-blue-700 underline-offset-3 hover:decoration-2" href="#{{ item.id }}">
+                    {{ '/src/_includes/svg/icons/right-angle.svg' | svgContents('w-6 h-6 -ml-1 translate-y-1.5 -translate-x-0.5 shrink-0 opacity-85') | safe  }}
+                    <span>{{ item.text }}</span>
+                  </a>
+                </li>
+                {% endfor %}
+              </ul>
+              {% endif %}
+            </li>
+          {% endfor %}
+        </ul>
       </div>
     </div>
 
