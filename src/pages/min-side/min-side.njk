@@ -8,7 +8,7 @@ alpine: true
 {%- extends 'base.njk' -%}
 
 {% block content %}
-<main class="relative z-10 grid content-start pt-12 pb-24 bg-slate-200 min-h-[50svh] grid-cols-combi">
+<main class="relative z-10 grid content-start pt-8 pb-24 bg-white min-h-[50svh] grid-cols-combi">
   <div class="col-container">
     <h1 class="font-bold text-fluid-36-48">Min side</h1>
     <p>Du er registrert som arbeidssøker. <a class="text-blue-600 underline hover:decoration-2" href="#">Endre</a></p>
@@ -18,9 +18,9 @@ alpine: true
 
       <h2 class="mt-8 font-semibold text-fluid-22-24">{{ section.title | safe }}</h2>
 
-      <div class="mt-2 grid gap-0.5 overflow-clip rounded-lg drop-shadow drop-shadow-slate-300/50">
+      <div class="mt-2 grid gap-0.5 overflow-clip rounded-lg">
       {% for item in section.items %}
-        <a class="flex hover:bg-amber-100 hover:text-blue-700 items-baseline gap-1 px-4 py-2.5 bg-white rounded-sm" href="#">
+        <a class="flex hover:bg-amber-100 hover:text-blue-700 items-baseline gap-1 px-4 py-2.5 bg-deepblue-50 rounded-sm" href="#">
           {{ item.icon | svgContents('translate-y-1.5 -translate-x-1 w-6 h-6') | safe if item.icon }}
           {{ item.text }}
         </a>

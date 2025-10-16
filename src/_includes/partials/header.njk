@@ -1,8 +1,8 @@
-{%- set menuButtonClasses = "flex flex-col sm:flex-row items-center justify-center px-2 sm:pl-3.5 px-2 sm:pr-4 leading-none cursor-pointer gap-0.5 sm:gap-1 text-blue-600 min-w-0 py-2 sm:py-2.5 max-xs:text-fluid-16-18 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-800 menu-button" -%}
+{%- set menuButtonClasses = "flex flex-col sm:flex-row items-center justify-center px-2 sm:pl-3.5 px-2 sm:pr-4 leading-none cursor-pointer gap-0.5 sm:gap-1 text-blue-600 min-w-0 py-2 sm:py-2.5 max-xs:text-fluid-16-18 rounded-full focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-800 menu-button" -%}
 
-<div class="leading-tight text-center bg-gray-100 text-fluid-16-18">
+<div class="leading-tight text-center bg-deepblue-50 text-fluid-16-18 pt-0.5">
   <div class="py-1.5 xs:hidden">{{ audience.title or menu.audience[0].title }}</div>
-  <div class="hidden xs:justify-center xs:flex xs:gap-6">
+  <div class="hidden xs:justify-center xs:flex xs:gap-fluid-16-48">
   {% for item in menu.audience %}
     <a href="#" class="flex items-center py-1.5 border-b-3 {{ 'border-blue-500' if ((loop.index === 1 and audience.title == null) or (audience.title === item.title)) else 'border-transparent' }}">
       <span>{{ item.title }}</span>
@@ -12,7 +12,7 @@
 </div>
 
 <header class="relative z-50 bg-white -scroll-mt-16 snap-start" id="toppen">
-  <div class="relative z-30 grid bg-white isolate grid-cols-combi">
+  <div class="relative z-30 grid bg-white border-b isolate grid-cols-combi border-slate-200">
 
     <div class="grid grid-cols-[auto_1fr] sm:grid-cols-[auto_auto_1fr] col-container">
 
@@ -60,19 +60,19 @@
           <span class="mt-px">Søk</span>
         </button>
 
-
-        {% if loggedIn %}
-          <a class="inline-flex items-center gap-1 px-3 py-1.5 text-blue-600" href="/min-side">
-            {{ '/src/_includes/svg/icons/person-circle.svg' | svgContents('w-7 h-7 -ml-0.5 shrink-0 pointer-events-none') | safe }}
-            <span class="mt-px sm:hidden">Min side</span>
-            <span class="hidden mt-px sm:inline-block">Isac Norland</span>
-          </a>
-        {% else %}
-          <a class="inline-flex items-center gap-2 px-3 py-1.5 text-blue-600 underline cursor-pointer hover:decoration-2 decoration-blue-400 underline-offset-3" href="/logg-inn">
-            {{ '/src/_includes/svg/icons/login.svg' | svgContents('w-6 h-6 shrink-0 pointer-events-none') | safe }}
-            <span>Logg inn</span>
-          </a>
-        {% endif %}
+        <div class="hidden sm:inline-block">
+          {% if loggedIn %}
+            <a class="{{ menuButtonClasses }} bg-deepblue-800 text-white" href="/min-side">
+              {{ '/src/_includes/svg/icons/person-circle.svg' | svgContents('w-7 h-7 -ml-0.5 shrink-0 pointer-events-none') | safe }}
+              <span class="mt-px">Isac Norland</span>
+            </a>
+          {% else %}
+            <a class="{{ menuButtonClasses }} bg-deepblue-50 hover:bg-deepblue-100" href="/logg-inn">
+              {{ '/src/_includes/svg/icons/login.svg' | svgContents('w-6 h-6 shrink-0 pointer-events-none') | safe }}
+              <span>Logg inn</span>
+            </a>
+          {% endif %}
+        </div>
 
       </div>
     </div>
@@ -81,12 +81,11 @@
   {%- include "partials/navigation.njk" -%}
   {%- include "partials/search.njk" -%}
 
-  {# <div class="grid relative z-10 justify-center {{ 'bg-deepblue-50' if page.fileSlug !== 'min-side' else 'bg-deepblue-800 text-white' }} min-h-8 grid-cols-page has-[button:hover]:bg-slate-200">
+  <div class="grid relative z-10 justify-center sm:hidden {{ 'bg-deepblue-50' if page.fileSlug !== 'min-side' else 'bg-deepblue-800 text-white' }} min-h-8 grid-cols-page has-[button:hover]:bg-slate-200">
     {% if loggedIn %}
       <a class="inline-flex items-center gap-1 px-3 py-1.5 text-white" href="/min-side">
         {{ '/src/_includes/svg/icons/person-circle.svg' | svgContents('w-7 h-7 -ml-0.5 shrink-0 pointer-events-none') | safe }}
-        <span class="mt-px sm:hidden">Min side</span>
-        <span class="hidden mt-px sm:inline-block">Isac Norland</span>
+        <span class="mt-px">Isac Norland</span>
       </a>
     {% else %}
       <a class="inline-flex items-center gap-2 px-3 py-1.5 text-blue-600 underline cursor-pointer hover:decoration-2 decoration-blue-400 underline-offset-3" href="/logg-inn">
@@ -94,7 +93,7 @@
         <span>Logg inn</span>
       </a>
     {% endif %}
-  </div> #}
+  </div>
 
 {# Overlay #}
 <button 
