@@ -93,6 +93,7 @@
     --color-brand-purple-light: #F9D8E7;
     --color-transparent: #fff0;
     --max-width-wide: 75rem;
+    --max-width-main: min(42.5rem, 100%);
     --text-fluid-12-14: clamp(0.75rem, 0.7083rem + 0.2083vi, 0.875rem);
     --text-fluid-14-16: clamp(0.875rem, 0.8333rem + 0.2083vi, 1rem);
     --text-fluid-16-18: clamp(1rem, 0.9583rem + 0.2083vi, 1.125rem);
@@ -705,6 +706,9 @@
   }
   .max-w-lg {
     max-width: var(--container-lg);
+  }
+  .max-w-main {
+    max-width: var(--max-width-main);
   }
   .max-w-md {
     max-width: var(--container-md);
