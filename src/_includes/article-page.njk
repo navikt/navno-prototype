@@ -6,13 +6,13 @@
 
   <main 
     class="relative grid items-start pt-16 pb-16 grid-cols-article toc-highlight overflow-clip" 
-    x-data="{ chapterIndex: 0 }"
+    x-data="{ chapterIndex: 1 }"
   >
-    <div class="mb-3 col-pictogram" style="--pictogram: var(--color-brand-purple-light)">
+    <div class="mb-3 lg:mt-2 col-pictogram" style="--pictogram: var(--color-brand-purple-light)">
       {{ '/src/_includes/svg/piktogrammer/produkter/sykepenger.svg' | svgContents('text-brand-purple-deep w-16 h-16 sm:w-20 sm:h-20 -translate-x-1') | safe  }}
     </div>
     <div class="col-main md:col-start-[main] md:col-end-[container]">
-      <h1 class="font-bold text-fluid-36-48/tight text-pretty text-brand-purple-deep">{{ title | safe }}</h1>
+      <h1 class="font-bold text-fluid-36-48/tight text-balance text-brand-purple-deep">{{ title | safe }}</h1>
       <div class="mt-4 text-gray-700 text-fluid-12-14 font-regular">
         <span class="px-1.5 py-px rounded-sm bg-brand-purple-light">{{ category | safe }}</span>
         {%- if audience.description %}
@@ -34,32 +34,31 @@
     {% block quicklinks %}{% endblock %}
 
     {# Innholdsfortegnelse sticky #}
-    <div class="lg:row-span-4 lg:sticky bg-white lg:row-start-2 xl:row-start-2 lg:top-0 col-toc max-h-[99svh] overflow-auto toc lg:px-4 lg:pr-0" id="toc" x-intersect:enter="tocFixed = false, tocOpen = false" x-intersect:leave="tocFixed = true">
-      <h2 class="sticky top-0 z-10 hidden pt-6 pb-1 font-semibold lg:flex lg:items-baseline lg:gap-1 lg:bg-white text-fluid-18-20" >
-        {{ '/src/_includes/svg/icons/box-list.svg' | svgContents('w-5 h-5 translate-y-[3px] -translate-x-1 shrink-0 opacity-80') | safe  }}
-        <span>Innhold på denne siden</span>
+    <div class="lg:row-span-4 lg:sticky bg-white lg:row-start-2 xl:row-start-2 lg:top-0 col-toc max-h-[99svh] overflow-auto toc lg:pr-0" id="toc" x-intersect:enter="tocFixed = false, tocOpen = false" x-intersect:leave="tocFixed = true">
+      <h2 class="sticky top-0 z-10 hidden tracking-wider uppercase pt-7 lg:block lg:bg-white text-fluid-14-16 opacity-80" >
+        Innhold på denne siden
       </h2>
-      <ul class="pb-4 lg:ml-6 lg:text-fluid-16-18/normal">
+      <ul class="pb-8 lg:pt-2 lg:text-fluid-16-18/normal">
         {% for chapter in chapters %}
-        {% set chapterIndex = loop.index %}
-        <li>
-          <a class="inline-flex items-baseline py-1.5 pr-4 underline hover:text-blue-700 hover:decoration-2 underline-offset-3 decoration-slate-800/40 hover:decoration-blue-700 text-deepblue-900" href="#{{ chapter.data.title | slugify }}" x-on:click="tocOpen = false">
-            {{ '/src/_includes/svg/icons/right-angle.svg' | svgContents('w-6 h-6 -ml-1 -translate-x-0.5 translate-y-1.5 shrink-0 opacity-85 lg:hidden') | safe  }}
-            {{ chapter.data.title }}
-          </a>
-          {% if (chapter.templateContent | tocData).length >= 2 %}           
-          <ul class="hidden pb-1" x-bind:class="(chapterIndex == {{ chapterIndex }}) && 'lg:block'">
-            {% for item in chapter.templateContent | tocData %}
-            <li>
-              <a class="inline-flex py-1.5 pr-4 underline items-baseline text-deepblue-900 hover:text-blue-700 decoration-slate-800/40 opacity-85 hover:decoration-blue-700 underline-offset-3 hover:decoration-2" href="#{{ item.id }}" x-on:click="tocOpen = false">
-                {{ '/src/_includes/svg/icons/right-angle.svg' | svgContents('w-6 h-6 -ml-1 translate-y-1.5 -translate-x-0.5 shrink-0 opacity-85') | safe  }}
-                <span>{{ item.text }}</span>
-              </a>
-            </li>
-            {% endfor %}
-          </ul>
-          {% endif %}
-        </li>
+          {% set chapterIndex = loop.index %}
+          <li>
+            <a class="inline-flex items-baseline py-1.5 pr-4 text-blue-600 underline hover:text-blue-700 hover:decoration-2 underline-offset-3 decoration-slate-800/40 hover:decoration-blue-700" href="#{{ chapter.data.title | slugify }}" x-on:click="tocOpen = false">
+              {{ '/src/_includes/svg/icons/right-angle.svg' | svgContents('w-6 h-6 -ml-1 -translate-x-0.5 translate-y-1.5 shrink-0 opacity-85 lg:hidden') | safe  }}
+              {{ chapter.data.title }}
+            </a>
+            {% if (chapter.templateContent | tocData).length >= 2 %}           
+            <ul class="hidden pb-1" x-bind:class="(chapterIndex == {{ chapterIndex }}) && 'lg:block'">
+              {% for item in chapter.templateContent | tocData %}
+              <li>
+                <a class="inline-flex py-1.5 pr-4 underline items-baseline text-blue-600 hover:text-blue-700 decoration-slate-800/40 hover:decoration-blue-700 underline-offset-3 hover:decoration-2" href="#{{ item.id }}" x-on:click="tocOpen = false">
+                  {{ '/src/_includes/svg/icons/right-angle.svg' | svgContents('w-6 h-6 -ml-1 translate-y-1.5 -translate-x-0.5 shrink-0 opacity-85') | safe  }}
+                  <span>{{ item.text }}</span>
+                </a>
+              </li>
+              {% endfor %}
+            </ul>
+            {% endif %}
+          </li>
         {% endfor %}
       </ul>
     </div>
@@ -67,20 +66,20 @@
     {# Innhold #}
     {% for chapter in chapters %}
       {% set chapterIndex = loop.index %}
-      <section class="mb-16 prose col-main toc-chapter" id="{{ chapter.data.title | slugify }}" x-intersect.margin.0%.0%.-50%.0%="chapterIndex = {{ chapterIndex }}">
+      <section class="prose col-main toc-chapter" id="{{ chapter.data.title | slugify }}" x-intersect.margin.25%.0%.-75%.0%="chapterIndex = {{ chapterIndex }}">
         <div class="w-8 h-[0.625ch] bg-brand-purple-faded mt-12"></div>
-        <h2 class="mt-4 mb-4 -translate-x-0.5 font-bold text-fluid-32-36/tight text-balance text-brand-purple-deep" id="{{ chapter.data.title | slugify }}">
+        <h2 class="mt-4 mb-4 -translate-x-0.5 font-bold text-fluid-28-36/tight text-balance text-brand-purple-deep" id="{{ chapter.data.title | slugify }}">
           <a href="#{{ chapter.data.title | slugify }}">
             <span>{{ chapter.data.title }}</span>
           </a>
         </h2>
 
-        <nav class="lg:hidden">
+        <nav class="lg:hidden lg:text-fluid-16-18/normal">
           {%- set tocLinks = chapter.templateContent | tocData(h3) -%}
           <ul>
           {% for item in tocLinks %}
             <li>
-              <a href="#{{ item.id }}" class="inline-flex py-1.5 pr-4 text-slate-800 underline align-baseline hover:text-blue-500 decoration-slate-800/40 opacity-85 hover:decoration-blue-700 underline-offset-3 hover:decoration-2">
+              <a href="#{{ item.id }}" class="inline-flex py-1.5 pr-4 text-blue-600 underline align-baseline hover:text-blue-700 decoration-slate-800/40 hover:decoration-blue-700 underline-offset-3 hover:decoration-2">
                 {{ '/src/_includes/svg/icons/right-angle.svg' | svgContents('w-6 h-6 -ml-1 translate-y-0.5 -translate-x-0.5 shrink-0 opacity-85') | safe  }}
                 <span>{{ item.text }}</span>
               </a>
