@@ -24,7 +24,7 @@ permalink: '/omrade/helse-og-sykdom/index.html'
         {%- for item in situationList -%}
           <li class="relative flex items-start gap-3 py-4 bg-white xs:py-8 md:gap-8 md:odd:pr-12 md:even:pl-10 ring-1 ring-slate-300">
             <div class="grid flex-1 gap-1">
-              <a class="font-semibold text-blue-600 text-balance hover:underline text-fluid-22-24/snug hover:text-blue-600 hover:decoration-2 after:absolute after:inset-0" href="#">{{ item.title | safe }}</a>
+              <a class="font-semibold text-blue-600 text-balance hover:underline text-fluid-22-24/snug hover:text-blue-600 hover:decoration-2 after:absolute after:inset-0" href="{{ item.href or '#' }}">{{ item.title | safe }}</a>
               <p class="text-fluid-18-20">{{ item.ingress | safe }}</p>
             </div>
             {{ item.icon | svgContents('w-12 h-12 sm:w-16 order-2 sm:h-16 shrink-0 mt-1 self-center') | safe if item.icon }}

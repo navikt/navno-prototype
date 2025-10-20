@@ -5,6 +5,7 @@ export default {
       ingress: "Om sykepenger, hvilke regler som gjelder og hva du må gjøre.",
       icon: "/src/_includes/svg/piktogrammer/situasjoner/har-blitt-sykemeldt.svg",
       category: "Dette kan du ha rett til",
+      href: "/situasjon/sykmeldt/",
     },
     {
       title: "Har vært syk eller skadet lenge",

@@ -122,7 +122,7 @@
   --color-brand-beige: #FEF5EF;
   
   --color-current: currentColor;
-  --color-transparent: #fff0;
+  --color-transparent: #0000;
   --color-black: #000;
 
   --flex-basis-side: min(100%, 36rem);
@@ -381,7 +381,6 @@
   /* Accordion */
   .accordion {
     border-bottom: 1px solid var(--color-slate-300);
-    margin-block-end: --spacing(12);
   }
 
   .accordion details {
@@ -480,7 +479,6 @@
   /* ReadMore */
   .readmore {
     display: grid;
-    margin-block-end: 40px;
   }
   :where(.readmore) summary {
     appearance: none;
@@ -564,14 +562,12 @@
     border-radius: 6px;
   }
 
-  .tocHighlight {
+  .toc .tocHighlight {
     @media (width > 1280px) {     
-      transform-origin: left center;
-      animation: highlight 200ms ease-out forwards;
-      font-weight: var(--font-weight-semibold);
       color: var(--color-slate-800) !important;
+      font-weight:var(--font-weight-semibold);
+      padding-inline-end:var(--spacing);
       text-decoration: none !important;
-      padding-inline-end:0 !important;
     }
   }
 }
