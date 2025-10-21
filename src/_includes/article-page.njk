@@ -38,12 +38,12 @@
       <h2 class="hidden pt-8 tracking-wider uppercase flex-0 lg:block text-fluid-12-14 text-slate-800/80" >
         Innhold på denne siden
       </h2>
-      <ul class="flex-1 pb-8 overflow-auto lg:pt-2 lg:text-fluid-16-18/normal overscroll-contain">
+      <ul class="flex-1 pb-8 lg:overflow-auto lg:pt-2 lg:text-fluid-16-18/normal overscroll-contain">
         {% for chapter in chapters %}
           {% set chapterIndex = loop.index %}
           <li class="mb-1">
             <a class="inline-flex items-baseline pr-3 py-1.5 underline text-blue-600 hover:text-blue-700 hover:decoration-2 underline-offset-4 decoration-slate-400/40 hover:decoration-blue-700 {{ 'tocHighlight' if chapterIndex === 1 }}" href="#{{ chapter.data.title | slugify }}" x-on:click="tocOpen = false">
-              {{ '/src/_includes/svg/icons/right-angle.svg' | svgContents('w-6 h-6 -ml-1 -translate-x-0.5 translate-y-1.5 shrink-0 opacity-85 lg:hidden') | safe  }}
+              {{ '/src/_includes/svg/icons/right-angle.svg' | svgContents('w-6 h-6 mr-1 translate-y-1.5 shrink-0 opacity-85 lg:hidden') | safe  }}
               {{ chapter.data.title }}
             </a>
             {% if (chapter.templateContent | tocData).length >= 2 %}           
@@ -51,7 +51,7 @@
               {% for item in chapter.templateContent | tocData %}
               <li class="">
                 <a class="inline-flex items-start py-1.5 pr-3 underline text-blue-600 hover:text-blue-700 decoration-slate-400/40 hover:decoration-blue-700 underline-offset-4 hover:decoration-2" href="#{{ item.id }}" x-on:click="tocOpen = false">
-                  {{ '/src/_includes/svg/icons/right-angle.svg' | svgContents('w-6 h-6 -ml-1 -translate-x-0.5 shrink-0 opacity-85') | safe  }}
+                  {{ '/src/_includes/svg/icons/right-angle.svg' | svgContents('w-6 h-6 mr-1 -translate-x-0.5 shrink-0 opacity-85') | safe  }}
                   <span>{{ item.text }}</span>
                 </a>
               </li>
@@ -80,7 +80,7 @@
           {% for item in tocLinks %}
             <li>
               <a href="#{{ item.id }}" class="inline-flex py-1.5 pr-4 text-blue-600 underline align-baseline hover:text-blue-700 decoration-slate-800/40 hover:decoration-blue-700 underline-offset-3 hover:decoration-2">
-                {{ '/src/_includes/svg/icons/right-angle.svg' | svgContents('w-6 h-6 -ml-1 translate-y-0.5 -translate-x-0.5 shrink-0 opacity-85') | safe  }}
+                {{ '/src/_includes/svg/icons/right-angle.svg' | svgContents('w-6 h-6 translate-y-0.5 mr-1 shrink-0 opacity-85') | safe  }}
                 <span>{{ item.text }}</span>
               </a>
             </li>
@@ -97,7 +97,7 @@
 {# x-on:click="tocOpen = false" #}
 
     <div x-show="tocFixed" class="sticky inset-x-0 z-50 col-full bottom-2 lg:hidden" x-bind:class="tocOpen && 'drawerOpen'">
-      <button x-on:click="tocOpen = !tocOpen" class="flex items-center gap-2 mx-auto max-w-main bg-slate-100 border border-b-0 border-slate-300 rounded-t-2xl justify-between cursor-pointer px-4 py-2.5 w-full  hover:bg-slate-50">
+      <button x-on:click="tocOpen = !tocOpen" class="flex items-center gap-2 mx-auto max-w-main bg-slate-100 border border-b-0 border-slate-300 rounded-t-2xl justify-between cursor-pointer px-4 py-2.5 w-full hover:bg-slate-50">
         <span class="flex items-center gap-2 mr-auto">
           {{ '/src/_includes/svg/icons/box-list.svg' | svgContents('w-5 h-5 -translate-y-px shrink-0 opacity-85') | safe  }}
           <span>Innholdsfortegnelse</span>
@@ -110,14 +110,14 @@
           {% for chapter in chapters %}
             {% set chapterIndex = loop.index %}
             <li>
-              <a class="inline-flex items-baseline py-1.5 pr-4 font-semibold underline hover:text-blue-700 hover:decoration-2 underline-offset-3 decoration-slate-800/40 hover:decoration-blue-700" href="#{{ chapter.data.title | slugify }}">
+              <a class="inline-flex items-baseline py-1.5 pr-4 font-semibold underline text-blue-600 hover:text-blue-700 hover:decoration-2 underline-offset-3 decoration-slate-800/40 hover:decoration-blue-700" href="#{{ chapter.data.title | slugify }}">
                 {{ chapter.data.title }}
               </a>
               {% if (chapter.templateContent | tocData).length >= 2 %}           
               <ul class="pb-4">
                 {% for item in chapter.templateContent | tocData %}
                 <li>
-                  <a class="inline-flex py-1.5 pr-4 pl-1 underline items-baseline hover:text-blue-700 decoration-slate-800/40 hover:decoration-blue-700 underline-offset-3 hover:decoration-2" href="#{{ item.id }}">
+                  <a class="inline-flex py-1.5 pr-4 pl-1 underline items-baseline hover:text-blue-700 text-blue-600 decoration-slate-800/40 hover:decoration-blue-700 underline-offset-3 hover:decoration-2" href="#{{ item.id }}">
                     {{ '/src/_includes/svg/icons/right-angle.svg' | svgContents('w-6 h-6 -ml-1 translate-y-1.5 -translate-x-0.5 shrink-0 opacity-85') | safe  }}
                     <span>{{ item.text }}</span>
                   </a>

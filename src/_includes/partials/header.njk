@@ -1,15 +1,15 @@
-{%- set menuButtonClasses = "flex flex-col xs:flex-row items-center justify-center px-2 xs:pl-3.5 px-2 xs:pr-4 leading-none cursor-pointer gap-0.5 xs:gap-1 text-blue-600 min-w-0 py-2 xs:py-2.5 max-xs:text-fluid-16-18 rounded-full focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-800 menu-button" -%}
+{%- set menuButtonClasses = "flex flex-col xs:flex-row items-center justify-center px-2 xs:pl-3.5 px-2 xs:pr-4 leading-none cursor-pointer gap-1 xs:gap-2 text-blue-600 min-w-0 py-2 xs:py-2.5 text-fluid-16-18 rounded-full focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-800 menu-button" -%}
 
-<div class="leading-tight text-center bg-deepblue-50 text-fluid-16-18 pt-0.5">
+{# <div class="leading-tight text-center bg-deepblue-50 text-fluid-16-18 pt-0.5">
   <div class="py-1.5 xs:hidden">{{ audience.title or menu.audience[0].title }}</div>
   <div class="hidden xs:justify-center xs:flex xs:gap-fluid-16-48">
   {% for item in menu.audience %}
-    <a href="#" class="flex items-center py-1.5 border-b-3 {{ 'border-blue-500' if ((loop.index === 1 and audience.title == null) or (audience.title === item.title)) else 'border-transparent' }}">
+    <a href="#" class="flex items-center py-1.5 border-b-3 focus-visible:px-2 focus-visible:-mx-2 focus-visible:rounded-md {{ 'border-blue-500' if ((loop.index === 1 and audience.title == null) or (audience.title === item.title)) else 'border-transparent' }}">
       <span>{{ item.title }}</span>
     </a>
   {% endfor %}
   </div>
-</div>
+</div> #}
 
 <header class="relative z-50 bg-white -scroll-mt-16 snap-start" id="toppen">
   <div class="relative z-30 grid bg-white border-b isolate grid-cols-combi border-slate-200">
@@ -24,6 +24,13 @@
             <span class="sr-only">NAV</span>
           </a>
         </div>
+        <div class="self-stretch hidden gap-4 ml-5 lg:flex text-fluid-16-18">
+          {% for item in menu.audience %}
+            <a href="#" class="flex items-center pt-3 pb-1 px-2 border-b-4 focus-visible:px-2 focus-visible:-mx-2 focus-visible:rounded-md {{ 'border-blue-500 font-semibold' if ((loop.index === 1 and audience.title == null) or (audience.title === item.title)) else 'border-transparent opacity-90 hover:border-slate-300' }}">
+      <span>{{ item.title }}</span>
+    </a>
+  {% endfor %}
+        </div>
       </div>
 
       {# Menu Buttons #}
@@ -37,37 +44,37 @@
           x-bind:aria-expanded="menuOpen"
         >
           <template x-if="!menuOpen">
-            {{ '/src/_includes/svg/icons/menu.svg' | svgContents('w-6 h-6  shrink-0 pointer-events-none') | safe }}
+            {{ '/src/_includes/svg/icons/menu.svg' | svgContents('w-6 h-6 -translate-y-px shrink-0 pointer-events-none') | safe }}
           </template>
           <template x-if="menuOpen">
-            {{ '/src/_includes/svg/icons/close.svg' | svgContents('w-6 h-6 shrink-0 pointer-events-none') | safe }}
+            {{ '/src/_includes/svg/icons/close.svg' | svgContents('w-6 h-6  -translate-y-px shrink-0 pointer-events-none') | safe }}
           </template>
           <span class="mt-px">Meny</span>
         </button>
         <button
-          class="{{ menuButtonClasses }} max-w-min xs:max-w-fit ml-auto order-1" 
+          class="{{ menuButtonClasses }} max-w-min xs:max-w-fit ml-auto order-1 hidden sm:flex" 
           type="button" 
           x-on:click="searchOpen = !searchOpen, menuOpen = false"
           x-bind:class="searchOpen && 'bg-deepblue-800 text-white'" 
           x-bind:aria-expanded="searchOpen"
         >
           <template x-if="!searchOpen">
-            {{ '/src/_includes/svg/icons/search.svg' | svgContents('w-6 h-6  shrink-0 pointer-events-none') | safe }}
+            {{ '/src/_includes/svg/icons/search.svg' | svgContents('w-6 h-6 -translate-y-px shrink-0 pointer-events-none') | safe }}
           </template>
           <template x-if="searchOpen">
-            {{ '/src/_includes/svg/icons/close.svg' | svgContents('w-6 h-6 shrink-0 pointer-events-none') | safe }}
+            {{ '/src/_includes/svg/icons/close.svg' | svgContents('w-6 h-6 -translate-y-px shrink-0 pointer-events-none') | safe }}
           </template>
           <span class="mt-px">Søk</span>
         </button>
 
-        <div class="hidden sm:inline-block">
+        <div class="">
           {% if loggedIn %}
             <a class="{{ menuButtonClasses }} bg-deepblue-800 text-white" href="/min-side">
               {{ '/src/_includes/svg/icons/person-circle.svg' | svgContents('w-7 h-7 -ml-0.5 shrink-0 pointer-events-none') | safe }}
               <span class="mt-px">Isac Norland</span>
             </a>
           {% else %}
-            <a class="{{ menuButtonClasses }} bg-deepblue-50 hover:bg-deepblue-100" href="/logg-inn">
+            <a class="{{ menuButtonClasses }}" href="/logg-inn">
               {{ '/src/_includes/svg/icons/login.svg' | svgContents('w-6 h-6 shrink-0 pointer-events-none') | safe }}
               <span>Logg inn</span>
             </a>
@@ -81,7 +88,7 @@
   {%- include "partials/navigation.njk" -%}
   {%- include "partials/search.njk" -%}
 
-  <div class="grid relative z-10 justify-center sm:hidden {{ 'bg-deepblue-50' if page.fileSlug !== 'min-side' else 'bg-deepblue-800 text-white' }} min-h-8 grid-cols-page has-[button:hover]:bg-slate-200">
+  {# <div class="grid relative z-10 justify-center sm:hidden {{ 'bg-deepblue-50' if page.fileSlug !== 'min-side' else 'bg-deepblue-800 text-white' }} min-h-8 grid-cols-page has-[button:hover]:bg-slate-200">
     {% if loggedIn %}
       <a class="inline-flex items-center gap-1 px-3 py-1.5 text-white" href="/min-side">
         {{ '/src/_includes/svg/icons/person-circle.svg' | svgContents('w-7 h-7 -ml-0.5 shrink-0 pointer-events-none') | safe }}
@@ -93,7 +100,7 @@
         <span>Logg inn</span>
       </a>
     {% endif %}
-  </div>
+  </div> #}
 
 {# Overlay #}
 <button 
