@@ -1,10 +1,10 @@
 <aside class="grid pt-16 pb-16 grid-cols-combi wave -mt-4 relative z-10 {{ 'bg-white' if contactTheme === "white" else 'bg-slate-100' }}">
-  <h2 class="font-semibold text-fluid-24-28 col-container">Kontakt oss</h2>
-  <div class="grid gap-8 mt-4 {{ 'md:grid-cols-3' if contact.length === 3 }} md:gap-x-6 col-container"> 
+  <h2 class="font-semibold text-fluid-28-36 col-container">Kontakt oss</h2>
+  <div class="grid gap-y-8 gap-x-12 mt-4 {{ 'md:grid-cols-3' if contact.length === 3 }} col-container"> 
     {% for item in contact %}
-    <div class="pr-4">
-      <div class="w-fit grid p-2 text-blue-600 mb-2.5 -ml-1.5 rounded-full place-items-center shrink-0 {{ 'bg-blue-50' if contactTheme === 'white' else 'bg-white' }}">
-        {{ item.icon | svgContents('w-7 h-7 shrink-0 items-baseline') | safe if item.icon }}
+    <div class="items-start lg:flex lg:gap-3">
+      <div class="w-fit grid p-2 text-blue-600 mb-2.5 -ml-1.5 lg:-translate-y-1 rounded-full place-items-center shrink-0 {{ 'bg-blue-50' if contactTheme === 'white' else 'bg-white' }}">
+        {{ item.icon | svgContents('w-7 h-7 shrink-0') | safe if item.icon }}
       </div>
       <div>
         <h3 class="font-semibold text-fluid-20-22">
