@@ -2,11 +2,10 @@
  * @param { import('@11ty/eleventy/src/UserConfig') } eleventyConfig
  */
 
-import slugify from "slugify";
+import slugify from "@sindresorhus/slugify";
 import markdownIt from "markdown-it";
 import markdownItAnchor from "markdown-it-anchor";
 import markdownItMark from "markdown-it-mark";
-import compression from "compression";
 import { EleventyHtmlBasePlugin, EleventyRenderPlugin } from "@11ty/eleventy";
 import tocPlugin from "eleventy-plugin-toc";
 
