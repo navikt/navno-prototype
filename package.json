@@ -8,6 +8,9 @@
     "url": "https://github.com/macbruker/navno-prototype"
   },
   "type": "module",
+  "engines": {
+    "node": "24"
+  },
   "scripts": {
     "preinstall": "npx only-allow pnpm",
     "eleventy-debug": "DEBUG=Eleventy* pnpm exec eleventy",
