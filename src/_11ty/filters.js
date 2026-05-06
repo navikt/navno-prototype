@@ -1,7 +1,8 @@
 import markdownIt from "markdown-it";
 import * as cheerio from "cheerio";
 import markdownItAnchor from "markdown-it-anchor";
-import slugify from "slugify";
+import slugify from "@sindresorhus/slugify";
+
 
 const markdown = (value) => {
   return new markdownIt({
