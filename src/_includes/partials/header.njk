@@ -1,119 +1,98 @@
-{%- set menuButtonClasses = "flex flex-col xs:flex-row items-center justify-center px-2 xs:pl-3.5 px-2 xs:pr-4 leading-none cursor-pointer gap-1 xs:gap-2 text-blue-600 min-w-0 py-2 xs:py-2.5 text-fluid-16-18 rounded-full focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-800 menu-button" -%}
+<header class="site-header">
+  <div class="site-navigation">
 
-{# <div class="leading-tight text-center bg-deepblue-50 text-fluid-16-18 pt-0.5">
-  <div class="py-1.5 xs:hidden">{{ audience.title or menu.audience[0].title }}</div>
-  <div class="hidden xs:justify-center xs:flex xs:gap-fluid-16-48">
-  {% for item in menu.audience %}
-    <a href="#" class="flex items-center py-1.5 border-b-3 focus-visible:px-2 focus-visible:-mx-2 focus-visible:rounded-md {{ 'border-blue-500' if ((loop.index === 1 and audience.title == null) or (audience.title === item.title)) else 'border-transparent' }}">
-      <span>{{ item.title }}</span>
+    <a class="site-logo" href="/">
+      {{ "/src/assets/images/logo.svg" | svgContents | safe }}
     </a>
-  {% endfor %}
-  </div>
-</div> #}
 
-<header class="relative z-50 bg-white -scroll-mt-16 snap-start" id="toppen">
-  <div class="relative z-30 grid bg-white border-b isolate grid-cols-combi border-slate-200">
-
-    <div class="grid grid-cols-[auto_1fr] sm:grid-cols-[auto_auto_1fr] col-container">
-
-      <div class="flex items-center sm:col-span-2">
-        {# Logo #}
-        <div class="flex items-center py-5 sm:py-6">
-          <a href="/" class="block px-3 py-2.5 -ml-3.5 text-nav-red rounded-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-800">
-            {{ '/src/_includes/svg/logo.svg' | svgContents('w-logo h-auto') | safe }}
-            <span class="sr-only">NAV</span>
-          </a>
-        </div>
-        <div class="self-stretch hidden gap-4 ml-5 lg:flex text-fluid-16-18">
-          {% for item in menu.audience %}
-            <a href="#" class="flex items-center pt-3 pb-1 px-2 border-b-4 focus-visible:px-2 focus-visible:-mx-2 focus-visible:rounded-md {{ 'border-blue-500 font-semibold' if ((loop.index === 1 and audience.title == null) or (audience.title === item.title)) else 'border-transparent opacity-90 hover:border-slate-300' }}">
-      <span>{{ item.title }}</span>
-    </a>
-  {% endfor %}
-        </div>
-      </div>
-
-      {# Menu Buttons #}
-
-      <div class="flex self-center justify-end gap-2 py-2 -mr-1 justify-self-end">
-        <button 
-          class="{{ menuButtonClasses }} max-w-min xs:max-w-fit ml-auto order-2" 
-          type="button" 
-          x-on:click="menuOpen = !menuOpen, searchOpen = false"
-          x-bind:class="menuOpen && 'bg-deepblue-800 text-white'" 
-          x-bind:aria-expanded="menuOpen"
-        >
-          <template x-if="!menuOpen">
-            {{ '/src/_includes/svg/icons/menu.svg' | svgContents('w-6 h-6 -translate-y-px shrink-0 pointer-events-none') | safe }}
-          </template>
-          <template x-if="menuOpen">
-            {{ '/src/_includes/svg/icons/close.svg' | svgContents('w-6 h-6  -translate-y-px shrink-0 pointer-events-none') | safe }}
-          </template>
-          <span class="mt-px">Meny</span>
-        </button>
-        <button
-          class="{{ menuButtonClasses }} max-w-min xs:max-w-fit ml-auto order-1 hidden sm:flex" 
-          type="button" 
-          x-on:click="searchOpen = !searchOpen, menuOpen = false"
-          x-bind:class="searchOpen && 'bg-deepblue-800 text-white'" 
-          x-bind:aria-expanded="searchOpen"
-        >
-          <template x-if="!searchOpen">
-            {{ '/src/_includes/svg/icons/search.svg' | svgContents('w-6 h-6 -translate-y-px shrink-0 pointer-events-none') | safe }}
-          </template>
-          <template x-if="searchOpen">
-            {{ '/src/_includes/svg/icons/close.svg' | svgContents('w-6 h-6 -translate-y-px shrink-0 pointer-events-none') | safe }}
-          </template>
-          <span class="mt-px">Søk</span>
-        </button>
-
-        <div class="">
-          {% if loggedIn %}
-            <a class="{{ menuButtonClasses }} bg-deepblue-800 text-white" href="/min-side">
-              {{ '/src/_includes/svg/icons/person-circle.svg' | svgContents('w-7 h-7 -ml-0.5 shrink-0 pointer-events-none') | safe }}
-              <span class="mt-px">Isac Norland</span>
-            </a>
-          {% else %}
-            <a class="{{ menuButtonClasses }}" href="/logg-inn">
-              {{ '/src/_includes/svg/icons/login.svg' | svgContents('w-6 h-6 shrink-0 pointer-events-none') | safe }}
-              <span>Logg inn</span>
-            </a>
-          {% endif %}
-        </div>
-
+    <div class="site-audience">
+      <button popovertarget="audience">
+        <span>{{ site.audience[0] }}</span>
+        <svg width="20" height="20" fill="none" viewBox="0 0 20 20">
+          <path stroke="currentColor" stroke-linecap="round" stroke-width="1.5" opacity="0.75" d="m6 8 4 4 4-4"/>
+        </svg>
+      </button>
+      <div id="audience" popover>
+        {% for audience in site.audience %}
+        <button type="button">{{ audience }}</button>
+        {% endfor %}
       </div>
     </div>
+
+    <form class="site-search" action="#">
+      <label for="site-search">
+        <svg width="20" height="20" fill="none" viewBox="0 0 20 20">
+          <circle cx="8.33" cy="8.33" r="5.83" stroke="currentColor" stroke-width="1.5"/>
+          <path stroke="currentColor" stroke-linecap="round" stroke-width="1.5" d="m12.92 12.92 4.16 4.16"/>
+        </svg>
+        <span class="sr-only">Søk</span>        
+      </label>
+      <input id="site-search" placeholder="Søk på nav.no" type="search">
+    </form>
+
+    <nav class="site-menu">
+      <button popovertarget="site-menu">
+        <span>Meny</span>
+
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+          <style>
+            :is(#spyglassClip,#spyglassGroup) {
+              transition: translate 300ms;
+              @media (width > 800px) { translate:15px }
+            }
+          </style>
+          <defs>
+            <clipPath id="a">
+              <path id="spyglassClip" fill="black" d="m5.5 0 2.65 4.24a8.5 8.5 0 0 0 7.96 12.74L20.5 24H-15V0z"/>
+            </clipPath>
+          </defs>
+          <g stroke="currentColor" stroke-linecap="round" stroke-width="1.8" clip-path="url(#a)">
+            <path d="M3 5h18M3 12h18M3 19h18"/>
+          </g>
+          <g id="spyglassGroup">
+          <circle cx="15" cy="8.5" r="5" stroke="currentColor" stroke-width="1.8" transform="rotate(90 15 8.5)"/>
+          <path stroke="currentColor" stroke-linecap="round" stroke-width="1.8" d="m17.5 13 3.5 6"/>
+          </g>
+        </svg>
+
+
+      </button>
+      <div id="site-menu" popover>
+        <div>
+          {% for section in menu %}
+            <div>
+              <h2>{{ section.title }}</h2>
+              <ul>
+                {% for item in section.linkList %}
+                <li><a href="{{ item.href }}"><span>{{ item.text }}</span></a></li>
+                {% endfor %}
+              </ul>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </nav>
   </div>
 
-  {%- include "partials/navigation.njk" -%}
-  {%- include "partials/search.njk" -%}
-
-  {# <div class="grid relative z-10 justify-center sm:hidden {{ 'bg-deepblue-50' if page.fileSlug !== 'min-side' else 'bg-deepblue-800 text-white' }} min-h-8 grid-cols-page has-[button:hover]:bg-slate-200">
+  <div class="site-user">
     {% if loggedIn %}
-      <a class="inline-flex items-center gap-1 px-3 py-1.5 text-white" href="/min-side">
-        {{ '/src/_includes/svg/icons/person-circle.svg' | svgContents('w-7 h-7 -ml-0.5 shrink-0 pointer-events-none') | safe }}
-        <span class="mt-px">Isac Norland</span>
-      </a>
+    <button popovertarget="site-user">
+      <div>
+        <span>Charlie Jensen</span>
+        <small>Deg selv</small>
+      </div>
+      <svg width="24" height="24" fill="none" viewBox="0 0 24 24">
+        <circle cx="12" cy="7.5" r="4.5" stroke="currentColor" stroke-width="1.5"/>
+        <path stroke="currentColor" stroke-linecap="round" stroke-width="1.5" d="M6 21c0-3 2.5-6 6-6s6 3 6 6"/>
+      </svg>
+    </button>
+    <div id="site-user" popover>
+      <a href="#">Item 1</a>
+      <a href="#">Item 2</a>
+      <a href="#">Item 3</a>
+    </div>
     {% else %}
-      <a class="inline-flex items-center gap-2 px-3 py-1.5 text-blue-600 underline cursor-pointer hover:decoration-2 decoration-blue-400 underline-offset-3" href="/logg-inn">
-        {{ '/src/_includes/svg/icons/login.svg' | svgContents('w-6 h-6 shrink-0 pointer-events-none') | safe }}
-        <span>Logg inn</span>
-      </a>
+    <a href="/minside">Logg inn</a>
     {% endif %}
-  </div> #}
-
-{# Overlay #}
-<button 
-  class="fixed z-10 w-full h-[102vh] cursor-default inset-0 bg-gray-800/50 overscroll-contain" 
-  type="button"
-  x-show="(menuOpen || searchOpen || tocOpen)" 
-  x-on:click="menuOpen = false, searchOpen = false, tocOpen = false" 
-  x-on:keyup.escape.window="menuOpen = false, searchOpen = false"
-  x-transition:enter="transition ease-out duration-75"
-  x-transition:enter-start="opacity-0"
-  x-transition:enter-end="opacity-100"
-  x-bind:hidden="overlayOpen"
-  hidden></button>
-
-
+  </div>
 </header>

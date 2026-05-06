@@ -1,22 +1,5 @@
-export default {
-  audience: [
-    {
-      title: "Privatperson",
-      description: "Lorem ipsum dolor sit amet",
-      href: "#",
-    },
-    {
-      title: "Arbeidsgiver",
-      description: "Lorem ipsum dolor sit amet",
-      href: "#",
-    },
-    {
-      title: "Samarbeidspartner",
-      description: "Lorem ipsum dolor sit amet",
-      href: "#",
-    },
-  ],
-  areas: {
+export default [
+  {
     title: "Områder",
     linkList: [
       {
@@ -45,7 +28,7 @@ export default {
       },
     ],
   },
-  shortcuts: {
+  {
     title: "Snarveier",
     linkList: [
       { text: "Saksbehandlingstider" },
@@ -58,50 +41,4 @@ export default {
       { text: "Kontakt oss" },
     ],
   },
-  user: [
-    {
-      linkList: [
-        {
-          text: "Min side",
-          icon: "/src/_includes/svg/icons/grid.svg",
-        },
-        {
-          text: "Mine utbetalinger",
-          icon: "/src/_includes/svg/icons/wallet.svg",
-        },
-        {
-          text: "Mine saker",
-          icon: "/src/_includes/svg/icons/document.svg",
-        },
-        {
-          text: "Innboks",
-          icon: "/src/_includes/svg/icons/envelope.svg",
-        },
-        {
-          text: "Personopplysninger",
-          icon: "/src/_includes/svg/icons/user.svg",
-        },
-      ],
-    },
-    {
-      linkList: [
-        {
-          text: "Min pensjon",
-          icon: "/src/_includes/svg/icons/bookmark.svg",
-        },
-        {
-          text: "Arbeidssøker",
-          icon: "/src/_includes/svg/icons/bookmark.svg",
-        },
-      ],
-    },
-    {
-      linkList: [
-        {
-          text: "Logg ut",
-          icon: "/src/_includes/svg/icons/exit.svg",
-        },
-      ],
-    },
-  ],
-};
+];
