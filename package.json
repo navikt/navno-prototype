@@ -14,7 +14,7 @@
     "dev:eleventy": "pnpm exec eleventy --config=eleventy.config.js --serve",
     "dev:css": "pnpm exec tailwindcss -i ./src/assets/main.css -o ./build/assets/main.min.css --watch",
     "dev": "ELEVENTY_ENV=development pnpm run \"/^dev:.*/\"",
-    "build:eleventy": "ELEVENTY_ENV=production pnpm --config=eleventy.config.js",
+    "build:eleventy": "ELEVENTY_ENV=production pnpm exec eleventy --config=eleventy.config.js",
     "build:css": "NODE_ENV=production pnpm exec tailwindcss -i ./src/assets/main.css -o ./build/assets/main.min.css",
     "build": "pnpm run \"/^build:.*/\"",
     "serve": "NODE_ENV=production ELEVENTY_ENV=production pnpm exec eleventy --config=eleventy.config.js --serve",
@@ -40,13 +40,6 @@
     "prettier": "3.8.3",
     "prettier-plugin-multiline-arrays": "4.1.8",
     "tailwindcss": "4.2.4"
-  },
-  "dependencies": {
-    "compression": "1.8.1",
-    "express": "5.2.1",
-    "path": "0.12.7",
-    "pnpm": "10.33.3",
-    "test": "3.3.0"
   },
   "packageManager": "pnpm@10.33.3+sha512.a19744364a7e248b92657a4ca5973f9354d21caf982579674b1c539f32c7420c47138ad8b1254df07aba9bc782d9b3029e3db34d5dbff974326eb74dac8ff489"
 }
