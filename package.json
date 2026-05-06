@@ -20,8 +20,7 @@
     "build:eleventy": "ELEVENTY_ENV=production pnpm exec eleventy --config=eleventy.config.js",
     "build:css": "NODE_ENV=production pnpm exec tailwindcss -i ./src/assets/main.css -o ./build/assets/main.min.css",
     "build": "pnpm run \"/^build:.*/\"",
-    "serve": "NODE_ENV=production ELEVENTY_ENV=production pnpm exec eleventy --config=eleventy.config.js --serve",
-    "start": "node ./server/app.js"
+    "serve": "NODE_ENV=production ELEVENTY_ENV=production pnpm exec eleventy --config=eleventy.config.js --serve"
   },
   "license": "MIT",
   "devDependencies": {
