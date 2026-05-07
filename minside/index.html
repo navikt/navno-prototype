@@ -154,7 +154,21 @@
 
   <div class="site-user">
     
-    <a href="/navno-prototype/minside">Logg inn</a>
+    <button popovertarget="site-user">
+      <div>
+        <span>Charlie Jensen</span>
+        <small>Deg selv</small>
+      </div>
+      <svg width="24" height="24" fill="none" viewBox="0 0 24 24">
+        <circle cx="12" cy="7.5" r="4.5" stroke="currentColor" stroke-width="1.5"></circle>
+        <path stroke="currentColor" stroke-linecap="round" stroke-width="1.5" d="M6 21c0-3 2.5-6 6-6s6 3 6 6"></path>
+      </svg>
+    </button>
+    <div id="site-user" popover="">
+      <a href=javascript:void(0);>Item 1</a>
+      <a href=javascript:void(0);>Item 2</a>
+      <a href=javascript:void(0);>Item 3</a>
+    </div>
     
   </div>
 </header>
