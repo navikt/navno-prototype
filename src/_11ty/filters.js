@@ -11,7 +11,7 @@ const markdown = (value) => {
   })
     .disable("code")
     .use(markdownItAnchor, {
-      level: [2,3],
+      level: [2, 3],
       slugify: (s) => slugify(s.toLowerCase()),
     })
     .render(value);
@@ -54,7 +54,6 @@ const filterByTags = (collection = [], ...tags) => {
   });
 };
 
-
 export {
   markdown,
   markdownInline,
@@ -62,5 +61,5 @@ export {
   extractTags,
   sortStringLast,
   lowerfirst,
-  filterByTags
+  filterByTags,
 };

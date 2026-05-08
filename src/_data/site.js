@@ -1,10 +1,6 @@
 export default {
   title: "Prototype av enkelte nav.no-sider",
-  audience:[
-      "Privatperson",
-      "Arbeidsgiver",
-      "Samarbeidspartner"
-  ],
+  audience: ["Privatperson", "Arbeidsgiver", "Samarbeidspartner"],
   language: [
     {
       full: "Norsk bokmål",
