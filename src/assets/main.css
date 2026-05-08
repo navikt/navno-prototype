@@ -8,36 +8,41 @@ body {
   background: whitesmoke;
   font-size: 1.125rem;
   min-block-size: 100%;
-  margin:0;
+  margin: 0;
 }
 
-[popover] { 
+:where(strong, b) {
+  font-weight: 650;
+}
+
+[popover] {
   border: none;
   padding: 0;
 }
-:where(button, input) { font: inherit}
-svg { vertical-align: middle }
+:where(button, input) {
+  font: inherit;
+}
+svg {
+  vertical-align: middle;
+}
 
 .site-header {
   display: grid;
   grid-template-areas: "navigation" "user";
-  isolation: isolate;
-  
+
   @media (width > 1200px) {
     grid-template-columns: 4fr 1fr;
     grid-template-areas: "navigation user";
-    background: white;
-    padding-inline: calc(50% - 50rem);
   }
 }
 
 .site-navigation {
-  background: white;
-  padding: 0.75rem var(--inline-edge);
+  border-image: conic-gradient(white 0 0) fill 0/0/0 100vw;
+  padding-block: 0.75rem;
   display: grid;
   align-items: center;
   grid-template-columns: [logo] auto [audience] auto 1fr [menu] auto;
-  
+
   @media (width > 800px) {
     grid-template-columns: [logo] auto [audience] auto 2fr [search] 16fr 3fr [menu] auto;
   }
@@ -74,17 +79,17 @@ svg { vertical-align: middle }
     gap: 0.25ch;
     align-items: center;
     cursor: pointer;
-        
+
     svg {
       flex-shrink: 0;
       translate: 1px 1px;
     }
   }
-  
+
   [popover] {
     inset: 0.5625rem auto auto;
     position-area: span-inline-end block-end;
-    
+
     @media (width < 480px) {
       inset-inline: 0;
       inline-size: stretch;
@@ -114,15 +119,15 @@ svg { vertical-align: middle }
   grid-template-columns: [label search-start] auto 1fr [search-end];
 
   @media (width <= 800px) {
-    display: none;  
+    display: none;
   }
   label {
     padding: 0.5rem;
     grid-area: label;
     z-index: 2;
-    
+
     svg {
-      translate:2px -1px;
+      translate: 2px -1px;
     }
   }
   input {
@@ -138,21 +143,21 @@ svg { vertical-align: middle }
 .site-menu {
   grid-area: menu;
   margin-inline-end: -1.75ch;
-  
+
   & > button {
     display: flex;
-    column-gap: .75ch;
+    column-gap: 0.75ch;
     align-items: center;
     border: none;
     background: none;
     cursor: pointer;
     padding: 0.5625rem 0.875rem 0.5625rem 1.125rem;
     border-radius: 99ch;
-    
+
     &:hover {
       background: #eee;
     }
-    
+
     span {
       @media (width <= 360px) {
         clip-path: inset(50%);
@@ -168,9 +173,7 @@ svg { vertical-align: middle }
     }
   }
   [popover] {
-    box-sizing: border-box;
     inline-size: 100%;
-    padding-inline: calc(50% - 50rem);
     inset: 0.75rem 0 auto;
     position-area: bottom;
     
@@ -178,12 +181,9 @@ svg { vertical-align: middle }
       box-shadow: 0 0.25rem 1rem -0.25rem hsl(0 0 0 / 0.2);
       clip-path: inset(0 0 -1rem);
     }
-
+    
     & > div {
-      padding: 3rem var(--inline-edge);
-      max-inline-size: calc(100rem - (var(--inline-edge) * 2));
-      min-block-size: 25vb;
-      margin-inline: auto;
+      padding-block: 3rem;
       display: grid;
       grid-template-columns: 1fr 3fr;
     }
@@ -197,7 +197,7 @@ svg { vertical-align: middle }
 
 .site-user {
   text-align: right;
-  padding: 1em var(--inline-edge);
+  padding-block: 1em;
   justify-self: end;
   display: grid;
   align-items: center;
@@ -211,7 +211,6 @@ svg { vertical-align: middle }
     @media (width > 1200px) {
       margin-inline-end: 0;
     }
-
   }
   button {
     white-space: nowrap;
@@ -222,7 +221,7 @@ svg { vertical-align: middle }
     justify-items: end;
     text-align: right;
     column-gap: 0.875ch;
-    text-align:right;
+    text-align: right;
     cursor: pointer;
     padding-inline-end: 0;
     margin-inline-end: -1.625ch;
@@ -231,7 +230,7 @@ svg { vertical-align: middle }
     @media (width > 1200px) {
       margin-inline-end: 0;
     }
-    
+
     div {
       display: grid;
       gap: 0.25ch;
@@ -247,10 +246,10 @@ svg { vertical-align: middle }
     }
   }
   [popover] {
-    inset: .5625rem auto auto;
+    inset: 0.5625rem auto auto;
     position-area: span-inline-start block-end;
     min-inline-size: 20ch;
-    
+
     @media (width < 480px) {
       inset-inline: 0;
       inline-size: stretch;
@@ -263,17 +262,17 @@ svg { vertical-align: middle }
     a {
       text-align: left;
       display: block;
-      padding:0.75rem;
+      padding: 0.75rem;
     }
   }
 }
 
-
-
-
-
-
-
+.container {
+  box-sizing: border-box;
+  max-inline-size: 1600px;
+  padding-inline: var(--inline-edge);
+  margin-inline: auto;
+}
 
 
 .sr-only {

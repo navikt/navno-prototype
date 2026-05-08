@@ -1,4 +1,4 @@
-<header class="site-header">
+<header class="site-header container">
   <div class="site-navigation">
 
     <a class="site-logo" href="/">
@@ -58,7 +58,7 @@
 
       </button>
       <div id="site-menu" popover>
-        <div>
+        <div class="container">
           {% for section in menu %}
             <div>
               <h2>{{ section.title }}</h2>
@@ -78,7 +78,7 @@
     {% if loggedIn %}
     <button popovertarget="site-user">
       <div>
-        <span>Charlie Jensen</span>
+        <strong>Charlie Jensen</strong>
         <small>Deg selv</small>
       </div>
       <svg width="24" height="24" fill="none" viewBox="0 0 24 24">
@@ -92,7 +92,7 @@
       <a href="#">Item 3</a>
     </div>
     {% else %}
-    <a href="/minside">Logg inn</a>
+    <a href="/minside/">Logg inn</a>
     {% endif %}
   </div>
 </header>
