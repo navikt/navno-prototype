@@ -4,10 +4,8 @@
 
 import slugify from "@sindresorhus/slugify";
 import markdownIt from "markdown-it";
-import markdownItAnchor from "markdown-it-anchor";
 import { EleventyHtmlBasePlugin, EleventyRenderPlugin } from "@11ty/eleventy";
-import { transform } from 'lightningcss'
-
+import { transform } from "lightningcss";
 
 import svgContents from "eleventy-plugin-svg-contents";
 import {
@@ -23,41 +21,15 @@ import { timestampNow } from "./src/_11ty/shortcodes.js";
 import { minifyHtml, dummifyLinks } from "./src/_11ty/transforms.js";
 // import {} from "./src/_11ty/collections.js";
 
-const linkAfterHeaderOptions = {
-  class: "absolute inset-0",
-  style: "visually-hidden",
-  visuallyHiddenClass: "sr-only",
-  assistiveText: (title) => `Lenke til kapittel «${title}»`,
-  placement: "after",
-  symbol: "",
-  wrapper: ['<div class="relative heading-3">', "</div>"],
-};
-
-const headerLinkOptions = {
-  safariReaderFix: true,
-  class: "",
-};
-
 export default function (eleventyConfig) {
   // Eleventy Plugins
   eleventyConfig.addPlugin(EleventyHtmlBasePlugin);
   eleventyConfig.addPlugin(EleventyRenderPlugin);
   eleventyConfig.addPlugin(svgContents);
 
-  // Markdown-it plugins
-  eleventyConfig.amendLibrary("md", (mdLib) =>
-    mdLib
-      .use(markdownItAnchor, {
-        level: [2,3],
-        slugify: (s) => slugify(s.toLowerCase()),
-        permalink: markdownItAnchor.permalink.headerLink(headerLinkOptions),
-      })
-      .use(markdownItMark),
-  );
-
   // Copy static assets to build folder
   eleventyConfig.addPassthroughCopy({ "./static/fonts/*": "/assets/fonts" });
-  
+
   // Watch extra files for changes
   eleventyConfig.setWatchThrottleWaitTime(100);
   eleventyConfig.addWatchTarget("./src/assets/main.css");
@@ -76,12 +48,12 @@ export default function (eleventyConfig) {
   eleventyConfig.addShortcode("now", timestampNow);
 
   // Bundles
-  eleventyConfig.addBundle('css', {
-    toFileDirectory: '',
+  eleventyConfig.addBundle("css", {
+    toFileDirectory: "",
     transforms: [
       async function (content) {
         // 'this.type' returns the bundle name.
-        if (this.type === 'css') {
+        if (this.type === "css") {
           let result = await transform({
             code: Buffer.from(content),
             minify: true,
@@ -89,13 +61,13 @@ export default function (eleventyConfig) {
             drafts: {
               nesting: true,
             },
-          })
-          return result.code
+          });
+          return result.code;
         }
-        return content
+        return content;
       },
     ],
-  })
+  });
 
   // Transforms
   eleventyConfig.addTransform("dummifyLinks", dummifyLinks);
@@ -109,14 +81,14 @@ export default function (eleventyConfig) {
   });
 
   // Build Time
-  eleventyConfig.addGlobalData('generated', () => {
-    let now = new Date()
-    return new Intl.DateTimeFormat('no-NB', {
-      year: 'numeric',
-      month: 'long',
-      day: 'numeric',
-    }).format(now)
-  })
+  eleventyConfig.addGlobalData("generated", () => {
+    let now = new Date();
+    return new Intl.DateTimeFormat("no-NB", {
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+    }).format(now);
+  });
 
   eleventyConfig.setDataDeepMerge(true);
 
