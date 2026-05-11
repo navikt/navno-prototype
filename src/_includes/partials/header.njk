@@ -99,10 +99,7 @@
         <strong>{{ account.name }}</strong>
         <small>{{ account.role }}</small>
       </div>
-      <svg width="24" height="24" fill="none" viewBox="0 0 24 24">
-        <circle cx="12" cy="7.5" r="4.5" stroke="currentColor" stroke-width="1.5"/>
-        <path stroke="currentColor" stroke-linecap="round" stroke-width="1.5" d="M6 21c0-3 2.5-6 6-6s6 3 6 6"/>
-      </svg>
+      {{ account.icon | svgContents | safe }}
     </button>
     <div class="site-account-menu" id="site-account-menu" popover>
       <div>

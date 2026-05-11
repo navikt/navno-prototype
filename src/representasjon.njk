@@ -13,14 +13,13 @@ title: "Representasjon"
       {%- for account in site.accounts %}  
       <li>
         <a class="account-option" href="/minside/{{ account.name | slugify }}/">
-          {% set icon = '/src/assets/images/' + account.icon %}
           <span class="avatar">
-            {{ icon | svgContents() | safe }}
+            {{ account.icon | svgContents | safe }}
           </span>
-          <span>
-            <strong>{{ account.name }}</strong>
+          <div>
+            <strong>{{ account.name }}</strong><br>
             <small>{{ account.role }}</small>
-          </span>
+          </div>
         </a>
       </li>
       {%- endfor %}
