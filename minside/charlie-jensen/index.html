@@ -259,7 +259,42 @@
      
   <div class="site-account">
     
-    <a class="site-account-button" href="/navno-prototype/idporten/">Logg inn</a>
+    <button class="site-account-button" popovertarget="site-account-menu" type="button">
+      <div>
+        <strong>Charlie Jensen</strong>
+        <small>Deg selv</small>
+      </div>
+      <svg width="24" height="24" fill="none" viewBox="0 0 24 24">
+        <circle cx="12" cy="7.5" r="4.5" stroke="currentColor" stroke-width="1.5"></circle>
+        <path stroke="currentColor" stroke-linecap="round" stroke-width="1.5" d="M6 21c0-3 2.5-6 6-6s6 3 6 6"></path>
+      </svg>
+    </button>
+    <div class="site-account-menu" id="site-account-menu" popover="">
+      <div>
+        <a href="/navno-prototype/minside/charlie-jensen/">Min side</a>
+        <a href="/navno-prototype/representasjon/">Endre representasjon</a>
+      </div>
+      <div class="site-notifications">
+        <strong>Varsler</strong>
+        <ul>
+          <li>
+            <article>
+              <a href=javascript:void(0);>Du har mottatt et vedtak på søknaden din om foreldrepenger</a>
+              <small>13.10.23 kl. 15.23 &nbsp;•&nbsp; Varslet på SMS</small>
+            </article>
+          </li>
+          <li>
+            <article>
+              <a href=javascript:void(0);>Vi har mottatt søknaden din om arbeidsavklaringspenger</a>
+              <small>05.10.23 kl. 14.22</small>
+            </article>
+          </li>
+        </ul>
+      </div>
+      <div>
+        <button type="button">Logg ut</button>
+      </div>
+    </div>
     
   </div>
   
@@ -268,6 +303,11 @@
     
     <main>
       
+<div class="container container--prose">
+  <header class="page-header">
+    <h1>Hei, Charlie Jensen</h1>
+  </header>
+</div>
     </main>
     <!-- Generated: 'Mandag 11. mai 2026 kl. 12:13:47 cest' -->
   </body>
