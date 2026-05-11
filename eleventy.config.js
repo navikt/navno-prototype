@@ -84,9 +84,9 @@ export default function (eleventyConfig) {
   eleventyConfig.addGlobalData("generated", () => {
     let now = new Date();
     return new Intl.DateTimeFormat("no-NB", {
-      year: "numeric",
-      month: "long",
-      day: "numeric",
+      dateStyle: "full",
+      timeStyle: "long",
+      timeZone: "Europe/Oslo",
     }).format(now);
   });
 

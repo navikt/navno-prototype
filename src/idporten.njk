@@ -1,0 +1,36 @@
+---
+layout: "base.njk"
+title: ID-porten
+---
+<div class="id-porten">
+  <style>
+    @scope {
+      :scope {
+        block-size: 100vb;
+        inline-size: min(240px, 100%);
+        margin-inline: auto;
+        display: grid;
+        place-items: center;
+        text-align: center;
+      }
+      a {
+        border-radius: 0.5rem;
+        text-decoration: none;
+        box-sizing: border-box;
+        inline-size: 100%;
+        display: block;
+        padding:1rem;
+        background: lightblue;
+        color: darkblue;
+        font-size: 1.5rem;
+        border: 1px solid hsl(from lightblue H S calc(L - 8));
+
+        &:hover {
+          background: hsl(from lightblue H calc(S + 10) calc(L + 8));
+          border-color: lightblue;
+        }
+      }
+    }
+  </style>
+  <a href="/representasjon/">BankID</a>
+</div>

@@ -42,12 +42,9 @@
     <link rel="stylesheet" href="{% getBundleFileUrl 'css' %}" type="text/css" />
   </head>
   <body>
-    {% if page.url != '/idporten/' %}     
-    {% include "partials/header.njk" %}
-    {% endif %}
     <main>
-      {{ content | safe }}
+    {%- block content %}{% endblock -%}
     </main>
-    <!-- Generated: '{{ generated | capitalize | safe }}' -->
+    <!-- {{ generated }} -->
   </body>
 </html>

@@ -1,8 +1,23 @@
+{% macro search(class, id) %}
+  <form class="{{ class }}" action="#" style="view-transition-name: search">
+    <label for="{{ id }}">
+      <svg width="20" height="20" fill="none" viewBox="0 0 20 20">
+        <circle cx="8.33" cy="8.33" r="5.83" stroke="currentColor" stroke-width="1.5"/>
+        <path stroke="currentColor" stroke-linecap="round" stroke-width="1.5" d="m12.92 12.92 4.16 4.16"/>
+      </svg>
+      <span class="sr-only">Søk</span>        
+    </label>
+    <input id="{{ id }}" placeholder="Søk på nav.no" type="search">
+  </form>
+{% endmacro %}
+
+
 <header class="site-header container">
   <div class="site-navigation">
 
     <a class="site-logo" href="/">
       {{ "/src/assets/images/logo.svg" | svgContents | safe }}
+      <span class="sr-only">Nav</span>
     </a>
 
     <div class="site-audience">
@@ -14,24 +29,15 @@
       </button>
       <div id="audience" popover>
         {% for audience in site.audience %}
-        <button type="button">{{ audience }}</button>
+        <a href="#" {{- 'aria-current=page' if loop.first -}}>{{ audience }}</a>
         {% endfor %}
       </div>
     </div>
 
-    <form class="site-search" action="#">
-      <label for="site-search">
-        <svg width="20" height="20" fill="none" viewBox="0 0 20 20">
-          <circle cx="8.33" cy="8.33" r="5.83" stroke="currentColor" stroke-width="1.5"/>
-          <path stroke="currentColor" stroke-linecap="round" stroke-width="1.5" d="m12.92 12.92 4.16 4.16"/>
-        </svg>
-        <span class="sr-only">Søk</span>        
-      </label>
-      <input id="site-search" placeholder="Søk på nav.no" type="search">
-    </form>
+    {{ search('site-search site-search--large', 'site-search-1') }}
 
     <nav class="site-menu">
-      <button popovertarget="site-menu">
+      <button popovertarget="site-menu" style="view-transition-name: hamburger">
         <span>Meny</span>
 
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -59,40 +65,74 @@
       </button>
       <div id="site-menu" popover>
         <div class="container">
-          {% for section in menu %}
-            <div>
-              <h2>{{ section.title }}</h2>
-              <ul>
-                {% for item in section.linkList %}
-                <li><a href="{{ item.href }}"><span>{{ item.text }}</span></a></li>
-                {% endfor %}
-              </ul>
-            </div>
-          {% endfor %}
+          <div class="site-menu-content">
+            {{ search('site-search site-search--small', 'site-search-2') }}
+
+            {% for section in menu %}
+              <div>
+                <h2>{{ section.title }}</h2>
+                <ul>
+                  {% for item in section.linkList %}
+                  <li>
+                    <a href="{{ item.href or '#' }}">
+                      {% if item.icon %}
+                        {{- item.icon | svgContents | safe -}}
+                      {% endif %}
+                      <span>{{ item.text }}</span>
+                    </a>
+                  </li>
+                  {% endfor %}
+                </ul>
+              </div>
+            {% endfor %}
+          </div>
         </div>
       </div>
     </nav>
   </div>
 
-  <div class="site-user">
+  {% if page.url != '/representasjon/' %}   
+  <div class="site-account">
     {% if loggedIn %}
-    <button popovertarget="site-user">
+    <button class="site-account-button" popovertarget="site-account-menu" type="button">
       <div>
-        <strong>Charlie Jensen</strong>
-        <small>Deg selv</small>
+        <strong>{{ account.name }}</strong>
+        <small>{{ account.role }}</small>
       </div>
       <svg width="24" height="24" fill="none" viewBox="0 0 24 24">
         <circle cx="12" cy="7.5" r="4.5" stroke="currentColor" stroke-width="1.5"/>
         <path stroke="currentColor" stroke-linecap="round" stroke-width="1.5" d="M6 21c0-3 2.5-6 6-6s6 3 6 6"/>
       </svg>
     </button>
-    <div id="site-user" popover>
-      <a href="#">Item 1</a>
-      <a href="#">Item 2</a>
-      <a href="#">Item 3</a>
+    <div class="site-account-menu" id="site-account-menu" popover>
+      <div>
+        <a href="/minside/{{ account.name |slugify }}/">Min side</a>
+        <a href="/representasjon/">Endre representasjon</a>
+      </div>
+      <div class="site-notifications">
+        <strong>Varsler</strong>
+        <ul>
+          <li>
+            <article>
+              <a href="#">Du har mottatt et vedtak på søknaden din om foreldrepenger</a>
+              <small>13.10.23 kl. 15.23 &nbsp;•&nbsp; Varslet på SMS</small>
+            </article>
+          </li>
+          <li>
+            <article>
+              <a href="#">Vi har mottatt søknaden din om arbeidsavklaringspenger</a>
+              <small>05.10.23 kl. 14.22</small>
+            </article>
+          </li>
+        </ul>
+      </div>
+      <div>
+        <button type="button">Logg ut</button>
+      </div>
     </div>
     {% else %}
-    <a href="/minside/">Logg inn</a>
+    <a class="site-account-button" href="/idporten/">Logg inn</a>
     {% endif %}
   </div>
+  {% endif %}
 </header>

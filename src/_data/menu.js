@@ -4,27 +4,27 @@ export default [
     linkList: [
       {
         text: "Arbeid",
-        icon: "/src/_includes/svg/icons/suitcase.svg",
+        icon: "/src/assets/images/icon-briefcase.svg",
       },
       {
         text: "Helse og sykdom",
-        icon: "/src/_includes/svg/icons/medkit.svg",
+        icon: "/src/assets/images/icon-stethoscope.svg",
       },
       {
         text: "Familie og barn",
-        icon: "/src/_includes/svg/icons/family.svg",
+        icon: "/src/assets/images/icon-househeart.svg",
       },
       {
         text: "Pensjon",
-        icon: "/src/_includes/svg/icons/umbrella.svg",
+        icon: "/src/assets/images/icon-sackpension.svg",
       },
       {
         text: "Sosiale tjenester og veiledning",
-        icon: "/src/_includes/svg/icons/socialaid.svg",
+        icon: "/src/assets/images/icon-handheart.svg",
       },
       {
         text: "Hjelpemidler og tilrettelegging",
-        icon: "/src/_includes/svg/icons/wheelchair.svg",
+        icon: "/src/assets/images/icon-wheelchair.svg",
       },
     ],
   },

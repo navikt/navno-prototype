@@ -1,0 +1,30 @@
+---
+layout: "base.njk"
+title: "Representasjon"
+---
+
+<div class="container container--prose account-selection">
+  <h1>Hvem skal du representere?</h1>
+  <p>Du kan endre dette valget senere, uten å logge ut og inn igjen.</p>
+
+  <div class="account-list">
+    <h2>Velg profil</h2>
+    <ul>
+      {%- for account in site.accounts %}  
+      <li>
+        <a class="account-option" href="/minside/{{ account.name | slugify }}/">
+          {% set icon = '/src/assets/images/' + account.icon %}
+          <span class="avatar">
+            {{ icon | svgContents() | safe }}
+          </span>
+          <span>
+            <strong>{{ account.name }}</strong>
+            <small>{{ account.role }}</small>
+          </span>
+        </a>
+      </li>
+      {%- endfor %}
+    </ul>
+  </div>
+
+</div>

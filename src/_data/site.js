@@ -19,4 +19,21 @@ export default {
       short: "SMI",
     },
   ],
+  accounts: [
+    {
+      name: "Charlie Jensen",
+      role: "Deg selv",
+      icon: "icon-person.svg",
+    },
+    {
+      name: "Alex Jensen",
+      role: "Du har foreldreansvar",
+      icon: "icon-persongroup.svg",
+    },
+    {
+      name: "Casey Jensen",
+      role: "Du har foreldreansvar",
+      icon: "icon-persongroup.svg",
+    },
+  ],
 };
