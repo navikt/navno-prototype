@@ -104,20 +104,26 @@
           På vegne av {{ account.name }}
           {%- endif %}</small>
       </div>
-      <div class="agent__icon avatar {{ 'avatar--main' if account.type != 'agent' }}">
+      <div class="agent__icon avatar {{ 'avatar--main' if account.type != 'agent' }}" style="view-transition-name: avatar-{{ account.name | slugify }}">
         {{ (account.icon or site.accounts[0].icon) | svgContents | safe }}
       </div>
     </button>
     <div class="site-account-menu" id="site-account-menu" popover>
       <div>
-        <a class="stack-text" href="/{{ (account.name or site.accounts[0].name) | slugify }}/minside/">
-          <strong>Min side</strong>
-          <small>2 oppgaver venter</small>
+        <a href="/{{ (account.name or site.accounts[0].name) | slugify }}/minside/">
+          {{ '/src/assets/images/icon-house.svg' | svgContents | safe }}
+          <div class="stack-text">
+            <strong>Min side</strong>
+            <small>2 oppgaver venter</small>
+          </div>
         </a>
         <div class="site-agency-switcher">
-          <a class="stack-text" href="/{{ account.name | slugify }}/representasjon/">
-            <strong>Velg profil</strong>
-            <small>Personer du kan representere</small>
+          <a href="/{{ account.name | slugify }}/representasjon/">
+            {{ '/src/assets/images/icon-persongroup.svg' | svgContents | safe }}
+            <div class="stack-text">
+              <strong>Velg profil</strong>
+              <small>Personer du kan representere</small>
+            </div>
           </a>
           <details>
             <summary>
@@ -127,7 +133,7 @@
             <div>
               {% for item in site.accounts %}
                 <a class="agent" href="/{{ item.name | slugify }}/minside/">
-                  <div class="agent__icon avatar {{ 'avatar--main' if item.type != 'agent' }}">
+                  <div class="agent__icon avatar {{ 'avatar--main' if item.type != 'agent' }}" style="view-transition-name: avatar-{{ item.name | slugify }}">
                     {{ item.icon | svgContents | safe }}
                   </div>
                   <div class="agent__text stack-text">
@@ -139,14 +145,20 @@
             </div>
           </details>
         </div>
-        <a href="#" class="stack-text">
-          <strong>Personopplysninger</strong>
-          <small>Kontaktinfo, kontonummer, osv.</small>
+        <a href="#">
+          {{ '/src/assets/images/icon-cog.svg' | svgContents | safe }}
+          <div class="stack-text">
+            <strong>Personopplysninger</strong>
+            <small>Kontaktinfo, kontonummer, osv.</small>
+          </div>
         </a>
       </div>
       <div class="separator-line"></div>
       <div>
-        <a href="/"><strong style="line-height:1.8">Logg ut</strong></a>
+        <a href="/">
+          {{ '/src/assets/images/icon-leave.svg' | svgContents | safe }}
+          <strong style="line-height:1.8">Logg ut</strong>
+        </a>
       </div>
     </div>
     {%- else %}
