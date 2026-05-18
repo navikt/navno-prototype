@@ -15,7 +15,7 @@
     "preinstall": "npx only-allow pnpm",
     "eleventy-debug": "DEBUG=Eleventy* pnpm exec eleventy",
     "dev": "pnpm exec eleventy --config=eleventy.config.js --serve",
-    "build": "pnpm exec eleventy --config=eleventy.config.js",
+    "build": "NODE_ENV=production ELEVENTY_ENV=production pnpm exec eleventy --config=eleventy.config.js",
     "serve": "NODE_ENV=production ELEVENTY_ENV=production pnpm exec eleventy --config=eleventy.config.js --serve"
   },
   "license": "MIT",
