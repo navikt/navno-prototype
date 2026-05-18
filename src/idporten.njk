@@ -4,6 +4,10 @@ title: ID-porten
 ---
 <div class="id-porten">
   <style>
+    .site-content {
+      display: grid;
+      place-items: center;
+    }
     @scope {
       :scope {
         block-size: 100vb;
@@ -12,18 +16,20 @@ title: ID-porten
         display: grid;
         place-items: center;
         text-align: center;
+        align-self: center;
       }
       a {
-        border-radius: 0.5rem;
         text-decoration: none;
         box-sizing: border-box;
-        inline-size: 100%;
+        inline-size: max-content;
         display: block;
-        padding:1rem;
+        margin-inline: auto;
         background: lightblue;
         color: darkblue;
         font-size: 1.5rem;
+        padding:2rem 4rem;
         border: 1px solid hsl(from lightblue H S calc(L - 8));
+        border-radius: 0.5rem;
 
         &:hover {
           background: hsl(from lightblue H calc(S + 10) calc(L + 8));

@@ -48,6 +48,8 @@
   <body style="{{ '--_body:#fbf3f6' if account.type == 'agent' }}">
     {%- if page.url != '/idporten/' %}     
     {% include "partials/header.njk" %}
+    {%- else %}
+      <div></div>
     {%- endif %}
     <main class="site-content">
       {{- content | safe -}}
