@@ -47,14 +47,21 @@
   </head>
   <body style="{{ '--_body:#fbf3f6' if account.type == 'agent' }}">
     {%- if page.url != '/idporten/' %}     
-    {% include "partials/header.njk" %}
+      {% include "partials/header.njk" %}
+    {%- else %}
+      <div></div>
     {%- endif %}
+
     <main class="site-content">
       {{- content | safe -}}
     </main>
-    <footer class="site-footer">
 
-    </footer>
+    {%- if page.url != '/idporten/' %}     
+      <footer class="site-footer"></footer>
+    {%- else %}
+      <div></div>
+    {%- endif %}
+
     <!-- Generated: '{{ generated | capitalize | safe }}' -->
     <!-- Environment: '{{ environment }}' -->
   </body>
