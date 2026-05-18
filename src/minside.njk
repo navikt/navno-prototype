@@ -5,11 +5,13 @@ pagination:
   data: site.accounts
   size: 1
   alias: account
-permalink: "/minside/{{ account.name | slugify }}/index.html"
+permalink: "/{{ account.name | slugify }}/minside/index.html"
 ---
 
 <div class="container container--prose">
   <header class="page-header">
-    <h1>Hei, {{ account.name }}</h1>
+    <h1>Hei, {{ account.name or site.accounts[0].name }}</h1>
+
+    <div class="placeholder-box"></div>
   </header>
 </div>

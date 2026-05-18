@@ -1,23 +1,29 @@
 ---
 layout: "base.njk"
-title: "Representasjon"
+title: "Velg profil"
+loggedIn: true
+pagination:
+  data: site.accounts
+  size: 1
+  alias: account
+permalink: "/{{ account.name | slugify }}/representasjon/index.html"
 ---
 
 <div class="container container--prose account-selection">
-  <h1>Hvem skal du representere?</h1>
-  <p>Du kan endre dette valget senere, uten å logge ut og inn igjen.</p>
-
+  <div class="page-crumbs"><a href="/{{ site.accounts[0].name | slugify }}/minside/">Min side</a> /</div>
+  <h1>{{ title }}</h1>
+  <p>Du kan endre valget senere, ved å trykke på profilen din.</p>
+  
   <div class="account-list">
-    <h2>Velg profil</h2>
     <ul>
-      {%- for account in site.accounts %}  
+      {%- for account in site.accounts %}
       <li>
-        <a class="account-option" href="/minside/{{ account.name | slugify }}/">
-          <span class="avatar">
+        <a class="account-option" href="/{{ account.name | slugify }}/minside/">
+          <div class="avatar {{ 'avatar--main' if account.type != 'agent' }}">
             {{ account.icon | svgContents | safe }}
-          </span>
+          </div>
           <div>
-            <strong>{{ account.name }}</strong><br>
+            <strong>{{ account.name }}</strong>
             <small>{{ account.role }}</small>
           </div>
         </a>

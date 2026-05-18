@@ -23,14 +23,12 @@
     <div class="site-audience">
       <button popovertarget="audience">
         <span>{{ site.audience[0] }}</span>
-        <svg width="20" height="20" fill="none" viewBox="0 0 20 20">
-          <path stroke="currentColor" stroke-linecap="round" stroke-width="1.5" opacity="0.75" d="m6 8 4 4 4-4"/>
-        </svg>
+        {{ '/src/assets/images/icon-chevrondown.svg' | svgContents | safe }}
       </button>
       <div id="audience" popover>
-        {% for audience in site.audience %}
+        {%- for audience in site.audience %}
         <a href="#" {{- 'aria-current=page' if loop.first -}}>{{ audience }}</a>
-        {% endfor %}
+        {%- endfor %}
       </div>
     </div>
 
@@ -43,8 +41,8 @@
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
           <style>
             :is(#spyglassClip,#spyglassGroup) {
-              transition: translate 300ms;
-              @media (width > 800px) { translate:15px }
+              transition: translate 200ms ease-in-out;
+              @media (width > 840px) { translate:15px }
             }
           </style>
           <defs>
@@ -60,8 +58,6 @@
           <path stroke="currentColor" stroke-linecap="round" stroke-width="1.8" d="m17.5 13 3.5 6"/>
           </g>
         </svg>
-
-
       </button>
       <div id="site-menu" popover>
         <div class="container">
@@ -84,6 +80,9 @@
                   {% endfor %}
                 </ul>
               </div>
+              {% if loop.first %}
+                <div class="menu-col-separator"></div>
+              {% endif %}
             {% endfor %}
           </div>
         </div>
@@ -91,45 +90,92 @@
     </nav>
   </div>
 
-  {% if page.url != '/representasjon/' %}   
+
+
   <div class="site-account">
-    {% if loggedIn %}
-    <button class="site-account-button" popovertarget="site-account-menu" type="button">
-      <div>
-        <strong>{{ account.name }}</strong>
-        <small>{{ account.role }}</small>
+    {%- if loggedIn %}
+    <button class="site-account-button agent" popovertarget="site-account-menu" type="button">
+      <div class="agent__text stack-text">
+        <strong>{{ site.accounts[0].name }}</strong>
+        {#- <small>{{ site.notifications | length }} oppgaver venter</small> #}
+        <small>{%- if not account.name or account.type == 'main' -%}
+          {{ site.accounts[0].role }}
+          {%- else %}
+          På vegne av {{ account.name }}
+          {%- endif %}</small>
       </div>
-      {{ account.icon | svgContents | safe }}
+      <div class="agent__icon avatar {{ 'avatar--main' if account.type != 'agent' }}">
+        {{ (account.icon or site.accounts[0].icon) | svgContents | safe }}
+      </div>
     </button>
     <div class="site-account-menu" id="site-account-menu" popover>
       <div>
-        <a href="/minside/{{ account.name |slugify }}/">Min side</a>
-        <a href="/representasjon/">Endre representasjon</a>
+        <a class="stack-text" href="/{{ (account.name or site.accounts[0].name) | slugify }}/minside/">
+          <strong>Min side</strong>
+          <small>2 oppgaver venter</small>
+        </a>
+        <div class="site-agency-switcher">
+          <a class="stack-text" href="/{{ account.name | slugify }}/representasjon/">
+            <strong>Velg profil</strong>
+            <small>Personer du kan representere</small>
+          </a>
+          <details>
+            <summary>
+              <span class="sr-only">Hurtigbytte</span>
+              {{ '/src/assets/images/icon-chevrondown.svg' | svgContents | safe }}
+            </summary>
+            <div>
+              {% for item in site.accounts %}
+                <a class="agent" href="/{{ item.name | slugify }}/minside/">
+                  <div class="agent__icon avatar {{ 'avatar--main' if item.type != 'agent' }}">
+                    {{ item.icon | svgContents | safe }}
+                  </div>
+                  <div class="agent__text stack-text">
+                    <strong>{{ item.name }}</strong>
+                    <small>{{ item.role }}</small>
+                  </div>
+                </a>
+              {% endfor %}
+            </div>
+          </details>
+        </div>
+        <a href="#" class="stack-text">
+          <strong>Personopplysninger</strong>
+          <small>Kontaktinfo, kontonummer, osv.</small>
+        </a>
       </div>
-      <div class="site-notifications">
-        <strong>Varsler</strong>
-        <ul>
-          <li>
-            <article>
-              <a href="#">Du har mottatt et vedtak på søknaden din om foreldrepenger</a>
-              <small>13.10.23 kl. 15.23 &nbsp;•&nbsp; Varslet på SMS</small>
-            </article>
-          </li>
-          <li>
-            <article>
-              <a href="#">Vi har mottatt søknaden din om arbeidsavklaringspenger</a>
-              <small>05.10.23 kl. 14.22</small>
-            </article>
-          </li>
-        </ul>
-      </div>
+      <div class="separator-line"></div>
       <div>
-        <button type="button">Logg ut</button>
+        <a href="/"><strong style="line-height:1.8">Logg ut</strong></a>
       </div>
     </div>
-    {% else %}
+    {%- else %}
     <a class="site-account-button" href="/idporten/">Logg inn</a>
-    {% endif %}
+    {%- endif %}
   </div>
-  {% endif %}
+
+  {#- {% if account.type === 'agent' %}
+  <div class="site-agency">
+    <p>Du bruker denne siden på vegne av <strong>{{ account.name }}</strong>. <a href="/representasjon/">Bytt profil</a></p>
+  </div>
+  {%- endif %} #}
 </header>
+
+
+{# <div class="site-notifications">
+  <strong>Varsler</strong>
+  <ul>
+    {%- for item in site.notifications %}            
+    <li>
+      <article>
+        <a href="#">{{ item.title }}</a>
+        <small>
+          {{ item.time }}
+          {{ '&nbsp;•&nbsp;' | safe if item.type }}
+          {{ item.type }}
+        </small>
+      </article>
+    </li>
+    {%- endfor %}
+  </ul>
+</div> #}

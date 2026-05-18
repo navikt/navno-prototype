@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>
       {{- title | safe }}
-      {{- '&ndash;' | safe if title }}
+      {{- ' &ndash; ' | safe if title }}
       {{- site.title | safe }}
     </title>
     <meta name="description" content="..." />
@@ -39,15 +39,22 @@
       }
     </style>
     {% css %}{% include "../assets/main.css" %}{% endcss %}
+    {% if environment == 'production' %}
     <link rel="stylesheet" href="{% getBundleFileUrl 'css' %}" type="text/css" />
-  </head>
-  <body>
-    {% if page.url != '/idporten/' %}     
-    {% include "partials/header.njk" %}
+    {% else %}
+    <style>{% getBundle "css" %}</style>
     {% endif %}
-    <main>
-      {{ content | safe }}
+  </head>
+  <body style="{{ '--_body:#fbf3f6' if account.type == 'agent' }}">
+    {%- if page.url != '/idporten/' %}     
+    {% include "partials/header.njk" %}
+    {%- endif %}
+    <main class="site-content">
+      {{- content | safe -}}
     </main>
+    <footer class="site-footer">
+
+    </footer>
     <!-- Generated: '{{ generated | capitalize | safe }}' -->
   </body>
 </html>
