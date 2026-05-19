@@ -221,10 +221,6 @@ a {
   font: inherit;
 }
 
-summary::marker {
-  content: none;
-}
-
 [popover] {
   border: none;
   padding: 0;
@@ -312,14 +308,8 @@ a:hover {
   }
 
   [popover] {
-    inset: anchor(120%) auto auto anchor(0%);
-    
+    inset: anchor(120%) auto auto anchor(0%);   
 
-
-    @media (width < 480px) {
-      inset-inline: 0;
-      inline-size: stretch;
-    }
     &:popover-open {
       padding-block: 0.5rem;
       border-radius: var(--ax-radius-12);
@@ -497,6 +487,11 @@ a:hover {
 
   [popover] {
     inset: anchor(110%) anchor(end) auto auto;
+
+    @media (width < 480px) {
+      inset: anchor(110%) 0 auto 0;
+    }
+
   }
 }
 
@@ -521,7 +516,6 @@ a:hover {
     padding-block: 0.5rem;
     border-radius: var(--ax-radius-12);
     box-shadow: 0 0.125rem 1rem -0.25rem hsl(0 0 0 / 0.2);
-    display: grid;
     text-align: left;
   }
   :where(div > a, div > button) {
@@ -581,6 +575,7 @@ a:hover {
     align-self: center;
     background-color: var(--ax-neutral-100);
     cursor: pointer;
+    list-style-type: none;
 
     &:hover {
       background-color: var(--ax-neutral-100A);

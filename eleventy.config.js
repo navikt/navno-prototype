@@ -61,6 +61,7 @@ export default function (eleventyConfig) {
             drafts: {
               nesting: true,
             },
+            targets: { safari: (13 << 16) | (2 << 8) },
           });
           return result.code;
         }
