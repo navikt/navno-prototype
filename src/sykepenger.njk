@@ -1,0 +1,17 @@
+---
+title: Sykepenger
+layout: "base.njk"
+loggedIn: true
+pagination:
+  data: site.accounts
+  size: 1
+  alias: account
+permalink: "/{{ account.name | slugify }}/minside/sykepenger/index.html"
+---
+
+<div class="container container--prose">
+  <div class="page-crumbs">
+    <a href="/{{ account.name | slugify }}/"></a>
+  </div>
+  <h1>{{ title }}</h1>
+</div>

@@ -209,9 +209,6 @@ body {
   margin-block: 0;
 }
 
-a {
-  color: var(--ax-accent-700);
-}
 
 :where(strong, b) {
   font-weight: 600;
@@ -239,8 +236,13 @@ button {
   padding:0;
 }
 
-a:hover {
-  text-decoration-thickness: 0.125em;
+
+a {
+  color: var(--ax-accent-700);
+
+  &:hover {
+    text-decoration-thickness: 0.125em;
+  }
 }
 
 .site-header {
@@ -315,6 +317,9 @@ a:hover {
       border-radius: var(--ax-radius-12);
       margin-inline-start: calc(var(--ax-space-8) * -1);
       box-shadow: 0 0.125rem 1rem -0.25rem hsl(0 0 0 / 0.2);
+    }
+    &::backdrop {
+      background-color: var(--ax-neutral-400A);
     }
     & > a {
       display: block;
@@ -419,6 +424,11 @@ a:hover {
       box-shadow: 0 0.25rem 1rem -0.25rem hsl(0 0 0 / 0.2);
       clip-path: inset(1px 0 -1rem);
     }
+    &::backdrop {
+      background-color: var(--ax-neutral-400A);
+      inset: 3lh 0 0;
+    }
+
   }
   ul {
     margin-block: 0;
@@ -433,34 +443,52 @@ a:hover {
   gap: var(--ax-space-32);
 
   @media (width > 840px) {
-    grid-template-columns: 2fr auto 5fr;
+    grid-template-columns: 4fr auto 3fr;
     gap: var(--ax-space-24);
   }
   h2 {
     font-size: 1.25rem;
     margin-block-end: var(--ax-space-12);
   }
+  
 
-  li + li {
-    margin-block-start: var(--ax-space-8);
+  .menu-tiles {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(30ch, 100%), 1fr));
+    gap: var(--ax-space-12);
+
+    li {
+      border-radius: var(--ax-radius-8);
+      background-color: var(--ax-accent-200);
+      padding: var(--ax-space-10);
+    }
+  }
+
+  .menu-list {
+    columns: 20ch;
+
+    li + li {
+      margin-block-start: var(--ax-space-12);
+    }
   }
 
   a:has(svg) {
     display: flex;
     align-items: center;
-    gap: 0.5ch;
+    gap: 0.75ch;
 
 
     svg {
       border-radius: var(--ax-radius-full);
       background-color: var(--ax-accent-200);
-      padding: var(--ax-space-8);
+      padding: var(--ax-space-10);
     }
   }
 }
 
+
 .menu-col-separator {
-  margin-inline: var(--ax-space-48) var(--ax-space-48);
+  margin-inline: var(--ax-space-40);
   inline-size: 1px;
   background-color: var(--ax-neutral-200);
 
@@ -492,6 +520,9 @@ a:hover {
       inset: anchor(110%) 0 auto 0;
     }
 
+    &::backdrop {
+      background-color: var(--ax-neutral-400A);
+    }
   }
 }
 
@@ -522,7 +553,7 @@ a:hover {
     text-decoration: none;
     color: inherit;
     display: block;
-    padding: var(--ax-space-8) var(--ax-space-20);
+    padding: var(--ax-space-12) var(--ax-space-20);
 
     &:hover {
       background-color: var(--ax-neutral-100A);
@@ -619,8 +650,8 @@ a:hover {
 
 
 .site-footer {
-  background-color: var(--ax-accent-1000);
-  min-block-size: var(--ax-space-128);
+  background-color: var(--ax-brand-blue-1000);
+  padding-block: var(--ax-space-128);
 }
 
 
@@ -692,11 +723,9 @@ a:hover {
 
 .stack-text {
   display: grid;
-  gap: 0 0.25ch;
 
   small {
     opacity: 0.8;
-    line-height: 1.35;
   }
 
 }
@@ -720,12 +749,50 @@ a:hover {
   margin-block:0 var(--ax-space-8);
 }
 
+
+.card {
+  /* box-shadow: 0 1px 2px var(--ax-neutral-100A), 0 8px 12px -6px var(--ax-neutral-200A); */
+  border: 2px solid #0000;
+  border-radius: var(--ax-radius-12);
+  background-color: var(--ax-neutral-000);
+  padding: var(--ax-space-12) var(--ax-space-16);
+
+  &:has(a) {
+    position: relative;
+  }
+  &:has(a:hover) {
+    border-color: var(--ax-brand-magenta-500);
+  }
+  &:has(a) a {
+    color: currentColor;
+    text-decoration: none;
+
+    &:before {
+      content:"";
+      position: absolute;
+      inset: 0;
+    }
+  }
+}
+.card__title {
+  font-weight: 625;
+  line-height: 1.35;
+}
+
+
 .placeholder-box {
   outline: 2px dashed var(--ax-neutral-400);
   border-radius: var(--ax-radius-12);
   min-height: 50vh;
   margin-block-start: var(--ax-space-32);
 }
+
+
+
+
+
+
+
 
 
 .container {
@@ -751,11 +818,6 @@ a:hover {
   position: absolute;
   overflow: hidden;
 }
-
-
-/* { outline: 1px solid #F00A }
-
-
 
 
 /* .site-agency {
@@ -808,3 +870,5 @@ a:hover {
   }
 }
  */
+
+ /* { outline: 1px solid #F00A }

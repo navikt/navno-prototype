@@ -1,5 +1,5 @@
-export default [
-  {
+export default {
+  areas: {
     title: "Områder",
     linkList: [
       {
@@ -28,7 +28,7 @@ export default [
       },
     ],
   },
-  {
+  shortcuts: {
     title: "Snarveier",
     linkList: [
       { text: "Saksbehandlingstider" },
@@ -41,4 +41,4 @@ export default [
       { text: "Kontakt oss" },
     ],
   },
-];
+};

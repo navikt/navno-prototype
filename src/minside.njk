@@ -11,7 +11,42 @@ permalink: "/{{ account.name | slugify }}/minside/index.html"
 <div class="container container--prose">
   <header class="page-header">
     <h1>Hei, {{ account.name or site.accounts[0].name }}</h1>
+    <br>
 
-    <div class="placeholder-box"></div>
+    <div class="card">
+      <a href="#" class="stack-text">
+        <strong>Dialog med Nav</strong>
+        <small>Ingen nye meldinger</small>
+      </a>
+    </div>
+    <br>
+
+    <div class="">
+      <h2>Oppgaver</h2>
+    </div>
+    <br>
+
+    <div class="">
+      <h2>Pengestøtte</h2>
+
+      <div style="display:grid; gap:var(--ax-space-6)">
+        <article class="card">
+          <a class="card__title" href="/{{ account.name | slugify }}/minside/sykepenger/">Sykepenger</a><br>
+          <small>Status for pengestøtten …</small>
+        </article>
+
+        <article class="card">
+          <a class="card__title" href="#">Økonomisk sosialhjelp</a><br>
+            <small>Status for pengestøtten …</small>
+        </article>
+
+        <article class="card">
+          <a class="card__title" href="#">Utbetalinger</a><br>
+          <small>Status for pengestøtten …</small>
+        </article>
+      </div>
+    </div>
+
+
   </header>
 </div>
