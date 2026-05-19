@@ -19,7 +19,7 @@ export default {
       short: "SMI",
     },
   ],
-  accounts: [
+  agents: [
     {
       type: "main",
       name: "Charlie Jensen",

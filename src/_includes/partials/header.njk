@@ -38,13 +38,7 @@
       <button popovertarget="site-menu" style="view-transition-name: hamburger">
         <span>Meny</span>
 
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-          <style>
-            :is(#spyglassClip,#spyglassGroup) {
-              transition: translate 200ms ease-in-out;
-              @media (width > 840px) { translate:15px }
-            }
-          </style>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" eleventy:ignore>
           <defs>
             <clipPath id="a">
               <path id="spyglassClip" fill="black" d="m5.5 0 2.65 4.24a8.5 8.5 0 0 0 7.96 12.74L20.5 24H-15V0z"/>
@@ -109,21 +103,21 @@
     {%- if loggedIn %}
     <button class="site-account-button agent" popovertarget="site-account-menu" type="button">
       <div class="agent__text stack-text">
-        <strong>{{ site.accounts[0].name }}</strong>
+        <strong>{{ site.agents[0].name }}</strong>
         {#- <small>{{ site.notifications | length }} oppgaver venter</small> #}
-        <small>{%- if not account.name or account.type == 'main' -%}
-          {{ site.accounts[0].role }}
+        <small>{%- if not agent.name or agent.type == 'main' -%}
+          {{ site.agents[0].role }}
           {%- else %}
-          På vegne av {{ account.name }}
+          På vegne av {{ agent.name }}
           {%- endif %}</small>
       </div>
-      <div class="agent__icon avatar {{ 'avatar--main' if account.type != 'agent' }}" style="view-transition-name: avatar-{{ account.name | slugify }}">
-        {{ (account.icon or site.accounts[0].icon) | svgContents | safe }}
+      <div class="agent__icon avatar {{ 'avatar--main' if agent.type != 'agent' }}" style="view-transition-name: avatar-{{ agent.name | slugify }}">
+        {{ (agent.icon or site.agents[0].icon) | svgContents | safe }}
       </div>
     </button>
     <div class="site-account-menu" id="site-account-menu" popover>
       <div>
-        <a href="/{{ (account.name or site.accounts[0].name) | slugify }}/minside/">
+        <a href="/{{ (agent.name or site.agents[0].name) | slugify }}/minside/">
           {{ '/src/assets/images/icon-house.svg' | svgContents | safe }}
           <div class="stack-text">
             <strong>Min side</strong>
@@ -131,7 +125,7 @@
           </div>
         </a>
         <div class="site-agency-switcher">
-          <a href="/{{ account.name | slugify }}/representasjon/">
+          <a href="/{{ agent.name | slugify }}/representasjon/">
             {{ '/src/assets/images/icon-persongroup.svg' | svgContents | safe }}
             <div class="stack-text">
               <strong>Velg profil</strong>
@@ -144,14 +138,14 @@
               {{ '/src/assets/images/icon-chevrondown.svg' | svgContents | safe }}
             </summary>
             <div>
-              {% for item in site.accounts %}
-                <a class="agent" href="/{{ item.name | slugify }}/minside/">
-                  <div class="agent__icon avatar {{ 'avatar--main' if item.type != 'agent' }}" style="view-transition-name: avatar-{{ item.name | slugify }}">
-                    {{ item.icon | svgContents | safe }}
+              {% for profile in site.agents %}
+                <a class="agent" href="/{{ profile.name | slugify }}/minside/">
+                  <div class="agent__icon avatar {{ 'avatar--main' if profile.type != 'agent' }}" style="view-transition-name: avatar-{{ profile.name | slugify }}">
+                    {{ profile.icon | svgContents | safe }}
                   </div>
                   <div class="agent__text stack-text">
-                    <strong>{{ item.name }}</strong>
-                    <small>{{ item.role }}</small>
+                    <strong>{{ profile.name }}</strong>
+                    <small>{{ profile.role }}</small>
                   </div>
                 </a>
               {% endfor %}
@@ -179,9 +173,9 @@
     {%- endif %}
   </div>
 
-  {#- {% if account.type === 'agent' %}
+  {#- {% if agent.type === 'agent' %}
   <div class="site-agency">
-    <p>Du bruker denne siden på vegne av <strong>{{ account.name }}</strong>. <a href="/representasjon/">Bytt profil</a></p>
+    <p>Du bruker denne siden på vegne av <strong>{{ agent.name }}</strong>. <a href="/representasjon/">Bytt profil</a></p>
   </div>
   {%- endif %} #}
 </header>

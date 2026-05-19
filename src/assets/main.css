@@ -249,7 +249,6 @@ a {
   display: grid;
   grid-template-areas: 
     "navigation" 
-    "account"
     "agency"
     "language"
   ;
@@ -257,7 +256,7 @@ a {
   @media (width > 1280px) {
     grid-template-columns: 3fr 1fr;
     grid-template-areas: 
-    "navigation account" 
+    "navigation agency" 
     "language .";
   }
 }
@@ -510,7 +509,7 @@ a {
 
   @media (width > 1280px) {
     padding-block: var(--ax-space-0);
-    grid-area: account;
+    grid-area: agency;
   }
 
   [popover] {
@@ -761,7 +760,7 @@ a {
     position: relative;
   }
   &:has(a:hover) {
-    border-color: var(--ax-brand-magenta-500);
+    border-color: var(--ax-accent-500);
   }
   &:has(a) a {
     color: currentColor;
@@ -818,6 +817,12 @@ a {
   position: absolute;
   overflow: hidden;
 }
+
+:is(#spyglassClip,#spyglassGroup) {
+  transition: translate 200ms ease-in-out;
+  @media (width > 840px) { translate:15px }
+}
+
 
 
 /* .site-agency {

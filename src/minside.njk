@@ -2,15 +2,15 @@
 layout: "base.njk"
 loggedIn: true
 pagination:
-  data: site.accounts
+  data: site.agents
   size: 1
-  alias: account
-permalink: "/{{ account.name | slugify }}/minside/index.html"
+  alias: agent
+permalink: "/{{ agent.name | slugify }}/minside/index.html"
 ---
 
 <div class="container container--prose">
   <header class="page-header">
-    <h1>Hei, {{ account.name or site.accounts[0].name }}</h1>
+    <h1>Hei, {{ agent.name or site.agents[0].name }}</h1>
     <br>
 
     <div class="card">
@@ -31,7 +31,7 @@ permalink: "/{{ account.name | slugify }}/minside/index.html"
 
       <div style="display:grid; gap:var(--ax-space-6)">
         <article class="card">
-          <a class="card__title" href="/{{ account.name | slugify }}/minside/sykepenger/">Sykepenger</a><br>
+          <a class="card__title" href="/{{ agent.name | slugify }}/minside/sykepenger/">Sykepenger</a><br>
           <small>Status for pengestøtten …</small>
         </article>
 

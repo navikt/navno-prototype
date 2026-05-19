@@ -3,28 +3,28 @@ layout: "base.njk"
 title: "Velg profil"
 loggedIn: true
 pagination:
-  data: site.accounts
+  data: site.agents
   size: 1
-  alias: account
-permalink: "/{{ account.name | slugify }}/representasjon/index.html"
+  alias: agent
+permalink: "/{{ agent.name | slugify }}/representasjon/index.html"
 ---
 
 <div class="container container--prose account-selection">
-  <div class="page-crumbs"><a href="/{{ site.accounts[0].name | slugify }}/minside/">Min side</a> /</div>
+  <div class="page-crumbs"><a href="/{{ site.agents[0].name | slugify }}/minside/">Min side</a> /</div>
   <h1>{{ title }}</h1>
   <p>Du kan endre valget senere, ved å trykke på profilen din.</p>
   
   <div class="account-list">
     <ul>
-      {%- for account in site.accounts %}
+      {%- for profile in site.agents %}
       <li>
-        <a class="account-option" href="/{{ account.name | slugify }}/minside/">
-          <div class="avatar {{ 'avatar--main' if account.type != 'agent' }}">
-            {{ account.icon | svgContents | safe }}
+        <a class="account-option" href="/{{ profile.name | slugify }}/minside/">
+          <div class="avatar {{ 'avatar--main' if profile.type != 'agent' }}">
+            {{ profile.icon | svgContents | safe }}
           </div>
           <div>
-            <strong>{{ account.name }}</strong>
-            <small>{{ account.role }}</small>
+            <strong>{{ profile.name }}</strong>
+            <small>{{ profile.role }}</small>
           </div>
         </a>
       </li>

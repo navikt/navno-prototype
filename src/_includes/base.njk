@@ -26,7 +26,6 @@
           U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212,
           U+2215, U+FEFF, U+FFFD;
       }
-
       @font-face {
         font-family: "Source Sans 3";
         font-weight: 100 900;
@@ -44,8 +43,16 @@
     {% else %}
     <style>{% getBundle "css" %}</style>
     {% endif %}
+    {% if agent.type == 'agent' %}
+    <style>
+      :root {
+        --_body: radial-gradient(1q,var(--ax-brand-magenta-400A) 0.05rem,#fbf3f6 0)0/1.5rem 1.5rem;
+        {# --_body: repeating-linear-gradient(-45deg,var(--ax-brand-magenta-100) 0 10px, var(--ax-brand-magenta-300) 10px 20px); #}
+      }
+    </style>
+    {% endif %}
   </head>
-  <body style="{{ '--_body:#fbf3f6' if account.type == 'agent' }}">
+  <body>
     {%- if page.url != '/idporten/' %}     
       {% include "partials/header.njk" %}
     {%- else %}
