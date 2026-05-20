@@ -40,14 +40,14 @@
 
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" eleventy:ignore>
           <defs>
-            <clipPath id="a">
-              <path id="spyglassClip" fill="black" d="m5.5 0 2.65 4.24a8.5 8.5 0 0 0 7.96 12.74L20.5 24H-15V0z"/>
+            <clipPath id="spyglassMask">
+              <path class="hamburger-spyglass" fill="black" d="m5.5 0 2.65 4.24a8.5 8.5 0 0 0 7.96 12.74L20.5 24H-15V0z"/>
             </clipPath>
           </defs>
-          <g stroke="currentColor" stroke-linecap="round" stroke-width="1.8" clip-path="url(#a)">
+          <g stroke="currentColor" stroke-linecap="round" stroke-width="1.8" clip-path="url(#spyglassMask)">
             <path d="M3 5h18M3 12h18M3 19h18"/>
           </g>
-          <g id="spyglassGroup">
+          <g class="hamburger-spyglass">
           <circle cx="15" cy="8.5" r="5" stroke="currentColor" stroke-width="1.8" transform="rotate(90 15 8.5)"/>
           <path stroke="currentColor" stroke-linecap="round" stroke-width="1.8" d="m17.5 13 3.5 6"/>
           </g>
@@ -132,12 +132,13 @@
               <small>Personer du kan representere</small>
             </div>
           </a>
-          <details>
+          <details open>
             <summary>
               <span class="sr-only">Hurtigbytte</span>
               {{ '/src/assets/images/icon-chevrondown.svg' | svgContents | safe }}
             </summary>
-            <div>
+            <div class="scroll-container">
+              {% for i in range(0,1) %}                
               {% for profile in site.agents %}
                 <a class="agent" href="/{{ profile.name | slugify }}/minside/">
                   <div class="agent__icon avatar {{ 'avatar--main' if profile.type != 'agent' }}" style="view-transition-name: avatar-{{ profile.name | slugify }}">
@@ -148,6 +149,7 @@
                     <small>{{ profile.role }}</small>
                   </div>
                 </a>
+              {% endfor %}
               {% endfor %}
             </div>
           </details>

@@ -43,16 +43,8 @@
     {% else %}
     <style>{% getBundle "css" %}</style>
     {% endif %}
-    {% if agent.type == 'agent' %}
-    <style>
-      :root {
-        --_body: radial-gradient(1q,var(--ax-brand-magenta-400A) 0.05rem,#fbf3f6 0)0/1.5rem 1.5rem;
-        {# --_body: repeating-linear-gradient(-45deg,var(--ax-brand-magenta-100) 0 10px, var(--ax-brand-magenta-300) 10px 20px); #}
-      }
-    </style>
-    {% endif %}
   </head>
-  <body>
+  <body class="{{ 'patternFun' if agent.type == 'agent' }}">
     {%- if page.url != '/idporten/' %}     
       {% include "partials/header.njk" %}
     {%- else %}

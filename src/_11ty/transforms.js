@@ -8,7 +8,7 @@ const minifyHtml = (content, outputPath) => {
       removeComments: true,
       collapseWhitespace: true,
       minifyCSS: {
-        level: 2,
+        level: 1,
       },
     });
     return minified;

@@ -3,7 +3,7 @@
 :root {
   --edge-padding: clamp(1.25rem, -100px + 18.75vw, 5rem);
   --edge-padding: clamp(1.25rem, 5vw, 5rem);
-  --_body:#F6F7F9;
+  --_body:hsl(220, 32%, 96%);
 
   --ax-text-neutral: var(--ax-neutral-1000);
   --ax-text-logo: #C30000;
@@ -355,7 +355,7 @@ a {
     grid-area: search;
     inline-size: stretch;
     border: 0;
-    background: var(--ax-neutral-200);
+    background: hsl(220, 32%, 94%);
   }
 }
 
@@ -390,7 +390,7 @@ a {
     border-radius: var(--ax-radius-8);
     translate: var(--ax-space-6);
 
-    @media (width > 400px) {
+    @media (width > 480px) {
       padding-inline: var(--ax-space-16) var(--ax-space-12);
     }
 
@@ -399,7 +399,7 @@ a {
     }
 
     span {
-      @media (width <= 400px) {
+      @media (width <= 480px) {
         clip-path: inset(50%);
         white-space: nowrap;
         border: 0;
@@ -435,14 +435,13 @@ a {
     list-style-type: none;
   }
 }
-
 .site-menu-content {
   padding-block: 1lh 2lh;
   display: grid;
   gap: var(--ax-space-32);
 
   @media (width > 840px) {
-    grid-template-columns: 4fr auto 3fr;
+    grid-template-columns: 1fr auto 1fr;
     gap: var(--ax-space-24);
   }
   h2 {
@@ -452,19 +451,15 @@ a {
   
 
   .menu-tiles {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(30ch, 100%), 1fr));
-    gap: var(--ax-space-12);
+    columns: 26ch;
 
-    li {
-      border-radius: var(--ax-radius-8);
-      background-color: var(--ax-accent-200);
-      padding: var(--ax-space-10);
+    li + li {
+      margin-block-start: var(--ax-space-12);
     }
   }
 
   .menu-list {
-    columns: 20ch;
+    columns: 26ch;
 
     li + li {
       margin-block-start: var(--ax-space-12);
@@ -477,17 +472,17 @@ a {
     gap: 0.75ch;
 
 
-    svg {
+    /* svg {
       border-radius: var(--ax-radius-full);
       background-color: var(--ax-accent-200);
       padding: var(--ax-space-10);
-    }
+    } */
   }
 }
 
 
 .menu-col-separator {
-  margin-inline: var(--ax-space-40);
+  margin-inline: var(--ax-space-32);
   inline-size: 1px;
   background-color: var(--ax-neutral-200);
 
@@ -623,6 +618,7 @@ a {
   details[open] > div {
     background-color: var(--ax-neutral-100);
     margin-block-end: var(--ax-space-8);
+    max-block-size: 12lh;
   }
   details a {
       padding-inline-start: var(--ax-space-48);
@@ -818,9 +814,22 @@ a {
   overflow: hidden;
 }
 
-:is(#spyglassClip,#spyglassGroup) {
+
+.hamburger-spyglass {
   transition: translate 200ms ease-in-out;
-  @media (width > 840px) { translate:15px }
+
+  @media (width > 840px) { 
+    translate:15px;
+  }
+}
+
+.patternFun {
+  --s: 60px;
+  --c1: var(--ax-brand-magenta-100);
+  --c2: var(--ax-brand-magenta-200);
+  --_g: #0000 8%, var(--c1) 0 17%, #0000 0 58%;
+  background: linear-gradient(135deg, #0000 20.5%, var(--c1) 0 29.5%, #0000 0) 0 calc(var(--s) / 4), linear-gradient(45deg, var(--_g)) calc(var(--s) / 2) 0, linear-gradient(135deg, var(--_g), var(--c1) 0 67%, #0000 0), linear-gradient(45deg, var(--_g), var(--c1) 0 67%, #0000 0 83%, var(--c1) 0 92%, #0000 0), var(--c2);
+  background-size: var(--s) var(--s);
 }
 
 
@@ -876,4 +885,88 @@ a {
 }
  */
 
- /* { outline: 1px solid #F00A }
+ /* { outline: 1px solid #F00A } */
+
+
+@supports (animation-timeline: scroll()) {
+
+  /* Scroll Indicators */
+  @keyframes reveal {
+    0% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
+
+  .scroll-container {
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    scroll-timeline: --scroll-timeline y;
+  }
+  .scroll-container::before,
+  .scroll-container::after {
+    content: '';
+    display: block;
+    position: sticky;
+    left: 0em;
+    right: 0em;
+    height: 0.5rem;
+
+    visibility: hidden;
+  }
+
+  .scroll-container::before {
+    top: 0;
+    background: radial-gradient(farthest-side at 50% 0, #0002, #0000);
+    margin-block-end:-0.5rem;
+  }
+
+  .scroll-container::after {
+    bottom: 0;
+    background: radial-gradient(farthest-side at 50% 100%, #0002, #0000);
+    animation-direction: reverse;
+    animation-range: calc(100% - 40px) calc(100% - 20px);
+    margin-block-start:-0.5rem;
+  }
+
+  .scroll-container::before,
+  .scroll-container::after {
+    animation-name: reveal;
+    animation-timeline: --scroll-timeline;
+    animation-fill-mode: both;
+    content: "";
+  }
+
+  .scroll-container::before {
+    animation-range: 1em 2em;
+  }
+
+  .scroll-container::after {
+    animation-direction: reverse;
+    animation-range: calc(100% - 2em) calc(100% - 1em);
+  }
+
+  /* Only show Scroll Indicators when the scroller can actually scroll */
+  @keyframes detect-scroll {
+    from,
+    to {
+      --can-scroll: ;
+    }
+  }
+
+  .scroll-container {
+    animation: detect-scroll;
+    animation-timeline: --scroll-timeline;
+    animation-fill-mode: none;
+  }
+
+  .scroll-container::before,
+  .scroll-container::after {
+    --visibility-if-can-scroll: var(--can-scroll) visible;
+    --visibility-if-cant-scroll: hidden;
+    visibility: var(--visibility-if-can-scroll, var(--visibility-if-cant-scroll));
+  }
+}
