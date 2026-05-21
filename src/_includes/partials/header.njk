@@ -22,11 +22,11 @@
 
     <div class="site-audience">
       <button popovertarget="audience">
-        <span>{{ site.audience[0] }}</span>
+        <span>{{ audience[0] }}</span>
         {{ '/src/assets/images/icon-chevrondown.svg' | svgContents | safe }}
       </button>
       <div id="audience" popover>
-        {%- for audience in site.audience %}
+        {%- for audience in audience %}
         <a href="#" {{- 'aria-current=page' if loop.first -}}>{{ audience }}</a>
         {%- endfor %}
       </div>
@@ -37,7 +37,6 @@
     <nav class="site-menu">
       <button popovertarget="site-menu" style="view-transition-name: hamburger">
         <span>Meny</span>
-
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" eleventy:ignore>
           <defs>
             <clipPath id="spyglassMask">
@@ -103,21 +102,18 @@
     {%- if loggedIn %}
     <button class="site-account-button agent" popovertarget="site-account-menu" type="button">
       <div class="agent__text stack-text">
-        <strong>{{ site.agents[0].name }}</strong>
-        {#- <small>{{ site.notifications | length }} oppgaver venter</small> #}
-        <small>{%- if not agent.name or agent.type == 'main' -%}
-          {{ site.agents[0].role }}
-          {%- else %}
-          På vegne av {{ agent.name }}
-          {%- endif %}</small>
+        <strong>{{ agents[0].name }}</strong>
+        <small>
+          {{ ('På vegne av ' + agent.name) if agent.type == 'agent' else agents[0].role}}
+        </small>
       </div>
       <div class="agent__icon avatar {{ 'avatar--main' if agent.type != 'agent' }}" style="view-transition-name: avatar-{{ agent.name | slugify }}">
-        {{ (agent.icon or site.agents[0].icon) | svgContents | safe }}
+        {{ (agent.icon or agents[0].icon) | svgContents | safe }}
       </div>
     </button>
     <div class="site-account-menu" id="site-account-menu" popover>
       <div>
-        <a href="/{{ (agent.name or site.agents[0].name) | slugify }}/minside/">
+        <a href="/{{ (agent.name or agents[0].name) | slugify }}/minside/">
           {{ '/src/assets/images/icon-squaregrid.svg' | svgContents | safe }}
           <div class="stack-text">
             <strong>
@@ -134,7 +130,7 @@
           </div>
         </a>
         <a href="/{{ agent.name | slugify }}/representasjon/">
-          {{ '/src/assets/images/icon-persongroup.svg' | svgContents | safe }}
+          {{ '/src/assets/images/icon-passport.svg' | svgContents | safe }}
           <div class="stack-text">
             <strong>Representasjon</strong>
             <small>Personer du kan representere</small>
@@ -145,7 +141,7 @@
             <strong>Velg profil</strong>
           </p>
           {% for i in range(0,1) %}
-          {% for profile in site.agents %}
+          {% for profile in agents %}
             <a class="agent" href="/{{ profile.name | slugify }}/minside/">
               <div class="agent__icon avatar {{ 'avatar--main' if profile.type != 'agent' }}" style="view-transition-name: avatar-{{ profile.name | slugify }}">
                 {{ profile.icon | svgContents | safe }}
@@ -154,6 +150,7 @@
                 <strong>{{ profile.name }}</strong>
                 <small>{{ profile.role }}</small>
               </div>
+              {% if loop.first %}<span class="tag">Deg</span>{% endif %}
             </a>
           {% endfor %}
           {% endfor %}

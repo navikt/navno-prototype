@@ -3,15 +3,13 @@ title: Sykepenger
 layout: "base.njk"
 loggedIn: true
 pagination:
-  data: site.agents
+  data: agents
   size: 1
   alias: agent
 permalink: "/{{ agent.name | slugify }}/minside/sykepenger/index.html"
 ---
 
 <div class="container container--prose">
-  <div class="page-crumbs">
-    <a href="/{{ agent.name | slugify }}/"></a>
-  </div>
+  <div class="page-crumbs"><a href="/{{ agents[0].name | slugify }}/minside/">Min side</a> /</div>
   <h1>{{ title }}</h1>
 </div>

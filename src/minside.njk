@@ -2,7 +2,7 @@
 layout: "base.njk"
 loggedIn: true
 pagination:
-  data: site.agents
+  data: agents
   size: 1
   alias: agent
 permalink: "/{{ agent.name | slugify }}/minside/index.html"
@@ -10,7 +10,7 @@ permalink: "/{{ agent.name | slugify }}/minside/index.html"
 
 <div class="container container--prose">
   <header class="page-header">
-    <h1>{{ 'På vegne av' if agent.type == 'agent' or 'Hei,' }} {{ agent.name or site.agents[0].name }}</h1>
+    <h1>{{ 'På vegne av' if agent.type == 'agent' else 'Hei,' }} {{ agent.name or agents[0].name }}</h1>
     <br>
 
     {% if agent.type == 'main' %}     

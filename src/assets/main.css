@@ -201,7 +201,8 @@ body {
   grid-template-rows: auto 1fr auto;
 
   & > * {
-    inline-size: stretch;
+    inline-size: 100%;
+    box-sizing: border-box;
   }
 }
 
@@ -209,6 +210,14 @@ body {
   margin-block: 0;
 }
 
+:where(h1) {
+  line-height: 1.35;
+  margin-block-end: 0.5lh;
+}
+
+:where(h2) {
+  line-height: 1.45;
+}
 
 :where(strong, b) {
   font-weight: 600;
@@ -314,7 +323,7 @@ a {
     &:popover-open {
       padding-block: 0.5rem;
       border-radius: var(--ax-radius-12);
-      margin-inline-start: calc(var(--ax-space-8) * -1);
+      margin-inline-start: calc(var(--ax-space-10) * -1);
       box-shadow: 0 0.125rem 1rem -0.25rem hsl(0 0 0 / 0.2);
     }
     &::backdrop {
@@ -325,7 +334,7 @@ a {
       text-align: left;
       text-decoration: none;
       color: inherit;
-      padding: 0.625rem 1.5rem;
+      padding: var(--ax-space-10) var(--ax-space-20);
 
       &:hover {
         background-color: var(--ax-neutral-100);
@@ -532,6 +541,13 @@ a {
   border-radius: var(--ax-radius-8);
   cursor: pointer;
   translate: var(--ax-space-12);
+
+  small {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    max-inline-size: 32ch;
+    overflow: clip;
+  }
 }
 
 .site-account-menu {
@@ -595,19 +611,19 @@ a {
 .agent-switcher {
   background-color: var(--ax-neutral-100);
   position: relative;
-  max-block-size: 11lh;
+  max-block-size: 10lh;
 
   & > p {
     background: linear-gradient(var(--ax-neutral-100) 80%, #0000);
-    padding: var(--ax-space-8) var(--ax-space-20) var(--ax-space-4) 50px;
-    margin-block:-0.5rem;
+    padding: var(--ax-space-12) var(--ax-space-20) var(--ax-space-8) 52px;
+    margin-block:-0.5rem 0;
     position: sticky;
     z-index: 2;
     inset-block-start: 0;
   }
 
   & > a {
-    padding: var(--ax-space-12) var(--ax-space-20) var(--ax-space-12) 50px;
+    padding: var(--ax-space-12) var(--ax-space-20) var(--ax-space-12) 52px;
   }
   a {
     padding-block: var(--ax-space-12);
@@ -616,7 +632,7 @@ a {
 
 
 
-.account-list {
+.agent-list {
   margin-block-start: var(--ax-space-40);
 
   h2 {
@@ -644,7 +660,7 @@ a {
   padding-block: var(--ax-space-16);
   display: flex;
   align-items: center;
-  gap: var(--ax-space-8);
+  gap: var(--ax-space-12);
   text-decoration: none;
   border: 1px solid #0000;
   z-index: 1;
@@ -673,6 +689,16 @@ a {
   }
 }
 
+.tag {
+  align-self: center;
+  margin-inline: auto var(--ax-space-8);
+  color: var(--ax-text-neutral);
+  font-size: 83.5%;
+  border-radius: 99ch;
+  background-color: var(--ax-neutral-200A);
+  padding: var(--ax-space-4) var(--ax-space-12)
+}
+
 .agent {
   display: flex;
   align-items: start;
@@ -681,6 +707,8 @@ a {
 
 .stack-text {
   display: grid;
+  line-height: 1.35;
+  row-gap: 0.125lh;
 
   small {
     opacity: 0.8;
@@ -786,6 +814,25 @@ a {
   }
 }
 
+.idporten {
+  text-decoration: none;
+  box-sizing: border-box;
+  inline-size: max-content;
+  display: block;
+  margin-inline: auto;
+  background: lightblue;
+  color: darkblue;
+  font-size: 1.5rem;
+  padding:2rem 4rem;
+  border: 1px solid hsl(from lightblue H S calc(L - 8));
+  border-radius: 0.5rem;
+
+  &:hover {
+    border-color: lightblue;
+    background: hsl(from lightblue H calc(S + 20) calc(L + 8));
+  }
+}
+
 
 /*
 .patternFun {
@@ -850,6 +897,11 @@ a {
 
  /* { outline: 1px solid #F00A } */
 
+.scroll-container {
+  position: relative;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
 
 @supports (animation-timeline: scroll()) {
 
@@ -865,11 +917,9 @@ a {
   }
 
   .scroll-container {
-    position: relative;
-    overflow-y: auto;
-    overscroll-behavior: contain;
     scroll-timeline: --scroll-timeline y;
   }
+
   .scroll-container::before,
   .scroll-container::after {
     content: '';

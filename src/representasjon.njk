@@ -3,20 +3,20 @@ layout: "base.njk"
 title: "Velg profil"
 loggedIn: true
 pagination:
-  data: site.agents
+  data: agents
   size: 1
   alias: agent
 permalink: "/{{ agent.name | slugify }}/representasjon/index.html"
 ---
 
 <div class="container container--prose account-selection">
-  <div class="page-crumbs"><a href="/{{ site.agents[0].name | slugify }}/minside/">Min side</a> /</div>
+  <div class="page-crumbs"><a href="/{{ agents[0].name | slugify }}/minside/">Min side</a> /</div>
   <h1>{{ title }}</h1>
   <p>Du kan endre valget senere, ved å trykke på profilen din.</p>
   
-  <div class="account-list">
+  <div class="agent-list">
     <ul>
-      {%- for profile in site.agents %}
+      {%- for profile in agents %}
       <li>
         <a class="account-option" href="/{{ profile.name | slugify }}/minside/">
           <div class="avatar {{ 'avatar--main' if profile.type != 'agent' }}">
@@ -26,6 +26,7 @@ permalink: "/{{ agent.name | slugify }}/representasjon/index.html"
             <strong>{{ profile.name }}</strong>
             <small>{{ profile.role }}</small>
           </div>
+          {% if loop.first %}<span class="tag">Deg</span>{% endif %}
         </a>
       </li>
       {%- endfor %}

@@ -7,9 +7,8 @@ title: ID-porten
     .site-content {
       display: grid;
       place-items: center;
-    }
-    @scope {
-      :scope {
+
+      & > {
         block-size: 80vb;
         inline-size: min(240px, 100%);
         margin-inline: auto;
@@ -18,25 +17,7 @@ title: ID-porten
         text-align: center;
         align-self: center;
       }
-      a {
-        text-decoration: none;
-        box-sizing: border-box;
-        inline-size: max-content;
-        display: block;
-        margin-inline: auto;
-        background: lightblue;
-        color: darkblue;
-        font-size: 1.5rem;
-        padding:2rem 4rem;
-        border: 1px solid hsl(from lightblue H S calc(L - 8));
-        border-radius: 0.5rem;
-
-        &:hover {
-          border-color: lightblue;
-          background: hsl(from lightblue H calc(S + 20) calc(L + 8));
-        }
-      }
     }
   </style>
-  <a href="/{{ site.agents[0].name | slugify }}/minside/">Dummy-BankID</a>
+  <a class="idporten" href="/{{ agents[0].name | slugify }}/minside/">Dummy-BankID</a>
 </div>
