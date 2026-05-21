@@ -576,64 +576,6 @@ a {
   }
 }
 
-.site-agency-switcher {
-  position: relative;
-
-  & > a {
-    display: grid;
-    grid-row: 1;
-    grid-column: 1 / -1;
-    padding-inline: var(--ax-space-20) var(--ax-space-64);
-  }
-  a {
-    padding-block: var(--ax-space-12);
-  }
-
-  
-  summary {
-    position: absolute;
-    inset: var(--ax-space-16) var(--ax-space-16) auto auto;
-    border-radius: var(--ax-radius-8);
-    padding: var(--ax-space-8) var(--ax-space-8);
-    line-height: 1;
-    justify-self: end;
-    align-self: center;
-    background-color: var(--ax-neutral-100);
-    cursor: pointer;
-    list-style-type: none;
-
-    &:hover {
-      background-color: var(--ax-neutral-100A);
-    }
-  }
-
-  &:has(> a:hover) summary {
-    background-color: var(--ax-neutral-000);
-  }
-
-  details > div {
-    grid-column: 1 / -1;
-    grid-row: 2;
-  }
-  details[open] > div {
-    background-color: var(--ax-neutral-100);
-    margin-block-end: var(--ax-space-8);
-    max-block-size: 12lh;
-  }
-  details a {
-      padding-inline-start: var(--ax-space-48);
-      padding-block: var(--ax-space-10);
-
-      &:first-of-type {
-        padding-block-start: var(--ax-space-16);
-      }
-      &:last-of-type {
-        padding-block-end: var(--ax-space-16);
-      }
-  }
-}
-
-
 .site-content {
     padding-block: var(--ax-space-24);
     inline-size: stretch;
@@ -648,6 +590,30 @@ a {
   background-color: var(--ax-brand-blue-1000);
   padding-block: var(--ax-space-128);
 }
+
+
+.agent-switcher {
+  background-color: var(--ax-neutral-100);
+  position: relative;
+  max-block-size: 11lh;
+
+  & > p {
+    background: linear-gradient(var(--ax-neutral-100) 80%, #0000);
+    padding: var(--ax-space-8) var(--ax-space-20) var(--ax-space-4) 50px;
+    margin-block:-0.5rem;
+    position: sticky;
+    z-index: 2;
+    inset-block-start: 0;
+  }
+
+  & > a {
+    padding: var(--ax-space-12) var(--ax-space-20) var(--ax-space-12) 50px;
+  }
+  a {
+    padding-block: var(--ax-space-12);
+  }
+}
+
 
 
 .account-list {
@@ -672,6 +638,7 @@ a {
     border-color: #0000;
   }
 }
+
 
 .account-option {
   padding-block: var(--ax-space-16);
@@ -708,12 +675,8 @@ a {
 
 .agent {
   display: flex;
-  align-items: center;
+  align-items: start;
   column-gap: 1ch;
-
-  .agent__text {
-    white-space: nowrap;
-  }
 }
 
 .stack-text {
@@ -823,6 +786,8 @@ a {
   }
 }
 
+
+/*
 .patternFun {
   --s: 60px;
   --c1: var(--ax-brand-magenta-100);
@@ -832,9 +797,7 @@ a {
   background-size: var(--s) var(--s);
 }
 
-
-
-/* .site-agency {
+.site-agency {
   --_agency-bg: var(--ax-brand-magenta-700);
   grid-area: agency;
   grid-column: 1 / -1;
@@ -902,6 +865,7 @@ a {
   }
 
   .scroll-container {
+    position: relative;
     overflow-y: auto;
     overscroll-behavior: contain;
     scroll-timeline: --scroll-timeline y;
@@ -911,21 +875,20 @@ a {
     content: '';
     display: block;
     position: sticky;
-    left: 0em;
-    right: 0em;
-    height: 0.5rem;
-
+    inset-inline: 0;
+    block-size: 0.5rem;
     visibility: hidden;
+    z-index: 3;
   }
 
   .scroll-container::before {
-    top: 0;
+    inset-block-start: 0;
     background: radial-gradient(farthest-side at 50% 0, #0002, #0000);
     margin-block-end:-0.5rem;
   }
 
   .scroll-container::after {
-    bottom: 0;
+    inset-block-end: 0;
     background: radial-gradient(farthest-side at 50% 100%, #0002, #0000);
     animation-direction: reverse;
     animation-range: calc(100% - 40px) calc(100% - 20px);

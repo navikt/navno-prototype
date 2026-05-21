@@ -10,9 +10,10 @@ permalink: "/{{ agent.name | slugify }}/minside/index.html"
 
 <div class="container container--prose">
   <header class="page-header">
-    <h1>Hei, {{ agent.name or site.agents[0].name }}</h1>
+    <h1>{{ 'På vegne av' if agent.type == 'agent' or 'Hei,' }} {{ agent.name or site.agents[0].name }}</h1>
     <br>
 
+    {% if agent.type == 'main' %}     
     <div class="card">
       <a href="#" class="stack-text">
         <strong>Dialog med Nav</strong>
@@ -20,6 +21,7 @@ permalink: "/{{ agent.name | slugify }}/minside/index.html"
       </a>
     </div>
     <br>
+    {% endif %}
 
     <div class="">
       <h2>Oppgaver</h2>

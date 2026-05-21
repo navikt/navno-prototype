@@ -118,42 +118,14 @@
     <div class="site-account-menu" id="site-account-menu" popover>
       <div>
         <a href="/{{ (agent.name or site.agents[0].name) | slugify }}/minside/">
-          {{ '/src/assets/images/icon-house.svg' | svgContents | safe }}
+          {{ '/src/assets/images/icon-squaregrid.svg' | svgContents | safe }}
           <div class="stack-text">
-            <strong>Min side</strong>
+            <strong>
+              Min side ({{ agent.name }})
+              </strong>
             <small>2 oppgaver venter</small>
           </div>
         </a>
-        <div class="site-agency-switcher">
-          <a href="/{{ agent.name | slugify }}/representasjon/">
-            {{ '/src/assets/images/icon-persongroup.svg' | svgContents | safe }}
-            <div class="stack-text">
-              <strong>Velg profil</strong>
-              <small>Personer du kan representere</small>
-            </div>
-          </a>
-          <details open>
-            <summary>
-              <span class="sr-only">Hurtigbytte</span>
-              {{ '/src/assets/images/icon-chevrondown.svg' | svgContents | safe }}
-            </summary>
-            <div class="scroll-container">
-              {% for i in range(0,1) %}                
-              {% for profile in site.agents %}
-                <a class="agent" href="/{{ profile.name | slugify }}/minside/">
-                  <div class="agent__icon avatar {{ 'avatar--main' if profile.type != 'agent' }}" style="view-transition-name: avatar-{{ profile.name | slugify }}">
-                    {{ profile.icon | svgContents | safe }}
-                  </div>
-                  <div class="agent__text stack-text">
-                    <strong>{{ profile.name }}</strong>
-                    <small>{{ profile.role }}</small>
-                  </div>
-                </a>
-              {% endfor %}
-              {% endfor %}
-            </div>
-          </details>
-        </div>
         <a href="#">
           {{ '/src/assets/images/icon-informationsquare.svg' | svgContents | safe }}
           <div class="stack-text">
@@ -161,8 +133,32 @@
             <small>Kontaktinfo, kontonummer, osv.</small>
           </div>
         </a>
+        <a href="/{{ agent.name | slugify }}/representasjon/">
+          {{ '/src/assets/images/icon-persongroup.svg' | svgContents | safe }}
+          <div class="stack-text">
+            <strong>Representasjon</strong>
+            <small>Personer du kan representere</small>
+          </div>
+        </a>
+        <div class="agent-switcher scroll-container">
+          <p class="stack-text">
+            <strong>Velg profil</strong>
+          </p>
+          {% for i in range(0,1) %}
+          {% for profile in site.agents %}
+            <a class="agent" href="/{{ profile.name | slugify }}/minside/">
+              <div class="agent__icon avatar {{ 'avatar--main' if profile.type != 'agent' }}" style="view-transition-name: avatar-{{ profile.name | slugify }}">
+                {{ profile.icon | svgContents | safe }}
+              </div>
+              <div class="agent__text stack-text">
+                <strong>{{ profile.name }}</strong>
+                <small>{{ profile.role }}</small>
+              </div>
+            </a>
+          {% endfor %}
+          {% endfor %}
+        </div>
       </div>
-      <div class="separator-line"></div>
       <div>
         <a href="/">
           {{ '/src/assets/images/icon-leave.svg' | svgContents | safe }}
