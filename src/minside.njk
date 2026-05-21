@@ -1,0 +1,54 @@
+---
+layout: "base.njk"
+loggedIn: true
+pagination:
+  data: agents
+  size: 1
+  alias: agent
+permalink: "/{{ agent.name | slugify }}/minside/index.html"
+---
+
+<div class="container container--prose">
+  <header class="page-header">
+    <h1>{{ 'På vegne av' if agent.type == 'agent' else 'Hei,' }} {{ agent.name or agents[0].name }}</h1>
+    <br>
+
+    {% if agent.type == 'main' %}     
+    <div class="card">
+      <a href="#" class="stack-text">
+        <strong>Dialog med Nav</strong>
+        <small>Ingen nye meldinger</small>
+      </a>
+    </div>
+    <br>
+    {% endif %}
+
+    <div class="">
+      <h2>Oppgaver</h2>
+    </div>
+    <br>
+
+    <div class="">
+      <h2>Pengestøtte</h2>
+
+      <div style="display:grid; gap:var(--ax-space-6)">
+        <article class="card">
+          <a class="card__title" href="/{{ agent.name | slugify }}/minside/sykepenger/">Sykepenger</a><br>
+          <small>Status for pengestøtten …</small>
+        </article>
+
+        <article class="card">
+          <a class="card__title" href="#">Økonomisk sosialhjelp</a><br>
+            <small>Status for pengestøtten …</small>
+        </article>
+
+        <article class="card">
+          <a class="card__title" href="#">Utbetalinger</a><br>
+          <small>Status for pengestøtten …</small>
+        </article>
+      </div>
+    </div>
+
+
+  </header>
+</div>

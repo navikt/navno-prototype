@@ -1,47 +1,30 @@
 export default {
-  audience: [
-    {
-      title: "Privatperson",
-      description: "Lorem ipsum dolor sit amet",
-      href: "#",
-    },
-    {
-      title: "Arbeidsgiver",
-      description: "Lorem ipsum dolor sit amet",
-      href: "#",
-    },
-    {
-      title: "Samarbeidspartner",
-      description: "Lorem ipsum dolor sit amet",
-      href: "#",
-    },
-  ],
   areas: {
     title: "Områder",
     linkList: [
       {
         text: "Arbeid",
-        icon: "/src/_includes/svg/icons/suitcase.svg",
+        icon: "/src/assets/images/icon-briefcase.svg",
       },
       {
         text: "Helse og sykdom",
-        icon: "/src/_includes/svg/icons/medkit.svg",
+        icon: "/src/assets/images/icon-stethoscope.svg",
       },
       {
         text: "Familie og barn",
-        icon: "/src/_includes/svg/icons/family.svg",
+        icon: "/src/assets/images/icon-househeart.svg",
       },
       {
         text: "Pensjon",
-        icon: "/src/_includes/svg/icons/umbrella.svg",
+        icon: "/src/assets/images/icon-sackpension.svg",
       },
       {
         text: "Sosiale tjenester og veiledning",
-        icon: "/src/_includes/svg/icons/socialaid.svg",
+        icon: "/src/assets/images/icon-handheart.svg",
       },
       {
         text: "Hjelpemidler og tilrettelegging",
-        icon: "/src/_includes/svg/icons/wheelchair.svg",
+        icon: "/src/assets/images/icon-wheelchair.svg",
       },
     ],
   },
@@ -58,50 +41,4 @@ export default {
       { text: "Kontakt oss" },
     ],
   },
-  user: [
-    {
-      linkList: [
-        {
-          text: "Min side",
-          icon: "/src/_includes/svg/icons/grid.svg",
-        },
-        {
-          text: "Mine utbetalinger",
-          icon: "/src/_includes/svg/icons/wallet.svg",
-        },
-        {
-          text: "Mine saker",
-          icon: "/src/_includes/svg/icons/document.svg",
-        },
-        {
-          text: "Innboks",
-          icon: "/src/_includes/svg/icons/envelope.svg",
-        },
-        {
-          text: "Personopplysninger",
-          icon: "/src/_includes/svg/icons/user.svg",
-        },
-      ],
-    },
-    {
-      linkList: [
-        {
-          text: "Min pensjon",
-          icon: "/src/_includes/svg/icons/bookmark.svg",
-        },
-        {
-          text: "Arbeidssøker",
-          icon: "/src/_includes/svg/icons/bookmark.svg",
-        },
-      ],
-    },
-    {
-      linkList: [
-        {
-          text: "Logg ut",
-          icon: "/src/_includes/svg/icons/exit.svg",
-        },
-      ],
-    },
-  ],
 };

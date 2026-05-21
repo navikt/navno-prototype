@@ -1,0 +1,36 @@
+---
+layout: "base.njk"
+title: "Velg profil"
+loggedIn: true
+pagination:
+  data: agents
+  size: 1
+  alias: agent
+permalink: "/{{ agent.name | slugify }}/representasjon/index.html"
+---
+
+<div class="container container--prose account-selection">
+  <div class="page-crumbs"><a href="/{{ agents[0].name | slugify }}/minside/">Min side</a> /</div>
+  <h1>{{ title }}</h1>
+  <p>Du kan endre valget senere, ved å trykke på profilen din.</p>
+  
+  <div class="agent-list">
+    <ul>
+      {%- for profile in agents %}
+      <li>
+        <a class="account-option" href="/{{ profile.name | slugify }}/minside/">
+          <div class="avatar {{ 'avatar--main' if profile.type != 'agent' }}">
+            {{ profile.icon | svgContents | safe }}
+          </div>
+          <div>
+            <strong>{{ profile.name }}</strong>
+            <small>{{ profile.role }}</small>
+          </div>
+          {% if loop.first %}<span class="tag">Deg</span>{% endif %}
+        </a>
+      </li>
+      {%- endfor %}
+    </ul>
+  </div>
+
+</div>

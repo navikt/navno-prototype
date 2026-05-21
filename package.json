@@ -1,11 +1,11 @@
 {
   "name": "navno-prototype",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "",
-  "author": "Martin Berglund <marberglund@gmail.com>",
+  "author": "Martin Berglund <martin.berglund@nav.no>",
   "repository": {
     "type": "git",
-    "url": "https://github.com/macbruker/navno-prototype"
+    "url": "https://github.com/navikt/navno-prototype"
   },
   "type": "module",
   "engines": {
@@ -14,34 +14,21 @@
   "scripts": {
     "preinstall": "npx only-allow pnpm",
     "eleventy-debug": "DEBUG=Eleventy* pnpm exec eleventy",
-    "dev:eleventy": "pnpm exec eleventy --config=eleventy.config.js --serve",
-    "dev:css": "pnpm exec tailwindcss -i ./src/assets/main.css -o ./build/assets/main.min.css --watch",
-    "dev": "ELEVENTY_ENV=development pnpm run \"/^dev:.*/\"",
-    "build:eleventy": "ELEVENTY_ENV=production pnpm exec eleventy --config=eleventy.config.js",
-    "build:css": "NODE_ENV=production pnpm exec tailwindcss -i ./src/assets/main.css -o ./build/assets/main.min.css",
-    "build": "pnpm run \"/^build:.*/\"",
+    "dev": "pnpm exec eleventy --config=eleventy.config.js --serve",
+    "build": "NODE_ENV=production ELEVENTY_ENV=production pnpm exec eleventy --config=eleventy.config.js",
     "serve": "NODE_ENV=production ELEVENTY_ENV=production pnpm exec eleventy --config=eleventy.config.js --serve"
   },
   "license": "MIT",
   "devDependencies": {
     "@11ty/eleventy": "3.1.5",
-    "@alpinejs/intersect": "3.15.12",
     "@sindresorhus/slugify": "3.0.0",
-    "@tailwindcss/cli": "4.2.4",
-    "alpinejs": "3.15.12",
-    "autoprefixer": "10.5.0",
-    "cheerio": "1.2.0",
-    "dotenv": "17.4.2",
     "eleventy-plugin-svg-contents": "0.7.0",
-    "eleventy-plugin-toc": "1.1.5",
     "html-minifier-terser": "7.2.0",
+    "lightningcss": "^1.32.0",
     "markdown-it": "14.1.1",
     "markdown-it-anchor": "9.2.0",
-    "markdown-it-mark": "4.0.0",
-    "markdown-it-toc-done-right": "4.2.0",
     "prettier": "3.8.3",
-    "prettier-plugin-multiline-arrays": "4.1.8",
-    "tailwindcss": "4.2.4"
+    "prettier-plugin-multiline-arrays": "4.1.8"
   },
   "packageManager": "pnpm@10.33.3+sha512.a19744364a7e248b92657a4ca5973f9354d21caf982579674b1c539f32c7420c47138ad8b1254df07aba9bc782d9b3029e3db34d5dbff974326eb74dac8ff489"
 }

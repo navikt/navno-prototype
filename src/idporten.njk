@@ -1,0 +1,23 @@
+---
+layout: "base.njk"
+title: ID-porten
+---
+<div class="id-porten">
+  <style>
+    .site-content {
+      display: grid;
+      place-items: center;
+
+      & > {
+        block-size: 80vb;
+        inline-size: min(240px, 100%);
+        margin-inline: auto;
+        display: grid;
+        place-items: center;
+        text-align: center;
+        align-self: center;
+      }
+    }
+  </style>
+  <a class="idporten" href="/{{ agents[0].name | slugify }}/minside/">Dummy-BankID</a>
+</div>

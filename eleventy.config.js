@@ -4,10 +4,8 @@
 
 import slugify from "@sindresorhus/slugify";
 import markdownIt from "markdown-it";
-import markdownItAnchor from "markdown-it-anchor";
-import markdownItMark from "markdown-it-mark";
 import { EleventyHtmlBasePlugin, EleventyRenderPlugin } from "@11ty/eleventy";
-import tocPlugin from "eleventy-plugin-toc";
+import { transform } from "lightningcss";
 
 import svgContents from "eleventy-plugin-svg-contents";
 import {
@@ -18,58 +16,19 @@ import {
   sortStringLast,
   lowerfirst,
   filterByTags,
-  tocData,
 } from "./src/_11ty/filters.js";
 import { timestampNow } from "./src/_11ty/shortcodes.js";
 import { minifyHtml, dummifyLinks } from "./src/_11ty/transforms.js";
 // import {} from "./src/_11ty/collections.js";
-
-const linkAfterHeaderOptions = {
-  class: "absolute inset-0",
-  style: "visually-hidden",
-  visuallyHiddenClass: "sr-only",
-  assistiveText: (title) => `Lenke til kapittel «${title}»`,
-  placement: "after",
-  symbol: "",
-  wrapper: ['<div class="relative heading-3">', "</div>"],
-};
-
-const headerLinkOptions = {
-  safariReaderFix: true,
-  class: "",
-};
 
 export default function (eleventyConfig) {
   // Eleventy Plugins
   eleventyConfig.addPlugin(EleventyHtmlBasePlugin);
   eleventyConfig.addPlugin(EleventyRenderPlugin);
   eleventyConfig.addPlugin(svgContents);
-  eleventyConfig.addPlugin(tocPlugin, {
-    tags: ["h3"],
-    wrapper: "",
-  });
-
-  // Markdown-it plugins
-  eleventyConfig.amendLibrary("md", (mdLib) =>
-    mdLib
-      .use(markdownItAnchor, {
-        level: [2, 3],
-        slugify: (s) => slugify(s.toLowerCase()),
-        permalink: markdownItAnchor.permalink.headerLink(headerLinkOptions),
-      })
-      .use(markdownItMark),
-  );
 
   // Copy static assets to build folder
-  eleventyConfig.addPassthroughCopy({ "./static/images/*": "/assets/images" });
   eleventyConfig.addPassthroughCopy({ "./static/fonts/*": "/assets/fonts" });
-  eleventyConfig.addPassthroughCopy({
-    "./node_modules/alpinejs/dist/cdn.min.js": "./assets/alpine.min.js",
-  });
-  eleventyConfig.addPassthroughCopy({
-    "./node_modules/@alpinejs/intersect/dist/cdn.min.js":
-      "./assets/alpine-intersect-plugin.min.js",
-  });
 
   // Watch extra files for changes
   eleventyConfig.setWatchThrottleWaitTime(100);
@@ -84,26 +43,31 @@ export default function (eleventyConfig) {
   eleventyConfig.addFilter("extractTags", extractTags);
   eleventyConfig.addFilter("sortStringLast", sortStringLast);
   eleventyConfig.addFilter("filterByTags", filterByTags);
-  eleventyConfig.addFilter("tocData", tocData);
 
   // Templating shortcodes
   eleventyConfig.addShortcode("now", timestampNow);
-  eleventyConfig.addPairedShortcode("prose", function (content, classes = "") {
-    const markdown = new markdownIt({
-      html: true,
-      linkify: false,
-      typographer: true,
-      quotes: "«»",
-    })
-      .use(markdownItAnchor, {
-        level: 3,
-        slugify: (s) => slugify(s.toLowerCase()),
-        permalink: markdownItAnchor.permalink.headerLink(headerLinkOptions),
-      })
-      .use(markdownItMark)
-      .disable("code")
-      .render(content);
-    return `<div class="prose ${classes}">${markdown}</div>`;
+
+  // Bundles
+  eleventyConfig.addBundle("css", {
+    toFileDirectory: "",
+    transforms: [
+      async function (content) {
+        // 'this.type' returns the bundle name.
+        if (this.type === "css") {
+          let result = await transform({
+            code: Buffer.from(content),
+            minify: true,
+            sourceMap: true,
+            drafts: {
+              nesting: true,
+            },
+            targets: { safari: (13 << 16) | (2 << 8) },
+          });
+          return result.code;
+        }
+        return content;
+      },
+    ],
   });
 
   // Transforms
@@ -115,6 +79,16 @@ export default function (eleventyConfig) {
     enabled: true,
     showVersion: true,
     port: 8888,
+  });
+
+  // Build Time
+  eleventyConfig.addGlobalData("generated", () => {
+    let now = new Date();
+    return new Intl.DateTimeFormat("no-NB", {
+      dateStyle: "full",
+      timeStyle: "long",
+      timeZone: "Europe/Oslo",
+    }).format(now);
   });
 
   eleventyConfig.setDataDeepMerge(true);
