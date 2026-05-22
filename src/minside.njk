@@ -10,45 +10,46 @@ permalink: "/{{ agent.name | slugify }}/minside/index.html"
 
 <div class="container container--prose">
   <header class="page-header">
-    <h1>{{ 'På vegne av' if agent.type == 'agent' else 'Hei,' }} {{ agent.name or agents[0].name }}</h1>
-    <br>
-
-    {% if agent.type == 'main' %}     
-    <div class="card">
-      <a href="#" class="stack-text">
-        <strong>Dialog med Nav</strong>
-        <small>Ingen nye meldinger</small>
-      </a>
-    </div>
-    <br>
-    {% endif %}
-
-    <div class="">
-      <h2>Oppgaver</h2>
-    </div>
-    <br>
-
-    <div class="">
-      <h2>Pengestøtte</h2>
-
-      <div style="display:grid; gap:var(--ax-space-6)">
-        <article class="card">
-          <a class="card__title" href="/{{ agent.name | slugify }}/minside/sykepenger/">Sykepenger</a><br>
-          <small>Status for pengestøtten …</small>
-        </article>
-
-        <article class="card">
-          <a class="card__title" href="#">Økonomisk sosialhjelp</a><br>
-            <small>Status for pengestøtten …</small>
-        </article>
-
-        <article class="card">
-          <a class="card__title" href="#">Utbetalinger</a><br>
-          <small>Status for pengestøtten …</small>
-        </article>
-      </div>
-    </div>
-
-
+    <h1>
+      {{ 'På vegne av' if agent.type == 'agent' else 'Hei,' }} 
+      {{ agent.name or agents[0].name }}
+    </h1>
   </header>
+
+  <div class="page-section card">
+    <a href="#" class="stack-text">
+      <strong>Dialog med Nav</strong>
+      <small>Ingen nye meldinger</small>
+    </a>
+  </div>
+
+  {% if agent.tasks %}
+  <section class="page-section">
+    <h2 class="page-section__title">Oppgaver</h2>
+    <div class="page-section__content" style="display:grid; gap:var(--ax-space-6)">
+      {%- for task in agent.tasks %}
+      <div class="card">
+        <h3><a href="#">{{ task.title }}</a></h3>
+        <p>{{ task.description }}</p>
+      </div>
+      {%- endfor %}
+      <a href="#">Tidligere oppgaver</a>
+    </div>
+  </section>
+  {% endif %}
+
+  {% if agent.products %}
+  <section class="page-section">
+    <h2 class="page-section__title">Pengestøtte</h2>
+    <div class="page-section__content" style="display:grid; gap:var(--ax-space-6)">
+      {%- for product in agent.products %}
+      <article class="card">
+        <a class="card__title" href="/{{ agent.name | slugify }}/minside/{{ product.title | slugify }}/">{{ product.title }}</a><br>
+        <small>{{ product.status }}</small>
+      </article>
+      {%- endfor %}
+    </div>
+  </section>
+  {% endif %}
+
 </div>

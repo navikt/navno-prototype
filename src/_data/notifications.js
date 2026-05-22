@@ -5,7 +5,7 @@ export default [
     type: "Varslet på SMS",
   },
   {
-    title: "Vi har mottatt søknaden din om arbeidsavklaringspenger",
+    title: "Vi har mottatt søknaden din om sykepenger",
     time: "13.10.23 kl. 15.23",
   },
 ];
