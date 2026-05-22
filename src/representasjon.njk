@@ -1,6 +1,6 @@
 ---
 layout: "base.njk"
-title: "Velg profil"
+title: "Representasjon"
 loggedIn: true
 pagination:
   data: agents
@@ -12,9 +12,11 @@ permalink: "/{{ agent.name | slugify }}/representasjon/index.html"
 <div class="container container--prose account-selection">
   <div class="page-crumbs"><a href="/{{ agents[0].name | slugify }}/minside/">Min side</a> /</div>
   <h1>{{ title }}</h1>
-  <p>Du kan endre valget senere, ved å trykke på profilen din.</p>
-  
+
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam blanditiis obcaecati ratione, molestiae suscipit inventore error consequuntur ab non atque neque enim repellat, itaque placeat possimus. Quam molestiae iure neque!</p>
+
   <div class="agent-list">
+    <h2>Velg hvem du skal representere</h2> 
     <ul>
       {%- for profile in agents %}
       <li>

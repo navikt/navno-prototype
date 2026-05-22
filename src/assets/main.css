@@ -225,7 +225,7 @@ body {
   margin-block: 0;
 }
 
-:where(p,ul,ol,dl) + :where(p,ul,ol,dl) {
+:where(h1,p,ul,ol,dl) + :where(h2, h3, p,ul,ol,dl) {
   margin-block-start: 1.5lh;
 }
 
@@ -618,9 +618,10 @@ a {
 
 
 .agent-switcher {
+  border-block: 1px solid var(--ax-neutral-200A);
   background-color: var(--ax-neutral-100);
   position: relative;
-  max-block-size: 10lh;
+  max-block-size: 8lh;
 
   & > p {
     background: linear-gradient(var(--ax-neutral-100) 80%, #0000);
@@ -702,10 +703,10 @@ a {
   align-self: center;
   margin-inline: auto var(--ax-space-8);
   color: var(--ax-text-neutral);
-  font-size: 83.5%;
+  font-size: smaller;
   border-radius: 99ch;
   background-color: var(--ax-neutral-200A);
-  padding: var(--ax-space-4) var(--ax-space-12)
+  padding: var(--ax-space-4) var(--ax-space-12);
 }
 
 .agent {
@@ -713,6 +714,28 @@ a {
   align-items: start;
   column-gap: 1ch;
 }
+
+.agent__icon {
+  position: relative;
+
+  &:has(.agent__tasks) .avatar {
+    mask: radial-gradient(1q at 40px 4px,#0000 12px,red 0);
+  }
+}
+
+.agent__tasks {
+  position: absolute;
+  inset: -6px -6px auto auto;
+  display: grid;
+  place-items: center;
+  background-color: var(--ax-brand-blue-1000);
+  inline-size: var(--ax-space-20);
+  font-size: small;
+  aspect-ratio: 1;
+  border-radius: var(--ax-radius-full);
+  color: var(--ax-neutral-000);
+}
+
 
 .stack-text {
   display: grid;

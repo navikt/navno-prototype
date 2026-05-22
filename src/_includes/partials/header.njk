@@ -107,8 +107,14 @@
           {{ ('På vegne av ' + agent.name) if agent.type == 'agent' else agents[0].role}}
         </small>
       </div>
-      <div class="agent__icon avatar {{ 'avatar--main' if agent.type != 'agent' }}" style="view-transition-name: avatar-{{ agent.name | slugify }}">
+      <div class="agent__icon">
+        <div class="avatar {{ 'avatar--main' if agent.type != 'agent' }}" style="view-transition-name: avatar-{{ agent.name | slugify }}">
         {{ (agent.icon or agents[0].icon) | svgContents | safe }}
+        </div>
+        {% if (agent.tasks | length) >= 1 %}
+          <span class="agent__tasks">{{ agent.tasks | length }}</span>
+        {% endif %}
+        <div></div>
       </div>
     </button>
     <div class="site-account-menu" id="site-account-menu" popover>
@@ -122,7 +128,7 @@
             <small>2 oppgaver venter</small>
           </div>
         </a>
-        <a href="#">
+        <a href="/{{ agent.name | slugify }}/personopplysninger/">
           {{ '/src/assets/images/icon-informationsquare.svg' | svgContents | safe }}
           <div class="stack-text">
             <strong>Personopplysninger</strong>
@@ -130,7 +136,7 @@
           </div>
         </a>
         <a href="/{{ agent.name | slugify }}/representasjon/">
-          {{ '/src/assets/images/icon-passport.svg' | svgContents | safe }}
+          {{ '/src/assets/images/icon-personrectangle.svg' | svgContents | safe }}
           <div class="stack-text">
             <strong>Representasjon</strong>
             <small>Personer du kan representere</small>

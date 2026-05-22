@@ -6,17 +6,18 @@ export default [
     icon: "/src/assets/images/icon-person.svg",
     tasks: [
       {
-        title: "Du har mottatt et vedtak på søknaden din om foreldrepenger",
+        title: "Les vedtak på søknad om foreldrepenger",
         description: "13.10.23 kl. 15.23 • Varslet på SMS",
       },
       {
-        title: "Oppgave nummer 2",
+        title:
+          "Last opp manglende dokumentasjon til søknad om arbeidsavklaringspenger",
         description: "16.10.23 kl. 10.29",
       },
     ],
     products: [
       {
-        title: "Sykepenger",
+        title: "Arbeidsavklaringspenger",
         status: "Status …",
       },
       {
