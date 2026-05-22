@@ -606,8 +606,8 @@ a {
     padding-block: var(--ax-space-8) var(--ax-space-128);
     inline-size: stretch;
 
-    @media (width > 1280px) {
-      padding-block: var(--ax-space-48);
+    @media (width > 1480px) {
+      padding-block-start: var(--ax-space-48);
     }
 }
 
