@@ -552,6 +552,10 @@ a {
   cursor: pointer;
   translate: var(--ax-space-12);
 
+  &:hover .avatar {
+    background-color: var(--ax-brand-blue-1000);
+  }
+
   small {
     white-space: nowrap;
     text-overflow: ellipsis;

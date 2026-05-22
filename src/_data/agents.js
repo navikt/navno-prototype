@@ -36,6 +36,12 @@ export default [
     name: "Alex Jensen",
     role: "Du har foreldreansvar",
     icon: "/src/assets/images/icon-persongroup.svg",
+    tasks: [
+      {
+        title: "Veldig viktig oppgave 1",
+        description: "Varslet på SMS",
+      },
+    ],
   },
   {
     type: "agent",
