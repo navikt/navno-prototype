@@ -31,14 +31,18 @@ export default {
   shortcuts: {
     title: "Snarveier",
     linkList: [
+      { text: "Søknad og skjema" },
+      { text: "Ettersendelse" },
+      { text: "Klage" },
+      { text: "Pengestøtter og tjenester fra A til Å" },
       { text: "Saksbehandlingstider" },
-      { text: "Utbetalinger" },
+      { text: "Utbetalinger og skatt" },
       { text: "Satser" },
-      { text: "Skjema og søknad" },
       { text: "Meldekort" },
+      { text: "Registrer deg som arbeidssøker" },
       { text: "Kurs fra NAV" },
-      { text: "Innkreving og innbetaling" },
-      { text: "Kontakt oss" },
+      { text: "Feiltolkning av EØS-reglene" },
+      { text: "Oljepionerene" },
     ],
   },
 };

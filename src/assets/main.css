@@ -356,8 +356,13 @@ a {
 .site-search {
   grid-area: search;
   margin-inline-end: 2ch;
-  display: grid;
-  grid-template-columns: [label search-start] auto 1fr [search-end];
+  position: relative;
+
+  form {
+    anchor-name: --suggestion;
+    display: grid;
+    grid-template-columns: [label search-start] auto 1fr [search-end];
+  }
 
   label {
     padding: 0.5rem;
@@ -376,6 +381,21 @@ a {
     border: 0;
     background: hsl(220, 32%, 94%);
   }
+  [popover] {
+    position-anchor: --suggestion;
+    inline-size: 100%;
+    inset: calc(anchor(100%) + var(--ax-space-12)) 0 auto;
+  
+    &:popover-open {
+      box-shadow: 0 0.25rem 1rem -0.25rem hsl(0 0 0 / 0.2);
+      clip-path: inset(1px 0 -1rem);
+    }
+    &::backdrop {
+      background-color: var(--ax-neutral-400A);
+      inset: 3lh 0 0;
+    }
+  }
+
 }
 
 .site-search--small {
@@ -396,8 +416,14 @@ a {
   }  
 }
 
+.site-search-suggestion {
+  padding-block: var(--ax-space-48);
+  block-size: 50vh;
+}
+
 .site-menu {
   grid-area: menu;
+  anchor-name: --menu;
 
   & > button {
     display: flex;
@@ -435,8 +461,9 @@ a {
     }
   }
   [popover] {
+    position-anchor: --menu;
     inline-size: 100%;
-    inset: calc(anchor(100%) + var(--ax-space-12)) 0 auto;
+    inset: anchor(100%) 0 auto;
     
     &:popover-open {
       box-shadow: 0 0.25rem 1rem -0.25rem hsl(0 0 0 / 0.2);
@@ -446,7 +473,6 @@ a {
       background-color: var(--ax-neutral-400A);
       inset: 3lh 0 0;
     }
-
   }
   ul {
     margin-block: 0;
@@ -455,13 +481,17 @@ a {
   }
 }
 .site-menu-content {
-  padding-block: 1lh 2lh;
+  padding-block: var(--ax-space-48);
+
   display: grid;
   gap: var(--ax-space-32);
 
   @media (width > 840px) {
     grid-template-columns: 1fr auto 1fr;
     gap: var(--ax-space-24);
+  }
+  @media (width > 1280px) {
+    grid-template-columns: 2fr auto 5fr;
   }
   h2 {
     font-size: 1.25rem;
@@ -470,15 +500,15 @@ a {
   
 
   .menu-tiles {
-    columns: 26ch;
+    columns: 30ch 2;
 
     li + li {
-      margin-block-start: var(--ax-space-12);
+      margin-block-start: var(--ax-space-8);
     }
   }
 
   .menu-list {
-    columns: 26ch;
+    columns: 30ch 2;
 
     li + li {
       margin-block-start: var(--ax-space-12);
@@ -491,22 +521,23 @@ a {
     gap: 0.75ch;
 
 
-    /* svg {
+    svg {
       border-radius: var(--ax-radius-full);
       background-color: var(--ax-accent-200);
       padding: var(--ax-space-10);
-    } */
+    }
   }
 }
 
 
 .menu-col-separator {
-  margin-inline: var(--ax-space-32);
-  inline-size: 1px;
   background-color: var(--ax-neutral-200);
+  block-size: 1px;
 
-  @media (width <= 840px) {
-    display: none;
+  @media (width > 840px) {
+    margin-inline: var(--ax-space-32);
+    inline-size: 1px;
+    block-size: auto;
   }
 }
 
@@ -516,9 +547,10 @@ a {
   display: grid;
   justify-content: end;
   align-items: center;
+  anchor-name: --account;
   
   @media (width <= 1280) {
-    padding-block: var(--ax-space-20);
+    padding-block: var(--ax-space-20) var(--ax-space-12);
   }
 
   @media (width > 1280px) {
@@ -528,9 +560,11 @@ a {
 
   [popover] {
     inset: anchor(110%) anchor(end) auto auto;
+    align-self: start;
+    position-anchor: --account;
 
     @media (width < 480px) {
-      inset: anchor(110%) 0 auto 0;
+      inset: anchor(100%) 0 auto 0;
     }
 
     &::backdrop {
@@ -610,7 +644,7 @@ a {
     padding-block: var(--ax-space-8) var(--ax-space-128);
     inline-size: stretch;
 
-    @media (width > 1480px) {
+    @media (width > 1280px) {
       padding-block-start: var(--ax-space-48);
     }
 }
@@ -626,6 +660,10 @@ a {
   background-color: var(--ax-neutral-100);
   position: relative;
   max-block-size: 8lh;
+
+  @media (width > 840px) {
+    max-block-size: 10lh;
+  }
 
   & > p {
     background: linear-gradient(var(--ax-neutral-100) 80%, #0000);
@@ -734,17 +772,19 @@ a {
   place-items: center;
   background-color: var(--ax-brand-blue-1000);
   inline-size: var(--ax-space-20);
-  font-size: small;
-  aspect-ratio: 1;
+  block-size: var(--ax-space-20);
   border-radius: var(--ax-radius-full);
+  font-size: small;
+  line-height: 1;
   color: var(--ax-neutral-000);
+  text-indent: 1px;
+  font-variant-numeric: tabular-nums;
 }
 
 
 .stack-text {
   display: grid;
   line-height: 1.35;
-  row-gap: 0.125lh;
 
   small {
     opacity: 0.8;
@@ -787,6 +827,10 @@ a {
       position: absolute;
       inset: 0;
     }
+  }
+
+  & + a {
+    margin-block-start: var(--ax-space-6);
   }
 }
 
@@ -848,26 +892,6 @@ a {
   }
 }
 
-
-/*
-
-  .patternFun {
-    --s: 60px;
-    --c1: var(--ax-brand-magenta-100);
-    --c2: var(--ax-brand-magenta-200);
-    --_g: #0000 8%, var(--c1) 0 17%, #0000 0 58%;
-    background: linear-gradient(135deg, #0000 20.5%, var(--c1) 0 29.5%, #0000 0) 0 calc(var(--s) / 4), linear-gradient(45deg, var(--_g)) calc(var(--s) / 2) 0, linear-gradient(135deg, var(--_g), var(--c1) 0 67%, #0000 0), linear-gradient(45deg, var(--_g), var(--c1) 0 67%, #0000 0 83%, var(--c1) 0 92%, #0000 0), var(--c2);
-    background-size: var(--s) var(--s);
-  }
-  * { outline: 1px solid #F00A } 
-
-*/
-
-
-
-
-
-
 .container {
   box-sizing: border-box;
   max-inline-size: 1500px;
@@ -897,6 +921,7 @@ a {
   position: relative;
   overflow-y: auto;
   overscroll-behavior: contain;
+  scrollbar-color: silver transparent;
 }
 
 @supports (animation-timeline: scroll()) {

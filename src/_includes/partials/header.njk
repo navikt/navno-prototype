@@ -1,14 +1,27 @@
-{% macro search(class, id) %}
-  <form class="{{ class }}" action="#" style="view-transition-name: search">
-    <label for="{{ id }}">
+{% macro search(class, searchId, suggestId) %}
+<div class="{{ class }}">
+  <form action="#" style="view-transition-name: search">
+    <label for="{{ searchId }}">
       <svg width="20" height="20" fill="none" viewBox="0 0 20 20">
         <circle cx="8.33" cy="8.33" r="5.83" stroke="currentColor" stroke-width="1.5"/>
         <path stroke="currentColor" stroke-linecap="round" stroke-width="1.5" d="m12.92 12.92 4.16 4.16"/>
       </svg>
       <span class="sr-only">Søk</span>        
     </label>
-    <input id="{{ id }}" placeholder="Søk på nav.no" type="search">
+    <input id="{{ searchId }}" placeholder="Søk på nav.no" popovertarget="{{ suggestId }}" type="search">
   </form>
+  <div class="site-search-suggestion" id="{{ suggestId }}" popover>
+   <div class="container  container--prose">[ Søkeforslag ]</div>
+  </div>
+  <script>
+    const {{ searchId }} = document.getElementById('{{ searchId}}');
+    const {{ suggestId }} = document.getElementById('{{ suggestId }}')
+
+    {{ searchId }}.addEventListener("click", () => {
+      {{ suggestId }}.togglePopover()
+    })
+  </script>
+</div>
 {% endmacro %}
 
 
@@ -32,7 +45,7 @@
       </div>
     </div>
 
-    {{ search('site-search site-search--large', 'site-search-1') }}
+    {{ search('site-search site-search--large', 'siteSearch1', 'siteSearchSuggestions1') }}
 
     <nav class="site-menu">
       <button popovertarget="site-menu" style="view-transition-name: hamburger">
@@ -55,7 +68,7 @@
       <div id="site-menu" popover>
         <div class="container">
           <div class="site-menu-content">
-            {{ search('site-search site-search--small', 'site-search-2') }}
+            {{ search('site-search site-search--small', 'siteSearch2', 'siteSearchSuggestions2') }}
 
             <div>
               <h2>{{ menu.areas.title }}</h2>

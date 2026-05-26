@@ -17,7 +17,7 @@ permalink: "/{{ agent.name | slugify }}/minside/index.html"
   </header>
 
   <div class="page-section card">
-    <a href="#" class="stack-text">
+    <a href="/{{ agent.name | slugify }}/minside/dialog/" class="stack-text">
       <strong>Dialog med Nav</strong>
       <small>Ingen nye meldinger</small>
     </a>
@@ -44,8 +44,7 @@ permalink: "/{{ agent.name | slugify }}/minside/index.html"
     <div class="page-section__content" style="display:grid; gap:var(--ax-space-6)">
       {%- for product in agent.products %}
       <article class="card">
-        {# /{{ agent.name | slugify }}/minside/{{ product.title | slugify }}/ #}
-        <a class="card__title" href="#">{{ product.title }}</a><br>
+        <a class="card__title" href="/{{ agent.name | slugify }}/minside/{{ product.title | slugify }}/">{{ product.title }}</a><br>
         <small>{{ product.status }}</small>
       </article>
       {%- endfor %}
