@@ -68,6 +68,7 @@
       <div id="site-menu" popover>
         <div class="container">
           <div class="site-menu-content">
+
             {{ search('site-search site-search--small', 'siteSearch2', 'siteSearchSuggestions2') }}
 
             <div>
@@ -85,6 +86,7 @@
                 {% endfor %}
               </ul>
             </div>
+
             <div class="menu-col-separator"></div>
 
             <div>
@@ -103,6 +105,10 @@
               </ul>
             </div>
 
+            <div class="menu-footer">
+              <p>Bytt til <a href="#">arbeidsgiver</a> eller <a href="#">samarbeidspartner</a>.</p>
+            </div>
+
           </div>
         </div>
       </div>
@@ -115,9 +121,9 @@
     {%- if loggedIn %}
     <button class="site-account-button agent" popovertarget="site-account-menu" type="button">
       <div class="agent__text stack-text">
-        <strong>{{ agents[0].name }}</strong>
+        <strong>{{ agent.name if agent.type == 'agent' else agents[0].name }}</strong>
         <small>
-          {{ ('På vegne av ' + agent.name) if agent.type == 'agent' else agents[0].role}}
+          {{ ('Representert av ' + agents[0].name) if agent.type == 'agent' else agents[0].role}}
         </small>
       </div>
       <div class="agent__icon">
@@ -155,11 +161,11 @@
             <small>Personer du kan representere</small>
           </div>
         </a>
+        {# 
         <div class="agent-switcher scroll-container">
           <p class="stack-text">
             <strong>Velg profil</strong>
           </p>
-          {% for i in range(0,1) %}
           {% for profile in agents %}
             <a class="agent" href="/{{ profile.name | slugify }}/minside/">
               <div class="agent__icon avatar {{ 'avatar--main' if profile.type != 'agent' }}" style="view-transition-name: avatar-{{ profile.name | slugify }}">
@@ -172,9 +178,9 @@
               {% if loop.first %}<span class="tag">Deg</span>{% endif %}
             </a>
           {% endfor %}
-          {% endfor %}
         </div>
       </div>
+      #}
       <div>
         <a href="/">
           {{ '/src/assets/images/icon-leave.svg' | svgContents | safe }}
@@ -183,7 +189,10 @@
       </div>
     </div>
     {%- else %}
-    <a class="site-account-button" href="/idporten/">Logg inn</a>
+    <a class="site-account-login" href="/idporten/">
+      <span>Logg inn</span>
+      {{ '/src/assets/images/icon-padlocklocked.svg' | svgContents | safe }}
+    </a>
     {%- endif %}
   </div>
 

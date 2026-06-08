@@ -18,7 +18,7 @@ export default [
     products: [
       {
         title: "Arbeidsavklaringspenger",
-        status: "Status …",
+        status: "Oppdatert 27. mai, kl. 14.15",
       },
       {
         title: "Foreldrepenger",

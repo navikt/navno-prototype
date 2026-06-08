@@ -15,24 +15,33 @@ permalink: "/{{ agent.name | slugify }}/representasjon/index.html"
 
   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam blanditiis obcaecati ratione, molestiae suscipit inventore error consequuntur ab non atque neque enim repellat, itaque placeat possimus. Quam molestiae iure neque!</p>
 
-  <div class="agent-list">
-    <h2>Velg hvem du skal representere</h2> 
-    <ul>
+  <form class="agent-chooser" id="representasjon">
+    <fieldset>
+      <legend>Velg hvem du skal representere</legend>
       {%- for profile in agents %}
-      <li>
-        <a class="account-option" href="/{{ profile.name | slugify }}/minside/">
-          <div class="avatar {{ 'avatar--main' if profile.type != 'agent' }}">
-            {{ profile.icon | svgContents | safe }}
-          </div>
-          <div>
+      <div class="account-option card">
+        <div class="avatar {{ 'avatar--main' if profile.type != 'agent' }}">
+          {{ profile.icon | svgContents | safe }}
+          <input type="radio" id="{{ profile.name | slugify }}" name="profil" value="{{ profile.name | slugify }}/minside/" {{ 'checked' if agent.name == profile.name }}>
+        </div>
+        <label for="{{ profile.name | slugify }}">
+          <span>
             <strong>{{ profile.name }}</strong>
             <small>{{ profile.role }}</small>
-          </div>
+          </span>
           {% if loop.first %}<span class="tag">Deg</span>{% endif %}
-        </a>
-      </li>
+        </label>
+      </div>
       {%- endfor %}
-    </ul>
-  </div>
+    </fieldset>
+    <button type="submit">Velg profil</button>
+  </form>
+  <script>
+    const agentChooser = document.getElementById('representasjon');
+    agentChooser.addEventListener('submit', function(event) {
+      event.preventDefault();
+      window.location.href = "{{ '/' | htmlBaseUrl }}" + agentChooser.elements["profil"].value;
+    });
+  </script> 
 
 </div>

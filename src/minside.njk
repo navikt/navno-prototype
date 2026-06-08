@@ -11,8 +11,7 @@ permalink: "/{{ agent.name | slugify }}/minside/index.html"
 <div class="container container--prose">
   <header class="page-header">
     <h1>
-      {{ 'På vegne av' if agent.type == 'agent' else 'Hei,' }} 
-      {{ agent.name or agents[0].name }}
+      Hei, {{ agent.name or agents[0].name }}
     </h1>
   </header>
 
@@ -30,7 +29,7 @@ permalink: "/{{ agent.name | slugify }}/minside/index.html"
       {%- for task in agent.tasks %}
       <div class="card">
         <h3><a href="#">{{ task.title }}</a></h3>
-        <p>{{ task.description }}</p>
+        <p><small>{{ task.description }}</small></p>
       </div>
       {%- endfor %}
       <a href="#">Tidligere oppgaver</a>
@@ -43,8 +42,8 @@ permalink: "/{{ agent.name | slugify }}/minside/index.html"
     <h2 class="page-section__title">Pengestøtte</h2>
     <div class="page-section__content" style="display:grid; gap:var(--ax-space-6)">
       {%- for product in agent.products %}
-      <article class="card">
-        <a class="card__title" href="/{{ agent.name | slugify }}/minside/{{ product.title | slugify }}/">{{ product.title }}</a><br>
+      <article class="card card--product stack-text" {{- 'data-status=new' if loop.first -}}>
+        <a class="card__title" href="/{{ agent.name | slugify }}/minside/{{ product.title | slugify }}/">{{ product.title }}</a>
         <small>{{ product.status }}</small>
       </article>
       {%- endfor %}
