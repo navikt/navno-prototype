@@ -10,7 +10,7 @@ permalink: "/{{ users[0].name | slugify }}/bytt-bruker/index.html"
   <p></p>
 
   {%- for user in users.slice(0,1) %}
-  <a href="/{{ user.name | slugify }}/minside/" class="account-option">
+  <div class="account-option card card--ghost">
     <div class="avatar {{ 'avatar--self' if user.type != 'agent' }}">
       {{ user.icon | svgContents | safe }}
     </div>
@@ -19,13 +19,13 @@ permalink: "/{{ users[0].name | slugify }}/bytt-bruker/index.html"
       <small>{{ user.role }}</small>
     </div>
     <span class="tag">Deg</span>
-  </a>
+  </div>
   {%- endfor %}
 
 
-  <div class="my-agents">
+  <div style="margin-block:1lh;">
     {%- for user in users.slice(1, 9) %}
-    <a href="/{{ user.name | slugify }}/minside/" class="account-option">
+    <a href="/{{ user.name | slugify }}/minside/" class="account-option card">
       <div class="avatar {{ 'avatar--self' if user.type != 'agent' }}">
         {{ user.icon | svgContents | safe }}
       </div>
@@ -37,9 +37,6 @@ permalink: "/{{ users[0].name | slugify }}/bytt-bruker/index.html"
     {%- endfor %}
   </div>
 
-
-
-
-  <p><a href="/{{ user.name | slugify }}/representasjon/">Alt om representasjon og fullmakter</a></p>
+  <p><a href="/{{ user.name | slugify }}/representasjon/">Mer om representasjon og fullmakter</a></p>
 
 </div>

@@ -880,6 +880,13 @@ a {
   }
 }
 
+.card--ghost {
+  background-color: #0000;
+  border-style:dashed;
+  border-color: var(--ax-neutral-400A);
+  box-shadow: none;
+}
+
 .card[data-status="new"] a {
   &:before {
     content:"";
