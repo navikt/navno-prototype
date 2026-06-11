@@ -628,6 +628,7 @@ a {
   border-radius: var(--ax-radius-8);
   cursor: pointer;
   translate: var(--ax-space-10);
+  
 
   @media (width <= 1280px) {
       margin-block: -0.375lh;
@@ -635,6 +636,13 @@ a {
   
   & > div {
       justify-items: end;
+  }
+
+  strong {
+    overflow: clip;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    max-inline-size: 24ch;
   }
 
   small {
