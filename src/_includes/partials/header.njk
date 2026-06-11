@@ -6,7 +6,7 @@
         <circle cx="8.33" cy="8.33" r="5.83" stroke="currentColor" stroke-width="1.5"/>
         <path stroke="currentColor" stroke-linecap="round" stroke-width="1.5" d="m12.92 12.92 4.16 4.16"/>
       </svg>
-      <span class="sr-only">Søk</span>        
+      <span class="sr-only">Søk</span>
     </label>
     <input id="{{ searchId }}" placeholder="Søk på nav.no" popovertarget="{{ suggestId }}" type="search">
   </form>
@@ -34,13 +34,17 @@
     </a>
 
     <div class="site-audience">
-      <button popovertarget="audience">
-        <span>{{ audience[0] }}</span>
+      <button popovertarget="audienceChooser">
+        <span>{{ role or roles[0] }}</span>
         {{ '/src/assets/images/icon-chevrondown.svg' | svgContents | safe }}
       </button>
-      <div id="audience" popover>
-        {%- for audience in audience %}
-        <a href="#" {{- 'aria-current=page' if loop.first -}}>{{ audience }}</a>
+      <div id="audienceChooser" popover>
+        {%- for role in roles %}
+        {% if role === 'Arbeidsgiver' %}          
+        <a href="/{{ agent.name | slugify }}/minside-arbeidsgiver/">{{ role }}</a>
+        {% else %}
+        <a href="#" {{- 'aria-current=page' if loop.first -}}>{{ role }}</a>
+        {% endif %}
         {%- endfor %}
       </div>
     </div>
@@ -115,23 +119,21 @@
     </nav>
   </div>
 
-
-
   <div class="site-account">
     {%- if loggedIn %}
-    <button class="site-account-button agent" popovertarget="site-account-menu" type="button">
-      <div class="agent__text stack-text">
+    <button class="site-account-button account" popovertarget="site-account-menu" type="button">
+      <div class="account__text stack-text">
         <strong>{{ agent.name if agent.type == 'agent' else agents[0].name }}</strong>
         <small>
-          {{ ('Representert av ' + agents[0].name) if agent.type == 'agent' else agents[0].role}}
+          Du har {{ agent.tasks | length }} uløst{{ 'e' if agent.tasks.length != 1 }} oppgave{{ 'r' if agent.tasks.length != 1 }}
         </small>
       </div>
-      <div class="agent__icon">
-        <div class="avatar {{ 'avatar--main' if agent.type != 'agent' }}" style="view-transition-name: avatar-{{ agent.name | slugify }}">
+      <div class="account__icon">
+        <div class="avatar {{ 'avatar--self' if agent.type != 'agent' }}" style="view-transition-name: avatar-{{ agent.name | slugify }}">
         {{ (agent.icon or agents[0].icon) | svgContents | safe }}
         </div>
         {% if (agent.tasks | length) >= 1 %}
-          <span class="agent__tasks">{{ agent.tasks | length }}</span>
+          <span class="account__tasks">{{ agent.tasks | length }}</span>
         {% endif %}
         <div></div>
       </div>
@@ -156,32 +158,28 @@
         </a>
         <a href="/{{ agent.name | slugify }}/representasjon/">
           {{ '/src/assets/images/icon-personrectangle.svg' | svgContents | safe }}
-          <div class="stack-text">
+          <div class="stack-text">  
             <strong>Representasjon</strong>
+            <small>Oversikt over tilganger</small>
+          </div>
+        </a>
+        {% if agent.name === agents[0].name %}
+        <a href="/{{ agents[0].name | slugify }}/bytt-bruker/">
+          {{ '/src/assets/images/icon-persongroup.svg' | svgContents | safe }}
+          <div class="stack-text">
+            <strong>Bytt bruker</strong>
             <small>Personer du kan representere</small>
           </div>
         </a>
-        {# 
-        <div class="agent-switcher scroll-container">
-          <p class="stack-text">
-            <strong>Velg profil</strong>
-          </p>
-          {% for profile in agents %}
-            <a class="agent" href="/{{ profile.name | slugify }}/minside/">
-              <div class="agent__icon avatar {{ 'avatar--main' if profile.type != 'agent' }}" style="view-transition-name: avatar-{{ profile.name | slugify }}">
-                {{ profile.icon | svgContents | safe }}
-              </div>
-              <div class="agent__text stack-text">
-                <strong>{{ profile.name }}</strong>
-                <small>{{ profile.role }}</small>
-              </div>
-              {% if loop.first %}<span class="tag">Deg</span>{% endif %}
-            </a>
-          {% endfor %}
-        </div>
-      </div>
-      #}
-      <div>
+        {% else %}
+        <a href="/{{ agents[0].name | slugify }}/minside/">
+          {{ '/src/assets/images/icon-personminus.svg' | svgContents | safe }}
+          <div class="stack-text">
+            <strong>Avslutt representasjon</strong>
+            <small>[Beskrivelse]</small>
+          </div>
+        </a>
+        {% endif %}
         <a href="/">
           {{ '/src/assets/images/icon-leave.svg' | svgContents | safe }}
           <strong style="line-height:1.8">Logg ut</strong>
@@ -195,29 +193,7 @@
     </a>
     {%- endif %}
   </div>
-
-  {#- {% if agent.type === 'agent' %}
-  <div class="site-agency">
-    <p>Du bruker denne siden på vegne av <strong>{{ agent.name }}</strong>. <a href="/representasjon/">Bytt profil</a></p>
-  </div>
-  {%- endif %} #}
+  {% if (agent.name != agents[0].name) and (page.url != '/') %}
+  <div class="site-repmode">Representeres av {{ agents[0].name }} &nbsp; | &nbsp; <a href="/charlie-jensen/minside/">Avslutt representasjon</button></div>
+  {% endif %}
 </header>
-
-
-{# <div class="site-notifications">
-  <strong>Varsler</strong>
-  <ul>
-    {%- for item in site.notifications %}            
-    <li>
-      <article>
-        <a href="#">{{ item.title }}</a>
-        <small>
-          {{ item.time }}
-          {{ '&nbsp;•&nbsp;' | safe if item.type }}
-          {{ item.type }}
-        </small>
-      </article>
-    </li>
-    {%- endfor %}
-  </ul>
-</div> #}

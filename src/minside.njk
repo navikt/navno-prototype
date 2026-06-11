@@ -10,9 +10,8 @@ permalink: "/{{ agent.name | slugify }}/minside/index.html"
 
 <div class="container container--prose">
   <header class="page-header">
-    <h1>
-      Hei, {{ agent.name or agents[0].name }}
-    </h1>
+    <div class="page-crumbs"><span>Min side</span> /</div>
+    <h1>Hei, {{ agent.name or agents[0].name }}</h1>
   </header>
 
   <div class="page-section card">

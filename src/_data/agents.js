@@ -1,6 +1,6 @@
 export default [
   {
-    type: "main",
+    type: "self",
     name: "Charlie Jensen",
     role: "Din egen profil",
     icon: "/src/assets/images/icon-person.svg",

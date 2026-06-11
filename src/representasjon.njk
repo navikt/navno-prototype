@@ -1,6 +1,6 @@
 ---
 layout: "base.njk"
-title: "Representasjon"
+title: "Fullmakter og representasjon"
 loggedIn: true
 pagination:
   data: agents
@@ -13,14 +13,16 @@ permalink: "/{{ agent.name | slugify }}/representasjon/index.html"
   <div class="page-crumbs"><a href="/{{ agents[0].name | slugify }}/minside/">Min side</a> /</div>
   <h1>{{ title }}</h1>
 
-  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam blanditiis obcaecati ratione, molestiae suscipit inventore error consequuntur ab non atque neque enim repellat, itaque placeat possimus. Quam molestiae iure neque!</p>
+</div>
 
+
+{# 
   <form class="agent-chooser" id="representasjon">
     <fieldset>
       <legend>Velg hvem du skal representere</legend>
       {%- for profile in agents %}
       <div class="account-option card">
-        <div class="avatar {{ 'avatar--main' if profile.type != 'agent' }}">
+        <div class="avatar {{ 'avatar--self' if profile.type != 'agent' }}">
           {{ profile.icon | svgContents | safe }}
           <input type="radio" id="{{ profile.name | slugify }}" name="profil" value="{{ profile.name | slugify }}/minside/" {{ 'checked' if agent.name == profile.name }}>
         </div>
@@ -43,5 +45,4 @@ permalink: "/{{ agent.name | slugify }}/representasjon/index.html"
       window.location.href = "{{ '/' | htmlBaseUrl }}" + agentChooser.elements["profil"].value;
     });
   </script> 
-
-</div>
+ #}

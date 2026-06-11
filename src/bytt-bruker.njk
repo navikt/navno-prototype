@@ -1,0 +1,45 @@
+---
+layout: "base.njk"
+title: "Bytt bruker"
+loggedIn: true
+permalink: "/{{ agents[0].name | slugify }}/bytt-bruker/index.html"
+---
+<div class="container container--prose account-selection">
+  <div class="page-crumbs"><a href="/{{ agents[0].name | slugify }}/minside/">Min side</a> /</div>
+  <h1>{{ title }}</h1>
+  <p></p>
+
+  {%- for profile in agents.slice(0,1) %}
+  <a href="/{{ profile.name | slugify }}/minside/" class="account-option">
+    <div class="avatar {{ 'avatar--self' if profile.type != 'agent' }}">
+      {{ profile.icon | svgContents | safe }}
+    </div>
+    <div class="stack-text">
+      <strong>{{ profile.name }}</strong>
+      <small>{{ profile.role }}</small>
+    </div>
+    <span class="tag">Deg</span>
+  </a>
+  {%- endfor %}
+
+
+  <div class="my-agents">
+    {%- for profile in agents.slice(1, 9) %}
+    <a href="/{{ profile.name | slugify }}/minside/" class="account-option">
+      <div class="avatar {{ 'avatar--self' if profile.type != 'agent' }}">
+        {{ profile.icon | svgContents | safe }}
+      </div>
+      <div class="stack-text">
+        <strong>{{ profile.name }}</strong>
+        <small>{{ profile.role }}</small>
+      </div>
+    </a>
+    {%- endfor %}
+  </div>
+
+
+
+
+  <p><a href="/{{ agent.name | slugify }}/representasjon/">Alt om representasjon og fullmakter</a></p>
+
+</div>
