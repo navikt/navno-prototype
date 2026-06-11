@@ -2,21 +2,21 @@
 layout: "base.njk"
 title: "Bytt bruker"
 loggedIn: true
-permalink: "/{{ agents[0].name | slugify }}/bytt-bruker/index.html"
+permalink: "/{{ users[0].name | slugify }}/bytt-bruker/index.html"
 ---
 <div class="container container--prose account-selection">
-  <div class="page-crumbs"><a href="/{{ agents[0].name | slugify }}/minside/">Min side</a> /</div>
+  <div class="page-crumbs"><a href="/{{ users[0].name | slugify }}/minside/">Min side</a> /</div>
   <h1>{{ title }}</h1>
   <p></p>
 
-  {%- for profile in agents.slice(0,1) %}
-  <a href="/{{ profile.name | slugify }}/minside/" class="account-option">
-    <div class="avatar {{ 'avatar--self' if profile.type != 'agent' }}">
-      {{ profile.icon | svgContents | safe }}
+  {%- for user in users.slice(0,1) %}
+  <a href="/{{ user.name | slugify }}/minside/" class="account-option">
+    <div class="avatar {{ 'avatar--self' if user.type != 'agent' }}">
+      {{ user.icon | svgContents | safe }}
     </div>
     <div class="stack-text">
-      <strong>{{ profile.name }}</strong>
-      <small>{{ profile.role }}</small>
+      <strong>{{ user.name }}</strong>
+      <small>{{ user.role }}</small>
     </div>
     <span class="tag">Deg</span>
   </a>
@@ -24,14 +24,14 @@ permalink: "/{{ agents[0].name | slugify }}/bytt-bruker/index.html"
 
 
   <div class="my-agents">
-    {%- for profile in agents.slice(1, 9) %}
-    <a href="/{{ profile.name | slugify }}/minside/" class="account-option">
-      <div class="avatar {{ 'avatar--self' if profile.type != 'agent' }}">
-        {{ profile.icon | svgContents | safe }}
+    {%- for user in users.slice(1, 9) %}
+    <a href="/{{ user.name | slugify }}/minside/" class="account-option">
+      <div class="avatar {{ 'avatar--self' if user.type != 'agent' }}">
+        {{ user.icon | svgContents | safe }}
       </div>
       <div class="stack-text">
-        <strong>{{ profile.name }}</strong>
-        <small>{{ profile.role }}</small>
+        <strong>{{ user.name }}</strong>
+        <small>{{ user.role }}</small>
       </div>
     </a>
     {%- endfor %}
@@ -40,6 +40,6 @@ permalink: "/{{ agents[0].name | slugify }}/bytt-bruker/index.html"
 
 
 
-  <p><a href="/{{ agent.name | slugify }}/representasjon/">Alt om representasjon og fullmakter</a></p>
+  <p><a href="/{{ user.name | slugify }}/representasjon/">Alt om representasjon og fullmakter</a></p>
 
 </div>

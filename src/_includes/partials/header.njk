@@ -41,7 +41,7 @@
       <div id="audienceChooser" popover>
         {%- for role in roles %}
         {% if role === 'Arbeidsgiver' %}          
-        <a href="/{{ agent.name | slugify }}/minside-arbeidsgiver/">{{ role }}</a>
+        <a href="/{{ user.name | slugify }}/minside-arbeidsgiver/">{{ role }}</a>
         {% else %}
         <a href="#" {{- 'aria-current=page' if loop.first -}}>{{ role }}</a>
         {% endif %}
@@ -123,48 +123,48 @@
     {%- if loggedIn %}
     <button class="site-account-button account" popovertarget="site-account-menu" type="button">
       <div class="account__text stack-text">
-        <strong>{{ agent.name if agent.type == 'agent' else agents[0].name }}</strong>
+        <strong>{{ user.name if user.type == 'agent' else users[0].name }}</strong>
         <small>
-          Du har {{ agent.tasks | length }} uløst{{ 'e' if agent.tasks.length != 1 }} oppgave{{ 'r' if agent.tasks.length != 1 }}
+          Du har {{ user.tasks | length }} uløst{{ 'e' if user.tasks.length != 1 }} oppgave{{ 'r' if user.tasks.length != 1 }}
         </small>
       </div>
       <div class="account__icon">
-        <div class="avatar {{ 'avatar--self' if agent.type != 'agent' }}" style="view-transition-name: avatar-{{ agent.name | slugify }}">
-        {{ (agent.icon or agents[0].icon) | svgContents | safe }}
+        <div class="avatar {{ 'avatar--self' if user.type != 'agent' }}" style="view-transition-name: avatar-{{ user.name | slugify }}">
+        {{ (user.icon or users[0].icon) | svgContents | safe }}
         </div>
-        {% if (agent.tasks | length) >= 1 %}
-          <span class="account__tasks">{{ agent.tasks | length }}</span>
+        {% if (user.tasks | length) >= 1 %}
+          <span class="account__tasks">{{ user.tasks | length }}</span>
         {% endif %}
         <div></div>
       </div>
     </button>
     <div class="site-account-menu" id="site-account-menu" popover>
       <div>
-        <a href="/{{ (agent.name or agents[0].name) | slugify }}/minside/">
+        <a href="/{{ (user.name or users[0].name) | slugify }}/minside/">
           {{ '/src/assets/images/icon-squaregrid.svg' | svgContents | safe }}
           <div class="stack-text">
             <strong>
-              Min side ({{ agent.name }})
+              Min side ({{ user.name }})
               </strong>
             <small>2 oppgaver venter</small>
           </div>
         </a>
-        <a href="/{{ agent.name | slugify }}/personopplysninger/">
+        <a href="/{{ user.name | slugify }}/personopplysninger/">
           {{ '/src/assets/images/icon-informationsquare.svg' | svgContents | safe }}
           <div class="stack-text">
             <strong>Personopplysninger</strong>
             <small>Kontaktinfo, kontonummer, osv.</small>
           </div>
         </a>
-        <a href="/{{ agent.name | slugify }}/representasjon/">
+        <a href="/{{ user.name | slugify }}/representasjon/">
           {{ '/src/assets/images/icon-personrectangle.svg' | svgContents | safe }}
           <div class="stack-text">  
             <strong>Representasjon</strong>
             <small>Oversikt over tilganger</small>
           </div>
         </a>
-        {% if agent.name === agents[0].name %}
-        <a href="/{{ agents[0].name | slugify }}/bytt-bruker/">
+        {% if user.type == 'self' %}
+        <a href="/{{ users[0].name | slugify }}/bytt-bruker/">
           {{ '/src/assets/images/icon-persongroup.svg' | svgContents | safe }}
           <div class="stack-text">
             <strong>Bytt bruker</strong>
@@ -172,7 +172,7 @@
           </div>
         </a>
         {% else %}
-        <a href="/{{ agents[0].name | slugify }}/minside/">
+        <a href="/{{ users[0].name | slugify }}/minside/">
           {{ '/src/assets/images/icon-personminus.svg' | svgContents | safe }}
           <div class="stack-text">
             <strong>Avslutt representasjon</strong>
@@ -193,7 +193,7 @@
     </a>
     {%- endif %}
   </div>
-  {% if (agent.name != agents[0].name) and (page.url != '/') %}
-  <div class="site-repmode">Representeres av {{ agents[0].name }} &nbsp; | &nbsp; <a href="/charlie-jensen/minside/">Avslutt representasjon</button></div>
+  {% if (user.type == 'agent') and (page.url != '/') %}
+  <div class="site-agentmode">Representeres av {{ users[0].name }} &nbsp; | &nbsp; <a href="/charlie-jensen/minside/">Avslutt representasjon</button></div>
   {% endif %}
 </header>

@@ -3,10 +3,10 @@ layout: "base.njk"
 loggedIn: true
 role: Arbeidsgiver
 pagination:
-  data: agents
+  data: users
   size: 1
-  alias: agent
-permalink: "/{{ agent.name | slugify }}/minside-arbeidsgiver/index.html"
+  alias: user
+permalink: "/{{ user.name | slugify }}/minside-arbeidsgiver/index.html"
 ---
 
 <div class="container container--prose">
@@ -15,8 +15,8 @@ permalink: "/{{ agent.name | slugify }}/minside-arbeidsgiver/index.html"
   </header>
 
 
-  {% if agent.type == 'agent' %}
-    asdfasd
+  {% if user.type == 'agent' %}
+    Du har ikke tilgang …
   {% endif %}
 
 </div>

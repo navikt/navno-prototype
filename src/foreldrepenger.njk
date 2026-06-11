@@ -3,13 +3,13 @@ title: Foreldrepenger
 layout: "base.njk"
 loggedIn: true
 pagination:
-  data: agents
+  data: users
   size: 1
-  alias: agent
-permalink: "/{{ agent.name | slugify }}/minside/foreldrepenger/index.html"
+  alias: user
+permalink: "/{{ user.name | slugify }}/minside/foreldrepenger/index.html"
 ---
 
 <div class="container container--prose">
-  <div class="page-crumbs"><a href="/{{ agent.name | slugify }}/minside/">Min side</a> /</div>
+  <div class="page-crumbs"><a href="/{{ user.name | slugify }}/minside/">Min side</a> /</div>
   <h1>{{ title }}</h1>
 </div>

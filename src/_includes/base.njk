@@ -46,7 +46,7 @@
     <style>{% getBundle "css" %}</style>
     {% endif %}
   </head>
-  <body style="{{ '--_body-bg: hsl(320, 36%, 94%)' if agent.type == 'agent' }}">
+  <body style="{{ '--_body-bg: hsl(320, 36%, 94%)' if user.type == 'agent' }}">
     {%- if page.url != '/idporten/' %}     
       {% include "partials/header.njk" %}
     {%- else %}

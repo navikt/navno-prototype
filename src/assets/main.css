@@ -216,6 +216,7 @@ body {
 :where(h1) {
   font-size: 2.5rem;
   line-height: 1.35;
+  margin-block-end: 0.5lh;
 }
 
 :where(h2) {
@@ -275,7 +276,7 @@ a {
   display: grid;
   grid-template-areas: 
     "navigation" 
-    "repmode"
+    "agentmode"
     "agency"
     "language"
   ;
@@ -284,7 +285,7 @@ a {
     grid-template-columns: 3fr 1fr;
     grid-template-areas: 
     "navigation agency"
-    "repmode repmode" 
+    "agentmode agentmode" 
     "language .";
   }
 }
@@ -687,11 +688,11 @@ a {
   }
 }
 
-.site-repmode {
+.site-agentmode {
   border-image: conic-gradient(var(--ax-brand-magenta-700) 0 0) fill 0/0/0 100vw;
   background-color: var(--ax-brand-magenta-700);
   color: var(--ax-neutral-000);
-  grid-area: repmode;
+  grid-area: agentmode;
   text-align: center;
   padding-block: var(--ax-space-4);
 
@@ -718,6 +719,7 @@ a {
 
     @media (width > 1280px) {
       padding-block-start: var(--ax-space-56);
+      min-block-size: 140vb;
     }
 }
 
