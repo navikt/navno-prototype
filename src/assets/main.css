@@ -613,7 +613,7 @@ a {
 
   svg {
     border-radius: var(--ax-radius-full);
-    background-color: var(--ax-accent-200);
+    background-color: var(--ax-accent-200A);
     padding: var(--ax-space-8);
     color: var(--ax-accent-700);
   }
@@ -727,7 +727,6 @@ a {
 
     @media (width > 1280px) {
       padding-block-start: var(--ax-space-56);
-      min-block-size: 140vb;
     }
 }
 
