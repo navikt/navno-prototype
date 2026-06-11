@@ -167,14 +167,14 @@
             <small>Personer du kan representere</small>
           </div>
         </a>
-        {% else %}
+        {# {% else %}
         <a href="/{{ users[0].name | slugify }}/minside/">
           {{ '/src/assets/images/icon-personminus.svg' | svgContents | safe }}
           <div class="stack-text">
             <strong>Avslutt representasjon</strong>
             <small>[Beskrivelse]</small>
           </div>
-        </a>
+        </a> #}
         {% endif %}
         <a href="/">
           {{ '/src/assets/images/icon-leave.svg' | svgContents | safe }}
