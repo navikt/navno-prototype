@@ -646,9 +646,9 @@ a {
   }
 
   small {
-    white-space: nowrap;
     text-overflow: ellipsis;
     max-inline-size: 32ch;
+    white-space: nowrap;
     overflow: clip;
   }
 }
