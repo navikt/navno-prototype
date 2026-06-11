@@ -1,0 +1,16 @@
+---
+layout: "base.njk"
+loggedIn: true
+pagination:
+  data: users
+  size: 1
+  alias: user
+permalink: "/{{ user.name | slugify }}/index.html"
+---
+
+<div class="container container--prose">
+  <header class="page-header">
+    <h1>Forside (privatperson)</h1>
+  </header>
+
+</div>

@@ -1,0 +1,18 @@
+---
+layout: "base.njk"
+loggedIn: true
+role:
+  title: Samarbeidspartner
+pagination:
+  data: users
+  size: 1
+  alias: user
+permalink: "/{{ user.name | slugify }}/samarbeidspartner/index.html"
+---
+
+<div class="container container--prose">
+  <header class="page-header">
+    <h1>Forside (samarbeidspartner)</h1>
+  </header>
+
+</div>

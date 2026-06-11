@@ -28,23 +28,19 @@
 <header class="site-header container">
   <div class="site-navigation">
 
-    <a class="site-logo" href="/">
+    <a class="site-logo" href="/{{ (user.name or users[0].name) | slugify }}/">
       {{ "/src/assets/images/logo.svg" | svgContents | safe }}
       <span class="sr-only">Nav</span>
     </a>
 
     <div class="site-audience">
       <button popovertarget="audienceChooser">
-        <span>{{ role or roles[0] }}</span>
+        <span>{{ role.title or roles[0].title }}</span>
         {{ '/src/assets/images/icon-chevrondown.svg' | svgContents | safe }}
       </button>
       <div id="audienceChooser" popover>
         {%- for role in roles %}
-        {% if role === 'Arbeidsgiver' %}          
-        <a href="/{{ user.name | slugify }}/minside-arbeidsgiver/">{{ role }}</a>
-        {% else %}
-        <a href="#" {{- 'aria-current=page' if loop.first -}}>{{ role }}</a>
-        {% endif %}
+        <a href="/{{ user.name | slugify }}/{{ role.url }}" {{- 'aria-current=page' if loop.first -}}>{{ role.title }}</a>
         {%- endfor %}
       </div>
     </div>
