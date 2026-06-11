@@ -775,14 +775,11 @@ a {
   gap: var(--ax-space-8);
   text-decoration: none;
 
-  &:hover {
-    background-color: var(--ax-accent-200A);
-  }
-  strong {
+  a& strong {
       color: var(--ax-accent-900);
   }
   small {
-      color: var(--ax-neutral-700);
+      color: var(--ax-neutral-800);
   }
 }
 
@@ -870,6 +867,10 @@ a {
 
   &:has(a) { position: relative }
   &:has(a:hover) { border-color: var(--ax-accent-500) }
+
+  a&:hover {
+    border-color: var(--ax-accent-600);
+  }
 
   &:has(a) :where(a) {
     color: currentColor;
