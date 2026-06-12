@@ -48,11 +48,13 @@ export default [
     name: "Casey Jensen",
     role: "Du har foreldreansvar",
     icon: "/src/assets/images/icon-persongroup.svg",
+    tasks: [],
   },
   {
     type: "agent",
     name: "Pippilotta Viktualia Rullgardina Krusmynte Efraimsdatter Langstrømpe",
     role: "Du er verge",
     icon: "/src/assets/images/icon-persongroup.svg",
+    tasks: [],
   },
 ];

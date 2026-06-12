@@ -121,7 +121,7 @@
       <div class="account__text stack-text">
         <strong>{{ user.name if user.type == 'agent' else users[0].name }}</strong>
         <small>
-          Du har {{ user.tasks | length }} uløst{{ 'e' if user.tasks.length != 1 }} oppgave{{ 'r' if user.tasks.length != 1 }}
+          {{ (user.tasks or users[0].tasks) | length }} ny{{ 'e' if user.tasks.length != 1 }} oppgave{{ 'r' if user.tasks.length != 1 }}
         </small>
       </div>
       <div class="account__icon">

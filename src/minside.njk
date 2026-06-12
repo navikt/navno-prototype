@@ -10,7 +10,7 @@ permalink: "/{{ user.name | slugify }}/minside/index.html"
 
 <div class="container container--prose">
   <header class="page-header">
-    <div class="page-crumbs"><span>Min side</span> /</div>
+    <div class="page-crumbs"><span>Min side</span></div>
     <h1>Hei, {{ user.name or users[0].name }}</h1>
   </header>
 
@@ -21,20 +21,24 @@ permalink: "/{{ user.name | slugify }}/minside/index.html"
     </a>
   </div>
 
-  {% if user.tasks %}
   <section class="page-section">
     <h2 class="page-section__title">Oppgaver</h2>
+
     <div class="page-section__content" style="display:grid; gap:var(--ax-space-6)">
-      {%- for task in user.tasks %}
-      <div class="card">
-        <h3><a href="#">{{ task.title }}</a></h3>
-        <p><small>{{ task.description }}</small></p>
-      </div>
-      {%- endfor %}
+      {%- if (user.tasks | length) > 0 %}
+        {%- for task in user.tasks %}
+        <div class="card">
+          <h3><a href="#">{{ task.title }}</a></h3>
+          <p><small>{{ task.description }}</small></p>
+        </div>
+        {%- endfor %}
+      {% else %}
+        Ingen nye oppgaver venter
+      {%- endif %}
+
       <a href="#">Tidligere oppgaver</a>
     </div>
   </section>
-  {% endif %}
 
   {% if user.products %}
   <section class="page-section">

@@ -915,6 +915,10 @@ a {
 
 .page-crumbs {
   margin-block:0 var(--ax-space-12);
+
+  span {
+    opacity: 0.8;
+  }
 }
 
 .page-section {
