@@ -319,6 +319,7 @@ a {
   border-inline-start: 1px solid #bbb;
   padding-inline-start: var(--ax-space-12);
   margin-inline-start: var(--ax-space-6);
+  min-inline-size: 22ch;
 
   & > button {
     border-radius: var(--ax-radius-8);

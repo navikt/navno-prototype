@@ -40,7 +40,7 @@
       </button>
       <div id="audienceChooser" popover>
         {%- for role in roles %}
-        <a href="/{{ user.name | slugify }}/{{ role.url }}" {{- 'aria-current=page' if loop.first -}}>{{ role.title }}</a>
+        <a href="{{ ('/' + (user.name | slugify) + '/') if user.name or '' }}{{ role.url }}" {{- 'aria-current=page' if loop.first -}}>{{ role.title }}</a>
         {%- endfor %}
       </div>
     </div>
@@ -106,7 +106,7 @@
             </div>
 
             <div class="menu-footer">
-              <p>Bytt til <a href="/{{ user.name | slugify }}/arbeidsgiver/">arbeidsgiver</a> eller <a href="/{{ user.name | slugify }}/samarbeidspartner/">samarbeidspartner</a>.</p>
+              <p>Bytt til <a href="{{ ('/' + (user.name | slugify) + '/arbeidsgiver/') if user.name else '/arbeidsgiver/' }}">arbeidsgiver</a> eller <a href="{{ ('/' + (user.name | slugify) + '/samarbeidspartner/') if user.name else '/samarbeidspartner/' }}">samarbeidspartner</a>.</p>
             </div>
 
           </div>

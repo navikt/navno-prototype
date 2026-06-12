@@ -1,4 +1,10 @@
 ---
 layout: "base.njk"
 loggedIn: false
+pagination:
+  data: roles
+  size: 1
+  alias: role
+permalink: "{{ role.url }}"
 ---
+
