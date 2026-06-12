@@ -913,7 +913,7 @@ a {
 }
 
 .page-crumbs {
-  margin-block:0 var(--ax-space-8);
+  margin-block:0 var(--ax-space-12);
 }
 
 .page-section {
