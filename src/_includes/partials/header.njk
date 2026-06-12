@@ -116,7 +116,7 @@
   </div>
 
   <div class="site-account">
-    {%- if loggedIn %}
+    {%- if user.name %}
     <button class="site-account-button account" popovertarget="site-account-menu" type="button">
       <div class="account__text stack-text">
         <strong>{{ user.name if user.type == 'agent' else users[0].name }}</strong>
@@ -167,14 +167,16 @@
             <small>Personer du kan representere</small>
           </div>
         </a>
-        {# {% else %}
-        <a href="/{{ users[0].name | slugify }}/minside/">
+        {% else %}
+        {% set oldName = (user.name | slugify) %}
+        {% set newName = (users[0].name | slugify) %}
+        <a href="{{ page.url | replace(oldName, newName) }}">
           {{ '/src/assets/images/icon-personminus.svg' | svgContents | safe }}
           <div class="stack-text">
             <strong>Avslutt representasjon</strong>
             <small>[Beskrivelse]</small>
           </div>
-        </a> #}
+        </a>
         {% endif %}
         <a href="/">
           {{ '/src/assets/images/icon-leave.svg' | svgContents | safe }}
@@ -190,6 +192,9 @@
     {%- endif %}
   </div>
   {% if (user.type == 'agent') and (page.url != '/') %}
-  <div class="site-agentmode">Representeres av {{ users[0].name }} &nbsp; | &nbsp; <a href="/charlie-jensen/minside/">Avslutt representasjon</button></div>
+  <div class="site-agentmode">
+    Representeres av {{ users[0].name }}
+    {# &nbsp; | &nbsp; <a href="/charlie-jensen/minside/">Avslutt representasjon</button> #}
+  </div>
   {% endif %}
 </header>
