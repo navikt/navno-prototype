@@ -15,9 +15,14 @@ permalink: "/{{ user.name | slugify }}/minside-arbeidsgiver/index.html"
     <h1>Min side - arbeidsgiver</h1>
   </header>
 
+    <div style="display:flex;align-items:center;gap:1ch">
+      {{ '/src/assets/images/icon-xmarkoctagonfill.svg' | svgContents | safe }}
+      <span>Du har ikke tilgang til innhold på denne siden …</span>
+    </div>
 
-  {% if user.type == 'agent' %}
-    Du har ikke tilgang …
-  {% endif %}
+    <div style="margin-block-start:2lh">
+      <p><a href="#">Lenke til info om tilganger i Altinn …</a></p>
+      <p><a href="/{{ user.name | slugify }}/minside/">Min side (privatperson)</a></p>
+    </div>
 
 </div>

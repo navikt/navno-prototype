@@ -27,7 +27,6 @@
 
 <header class="site-header container">
   <div class="site-navigation">
-
     <a class="site-logo" href="/{{ (user.name or users[0].name) | slugify }}/">
       {{ "/src/assets/images/logo.svg" | svgContents | safe }}
       <span class="sr-only">Nav</span>
@@ -66,50 +65,48 @@
         </svg>
       </button>
       <div id="site-menu" popover>
-        <div class="container">
-          <div class="site-menu-content">
+        <div class="site-menu-content container">
 
-            {{ search('site-search site-search--small', 'siteSearch2', 'siteSearchSuggestions2') }}
+          {{ search('site-search site-search--small', 'siteSearch2', 'siteSearchSuggestions2') }}
 
-            <div>
-              <h2>{{ menu.areas.title }}</h2>
-              <ul class="menu-tiles">
-                {% for item in menu.areas.linkList %}
-                <li>
-                  <a href="{{ item.href or '#' }}">
-                    {% if item.icon %}
-                      {{- item.icon | svgContents | safe -}}
-                    {% endif %}
-                    <span>{{ item.text }}</span>
-                  </a>
-                </li>
-                {% endfor %}
-              </ul>
-            </div>
-
-            <div class="menu-col-separator"></div>
-
-            <div>
-              <h2>{{ menu.shortcuts.title }}</h2>
-              <ul class="menu-list">
-                {% for item in menu.shortcuts.linkList %}
-                <li>
-                  <a href="{{ item.href or '#' }}">
-                    {% if item.icon %}
-                      {{- item.icon | svgContents | safe -}}
-                    {% endif %}
-                    <span>{{ item.text }}</span>
-                  </a>
-                </li>
-                {% endfor %}
-              </ul>
-            </div>
-
-            <div class="menu-footer">
-              <p>Bytt til <a href="{{ ('/' + (user.name | slugify) + '/arbeidsgiver/') if user.name else '/arbeidsgiver/' }}">arbeidsgiver</a> eller <a href="{{ ('/' + (user.name | slugify) + '/samarbeidspartner/') if user.name else '/samarbeidspartner/' }}">samarbeidspartner</a>.</p>
-            </div>
-
+          <div>
+            <h2>{{ menu.areas.title }}</h2>
+            <ul class="menu-tiles">
+              {% for item in menu.areas.linkList %}
+              <li>
+                <a href="{{ item.href or '#' }}">
+                  {% if item.icon %}
+                    {{- item.icon | svgContents | safe -}}
+                  {% endif %}
+                  <span>{{ item.text }}</span>
+                </a>
+              </li>
+              {% endfor %}
+            </ul>
           </div>
+
+          <div class="menu-col-separator"></div>
+
+          <div>
+            <h2>{{ menu.shortcuts.title }}</h2>
+            <ul class="menu-list">
+              {% for item in menu.shortcuts.linkList %}
+              <li>
+                <a href="{{ item.href or '#' }}">
+                  {% if item.icon %}
+                    {{- item.icon | svgContents | safe -}}
+                  {% endif %}
+                  <span>{{ item.text }}</span>
+                </a>
+              </li>
+              {% endfor %}
+            </ul>
+          </div>
+
+          <div class="menu-footer">
+            <p>Bytt til <a href="{{ ('/' + (user.name | slugify) + '/arbeidsgiver/') if user.name else '/arbeidsgiver/' }}">arbeidsgiver</a> eller <a href="{{ ('/' + (user.name | slugify) + '/samarbeidspartner/') if user.name else '/samarbeidspartner/' }}">samarbeidspartner</a>.</p>
+          </div>
+
         </div>
       </div>
     </nav>
@@ -121,28 +118,40 @@
       <div class="account__text stack-text">
         <strong>{{ user.name if user.type == 'agent' else users[0].name }}</strong>
         <small>
-          {{ (user.tasks or users[0].tasks) | length }} ny{{ 'e' if user.tasks.length != 1 }} oppgave{{ 'r' if user.tasks.length != 1 }}
+          {% if role.title == 'Arbeidsgiver' %}
+            0 nye oppgaver
+          {% else %}
+            {{ (user.tasks or users[0].tasks) | length }} ny{{ 'e' if user.tasks.length != 1 }} oppgave{{ 'r' if user.tasks.length != 1 }}
+          {% endif %}
         </small>
       </div>
       <div class="account__icon">
         <div class="avatar {{ 'avatar--self' if user.type != 'agent' }}" style="view-transition-name: avatar-{{ user.name | slugify }}">
-        {{ (user.icon or users[0].icon) | svgContents | safe }}
+          {{ (user.icon or users[0].icon) | svgContents | safe }}
         </div>
-        {% if (user.tasks | length) >= 1 %}
+        {% if ((user.tasks | length) >= 1) and role.title != 'Arbeidsgiver' %}
           <span class="account__tasks">{{ user.tasks | length }}</span>
         {% endif %}
-        <div></div>
       </div>
     </button>
     <div class="site-account-menu" id="site-account-menu" popover>
-      <div>
+      {% if role.title == 'Arbeidsgiver' %}
+        <a href="/{{ (user.name or users[0].name) | slugify }}/minside-arbeidsgiver/">
+          {{ '/src/assets/images/icon-squaregrid.svg' | svgContents | safe }}
+          <strong>Min side - arbeidsgiver</strong>
+        </a>
+        <a href="/">
+          {{ '/src/assets/images/icon-leave.svg' | svgContents | safe }}
+          <strong style="line-height:1.8">Logg ut</strong>
+        </a>
+      {% else %}
         <a href="/{{ (user.name or users[0].name) | slugify }}/minside/">
           {{ '/src/assets/images/icon-squaregrid.svg' | svgContents | safe }}
           <div class="stack-text">
             <strong>
-              Min side ({{ user.name }})
+              Min side ({{ user.name or users[0].name }})
               </strong>
-            <small>2 oppgaver venter</small>
+            <small>{{ (user.tasks or users[0].tasks) | length }} ny{{ 'e' if user.tasks.length != 1 }} oppgave{{ 'r' if user.tasks.length != 1 }}</small>
           </div>
         </a>
         <a href="/{{ user.name | slugify }}/personopplysninger/">
@@ -155,34 +164,22 @@
         <a href="/{{ user.name | slugify }}/representasjon/">
           {{ '/src/assets/images/icon-personrectangle.svg' | svgContents | safe }}
           <div class="stack-text">  
-            <strong>Representasjon</strong>
+            <strong>Fullmakter</strong>
             <small>Oversikt over tilganger</small>
           </div>
         </a>
-        {% if user.type == 'self' %}
-        <a href="/{{ users[0].name | slugify }}/bytt-bruker/">
+        <a href="/{{ user.name | slugify }}/bytt-bruker/">
           {{ '/src/assets/images/icon-persongroup.svg' | svgContents | safe }}
           <div class="stack-text">
-            <strong>Bytt bruker</strong>
-            <small>Personer du kan representere</small>
+            <strong>Representasjon</strong>
+            <small>Bytt bruker</small>
           </div>
         </a>
-        {% else %}
-        {% set oldName = (user.name | slugify) %}
-        {% set newName = (users[0].name | slugify) %}
-        <a href="{{ page.url | replace(oldName, newName) }}">
-          {{ '/src/assets/images/icon-personminus.svg' | svgContents | safe }}
-          <div class="stack-text">
-            <strong>Avslutt representasjon</strong>
-            <small>Bytter til {{ users[0].name }}</small>
-          </div>
-        </a>
-        {% endif %}
         <a href="/">
           {{ '/src/assets/images/icon-leave.svg' | svgContents | safe }}
           <strong style="line-height:1.8">Logg ut</strong>
         </a>
-      </div>
+      {% endif %}
     </div>
     {%- else %}
     <a class="site-account-login" href="/idporten/">
@@ -191,10 +188,4 @@
     </a>
     {%- endif %}
   </div>
-  {% if (user.type == 'agent') and (page.url != '/') %}
-  <div class="site-agentmode">
-    Representeres av {{ users[0].name }}
-    {# &nbsp; | &nbsp; <a href="/charlie-jensen/minside/">Avslutt representasjon</button> #}
-  </div>
-  {% endif %}
 </header>

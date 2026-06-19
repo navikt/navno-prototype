@@ -29,7 +29,7 @@ permalink: "/{{ user.name | slugify }}/representasjon/index.html"
         <label for="{{ user.name | slugify }}">
           <span>
             <strong>{{ user.name }}</strong>
-            <small>{{ user.role }}</small>
+            <small>{{ user.id }}</small>
           </span>
           {% if loop.first %}<span class="tag">Deg</span>{% endif %}
         </label>

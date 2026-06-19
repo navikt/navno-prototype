@@ -2,7 +2,7 @@ export default [
   {
     type: "self",
     name: "Charlie Jensen",
-    role: "Din egen profil",
+    id: "090292*****",
     icon: "/src/assets/images/icon-person.svg",
     tasks: [
       {
@@ -17,16 +17,19 @@ export default [
     ],
     products: [
       {
-        title: "Arbeidsavklaringspenger",
-        status: "Oppdatert 27. mai, kl. 14.15",
+        title: "Arbeidsavklaringspenger (AAP)",
+        url: "aap",
+        access: true,
       },
       {
         title: "Foreldrepenger",
-        status: "Status …",
+        url: "foreldrepenger",
+        access: true,
       },
       {
         title: "Utbetalinger",
-        status: "Status …",
+        url: "utbetalinger",
+        access: true,
       },
     ],
     support: [{}],
@@ -34,7 +37,7 @@ export default [
   {
     type: "agent",
     name: "Alex Jensen",
-    role: "Du har foreldreansvar",
+    id: "211112*****",
     icon: "/src/assets/images/icon-persongroup.svg",
     tasks: [
       {
@@ -42,19 +45,33 @@ export default [
         description: "Varslet på SMS",
       },
     ],
+    products: [
+      {
+        title: "Arbeidsavklaringspenger (AAP)",
+        url: "aap",
+        access: false,
+      },
+    ],
   },
   {
     type: "agent",
     name: "Casey Jensen",
-    role: "Du har foreldreansvar",
+    id: "160616*****",
     icon: "/src/assets/images/icon-persongroup.svg",
     tasks: [],
   },
   {
     type: "agent",
     name: "Pippilotta Viktualia Rullgardina Krusmynte Efraimsdatter Langstrømpe",
-    role: "Du er verge",
+    id: "140561*****",
     icon: "/src/assets/images/icon-persongroup.svg",
     tasks: [],
+    products: [
+      {
+        title: "Arbeidsavklaringspenger",
+        url: "aap",
+        access: false,
+      },
+    ],
   },
 ];
