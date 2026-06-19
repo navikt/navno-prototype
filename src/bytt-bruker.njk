@@ -16,7 +16,7 @@ permalink: "/{{ user.name | slugify }}/bytt-bruker/index.html"
   <div style="margin-block:1lh;">
     {%- for agent in users %}
       {% if agent.name == user.name %}
-        <div class="account-option card card--ghost">
+        <div class="account-option card card--active">
           <div class="avatar {{ 'avatar--agent' if agent.type === 'agent' }}">
             {{ agent.name.slice(0,2) }}
           </div>

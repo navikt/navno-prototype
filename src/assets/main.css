@@ -235,6 +235,10 @@ body {
   font-weight: 625;
 }
 
+small {
+  font-size: 1rem;
+}
+
 :where(button, input) {
   font: inherit;
 }
@@ -663,7 +667,13 @@ a {
     overflow: clip;
     white-space: nowrap;
     text-overflow: ellipsis;
-    max-inline-size: 24ch;
+
+    @media (width <= 1280px) {
+      max-inline-size: 32ch;
+    }
+    @media (width > 1280px) {
+      max-inline-size: 18ch;
+    }
   }
 
   small {
@@ -674,30 +684,38 @@ a {
   }
 }
 
-.site-account-menu {
-  inline-size: min(42ch, 90vw);
+.site-user-menu {
+  inline-size: min(36ch, 90vw);
 
   &:popover-open {
-    padding-block: 0.5rem;
+    padding: var(--ax-space-16);
     border-radius: var(--ax-radius-12);
     box-shadow: 0 0.125rem 1rem -0.25rem hsl(0 0 0 / 0.2);
     text-align: left;
+    display: grid;
+    gap: var(--ax-space-12);
   }
 
-  & > :where(a, button) {
+  header h2 {
+    font-size: 1.5rem;
+  }
+
+  & > div {
+    display: grid;
+    gap: var(--ax-space-8);
+  }
+
+  & :where(a, button) {
+    border-radius: var(--ax-radius-8);
     text-decoration: none;
     color: inherit;
     display: block;
-    padding: var(--ax-space-16) var(--ax-space-20);
+    padding: var(--ax-space-16) var(--ax-space-12);
+    background-color: var(--ax-neutral-100);
 
     &:hover {
-      background-color: var(--ax-neutral-100);
-      outline: 1px solid var(--ax-neutral-100);
+      background-color: var(--ax-accent-200A);
     }
-  }
-
-  & > :where(a, button):not(:last-child) {
-    box-shadow: 0 21px 0 -20px var(--ax-neutral-300A);
   }
 
   :where(a, button):has( > svg) {
@@ -713,6 +731,13 @@ a {
       translate:0 1px;
       flex-shrink: 0;
     }
+  }
+
+  hr {
+    inline-size: 100%;
+    border: none;
+    block-size: 1px;
+    background-color: var(--ax-neutral-300A);
   }
 }
 
@@ -788,7 +813,7 @@ a {
 
 .account-option {
   padding: var(--ax-space-12) var(--ax-space-12);
-  margin-block: var(--ax-space-6);
+  margin-block: var(--ax-space-8);
   margin-inline: calc(var(--ax-space-12) * -1);
   border-radius: var(--ax-radius-8);
   display: grid;
@@ -820,16 +845,16 @@ a {
   align-self: center;
 
   &:has(.account__tasks) .avatar {
-    mask: radial-gradient(1q at 42px 4px,#0000 12px,red 0);
+    mask: radial-gradient(1q at 42px 3px,#0000 13px,red 0);
   }
 }
 
 .account__tasks {
   position: absolute;
-  inset: -6px -6px auto auto;
+  inset: -6px -10px auto auto;
   display: grid;
   place-items: center;
-  background-color: var(--ax-text-logo);
+  background-color: var(--ax-accent-1000);
   inline-size: var(--ax-space-20);
   block-size: var(--ax-space-20);
   border-radius: var(--ax-radius-full);
@@ -861,22 +886,20 @@ a {
   border:1px solid #0000;
   corner-shape: squircle;
   aspect-ratio: 1;
-  inline-size: 36;
+  inline-size: 32;
   font-size:1.25rem;
   font-weight: 400;
 }
 
 .avatar--agent {
   background-color: var(--ax-meta-purple-700);
-  color: var(--ax-neutral-000);
+  color: var(--ax-meta-purple-300);
   border-radius: var(--ax-radius-full);
-  border-color: var(--ax-meta-purple-1000);
   corner-shape: unset;
 
 }
 
 .card {
-  border: 2px solid #0000;
   border-radius: var(--ax-radius-12);
   background-color: var(--ax-neutral-000);
   padding: var(--ax-space-12) var(--ax-space-16);
@@ -889,7 +912,7 @@ a {
   &:has(a:hover) { border-color: var(--ax-accent-500) }
 
   a&:hover {
-    border-color: var(--ax-accent-600);
+    outline:2px solid var(--ax-accent-600);
   }
 
   &:has(a) :where(a) {
@@ -909,11 +932,9 @@ a {
   }
 }
 
-.card--ghost {
-  background-color: #0000;
-  border-style:dashed;
-  border-color: var(--ax-neutral-400A);
-  box-shadow: none;
+.card--active {
+  background-color: var(--ax-neutral-200A);
+  box-shadow:inset 0 1px 1px var(--ax-neutral-200A);
 }
 
 .card[data-status="new"] a {
