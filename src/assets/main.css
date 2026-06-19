@@ -636,7 +636,7 @@ a {
     border-radius: var(--ax-radius-full);
     background-color: var(--ax-accent-200A);
     padding: var(--ax-space-8);
-    color: var(--ax-accent-700);
+    color: var(--ax-accent-900);
   }
 }
 
@@ -809,17 +809,6 @@ a {
   }
 }
 
-
-.tag {
-  align-self: center;
-  margin-inline: auto var(--ax-space-8);
-  color: var(--ax-text-neutral);
-  font-size: smaller;
-  border-radius: 99ch;
-  background-color: var(--ax-neutral-200A);
-  padding: var(--ax-space-4) var(--ax-space-12);
-}
-
 .account {
   display: flex;
   align-items: center;
@@ -831,16 +820,16 @@ a {
   align-self: center;
 
   &:has(.account__tasks) .avatar {
-    mask: radial-gradient(1q at 38px 2px,#0000 12px,red 0);
+    mask: radial-gradient(1q at 42px 4px,#0000 12px,red 0);
   }
 }
 
 .account__tasks {
   position: absolute;
-  inset: -8px -8px auto auto;
+  inset: -6px -6px auto auto;
   display: grid;
   place-items: center;
-  background-color: var(--ax-brand-blue-1000);
+  background-color: var(--ax-text-logo);
   inline-size: var(--ax-space-20);
   block-size: var(--ax-space-20);
   border-radius: var(--ax-radius-full);
@@ -850,7 +839,6 @@ a {
   text-indent: 1px;
   font-variant-numeric: tabular-nums;
 }
-
 
 .stack-text {
   display: grid;
@@ -863,26 +851,29 @@ a {
 
 }
 
-
 .avatar {
   display: inline-grid;
   place-items: center;
-  padding: var(--ax-space-8);
-  border-radius: var(--ax-radius-full);
-  background-color: var(--ax-brand-magenta-700);
-  color: var(--ax-neutral-000);
+  padding: var(--ax-space-4);
+  border-radius: var(--ax-radius-12);
+  background-color: var(--ax-accent-300);
+  color: var(--ax-accent-900);
+  border:1px solid #0000;
+  corner-shape: squircle;
   aspect-ratio: 1;
-
-  input {
-    appearance: none;
-    margin:0;
-  }
+  inline-size: 36;
+  font-size:1.25rem;
+  font-weight: 400;
 }
 
-.avatar--self {
-  background-color: var(--ax-accent-700);
-}
+.avatar--agent {
+  background-color: var(--ax-meta-purple-700);
+  color: var(--ax-neutral-000);
+  border-radius: var(--ax-radius-full);
+  border-color: var(--ax-meta-purple-1000);
+  corner-shape: unset;
 
+}
 
 .card {
   border: 2px solid #0000;

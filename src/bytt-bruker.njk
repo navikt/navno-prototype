@@ -17,8 +17,8 @@ permalink: "/{{ user.name | slugify }}/bytt-bruker/index.html"
     {%- for agent in users %}
       {% if agent.name == user.name %}
         <div class="account-option card card--ghost">
-          <div class="avatar {{ 'avatar--self' if agent.type != 'agent' }}">
-            {{ agent.icon | svgContents | safe }}
+          <div class="avatar {{ 'avatar--agent' if agent.type === 'agent' }}">
+            {{ agent.name.slice(0,2) }}
           </div>
           <div class="stack-text">
             <strong>{{ agent.name }}</strong>
@@ -28,8 +28,8 @@ permalink: "/{{ user.name | slugify }}/bytt-bruker/index.html"
         </div>       
       {% else %}
         <a href="/{{ agent.name | slugify }}/minside/" class="account-option card">
-          <div class="avatar {{ 'avatar--self' if agent.type != 'agent' }}">
-            {{ agent.icon | svgContents | safe }}
+          <div class="avatar {{ 'avatar--agent' if agent.type === 'agent' }}">
+            {{ agent.name.slice(0,2) }}
           </div>
           <div class="stack-text">
             <strong>{{ agent.name }}</strong>

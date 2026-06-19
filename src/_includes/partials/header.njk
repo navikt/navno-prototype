@@ -126,8 +126,8 @@
         </small>
       </div>
       <div class="account__icon">
-        <div class="avatar {{ 'avatar--self' if user.type != 'agent' }}" style="view-transition-name: avatar-{{ user.name | slugify }}">
-          {{ (user.icon or users[0].icon) | svgContents | safe }}
+        <div class="avatar {{ 'avatar--agent' if user.type === 'agent' }}" style="view-transition-name: avatar-{{ user.name | slugify }}">
+          {{ user.name.slice(0,2) }}
         </div>
         {% if ((user.tasks | length) >= 1) and role.title != 'Arbeidsgiver' %}
           <span class="account__tasks">{{ user.tasks | length }}</span>
@@ -157,22 +157,22 @@
         <a href="/{{ user.name | slugify }}/personopplysninger/">
           {{ '/src/assets/images/icon-informationsquare.svg' | svgContents | safe }}
           <div class="stack-text">
-            <strong>Personopplysninger</strong>
+            <strong>Profil og innstillinger</strong>
             <small>Kontaktinfo, kontonummer, osv.</small>
-          </div>
-        </a>
-        <a href="/{{ user.name | slugify }}/representasjon/">
-          {{ '/src/assets/images/icon-personrectangle.svg' | svgContents | safe }}
-          <div class="stack-text">  
-            <strong>Fullmakter</strong>
-            <small>Oversikt over tilganger</small>
           </div>
         </a>
         <a href="/{{ user.name | slugify }}/bytt-bruker/">
           {{ '/src/assets/images/icon-persongroup.svg' | svgContents | safe }}
           <div class="stack-text">
-            <strong>Representasjon</strong>
-            <small>Bytt bruker</small>
+            <strong>Bytt bruker</strong>
+            <small>Representasjon</small>
+          </div>
+        </a>
+        <a href="/{{ user.name | slugify }}/representasjon/">
+          {{ '/src/assets/images/icon-personrectangle.svg' | svgContents | safe }}
+          <div class="stack-text">  
+            <strong>Fullmakter og tilgangsstyring</strong>
+            <small>Oversikt over tilganger</small>
           </div>
         </a>
         <a href="/">
