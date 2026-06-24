@@ -3,11 +3,12 @@ export default [
     type: "self",
     name: "Charlie Jensen",
     id: "090292*****",
+    birthday: "1992-02-09",
     icon: "/src/assets/images/icon-person.svg",
     tasks: [
       {
         title: "Les vedtak på søknad om foreldrepenger",
-        description: "13.10.23 kl. 15.23 • Varslet på SMS",
+        description: "13.10.23 kl. 15.23  •  Varslet på SMS",
       },
       {
         title:
@@ -38,6 +39,8 @@ export default [
     type: "agent",
     name: "Alex Jensen",
     id: "211112*****",
+    birthday: "2012-11-21",
+    representation: "Du har foreldreansvar",
     icon: "/src/assets/images/icon-persongroup.svg",
     tasks: [
       {
@@ -57,6 +60,8 @@ export default [
     type: "agent",
     name: "Casey Jensen",
     id: "160616*****",
+    birthday: "2016-06-16",
+    representation: "Du har foreldreansvar",
     icon: "/src/assets/images/icon-persongroup.svg",
     tasks: [],
   },
@@ -64,6 +69,8 @@ export default [
     type: "agent",
     name: "Pippilotta Viktualia Rullgardina Krusmynte Efraimsdatter Langstrømpe",
     id: "140561*****",
+    birthday: "1961-05-14",
+    representation: "Du er verge",
     icon: "/src/assets/images/icon-persongroup.svg",
     tasks: [],
     products: [

@@ -113,6 +113,7 @@
   </div>
 
   <div class="site-account">
+    {%- if loggedIn %}
     {%- if user.name %}
     <button class="site-account-button account" popovertarget="site-user-menu" type="button">
       <div class="account__text stack-text">
@@ -138,7 +139,7 @@
       <header>
         <small>Logget inn</small><br>
         <h2>{{ 'På vegne av ' + user.name if user.type == 'agent' else users[0].name }}</h2>
-        <p>Født 21. november 2012</p>
+        <p><span class="tag">Født 21. november 2012</span></p>
       </header>
       <div>
 
@@ -147,15 +148,11 @@
             {# {{ '/src/assets/images/icon-squaregrid.svg' | svgContents | safe }} #}
             <strong>Min side - arbeidsgiver</strong>
           </a>
-          <a href="/">
-            {# {{ '/src/assets/images/icon-leave.svg' | svgContents | safe }} #}
-            <strong style="line-height:1.8">Logg ut</strong>
-          </a>
         {% endif %}
 
         {% if not role.title %}
           <a href="/{{ (user.name or users[0].name) | slugify }}/minside/">
-            {# {{ '/src/assets/images/icon-squaregrid.svg' | svgContents | safe }} #}
+            {{ '/src/assets/images/icon-squaregrid.svg' | svgContents | safe }}
             <div class="stack-text">
               <strong>
                 Min side
@@ -164,14 +161,14 @@
             </div>
           </a>
           <a href="/{{ user.name | slugify }}/personopplysninger/">
-            {# {{ '/src/assets/images/icon-informationsquare.svg' | svgContents | safe }} #}
+            {{ '/src/assets/images/icon-cog.svg' | svgContents | safe }}
             <div class="stack-text">
               <strong>Profil og innstillinger</strong>
               <small>Kontaktinfo, kontonummer, osv.</small>
             </div>
           </a>
           <a href="/{{ user.name | slugify }}/bytt-bruker/">
-            {# {{ '/src/assets/images/icon-persongroup.svg' | svgContents | safe }} #}
+            {{ '/src/assets/images/icon-persongroup.svg' | svgContents | safe }}
             <div class="stack-text">
               <strong>Bytt bruker</strong>
               <small>Velg hvem du vil bruke Nav på vegne av</small>
@@ -181,12 +178,18 @@
 
         <hr>
 
-        <a href="/" style="text-align:center;line-height:1.8">
-          {# {{ '/src/assets/images/icon-leave.svg' | svgContents | safe }} #}
+        <a href="/" style="justify-content:center">
+          {{ '/src/assets/images/icon-leave.svg' | svgContents | safe }}
           <strong>Logg ut</strong>
         </a>
       </div>
     </nav>
+    {%- else %}
+    <div class="site-account-login">
+      <span>Velg bruker</span>
+      {{ '/src/assets/images/icon-persongroup.svg' | svgContents | safe }}
+    </div>
+    {%- endif %}
     {%- else %}
     <a class="site-account-login" href="/idporten/">
       <span>Logg inn</span>

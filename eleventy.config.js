@@ -16,6 +16,7 @@ import {
   sortStringLast,
   lowerfirst,
   filterByTags,
+  formatDate,
 } from "./src/_11ty/filters.js";
 import { timestampNow } from "./src/_11ty/shortcodes.js";
 import { minifyHtml, dummifyLinks } from "./src/_11ty/transforms.js";
@@ -43,6 +44,7 @@ export default function (eleventyConfig) {
   eleventyConfig.addFilter("extractTags", extractTags);
   eleventyConfig.addFilter("sortStringLast", sortStringLast);
   eleventyConfig.addFilter("filterByTags", filterByTags);
+  eleventyConfig.addFilter("formatDate", formatDate);
 
   // Templating shortcodes
   eleventyConfig.addShortcode("now", timestampNow);

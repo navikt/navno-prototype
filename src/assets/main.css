@@ -217,6 +217,9 @@ body {
   font-size: 2.5rem;
   line-height: 1.35;
   margin-block-end: 0.5lh;
+  hyphenate-limit-chars: 6 3 3;
+  hyphenate-limit-lines: 2;
+  hyphens: auto;
 }
 
 :where(h2) {
@@ -327,7 +330,10 @@ a {
   border-inline-start: 1px solid #bbb;
   padding-inline-start: var(--ax-space-12);
   margin-inline-start: var(--ax-space-6);
-  min-inline-size: 22ch;
+
+  @media (width > 480px) {
+    min-inline-size: 22ch;
+  }
 
   & > button {
     border-radius: var(--ax-radius-8);
@@ -337,8 +343,8 @@ a {
     margin-block: calc(var(--ax-space-8) * -1);
     color: var(--ax-neutral-900);
     display: flex;
-    gap: 0.25ch;
     align-items: center;
+    gap: 0.25ch;
     cursor: pointer;
 
     svg {
@@ -458,7 +464,7 @@ a {
     }
 
     &:hover {
-      background: var(--ax-neutral-200A);
+      background: var(--ax-accent-200A);
     }
 
     span {
@@ -507,7 +513,7 @@ a {
   @media (width <= 840px) {
     padding-block-end: var(--ax-space-48);
     overflow-y: auto;
-    block-size: 90vh;
+    max-block-size: 90vh;
     overscroll-behavior: contain;
   }
 
@@ -526,16 +532,16 @@ a {
   
 
   .menu-tiles {
-    columns: 30ch 2;
+    columns: 32ch 2;
     padding-block-end: var(--ax-space-16);
 
     li + li {
-      margin-block-start: var(--ax-space-8);
+      margin-block-start: var(--ax-space-12);
     }
   }
 
   .menu-list {
-    columns: 30ch 2;
+    columns: 32ch 2;
 
     li + li {
       margin-block-start: var(--ax-space-12);
@@ -601,12 +607,14 @@ a {
   }
 
   [popover] {
-    inset: anchor(110%) anchor(end) auto auto;
+    inset: anchor(110%) calc(anchor(end) - 3px) auto auto;
     align-self: start;
+    block-size: auto;
     position-anchor: --account;
 
-    @media (width < 480px) {
-      inset: anchor(100%) 0 auto 0;
+    @media (width <= 480px) {
+      inset: anchor(100%) 0.75rem auto;
+      inline-size: stretch
     }
 
     &::backdrop {
@@ -619,7 +627,6 @@ a {
   display: flex;
   column-gap: var(--ax-space-6);
   align-items: center;
-  cursor: pointer;
   color: currentColor;
   padding-block: var(--ax-space-8);
   padding-inline: var(--ax-space-16) var(--ax-space-12);
@@ -630,10 +637,9 @@ a {
     translate: var(--ax-space-12);
   }
 
-  &:hover svg {
+  a&:hover svg {
     background-color: var(--ax-accent-700);
     color: var(--ax-neutral-000);
-
   }
 
   svg {
@@ -654,7 +660,6 @@ a {
   cursor: pointer;
   translate: var(--ax-space-10);
   
-
   @media (width <= 1280px) {
       margin-block: -0.375lh;
   }
@@ -682,10 +687,17 @@ a {
     white-space: nowrap;
     overflow: clip;
   }
+
+  &:hover .avatar {
+    background-color: var(--ax-accent-400A);
+  }
+  &:hover .avatar--agent {
+    background-color: var(--ax-meta-purple-900);
+  }
 }
 
 .site-user-menu {
-  inline-size: min(36ch, 90vw);
+  inline-size: min(38ch, calc(100% - var(--edge-padding)));
 
   &:popover-open {
     padding: var(--ax-space-16);
@@ -696,7 +708,14 @@ a {
     gap: var(--ax-space-12);
   }
 
-  header h2 {
+  header {
+    margin-block-end: var(--ax-space-8);
+
+    .tag {
+      margin-block: var(--ax-space-8) var(--ax-space-4);
+    }
+  }
+  h2 {
     font-size: 1.5rem;
   }
 
@@ -710,7 +729,7 @@ a {
     text-decoration: none;
     color: inherit;
     display: block;
-    padding: var(--ax-space-16) var(--ax-space-12);
+    padding: var(--ax-space-16) var(--ax-space-16);
     background-color: var(--ax-neutral-100);
 
     &:hover {
@@ -728,7 +747,7 @@ a {
 
     svg {
       color: var(--ax-accent-700);
-      translate:0 1px;
+      translate:0 -2px;
       flex-shrink: 0;
     }
   }
@@ -783,55 +802,53 @@ a {
 }
 
 
-.agent-switcher {
-  border-block: 1px solid var(--ax-neutral-200A);
-  background-color: var(--ax-neutral-100);
-  position: relative;
-  max-block-size: 8lh;
+.account-switcher {
+  margin-block: var(--ax-space-64) var(--ax-space-24);
 
-  @media (width > 840px) {
-    max-block-size: 10lh;
-  }
-
-  & > p {
-    background: linear-gradient(var(--ax-neutral-100) 80%, #0000);
-    padding: var(--ax-space-12) var(--ax-space-20) var(--ax-space-8) 52px;
-    margin-block:-0.5rem 0;
-    position: sticky;
-    z-index: 2;
-    inset-block-start: 0;
-  }
-
-  & > a {
-    padding: var(--ax-space-12) var(--ax-space-20) var(--ax-space-12) 52px;
-  }
-  a {
-    padding-block: var(--ax-space-12);
+  hr {
+    margin:var(--ax-space-24) var(--ax-space-2);
+    border: 1px solid var(--ax-neutral-300A);
+    border-bottom: 0;
   }
 }
 
 
 .account-option {
-  padding: var(--ax-space-12) var(--ax-space-12);
+  padding: var(--ax-space-16) var(--ax-space-16);
   margin-block: var(--ax-space-8);
-  margin-inline: calc(var(--ax-space-12) * -1);
-  border-radius: var(--ax-radius-8);
+  border-radius: var(--ax-radius-12);
   display: grid;
   grid-template-columns: 3rem 1fr auto;
   gap: var(--ax-space-8);
   text-decoration: none;
+  align-items: start;
 
-  &:first-child {
-    margin-block-end: var(--ax-space-40);
+  &:has(a):hover {
+    outline:2px solid var(--ax-accent-600);
   }
 
-  a& strong {
-      color: var(--ax-accent-900);
+  :where(a) {
+      color: var(--ax-accent-1000);
   }
+
   small {
-      color: var(--ax-neutral-800);
-      font-family: monospace;
+      opacity: 0.8;
   }
+}
+
+.tag {
+  display: inline-block;
+  background-color: var(--ax-meta-purple-200A);
+  justify-self: start;
+  color: var(--ax-meta-purple-1000);
+  border-radius: var(--ax-radius-4);
+  padding: var(--ax-space-1) var(--ax-space-4);
+  margin-block: var(--ax-space-12) var(--ax-space-6);
+  letter-spacing: 0.75%;
+  line-height: 1;
+  font-size: 1rem;
+  outline: 1px solid var(--ax-meta-purple-300A);
+  translate: calc(var(--ax-space-4) * -1);
 }
 
 .account {
@@ -845,13 +862,13 @@ a {
   align-self: center;
 
   &:has(.account__tasks) .avatar {
-    mask: radial-gradient(1q at 42px 3px,#0000 13px,red 0);
+    mask: radial-gradient(1q at calc(100% - 2px) 2px,#0000 12px,red 0);
   }
 }
 
 .account__tasks {
   position: absolute;
-  inset: -6px -10px auto auto;
+  inset: -8px -8px auto auto;
   display: grid;
   place-items: center;
   background-color: var(--ax-accent-1000);
@@ -881,9 +898,8 @@ a {
   place-items: center;
   padding: var(--ax-space-4);
   border-radius: var(--ax-radius-12);
-  background-color: var(--ax-accent-300);
+  background-color: var(--ax-accent-300A);
   color: var(--ax-accent-900);
-  border:1px solid #0000;
   corner-shape: squircle;
   aspect-ratio: 1;
   inline-size: 32;
@@ -892,28 +908,20 @@ a {
 }
 
 .avatar--agent {
-  background-color: var(--ax-meta-purple-700);
+  background-color: var(--ax-meta-purple-1000);
   color: var(--ax-meta-purple-300);
   border-radius: var(--ax-radius-full);
   corner-shape: unset;
-
 }
 
-.card {
+:where(.card) {
   border-radius: var(--ax-radius-12);
   background-color: var(--ax-neutral-000);
   padding: var(--ax-space-12) var(--ax-space-16);
   box-shadow:0 1px 1px var(--ax-neutral-100A),0 8px 16px -12px var(--ax-neutral-200A);
   min-block-size: 1.5lh;
-  display: grid;
-  align-items: center;
 
   &:has(a) { position: relative }
-  &:has(a:hover) { border-color: var(--ax-accent-500) }
-
-  a&:hover {
-    outline:2px solid var(--ax-accent-600);
-  }
 
   &:has(a) :where(a) {
     color: currentColor;
@@ -950,8 +958,16 @@ a {
   }
 }
 
-.card--product a {
-  font-weight: 625;
+.card--product {
+  align-items: center;
+
+  a {
+    font-weight: 625;
+  }
+}
+
+.card--task small {
+  opacity: 0.8;
 }
 
 .page-crumbs {
@@ -969,6 +985,10 @@ a {
 .page-section__title {
   font-size: 1em;
   margin-block-end: var(--ax-space-12);
+}
+
+.page-section__footer {
+  margin-block-start: var(--ax-space-12);
 }
 
 @keyframes fadein{

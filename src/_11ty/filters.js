@@ -54,6 +54,10 @@ const filterByTags = (collection = [], ...tags) => {
   });
 };
 
+const formatDate = (value, options) => {
+  return new Date(value).toLocaleDateString("no-NB", options);
+};
+
 export {
   markdown,
   markdownInline,
@@ -62,4 +66,5 @@ export {
   sortStringLast,
   lowerfirst,
   filterByTags,
+  formatDate,
 };

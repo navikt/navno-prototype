@@ -27,7 +27,7 @@ permalink: "/{{ user.name | slugify }}/minside/index.html"
     <div class="page-section__content" style="display:grid; gap:var(--ax-space-6)">
       {%- if (user.tasks | length) > 0 %}
         {%- for task in user.tasks %}
-        <div class="card">
+        <div class="card card--task">
           <h3><a href="#">{{ task.title }}</a></h3>
           {% if task.description %}
           <p><small>{{ task.description }}</small></p>
@@ -38,8 +38,8 @@ permalink: "/{{ user.name | slugify }}/minside/index.html"
         Ingen nye oppgaver venter
       {%- endif %}
 
-      <a href="/{{ user.name | slugify }}/minside/oppgaver/">Tidligere oppgaver</a>
     </div>
+    <p class="page-section__footer"><a href="/{{ user.name | slugify }}/minside/oppgaver/">Tidligere oppgaver</a></p>
   </section>
 
   {% if user.products %}

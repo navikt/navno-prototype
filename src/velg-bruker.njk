@@ -1,15 +1,10 @@
 ---
 layout: "base.njk"
-title: "Bytt bruker"
+title: "Velg bruker"
 loggedIn: true
-pagination:
-  data: users
-  size: 1
-  alias: user
-permalink: "/{{ user.name | slugify }}/bytt-bruker/index.html"
+permalink: "/velg-bruker/index.html"
 ---
 <div class="container container--prose">
-  <div class="page-crumbs"><a href="/{{ users[0].name | slugify }}/minside/">Min side</a> /</div>
   <h1>{{ title }}</h1>
   <p></p>
 
