@@ -113,7 +113,6 @@
   </div>
 
   <div class="site-account">
-    {%- if loggedIn %}
     {%- if user.name %}
     <button class="site-account-button account" popovertarget="site-user-menu" type="button">
       <div class="account__text stack-text">
@@ -131,7 +130,7 @@
           {{ user.name.slice(0,2) }}
         </div>
         {% if ((user.tasks | length) >= 1) and not role.title %}
-          <span class="account__tasks">{{ user.tasks | length }}</span>
+          {# <span class="account__tasks">{{ user.tasks | length }}</span> #}
         {% endif %}
       </div>
     </button>
@@ -184,12 +183,6 @@
         </a>
       </div>
     </nav>
-    {%- else %}
-    <div class="site-account-login">
-      <span>Velg bruker</span>
-      {{ '/src/assets/images/icon-persongroup.svg' | svgContents | safe }}
-    </div>
-    {%- endif %}
     {%- else %}
     <a class="site-account-login" href="/idporten/">
       <span>Logg inn</span>

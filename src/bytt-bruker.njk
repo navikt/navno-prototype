@@ -39,6 +39,8 @@ permalink: "/{{ user.name | slugify }}/bytt-bruker/index.html"
               <div class="tag">{{ agent.representation | safe }}</div>
             {% endif %}
           </div>
+
+          {{ '/src/assets/images/icon-checkmarkcirclefill.svg' | svgContents | safe if agent.name == user.name }}
         </div>       
         {% if agent.type === 'self' %}
           <hr>

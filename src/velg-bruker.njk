@@ -2,26 +2,22 @@
 layout: "base.njk"
 title: "Velg bruker"
 loggedIn: true
-permalink: "/velg-bruker/index.html"
+permalink: "/{{ users[0].name | slugify }}/velg-bruker/index.html"
 ---
 <div class="container container--prose">
   <h1>{{ title }}</h1>
-  <p></p>
+  <p>[ Noe om at brukere MÅ ta et valg, og at de kan endre valget uten å logge ut og inn igjen … ]</p>
 
   <div class="account-switcher">
     {% set dateOptions = { year: "numeric", month: "long", day: "numeric" } %}
     {%- for agent in users %}
-        <div class="account-option card {{ 'card--active' if agent.name == user.name }}">
+        <div class="account-option card">
           <div class="avatar {{ 'avatar--agent' if agent.type === 'agent' }}">
             {{ agent.name.slice(0,2) }}
           </div>
           <div class="stack-text">
             <strong>
-              {% if agent.name == user.name %}
-                {{ agent.name }}
-              {% else %}
-                <a href="/{{ agent.name | slugify }}/minside/">{{ agent.name }}</a>
-              {% endif %}
+              <a href="/{{ agent.name | slugify }}/minside/">{{ agent.name }}</a>
             </strong>
             <small>
               {% if agent.type === 'self' %}
@@ -40,5 +36,6 @@ permalink: "/velg-bruker/index.html"
         {% endif %}
     {%- endfor %}
   </div>
+  <p><a href="/">Avbryt og logg ut</a></p>
 
 </div>

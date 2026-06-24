@@ -40,7 +40,7 @@ export default [
     name: "Alex Jensen",
     id: "211112*****",
     birthday: "2012-11-21",
-    representation: "Du har foreldreansvar",
+    representation: "Du har fullmakt",
     icon: "/src/assets/images/icon-persongroup.svg",
     tasks: [
       {
@@ -61,7 +61,7 @@ export default [
     name: "Casey Jensen",
     id: "160616*****",
     birthday: "2016-06-16",
-    representation: "Du har foreldreansvar",
+    representation: "Du har fullmakt",
     icon: "/src/assets/images/icon-persongroup.svg",
     tasks: [],
   },

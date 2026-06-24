@@ -287,18 +287,16 @@ a {
   display: grid;
   grid-template-areas: 
     "navigation" 
-    "agentmode"
     "agency"
     "language"
   ;
 
-  @media (width > 1280px) {
+  /* @media (width > 1280px) {
     grid-template-columns: 3fr 1fr;
     grid-template-areas: 
     "navigation agency"
-    "agentmode agentmode" 
     "language .";
-  }
+  } */
 }
 
 .site-navigation {
@@ -307,14 +305,14 @@ a {
   padding-block: var(--ax-space-16);
   display: grid;
   align-items: center;
-  grid-template-columns: [logo] auto [audience] auto 1fr [menu] auto;
+  grid-template-columns: [logo] auto [audience] 1fr [menu] auto;
 
-  @media (width > 800px) {
-    grid-template-columns: [logo] auto [audience] auto 1fr [search] 12fr 2fr [menu] auto;
+  @media (width > 840px) {
+    grid-template-columns: [logo] auto [audience] auto 1fr [search] 16fr 5fr [menu] auto;
   }
-  @media (width > 1280px) {
+  /* @media (width > 1280px) {
     grid-template-columns: [logo] auto [audience] auto 3fr [search] 12fr [menu] auto;
-  }
+  } */
 }
 
 .site-logo {
@@ -591,30 +589,26 @@ a {
 
 
 .site-account {
+  grid-area: agency;
   text-align: right;
   display: grid;
   justify-content: end;
   align-items: center;
   anchor-name: --account;
+  padding-block: var(--ax-space-12) var(--ax-space-12);
   
-  @media (width <= 1280) {
-    padding-block: var(--ax-space-16) var(--ax-space-4);
-  }
-
-  @media (width > 1280px) {
-    padding-block: var(--ax-space-0);
-    grid-area: agency;
-  }
-
   [popover] {
-    inset: anchor(110%) calc(anchor(end) - 3px) auto auto;
+    inset: anchor(100%) 0.75rem auto;
     align-self: start;
     block-size: auto;
     position-anchor: --account;
-
+    
     @media (width <= 480px) {
-      inset: anchor(100%) 0.75rem auto;
       inline-size: stretch
+    }
+
+    @media (width > 480px) {
+      inset: anchor(100%) calc(anchor(end) - 3px) auto auto;
     }
 
     &::backdrop {
@@ -659,10 +653,6 @@ a {
   border-radius: var(--ax-radius-8);
   cursor: pointer;
   translate: var(--ax-space-10);
-  
-  @media (width <= 1280px) {
-      margin-block: -0.375lh;
-  }
   
   & > div {
       justify-items: end;
@@ -788,12 +778,8 @@ a {
 }
 
 .site-content {
-    padding-block: var(--ax-space-12) var(--ax-space-96);
+    padding-block-end: var(--ax-space-96);
     inline-size: stretch;
-
-    @media (width > 1280px) {
-      padding-block-start: var(--ax-space-56);
-    }
 }
 
 .site-footer {
@@ -803,7 +789,7 @@ a {
 
 
 .account-switcher {
-  margin-block: var(--ax-space-64) var(--ax-space-24);
+  margin-block: var(--ax-space-64) var(--ax-space-28);
 
   hr {
     margin:var(--ax-space-24) var(--ax-space-2);
@@ -862,13 +848,13 @@ a {
   align-self: center;
 
   &:has(.account__tasks) .avatar {
-    mask: radial-gradient(1q at calc(100% - 2px) 2px,#0000 12px,red 0);
+    mask: radial-gradient(1q at calc(100% - 1px) 1px,#0000 12px,red 0);
   }
 }
 
 .account__tasks {
   position: absolute;
-  inset: -8px -8px auto auto;
+  inset: -9px -9px auto auto;
   display: grid;
   place-items: center;
   background-color: var(--ax-accent-1000);
