@@ -453,9 +453,10 @@ a {
     align-items: center;
     cursor: pointer;
     padding-block: var(--ax-space-8);
-    padding-inline: var(--ax-space-8);
+    padding-inline: var(--ax-space-12);
     border-radius: var(--ax-radius-8);
     translate: var(--ax-space-6);
+    color: var(--ax-accent-1000);
 
     @media (width > 480px) {
       padding-inline: var(--ax-space-16) var(--ax-space-12);
@@ -619,13 +620,14 @@ a {
 
 .site-account-login {
   display: flex;
-  column-gap: var(--ax-space-6);
+  column-gap: var(--ax-space-8);
   align-items: center;
   color: currentColor;
   padding-block: var(--ax-space-8);
   padding-inline: var(--ax-space-16) var(--ax-space-12);
   border-radius: var(--ax-radius-8);
   text-decoration: none;
+  translate: var(--ax-space-12);
 
   @media (width <= 1280px) {
     translate: var(--ax-space-12);
@@ -645,7 +647,7 @@ a {
 }
 
 .site-account-button {
-  color: currentColor;
+  color: var(--ax-accent-1000);
   text-decoration: none;
   text-align: right;
   padding-block: var(--ax-space-6);
@@ -662,20 +664,15 @@ a {
     overflow: clip;
     white-space: nowrap;
     text-overflow: ellipsis;
+    max-inline-size: 50vw;
 
-    @media (width <= 1280px) {
-      max-inline-size: 32ch;
-    }
-    @media (width > 1280px) {
-      max-inline-size: 18ch;
-    }
   }
 
   small {
+    overflow: clip;
+    white-space: nowrap;
     text-overflow: ellipsis;
     max-inline-size: 32ch;
-    white-space: nowrap;
-    overflow: clip;
   }
 
   &:hover .avatar {
@@ -840,7 +837,7 @@ a {
 .account {
   display: flex;
   align-items: center;
-  column-gap: 1ch;
+  column-gap: var(--ax-space-12);
 }
 
 .account__icon {
