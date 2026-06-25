@@ -113,9 +113,10 @@
   </div>
 
   <div class="site-account">
+
     {%- if user.name %}
     <button class="site-account-button account" popovertarget="site-user-menu" type="button">
-      <div class="account__text stack-text">
+      <span class="account__text stack-text">
         <strong>{{ 'På vegne av ' + user.name if user.type == 'agent' else users[0].name }}</strong>
         <small>
           {% if role.title %}
@@ -124,16 +125,17 @@
             {{ (user.tasks or users[0].tasks) | length }} ny{{ 'e' if user.tasks.length != 1 }} oppgave{{ 'r' if user.tasks.length != 1 }}
           {% endif %}
         </small>
-      </div>
-      <div class="account__icon">
-        <div class="avatar {{ 'avatar--agent' if user.type === 'agent' }}" style="view-transition-name: avatar-{{ user.name | slugify }}">
+      </span>
+      <span class="account__icon">
+        <span class="avatar {{ 'avatar--agent' if user.type === 'agent' }}" style="view-transition-name: avatar-{{ user.name | slugify }}">
           {{ user.name.slice(0,2) }}
-        </div>
+        </span>
         {% if ((user.tasks | length) >= 1) and not role.title %}
           {# <span class="account__tasks">{{ user.tasks | length }}</span> #}
         {% endif %}
-      </div>
+      </span>
     </button>
+
     <nav class="site-user-menu" id="site-user-menu" aria-label="user-menu" popover>
       <header>
         <small>Logget inn</small><br>
@@ -141,7 +143,6 @@
         <p><span class="tag">Født 21. november 2012</span></p>
       </header>
       <div>
-
         {% if role.title == 'Arbeidsgiver' %}
           <a href="/{{ (user.name or users[0].name) | slugify }}/minside-arbeidsgiver/">
             {# {{ '/src/assets/images/icon-squaregrid.svg' | svgContents | safe }} #}

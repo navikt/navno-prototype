@@ -246,6 +246,10 @@ small {
   font: inherit;
 }
 
+:where(button) {
+  cursor: pointer;
+}
+
 fieldset {
   padding: 0;
   border: 0;
@@ -297,6 +301,20 @@ a {
     "navigation agency"
     "language .";
   } */
+}
+
+.simple-site-header {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--ax-space-12);
+  justify-content: space-between;
+  align-items: center;
+  padding-block: var(--ax-space-8);
+  margin-block-end: var(--ax-space-32);
+
+  .site-logo {
+    color: var(--ax-neutral-1000);
+  }
 }
 
 .site-navigation {
@@ -524,9 +542,27 @@ a {
   @media (width > 1280px) {
     grid-template-columns: 2fr auto 5fr;
   }
+
   h2 {
     font-size: 1.25rem;
     margin-block-end: var(--ax-space-12);
+  }
+
+  a:has(svg) {
+    display: flex;
+    align-items: center;
+    gap: 0.75ch;
+
+    svg {
+      border-radius: var(--ax-radius-full);
+      background-color: var(--ax-accent-200A);
+      padding: var(--ax-space-10);
+    }
+
+    &:hover svg {
+      background-color: var(--ax-accent-300A);
+      color: var(--ax-accent-1000);
+    }
   }
   
 
@@ -562,18 +598,6 @@ a {
     }
   }
 
-  a:has(svg) {
-    display: flex;
-    align-items: center;
-    gap: 0.75ch;
-
-
-    svg {
-      border-radius: var(--ax-radius-full);
-      background-color: var(--ax-accent-200);
-      padding: var(--ax-space-10);
-    }
-  }
 }
 
 
@@ -653,9 +677,8 @@ a {
   padding-block: var(--ax-space-6);
   padding-inline: var(--ax-space-16) var(--ax-space-8);
   border-radius: var(--ax-radius-8);
-  cursor: pointer;
   translate: var(--ax-space-10);
-  
+ 
   & > div {
       justify-items: end;
   }
@@ -675,10 +698,10 @@ a {
     max-inline-size: 32ch;
   }
 
-  &:hover .avatar {
-    background-color: var(--ax-accent-400A);
+  button&:hover .avatar {
+    background-color: var(--ax-accent-300A);
   }
-  &:hover .avatar--agent {
+  button&:hover .avatar--agent {
     background-color: var(--ax-meta-purple-900);
   }
 }
@@ -786,7 +809,7 @@ a {
 
 
 .account-switcher {
-  margin-block: var(--ax-space-64) var(--ax-space-28);
+  margin-block: var(--ax-space-64) var(--ax-space-32);
 
   hr {
     margin:var(--ax-space-24) var(--ax-space-2);
@@ -820,17 +843,17 @@ a {
 }
 
 .tag {
-  display: inline-block;
-  background-color: var(--ax-meta-purple-200A);
   justify-self: start;
+  display: inline-block;
+  padding: var(--ax-space-2) var(--ax-space-4);
+  margin-block: var(--ax-space-12) var(--ax-space-6);
+  background-color: var(--ax-meta-purple-200A);
   color: var(--ax-meta-purple-1000);
   border-radius: var(--ax-radius-4);
-  padding: var(--ax-space-1) var(--ax-space-4);
-  margin-block: var(--ax-space-12) var(--ax-space-6);
-  letter-spacing: 0.75%;
+  outline: 1px solid var(--ax-meta-purple-300A);
   line-height: 1;
   font-size: 1rem;
-  outline: 1px solid var(--ax-meta-purple-300A);
+  letter-spacing: 0.75%;
   translate: calc(var(--ax-space-4) * -1);
 }
 
@@ -881,7 +904,7 @@ a {
   place-items: center;
   padding: var(--ax-space-4);
   border-radius: var(--ax-radius-12);
-  background-color: var(--ax-accent-300A);
+  background-color: var(--ax-accent-400A);
   color: var(--ax-accent-900);
   corner-shape: squircle;
   aspect-ratio: 1;

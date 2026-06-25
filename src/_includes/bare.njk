@@ -42,8 +42,37 @@
     <link rel="stylesheet" href="{% getBundleFileUrl 'css' %}" type="text/css" />
   </head>
   <body>
-    <main>
-    {%- block content %}{% endblock -%}
+    {% if page.fileSlug === 'velg-bruker' %}
+      <header class="container simple-site-header">
+        <div class="site-logo">
+          {{ "/src/assets/images/logo.svg" | svgContents | safe }}
+          <span class="sr-only">Nav</span>
+        </div>
+
+        <div class="site-account-button account">
+          <span class="account__text stack-text">
+            <strong>{{ 'På vegne av ' + user.name if user.type == 'agent' else users[0].name }}</strong>
+            <small>
+              {% if role.title %}
+                0 nye oppgaver
+              {% else %}
+                {{ (user.tasks or users[0].tasks) | length }} ny{{ 'e' if user.tasks.length != 1 }} oppgave{{ 'r' if user.tasks.length != 1 }}
+              {% endif %}
+            </small>
+          </span>
+          <span class="account__icon">
+            <span class="avatar {{ 'avatar--agent' if user.type === 'agent' }}" style="view-transition-name: avatar-{{ user.name | slugify }}">
+              {{ user.name.slice(0,2) }}
+            </span>
+            {% if ((user.tasks | length) >= 1) and not role.title %}
+              {# <span class="account__tasks">{{ user.tasks | length }}</span> #}
+            {% endif %}
+          </span>
+        </div>
+      </header>
+    {% endif %}
+    <main class="site-content">
+    {%- block content %}{{ content | safe }}{% endblock -%}
     </main>
     <!-- {{ generated }} -->
   </body>
