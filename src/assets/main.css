@@ -310,7 +310,7 @@ a {
   justify-content: space-between;
   align-items: center;
   padding-block: var(--ax-space-8);
-  margin-block-end: var(--ax-space-32);
+  margin-block-end: var(--ax-space-64);
 
   .site-logo {
     color: var(--ax-neutral-1000);
@@ -683,11 +683,12 @@ a {
       justify-items: end;
   }
 
+
   strong {
     overflow: clip;
     white-space: nowrap;
     text-overflow: ellipsis;
-    max-inline-size: 50vw;
+    inline-size: min(32ch, 64vw);
 
   }
 
@@ -861,6 +862,10 @@ a {
   display: flex;
   align-items: center;
   column-gap: var(--ax-space-12);
+}
+
+.account__text {
+  justify-items: end;
 }
 
 .account__icon {
