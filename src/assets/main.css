@@ -688,7 +688,7 @@ a {
     overflow: clip;
     white-space: nowrap;
     text-overflow: ellipsis;
-    inline-size: min(32ch, 64vw);
+    max-inline-size: min(56ch, 56vw);
 
   }
 
@@ -696,7 +696,7 @@ a {
     overflow: clip;
     white-space: nowrap;
     text-overflow: ellipsis;
-    max-inline-size: 32ch;
+    max-inline-size: 56ch;
   }
 
   button&:hover .avatar__shape {
@@ -728,6 +728,7 @@ a {
   }
   h2 {
     font-size: 1.5rem;
+    line-height: 1.25;
   }
 
   & > div {
