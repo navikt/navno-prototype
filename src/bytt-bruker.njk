@@ -17,9 +17,12 @@ permalink: "/{{ user.name | slugify }}/bytt-bruker/index.html"
     {% set dateOptions = { year: "numeric", month: "long", day: "numeric" } %}
     {%- for agent in users %}
         <div class="account-option card {{ 'card--active' if agent.name == user.name }}">
-          <div class="avatar {{ 'avatar--agent' if agent.type === 'agent' }}">
-            {{ agent.name.slice(0,2) }}
-          </div>
+          <span class="avatar {{ 'avatar--agent' if agent.type === 'agent' }}">
+            <span class="avatar__shape">{{ agent.name.slice(0,2) }}</span>
+            {% if (agent.tasks | length) >= 1 %}
+              <span class="avatar__tasks">{{ agent.tasks | length }}</span>
+            {% endif %}
+          </span>
           <div class="stack-text">
             <strong>
               {% if agent.name == user.name %}

@@ -183,7 +183,7 @@
   --_body-bg:hsl(220, 48%, 95%);
 
   font-family: "Source Sans 3", Arial, system-ui, sans-serif;
-  background-color: var(--ax-brand-blue-1000);
+  background-color: linear-gradient(var(--ax-neutral-000) 50%, (--ax-brand-blue-400) 0);
   color: var(--ax-text-neutral);
   block-size: 100%;
 
@@ -197,7 +197,7 @@ body {
   line-height: 1.5;
   background: var(--_body-bg);
   min-block-size: 100%;
-  margin: 0;
+  margin:1px 0;
   display: grid;
   grid-template-rows: auto 1fr auto;
 
@@ -699,10 +699,10 @@ a {
     max-inline-size: 32ch;
   }
 
-  button&:hover .avatar {
+  button&:hover .avatar__shape {
     background-color: var(--ax-accent-300A);
   }
-  button&:hover .avatar--agent {
+  button&:hover .avatar--agent .avatar__shape {
     background-color: var(--ax-meta-purple-900);
   }
 }
@@ -868,31 +868,6 @@ a {
   justify-items: end;
 }
 
-.account__icon {
-  position: relative;
-  align-self: center;
-
-  &:has(.account__tasks) .avatar {
-    mask: radial-gradient(1q at calc(100% - 1px) 1px,#0000 12px,red 0);
-  }
-}
-
-.account__tasks {
-  position: absolute;
-  inset: -9px -9px auto auto;
-  display: grid;
-  place-items: center;
-  background-color: var(--ax-accent-1000);
-  inline-size: var(--ax-space-20);
-  block-size: var(--ax-space-20);
-  border-radius: var(--ax-radius-full);
-  font-size: small;
-  line-height: 1;
-  color: var(--ax-neutral-000);
-  text-indent: 1px;
-  font-variant-numeric: tabular-nums;
-}
-
 .stack-text {
   display: grid;
   line-height: 1.35;
@@ -905,25 +880,56 @@ a {
 }
 
 .avatar {
+  position: relative;
   display: inline-grid;
   place-items: center;
-  padding: var(--ax-space-4);
-  border-radius: var(--ax-radius-12);
-  background-color: var(--ax-accent-400A);
-  color: var(--ax-accent-900);
-  corner-shape: squircle;
+  place-self: start;
   aspect-ratio: 1;
-  inline-size: 32;
-  font-size:1.25rem;
-  font-weight: 400;
+
+  &:has(.avatar__tasks) .avatar__shape {
+    mask: radial-gradient(1q at calc(100% - 1px) 1px,#0000 12px,red 0);
+  }
+
+  .avatar__shape {
+    padding: var(--ax-space-4);
+    border-radius: var(--ax-radius-12);
+    background-color: var(--ax-accent-400A);
+    color: var(--ax-accent-900);
+    corner-shape: squircle;
+    aspect-ratio: 1;
+    inline-size: 32;
+    font-size:1.25rem;
+    font-weight: 400;
+    line-height: 1.65;
+    text-align: center;
+  }
+
+  .avatar__tasks {
+    position: absolute;
+    inset: -9px -9px auto auto;
+    display: grid;
+    place-items: center;
+    background-color: var(--ax-accent-1000);
+    inline-size: var(--ax-space-20);
+    block-size: var(--ax-space-20);
+    border-radius: var(--ax-radius-full);
+    font-size: small;
+    line-height: 1;
+    color: var(--ax-neutral-000);
+    text-indent: 1px;
+    font-variant-numeric: tabular-nums;
+  }
 }
 
-.avatar--agent {
+.avatar--agent .avatar__shape {
   background-color: var(--ax-meta-purple-1000);
   color: var(--ax-meta-purple-300);
   border-radius: var(--ax-radius-full);
   corner-shape: unset;
 }
+
+
+
 
 :where(.card) {
   border-radius: var(--ax-radius-12);

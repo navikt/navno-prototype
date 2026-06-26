@@ -126,13 +126,11 @@
           {% endif %}
         </small>
       </span>
-      <span class="account__icon">
-        <span class="avatar {{ 'avatar--agent' if user.type === 'agent' }}" style="view-transition-name: avatar-{{ user.name | slugify }}">
-          {{ user.name.slice(0,2) }}
-        </span>
-        {% if ((user.tasks | length) >= 1) and not role.title %}
-          {# <span class="account__tasks">{{ user.tasks | length }}</span> #}
-        {% endif %}
+      <span class="avatar {{ 'avatar--agent' if user.type === 'agent' }}" style="view-transition-name: avatar-{{ user.name | slugify }}">
+        <span class="avatar__shape">{{ user.name.slice(0,2) }}</span>
+        {%- if (user.tasks | length) >= 1 %}
+          <span class="avatar__tasks">{{ user.tasks | length }}</span>
+        {%- endif %}
       </span>
     </button>
 
@@ -143,14 +141,15 @@
         <p><span class="tag">Født 21. november 2012</span></p>
       </header>
       <div>
-        {% if role.title == 'Arbeidsgiver' %}
-          <a href="/{{ (user.name or users[0].name) | slugify }}/minside-arbeidsgiver/">
-            {# {{ '/src/assets/images/icon-squaregrid.svg' | svgContents | safe }} #}
-            <strong>Min side - arbeidsgiver</strong>
-          </a>
-        {% endif %}
-
         {% if not role.title %}
+          <a href="/{{ user.name | slugify }}/bytt-bruker/">
+            {{ '/src/assets/images/icon-persongroup.svg' | svgContents | safe }}
+            <div class="stack-text">
+              <strong>Bytt bruker</strong>
+              <small>Velg hvem du vil bruke Nav på vegne av</small>
+            </div>
+          </a>
+          <hr>
           <a href="/{{ (user.name or users[0].name) | slugify }}/minside/">
             {{ '/src/assets/images/icon-squaregrid.svg' | svgContents | safe }}
             <div class="stack-text">
@@ -167,17 +166,7 @@
               <small>Kontaktinfo, kontonummer, osv.</small>
             </div>
           </a>
-          <a href="/{{ user.name | slugify }}/bytt-bruker/">
-            {{ '/src/assets/images/icon-persongroup.svg' | svgContents | safe }}
-            <div class="stack-text">
-              <strong>Bytt bruker</strong>
-              <small>Velg hvem du vil bruke Nav på vegne av</small>
-            </div>
-          </a>
         {% endif %}
-
-        <hr>
-
         <a href="/" style="justify-content:center">
           {{ '/src/assets/images/icon-leave.svg' | svgContents | safe }}
           <strong>Logg ut</strong>

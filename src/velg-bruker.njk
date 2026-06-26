@@ -15,9 +15,12 @@ permalink: "/{{ users[0].name | slugify }}/velg-bruker/index.html"
     {% set dateOptions = { year: "numeric", month: "long", day: "numeric" } %}
     {%- for agent in users %}
         <div class="account-option card">
-          <div class="avatar {{ 'avatar--agent' if agent.type === 'agent' }}">
-            {{ agent.name.slice(0,2) }}
-          </div>
+          <span class="avatar {{ 'avatar--agent' if agent.type === 'agent' }}">
+            <span class="avatar__shape">{{ agent.name.slice(0,2) }}</span>
+            {% if (agent.tasks | length) >= 1 %}
+              <span class="avatar__tasks">{{ agent.tasks | length }}</span>
+            {% endif %}
+          </span>
           <div class="stack-text">
             <strong>
               <a href="/{{ agent.name | slugify }}/minside/">{{ agent.name }}</a>
