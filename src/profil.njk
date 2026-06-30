@@ -1,0 +1,34 @@
+---
+layout: "base.njk"
+title: "Profil"
+loggedIn: true
+pagination:
+  data: users
+  size: 1
+  alias: user
+permalink: "/{{ user.name | slugify }}/minside/profil/index.html"
+---
+
+<div class="container container--prose account-selection">
+  <div class="page-crumbs"><a href="/{{ user.name | slugify }}/minside/">Min side</a> /</div>
+  <h1>{{ title }}</h1>
+
+  <div class="page-content" style="display:grid; gap:var(--ax-space-12)">
+    <div class="card stack-text">
+      <h2><a href="#">Kontaktinformasjon</a></h2>
+      <p><small>Telefon, e-post, adresse, …</small></p>
+    </div>
+    <div class="card stack-text">
+      <h2><a href="#">Kontoopplysninger</a></h2>
+      <p><small>Endre kontonummer</small></p>
+    </div>
+    <div class="card stack-text">
+      <h2><a href="#">Arbeidsforhold</a></h2>
+      <p><small>Info om dine arbeidsforhold</small></p>
+    </div>
+    <div class="card stack-text">
+      <h2><a href="/{{ user.name | slugify }}/minside/profil/fullmakter/">Fullmakter og vergemål</a></h2>
+      <p><small>Personer som kan bruke Nav på dine vegne</small></p>
+    </div>
+  </div>
+</div>

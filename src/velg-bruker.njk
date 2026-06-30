@@ -32,9 +32,6 @@ permalink: "/{{ users[0].name | slugify }}/velg-bruker/index.html"
                 Født {{ agent.birthday | formatDate(dateOptions) | safe }}
               {% endif %}
             </small>
-            {% if agent.representation %}
-              <div class="tag">{{ agent.representation | safe }}</div>
-            {% endif %}
           </div>
         </div>       
         {% if agent.type === 'self' %}

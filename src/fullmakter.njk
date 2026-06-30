@@ -1,0 +1,16 @@
+---
+layout: "base.njk"
+title: "Fullmakter og vergemål"
+loggedIn: true
+pagination:
+  data: users
+  size: 1
+  alias: user
+permalink: "/{{ user.name | slugify }}/minside/profil/fullmakter/index.html"
+---
+
+<div class="container container--prose account-selection">
+  <div class="page-crumbs"><a href="/{{ user.name | slugify }}/minside/">Min side</a> / <a href="/{{ user.name | slugify }}/minside/profil/">Profil</a></div>
+  <h1>{{ title }}</h1>
+   
+</div>

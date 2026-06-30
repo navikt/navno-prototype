@@ -141,32 +141,28 @@
         <p><span class="tag">Født 21. november 2012</span></p>
       </header>
       <div>
-        {% if not role.title %}
-          <a href="/{{ user.name | slugify }}/bytt-bruker/">
-            {{ '/src/assets/images/icon-persongroup.svg' | svgContents | safe }}
-            <div class="stack-text">
-              <strong>Bytt bruker</strong>
-              <small>Velg hvem du vil bruke Nav på vegne av</small>
-            </div>
-          </a>
-          <hr>
-          <a href="/{{ (user.name or users[0].name) | slugify }}/minside/">
-            {{ '/src/assets/images/icon-squaregrid.svg' | svgContents | safe }}
-            <div class="stack-text">
-              <strong>
-                Min side
-                </strong>
-              <small>{{ (user.tasks or users[0].tasks) | length }} ny{{ 'e' if user.tasks.length != 1 }} oppgave{{ 'r' if user.tasks.length != 1 }}</small>
-            </div>
-          </a>
-          <a href="/{{ user.name | slugify }}/personopplysninger/">
-            {{ '/src/assets/images/icon-cog.svg' | svgContents | safe }}
-            <div class="stack-text">
-              <strong>Profil og innstillinger</strong>
-              <small>Kontaktinfo, kontonummer, osv.</small>
-            </div>
-          </a>
-        {% endif %}
+        {% if not role.title %}{% endif %}
+        <a href="/{{ user.name | slugify }}/bytt-bruker/">
+          {{ '/src/assets/images/icon-persongroup.svg' | svgContents | safe }}
+          <div class="stack-text">
+            <strong>Bytt bruker</strong>
+            <small>Velg hvem du vil bruke Nav på vegne av</small>
+          </div>
+        </a>
+        <a href="/{{ (user.name or users[0].name) | slugify }}/minside/">
+          {{ '/src/assets/images/icon-squaregrid.svg' | svgContents | safe }}
+          <div class="stack-text">
+            <strong>Min side (privatperson)</strong>
+            <small>{{ (user.tasks or users[0].tasks) | length }} ny{{ 'e' if user.tasks.length != 1 }} oppgave{{ 'r' if user.tasks.length != 1 }}</small>
+          </div>
+        </a>
+        <a href="/{{ user.name | slugify }}/minside/profil/">
+          {{ '/src/assets/images/icon-cog.svg' | svgContents | safe }}
+          <div class="stack-text">
+            <strong>Profil og innstillinger</strong>
+            <small>Kontaktinfo, kontonummer, osv.</small>
+          </div>
+        </a>
         <a href="/" style="justify-content:center">
           {{ '/src/assets/images/icon-leave.svg' | svgContents | safe }}
           <strong>Logg ut</strong>

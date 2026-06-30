@@ -595,6 +595,7 @@ a {
     @media (width > 840px) {
       border-top: 1px solid var(--ax-neutral-200);
       padding-block-start: var(--ax-space-24);
+      margin-block-start: var(--ax-space-24);
     }
   }
 
@@ -821,10 +822,10 @@ a {
 }
 
 
-.account-option {
+.account-switcher__option {
   padding: var(--ax-space-16) var(--ax-space-16);
   margin-block: var(--ax-space-8);
-  border-radius: var(--ax-radius-12);
+  border-radius: var(--ax-radius-8);
   display: grid;
   grid-template-columns: 3rem 1fr auto;
   gap: var(--ax-space-8);
@@ -915,7 +916,7 @@ a {
     block-size: var(--ax-space-20);
     border-radius: var(--ax-radius-full);
     font-size: small;
-    line-height: 1;
+    line-height: var(--ax-space-20);
     color: var(--ax-neutral-000);
     text-indent: 1px;
     font-variant-numeric: tabular-nums;
@@ -935,11 +936,17 @@ a {
 :where(.card) {
   border-radius: var(--ax-radius-12);
   background-color: var(--ax-neutral-000);
-  padding: var(--ax-space-12) var(--ax-space-16);
+  padding: var(--ax-space-16) var(--ax-space-16);
   box-shadow:0 1px 1px var(--ax-neutral-100A),0 8px 16px -12px var(--ax-neutral-200A);
   min-block-size: 1.5lh;
 
-  &:has(a) { position: relative }
+  &:has(a) { 
+    position: relative;
+
+    &:hover {
+      outline:2px solid var(--ax-accent-600);
+    }
+  }
 
   &:has(a) :where(a) {
     color: currentColor;
@@ -960,7 +967,12 @@ a {
 
 .card--active {
   background-color: var(--ax-neutral-200A);
-  box-shadow:inset 0 1px 1px var(--ax-neutral-200A);
+  /* background: linear-gradient(90deg, var(--ax-neutral-1000) var(--ax-space-6), var(--ax-neutral-200A) 0) 100% 0; */
+  outline: 2px solid var(--ax-accent-900);
+  box-shadow:inset 5px 0 var(--ax-accent-900);
+  outline-offset: -1px;
+  /* border-top-left-radius: var(--ax-radius-4);
+  border-bottom-left-radius: var(--ax-radius-4); */
 }
 
 .card[data-status="new"] a {
