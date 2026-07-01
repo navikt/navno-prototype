@@ -14,7 +14,7 @@ permalink: "/{{ users[0].name | slugify }}/velg-bruker/index.html"
   <div class="account-switcher">
     {% set dateOptions = { year: "numeric", month: "long", day: "numeric" } %}
     {%- for agent in users %}
-        <div class="account-option card">
+        <div class="account-switcher__option card">
           <span class="avatar {{ 'avatar--agent' if agent.type === 'agent' }}">
             <span class="avatar__shape">{{ agent.name.slice(0,2) }}</span>
             {% if (agent.tasks | length) >= 1 %}
