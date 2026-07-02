@@ -31,13 +31,10 @@ permalink: "/{{ user.name | slugify }}/bytt-bruker/index.html"
                 <a href="/{{ agent.name | slugify }}/minside/">{{ agent.name }}</a>
               {% endif %}
             </strong>
-            <small>
-              {% if agent.type === 'self' %}
-                Deg selv
-              {% else %}
-                Født {{ agent.birthday | formatDate(dateOptions) | safe }}
-              {% endif %}
-            </small>
+            {% if agent.type === 'agent' %}                  
+              <small>Født {{ agent.birthday | formatDate(dateOptions) | safe }}</small>
+            {% endif %}
+            <small>{{ agent.representation }}</small>
           </div>
         </div>       
         {% if agent.type === 'self' %}

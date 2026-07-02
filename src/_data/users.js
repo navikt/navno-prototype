@@ -4,6 +4,7 @@ export default [
     name: "Charlie Jensen",
     id: "090292*****",
     birthday: "1992-02-09",
+    representation: "Deg selv",
     icon: "/src/assets/images/icon-person.svg",
     tasks: [
       {

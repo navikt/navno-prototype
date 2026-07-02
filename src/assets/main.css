@@ -700,8 +700,12 @@ a {
     max-inline-size: 56ch;
   }
 
+  .avatar {
+    translate:0 0.125lh;
+  }
+
   button&:hover .avatar__shape {
-    background-color: var(--ax-accent-300A);
+    background-color: var(--ax-accent-500);
   }
   button&:hover .avatar--agent .avatar__shape {
     background-color: var(--ax-meta-purple-900);
@@ -723,8 +727,23 @@ a {
   header {
     margin-block-end: var(--ax-space-8);
 
-    .tag {
-      margin-block: var(--ax-space-8) var(--ax-space-4);
+    div {
+      margin-block-start: 0.5lh;
+    }
+
+    a {
+      display: inline-flex;
+      align-items: center;
+      justify-self: start;
+      padding-block: var(--ax-space-8);
+      padding-inline: var(--ax-space-16) var(--ax-space-20);
+      background-color: var(--ax-accent-200A);
+      text-decoration: none;
+      gap: var(--ax-space-8);
+
+      &:hover {
+        background-color: var(--ax-accent-300A);
+      }
     }
   }
   h2 {
@@ -737,7 +756,7 @@ a {
     gap: var(--ax-space-8);
   }
 
-  & :where(a, button) {
+  & > div :where(a, button) {
     border-radius: var(--ax-radius-8);
     text-decoration: none;
     color: inherit;
@@ -746,11 +765,11 @@ a {
     background-color: var(--ax-neutral-100);
 
     &:hover {
-      background-color: var(--ax-accent-200A);
+      background-color: var(--ax-neutral-200A);
     }
   }
 
-  :where(a, button):has( > svg) {
+  & > div :where(a, button):has( > svg) {
     cursor: pointer;
     box-sizing: border-box;
     inline-size: 100%;
@@ -769,6 +788,7 @@ a {
     inline-size: 100%;
     border: none;
     block-size: 1px;
+    margin-block: var(--ax-space-4);
     background-color: var(--ax-neutral-300A);
   }
 }
@@ -832,6 +852,13 @@ a {
   text-decoration: none;
   align-items: start;
 
+  &.card--active {
+    background-color: var(--ax-neutral-200A);
+    outline: 2px solid var(--ax-accent-900);
+    box-shadow:inset 5px 0 var(--ax-accent-900);
+    outline-offset: -1px;
+  }
+
   &:has(a):hover {
     outline:2px solid var(--ax-accent-600);
   }
@@ -844,6 +871,11 @@ a {
       opacity: 0.8;
   }
 }
+
+.shape-pill {
+  border-radius: var(--ax-radius-full);
+}
+
 
 .tag {
   justify-self: start;
@@ -873,7 +905,7 @@ a {
 .stack-text {
   display: grid;
   line-height: 1.35;
-  gap: var(--ax-space-1);
+  gap: var(--ax-space-2);
 
   small {
     opacity: 0.8;
@@ -895,8 +927,8 @@ a {
   .avatar__shape {
     padding: var(--ax-space-4);
     border-radius: var(--ax-radius-12);
-    background-color: var(--ax-accent-400A);
-    color: var(--ax-accent-900);
+    background-color: var(--ax-accent-600);
+    color: var(--ax-neutral-000);
     corner-shape: squircle;
     aspect-ratio: 1;
     inline-size: 32;
@@ -963,16 +995,6 @@ a {
   & + a {
     margin-block-start: var(--ax-space-6);
   }
-}
-
-.card--active {
-  background-color: var(--ax-neutral-200A);
-  /* background: linear-gradient(90deg, var(--ax-neutral-1000) var(--ax-space-6), var(--ax-neutral-200A) 0) 100% 0; */
-  outline: 2px solid var(--ax-accent-900);
-  box-shadow:inset 5px 0 var(--ax-accent-900);
-  outline-offset: -1px;
-  /* border-top-left-radius: var(--ax-radius-4);
-  border-bottom-left-radius: var(--ax-radius-4); */
 }
 
 .card[data-status="new"] a {
@@ -1067,7 +1089,7 @@ a {
 }
 
 .container--prose {
-  max-inline-size: 840px;
+  max-inline-size: 800px;
 }
 
 .sr-only {

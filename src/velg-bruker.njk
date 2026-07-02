@@ -21,17 +21,14 @@ permalink: "/{{ users[0].name | slugify }}/velg-bruker/index.html"
               <span class="avatar__tasks">{{ agent.tasks | length }}</span>
             {% endif %}
           </span>
-          <div class="stack-text">
-            <strong>
-              <a href="/{{ agent.name | slugify }}/minside/">{{ agent.name }}</a>
-            </strong>
-            <small>
-              {% if agent.type === 'self' %}
-                Deg selv
-              {% else %}
-                Født {{ agent.birthday | formatDate(dateOptions) | safe }}
-              {% endif %}
-            </small>
+          <div class="stack-text">           
+            <a href="/{{ agent.name | slugify }}/minside/">
+              <strong>{{ agent.name }}</strong>
+            </a>
+            {% if agent.type === 'agent' %}              
+            <small>Født {{ agent.birthday | formatDate(dateOptions) | safe }}</small>
+            {% endif %}
+            <small>{{ agent.representation }}</small>
           </div>
         </div>       
         {% if agent.type === 'self' %}

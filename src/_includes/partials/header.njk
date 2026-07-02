@@ -118,13 +118,7 @@
     <button class="site-account-button account" popovertarget="site-user-menu" type="button">
       <span class="account__text stack-text">
         <strong>{{ 'På vegne av ' + user.name if user.type == 'agent' else users[0].name }}</strong>
-        <small>
-          {% if role.title %}
-            0 nye oppgaver
-          {% else %}
-            {{ (user.tasks or users[0].tasks) | length }} ny{{ 'e' if user.tasks.length != 1 }} oppgave{{ 'r' if user.tasks.length != 1 }}
-          {% endif %}
-        </small>
+        <small>{{ user.representation }}</small>
       </span>
       <span class="avatar {{ 'avatar--agent' if user.type === 'agent' }}" style="view-transition-name: avatar-{{ user.name | slugify }}">
         <span class="avatar__shape">{{ user.name.slice(0,2) }}</span>
@@ -136,19 +130,19 @@
 
     <nav class="site-user-menu" id="site-user-menu" aria-label="user-menu" popover>
       <header>
-        <small>Logget inn</small><br>
-        <h2>{{ 'På vegne av ' + user.name if user.type == 'agent' else users[0].name }}</h2>
-        <p><span class="tag">Født 21. november 2012</span></p>
+        <h2>
+          {{ 'På vegne av ' + user.name if user.type == 'agent' else users[0].name }}
+        </h2>
+        <p><small>{{ user.representation }}</small></p>
+        <div>
+          <a class="shape-pill" href="/{{ user.name | slugify }}/bytt-bruker/">
+            {{ '/src/assets/images/icon-persongroup.svg' | svgContents | safe }}
+            <span>Bytt bruker</span>
+          </a>
+        </div>          
       </header>
       <div>
         {% if not role.title %}{% endif %}
-        <a href="/{{ user.name | slugify }}/bytt-bruker/">
-          {{ '/src/assets/images/icon-persongroup.svg' | svgContents | safe }}
-          <div class="stack-text">
-            <strong>Bytt bruker</strong>
-            <small>Velg hvem du vil bruke Nav på vegne av</small>
-          </div>
-        </a>
         <a href="/{{ (user.name or users[0].name) | slugify }}/minside/">
           {{ '/src/assets/images/icon-squaregrid.svg' | svgContents | safe }}
           <div class="stack-text">
@@ -163,6 +157,7 @@
             <small>Kontaktinfo, kontonummer, osv.</small>
           </div>
         </a>
+        <hr>
         <a href="/" style="justify-content:center">
           {{ '/src/assets/images/icon-leave.svg' | svgContents | safe }}
           <strong>Logg ut</strong>
