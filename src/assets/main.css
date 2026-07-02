@@ -853,10 +853,7 @@ a {
   align-items: start;
 
   &.card--active {
-    background-color: var(--ax-neutral-200A);
-    outline: 2px solid var(--ax-accent-900);
-    box-shadow:inset 5px 0 var(--ax-accent-900);
-    outline-offset: -1px;
+    background: linear-gradient(90deg, var(--ax-accent-1000) 5px,var(--ax-neutral-200A) 0);
   }
 
   &:has(a):hover {
