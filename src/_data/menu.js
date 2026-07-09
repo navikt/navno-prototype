@@ -9,6 +9,7 @@ export default {
       {
         text: "Helse og sykdom",
         icon: "/src/assets/images/icon-stethoscope.svg",
+        href: "/sykepenger/",
       },
       {
         text: "Familie og barn",

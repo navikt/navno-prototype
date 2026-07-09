@@ -80,7 +80,7 @@ export default function (eleventyConfig) {
   eleventyConfig.setServerOptions({
     enabled: true,
     showVersion: true,
-    port: 8888,
+    port: 8080,
   });
 
   // Build Time
@@ -95,8 +95,10 @@ export default function (eleventyConfig) {
 
   eleventyConfig.setDataDeepMerge(true);
 
+  const isProduction = process.env.ELEVENTY_ENV === "production"; 
+
   return {
-    pathPrefix: "navno-prototype",
+    pathPrefix: isProduction ? "navno-prototype" : "/",
     markdownTemplateEngine: "njk",
     templateFormats: ["njk", "md"],
     dir: {
