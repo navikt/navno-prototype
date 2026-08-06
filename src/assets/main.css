@@ -744,17 +744,18 @@ a {
     }
 
     &:has( > svg) {
-    cursor: pointer;
-    box-sizing: border-box;
-    inline-size: 100%;
-    display: flex;
-    align-items: start;
-    gap: var(--ax-space-8);
+      cursor: pointer;
+      box-sizing: border-box;
+      inline-size: 100%;
+      display: flex;
+      align-items: start;
+      gap: var(--ax-space-8);
 
-    svg {
-      color: var(--ax-accent-700);
-      translate:0 -2px;
-      flex-shrink: 0;
+      svg {
+        color: var(--ax-accent-700);
+        translate:0 -2px;
+        flex-shrink: 0;
+      }
     }
   }
 
@@ -939,9 +940,6 @@ a {
   border-radius: var(--ax-radius-full);
   corner-shape: unset;
 }
-
-
-
 
 :where(.card) {
   border-radius: var(--ax-radius-12);
