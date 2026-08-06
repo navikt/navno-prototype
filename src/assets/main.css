@@ -176,11 +176,12 @@
   --ax-meta-purple-200A: #7300ff14;
   --ax-meta-purple-300A: #6500e821;
   --ax-meta-purple-400A: #5e00d834;
+  --ax-bg-overlay: #0c1627a8;
 }
 :root {
   --edge-padding: clamp(1.25rem, -100px + 18.75vw, 5rem);
   --edge-padding: clamp(1.25rem, 5vw, 5rem);
-  --_body-bg:hsl(216, 48%, 96%);
+  --_body-bg:hsl(216, 36%, 97%);
 
   font-family: "Source Sans 3", Arial, system-ui, sans-serif;
   background-color: linear-gradient(var(--ax-neutral-000) 50%, (--ax-brand-blue-400) 0);
@@ -209,16 +210,18 @@ body {
 
 :where(h1, h2, h3, h4, h5) {
   font-size: inherit;
-  font-weight: 650;
+  font-weight: 600;
   line-height: 1.35;
   letter-spacing: -0.0125em;
-  text-wrap: balanced;
+  text-wrap: pretty;
   margin-block: 0;
+  color: var(--ax-accent-1000);
 }
 
 :where(h1) {
   font-size: 2.5rem;
   line-height: 1.15;
+  font-weight: 650;
   margin-block-end: 0.5lh;
   hyphenate-limit-chars: 6 3 3;
   hyphenate-limit-lines: 2;
@@ -284,7 +287,8 @@ button {
 
 
 a {
-  color: var(--ax-accent-700);
+  color: var(--ax-accent-800);
+  text-underline-offset: 0.1em;
 
   &:hover {
     text-decoration-thickness: 0.125em;
@@ -296,15 +300,7 @@ a {
   grid-template-areas: 
     "navigation" 
     "agency"
-    "language"
-  ;
-
-  /* @media (width > 1280px) {
-    grid-template-columns: 3fr 1fr;
-    grid-template-areas: 
-    "navigation agency"
-    "language .";
-  } */
+    "language";
 }
 
 .simple-site-header {
@@ -331,11 +327,8 @@ a {
 
   @media (width > 840px) {
     padding-block: var(--ax-space-16);
-    grid-template-columns: [logo] auto [audience] auto 1fr [search] 16fr 5fr [menu] auto;
+    grid-template-columns: [logo] auto [audience] auto 1fr [search] 15fr 4fr [menu] auto;
   }
-  /* @media (width > 1280px) {
-    grid-template-columns: [logo] auto [audience] auto 3fr [search] 12fr [menu] auto;
-  } */
 }
 
 .site-logo {
@@ -383,7 +376,7 @@ a {
       box-shadow: 0 0.125rem 1rem -0.25rem hsl(0 0 0 / 0.2);
     }
     &::backdrop {
-      background-color: var(--ax-neutral-400A);
+      background-color: var(--ax-bg-overlay);
     }
     & > a {
       display: block;
@@ -541,11 +534,8 @@ a {
 
   @media (width > 840px) {
     padding-block-start: var(--ax-space-48);
-    grid-template-columns: 1fr auto 1fr;
-    gap: var(--ax-space-24);
-  }
-  @media (width > 1280px) {
     grid-template-columns: 2fr auto 5fr;
+    gap: var(--ax-space-24);
   }
 
   h2 {
@@ -554,7 +544,7 @@ a {
   }
 
   a:has(svg) {
-    display: flex;
+    display: inline-flex;
     align-items: center;
     gap: 0.75ch;
 
@@ -562,6 +552,7 @@ a {
       border-radius: var(--ax-radius-full);
       background-color: var(--ax-accent-200A);
       padding: var(--ax-space-10);
+      flex-shrink: 0;
     }
 
     &:hover svg {
@@ -572,16 +563,19 @@ a {
   
 
   .menu-tiles {
+    inline-size: min(32ch, 100%);
     columns: 32ch 2;
     padding-block-end: var(--ax-space-16);
 
     li + li {
-      margin-block-start: var(--ax-space-12);
+      margin-block-start: var(--ax-space-4);
     }
   }
 
   .menu-list {
     columns: 32ch 2;
+    column-gap: var(--ax-space-32);
+    padding-block-end: var(--ax-space-12);
 
     li + li {
       margin-block-start: var(--ax-space-12);
@@ -600,7 +594,6 @@ a {
     @media (width > 840px) {
       border-top: 1px solid var(--ax-neutral-200);
       padding-block-start: var(--ax-space-24);
-      margin-block-start: var(--ax-space-24);
     }
   }
 
@@ -634,12 +627,12 @@ a {
     block-size: auto;
     position-anchor: --account;
     
-    @media (width <= 480px) {
-      inline-size: stretch
-    }
-
     @media (width > 480px) {
       inset: anchor(100%) calc(anchor(end) - 3px) auto auto;
+    }
+
+    @media (width <= 480px) {
+      inline-size: stretch
     }
 
     &::backdrop {
@@ -886,7 +879,7 @@ a {
 .tag {
   justify-self: start;
   display: inline-block;
-  padding: var(--ax-space-2) var(--ax-space-4);
+  padding: var(--ax-space-2) var(--ax-space-6);
   background-color: var(--ax-neutral-200A);
   color: var(--ax-neutral-1000);
   border-radius: var(--ax-radius-4);
@@ -928,7 +921,6 @@ a {
   display: inline-grid;
   place-items: center;
   place-self: start;
-  aspect-ratio: 1;
 
   &:has(.avatar__tasks) .avatar__shape {
     mask: radial-gradient(1q at calc(100% - 1px) 1px,#0000 12px,red 0);
@@ -936,16 +928,16 @@ a {
 
   .avatar__shape {
     padding: var(--ax-space-4);
-    border-radius: var(--ax-radius-12);
+    corner-shape: squircle;
+    border-radius: var(--ax-radius-16);
     background-color: var(--ax-accent-600);
     color: var(--ax-neutral-000);
-    corner-shape: squircle;
-    aspect-ratio: 1;
-    inline-size: 32;
+    block-size: var(--ax-space-32);
+    inline-size: var(--ax-space-32);
     font-size:1.25rem;
     font-weight: 400;
-    line-height: 1.65;
     text-align: center;
+    line-height: var(--ax-space-32);
   }
 
   .avatar__tasks {
@@ -1026,6 +1018,7 @@ a {
 
   a {
     font-weight: 625;
+    color: var(--ax-accent-800);
   }
 }
 
@@ -1216,14 +1209,18 @@ a {
 }
 
 .prose {
-  max-inline-size: 40rem;
+  max-inline-size: 44rem;
 
   & > :where(h2, h3, h4) {
-    margin-block: 1lh 0.125lh;
+    margin-block: 1.125lh 0.25lh;
   }
   & > h2 { font-size: 1.875rem }
   & > h3 { font-size: 1.5rem }
   & > h4 { font-size: 1.25rem }
+
+  & > h2 ~ h2 {
+    margin-block-start: 2lh;
+  }
   
   & > :where(ul,ol) li + li {
     margin-block-start: 0.125lh;
@@ -1255,14 +1252,14 @@ a {
     column-gap: var(--ax-space-10);
     cursor: pointer;
     padding-block: 11px 10px;
-    color: var(--ax-accent-1000);
+    color: var(--ax-accent-900);
 
     &::-webkit-details-marker {
       display: none;
     }
 
     &:hover {
-      color: var(--ax-accent-900);
+      color: var(--ax-accent-800);
     }
 
     &::before {
@@ -1287,16 +1284,19 @@ a {
 
 
 .table-of-contents {
-  @media (width <= 960px) {
+  @media (width <= 1024px) {
     margin-block-start: 1.25lh;
   }
 
-  @media (width > 960px) {
+  @media (width > 1024px) {
     float: right;
     position: sticky;
-    inset-block-start: 0;
+    inset-block-start: 0.5lh;
     margin-block-start: 0;
     margin-inline-start: 12ch;
+    block-size: calc(100vh - 1lh);
+    overflow-y: auto;
+    overscroll-behavior: contain;
   }
 
   h2 {
@@ -1323,34 +1323,33 @@ a {
     }
   }
   a {
-    color: inherit;
-    text-decoration-style: solid;
     text-underline-offset: 0.125lh;
+    text-decoration-color: var(--ax-accent-400A);
 
     &:hover {
-      color: inherit;
+      text-decoration-style: solid;
     }
 
     &:not(:hover) {
-      text-decoration-thickness: 1px;
-      text-decoration-color: hsl(from var(--ax-neutral-1000) H S L / .6);
+      text-decoration-thickness: 0;
+      text-decoration-color: hsl(from var(--ax-accent-700) H S L / .25);
     }
+  }
+  & > ul > li {
+    margin-block-end: 0.25lh;
   }
   li ul {
     padding-inline-start: .5ch;
     margin-block-start: 0.125lh;
   }
-  & > ul > li {
-    margin-block-end: 0.125lh;
-
-    & > a {
-      margin-block-end: 0.25lh;
-    }
-  }
 }
 
 .article  {
-  @media (width > 960px) {
+  @media (width <= 1024px) {
+    inline-size: min(44rem, 100%);
+    margin-inline: auto;
+  }
+  @media (width > 1024px) {
     display: grid;
     grid-template-columns: [main] 5fr auto [side] 3fr;
     align-items: start;
