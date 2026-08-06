@@ -720,42 +720,11 @@ a {
     box-shadow: 0 0.125rem 1rem -0.25rem hsl(0 0 0 / 0.2);
     text-align: left;
     display: grid;
-    gap: var(--ax-space-12);
-  }
-
-  header {
-    margin-block-end: var(--ax-space-8);
-
-    div {
-      margin-block-start: 0.5lh;
-    }
-
-    a {
-      display: inline-flex;
-      align-items: center;
-      justify-self: start;
-      padding-block: var(--ax-space-8);
-      padding-inline: var(--ax-space-16) var(--ax-space-20);
-      background-color: var(--ax-accent-200A);
-      text-decoration: none;
-      gap: var(--ax-space-8);
-
-      &:hover {
-        background-color: var(--ax-accent-300A);
-      }
-    }
-  }
-  h2 {
-    font-size: 1.5rem;
-    line-height: 1.25;
-  }
-
-  & > div {
-    display: grid;
+    grid-template-columns: 1fr 1fr;
     gap: var(--ax-space-8);
   }
 
-  & > div :where(a, button) {
+  a {
     border-radius: var(--ax-radius-8);
     text-decoration: none;
     color: inherit;
@@ -763,12 +732,18 @@ a {
     padding: var(--ax-space-16) var(--ax-space-16);
     background-color: var(--ax-neutral-100);
 
+    &:nth-child(-n + 2) {
+      grid-column: span 2;
+    }
+    &:nth-child(n + 3) {
+      align-items: center;
+    }
+
     &:hover {
       background-color: var(--ax-neutral-200A);
     }
-  }
 
-  & > div :where(a, button):has( > svg) {
+    &:has( > svg) {
     cursor: pointer;
     box-sizing: border-box;
     inline-size: 100%;
@@ -784,6 +759,7 @@ a {
   }
 
   hr {
+    grid-column: span 2;
     inline-size: 100%;
     border: none;
     block-size: 1px;
@@ -820,8 +796,8 @@ a {
 }
 
 .site-content {
-    padding-block-end: var(--ax-space-96);
-    inline-size: stretch;
+  padding-block-end: var(--ax-space-96);
+  inline-size: stretch;
 }
 
 .site-footer {

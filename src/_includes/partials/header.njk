@@ -115,34 +115,20 @@
   <div class="site-account">
 
     {%- if user.name %}
-    <button class="site-account-button account" popovertarget="site-user-menu" type="button">
-      <span class="account__text stack-text">
-        <strong>{{ 'På vegne av ' + user.name if user.type == 'agent' else users[0].name }}</strong>
-        <small>{{ user.representation }}</small>
-      </span>
-      <span class="avatar {{ 'avatar--agent' if user.type === 'agent' }}" style="view-transition-name: avatar-{{ user.name | slugify }}">
-        <span class="avatar__shape">{{ user.name.slice(0,2) }}</span>
-        {%- if (user.tasks | length) >= 1 %}
-          <span class="avatar__tasks">{{ user.tasks | length }}</span>
-        {%- endif %}
-      </span>
-    </button>
+      <button class="site-account-button account" popovertarget="site-user-menu" type="button">
+        <span class="account__text stack-text">
+          <strong>{{ 'På vegne av ' + user.name if user.type == 'agent' else users[0].name }}</strong>
+          <small>{{ user.representation }}</small>
+        </span>
+        <span class="avatar {{ 'avatar--agent' if user.type === 'agent' }}" style="view-transition-name: avatar-{{ user.name | slugify }}">
+          <span class="avatar__shape">{{ user.name.slice(0,2) }}</span>
+          {%- if (user.tasks | length) >= 1 %}
+            <span class="avatar__tasks">{{ user.tasks | length }}</span>
+          {%- endif %}
+        </span>
+      </button>
 
-    <nav class="site-user-menu" id="site-user-menu" aria-label="user-menu" popover>
-      <header>
-        <h2>
-          {{ 'På vegne av ' + user.name if user.type == 'agent' else users[0].name }}
-        </h2>
-        <p><small>{{ user.representation }}</small></p>
-        <div>
-          <a class="shape-pill" href="/{{ user.name | slugify }}/bytt-bruker/">
-            {{ '/src/assets/images/icon-persongroup.svg' | svgContents | safe }}
-            <span>Bytt bruker</span>
-          </a>
-        </div>
-      </header>
-      <div>
-        {% if not role.title %}{% endif %}
+      <nav class="site-user-menu" id="site-user-menu" aria-label="user-menu" popover>
         <a href="/{{ (user.name or users[0].name) | slugify }}/minside/">
           {{ '/src/assets/images/icon-squaregrid.svg' | svgContents | safe }}
           <div class="stack-text">
@@ -158,17 +144,23 @@
           </div>
         </a>
         <hr>
+        <a href="/{{ user.name | slugify }}/bytt-bruker/">
+          {{ '/src/assets/images/icon-persongroup.svg' | svgContents | safe }}
+          <strong>Bytt bruker</strong>
+        </a>
         <a href="/" style="justify-content:center">
           {{ '/src/assets/images/icon-leave.svg' | svgContents | safe }}
           <strong>Logg ut</strong>
         </a>
-      </div>
-    </nav>
+      </nav>
+
     {%- else %}
-    <a class="site-account-login" href="/idporten/">
-      <span>Logg inn</span>
-      {{ '/src/assets/images/icon-padlocklocked.svg' | svgContents | safe }}
-    </a>
+
+      <a class="site-account-login" href="/idporten/">
+        <span>Logg inn</span>
+        {{ '/src/assets/images/icon-padlocklocked.svg' | svgContents | safe }}
+      </a>
+
     {%- endif %}
   </div>
 </header>
