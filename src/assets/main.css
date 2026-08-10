@@ -266,9 +266,17 @@ fieldset {
 [popover] {
   border: none;
   padding: 0;
+  transition-behavior: allow-discrete;
 
   &::backdrop {
     overscroll-behavior: contain;
+    opacity: 0.75;
+    transition-behavior: allow-discrete;
+    transition: 200ms opacity linear;
+
+    @starting-style {
+      opacity: 0;
+    }
   }
 }
 
@@ -344,6 +352,7 @@ a {
   border-inline-start: 1px solid #bbb;
   padding-inline-start: var(--ax-space-12);
   margin-inline-start: var(--ax-space-6);
+  anchor-name: --audience;
 
   @media (width > 480px) {
     min-inline-size: 22ch;
@@ -367,7 +376,14 @@ a {
   }
 
   [popover] {
-    inset: anchor(120%) auto auto anchor(0%);   
+    inset: calc(anchor(--audience bottom) + var(--ax-space-16)) auto auto calc(anchor(--audience left) + var(--ax-space-6));
+    opacity: 1;
+    transition: opacity 300ms linear, translate 200ms cubic-bezier(.6, 0, .4, 1);
+
+    @starting-style {
+      opacity: 0;
+      translate: 0 -0.5rem;
+    }
 
     &:popover-open {
       padding-block: 0.5rem;
@@ -471,7 +487,7 @@ a {
     padding-block: var(--ax-space-8);
     padding-inline: var(--ax-space-12);
     border-radius: var(--ax-radius-8);
-    translate: var(--ax-space-6);
+    translate: var(--ax-space-4);
     color: var(--ax-accent-1000);
 
     @media (width > 480px) {
@@ -502,11 +518,16 @@ a {
   [popover] {
     position-anchor: --menu;
     inline-size: 100%;
-    inset: anchor(100%) 0 auto;
-    
+    inset: anchor(102%) 0 auto;
+    clip-path: inset(2px 0 -1rem);
+    transition: translate 250ms cubic-bezier(.6, 0, .4, 1);
+
+    @starting-style {
+      translate: 0 -0.5rem;
+    }
+
     &:popover-open {
       box-shadow: 0 0.25rem 1rem -0.25rem hsl(0 0 0 / 0.2);
-      clip-path: inset(2px 0 -1rem);
     }
     &::backdrop {
       background-color: var(--ax-neutral-400A);
@@ -524,6 +545,7 @@ a {
   padding-block: var(--ax-space-24);
   display: grid;
   gap: var(--ax-space-32);
+    transition: translate 200ms ease;
 
   @media (width <= 840px) {
     padding-block-end: var(--ax-space-48);
@@ -722,6 +744,16 @@ a {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: var(--ax-space-8);
+
+    transition-behavior: allow-discrete;
+    transition: opacity 100ms 50ms linear, translate 200ms ease-out;
+    opacity: 1;
+    translate: 0;
+
+    @starting-style {
+      opacity: 0;
+      translate: 0 -1rem;
+    }
   }
 
   a {
@@ -731,6 +763,7 @@ a {
     display: block;
     padding: var(--ax-space-16) var(--ax-space-16);
     background-color: var(--ax-neutral-100);
+    border: 2px solid #0000;
 
     &:nth-child(-n + 2) {
       grid-column: span 2;
@@ -740,7 +773,7 @@ a {
     }
 
     &:hover {
-      background-color: var(--ax-neutral-200A);
+      border-color: var(--ax-accent-700);
     }
 
     &:has( > svg) {
