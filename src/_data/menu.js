@@ -18,6 +18,7 @@ export default {
       {
         text: "Pensjon",
         icon: "/src/assets/images/icon-sackpension.svg",
+        href: "/pensjon",
       },
       {
         text: "Sosiale tjenester og veiledning",

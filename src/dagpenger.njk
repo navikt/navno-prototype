@@ -1,0 +1,22 @@
+---
+title: Dagpenger
+layout: "base.njk"
+loggedIn: true
+pagination:
+  data: users
+  size: 1
+  alias: user
+permalink: "/{{ user.name | slugify }}/minside/dagpenger/index.html"
+---
+
+<div class="container container--prose">
+  <div class="page-crumbs"><a href="/{{ user.name | slugify }}/minside/">Min side</a> /</div>
+  <h1>{{ title }}</h1>
+
+  {% if user.type == 'agent' and user.id === '211112*****' %}
+    <div style="display:flex;align-items:center;gap:1ch">
+      {{ '/src/assets/images/icon-xmarkoctagonfill.svg' | svgContents | safe }}
+      <span>Du har ikke fullmakt til å se innholdet på denne siden.</span>
+    </div>
+  {% endif %}
+</div>

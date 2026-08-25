@@ -179,9 +179,8 @@
   --ax-bg-overlay: #0c1627a8;
 }
 :root {
-  --edge-padding: clamp(1.25rem, -100px + 18.75vw, 5rem);
   --edge-padding: clamp(1.25rem, 5vw, 5rem);
-  --_body-bg:hsl(216, 36%, 97%);
+  --_body-bg: hsl(36 72% 97%);
 
   font-family: "Source Sans 3", Arial, system-ui, sans-serif;
   background-color: linear-gradient(var(--ax-neutral-000) 50%, (--ax-brand-blue-400) 0);
@@ -219,7 +218,7 @@ body {
 }
 
 :where(h1) {
-  font-size: 2.5rem;
+  font-size: 2.375rem;
   line-height: 1.15;
   font-weight: 650;
   margin-block-end: 0.5lh;
@@ -317,7 +316,7 @@ a {
   gap: var(--ax-space-12);
   justify-content: space-between;
   align-items: center;
-  padding-block: var(--ax-space-8);
+  padding-block: var(--ax-space-16);
   margin-block-end: var(--ax-space-64);
 
   .site-logo {
@@ -327,7 +326,8 @@ a {
 
 .site-navigation {
   box-sizing: border-box;
-  border-image: conic-gradient(white 0 0) fill 0/0/0 100vw;
+  border-image: conic-gradient(white) fill 0/0/0 100vw;
+  border-image: linear-gradient(white calc(100% - 1px), var(--ax-neutral-100A) 0) fill 0/0/0 100vw;
   padding-block: var(--ax-space-12);
   display: grid;
   align-items: center;
@@ -434,7 +434,7 @@ a {
     grid-area: search;
     inline-size: stretch;
     border: 0;
-    background: hsl(220, 32%, 94%);
+    background: var(--ax-neutral-200A);
   }
   [popover] {
     position-anchor: --suggestion;
@@ -518,12 +518,13 @@ a {
   [popover] {
     position-anchor: --menu;
     inline-size: 100%;
-    inset: anchor(102%) 0 auto;
-    clip-path: inset(2px 0 -1rem);
-    transition: translate 250ms cubic-bezier(.6, 0, .4, 1);
+    inset: calc(anchor(bottom) + var(--ax-space-12)) 0 auto;
+    clip-path: inset(1px 0 -1rem);
+    transition: clip-path 200ms cubic-bezier(.7, 0, .3, 1);
 
     @starting-style {
-      translate: 0 -0.5rem;
+      clip-path: inset(1px 0 100%);
+      /* translate: 0 -0.5rem; */
     }
 
     &:popover-open {
@@ -545,7 +546,7 @@ a {
   padding-block: var(--ax-space-24);
   display: grid;
   gap: var(--ax-space-32);
-    transition: translate 200ms ease;
+  transition: translate 200ms ease;
 
   @media (width <= 840px) {
     padding-block-end: var(--ax-space-48);
@@ -666,12 +667,13 @@ a {
 .site-account-login {
   display: flex;
   align-items: center;
-  column-gap: var(--ax-space-8);
+  column-gap: var(--ax-space-10);
   color: currentColor;
   padding-block: var(--ax-space-6);
   padding-inline: var(--ax-space-16) var(--ax-space-12);
   border-radius: var(--ax-radius-8);
   translate: var(--ax-space-12);
+  text-decoration: none;
 
   @media (width <= 1280px) {
     translate: var(--ax-space-12);
@@ -682,12 +684,14 @@ a {
     background-color: var(--ax-accent-700);
     padding: var(--ax-space-8);
     color: var(--ax-neutral-000);
+    transition: box-shadow 200ms;
   }
 
   &:hover {
     color: var(--ax-accent-800);
+
     svg {
-      background-color: var(--ax-accent-600);
+      box-shadow: 0 0 0 4px var(--ax-accent-400A);
     }
   }
 }
@@ -699,7 +703,7 @@ a {
   padding-block: var(--ax-space-6);
   padding-inline: var(--ax-space-16) var(--ax-space-8);
   border-radius: var(--ax-radius-8);
-  translate: var(--ax-space-10);
+  translate: var(--ax-space-8);
  
   & > div {
       justify-items: end;
@@ -726,10 +730,12 @@ a {
   }
 
   button&:hover .avatar__shape {
-    background-color: var(--ax-accent-500);
+    background-color: var(--ax-accent-700);
+    box-shadow: 0 0 0 4px var(--ax-accent-400A);
   }
   button&:hover .avatar--agent .avatar__shape {
     background-color: var(--ax-brand-magenta-800);
+    box-shadow: 0 0 0 4px var(--ax-brand-magenta-400A);
   }
 }
 
@@ -761,14 +767,16 @@ a {
     text-decoration: none;
     color: inherit;
     display: block;
-    padding: var(--ax-space-16) var(--ax-space-16);
+    padding-inline: var(--ax-space-16);
     background-color: var(--ax-neutral-100);
     border: 2px solid #0000;
 
     &:nth-child(-n + 2) {
+      padding-block: var(--ax-space-20);
       grid-column: span 2;
     }
     &:nth-child(n + 3) {
+      padding-block: var(--ax-space-12);
       align-items: center;
     }
 
@@ -897,11 +905,10 @@ a {
   line-height: 1;
   font-size: 1rem;
   letter-spacing: 0.75%;
-  translate: calc(var(--ax-space-4) * -1);
 }
 
 .tag-group {
-  margin-block: -0.375lh 0.875lh;
+  margin-block: -0.125lh 0.875lh;
 }
 
 
@@ -948,6 +955,8 @@ a {
     font-weight: 400;
     text-align: center;
     line-height: var(--ax-space-32);
+    transition: box-shadow 200ms;
+    box-shadow: 0 0;
   }
 
   .avatar__tasks {
@@ -975,17 +984,21 @@ a {
 }
 
 :where(.card) {
-  border-radius: var(--ax-radius-12);
+  border-radius: var(--ax-radius-8);
   background-color: var(--ax-neutral-000);
   padding: var(--ax-space-16) var(--ax-space-16);
-  box-shadow:0 1px 1px var(--ax-neutral-100A),0 8px 16px -12px var(--ax-neutral-200A);
-  min-block-size: 1.5lh;
+  box-shadow:
+    0 2px 4px -1px var(--ax-neutral-200A),
+    0 12px 18px -12px var(--ax-neutral-100A);
+  min-block-size: 1lh;
 
   &:has(a) { 
     position: relative;
+    transition: outline 75ms cubic-bezier(.6, 0, .4, 1);
+    outline: 0px solid #0000;
 
     &:hover {
-      outline:2px solid var(--ax-accent-600);
+      outline: 2px solid var(--ax-accent-600);
     }
   }
 
@@ -1004,6 +1017,10 @@ a {
   & + a {
     margin-block-start: var(--ax-space-6);
   }
+}
+
+.page-section:nth-of-type(3) .card {
+  min-block-size: 3lh;
 }
 
 .card[data-status="new"] a {
@@ -1117,13 +1134,11 @@ a {
 
 .invisible {
   background:#0000;
-  color:#0000;
   box-shadow: none;
   min-block-size: 2lh;
+  outline: 2px dashed var(--ax-neutral-300A);
+  outline-offset: -2px;
 
-  &:hover {
-      border: 2px dashed var(--ax-neutral-300A);
-  }
 }
 
 
@@ -1221,12 +1236,15 @@ a {
   & > :where(h2, h3, h4) {
     margin-block: 1.125lh 0.25lh;
   }
-  & > h2 { font-size: 1.875rem }
+  & > h2 { font-size: 1.75rem }
   & > h3 { font-size: 1.5rem }
   & > h4 { font-size: 1.25rem }
 
   & > h2 ~ h2 {
     margin-block-start: 2lh;
+  }
+  & > h2:nth-of-type(n+3) {
+    margin-block-end: 16lh;
   }
   
   & > :where(ul,ol) li + li {
@@ -1298,7 +1316,7 @@ a {
   @media (width > 1024px) {
     float: right;
     position: sticky;
-    inset-block-start: 0.5lh;
+    inset-block-start: 1lh;
     margin-block-start: 0;
     margin-inline-start: 12ch;
     block-size: calc(100vh - 1lh);
@@ -1332,14 +1350,10 @@ a {
   a {
     text-underline-offset: 0.125lh;
     text-decoration-color: var(--ax-accent-400A);
-
+    
     &:hover {
       text-decoration-style: solid;
-    }
-
-    &:not(:hover) {
-      text-decoration-thickness: 0;
-      text-decoration-color: hsl(from var(--ax-accent-700) H S L / .25);
+      text-decoration-color: var(--ax-accent-700);
     }
   }
   & > ul > li {
@@ -1348,6 +1362,7 @@ a {
   li ul {
     padding-inline-start: .5ch;
     margin-block-start: 0.125lh;
+    display: none; /* temporary */
   }
 }
 

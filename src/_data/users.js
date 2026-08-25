@@ -19,22 +19,30 @@ export default [
     ],
     products: [
       {
-        title: "Arbeidsavklaringspenger (AAP)",
-        url: "aap",
+        title: "Dagpenger",
+        url: "dagpenger",
         access: true,
       },
       {
-        title: "Foreldrepenger",
+        title: "Økonomisk sosialhjelp",
         url: "foreldrepenger",
         access: true,
       },
+    ],
+    support: [
       {
-        title: "Utbetalinger",
-        url: "utbetalinger",
+        title: "Aktivitetsplan",
+        access: true,
+      },
+      {
+        title: "Dialog med veileder",
+        access: true,
+      },
+      {
+        title: "CV",
         access: true,
       },
     ],
-    support: [{}],
   },
   {
     type: "agent",

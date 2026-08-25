@@ -14,43 +14,49 @@ permalink: "/{{ user.name | slugify }}/minside/index.html"
     <h1>Hei, {{ user.name or users[0].name }}</h1>
   </header>
 
-  <div class="page-section card">
-    <a href="/{{ user.name | slugify }}/minside/dialog/" class="stack-text">
-      <strong>Dialog med Nav</strong>
-      <small>Ingen nye meldinger</small>
-    </a>
-  </div>
-
-  <section class="page-section">
-    <h2 class="page-section__title">Oppgaver</h2>
-
-    <div class="page-section__content" style="display:grid; gap:var(--ax-space-6)">
-      {%- if (user.tasks | length) > 0 %}
-        {%- for task in user.tasks %}
-        <div class="card card--task">
-          <h3><a href="#">{{ task.title }}</a></h3>
-          {% if task.description %}
-          <p><small>{{ task.description }}</small></p>
-          {% endif %}
-        </div>
-        {%- endfor %}
-      {% else %}
-        Ingen nye oppgaver venter
-      {%- endif %}
-
+  <div class="page-section card card--product">
+    <div class="stack-text">
+      <a href="/{{ user.name | slugify }}/minside/oppgaver/">
+        <strong>Varsler med Nav</strong>
+      </a>
+      <small>1 oppgave, 1 beskjed</small>
     </div>
-    <p class="page-section__footer"><a href="/{{ user.name | slugify }}/minside/oppgaver/">Tidligere oppgaver</a></p>
-  </section>
+  </div>
 
   {% if user.products %}
   <section class="page-section">
     <h2 class="page-section__title">Pengestøtte</h2>
     <div class="page-section__content" style="display:grid; gap:var(--ax-space-6)">
-      {%- for product in user.products %}
-        {%- if product.access %}
+      {%- for item in user.products %}
+        {%- if item.access %}
           <article class="card card--product stack-text" {{- 'data-status=new' if loop.first -}}>
-            <a class="card__title" href="/{{ user.name | slugify }}/minside/{{ product.url }}/">{{ product.title }}</a>
-            {% if product.status %}<small>{{ product.status }}</small>{% endif %}
+            <a class="card__title" href="/{{ user.name | slugify }}/minside/{{ item.url }}/">{{ item.title }}</a>
+            {% if item.status %}<small>{{ item.status }}</small>{% endif %}
+          </article>
+        {%- else %}
+          <article class="card invisible">
+            <a href="/{{ user.name | slugify }}/minside/{{ item.url }}/">{{ item.title }}</a>
+          </article>
+        {%- endif %}
+        {% if user.type === 'agent' %}
+          <article class="card invisible">
+            <a href="/{{ user.name | slugify }}/minside/foreldrepenger/">Foreldrepenger</a>
+          </article>
+        {% endif %}
+      {%- endfor %}
+    </div>
+  </section>
+  {% endif %}
+
+  {% if user.support %}
+  <section class="page-section">
+    <h2 class="page-section__title">Oppfølging fra Nav</h2>
+    <div class="page-section__content" style="display:grid; gap:var(--ax-space-6)">
+      {%- for item in user.support %}
+        {%- if item.access %}
+          <article class="card card--product stack-text" {{- 'data-status=new' if loop.first -}}>
+            <a class="card__title" href="/{{ user.name | slugify }}/minside/{{ item.url }}/">{{ item.title }}</a>
+            {% if item.status %}<small>{{ item.status }}</small>{% endif %}
           </article>
         {%- else %}
           <article class="card invisible">
@@ -66,5 +72,19 @@ permalink: "/{{ user.name | slugify }}/minside/index.html"
     </div>
   </section>
   {% endif %}
+
+  <section class="page-section">
+    <div style="display: grid;grid-template-columns:1fr 1fr 1fr;gap:var(--ax-space-8)">
+    <div class="card card--product">
+      <a href="#">Innboks</a>
+    </div>
+    <div class="card card--product">
+      <a href="#">Dokumenter</a>
+    </div>
+    <div class="card card--product">
+      <a href="#">Utbetalinger</a>
+    </div>
+    </div>
+  </section>
 
 </div>

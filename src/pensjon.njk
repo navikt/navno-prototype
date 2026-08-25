@@ -1,0 +1,51 @@
+---
+layout: "base.njk"
+loggedIn: false
+---
+
+<div class="container">
+  <div class="prose">
+    <h1>Pensjon</h1>
+    <p><a href="#">Logg inn og beregn, søk om eller endre pensjonen din</a></p>
+    <h2>Hva er situasjonen din?</h2>
+    <ul>
+      <li>
+        <a href="#">Planlegger pensjon</a><br>
+        Få oversikt over pensjonen din, undersøk hva du kan få og se hvordan du søker.
+      </li>
+      <li>
+        <a href="#">Har pensjon</a><br>
+        Om pensjonen din, utbetalinger, brev og meldinger fra Nav. Du kan også søke om å endre pensjonen og melde fra om endringer i livssituasjonen din.
+      </li>
+      <li>
+        <a href="#">Har uføretrygd og skal ta ut pensjon</a><br>
+        Om overgangen til pensjon for deg som har uføretrygd. Hvis du har 100 prosent uføretrygd, får du automatisk alderspensjon når du blir 67 år.
+      </li>
+      <li>
+        <a href="#">Har bodd eller jobbet i flere land</a><br>
+        Om pensjon, søknad og utbetaling hvis du har bodd både i Norge og i andre land.
+      </li>
+      <li>
+        <a href="#">Har mistet noen i nær familie</a><br>
+        Om pengestøtter og rettigheter når du har mistet en ektefelle, en samboer, et barn, en forelder eller noen andre som har stått deg nær.
+      </li>
+    </ul>
+  </div>
+
+  <style>
+    @scope {
+      h1 + p {
+        background: var(--ax-accent-200A);
+        padding: 2ch;
+        border-radius: 1ch;
+        text-wrap: balance;
+      }
+      ul {
+        padding-inline-start: 2ch;
+      }
+      li + li {
+        margin-block-start: 0.75lh !important;
+      }
+    }
+  </style>
+</div>

@@ -123,7 +123,7 @@
         <span class="avatar {{ 'avatar--agent' if user.type === 'agent' }}" style="view-transition-name: avatar-{{ user.name | slugify }}">
           <span class="avatar__shape">{{ user.name.slice(0,2) }}</span>
           {%- if (user.tasks | length) >= 1 %}
-            <span class="avatar__tasks">{{ user.tasks | length }}</span>
+            {# <span class="avatar__tasks">{{ user.tasks | length }}</span> #}
           {%- endif %}
         </span>
       </button>
