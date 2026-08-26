@@ -28,6 +28,10 @@ export default [
         url: "foreldrepenger",
         access: true,
       },
+      {
+        title: "Utbetalinger",
+        access: true,
+      },
     ],
     support: [
       {
@@ -63,6 +67,10 @@ export default [
         url: "aap",
         access: false,
       },
+      {
+        title: "Utbetalinger",
+        access: true,
+      },
     ],
   },
   {
@@ -87,6 +95,10 @@ export default [
         title: "Arbeidsavklaringspenger",
         url: "aap",
         access: false,
+      },
+      {
+        title: "Utbetalinger",
+        access: true,
       },
     ],
   },
