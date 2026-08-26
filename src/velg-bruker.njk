@@ -2,9 +2,11 @@
 layout: "bare.njk"
 title: "Velg bruker"
 loggedIn: true
-user:
-  name: Charlie Jensen
-permalink: "/{{ users[0].name | slugify }}/velg-bruker/index.html"
+pagination:
+  data: users
+  size: 1
+  alias: user
+permalink: "/{{ user.name | slugify }}/velg-bruker/index.html"
 ---
 
 <div class="container container--prose">
@@ -34,6 +36,6 @@ permalink: "/{{ users[0].name | slugify }}/velg-bruker/index.html"
         {% if agent.type === 'self' %}<hr>{% endif %}
     {%- endfor %}
   </div>
-  <p><a href="/">Avbryt og logg ut</a></p>
+  <p><a href="/">Logg ut</a></p>
 
 </div>

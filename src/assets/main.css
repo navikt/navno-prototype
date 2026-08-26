@@ -1141,7 +1141,6 @@ a {
 .invisible {
   background:#0000;
   box-shadow: none;
-  min-block-size: 2lh;
   outline: 2px dashed var(--ax-neutral-300A);
   outline-offset: -2px;
 

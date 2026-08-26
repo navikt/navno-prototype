@@ -68,6 +68,11 @@ export default [
         access: false,
       },
       {
+        title: "Foreldrepenger",
+        url: "foreldrepenger",
+        access: false,
+      },
+      {
         title: "Utbetalinger",
         access: true,
       },

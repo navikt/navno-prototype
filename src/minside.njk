@@ -38,11 +38,6 @@ permalink: "/{{ user.name | slugify }}/minside/index.html"
             <a href="/{{ user.name | slugify }}/minside/{{ item.url }}/">{{ item.title }}</a>
           </article>
         {%- endif %}
-        {% if user.type === 'agent' %}
-          <article class="card invisible">
-            <a href="/{{ user.name | slugify }}/minside/foreldrepenger/">Foreldrepenger</a>
-          </article>
-        {% endif %}
       {%- endfor %}
     </div>
   </section>
