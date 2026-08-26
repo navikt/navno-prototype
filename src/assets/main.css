@@ -752,13 +752,16 @@ a {
     gap: var(--ax-space-8);
 
     transition-behavior: allow-discrete;
-    transition: opacity 100ms 50ms linear, translate 200ms ease-out;
+    transition: opacity 120ms linear, translate 120ms ease-out, scale 120ms ease-out;
     opacity: 1;
+    scale: 1;
     translate: 0;
+    transform-origin: top right;
 
     @starting-style {
       opacity: 0;
-      translate: 0 -1rem;
+      scale: 0.8;
+      translate: 0 -2lh;
     }
   }
 
@@ -1063,7 +1066,10 @@ a {
 }
 
 .page-section__title {
-  font-size: 1em;
+  font-size: 0.75em;
+  letter-spacing: 1%;
+  font-weight: 400;
+  opacity: 0.8;
   margin-block-end: var(--ax-space-12);
 }
 
