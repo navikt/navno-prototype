@@ -180,7 +180,7 @@
 }
 :root {
   --edge-padding: clamp(1.25rem, 5vw, 5rem);
-  --_body-bg: hsl(36 72% 97%);
+  --_body-bg: hsl(45 27% 96%);
 
   font-family: "Source Sans 3", Arial, system-ui, sans-serif;
   background-color: linear-gradient(var(--ax-neutral-000) 50%, (--ax-brand-blue-400) 0);
@@ -214,7 +214,6 @@ body {
   letter-spacing: -0.0125em;
   text-wrap: pretty;
   margin-block: 0;
-  color: var(--ax-accent-1000);
 }
 
 :where(h1) {
@@ -269,7 +268,7 @@ fieldset {
 
   &::backdrop {
     overscroll-behavior: contain;
-    opacity: 0.75;
+    opacity: 0.5;
     transition-behavior: allow-discrete;
     transition: 200ms opacity linear;
 
@@ -327,7 +326,7 @@ a {
 .site-navigation {
   box-sizing: border-box;
   border-image: conic-gradient(white) fill 0/0/0 100vw;
-  border-image: linear-gradient(white calc(100% - 1px), var(--ax-neutral-100A) 0) fill 0/0/0 100vw;
+  border-image: linear-gradient(white calc(100% - 0px), var(--ax-neutral-100A) 0) fill 0/0/0 100vw;
   padding-block: var(--ax-space-12);
   display: grid;
   align-items: center;
@@ -392,7 +391,7 @@ a {
       box-shadow: 0 0.125rem 1rem -0.25rem hsl(0 0 0 / 0.2);
     }
     &::backdrop {
-      background-color: var(--ax-bg-overlay);
+      background-color: var(--ax-neutral-400A);
     }
     & > a {
       display: block;
@@ -434,7 +433,7 @@ a {
     grid-area: search;
     inline-size: stretch;
     border: 0;
-    background: var(--ax-neutral-200A);
+    background: hsl(from var(--_body-bg) H calc(S - 12) calc(L - 3));
   }
   [popover] {
     position-anchor: --suggestion;
@@ -480,6 +479,7 @@ a {
   anchor-name: --menu;
 
   & > button {
+    
     display: flex;
     column-gap: var(--ax-space-12);
     align-items: center;
@@ -495,7 +495,7 @@ a {
     }
 
     &:hover {
-      background: var(--ax-accent-200A);
+      background-color: hsl(from var(--_body-bg) H S calc(L - 2));
     }
 
     span {
@@ -642,24 +642,30 @@ a {
   justify-content: end;
   align-items: center;
   anchor-name: --account;
-  padding-block: var(--ax-space-12) var(--ax-space-12);
+  padding-block: var(--ax-space-12);
   
   [popover] {
-    inset: anchor(100%) 0.75rem auto;
+    inset: calc(anchor(start) + 1px) 0 auto;
     align-self: start;
     block-size: auto;
     position-anchor: --account;
     
     @media (width > 480px) {
-      inset: anchor(100%) calc(anchor(end) - 3px) auto auto;
+      inset: calc(anchor(start) + var(--ax-space-2)) calc(anchor(end) - var(--ax-space-16)) auto auto;
     }
 
     @media (width <= 480px) {
-      inline-size: stretch
+      inline-size: stretch;
+      clip-path: inset(0 0 -1rem);
+
     }
 
     &::backdrop {
       background-color: var(--ax-neutral-400A);
+
+      @media (width <= 480px) {
+        inset: 3.5lh 0 0;
+      }
     }
   }
 }
@@ -709,7 +715,6 @@ a {
       justify-items: end;
   }
 
-
   strong {
     overflow: clip;
     white-space: nowrap;
@@ -725,10 +730,6 @@ a {
     max-inline-size: 56ch;
   }
 
-  .avatar {
-    translate:0 0.125lh;
-  }
-
   button&:hover .avatar__shape {
     background-color: var(--ax-accent-700);
     box-shadow: 0 0 0 4px var(--ax-accent-400A);
@@ -741,15 +742,23 @@ a {
 
 .site-user-menu {
   inline-size: min(38ch, calc(100% - var(--edge-padding)));
+  position: relative;
+  background-color: white;
 
   &:popover-open {
     padding: var(--ax-space-16);
-    border-radius: var(--ax-radius-12);
     box-shadow: 0 0.125rem 1rem -0.25rem hsl(0 0 0 / 0.2);
     text-align: left;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 8fr 7fr;
     gap: var(--ax-space-8);
+
+    @media (width > 480px) {
+      border-radius: var(--ax-radius-12);
+    }
+    @media (width <= 480px) {
+      border-radius: 0 0 var(--ax-radius-12) var(--ax-radius-12);
+    }
 
     transition-behavior: allow-discrete;
     transition: opacity 120ms linear, translate 120ms ease-out, scale 120ms ease-out;
@@ -761,7 +770,43 @@ a {
     @starting-style {
       opacity: 0;
       scale: 0.8;
-      translate: 0 -2lh;
+      translate: -1ch 0;
+    }
+  }
+
+  > div {
+    grid-column: span 2;
+    padding-inline-end: var(--ax-space-48);
+    padding-block: var(--ax-space-6) var(--ax-space-12);
+
+    h2 {
+      font-size: 1.5rem;
+      line-height: 1.2;
+      margin-block-end: 0.125lh;
+    }
+  }
+
+  [popovertargetaction="hide"] {
+    position: absolute;
+    border-radius: var(--ax-radius-8);
+    inset: var(--ax-space-16) var(--ax-space-16) auto auto;
+    display: grid;
+    place-items: center;
+    inline-size: var(--ax-space-40);
+    block-size: var(--ax-space-40);
+    border: 2px solid #0000;
+
+    @media (width <= 480px){
+      translate: calc(var(--ax-space-4) * -1) var(--ax-space-2);
+    }
+
+    &:hover {
+      border-color: var(--ax-accent-700);
+    }
+
+    svg {
+      inline-size: 28px;
+      block-size: 28px;
     }
   }
 
@@ -774,19 +819,16 @@ a {
     background-color: var(--ax-neutral-100);
     border: 2px solid #0000;
 
-    &:nth-child(-n + 2) {
+    &:nth-of-type(-n + 2) {
       padding-block: var(--ax-space-20);
       grid-column: span 2;
     }
-    &:nth-child(n + 3) {
+    &:nth-of-type(n + 3) {
       padding-block: var(--ax-space-12);
-      align-items: center;
     }
-
     &:hover {
       border-color: var(--ax-accent-700);
     }
-
     &:has( > svg) {
       cursor: pointer;
       box-sizing: border-box;
@@ -797,11 +839,12 @@ a {
 
       svg {
         color: var(--ax-accent-700);
-        translate:0 -2px;
+        translate:0 -1px;
         flex-shrink: 0;
       }
     }
   }
+
 
   hr {
     grid-column: span 2;
@@ -928,7 +971,7 @@ a {
 .stack-text {
   display: grid;
   line-height: 1.35;
-  gap: var(--ax-space-2);
+  gap: var(--ax-space-1);
 
   small {
     opacity: 0.8;
@@ -954,7 +997,7 @@ a {
     color: var(--ax-neutral-000);
     block-size: var(--ax-space-32);
     inline-size: var(--ax-space-32);
-    font-size:1.25rem;
+    font-size:1.125rem;
     font-weight: 400;
     text-align: center;
     line-height: var(--ax-space-32);
@@ -1053,6 +1096,11 @@ a {
   opacity: 0.8;
 }
 
+
+.page-header {
+  margin-block-start: 2lh;
+}
+
 .page-crumbs {
   margin-block:0 var(--ax-space-12);
 
@@ -1061,13 +1109,15 @@ a {
   }
 }
 
+
+
 .page-section {
   margin-block-start: var(--ax-space-40);
 }
 
 .page-section__title {
-  font-size: 0.75em;
-  letter-spacing: 1%;
+  font-size: 0.875em;
+  letter-spacing: 0.6%;
   font-weight: 400;
   opacity: 0.8;
   margin-block-end: var(--ax-space-12);

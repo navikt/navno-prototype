@@ -15,18 +15,15 @@ permalink: "/{{ user.name | slugify }}/minside/index.html"
   </header>
 
   <div class="page-section card card--product">
-    <div class="stack-text">
-      <a href="/{{ user.name | slugify }}/minside/oppgaver/">
-        <strong>Varsler</strong>
-      </a>
-      <small>1 oppgave, 1 beskjed</small>
-    </div>
+    <a href="/{{ user.name | slugify }}/minside/varsler/">
+      Varsler
+    </a>
   </div>
 
   {% if user.products %}
   <section class="page-section">
     <h2 class="page-section__title">Pengestøtte</h2>
-    <div class="page-section__content" style="display:grid; gap:var(--ax-space-6)">
+    <div class="page-section__content" style="display:grid; gap:var(--ax-space-8)">
       {%- for item in user.products %}
         {%- if item.access %}
           <article class="card card--product stack-text" {{- 'data-status=new' if loop.first -}}>
@@ -46,7 +43,7 @@ permalink: "/{{ user.name | slugify }}/minside/index.html"
   {% if user.support %}
   <section class="page-section">
     <h2 class="page-section__title">Oppfølging fra Nav</h2>
-    <div class="page-section__content" style="display:grid; gap:var(--ax-space-6)">
+    <div class="page-section__content" style="display:grid; gap:var(--ax-space-8)">
       {%- for item in user.support %}
         {%- if item.access %}
           <article class="card card--product stack-text" {{- 'data-status=new' if loop.first -}}>
