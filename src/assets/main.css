@@ -750,7 +750,7 @@ a {
     box-shadow: 0 0.125rem 1rem -0.25rem hsl(0 0 0 / 0.2);
     text-align: left;
     display: grid;
-    grid-template-columns: 8fr 7fr;
+    grid-template-columns: auto auto;
     gap: var(--ax-space-8);
 
     @media (width > 480px) {
@@ -820,7 +820,7 @@ a {
     border: 2px solid #0000;
 
     &:nth-of-type(-n + 2) {
-      padding-block: var(--ax-space-20);
+      padding-block: var(--ax-space-16);
       grid-column: span 2;
     }
     &:nth-of-type(n + 3) {
