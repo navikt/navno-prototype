@@ -50,7 +50,7 @@ export default [
   },
   {
     type: "agent",
-    name: "Alex Jensen",
+    name: "Alex Minsten Jensen",
     id: "211112*****",
     birthday: "2012-11-21",
     representation: "Du har fullmakt",

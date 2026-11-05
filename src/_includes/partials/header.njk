@@ -126,33 +126,36 @@
       </button>
 
       <nav class="site-user-menu" id="site-user-menu" aria-label="user-menu" popover>
-        <div class="stack-text">
+        <div class="site-user-menu__header stack-text">
           <h2>{{ 'På vegne av ' + user.name if user.type == 'agent' else users[0].name }}</h2>
           <small>{{ user.representation }}</small>
         </div>
-        <a href="/{{ (user.name or users[0].name) | slugify }}/minside/">
-          {{ '/src/assets/images/icon-squaregrid.svg' | svgContents | safe }}
-          <div class="stack-text">
-            <strong>Min side (privatperson)</strong>
-            <small>{{ (user.tasks or users[0].tasks) | length }} ny{{ 'e' if user.tasks.length != 1 }} oppgave{{ 'r' if user.tasks.length != 1 }}</small>
-          </div>
-        </a>
-        <a href="/{{ user.name | slugify }}/minside/profil/">
-          {{ '/src/assets/images/icon-cog.svg' | svgContents | safe }}
-          <div class="stack-text">
-            <strong>Profil og innstillinger</strong>
-            <small>Kontaktinfo, kontonummer, osv.</small>
-          </div>
-        </a>
-        <hr>
-        <a href="/{{ user.name | slugify }}/velg-bruker/">
-          {{ '/src/assets/images/icon-persongroup.svg' | svgContents | safe }}
-          <strong>Velg bruker</strong>
-        </a>
-        <a href="/">
-          {{ '/src/assets/images/icon-leave.svg' | svgContents | safe }}
-          <strong>Logg ut</strong>
-        </a>
+        <div>
+          <a class="flag-item" href="/{{ (user.name or users[0].name) | slugify }}/minside/">
+            <span class="disc-icon">{{ '/src/assets/images/icon-squaregrid.svg' | svgContents | safe }}</span>
+            <div class="stack-text">
+              <strong>Min side (privatperson)</strong>
+              <small>{{ (user.tasks or users[0].tasks) | length }} ny{{ 'e' if user.tasks.length != 1 }} oppgave{{ 'r' if user.tasks.length != 1 }}</small>
+            </div>
+          </a>
+          <a class="flag-item" href="/{{ user.name | slugify }}/minside/profil/">
+            <span class="disc-icon">{{ '/src/assets/images/icon-cog.svg' | svgContents | safe }}</span>
+            <div class="stack-text">
+              <strong>Profil og innstillinger</strong>
+              <small>Kontaktinfo, kontonummer, osv.</small>
+            </div>
+          </a>
+        </div>
+        <div>
+          <a class="button" href="/{{ user.name | slugify }}/velg-bruker/">
+            {{ '/src/assets/images/icon-persongroup.svg' | svgContents | safe }}
+            <strong>Velg bruker</strong>
+          </a>
+          <a class="button" href="/">
+            {{ '/src/assets/images/icon-leave.svg' | svgContents | safe }}
+            <strong>Logg ut</strong>
+          </a>
+        </div>
         <button popovertarget="site-user-menu" popovertargetaction="hide">
           <span class="sr-only">Lukk</span>
           {{ '/src/assets/images/icon-xmark.svg' | svgContents | safe }}
