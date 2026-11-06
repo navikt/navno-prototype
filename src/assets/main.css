@@ -960,14 +960,29 @@ a {
 .tag {
   justify-self: start;
   display: inline-block;
-  padding: var(--ax-space-2) var(--ax-space-6);
+  padding: var(--ax-space-4) var(--ax-space-6);
   background-color: var(--ax-neutral-200A);
   color: var(--ax-neutral-1000);
   border-radius: var(--ax-radius-4);
-  outline: 1px solid var(--ax-neutral-300A);
   line-height: 1;
   font-size: 1rem;
   letter-spacing: 0.75%;
+  margin-block-end: var(--ax-space-8);
+
+  &[data-variant=outline] {
+    outline: 1px solid #0000;
+    outline-offset: -1px;
+  }
+  &[data-color=warning] {
+    background-color: var(--ax-warning-200A);
+    outline-color: var(--ax-warning-500);
+    color: var(--ax-warning-1000);
+  }
+  &[data-color=danger] {
+    background-color: var(--ax-danger-200A);
+    outline-color: var(--ax-danger-500);
+    color: var(--ax-danger-1000);
+  }
 }
 
 .tag-group {
@@ -1515,7 +1530,7 @@ a {
 
     &:before {  
       grid-row: 1;
-      max-block-size: 14px;
+      max-block-size: 16px;
       margin-block-start:-8px;
     }
 
@@ -1550,6 +1565,10 @@ a {
     background: repeating-linear-gradient(#000 0 3px, #0000 0 7px)0 110%;
   }
 
+  [aria-current="step"]:after,
+  [aria-current="step"] ~ details:after {
+    margin-block-end: -6px;
+  }
 
   details:not([aria-current="step"]):has( + details:not([aria-current="step"])) {
       border-bottom-color: var(--ax-neutral-400A);
@@ -1563,6 +1582,7 @@ a {
     grid-column: 1 / -1;
     position: relative;
     text-wrap: pretty;
+    line-height: 1.4;
 
     &:hover {
       cursor: pointer;
@@ -1587,8 +1607,10 @@ a {
       font-size: 1rem;
       color: alpha(from currentColor / .8)
     }
+
     strong {
       font-size: 1.25rem;
+      font-weight: 600;
     }
   
     &::marker {
@@ -1615,7 +1637,7 @@ a {
   }
 
   .highlight {
-    border-image: conic-gradient(var(--ax-warning-200)) fill 1/0 100% / 0 100vw;
+    border-image: conic-gradient(var(--ax-warning-100)) fill 1/0 100% / 0 100vw;
     padding-block: var(--ax-space-12);
     margin-block: calc(var(--ax-space-4) * -1);
   }
